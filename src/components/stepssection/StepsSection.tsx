@@ -74,7 +74,7 @@ const styles = `
   }
 
   .steps-subtitle {
-    color: #00ebaa;
+    color: #a5a5a5;
     text-align: center;
     max-width: 550px;
     margin: 0 auto 3rem;

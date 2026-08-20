@@ -546,7 +546,7 @@ export default function BlogPage() {
               data-anim="from-bottom"
               data-anim-delay="2"
               style={{
-                color: '#b4d5da',
+                color: '#a5a5a5',
                 maxWidth: 'clamp(90%, 54%, 100%)',
                 margin: '0 auto 4rem',
                 fontSize: 'clamp(0.95rem, 2vw, 1.125rem)',

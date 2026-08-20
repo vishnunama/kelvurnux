@@ -147,7 +147,7 @@ export default function SolutionsSection() {
           <div
             ref={(el) => { if (el) elementsRef.current[1] = el; }}
             data-anim="from-bottom"
-            className="text-[#00ebaa]/90 text-base sm:text-base md:text-lg font-normal leading-relaxed text-center max-w-[90%] mx-auto mb-12 md:mb-16"
+            className="text-[#a5a5a5] text-base sm:text-base md:text-lg font-normal leading-relaxed text-center max-w-[90%] mx-auto mb-12 md:mb-16"
           >
             Whether you're launching or scaling — we've got you covered.
           </div>
@@ -173,7 +173,7 @@ export default function SolutionsSection() {
                 </div>
 
                 {/* Description */}
-                <div className="text-[#00ebaa]/90 text-base font-normal leading-relaxed text-center flex-grow">
+                <div className="text-[#a5a5a5] text-base font-normal leading-relaxed text-center flex-grow">
                   {solution.description}
                 </div>
               </div>
@@ -208,7 +208,7 @@ export default function SolutionsSection() {
                       </div>
 
                       {/* Description */}
-                      <div className="text-[#00ebaa]/90 text-base font-normal leading-relaxed text-center flex-grow">
+                      <div className="text-[#a5a5a5] text-base font-normal leading-relaxed text-center flex-grow">
                         {solution.description}
                       </div>
                     </div>

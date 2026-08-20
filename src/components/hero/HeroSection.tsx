@@ -374,7 +374,7 @@ Start Your Casino & Sportsbook Business Today        </h1>
 
           {/* Subtitle */}
           <p
-            className={`font-normal leading-relaxed text-[#00ebaa]/90 transition-all duration-700 hero-subtitle ${
+            className={`font-normal leading-relaxed text-[#a5a5a5] transition-all duration-700 hero-subtitle ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
             style={{

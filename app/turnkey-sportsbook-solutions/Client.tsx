@@ -376,22 +376,25 @@ export default function TurnkeySportsbookSolutions() {
               >
                 <button
                   onClick={handleScrollToContact}
-                  className="relative group font-bold rounded-full overflow-hidden text-black px-8 py-3 sm:px-10 sm:py-3.5 hover:shadow-lg transition-all duration-300"
                   style={{
-                    background: 'radial-gradient(67.03% 100% at 49.76% 99.23%, #ff8b2e 0%, #dbd646 36.72%, #00c3b3 100%)',
-                    boxShadow: '0 -3px 2.5px 0 rgba(255, 228, 132, 0.58) inset, 0 1px 1.8px 0 rgba(255, 244, 230, 0.93) inset',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: 'none',
+                    outline: '0',
+                    width: 'fit-content',
+                    borderRadius: '1.6rem',
+                    padding: '0.4rem 3rem',
+                    minHeight: '4rem',
+                    backgroundColor: '#00ebaa',
+                    cursor: 'pointer',
+                    color: '#000',
+                    fontWeight: '700',
                   }}
                 >
-                  <span className="relative z-10 text-sm sm:text-base">
+                  <span className="relative z-10 text-sm sm:text-base font-bold text-black">
                     Learn more
                   </span>
-
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"
-                    style={{
-                      background: 'radial-gradient(67.03% 100% at 49.76% 99.23%, #ff8b2e 0, #dbd646 36.72%, #00c3b3 100%)'
-                    }}
-                  />
                 </button>
               </div>
 
@@ -410,13 +413,13 @@ export default function TurnkeySportsbookSolutions() {
                     className="flex flex-col sm:flex-row items-start sm:items-start gap-3 sm:gap-6 p-8 md:p-[3.2rem] rounded-[1.6rem] h-max transition-all group"
                     style={{
                       background:
-                        'radial-gradient(61.37% 128.95% at 16.83% 106.91%, #0f4552 0%, #0a2a32 28.69%, #0c1921 100%)',
-                      border: '1px solid rgba(24,116,139,0.57)'
+                        'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10.25%, rgba(0, 235, 170, 0.03) 99.99%), #0a141a',
+                      border: '1px solid rgba(0, 235, 170, 0.3)'
                     }}
                   >
                     {/* Icon */}
-                    <div className="flex-shrink-0 w-10 sm:w-12 h-10 sm:h-12 bg-cyan-500/10 rounded-lg sm:rounded-xl flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
-                      <IconComponent className="w-5 sm:w-6 h-5 sm:h-6 text-cyan-400" strokeWidth={1.5} />
+                    <div className="flex-shrink-0 w-10 sm:w-12 h-10 sm:h-12 bg-[#00ebaa]/15 rounded-lg sm:rounded-xl flex items-center justify-center">
+                      <IconComponent className="w-5 sm:w-6 h-5 sm:h-6 text-[#00ebaa]" strokeWidth={1.5} />
                     </div>
 
                     {/* Content */}

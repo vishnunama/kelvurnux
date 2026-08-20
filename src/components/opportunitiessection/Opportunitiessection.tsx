@@ -40,7 +40,7 @@ const OpportunitiesSection: FC = () => {
           --gradient-cyan: #00ebaa;
           --gradient-teal: #00ebaa;
           --text-primary: #fff;
-          --text-secondary: #00ebaa;
+          --text-secondary: #a5a5a5;
           --bg-primary: #0b0b0f;
           --bg-dark: #0a141a;
           --border-light: rgba(0, 235, 170, 0.3);

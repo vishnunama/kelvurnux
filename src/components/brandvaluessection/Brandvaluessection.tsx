@@ -253,7 +253,7 @@ export default function BrandValuesSection() {
             <p
               className="text-base sm:text-base md:text-lg max-w-2xl mx-auto"
               style={{
-                color: '#00ebaa',
+                color: '#a5a5a5',
               }}
             >
               Keeping pace with the times while honoring time-tested solutions.
@@ -308,7 +308,7 @@ export default function BrandValuesSection() {
                     fontSize: 'clamp(0.85rem, 2.2vw, 1.1rem)',
                     fontWeight: '400',
                     lineHeight: '1.4',
-                    color: '#00ebaa',
+                    color: '#a5a5a5',
                   }}
                 >
                   {value.label}

@@ -175,7 +175,7 @@ export default function ContactForm() {
             Contact us
           </h2>
           <p 
-            className="text-[#b4d5da] text-base sm:text-lg md:text-lg lg:text-xl max-w-2xl mx-auto px-2 font-light"
+            className="text-[#a5a5a5] text-base sm:text-lg md:text-lg lg:text-xl max-w-2xl mx-auto px-2 font-light"
             ref={(el) => { if (el) elementsRef.current[1] = el; }}
             data-anim="from-bottom"
             data-anim-delay="1"
@@ -198,7 +198,7 @@ export default function ContactForm() {
               <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">
                 Let's Build Your iGaming Success Together!
               </h3>
-              <p className="text-[#80b3ff] text-base sm:text-lg md:text-lg lg:text-xl mb-6 sm:mb-8 font-light">
+              <p className="text-[#a5a5a5] text-base sm:text-lg md:text-lg lg:text-xl mb-6 sm:mb-8 font-light">
                 Leave your details. We'll arrange a call with the right specialist
               </p>
               {/* Decorative Image Placeholder */}

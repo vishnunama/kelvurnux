@@ -107,8 +107,8 @@ function MissionCard({
     <div
       style={{
         borderRadius: '2.4rem',
-        background: 'radial-gradient(187.98% 100% at 48.7% 0, #0f4552 0, #0a2a32 16.35%, #0c1921 70.3%)',
-        boxShadow: '0 -2px 4px 0 #14404e inset',
+        background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10.25%, rgba(0, 235, 170, 0.03) 99.99%), #0a141a',
+        border: '1px solid rgba(0, 235, 170, 0.3)',
         padding: isMobile ? '2.4rem 1.6rem' : '3.2rem',
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
@@ -140,7 +140,7 @@ function MissionCard({
           fontStyle: 'normal',
           fontWeight: 400,
           lineHeight: 1.44,
-          color: '#b4d5da',
+          color: '#a5a5a5',
           margin: 0,
         }}
       >

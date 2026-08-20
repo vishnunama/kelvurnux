@@ -202,7 +202,7 @@ export default function AboutUsHero() {
                 fontSize: isMobile ? 'clamp(13px, 3.5vw, 15px)' : 'clamp(15px, 2vw, 17px)',
                 fontWeight: 400,
                 lineHeight: 1.5,
-                color: '#b4d5da',
+                color: '#a5a5a5',
                 marginBottom: '0.8rem',
               }}
             >
@@ -215,7 +215,7 @@ export default function AboutUsHero() {
                 fontSize: isMobile ? 'clamp(13px, 3.5vw, 15px)' : 'clamp(15px, 2vw, 17px)',
                 fontWeight: 400,
                 lineHeight: 1.5,
-                color: '#b4d5da',
+                color: '#a5a5a5',
                 marginBottom: '0.8rem',
               }}
             >
@@ -227,7 +227,7 @@ export default function AboutUsHero() {
                 fontSize: isMobile ? 'clamp(13px, 3.5vw, 15px)' : 'clamp(15px, 2vw, 17px)',
                 fontWeight: 400,
                 lineHeight: 1.5,
-                color: '#b4d5da',
+                color: '#a5a5a5',
                 marginBottom: '0',
               }}
             >
