@@ -44,7 +44,7 @@ const styles = `
   }
 
   .glass-card {
-    background: radial-gradient(187.98% 100% at 48.7% 0, #0f4552 0, #0a2a32 16.35%, #0c1921 70.3%);
+    background: linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a;
     border: 1px solid rgba(0, 235, 170, 0.3);
   }
 
@@ -284,7 +284,7 @@ export default function CryptoCasinoBlogPage() {
         <div
           className="absolute inset-0"
           style={{
-            background: `radial-gradient(40% 80% at 50% 0, rgba(27, 87, 88, 0.58) 0, rgba(13, 11, 16, 0) 80.49%), #0b0b0f`,
+            background: `radial-gradient(40% 80% at 50% 0, rgba(0, 235, 170, 0.25) 0, rgba(13, 11, 16, 0) 80.49%), #0b0b0f`,
             backgroundSize: '125% 125%',
             animation: 'gradient 20s ease infinite',
           }}

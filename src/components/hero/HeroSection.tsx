@@ -15,7 +15,7 @@
 //       <div
 //         className="absolute inset-0"
 //         style={{
-//           background: `radial-gradient(40% 80% at 50% 0, rgba(27, 87, 88, 0.58) 0, rgba(13, 11, 16, 0) 80.49%), #0b0b0f`,
+//           background: `radial-gradient(40% 80% at 50% 0, rgba(0, 235, 170, 0.25) 0, rgba(13, 11, 16, 0) 80.49%), #0b0b0f`,
 //           backgroundSize: '125% 125%',
 //           animation: 'gradient 20s ease infinite',
 //         }}
@@ -293,7 +293,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: `radial-gradient(40% 80% at 50% 0, rgba(27, 87, 88, 0.58) 0, rgba(13, 11, 16, 0) 80.49%), #0b0b0f`,
+          background: `radial-gradient(40% 80% at 50% 0, rgba(0, 235, 170, 0.25) 0, rgba(13, 11, 16, 0) 80.49%), #0b0b0f`,
         }}
       />
 
@@ -406,9 +406,9 @@ Build and scale your iGaming business with our casino software, sportsbook platf
     border: 'none',
     outline: '0',
     width: 'fit-content',
-    borderRadius: '1.6rem',
-    padding: '0.4rem 3rem',
-    minHeight: '4rem',
+    borderRadius: '9999px',
+    padding: '0.6rem 2.2rem',
+    minHeight: '2.8rem',
     backgroundColor: '#00ebaa',
     cursor: 'pointer',
     color: '#000',

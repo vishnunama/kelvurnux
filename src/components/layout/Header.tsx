@@ -15,13 +15,13 @@ export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
   const lastScrollRef = useRef(0);
 
-  const handleMouseEnter = () => { 
-    clearTimeout(timerRef.current ?? undefined); 
-    setDropdownOpen(true); 
+  const handleMouseEnter = () => {
+    clearTimeout(timerRef.current ?? undefined);
+    setDropdownOpen(true);
   };
-  
-  const handleMouseLeave = () => { 
-    timerRef.current = setTimeout(() => setDropdownOpen(false), 150); 
+
+  const handleMouseLeave = () => {
+    timerRef.current = setTimeout(() => setDropdownOpen(false), 150);
   };
 
   const scrollToContactForm = () => {
@@ -272,9 +272,9 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
           position: relative; 
           overflow: hidden;
           transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
-          background: rgba(79,216,245,0.08);
+          background: rgba(0, 235, 170, 0.08);
           cursor: pointer;
-          border: 2px solid #4fd8f5;
+          border: 2px solid #00ebaa;
           border-radius: 9999px;
           padding: 0.6rem 1.8rem;
           color: #fff;
@@ -291,14 +291,14 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
           content: ""; 
           position: absolute; 
           inset: 0;
-          background: rgba(79,216,245,0.12); 
+          background: rgba(0, 235, 170, 0.15); 
           opacity: 0; 
           transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1);
         }
         
         .zg-contact-btn:hover { 
-          border-color: #7ff3ff;
-          background: rgba(79,216,245,0.12);
+          border-color: #00ebaa;
+          background: rgba(0, 235, 170, 0.15);
           transform: translateY(-2px);
         }
         
@@ -347,7 +347,7 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
           right: 0; 
           bottom: 0; 
           z-index: 90;
-          background: radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(21,41,46,.81) 0, rgba(8,14,16,.81) 100%);
+          background: radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(0,235,170,.12) 0, rgba(8,14,16,.95) 100%);
           backdrop-filter: blur(24px); 
           -webkit-backdrop-filter: blur(24px);
           transform: translateX(-100%);
@@ -430,7 +430,7 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
           align-items: center; 
           justify-content: center;
           flex-shrink: 0;
-          color: #4fd8f5;
+          color: #00ebaa;
           transition: transform 0.36s cubic-bezier(0.34,1.56,0.64,1);
         }
         
@@ -506,13 +506,13 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
 
         .zg-mob-link-arrow {
           font-size: 1.2rem;
-          color: #4fd8f5;
+          color: #00ebaa;
           transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), color 0.28s ease;
         }
         
         .zg-mob-link:hover .zg-mob-link-arrow { 
           transform: translateX(5px); 
-          color: #7ff3ff; 
+          color: #00ebaa; 
         }
 
         .zg-mob-contact {
@@ -520,8 +520,8 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
           text-align: center;
           padding: 1.1rem 2rem;
           border-radius: 10rem;
-          background: rgba(79,216,245,0.08);
-          border: 2px solid #4fd8f5;
+          background: rgba(0, 235, 170, 0.08);
+          border: 2px solid #00ebaa;
           color: #fff; 
           text-decoration: none;
           font-size: 1.05rem; 
@@ -537,14 +537,14 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
           content: ""; 
           position: absolute; 
           inset: 0;
-          background: rgba(79,216,245,0.1); 
+          background: rgba(0, 235, 170, 0.15); 
           opacity: 0;
           transition: opacity 0.3s ease;
         }
         
         .zg-mob-contact:hover { 
-          background: rgba(79,216,245,0.12);
-          border-color: #7ff3ff;
+          background: rgba(0, 235, 170, 0.15);
+          border-color: #00ebaa;
           transform: translateY(-2px);
         }
         
@@ -560,70 +560,69 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
       {/* HEADER */}
       <header ref={headerRef}>
         {/* High performance smooth transparent-to-glass header background */}
-        <div 
-          className={`absolute inset-0 pointer-events-none transition-all duration-300 ${
-            isScrolled 
-              ? 'bg-[rgba(4,8,10,0.84)] border-b border-white/[0.06] backdrop-blur-md' 
+        <div
+          className={`absolute inset-0 pointer-events-none transition-all duration-300 ${isScrolled
+              ? 'bg-[rgba(4,8,10,0.84)] border-b border-white/[0.06] backdrop-blur-md'
               : 'bg-transparent border-b border-transparent'
-          }`} 
+            }`}
         />
 
         {/* Header Content */}
         <div className="w-full max-w-[124rem] mx-auto lg:px-[4.5rem] px-[1rem] flex items-center justify-between relative z-[2] h-full">
           {/* Logo */}
           <Link href="/" className="block flex-shrink-0 bg-transparent">
-            <img 
-              src="/assets/logo4.png" 
-              alt="Kelvurnux" 
-              className="h-10 md:h-12 w-auto object-contain block bg-transparent" 
+            <img
+              src="/assets/logo4.png"
+              alt="Kelvurnux"
+              className="h-10 md:h-12 w-auto object-contain block bg-transparent"
             />
           </Link>
 
           {/* Desktop Navigation */}
-       <nav className="hidden md:flex flex-1 justify-center">
+          <nav className="hidden md:flex flex-1 justify-center">
             <ul className="flex items-center list-none m-0 p-0">
               <li className="relative mx-[1.8rem]" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <span className="flex items-center text-white font-medium cursor-pointer py-5 text-[1.15rem] tracking-[0.3px] transition-all duration-200 select-none whitespace-nowrap ">
                   Solutions
-                <span className={`zg-arrow ${dropdownOpen ? 'open' : ''}`}>
-  <svg
-  stroke="currentColor"
-  fill="currentColor"
-  strokeWidth="0"
-  viewBox="0 0 512 512"
-  height="1em"
-  width="1em"
-  xmlns="http://www.w3.org/2000/svg"
->
-    <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
-  </svg>
-</span>
+                  <span className={`zg-arrow ${dropdownOpen ? 'open' : ''}`}>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      strokeWidth="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+                    </svg>
+                  </span>
                 </span>
 
-              <div 
-  className={`zg-dropdown ${dropdownOpen ? 'open' : ''}`} 
-  onMouseEnter={handleMouseEnter} 
-  onMouseLeave={handleMouseLeave}
->
-  {/* SVG Image arrow */}
-  <img 
-    src="/assets/polygon.svg"
-    alt="Arrow"
-    className="absolute -top-[12px] left-[48%] transform -translate-x-1/2 w-[3rem] h-4 z-10"
-  />
+                <div
+                  className={`zg-dropdown ${dropdownOpen ? 'open' : ''}`}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {/* SVG Image arrow */}
+                  <img
+                    src="/assets/polygon.svg"
+                    alt="Arrow"
+                    className="absolute -top-[12px] left-[48%] transform -translate-x-1/2 w-[3rem] h-4 z-10"
+                  />
 
-  <div
-    className="rounded-[1.4rem] p-[1.4rem] grid grid-cols-[0.95fr_1.6fr] gap-[1.2rem] border border-white/[0.08]"
+                  <div
+                    className="rounded-[1.4rem] p-[1.4rem] grid grid-cols-[0.95fr_1.6fr] gap-[1.2rem]"
                     style={{
-                      background: 'radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(21,41,46,0.92) 0%, rgba(8,14,16,0.93) 100%)',
-                      boxShadow: '0 -2px 2px 0 rgba(114,239,255,0.08) inset, 0 24px 64px rgba(0,0,0,0.5)',
-                      backdropFilter: 'blur(20px)', 
+                      background: 'radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(0,235,170,0.15) 0%, rgba(8,14,16,0.95) 100%), #0a141a',
+                      boxShadow: '0 -2px 2px 0 rgba(0,235,170,0.12) inset, 0 24px 64px rgba(0,0,0,0.6)',
+                      backdropFilter: 'blur(20px)',
                       WebkitBackdropFilter: 'blur(20px)',
                     }}
                   >
-                    <div className="bg-white/[0.04] rounded-[1rem] p-[1.3rem] border border-white/[0.07] transition-all duration-300 hover:bg-white/[0.06] hover:border-white/[0.12]">
+                    <div className="bg-white/[0.04] rounded-[1rem] p-[1.3rem] border border-white/[0.07] transition-all duration-300 hover:bg-[#00ebaa]/[0.06] hover:border-[#00ebaa]/[0.2]">
                       <div className="flex items-center gap-[0.6rem] text-white font-semibold text-[1.05rem] mb-[1.2rem] tracking-[0.3px]">
-                        <Package size={20} className="text-amber-400 flex-shrink-0" strokeWidth={2} />
+                        <Package size={20} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
                         <span>Comprehensive Solutions</span>
                       </div>
                       <ul className="list-none m-0 p-0 space-y-[0.5rem]">
@@ -632,35 +631,35 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
                       </ul>
                     </div>
 
-                    <div className="bg-white/[0.04] rounded-[1rem] p-[1.3rem] border border-white/[0.07] transition-all duration-300 hover:bg-white/[0.06] hover:border-white/[0.12]">
+                    <div className="bg-white/[0.04] rounded-[1rem] p-[1.3rem] border border-white/[0.07] transition-all duration-300 hover:bg-[#00ebaa]/[0.06] hover:border-[#00ebaa]/[0.2]">
                       <div className="flex items-center gap-[0.6rem] text-white font-semibold text-[1.05rem] mb-[1.2rem] tracking-[0.3px]">
-                        <Zap size={20} className="text-amber-400 flex-shrink-0" strokeWidth={2} />
+                        <Zap size={20} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
                         <span>Special solutions</span>
                       </div>
                       <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-[0.9rem] gap-y-[0.5rem]">
-                       <li>
-  <Link href="/crypto-igaming-Solutions" className="zg-dd-link">
-    Crypto iGaming Solutions
-  </Link>
-</li>
+                        <li>
+                          <Link href="/crypto-igaming-Solutions" className="zg-dd-link">
+                            Crypto iGaming Solutions
+                          </Link>
+                        </li>
 
-<li>
-  <Link href="/custom-igaming-solution" className="zg-dd-link">
-    Custom iGaming Solution
-  </Link>
-</li>
+                        <li>
+                          <Link href="/custom-igaming-solution" className="zg-dd-link">
+                            Custom iGaming Solution
+                          </Link>
+                        </li>
 
-<li>
-  <Link href="/casino-aggregator-api-solution" className="zg-dd-link">
-    Casino Aggregator API Solution
-  </Link>
-</li>
+                        <li>
+                          <Link href="/casino-aggregator-api-solution" className="zg-dd-link">
+                            Casino Aggregator API Solution
+                          </Link>
+                        </li>
 
-<li>
-  <Link href="/turnkey-sportsbook-solutions" className="zg-dd-link">
-    turnkey sportsbook solutions
-  </Link>
-</li>
+                        <li>
+                          <Link href="/turnkey-sportsbook-solutions" className="zg-dd-link">
+                            turnkey sportsbook solutions
+                          </Link>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -673,36 +672,36 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
                 </Link>
               </li>
               <li className="mx-[1.8rem]">
-  <Link href="/blog" className="block text-white font-medium text-[1.15rem] py-5 transition-all duration-200 hover:text-[#00ebaa]">
-    Blog
-  </Link>
-</li>
+                <Link href="/blog" className="block text-white font-medium text-[1.15rem] py-5 transition-all duration-200 hover:text-[#00ebaa]">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </nav>
 
           {/* Contact Button - Desktop */}
-    <button 
-  onClick={scrollToContactForm}
-  className="ml-auto"
-  style={{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    border: 'none',
-    outline: '0',
-    width: 'fit-content',
-    borderRadius: '1.6rem',
-    padding: '0.4rem 2rem',
-    minHeight: '2.8rem',
-    backgroundColor: '#00ebaa',
-    cursor: 'pointer',
-    color: '#000',
-    fontWeight: '700',
-    fontSize: '0.95rem',
-  }}
->
-  <span className="relative z-10 text-black font-bold">Contact us</span>
-</button>
+          <button
+            onClick={scrollToContactForm}
+            className="ml-auto"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: 'none',
+              outline: '0',
+              width: 'fit-content',
+              borderRadius: '1.6rem',
+              padding: '0.4rem 2rem',
+              minHeight: '2.8rem',
+              backgroundColor: '#00ebaa',
+              cursor: 'pointer',
+              color: '#000',
+              fontWeight: '700',
+              fontSize: '0.95rem',
+            }}
+          >
+            <span className="relative z-10 text-black font-bold">Contact us</span>
+          </button>
           {/* Hamburger Menu */}
           <button
             className={`zg-ham md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px] bg-transparent border-none cursor-pointer p-0 z-[200] relative ${isMenuOpen ? 'open' : ''}`}
@@ -716,10 +715,10 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
         </div>
       </header>
 
-     {/* MOBILE MENU */}
+      {/* MOBILE MENU */}
       <div className={`zg-mobile-menu md:hidden ${isMenuOpen ? 'open' : ''}`}>
         <div className="flex items-center justify-between px-5 h-[4.8rem] flex-shrink-0 border-b border-white/[0.08]">
-         
+
         </div>
 
         <div className="zg-mobile-nav-scroll">
@@ -727,7 +726,7 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
             <div className={`zg-acc-wrap ${mobileAccordion.comp ? 'active' : ''}`}>
               <button className="zg-acc-btn" onClick={() => setMobileAccordion(prev => ({ ...prev, comp: !prev.comp }))}>
                 <span className="zg-acc-btn-left">
-                  <Package size={24} className="text-amber-400 flex-shrink-0" strokeWidth={2} />
+                  <Package size={24} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
                   <span>Comprehensive Solutions</span>
                 </span>
                 <span className={`zg-chevron ${mobileAccordion.comp ? 'open' : ''}`}>
@@ -748,7 +747,7 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
             <div className={`zg-acc-wrap ${mobileAccordion.special ? 'active' : ''}`}>
               <button className="zg-acc-btn" onClick={() => setMobileAccordion(prev => ({ ...prev, special: !prev.special }))}>
                 <span className="zg-acc-btn-left">
-                  <Zap size={24} className="text-amber-400 flex-shrink-0" strokeWidth={2} />
+                  <Zap size={24} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
                   <span>Special solutions</span>
                 </span>
                 <span className={`zg-chevron ${mobileAccordion.special ? 'open' : ''}`}>
@@ -759,24 +758,24 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
               </button>
 
               <div className={`zg-acc-body ${mobileAccordion.special ? 'open' : ''}`}>
-  <div className="zg-acc-inner">
-    <Link href="/crypto-igaming-Solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
-      Crypto iGaming Solutions
-    </Link>
+                <div className="zg-acc-inner">
+                  <Link href="/crypto-igaming-Solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Crypto iGaming Solutions
+                  </Link>
 
-    <Link href="/custom-igaming-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
-      Custom iGaming Solution
-    </Link>
+                  <Link href="/custom-igaming-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Custom iGaming Solution
+                  </Link>
 
-    <Link href="/casino-aggregator-api-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
-      Casino Aggregator API Solution
-    </Link>
+                  <Link href="/casino-aggregator-api-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Casino Aggregator API Solution
+                  </Link>
 
-    <Link href="/turnkey-sportsbook-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
-      turnkey sportsbook solutions
-    </Link>
-  </div>
-</div>
+                  <Link href="/turnkey-sportsbook-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    turnkey sportsbook solutions
+                  </Link>
+                </div>
+              </div>
             </div>
 
             <Link href="/about-us" className="zg-mob-link" onClick={() => setIsMenuOpen(false)}>
@@ -784,11 +783,11 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
               <span className="zg-mob-link-arrow">→</span>
             </Link>
             <Link href="/blog" className="zg-mob-link" onClick={() => setIsMenuOpen(false)}>
-  Blog
-  <span className="zg-mob-link-arrow">→</span>
-</Link>
+              Blog
+              <span className="zg-mob-link-arrow">→</span>
+            </Link>
 
-            <button 
+            <button
               onClick={() => {
                 setIsMenuOpen(false);
                 scrollToContactForm();

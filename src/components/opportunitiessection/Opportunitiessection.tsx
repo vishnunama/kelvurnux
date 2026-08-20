@@ -68,25 +68,15 @@ const OpportunitiesSection: FC = () => {
           min-height: 30rem;
           padding: 2rem 3rem 2rem 1rem;
           border-radius: 3.2rem;
-          border: 1px solid var(--border-light);
+          border: 1px solid rgba(0, 235, 170, 0.35);
           display: flex;
           justify-content: flex-end;
           align-items: center;
           position: relative;
           overflow: visible;
           background:
-            radial-gradient(
-              45.98% 116.69% at 18.63% 99.93%,
-              rgba(0, 235, 170, 0.2) 0,
-              rgba(0, 235, 170, 0.1) 32.64%,
-              rgba(9, 34, 41, 0) 100%
-            ),
-            radial-gradient(
-              187.98% 100% at 50% 100%,
-              #0a141a 42.07%,
-              #07232a 83.8%,
-              #0b3742 100%
-            );
+            radial-gradient(45.98% 116.69% at 18.63% 99.93%, rgba(243, 170, 74, 0.45) 0%, rgba(245, 94, 0, 0.15) 35%, rgba(10, 20, 26, 0) 100%),
+            linear-gradient(121deg, rgba(0, 235, 170, 0.22) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a;
         }
 
         /* Image Container */
@@ -199,10 +189,7 @@ const OpportunitiesSection: FC = () => {
 
         .btn:hover {
           transform: translateY(-2px);
-          box-shadow:
-            0 -5px 3.5px 0 rgba(132, 202, 255, 0.25) inset,
-            0 1px 1.8px 0 rgba(255, 244, 230, 1) inset,
-            0 8px 24px rgba(70, 255, 196, 0.2);
+          box-shadow: 0 4px 20px rgba(0, 235, 170, 0.4);
         }
 
         .btn:active {
@@ -272,10 +259,6 @@ const OpportunitiesSection: FC = () => {
             padding: 1rem 0;
           }
 
-          .container {
-            padding: 1.6rem 1rem;
-          }
-
           .opportunities-block {
             padding: 12rem 0 2rem;
             border-radius: 2.4rem;
@@ -284,18 +267,8 @@ const OpportunitiesSection: FC = () => {
             align-items: center;
             justify-content: flex-end;
             background:
-              radial-gradient(
-                144.97% 105.85% at 89.07% 0,
-                rgba(243, 170, 74, 0.67) 0,
-                rgba(245, 94, 0, 0.24) 26.93%,
-                rgba(9, 34, 41, 0) 100%
-              ),
-              radial-gradient(
-                187.98% 100% at 50% 100%,
-                #0a141a 42.07%,
-                #07232a 83.8%,
-                #0b3742 100%
-              );
+              radial-gradient(45.98% 116.69% at 18.63% 99.93%, rgba(243, 170, 74, 0.45) 0%, rgba(245, 94, 0, 0.15) 35%, rgba(10, 20, 26, 0) 100%),
+              linear-gradient(121deg, rgba(0, 235, 170, 0.22) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a;
           }
 
           .opportunities-img {
@@ -384,7 +357,7 @@ const OpportunitiesSection: FC = () => {
               alt="Opportunities illustration"
               width={896}
               height={896}
-              
+
             />
           </div>
 
@@ -397,32 +370,32 @@ const OpportunitiesSection: FC = () => {
               You're one step away from the best-fit solutions — contact us to learn more.
             </div>
 
-      <button
-  onClick={() => {
-    const section = document.getElementById('contact-form-section');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }}
-  className="w-full md:w-auto"
-  style={{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    border: 'none',
-    outline: '0',
-    width: 'fit-content',
-    borderRadius: '1.6rem',
-    padding: '0.4rem 3rem',
-    minHeight: '4rem',
-    backgroundColor: '#00ebaa',
-    cursor: 'pointer',
-    color: '#000',
-    fontWeight: '700',
-  }}
->
-  <span className="relative z-10 text-black font-bold">Get started</span>
-</button>
+            <button
+              onClick={() => {
+                const section = document.getElementById('contact-form-section');
+                if (section) {
+                  section.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="w-full md:w-auto"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: 'none',
+                outline: '0',
+                width: 'fit-content',
+                borderRadius: '9999px',
+                padding: '0.6rem 2.2rem',
+                minHeight: '2.8rem',
+                backgroundColor: '#00ebaa',
+                cursor: 'pointer',
+                color: '#000',
+                fontWeight: '700',
+              }}
+            >
+              <span className="relative z-10 text-black font-bold">Get started</span>
+            </button>
           </div>
         </div>
       </div>

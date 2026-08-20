@@ -270,14 +270,14 @@ export default function CasinoAggregatorAPI() {
         className="relative pt-32 overflow-hidden"
         style={{
           background:
-            'radial-gradient(71.13% 100% at 50% 0, rgba(8,89,106,0.2) 0%, rgba(13,11,16,0.2) 65.41%), #0b0b0f'
+            'radial-gradient(71.13% 100% at 50% 0, rgba(0,235,170,0.15) 0%, rgba(13,11,16,0.2) 65.41%), #0b0b0f'
         }}
       >
         
         {/* Animated background elements */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-32 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#00ebaa]/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-32 right-10 w-96 h-96 bg-[#00ebaa]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
@@ -445,9 +445,9 @@ export default function CasinoAggregatorAPI() {
                     border: 'none',
                     outline: '0',
                     width: 'fit-content',
-                    borderRadius: '1.6rem',
-                    padding: '0.4rem 3rem',
-                    minHeight: '4rem',
+                    borderRadius: '9999px',
+                    padding: '0.6rem 2.2rem',
+                    minHeight: '2.8rem',
                     backgroundColor: '#00ebaa',
                     cursor: 'pointer',
                     color: '#000',

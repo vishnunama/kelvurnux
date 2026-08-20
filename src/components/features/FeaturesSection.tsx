@@ -123,7 +123,7 @@ const styles = `
     transition: all 0.4s cubic-bezier(0.32, 0.72, 0.3, 1);
   }
   .dot-button:hover {
-    background: rgba(34, 211, 238, 0.8) !important;
+    background: rgba(0, 235, 170, 0.8) !important;
   }
 `;
 
@@ -193,7 +193,7 @@ export default function FeaturesSection() {
             >
 A solid base for your business
             </h2>
-            <p className="text-base sm:text-base md:text-lg text-cyan-200 max-w-2xl mx-auto">
+            <p className="text-base sm:text-base md:text-lg text-[#a5a5a5] max-w-2xl mx-auto">
 Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions tailored to your business vision            </p>
           </div>
 
@@ -226,7 +226,7 @@ Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
                   {current.title}
                 </h3>
-                <p className="text-base md:text-lg text-cyan-200">
+                <p className="text-base md:text-lg text-[#a5a5a5]">
                   {current.description}
                 </p>
               </div>
@@ -337,13 +337,17 @@ Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions
 
             {/* Content */}
             <div
-              className="w-full rounded-3xl bg-gradient-to-br from-slate-700/40 to-slate-800/40 backdrop-blur-md p-8 relative z-20 border border-white/5"
+              className="w-full rounded-3xl backdrop-blur-md p-8 relative z-20"
+              style={{
+                background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a',
+                border: '1px solid rgba(0, 235, 170, 0.3)',
+              }}
               ref={(el) => { elementsRef.current[11] = el; }}
               data-anim="from-bottom"
               data-anim-delay="1"
             >
               <h3 className="text-3xl font-bold text-white mb-4">{current.title}</h3>
-              <p className="text-base text-cyan-100 mb-6 leading-relaxed">{current.description}</p>
+              <p className="text-base text-[#a5a5a5] mb-6 leading-relaxed">{current.description}</p>
               <div className="flex flex-col gap-4">
                 {current.items.map((item, index) => (
                   <div
@@ -353,10 +357,10 @@ Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions
                     data-anim="from-bottom"
                     data-anim-delay={String(index + 2)}
                   >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="3" className="flex-shrink-0 mt-0.5">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ebaa" strokeWidth="2.5" className="flex-shrink-0 mt-0.5">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span className="text-base text-gray-100 leading-relaxed">{item}</span>
+                    <span className="text-base text-gray-200 leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>
@@ -379,7 +383,7 @@ Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions
                       width: index === currentSlide ? '20px' : '6px',
                       height: '6px',
                       borderRadius: '9.9rem',
-                      background: index === currentSlide ? '#22d3ee' : 'rgba(255,255,255,0.25)',
+                      background: index === currentSlide ? '#00ebaa' : 'rgba(255,255,255,0.25)',
                       border: 'none',
                       cursor: 'pointer',
                       padding: 0,
@@ -388,7 +392,7 @@ Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions
                 ))}
               </div>
               <div className="text-xs font-medium">
-                <span style={{ color: '#22d3ee' }}>{currentSlide + 1}</span>
+                <span style={{ color: '#00ebaa' }}>{currentSlide + 1}</span>
                 <span style={{ color: 'rgba(255,255,255,0.35)' }}> / {features.length}</span>
               </div>
               <div className="flex items-center gap-2.5">

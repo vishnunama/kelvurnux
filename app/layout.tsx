@@ -85,11 +85,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <body className={`min-h-full flex flex-col bg-black text-white ${gabarito.className}`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
-          <iframe 
+          <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-W68CLHWT"
-            height="0" 
-            width="0" 
-            style={{display:'none', visibility:'hidden'}}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
@@ -97,13 +97,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         <Header />
-        <FloatingContactIcons/>
+        <FloatingContactIcons />
         <main className="flex-1">
           {children}
         </main>
 
         {/* Footer */}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

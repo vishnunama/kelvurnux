@@ -202,9 +202,6 @@ export default function TurnkeyCasinoPlatform() {
           scrollbar-width: none;
           -ms-overflow-style: none;
         }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
       `}</style>
 
       {/* Hero Section */}
@@ -213,7 +210,7 @@ export default function TurnkeyCasinoPlatform() {
         className="relative pt-32 overflow-hidden"
         style={{
           background:
-            'radial-gradient(71.13% 100% at 50% 0, rgba(8,89,106,0.2) 0%, rgba(13,11,16,0.2) 65.41%), #0b0b0f'
+            'radial-gradient(71.13% 100% at 50% 0, rgba(0,235,170,0.15) 0%, rgba(13,11,16,0.2) 65.41%), #0b0b0f'
         }}
       >
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
@@ -232,7 +229,7 @@ export default function TurnkeyCasinoPlatform() {
           {/* Subtitle/Description - SEO Keywords Added */}
           <div className="max-w-4xl mx-auto mb-9">
             <p 
-              className="text-base sm:text-lg text-gray-300/90 leading-relaxed text-center font-light"
+              className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
               ref={(el) => { elementsRef.current[1] = el; }}
               data-anim="from-bottom"
               data-anim-delay="1"
@@ -283,7 +280,7 @@ Launch your own turnkey casino software platform with sportsbook integration, 20
                 {/* Image Card — first on mobile, right on desktop */}
                 <div className="col-span-1 lg:col-span-3 order-1 lg:order-2">
                   <div className="relative w-full aspect-video lg:aspect-auto lg:h-full rounded-xl sm:rounded-2xl md:rounded-2xl overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-blue-500/20 rounded-xl sm:rounded-2xl blur-3xl animate-pulse"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#00ebaa]/20 to-[#00ebaa]/5 rounded-xl sm:rounded-2xl blur-3xl animate-pulse"></div>
                     <img
                       src={activeTabData.image}
                       alt={getImageAlt(activeTabData.id)}
@@ -291,7 +288,7 @@ Launch your own turnkey casino software platform with sportsbook integration, 20
                       style={{ animation: 'imageSlideIn 0.6s ease-out' }}
                       onError={(e) => {
                         const target = e.currentTarget as HTMLImageElement;
-                        target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI1MzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iNTMwIiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iNTAwIiB5PSIyNjUiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg=='
+                        target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI5MzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iNTMwIiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iNTAwIiB5PSIyNjUiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg=='
                       }}
                     />
                   </div>
@@ -300,15 +297,15 @@ Launch your own turnkey casino software platform with sportsbook integration, 20
                 {/* Info Card — second on mobile, left on desktop */}
                 <div className="col-span-1 lg:col-span-2 order-2 lg:order-1 h-[280px] lg:h-auto">
                   <div
-                    className="w-full h-full rounded-xl sm:rounded-2xl md:rounded-2xl p-6 sm:p-7 md:p-10 lg:p-12 backdrop-blur-sm flex flex-col justify-center"
+                    className="w-full h-full rounded-xl sm:rounded-2xl md:rounded-2xl p-6 sm:p-7 md:p-10 lg:p-12 backdrop-blur-sm flex flex-col justify-center border border-[#00ebaa]/30"
                     style={{
-                      background: 'radial-gradient(187.98% 100% at 48.7% 0, #0f4552 0, #0a2a32 16.35%, #0c1921 70.3%)',
+                      background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a',
                     }}
                   >
                     <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
                       {activeTabData.title}
                     </h3>
-                    <p className="text-base sm:text-base md:text-base lg:text-lg text-gray-300/90 leading-relaxed font-light text-left">
+                    <p className="text-base sm:text-base md:text-base lg:text-lg text-[#a5a5a5] leading-relaxed font-light text-left">
                       {activeTabData.description}
                     </p>
                   </div>
@@ -383,9 +380,9 @@ Launch your own turnkey casino software platform with sportsbook integration, 20
                     border: 'none',
                     outline: '0',
                     width: 'fit-content',
-                    borderRadius: '1.6rem',
-                    padding: '0.4rem 3rem',
-                    minHeight: '4rem',
+                    borderRadius: '9999px',
+                    padding: '0.6rem 2.2rem',
+                    minHeight: '2.8rem',
                     backgroundColor: '#00ebaa',
                     cursor: 'pointer',
                     color: '#000',

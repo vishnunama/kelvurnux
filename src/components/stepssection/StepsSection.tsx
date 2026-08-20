@@ -138,15 +138,16 @@ const styles = `
   /* Active step indicator styling */
   .step-item.is-active .step-indicator,
   .swiper-slide-active .step-indicator {
-    background: #00ebaa;
+    background: #282a2c;
+    border: none;
     box-shadow: none;
   }
 
   .step-item.is-active .step-indicator span,
   .swiper-slide-active .step-indicator span {
-    background: #00ebaa;
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #00ebaa 60%, #00a87a 100%);
     background-blend-mode: normal;
-    box-shadow: none;
+    box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .step-title {
@@ -173,7 +174,7 @@ const styles = `
 
   .step-item.is-active .step-text,
   .swiper-slide-active .step-text {
-    color: #c4d7dc;
+    color: #a5a5a5;
   }
 
   .swiper-navigation-center {
@@ -340,25 +341,27 @@ export default function StepsSection() {
             </div>
           </div>
 
-          <a
-            href="#contact-form-section"
-            className="site-btn font-bold text-black border-none cursor-pointer"
-            style={{
-              backgroundColor: '#00ebaa',
-              padding: '0.7rem 2.5rem',
-              borderRadius: '2.6rem',
-              height: '3.6rem',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '2rem auto 0',
-              fontWeight: 700,
-              textDecoration: 'none',
-              color: '#000',
-            }}
-          >
-            <span>Let’s Partner Up</span>
-          </a>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2.5rem' }}>
+            <a
+              href="#contact-form-section"
+              className="font-bold text-black border-none cursor-pointer"
+              style={{
+                backgroundColor: '#00ebaa',
+                padding: '0.7rem 2.5rem',
+                borderRadius: '2.6rem',
+                height: '3.6rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 700,
+                textDecoration: 'none',
+                color: '#000',
+                fontFamily: "'Gabarito', sans-serif",
+              }}
+            >
+              <span>Let’s Partner Up</span>
+            </a>
+          </div>
         </div>
       </section>
     </>

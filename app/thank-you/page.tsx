@@ -71,8 +71,8 @@ export default function ThankYouPage() {
             className="modal-window-content w-full rounded-3xl overflow-y-auto"
             style={{
               padding: '3.25rem',
-              background: 'radial-gradient(107.85% 100.05% at 50% -.03%, rgba(48, 196, 255, .18) 0, rgba(75, 204, 255, 0) 52.41%), #141820',
-              boxShadow: '0 12px 33.8px 0 rgba(0, 0, 0, .16), 0 2px 4.4px 0 rgba(128, 179, 255, .28) inset'
+              background: 'radial-gradient(107.85% 100.05% at 50% -.03%, rgba(0, 235, 170, .2) 0, rgba(0, 235, 170, 0) 52.41%), #141820',
+              boxShadow: '0 12px 33.8px 0 rgba(0, 0, 0, .16), 0 2px 4.4px 0 rgba(0, 235, 170, .3) inset'
             }}
           >
             {/* Close Button - Mobile */}
@@ -133,9 +133,9 @@ export default function ThankYouPage() {
                     border: 'none',
                     outline: '0',
                     width: 'fit-content',
-                    borderRadius: '1.6rem',
-                    padding: '0.4rem 3rem',
-                    minHeight: '3.5rem',
+                    borderRadius: '9999px',
+                    padding: '0.6rem 2.2rem',
+                    minHeight: '2.8rem',
                     backgroundColor: '#00ebaa',
                     cursor: 'pointer',
                     color: '#000',
