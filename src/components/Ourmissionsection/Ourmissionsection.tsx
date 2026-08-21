@@ -35,7 +35,7 @@ export default function OurMissionSection() {
     <section
       className="relative w-full overflow-hidden"
       style={{
-        background: 'radial-gradient(50% 100% at 50.76% 100%, #02202a 0, #030f13 49.23%, #0b0b0f 91.15%), #0b0b0f',
+        background: 'radial-gradient(50% 100% at 50.76% 100%, rgba(0, 235, 170, 0.18) 0%, rgba(0, 235, 170, 0.04) 49.23%, #0b0b0f 91.15%), #0b0b0f',
         padding: isMobile ? '3.2rem 0' : '10rem 0',
         paddingTop: isMobile ? '3.2rem' : 'clamp(6.4rem, 10rem, 10rem)',
       }}
@@ -44,7 +44,7 @@ export default function OurMissionSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='134' height='106' viewBox='0 0 134 106' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23588998' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h134M0 10h134M0 20h134M0 30h134M0 40h134M0 50h134M0 60h134M0 70h134M0 80h134M0 90h134M0 100h134M0 106h134'/%3E%3Cpath d='M0 0v106M10 0v106M20 0v106M30 0v106M40 0v106M50 0v106M60 0v106M70 0v106M80 0v106M90 0v106M100 0v106M110 0v106M120 0v106M134 0v106'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='134' height='106' viewBox='0 0 134 106' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%2300ebaa' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M0 0h134M0 10h134M0 20h134M0 30h134M0 40h134M0 50h134M0 60h134M0 70h134M0 80h134M0 90h134M0 100h134M0 106h134'/%3E%3Cpath d='M0 0v106M10 0v106M20 0v106M30 0v106M40 0v106M50 0v106M60 0v106M70 0v106M80 0v106M90 0v106M100 0v106M110 0v106M120 0v106M134 0v106'/%3E%3C/g%3E%3C/svg%3E")`,
           backgroundSize: '134px 106px',
           backgroundPosition: '50% 50%',
           opacity: 0.05,

@@ -483,7 +483,7 @@ export default function BlogPage() {
         className="relative overflow-hidden"
         style={{
           padding: 'clamp(6rem, 12.5rem, 12.5rem) 0 4rem',
-          background: 'radial-gradient(167.61% 100% at 50% 100%, rgba(29, 174, 179, 0.24) 0, rgba(11, 11, 15, 0) 37.5%), radial-gradient(129.09% 100% at 50% 100%, rgba(0, 116, 112, 0.6) 0, rgba(11, 11, 15, 0) 71.15%), radial-gradient(64.91% 100% at 50% 100%, #0a322e 0, rgba(11, 11, 15, 0) 88.24%), #0b0b0f',
+          background: 'radial-gradient(167.61% 100% at 50% 100%, rgba(0, 235, 170, 0.22) 0, rgba(11, 11, 15, 0) 37.5%), radial-gradient(129.09% 100% at 50% 100%, rgba(0, 235, 170, 0.10) 0, rgba(11, 11, 15, 0) 71.15%), radial-gradient(64.91% 100% at 50% 100%, rgba(0, 235, 170, 0.04) 0, rgba(11, 11, 15, 0) 88.24%), #0b0b0f',
         }}
       >
 

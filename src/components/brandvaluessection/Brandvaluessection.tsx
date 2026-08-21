@@ -79,7 +79,7 @@ const styles = `
   }
 
   .brand-value:hover {
-    background: radial-gradient(114.85% 105.23% at 87.17% -18.95%, rgba(255, 112, 23, 0.4) 0, rgba(9, 39, 53, 0) 69.85%), radial-gradient(84.91% 94.78% at 69.5% 94.35%, #013a48 0, #0d202d 82.26%);
+    background: radial-gradient(114.85% 105.23% at 87.17% -18.95%, rgba(0, 235, 170, 0.25) 0, rgba(10, 20, 26, 0) 69.85%), radial-gradient(84.91% 94.78% at 69.5% 94.35%, #0a1c20 0, #0a141a 82.26%);
   }
 
   .brand-values-grid {

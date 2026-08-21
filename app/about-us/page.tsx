@@ -24,12 +24,12 @@ export default function AboutUsHero() {
 
   return (
     <section
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden pt-12"
       style={{
         background: `
-          radial-gradient(167.61% 100% at 50% 100%, rgba(29, 174, 179, 0.6) 0%, rgba(11, 11, 15, 0) 14.98%),
-          radial-gradient(129.09% 100% at 50% 100%, rgba(0, 116, 112, 0.6) 0%, rgba(11, 11, 15, 0) 38.39%),
-          radial-gradient(64.91% 100% at 50% 100%, #0a322e 0%, rgba(11, 11, 15, 0) 88.24%),
+          radial-gradient(167.61% 100% at 50% 100%, rgba(0, 235, 170, 0.22) 0%, rgba(11, 11, 15, 0) 25%),
+          radial-gradient(129.09% 100% at 50% 100%, rgba(0, 235, 170, 0.10) 0%, rgba(11, 11, 15, 0) 45%),
+          radial-gradient(64.91% 100% at 50% 100%, rgba(0, 235, 170, 0.04) 0%, rgba(11, 11, 15, 0) 88%),
           #0b0b0f
         `,
       }}
@@ -38,7 +38,7 @@ export default function AboutUsHero() {
       <div
         className="absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 md:w-4/5"
         style={{
-          background: 'linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(88, 153, 152, 0.9) 49.8%, rgba(88, 153, 152, 0.9) 50.2%, rgba(255, 255, 255, 0) 100%)',
+          background: 'linear-gradient(to right, rgba(0, 235, 170, 0) 0%, rgba(0, 235, 170, 0.8) 50%, rgba(0, 235, 170, 0) 100%)',
           opacity: isVisible ? 0.9 : 0,
           transition: 'opacity 600ms ease-out',
         }}
@@ -169,16 +169,11 @@ export default function AboutUsHero() {
 
           {/* Title */}
           <h1
-            className="text-center mb-3 sm:mb-4 md:mb-6 px-2"
+            className="text-center mb-3 sm:mb-4 md:mb-6 px-2 text-white"
             style={{
               fontSize: isMobile ? 'clamp(22px, 7vw, 32px)' : 'clamp(32px, 7vw, 48px)',
               fontWeight: 700,
               lineHeight: 1.15,
-              background: 'linear-gradient(147deg, rgba(255, 255, 255, .33) 10%, rgba(61, 75, 71, .33) 90%), #fff',
-              backgroundBlendMode: 'darken',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
               position: 'relative',
               zIndex: 2,
               opacity: isVisible ? 1 : 0,
