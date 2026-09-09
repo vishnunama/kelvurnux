@@ -74,14 +74,14 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: customFaqs }) => {
 
   const defaultFaqs: FAQ[] = [
     {
-      question: 'What are the advantages of working with Kelvurnux?',
+      question: 'What are the advantages of working with Kvaornux?',
       answer:
-        'Kelvurnux is powered by a team with strong experience in building and scaling iGaming development solutions for both B2B and B2C businesses. We deliver practical strategies and proven systems that help you grow faster and operate efficiently.',
+        'Kvaornux is powered by a team with strong experience in building and scaling iGaming development solutions for both B2B and B2C businesses. We deliver practical strategies and proven systems that help you grow faster and operate efficiently.',
     },
     {
-      question: 'What products and services does Kelvurnux offer?',
+      question: 'What products and services does Kvaornux offer?',
       answer:
-        'Kelvurnux offers complete iGaming development solutions for starting a new project or upgrading an existing one. Our services include White Label development, Turnkey development, iGaming systems, turnkey sportsbook solutions, Affiliate systems, CRM tools, marketing automation, and game integration.',
+        'Kvaornux offers complete iGaming development solutions for starting a new project or upgrading an existing one. Our services include White Label development, Turnkey development, iGaming systems, turnkey sportsbook solutions, Affiliate systems, CRM tools, marketing automation, and game integration.',
     },
     {
       question: 'I am not sure which solution is right for me',
@@ -98,7 +98,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: customFaqs }) => {
       question:
         'Do you provide support after project launch?',
       answer:
-        'Yes, Kelvurnux provides full support even after launch. Our team assists you with technical issues, updates, and guidance whenever needed, ensuring smooth operation of your solution.',
+        'Yes, Kvaornux provides full support even after launch. Our team assists you with technical issues, updates, and guidance whenever needed, ensuring smooth operation of your solution.',
     },
   ];
 
@@ -131,7 +131,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: customFaqs }) => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="relative min-h-screen bg-black py-10 md:py-20"
     >
@@ -185,20 +185,20 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: customFaqs }) => {
       <div className="relative z-10 mx-auto max-w-5xl px-6 md:px-12 lg:px-20">
         {/* Header */}
         <div className="mb-10 text-center md:mb-20">
-          <h2 
+          <h2
             className="mb-4 text-4xl sm:text-4xl md:text-6xl font-bold text-white"
             ref={(el) => { if (el) elementsRef.current[0] = el; }}
             data-anim="from-bottom"
           >
             Frequently Asked Questions
           </h2>
-          <p 
+          <p
             className="text-base sm:text-base md:text-lg text-gray-400"
             ref={(el) => { if (el) elementsRef.current[1] = el; }}
             data-anim="from-bottom"
             data-anim-delay="1"
           >
-            All you need to know before launching with Kelvurnux.
+            All you need to know before launching with Kvaornux.
           </p>
         </div>
 

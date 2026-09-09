@@ -14,7 +14,7 @@ const gabarito = Gabarito({
 });
 
 export const metadata: Metadata = {
-  title: "Kelvurnux - Crypto Casino Software Provider | White Label iGaming Platform Solutions",
+  title: "Kvaornux - Crypto Casino Software Provider | White Label iGaming Platform Solutions",
   description:
     "Launch your own crypto casino platform with our ready-made iGaming solution. 150+ APIs, sportsbook, slots and full white label system with admin & affiliate features.",
   keywords:

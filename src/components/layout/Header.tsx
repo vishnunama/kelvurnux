@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { Package, Zap } from 'lucide-react';
-import KelvurnuxLogo from './KelvurnuxLogo';
+import KvaornuxLogo from './KvaornuxLogo';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -562,8 +562,8 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
         {/* High performance smooth transparent-to-glass header background */}
         <div
           className={`absolute inset-0 pointer-events-none transition-all duration-300 ${isScrolled
-              ? 'bg-[rgba(4,8,10,0.84)] border-b border-white/[0.06] backdrop-blur-md'
-              : 'bg-transparent border-b border-transparent'
+            ? 'bg-[rgba(4,8,10,0.84)] border-b border-white/[0.06] backdrop-blur-md'
+            : 'bg-transparent border-b border-transparent'
             }`}
         />
 
@@ -572,8 +572,8 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
           {/* Logo */}
           <Link href="/" className="block flex-shrink-0 bg-transparent">
             <img
-              src="/assets/logo4.png"
-              alt="Kelvurnux"
+              src="/assets/logo.png"
+              alt="Kvaornux"
               className="h-10 md:h-12 w-auto object-contain block bg-transparent"
             />
           </Link>

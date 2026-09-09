@@ -1,7 +1,7 @@
 import WhiteLabelCasinoPlatform from "./Client";
 
 export const metadata = {
-  title: "White Label Casino Solution | Crypto Casino Software | Kelvurnux",
+  title: "White Label Casino Solution | Crypto Casino Software | Kvaornux",
   description:
     "Launch your own white label crypto casino solution with 150+ APIs, sportsbook, slots, crypto payments, and full admin & affiliate system.",
   keywords:

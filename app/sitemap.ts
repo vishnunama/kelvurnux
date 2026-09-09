@@ -3,43 +3,43 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://kelvurnux.com/",
+      url: "https://Kvaornux.com/",
       priority: 1.0,
     },
     {
-      url: "https://kelvurnux.com/blog",
+      url: "https://Kvaornux.com/blog",
       priority: 0.8,
     },
     {
-      url: "https://kelvurnux.com/how-to-start-crypto-casino-platform-step-by-step",
+      url: "https://Kvaornux.com/how-to-start-crypto-casino-platform-step-by-step",
       priority: 0.8,
     },
     {
-      url: "https://kelvurnux.com/white-label-casino-solutions",
+      url: "https://Kvaornux.com/white-label-casino-solutions",
       priority: 0.9,
     },
     {
-      url: "https://kelvurnux.com/turnkey-casino-software-solutions",
+      url: "https://Kvaornux.com/turnkey-casino-software-solutions",
       priority: 0.9,
     },
     {
-      url: "https://kelvurnux.com/crypto-igaming-Solutions",
+      url: "https://Kvaornux.com/crypto-igaming-Solutions",
       priority: 0.9,
     },
     {
-      url: "https://kelvurnux.com/custom-igaming-solution",
+      url: "https://Kvaornux.com/custom-igaming-solution",
       priority: 0.9,
     },
     {
-      url: "https://kelvurnux.com/casino-aggregator-api-solution",
+      url: "https://Kvaornux.com/casino-aggregator-api-solution",
       priority: 0.9,
     },
     {
-      url: "https://kelvurnux.com/turnkey-sportsbook-solutions",
+      url: "https://Kvaornux.com/turnkey-sportsbook-solutions",
       priority: 0.9,
     },
     {
-      url: "https://kelvurnux.com/about-us",
+      url: "https://Kvaornux.com/about-us",
       priority: 0.8,
     },
   ];

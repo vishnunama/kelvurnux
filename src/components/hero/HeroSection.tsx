@@ -57,7 +57,7 @@
 //           "
 //           fetchPriority="high"
 //           decoding="async"
-//           alt="Kelvurnux iGaming Platform"
+//           alt="Kvaornux iGaming Platform"
 //           style={{ width: '100%', height: 'auto' }}
 //         />
 //       </div>
@@ -79,7 +79,7 @@
 //               transitionDelay: isLoaded ? '0.1s' : '0s',
 //             }}
 //           >
-//             Power By Kelvurnux
+//             Power By Kvaornux
 //           </div>
 
 //           {/* Main Title */}
@@ -107,7 +107,7 @@
 //               transitionDelay: isLoaded ? '0.3s' : '0s',
 //             }}
 //           >
-//             Develop your online casino business today with the help of Kelvurnux. We have developed the best platform for your business which includes everything from games integration to payment system.
+//             Develop your online casino business today with the help of Kvaornux. We have developed the best platform for your business which includes everything from games integration to payment system.
 //           </p>
 
 //           {/* CTA Button */}
@@ -344,9 +344,8 @@ export default function HeroSection() {
 
           {/* Small Text */}
           <div
-            className={`text-base md:text-lg font-normal transition-all duration-700 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
+            className={`text-base md:text-lg font-normal transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`}
             style={{
               background: 'linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff',
               backgroundClip: 'text',
@@ -355,13 +354,12 @@ export default function HeroSection() {
               transitionDelay: isLoaded ? '0.1s' : '0s',
             }}
           >
-iGaming Software Development Company  </div>
+            iGaming Software Development Company  </div>
 
           {/* Main Title */}
           <h1
-            className={`font-bold leading-tight tracking-tight transition-all duration-700 hero-h1 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
+            className={`font-bold leading-tight tracking-tight transition-all duration-700 hero-h1 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`}
             style={{
               background: 'linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff',
               backgroundClip: 'text',
@@ -370,58 +368,56 @@ iGaming Software Development Company  </div>
               transitionDelay: isLoaded ? '0.2s' : '0s',
             }}
           >
-Start Your Casino & Sportsbook Business Today        </h1>
+            Start Your Casino & Sportsbook Business Today        </h1>
 
           {/* Subtitle */}
           <p
-            className={`font-normal leading-relaxed text-[#a5a5a5] transition-all duration-700 hero-subtitle ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
+            className={`font-normal leading-relaxed text-[#a5a5a5] transition-all duration-700 hero-subtitle ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`}
             style={{
               transitionDelay: isLoaded ? '0.3s' : '0s',
             }}
           >
-Build and scale your iGaming business with our casino software, sportsbook platforms, crypto gaming solutions, and turnkey systems powered by seamless API integration and scalable white-label infrastructure.          </p>
+            Build and scale your iGaming business with our casino software, sportsbook platforms, crypto gaming solutions, and turnkey systems powered by seamless API integration and scalable white-label infrastructure.          </p>
 
           {/* CTA Button */}
           <div
-            className={`transition-all duration-700 w-fit ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
+            className={`transition-all duration-700 w-fit ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`}
             style={{
               transitionDelay: isLoaded ? '0.4s' : '0s',
             }}
           >
-<button
-  onClick={() => {
-    const contactSection = document.getElementById('contact-form-section');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }}
-  style={{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    border: 'none',
-    outline: '0',
-    width: 'fit-content',
-    borderRadius: '9999px',
-    padding: '0.6rem 2.2rem',
-    minHeight: '2.8rem',
-    backgroundColor: '#00ebaa',
-    cursor: 'pointer',
-    color: '#000',
-    fontWeight: '700',
-  }}
->
-  <span className="relative z-10 text-black font-bold">Book a Demo</span>
-</button>
+            <button
+              onClick={() => {
+                const contactSection = document.getElementById('contact-form-section');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: 'none',
+                outline: '0',
+                width: 'fit-content',
+                borderRadius: '9999px',
+                padding: '0.6rem 2.2rem',
+                minHeight: '2.8rem',
+                backgroundColor: '#00ebaa',
+                cursor: 'pointer',
+                color: '#000',
+                fontWeight: '700',
+              }}
+            >
+              <span className="relative z-10 text-black font-bold">Book a Demo</span>
+            </button>
           </div>
 
         </div>
       </div>
-<style jsx>{`
+      <style jsx>{`
         @keyframes gradient {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
@@ -547,7 +543,7 @@ Build and scale your iGaming business with our casino software, sportsbook platf
           }
         }
       `}</style>
-    
+
     </section>
   );
 }

@@ -236,11 +236,11 @@ export default function BrandValuesSection() {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              What's behind the Kelvurnux brand?
+              What's behind the Kvaornux brand?
             </h2>
           </div>
 
-       
+
 
           {/* Description */}
           <div

@@ -1,7 +1,7 @@
 import BlogPage from "./BlogClient";
 
 export const metadata = {
-  title: "Casino Software & iGaming Development Blog | Kelvurnux",
+  title: "Casino Software & iGaming Development Blog | Kvaornux",
   description:
     "Explore guides on casino software, white label solutions, sportsbook development, crypto casino, APIs and iGaming platform setup.",
 };

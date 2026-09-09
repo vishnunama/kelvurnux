@@ -119,11 +119,11 @@ const blogSections: BlogSection[] = [
   {
     id: 'what-is',
     title: 'What is Crypto Casino Development?',
-   content: [
-  'Crypto casino development is the process of building secure online gaming platforms that accept cryptocurrency payments. These platforms provide transparent transactions, instant withdrawals, and global accessibility without geographic restrictions.',
-  'If you want to know how to start crypto casino platform step by step, this guide explains the complete process from business model selection to crypto casino software, API integration, payment setup, crypto casino cost planning, and launch.',
-  'A modern crypto casino combines gaming excellence with blockchain security, ensuring fair play through provably fair algorithms and complete transparency in all transactions.',
-],
+    content: [
+      'Crypto casino development is the process of building secure online gaming platforms that accept cryptocurrency payments. These platforms provide transparent transactions, instant withdrawals, and global accessibility without geographic restrictions.',
+      'If you want to know how to start crypto casino platform step by step, this guide explains the complete process from business model selection to crypto casino software, API integration, payment setup, crypto casino cost planning, and launch.',
+      'A modern crypto casino combines gaming excellence with blockchain security, ensuring fair play through provably fair algorithms and complete transparency in all transactions.',
+    ],
   },
   {
     id: 'step1',
@@ -436,11 +436,10 @@ export default function CryptoCasinoBlogPage() {
                     <a
                       key={section.id}
                       href={`#${section.id}`}
-                      className={`toc-link block text-sm transition-colors ${
-                        activeSection === section.id
+                      className={`toc-link block text-sm transition-colors ${activeSection === section.id
                           ? 'active text-cyan-400 font-semibold'
                           : 'text-gray-400 hover:text-cyan-300'
-                      }`}
+                        }`}
                     >
                       {section.title}
                     </a>
@@ -476,11 +475,11 @@ export default function CryptoCasinoBlogPage() {
                         {section.title}
                       </h2>
                     )}
-                    
+
                     {section.content.map((paragraph, pIndex) => {
                       // Parse and render internal links
                       let content: any = paragraph;
-                      
+
                       if (section.id === 'step1') {
                         if (pIndex === 0) {
                           content = (
@@ -534,7 +533,7 @@ export default function CryptoCasinoBlogPage() {
                           </>
                         );
                       }
-                      
+
                       return <p key={pIndex}>{content}</p>;
                     })}
 
@@ -542,7 +541,7 @@ export default function CryptoCasinoBlogPage() {
                     {section.id === 'step1' && (
                       <div className="mt-8 pt-8 border-t border-gray-700/50">
                         <a
-                          href="https://kelvurnux.com/#contact-form-section"
+                          href="https://Kvaornux.com/#contact-form-section"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="gradient-button px-6 py-3 rounded-lg font-bold text-black inline-block text-base hover:shadow-lg transition-shadow"
@@ -555,7 +554,7 @@ export default function CryptoCasinoBlogPage() {
                     {section.id === 'step2' && (
                       <div className="mt-8 pt-8 border-t border-gray-700/50">
                         <a
-                          href="https://kelvurnux.com/#contact-form-section"
+                          href="https://Kvaornux.com/#contact-form-section"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="gradient-button px-6 py-3 rounded-lg font-bold text-black inline-block text-base hover:shadow-lg transition-shadow"
@@ -568,7 +567,7 @@ export default function CryptoCasinoBlogPage() {
                     {section.id === 'step3' && (
                       <div className="mt-8 pt-8 border-t border-gray-700/50">
                         <a
-                          href="https://kelvurnux.com/#contact-form-section"
+                          href="https://Kvaornux.com/#contact-form-section"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="gradient-button px-6 py-3 rounded-lg font-bold text-black inline-block text-base hover:shadow-lg transition-shadow"
@@ -581,7 +580,7 @@ export default function CryptoCasinoBlogPage() {
                     {section.id === 'step4' && (
                       <div className="mt-8 pt-8 border-t border-gray-700/50">
                         <a
-                          href="https://kelvurnux.com/#contact-form-section"
+                          href="https://Kvaornux.com/#contact-form-section"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="gradient-button px-6 py-3 rounded-lg font-bold text-black inline-block text-base hover:shadow-lg transition-shadow"
@@ -594,7 +593,7 @@ export default function CryptoCasinoBlogPage() {
                     {section.id === 'step5' && (
                       <div className="mt-8 pt-8 border-t border-gray-700/50">
                         <a
-                          href="https://kelvurnux.com/#contact-form-section"
+                          href="https://Kvaornux.com/#contact-form-section"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="gradient-button px-6 py-3 rounded-lg font-bold text-black inline-block text-base hover:shadow-lg transition-shadow"
@@ -611,7 +610,7 @@ export default function CryptoCasinoBlogPage() {
         </div>
       </section>
 
-   
+
 
       {/* CRYPTO CASINO FAQ SECTION */}
       <FAQSection
@@ -644,7 +643,7 @@ export default function CryptoCasinoBlogPage() {
         ]}
       />
 
-     
+
     </>
   );
 }

@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import KelvurnuxLogo from '@/src/components/layout/KelvurnuxLogo';
+import KvaornuxLogo from '@/src/components/layout/KvaornuxLogo';
 
 const EmailIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,8 +39,8 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="block mb-3 md:mb-4 bg-transparent">
               <img
-                src="/assets/logo4.png"
-                alt="Kelvurnux"
+                src="/assets/logo.png"
+                alt="Kvaornux"
                 className="h-9 md:h-11 w-auto object-contain block bg-transparent"
               />
             </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
               <ul className="space-y-2 md:space-y-3">
                 <li>
                   <a href="/about-us/" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
-                    About Kelvurnux
+                    About Kvaornux
                   </a>
                 </li>
               </ul>
@@ -142,8 +142,8 @@ export default function Footer() {
             <div className="flex gap-2">
               {/* ✅ Email Link with aria-label */}
               <a
-                href="mailto:kelvurnux@gmail.com"
-                aria-label="Email Kelvurnux"
+                href="mailto:Kvaornux@gmail.com"
+                aria-label="Email Kvaornux"
                 className="w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
                 style={{
                   background: 'rgba(255, 255, 255, 0.1)',
@@ -157,7 +157,7 @@ export default function Footer() {
                 href="https://t.me/vikash9876g"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Contact Kelvurnux on Telegram"
+                aria-label="Contact Kvaornux on Telegram"
                 className="w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
                 style={{
                   background: 'rgba(255, 255, 255, 0.1)',
@@ -171,7 +171,7 @@ export default function Footer() {
                 href="https://wa.me/918696548657"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Contact Kelvurnux on WhatsApp"
+                aria-label="Contact Kvaornux on WhatsApp"
                 className="w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
                 style={{
                   background: 'rgba(255, 255, 255, 0.1)',
@@ -193,7 +193,7 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 md:gap-3 lg:col-span-1">
               <div className="text-lg md:text-2xl font-semibold text-gray-400 min-w-fit">18+</div>
               <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
-                Kelvurnux provides software development services only. We do not operate any gaming or betting platforms.
+                Kvaornux provides software development services only. We do not operate any gaming or betting platforms.
               </p>
             </div>
 
@@ -249,7 +249,7 @@ export default function Footer() {
         {/* Footer Terms */}
         <div className="pt-6 md:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 md:gap-6">
           <div className="text-xs md:text-sm text-gray-400">
-            ©{currentYear} Kelvurnux
+            ©{currentYear} Kvaornux
           </div>
           <nav>
             <ul className="flex gap-4 md:gap-6">
