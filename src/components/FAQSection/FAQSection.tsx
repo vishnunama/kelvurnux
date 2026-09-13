@@ -133,10 +133,32 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: customFaqs }) => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen bg-black py-10 md:py-20"
+      className="relative min-h-screen bg-[#0b0b0f] py-10 md:py-20 overflow-hidden"
     >
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-black to-black" />
+      {/* Background Image - anchored to top with object-top to prevent shaking on accordion toggle */}
+      <div className="section-bg absolute top-0 inset-x-0 h-full min-h-[900px] pointer-events-none z-0 overflow-hidden">
+        <img
+          width="1392"
+          loading="lazy"
+          alt=""
+          src="/assets/faq-bg.avif"
+          className="hidden md:block w-full h-full object-cover object-top opacity-70"
+        />
+        <img
+          width="375"
+          loading="lazy"
+          alt=""
+          src="/assets/faq-bg-mob.avif"
+          className="block md:hidden w-full h-full object-cover object-top opacity-75"
+        />
+        {/* Gradient Filter Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(180deg, #0b0b0f 0%, rgba(11,11,15,0.4) 25%, rgba(11,11,15,0.65) 75%, #0b0b0f 100%)',
+          }}
+        />
+      </div>
 
       <style>{`
         @keyframes fadeInFromBottom {

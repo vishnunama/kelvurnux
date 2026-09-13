@@ -210,7 +210,13 @@ export default function BrandValuesSection() {
             src="/assets/brand-values-bg.avif"
             className="image-cover is-live-casino w-full h-full object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0b0b0f]" />
+          {/* Gradient: Top fades from #0b0b0f to match upper section, middle stays clear, bottom fades into #0b0b0f */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(180deg, #0b0b0f 0%, rgba(11,11,15,0) 18%, rgba(11,11,15,0) 45%, rgba(11,11,15,0.85) 75%, #0b0b0f 100%)',
+            }}
+          />
         </div>
 
         {/* Grid Background */}
@@ -230,7 +236,7 @@ export default function BrandValuesSection() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-3 md:px-12 pt-28 sm:pt-40 md:pt-60 lg:pt-72">
+        <div className="relative z-10 max-w-7xl mx-auto px-3 md:px-12 pt-28 sm:pt-40 md:pt-60 lg:pt-80">
           {/* Title */}
           <div
             ref={(el) => {
@@ -240,9 +246,9 @@ export default function BrandValuesSection() {
             className="text-center mb-3 md:mb-8"
           >
             <h2
-              className="text-4xl sm:text-4xl md:text-6xl font-bold leading-tight max-w-4xl mx-auto"
+              className="text-4xl sm:text-4xl md:text-6xl font-bold leading-tight max-w-4xl mx-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]"
               style={{
-                background: 'linear-gradient(147deg, rgba(255,255,255,0.33) 10%, rgba(61,75,71,0.33) 90%), #fff',
+                background: 'linear-gradient(180deg, #ffffff 0%, #d1d5db 100%)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -252,20 +258,18 @@ export default function BrandValuesSection() {
             </h2>
           </div>
 
-
-
           {/* Description */}
           <div
             ref={(el) => {
               if (el) elementsRef.current[1] = el;
             }}
             data-anim="from-bottom"
-            className="text-center mb-8 md:mb-16 lg:mb-20"
+            className="text-center mb-8"
           >
             <p
-              className="text-base sm:text-base md:text-lg max-w-2xl mx-auto"
+              className="text-base sm:text-base md:text-lg max-w-2xl mx-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] font-medium"
               style={{
-                color: '#a5a5a5',
+                color: '#d1d5db',
               }}
             >
               Keeping pace with the times while honoring time-tested solutions.

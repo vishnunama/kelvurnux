@@ -178,7 +178,7 @@ export default function FeaturesSection() {
 
           {/* Title */}
           <div
-            className="text-center mb-0 md:mb-20"
+            className="text-center mb-0 md:mb-6"
             ref={(el) => { elementsRef.current[0] = el; }}
             data-anim="from-top"
           >
@@ -202,7 +202,7 @@ export default function FeaturesSection() {
 
             {/* Image */}
             <div
-              className="flex justify-center items-center h-[720px] xl:h-[820px] w-[64vw] xl:w-[70vw] -ml-[calc(32vw-50%)] xl:-ml-[calc(36vw-50%)] overflow-hidden pointer-events-none py-4"
+              className="flex justify-center items-center h-[720px] xl:h-[820px] w-[64vw] xl:w-[70vw] -ml-[calc(32vw-50%)] xl:-ml-[calc(36vw-50%)] overflow-hidden pointer-events-none py-4 -translate-y-8 lg:-translate-y-16"
               style={{
                 WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%)',
                 maskImage: 'linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%)',
@@ -215,7 +215,7 @@ export default function FeaturesSection() {
                 alt={current.title}
                 width={1780}
                 height={1319}
-                className="w-full h-full object-contain scale-[1.45] xl:scale-[1.6] -translate-x-[10%] origin-center"
+                className="w-full h-full object-contain scale-[1.45] xl:scale-[1.6] -translate-x-[10%] -translate-y-[5%] origin-center"
                 priority
               />
             </div>

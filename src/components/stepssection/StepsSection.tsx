@@ -252,6 +252,24 @@ export default function StepsSection() {
     <>
       <style>{styles}</style>
       <section className="steps-section">
+        {/* Background Image */}
+        <div className="section-bg absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          <img
+            width="1440"
+            loading="lazy"
+            alt=""
+            src="/assets/steps-bg.avif"
+            className="image-cover w-full h-full object-cover object-center opacity-75"
+          />
+          {/* Gradient Filter Overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(180deg, #0b0b0f 0%, rgba(11,11,15,0.45) 25%, rgba(11,11,15,0.65) 75%, #0b0b0f 100%)',
+            }}
+          />
+        </div>
+
         <div className="steps-container">
           <h2 className="steps-title">
             From idea to launch
@@ -269,19 +287,22 @@ export default function StepsSection() {
                 disableOnInteraction: false,
               }}
               loop={true}
+              centeredSlides={true}
               onSwiper={(swiper) => (swiperRef.current = swiper)}
               onSlideChange={(swiper) => setActiveIndex(swiper.realIndex ?? swiper.activeIndex)}
               className="steps-slider"
               spaceBetween={30}
-              slidesPerView={1}
+              slidesPerView={1.2}
               breakpoints={{
                 640: {
                   slidesPerView: 2,
                   spaceBetween: 40,
+                  centeredSlides: true,
                 },
                 1024: {
-                  slidesPerView: 3.5,
+                  slidesPerView: 3,
                   spaceBetween: 50,
+                  centeredSlides: true,
                 },
               }}
             >
