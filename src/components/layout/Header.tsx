@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   const handleMouseLeave = () => {
-    timerRef.current = setTimeout(() => setDropdownOpen(false), 150);
+    timerRef.current = setTimeout(() => setDropdownOpen(false), 250);
   };
 
   const scrollToContactForm = () => {
@@ -177,35 +177,49 @@ export default function Header() {
         }
 
         /* Dropdown - Hidden on mobile */
-       .zg-dropdown {
-  position: fixed; 
-  top: 4.2rem; 
-  left: 50%;
-  transform: translateX(-50%) translateY(-8px) scale(0.98);
-  width: min(72rem, calc(100vw - 6.4rem));
-  z-index: 101; 
-  opacity: 0; 
-  visibility: hidden; 
-  pointer-events: none;
-  transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1),
-              transform 0.4s cubic-bezier(0.16,1,0.3,1),
-              visibility 0s linear 0.4s;
-}
+        .zg-dropdown {
+          position: fixed; 
+          top: 4.4rem; 
+          left: 50%;
+          transform: translateX(-50%) translateY(-10px) scale(0.97);
+          width: min(72rem, calc(100vw - 6.4rem));
+          z-index: 101; 
+          opacity: 0; 
+          visibility: hidden; 
+          pointer-events: none;
+          transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                      visibility 0.35s linear;
+        }
 
-/* Only hide on mobile */
-@media (max-width: 768px) {
-  .zg-dropdown {
-    display: none;
-  }
-}
-        
+        /* Hover bridge to bridge cursor gap between nav link and dropdown menu */
+        .zg-dropdown::before {
+          content: "";
+          position: absolute;
+          top: -1.5rem;
+          left: 0;
+          right: 0;
+          height: 1.5rem;
+          pointer-events: auto;
+        }
+
+        /* Only hide on mobile */
+        @media (max-width: 768px) {
+          .zg-dropdown {
+            display: none;
+          }
+        }
+                
+        .nav-item-dropdown:hover .zg-dropdown,
+        .zg-dropdown:hover,
         .zg-dropdown.open {
-  opacity: 1; 
-  visibility: visible; 
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0) scale(1);
-transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-            transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);}
+          opacity: 1; 
+          visibility: visible; 
+          pointer-events: auto;
+          transform: translateX(-50%) translateY(0) scale(1);
+          transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
         
   @media (min-width: 1130px) {
     .zg-dd-link {
@@ -265,6 +279,7 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.nav-item-dropdown:hover .zg-arrow,
 .zg-arrow.open {
   transform: rotate(180deg);
 }
@@ -581,7 +596,7 @@ transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
           {/* Desktop Navigation */}
           <nav className="hidden md:flex flex-1 justify-center">
             <ul className="flex items-center list-none m-0 p-0">
-              <li className="relative mx-[1.8rem]" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <li className="nav-item-dropdown group relative mx-[1.8rem]" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <span className="flex items-center text-white font-medium cursor-pointer py-5 text-[1.15rem] tracking-[0.3px] transition-all duration-200 select-none whitespace-nowrap ">
                   Solutions
                   <span className={`zg-arrow ${dropdownOpen ? 'open' : ''}`}>
