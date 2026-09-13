@@ -191,10 +191,10 @@ export default function FeaturesSection() {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-A solid base for your business
+              A solid base for your business
             </h2>
             <p className="text-base sm:text-base md:text-lg text-[#a5a5a5] max-w-2xl mx-auto">
-Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions tailored to your business vision            </p>
+              Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions tailored to your business vision            </p>
           </div>
 
           {/* LAPTOP VIEW */}
@@ -202,16 +202,20 @@ Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions
 
             {/* Image */}
             <div
-              className="flex justify-center items-center h-[650px] w-[70vw] -mx-[calc(38vw-50%)] overflow-hidden"
+              className="flex justify-center items-center h-[720px] xl:h-[820px] w-[64vw] xl:w-[70vw] -ml-[calc(32vw-50%)] xl:-ml-[calc(36vw-50%)] overflow-hidden pointer-events-none py-4"
+              style={{
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%)',
+                maskImage: 'linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%)',
+              }}
               ref={(el) => { elementsRef.current[1] = el; }}
               data-anim="from-left"
             >
               <Image
                 src="/assets/features-img.webp"
                 alt={current.title}
-                width={900}
-                height={650}
-                className="w-[80%] h-auto object-cover"
+                width={1780}
+                height={1319}
+                className="w-full h-full object-contain scale-[1.45] xl:scale-[1.6] -translate-x-[10%] origin-center"
                 priority
               />
             </div>
@@ -317,27 +321,31 @@ Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions
           </div>
 
           {/* MOBILE/TABLET VIEW */}
-          <div className="lg:hidden w-full flex flex-col gap-0 pb-8">
+          <div className="lg:hidden w-full flex flex-col gap-0 pb-8 max-w-2xl md:max-w-4xl mx-auto">
 
             {/* Image */}
             <div
-              className="w-screen overflow-visible h-[500px] flex items-center justify-center relative z-10 mb-[-250px] -mx-[calc(50vw-50%)]"
+              className="w-screen -mx-[calc(50vw-50%)] flex items-center justify-center relative z-10 mb-[-140px] md:mb-[-180px] overflow-hidden"
+              style={{
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%)',
+                maskImage: 'linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%)',
+              }}
               ref={(el) => { elementsRef.current[10] = el; }}
               data-anim="from-top"
             >
               <Image
-                src="/assets/features-img.webp"
+                src="/assets/features-img-mobile.webp"
                 alt={current.title}
-                width={1200}
-                height={500}
-                className="w-screen h-auto object-cover"
+                width={750}
+                height={1026}
+                className="w-full max-w-[500px] md:max-w-[650px] h-auto object-contain scale-105 translate-y-3"
                 priority
               />
             </div>
 
             {/* Content */}
             <div
-              className="w-full rounded-3xl backdrop-blur-md p-8 relative z-20"
+              className="w-full rounded-3xl backdrop-blur-md p-6 sm:p-8 md:p-10 relative z-20"
               style={{
                 background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a',
                 border: '1px solid rgba(0, 235, 170, 0.3)',
@@ -346,9 +354,9 @@ Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              <h3 className="text-3xl font-bold text-white mb-4">{current.title}</h3>
-              <p className="text-base text-[#a5a5a5] mb-6 leading-relaxed">{current.description}</p>
-              <div className="flex flex-col gap-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">{current.title}</h3>
+              <p className="text-sm sm:text-base md:text-lg text-[#a5a5a5] mb-6 leading-relaxed">{current.description}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {current.items.map((item, index) => (
                   <div
                     key={index}
@@ -360,7 +368,7 @@ Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ebaa" strokeWidth="2.5" className="flex-shrink-0 mt-0.5">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span className="text-base text-gray-200 leading-relaxed">{item}</span>
+                    <span className="text-sm sm:text-base text-gray-200 leading-relaxed">{item}</span>
                   </div>
                 ))}
               </div>

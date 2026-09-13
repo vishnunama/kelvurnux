@@ -317,24 +317,18 @@ export default function HeroSection() {
       <div className="hero-img">
         <img
           src="/assets/hero-img-768.webp"
-          width={1312}
-          height={1312}
+          width={1920}
+          height={1215}
           srcSet={`
-            /assets/hero-img-480.webp 480w,
-            /assets/hero-img-768.webp 768w,
-            /assets/hero-img.webp 1312w
+            /assets/hero-img-480.webp 640w,
+            /assets/hero-img-768.webp 1200w,
+            /assets/hero-img.webp 1920w
           `}
-          sizes="
-            (max-width: 480px) 100vw,
-            (max-width: 600px) 94vw,
-            (max-width: 840px) 71vw,
-            (max-width: 1320px) 51vw,
-            46vw
-          "
+          sizes="100vw"
           fetchPriority="high"
           decoding="async"
           alt="Custom iGaming Solution Solutions"
-          style={{ width: '100%', height: 'auto' }}
+          className="hero-img-element"
         />
       </div>
 
@@ -425,7 +419,11 @@ export default function HeroSection() {
 
         /* ── DESKTOP default ── */
         .hero-section {
-          padding: 5rem 0;
+          padding: 6rem 0;
+          position: relative;
+          min-height: 85vh;
+          display: flex;
+          align-items: center;
         }
 
         .container-hero {
@@ -442,7 +440,7 @@ export default function HeroSection() {
           flex-direction: column;
           justify-content: center;
           min-height: 460px;
-          max-width: 40%;
+          max-width: 42%;
           gap: 1.2rem;
         }
 
@@ -459,22 +457,30 @@ export default function HeroSection() {
           font-size: 1.05rem;
         }
 
-        /* Image — desktop: right side, vertically centered */
+        /* Image — desktop: full width & height background */
         .hero-img {
           position: absolute;
-          right: 0;
-          top: 50%;
-          transform: translateY(-50%);
+          inset: 0;
+          width: 100%;
+          height: 100%;
           pointer-events: none;
-          width: 48em;
           display: flex;
           z-index: 1;
+          overflow: hidden;
+        }
+
+        .hero-img-element {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: right center;
         }
 
         /* ── TABLET ~840px ── */
         @media (max-width: 840px) {
           .hero-section {
             padding: 4rem 0;
+            min-height: auto;
           }
 
           .container-hero {
@@ -495,19 +501,23 @@ export default function HeroSection() {
           }
 
           .hero-img {
-            left: 88%;
-            top: 30%;
-            transform: translate(-50%, -50%) rotate(-19deg);
-            width: 42em;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+          .hero-img-element {
+            object-fit: cover;
+            object-position: 80% center;
           }
         }
 
         /* ── MOBILE ~600px ── */
         @media (max-width: 600px) {
-          /* Push section down so image at top has space */
           .hero-section {
-            padding-top: 15rem;
+            padding-top: 14rem;
             padding-bottom: 3rem;
+            display: block;
           }
 
           .container-hero {
@@ -535,11 +545,17 @@ export default function HeroSection() {
 
           /* Image — mobile: sits at the top of section */
           .hero-img {
-            width: 23em;
-            left: 40%;
-            top: -2.5rem;
-            right: auto;
-            transform: translateX(-10%);
+            width: 100%;
+            height: 240px;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: auto;
+          }
+
+          .hero-img-element {
+            object-fit: cover;
+            object-position: center center;
           }
         }
       `}</style>

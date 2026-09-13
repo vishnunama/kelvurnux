@@ -199,8 +199,20 @@ export default function BrandValuesSection() {
       <style>{styles}</style>
       <section
         ref={sectionRef}
-        className="relative overflow-hidden py-9 md:py-12 lg:py-20 bg-[#0b0b0f]"
+        className="relative overflow-hidden pt-12 md:pt-16 pb-12 md:pb-20 bg-[#0b0b0f]"
       >
+        {/* Background Image */}
+        <div className="section-bg absolute top-0 inset-x-0 h-[450px] sm:h-[550px] md:h-[650px] pointer-events-none z-0 overflow-hidden">
+          <img
+            width="1440"
+            loading="lazy"
+            alt=""
+            src="/assets/brand-values-bg.avif"
+            className="image-cover is-live-casino w-full h-full object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0b0b0f]" />
+        </div>
+
         {/* Grid Background */}
         <div
           className="absolute inset-0 pointer-events-none opacity-5"
@@ -218,7 +230,7 @@ export default function BrandValuesSection() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-3 md:px-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-3 md:px-12 pt-28 sm:pt-40 md:pt-60 lg:pt-72">
           {/* Title */}
           <div
             ref={(el) => {

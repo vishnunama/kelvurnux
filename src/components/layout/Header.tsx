@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { Package, Zap } from 'lucide-react';
-import KvaornuxLogo from './KvaornuxLogo';
+import KvaornuxLogo from './KelvurnuxLogo';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
