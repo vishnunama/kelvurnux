@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { 
-  Crown, 
-  Gamepad2, 
-  Rocket, 
-  ShieldCheck, 
+import {
+  Crown,
+  Gamepad2,
+  Rocket,
+  ShieldCheck,
   LayoutDashboard,
   HandshakeIcon,
   TrendingUp,
@@ -63,7 +63,7 @@ export default function TurnkeySportsbookSolutions() {
       icon: 'crown' as const,
       title: 'Full Sportsbook Platform Ownership',
       description: 'Take full control of your turnkey sportsbook with your own brand. Manage players, betting markets, payments, risk settings, and platform operations through a flexible sports betting software solution.',
-      image: '/assets/features/tab-turnkey-1.webp'
+      image: '/assets/features/custom-igaming-platform-design-interface.webp'
     },
     {
       id: 'game-apis',
@@ -71,7 +71,7 @@ export default function TurnkeySportsbookSolutions() {
       icon: 'gamepad-2' as const,
       title: 'Sportsbook API Integration',
       description: 'Connect your sportsbook platform with sports data feeds, odds providers, live betting APIs, and betting market sources to deliver real-time sports betting experiences.',
-      image: '/assets/features/tab-turnkey-2.webp'
+      image: '/assets/features/online-casino-game-aggregation-10000-plus-slots.webp'
     },
     {
       id: 'compliance',
@@ -79,7 +79,7 @@ export default function TurnkeySportsbookSolutions() {
       icon: 'shield-check' as const,
       title: 'Security & User Protection Tools',
       description: 'Keep your sportsbook software secure with KYC verification, fraud prevention, user protection tools, responsible gaming controls, and performance monitoring systems.',
-      image: '/assets/features/tab-turnkey-4.webp'
+      image: '/assets/features/igaming-security-risk-management-aml-kyc.webp'
     },
     {
       id: 'backoffice',
@@ -87,40 +87,40 @@ export default function TurnkeySportsbookSolutions() {
       icon: 'layout-dashboard' as const,
       title: 'Sportsbook Back Office Dashboard',
       description: 'Manage users, bets, transactions, odds settings, reports, risk controls, and sportsbook operations from one advanced back-office dashboard.',
-      image: '/assets/features/tab-turnkey-5.webp'
+      image: '/assets/features/turnkey-back-office-admin-dashboard-analytics.webp'
     }
   ];
 
   const solutions = [
-  {
-    id: 1,
-    icon: HandshakeIcon,
-    title: 'End-to-End Sportsbook Platform Setup',
-    description:
-      'Complete turnkey sportsbook software setup including frontend, backend, admin panel, sportsbook API integration, payment setup, and full system configuration for your betting business.'
-  },
-  {
-    id: 2,
-    icon: TrendingUp,
-    title: 'Scalable Sportsbook Infrastructure',
-    description:
-      'High-performance sportsbook infrastructure built to handle growing users, live betting activity, odds updates, transactions, and online betting platform traffic.'
-  },
-  {
-    id: 3,
-    icon: Palette,
-    title: 'Branding & Customization',
-    description:
-      'Customize your white label sportsbook with your own logo, colors, layouts, user interface, betting features, and brand identity for a professional betting platform.'
-  },
-  {
-    id: 4,
-    icon: Settings,
-    title: 'Sportsbook Back Office & Control Panel',
-    description:
-      'Control users, bets, payments, reports, odds management, risk settings, and sportsbook software operations with a powerful admin dashboard.'
-  }
-];
+    {
+      id: 1,
+      icon: HandshakeIcon,
+      title: 'End-to-End Sportsbook Platform Setup',
+      description:
+        'Complete turnkey sportsbook software setup including frontend, backend, admin panel, sportsbook API integration, payment setup, and full system configuration for your betting business.'
+    },
+    {
+      id: 2,
+      icon: TrendingUp,
+      title: 'Scalable Sportsbook Infrastructure',
+      description:
+        'High-performance sportsbook infrastructure built to handle growing users, live betting activity, odds updates, transactions, and online betting platform traffic.'
+    },
+    {
+      id: 3,
+      icon: Palette,
+      title: 'Branding & Customization',
+      description:
+        'Customize your white label sportsbook with your own logo, colors, layouts, user interface, betting features, and brand identity for a professional betting platform.'
+    },
+    {
+      id: 4,
+      icon: Settings,
+      title: 'Sportsbook Back Office & Control Panel',
+      description:
+        'Control users, bets, payments, reports, odds management, risk settings, and sportsbook software operations with a powerful admin dashboard.'
+    }
+  ];
 
   const activeTabData = tabs.find(tab => tab.label === activeTab);
   const solutionsElementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -208,7 +208,7 @@ export default function TurnkeySportsbookSolutions() {
       `}</style>
 
       {/* Hero Section */}
-      <section 
+      <section
         ref={sectionRef}
         className="relative pt-32 overflow-hidden"
         style={{
@@ -217,10 +217,10 @@ export default function TurnkeySportsbookSolutions() {
         }}
       >
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
-          
+
           {/* Main Title - SEO Optimized */}
           <div className="text-center mb-3">
-            <h1 
+            <h1
               className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight"
               ref={(el) => { elementsRef.current[0] = el; }}
               data-anim="from-top"
@@ -231,7 +231,7 @@ export default function TurnkeySportsbookSolutions() {
 
           {/* Subtitle/Description - SEO Keywords Added */}
           <div className="max-w-4xl mx-auto mb-9">
-            <p 
+            <p
               className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
               ref={(el) => { elementsRef.current[1] = el; }}
               data-anim="from-bottom"
@@ -261,11 +261,10 @@ export default function TurnkeySportsbookSolutions() {
                     key={tab.id}
                     ref={activeTab === tab.label ? activeTabRef : null}
                     onClick={() => handleTabClick(tab.label)}
-                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
-                      activeTab === tab.label
+                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 ${activeTab === tab.label
                         ? 'bg-white text-black border-2 border-white'
                         : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
-                    }`}
+                      }`}
                   >
                     {IconComponent && <IconComponent size={16} className="hidden sm:block" />}
                     <span className="leading-none">{tab.label}</span>
@@ -353,7 +352,7 @@ export default function TurnkeySportsbookSolutions() {
 
             {/* LEFT STICKY */}
             <div className="relative lg:sticky lg:top-28 self-start space-y-4 sm:space-y-6 z-10">
-              <h2 
+              <h2
                 ref={(el) => { solutionsElementsRef.current[0] = el; }}
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
@@ -361,7 +360,7 @@ export default function TurnkeySportsbookSolutions() {
                 Turnkey Sportsbook Solutions
               </h2>
 
-              <p 
+              <p
                 ref={(el) => { solutionsElementsRef.current[1] = el; }}
                 data-anim="from-bottom"
                 data-anim-delay="1"
@@ -441,9 +440,9 @@ export default function TurnkeySportsbookSolutions() {
       </section>
 
       {/* Opportunities Section */}
-      <OpportunitiesSection/>
-      <ContactForm/>
-    
+      <OpportunitiesSection />
+      <ContactForm />
+
     </>
   );
 }
@@ -452,10 +451,10 @@ export default function TurnkeySportsbookSolutions() {
 
 function getImageAlt(tabId: string): string {
   const altMap: { [key: string]: string } = {
-    'full-platform': 'turnkey sportsbook solutions platform dashboard',
-    'game-apis': 'sportsbook API integration with live odds feeds',
-    'compliance': 'white label sportsbook software with KYC verification',
-    'backoffice': 'sportsbook back office dashboard for bet and player management',
+    'full-platform': 'Turnkey Sportsbook Platform Ownership Interface and Live Odds Dashboard',
+    'game-apis': 'Sportsbook API Integration with Real-Time Sports Odds Feeds and Live Betting',
+    'compliance': 'Sportsbook Security, Risk Management, KYC Verification, and User Protection',
+    'backoffice': 'Sportsbook Back-Office Dashboard for Bet, Transaction, and Player Management',
   };
   return altMap[tabId] || 'turnkey sportsbook software solution';
 }

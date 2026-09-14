@@ -382,8 +382,8 @@ export default function CryptoCasinoBlogPage() {
           >
             {/* ✅ NEXT/IMAGE - OPTIMIZED */}
             <Image
-              src="/assets/features/tab-casino-platform-3.webp"
-              alt="crypto casino platform development software dashboard"
+              src="/assets/features/comprehensive-casino-platform-features-roulette-dice.webp"
+              alt="Crypto Casino Platform Development Software Dashboard showing Slots, Roulette, and Live Games"
               width={800}
               height={400}
               sizes="(max-width: 768px) 100vw, 800px"

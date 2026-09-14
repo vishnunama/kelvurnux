@@ -68,7 +68,8 @@ export default function CustomiGamingSolution() {
       icon: 'wrench',
       title: 'Your Custom Requirements',
       description: 'We build iGaming solutions tailored to your exact business needs. Whether you need custom workflows, unique game mechanics, specific feature sets, or proprietary integrations, our experienced development team creates a platform that matches your vision perfectly. Every component is built according to your specifications with no compromises.',
-      image: '/assets/features/tab-casino-platform-2.webp'
+      image: '/assets/features/end-to-end-igaming-business-support-stages.webp',
+      alt: 'End-to-End iGaming Business Support and Custom Requirements Development'
     },
     {
       id: 'wide-range-of-features',
@@ -76,7 +77,8 @@ export default function CustomiGamingSolution() {
       icon: 'lightbulb',
       title: 'Flexible Feature Architecture',
       description: 'Choose exactly which features matter for your business. Custom game selection and filtering, unique bonus mechanics, specialized tournament systems, branded user experiences, and tailored reporting tools. Build your platform with only the features you need, optimized for your player base and revenue model.',
-      image: '/assets/features/tab-casino-platform-3.webp'
+      image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp',
+      alt: 'Comprehensive Casino Platform Features including Slots, Roulette, and Dice Architecture'
     },
     {
       id: 'custom-design',
@@ -84,7 +86,8 @@ export default function CustomiGamingSolution() {
       icon: 'settings',
       title: 'Custom Design & Branding',
       description: 'Complete UI/UX customization to create a unique brand experience. Custom design system, branded player interface, personalized user journeys, and market-specific localization. Your platform reflects your brand identity and resonates with your target audience.',
-      image: '/assets/features/branded-platform.webp'
+      image: '/assets/features/custom-white-label-igaming-platform-branding.webp',
+      alt: 'Custom White Label iGaming Platform Branding and UI UX Design'
     },
     {
       id: 'payment-solutions',
@@ -92,7 +95,8 @@ export default function CustomiGamingSolution() {
       icon: 'shield-check',
       title: 'Payment Integration',
       description: 'Custom payment infrastructure supporting your target markets. Connect with your preferred payment providers, support multiple currencies and payment methods, implement custom KYC/AML workflows, and deploy fraud prevention tailored to your user base. Every transaction is secured and optimized for your operations.',
-      image: '/assets/features/tab-turnkey-4.webp'
+      image: '/assets/features/igaming-security-risk-management-aml-kyc.webp',
+      alt: 'iGaming Payment Integration, Security Risk Management, and AML/KYC Protocols'
     },
     {
       id: 'fast-launch',
@@ -100,7 +104,8 @@ export default function CustomiGamingSolution() {
       icon: 'rocket',
       title: 'Fast Deployment',
       description: 'Launch your custom platform quickly using our robust infrastructure and development framework. Accelerated development cycles, continuous integration/deployment, and testing automation ensure you go live fast without compromising quality or security.',
-      image: '/assets/features/tab-white-label-2.webp'
+      image: '/assets/features/turnkey-igaming-platform-infrastructure-services.webp',
+      alt: 'Turnkey iGaming Platform Fast Deployment Infrastructure'
     },
   ];
 
@@ -326,7 +331,7 @@ export default function CustomiGamingSolution() {
                     <div className="absolute inset-0 bg-gradient-to-br from-[#00ebaa]/20 to-[#00ebaa]/5 rounded-xl sm:rounded-2xl blur-3xl animate-pulse"></div>
                     <img
                       src={activeTabData.image}
-                      alt={activeTabData.title}
+                      alt={activeTabData.alt || activeTabData.title}
                       className="relative w-full h-full rounded-xl sm:rounded-2xl shadow-2xl object-cover"
                       style={{ animation: 'imageSlideIn 0.6s ease-out' }}
                       onError={(e) => {

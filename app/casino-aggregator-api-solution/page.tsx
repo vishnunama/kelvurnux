@@ -74,7 +74,8 @@ export default function CasinoAggregatorAPI() {
           text: 'Slots, Live Dealer, Table Games, Fishing, Fast Games, Mini Games — 20,000+ titles from 150+ providers. One API integration for everything.'
         }
       ],
-      image: '/assets/features/tab-game-aggregator-1.webp'
+      image: '/assets/features/casino-game-providers-api-aggregator.webp',
+      alt: 'Casino Game Providers Single API Aggregator Module with 20,000+ Games'
     },
     {
       id: 'promo-studio',
@@ -92,7 +93,8 @@ export default function CasinoAggregatorAPI() {
           text: 'Automate reward distribution with customizable rules, budget controls, and eligibility criteria. Export detailed campaign results for analytics.'
         }
       ],
-      image: '/assets/features/tab-game-aggregator-2.webp'
+      image: '/assets/features/casino-promotions-jackpots-tournaments-free-spins.webp',
+      alt: 'Casino Promotional Tools - Jackpots, Tournaments, Free Spins, and Promo Studio'
     },
     {
       id: 'analytics-alerts',
@@ -106,7 +108,8 @@ export default function CasinoAggregatorAPI() {
           text: 'Full API access to player game journals, bet history, and transaction data. System-wide alerts and anomaly detection for platform integrity.'
         }
       ],
-      image: '/assets/features/tab-game-aggregator-3.webp'
+      image: '/assets/features/player-analytics-gameplay-flagged-round-alerts.webp',
+      alt: 'Player Gameplay Analytics and Flagged Round Risk Monitoring System'
     },
     {
       id: 'invoices-reconcile',
@@ -124,7 +127,8 @@ export default function CasinoAggregatorAPI() {
           text: 'Automatic failover systems across provider endpoints. 24/7 monitoring with instant alerts if any integration issues arise.'
         }
       ],
-      image: '/assets/features/tab-game-aggregator-4.webp'
+      image: '/assets/features/igaming-financial-reconciliation-auto-invoices.webp',
+      alt: 'iGaming Financial Reconciliation and Automated Provider Invoicing Dashboard'
     }
   ];
  
@@ -350,7 +354,7 @@ export default function CasinoAggregatorAPI() {
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/30 to-blue-500/20 rounded-xl sm:rounded-2xl blur-3xl animate-pulse"></div>
                     <img
                       src={activeTabData.image}
-                      alt={activeTabData.title}
+                      alt={activeTabData.alt || activeTabData.title}
                       className="relative w-full h-full rounded-xl sm:rounded-2xl shadow-2xl object-cover"
                       style={{ animation: 'imageSlideIn 0.6s ease-out' }}
                       onError={(e) => {

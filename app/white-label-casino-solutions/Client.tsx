@@ -70,7 +70,8 @@ export default function WhiteLabelCasinoPlatform() {
       title: 'Branded platform',
       description:
         'Get complete control of your digital platform under your own brand. Design, manage, and scale your system as per your business needs with flexible deployment options.',
-      image: '/assets/features/branded-platform.webp'
+      image: '/assets/features/custom-white-label-igaming-platform-branding.webp',
+      alt: 'Custom White Label iGaming Platform Branding and UI Interface'
     },
     {
       id: 'fast-launch',
@@ -79,7 +80,8 @@ export default function WhiteLabelCasinoPlatform() {
       title: 'Fast deployment',
       description:
         'Launch your platform quickly using our ready-to-use infrastructure. Avoid long development cycles and go live with a fully tested system.',
-      image: '/assets/features/tab-white-label-2.webp'
+      image: '/assets/features/turnkey-igaming-platform-infrastructure-services.webp',
+      alt: 'Turnkey iGaming Platform Infrastructure and Fast Deployment Services'
     },
     {
       id: 'security-tools',
@@ -88,7 +90,8 @@ export default function WhiteLabelCasinoPlatform() {
       title: 'Security & compliance',
       description:
         'Protect your platform with enterprise-grade security systems, user verification workflows, and fraud prevention tools.',
-      image: '/assets/features/tab-white-label-3.webp'
+      image: '/assets/features/all-in-one-igaming-platform-solutions.webp',
+      alt: 'Enterprise iGaming Security, Compliance, and Risk Management Protocols'
     },
     {
       id: 'back-office',
@@ -97,7 +100,8 @@ export default function WhiteLabelCasinoPlatform() {
       title: 'Back Office',
       description:
         'Manage users, transactions, reports, and platform settings from a powerful centralized admin panel with full control.',
-      image: '/assets/features/tab-turnkey-5.webp'
+      image: '/assets/features/turnkey-back-office-admin-dashboard-analytics.webp',
+      alt: 'Turnkey Back-Office Admin Dashboard with Real-Time Analytics and Player Controls'
     },
     {
       id: 'ongoing-support',
@@ -106,7 +110,8 @@ export default function WhiteLabelCasinoPlatform() {
       title: 'Ongoing support',
       description:
         '24/7 tech support, continuous updates, and a dedicated success manager to keep your platform running smoothly and help you scale.',
-      image: '/assets/features/tab-ongoing-support.webp'
+      image: '/assets/features/24-7-igaming-technical-support-maintenance.webp',
+      alt: '24/7 Technical Support and Infrastructure Maintenance for iGaming Operations'
     }
   ];
 
@@ -327,7 +332,7 @@ Launch fast and scale your iGaming business with a ready-made system.
                     <div className="absolute inset-0 bg-gradient-to-br from-[#00ebaa]/20 to-[#00ebaa]/5 rounded-xl sm:rounded-2xl blur-3xl animate-pulse"></div>
                     <img
                       src={activeTabData.image}
-                      alt={activeTabData.title}
+                      alt={activeTabData.alt || activeTabData.title}
                       className="relative w-full h-full rounded-xl sm:rounded-2xl shadow-2xl object-cover"
                       style={{ animation: 'imageSlideIn 0.6s ease-out' }}
                       onError={(e) => {

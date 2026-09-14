@@ -11,7 +11,7 @@ const blogs = [
     href: "/how-to-start-crypto-casino-platform-step-by-step",
     tag: "Crypto Casino",
     readTime: "15 min read",
-    image: "/assets/features/tab-casino-platform-3.webp",
+    image: "/assets/features/comprehensive-casino-platform-features-roulette-dice.webp",
   },
 ];
 
@@ -683,7 +683,7 @@ export default function BlogPage() {
                 <Link href={blog.href} className="post-img-wrapper">
                   <img
                     src={blog.image}
-                    alt={blog.title}
+                    alt="Comprehensive Casino Platform Features including Slots, Roulette, and Dice for Crypto Casino Guide"
                     loading="lazy"
                   />
                 </Link>

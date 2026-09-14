@@ -227,10 +227,10 @@ export default function FeaturesSection() {
               data-anim="from-right"
             >
               <div className="mb-6">
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
+                <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
                   {current.title}
                 </h3>
-                <p className="text-base md:text-lg text-[#a5a5a5]">
+                <p className="text-base md:text-lg lg:text-xl text-[#a5a5a5] leading-relaxed">
                   {current.description}
                 </p>
               </div>
@@ -244,10 +244,10 @@ export default function FeaturesSection() {
                     data-anim="from-bottom"
                     data-anim-delay={String(index + 1)}
                   >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ebaa" strokeWidth="2">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00ebaa" strokeWidth="2.5" className="flex-shrink-0">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
-                    <span className="text-base text-gray-300">{item}</span>
+                    <span className="text-base lg:text-lg xl:text-xl text-gray-200 font-medium">{item}</span>
                   </div>
                 ))}
               </div>

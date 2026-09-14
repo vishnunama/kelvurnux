@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { 
-  Crown, 
-  Gamepad2, 
-  Rocket, 
-  ShieldCheck, 
+import {
+  Crown,
+  Gamepad2,
+  Rocket,
+  ShieldCheck,
   LayoutDashboard,
   HandshakeIcon,
   TrendingUp,
@@ -63,7 +63,7 @@ export default function TurnkeyCasinoPlatform() {
       icon: 'crown' as const,
       title: 'Full platform ownership',
       description: 'Take full control of your casino software platform with your own brand. Design, manage, and operate everything your way with flexible deployment options.',
-      image: '/assets/features/tab-turnkey-1.webp'
+      image: '/assets/features/custom-igaming-platform-design-interface.webp'
     },
     {
       id: 'game-apis',
@@ -71,7 +71,7 @@ export default function TurnkeyCasinoPlatform() {
       icon: 'gamepad-2' as const,
       title: 'Casino game aggregation',
       description: 'Get access to a large library of casino games, sportsbook APIs, and interactive content providers. Easily manage and integrate multiple game sources into your platform.',
-      image: '/assets/features/tab-turnkey-2.webp'
+      image: '/assets/features/online-casino-game-aggregation-10000-plus-slots.webp'
     },
     {
       id: 'compliance',
@@ -79,7 +79,7 @@ export default function TurnkeyCasinoPlatform() {
       icon: 'shield-check' as const,
       title: 'Security & User Protection Tools',
       description: 'Keep your casino software secure with advanced protection systems, user verification flows, KYC verification, fraud prevention tools, and performance monitoring systems.',
-      image: '/assets/features/tab-turnkey-4.webp'
+      image: '/assets/features/igaming-security-risk-management-aml-kyc.webp'
     },
     {
       id: 'backoffice',
@@ -87,40 +87,40 @@ export default function TurnkeyCasinoPlatform() {
       icon: 'layout-dashboard' as const,
       title: 'Casino Back Office Dashboard',
       description: 'Manage everything from one dashboard — users, transactions, bonuses, reports, and system settings. Monitor activity, adjust accounts, and control casino operations easily.',
-      image: '/assets/features/tab-turnkey-5.webp'
+      image: '/assets/features/turnkey-back-office-admin-dashboard-analytics.webp'
     }
   ];
 
   const solutions = [
-  {
-    id: 1,
-    icon: HandshakeIcon,
-    title: 'End-to-End Casino Platform Setup',
-    description:
-      'Complete turnkey casino software setup including frontend, backend, admin panel, and full system configuration — ready to launch under your own brand with white label options.'
-  },
-  {
-    id: 2,
-    icon: TrendingUp,
-    title: 'Scalable Casino Infrastructure',
-    description:
-      'High-performance and scalable architecture designed to handle growing traffic, player activity, and transactions without performance issues. Casino-grade infrastructure.'
-  },
-  {
-    id: 3,
-    icon: Palette,
-    title: 'Branding & Customization',
-    description:
-      'Fully customizable casino software design including UI, colors, layouts, and branding elements to match your business identity. White label casino solutions available.'
-  },
-  {
-    id: 4,
-    icon: Settings,
-    title: 'Casino Back Office & Control Panel',
-    description:
-      'Powerful admin dashboard to manage users, payments, reports, bonuses, and casino platform settings with full operational control and real-time analytics.'
-  }
-];
+    {
+      id: 1,
+      icon: HandshakeIcon,
+      title: 'End-to-End Casino Platform Setup',
+      description:
+        'Complete turnkey casino software setup including frontend, backend, admin panel, and full system configuration — ready to launch under your own brand with white label options.'
+    },
+    {
+      id: 2,
+      icon: TrendingUp,
+      title: 'Scalable Casino Infrastructure',
+      description:
+        'High-performance and scalable architecture designed to handle growing traffic, player activity, and transactions without performance issues. Casino-grade infrastructure.'
+    },
+    {
+      id: 3,
+      icon: Palette,
+      title: 'Branding & Customization',
+      description:
+        'Fully customizable casino software design including UI, colors, layouts, and branding elements to match your business identity. White label casino solutions available.'
+    },
+    {
+      id: 4,
+      icon: Settings,
+      title: 'Casino Back Office & Control Panel',
+      description:
+        'Powerful admin dashboard to manage users, payments, reports, bonuses, and casino platform settings with full operational control and real-time analytics.'
+    }
+  ];
 
   const activeTabData = tabs.find(tab => tab.label === activeTab);
   const solutionsElementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -205,7 +205,7 @@ export default function TurnkeyCasinoPlatform() {
       `}</style>
 
       {/* Hero Section */}
-      <section 
+      <section
         ref={sectionRef}
         className="relative pt-32 overflow-hidden"
         style={{
@@ -214,10 +214,10 @@ export default function TurnkeyCasinoPlatform() {
         }}
       >
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
-          
+
           {/* Main Title - SEO Optimized */}
           <div className="text-center mb-3">
-            <h1 
+            <h1
               className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight"
               ref={(el) => { elementsRef.current[0] = el; }}
               data-anim="from-top"
@@ -228,14 +228,14 @@ export default function TurnkeyCasinoPlatform() {
 
           {/* Subtitle/Description - SEO Keywords Added */}
           <div className="max-w-4xl mx-auto mb-9">
-            <p 
+            <p
               className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
               ref={(el) => { elementsRef.current[1] = el; }}
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-Launch your own turnkey casino software platform with sportsbook integration, 20,000+ casino games, crypto payment solutions, KYC verification, advanced back-office dashboard, and 24/7 technical support — everything you need to start and scale your gaming business with a white label casino solution from day one.
-              </p>
+              Launch your own turnkey casino software platform with sportsbook integration, 20,000+ casino games, crypto payment solutions, KYC verification, advanced back-office dashboard, and 24/7 technical support — everything you need to start and scale your gaming business with a white label casino solution from day one.
+            </p>
           </div>
 
         </div>
@@ -258,11 +258,10 @@ Launch your own turnkey casino software platform with sportsbook integration, 20
                     key={tab.id}
                     ref={activeTab === tab.label ? activeTabRef : null}
                     onClick={() => handleTabClick(tab.label)}
-                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
-                      activeTab === tab.label
+                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 ${activeTab === tab.label
                         ? 'bg-white text-black border-2 border-white'
                         : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
-                    }`}
+                      }`}
                   >
                     {IconComponent && <IconComponent size={16} className="hidden sm:block" />}
                     <span className="leading-none">{tab.label}</span>
@@ -350,7 +349,7 @@ Launch your own turnkey casino software platform with sportsbook integration, 20
 
             {/* LEFT STICKY */}
             <div className="relative lg:sticky lg:top-28 self-start space-y-4 sm:space-y-6 z-10">
-              <h2 
+              <h2
                 ref={(el) => { solutionsElementsRef.current[0] = el; }}
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
@@ -358,7 +357,7 @@ Launch your own turnkey casino software platform with sportsbook integration, 20
                 Create your own white label casino software with full flexibility, ownership, and long-term growth
               </h2>
 
-              <p 
+              <p
                 ref={(el) => { solutionsElementsRef.current[1] = el; }}
                 data-anim="from-bottom"
                 data-anim-delay="1"
@@ -438,9 +437,9 @@ Launch your own turnkey casino software platform with sportsbook integration, 20
       </section>
 
       {/* Opportunities Section */}
-      <OpportunitiesSection/>
-      <ContactForm/>
-    
+      <OpportunitiesSection />
+      <ContactForm />
+
     </>
   );
 }
@@ -449,10 +448,10 @@ Launch your own turnkey casino software platform with sportsbook integration, 20
 
 function getImageAlt(tabId: string): string {
   const altMap: { [key: string]: string } = {
-    'full-platform': 'turnkey casino software platform dashboard',
-    'game-apis': 'casino game aggregation platform with multiple game providers',
-    'compliance': 'white label casino software with security and KYC verification',
-    'backoffice': 'casino back office dashboard for player and transaction management',
+    'full-platform': 'Custom iGaming Platform Design Interface and Game Lobby Dashboard',
+    'game-apis': 'Online Casino Game Aggregation Platform with 10,000+ Slots and Live Games',
+    'compliance': 'iGaming Security, Risk Management, AML/KYC Protocols and User Protection',
+    'backoffice': 'Turnkey Back-Office Admin Dashboard for Player and Transaction Management',
   };
-  return altMap[tabId] || 'casino software solution';
+  return altMap[tabId] || 'turnkey casino software solution';
 }
