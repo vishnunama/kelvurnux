@@ -325,7 +325,7 @@ export default function FeaturesSection() {
 
             {/* Image */}
             <div
-              className="w-screen -mx-[calc(50vw-50%)] flex items-center justify-center relative z-10 mb-[-140px] md:mb-[-180px] overflow-hidden"
+              className="w-screen -mx-[calc(50vw-50%)] flex items-center justify-center relative z-10 mb-[-250px] md:mb-[-290px] overflow-hidden"
               style={{
                 WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%)',
                 maskImage: 'linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%)',
@@ -338,7 +338,7 @@ export default function FeaturesSection() {
                 alt={current.title}
                 width={750}
                 height={1026}
-                className="w-full max-w-[500px] md:max-w-[650px] h-auto object-contain scale-105 translate-y-3"
+                className="w-full max-w-[500px] md:max-w-[650px] h-auto object-contain scale-105 translate-y-0"
                 priority
               />
             </div>
