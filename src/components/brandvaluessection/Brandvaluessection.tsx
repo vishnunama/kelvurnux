@@ -236,7 +236,7 @@ export default function BrandValuesSection() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-3 md:px-12 pt-28 sm:pt-40 md:pt-60 lg:pt-80">
+        <div className="relative z-10 max-w-7xl mx-auto px-3 md:px-12 pt-50 sm:pt-50 md:pt-60 lg:pt-90">
           {/* Title */}
           <div
             ref={(el) => {

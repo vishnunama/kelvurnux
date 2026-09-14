@@ -260,7 +260,7 @@ const OpportunitiesSection: FC = () => {
           }
 
           .opportunities-block {
-            padding: 12rem 0 2rem;
+            padding: 13rem 0 2rem;
             border-radius: 2.4rem;
             display: flex;
             flex-direction: column;
@@ -272,10 +272,10 @@ const OpportunitiesSection: FC = () => {
           }
 
           .opportunities-img {
-            width: 20rem;
+            width: 22rem;
             left: 50%;
             transform: translateX(-50%);
-            top: -6rem;
+            top: -7.5rem;
             position: absolute;
           }
 
@@ -283,6 +283,9 @@ const OpportunitiesSection: FC = () => {
             max-width: 100%;
             padding: 1.6rem 1rem;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
           }
 
@@ -305,8 +308,9 @@ const OpportunitiesSection: FC = () => {
             font-size: 1.1rem;
           }
 
-          .btn-full-mob {
-            width: 100%;
+          .opp-btn {
+            width: 100% !important;
+            max-width: 100%;
           }
 
           .has-subtitle {
@@ -317,12 +321,12 @@ const OpportunitiesSection: FC = () => {
         /* Responsive - Extra small 480px */
         @media (max-width: 480px) {
           .opportunities-block {
-            padding: 10rem 1.6rem 1.6rem;
+            padding: 11rem 1.6rem 2rem;
           }
 
           .opportunities-img {
-            width: 14rem;
-            top: -5rem;
+            width: 18.5rem;
+            top: -6.5rem;
           }
 
           .opportunities-content {
@@ -333,7 +337,8 @@ const OpportunitiesSection: FC = () => {
             font-size: clamp(16px, 1.8rem, 1.8rem);
           }
 
-          .btn {
+          .opp-btn {
+            width: 100% !important;
             height: 3.6rem;
             padding: 0.6rem 1.4rem;
             font-size: 1rem;
@@ -346,6 +351,29 @@ const OpportunitiesSection: FC = () => {
           .opportunities-subtitle {
             margin: 0 0 1.4rem 0;
           }
+        }
+
+        .opp-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          outline: 0;
+          border-radius: 9999px;
+          padding: 0.8rem 2.2rem;
+          min-height: 3.2rem;
+          background-color: #00ebaa;
+          cursor: pointer;
+          color: #000;
+          font-weight: 700;
+          font-size: 1.1rem;
+          width: fit-content;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .opp-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 20px rgba(0, 235, 170, 0.4);
         }
       `}</style>
 
@@ -377,22 +405,7 @@ const OpportunitiesSection: FC = () => {
                   section.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="w-full md:w-auto"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: 'none',
-                outline: '0',
-                width: 'fit-content',
-                borderRadius: '9999px',
-                padding: '0.6rem 2.2rem',
-                minHeight: '2.8rem',
-                backgroundColor: '#00ebaa',
-                cursor: 'pointer',
-                color: '#000',
-                fontWeight: '700',
-              }}
+              className="opp-btn"
             >
               <span className="relative z-10 text-black font-bold">Get started</span>
             </button>

@@ -40,7 +40,9 @@ const styles = `
     overflow: hidden;
     background: radial-gradient(106.74% 100.05% at 50% 100.05%, #1c1918 0, #0b0b0f 19.4%);
     position: relative;
-    padding: 3rem 0;
+    padding-top: 3rem;
+        padding-bottom: 9rem;
+
   }
 
   @media (min-width: 768px) {

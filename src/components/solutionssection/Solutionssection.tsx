@@ -132,7 +132,7 @@ export default function SolutionsSection() {
     <>
       <style>{styles}</style>
       <section ref={sectionRef} className="solutions-section py-9 md:py-12 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 pt-[1rem] pb-[4rem] md:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 pt-[1rem] pb-[1rem] md:px-6 lg:px-8 relative z-10">
 
           {/* Title */}
           <div
@@ -182,7 +182,7 @@ export default function SolutionsSection() {
 
           {/* Mobile Slider */}
           {isMobile && (
-            <div className="mb-3 w-full overflow-visible relative px-6 ">
+            <div className="mb-15 w-full overflow-visible relative px-6 ">
               <Swiper
                 onSwiper={(swiper) => {
                   swiperRef.current = swiper;
@@ -276,31 +276,31 @@ export default function SolutionsSection() {
             data-anim="from-bottom"
             className="flex justify-center "
           >
-           <button
-  onClick={() => {
-    const section = document.getElementById('contact-form-section');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }}
-  style={{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    border: 'none',
-    outline: '0',
-    width: 'fit-content',
-    borderRadius: '9999px',
-    padding: '0.6rem 2.2rem',
-    minHeight: '2.8rem',
-    backgroundColor: '#00ebaa',
-    cursor: 'pointer',
-    color: '#000',
-    fontWeight: '700',
-  }}
->
-  <span className="relative z-10 text-black font-bold">Let's Partner Up</span>
-</button>
+            <button
+              onClick={() => {
+                const section = document.getElementById('contact-form-section');
+                if (section) {
+                  section.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                border: 'none',
+                outline: '0',
+                width: 'fit-content',
+                borderRadius: '9999px',
+                padding: '0.6rem 2.2rem',
+                minHeight: '2.8rem',
+                backgroundColor: '#00ebaa',
+                cursor: 'pointer',
+                color: '#000',
+                fontWeight: '700',
+              }}
+            >
+              <span className="relative z-10 text-black font-bold">Let's Partner Up</span>
+            </button>
           </div>
 
         </div>
