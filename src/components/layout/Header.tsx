@@ -695,7 +695,7 @@ export default function Header() {
           </nav>
 
           {/* Contact Button - Desktop */}
-          <button
+          {/* <button
             onClick={scrollToContactForm}
             className="ml-auto"
             style={{
@@ -716,7 +716,7 @@ export default function Header() {
             }}
           >
             <span className="relative z-10 text-black font-bold">Contact us</span>
-          </button>
+          </button> */}
           {/* Hamburger Menu */}
           <button
             className={`zg-ham md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px] bg-transparent border-none cursor-pointer p-0 z-[200] relative ${isMenuOpen ? 'open' : ''}`}

@@ -315,6 +315,12 @@ export default function HeroSection() {
 
       {/* Hero Image */}
       <div className="hero-img">
+        <div
+          className="absolute inset-0 pointer-events-none z-10"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(11, 11, 15, 0) 67.16%, rgb(11, 11, 15) 100%)',
+          }}
+        />
         <img
           src="/assets/hero-img-768.webp"
           width={1920}
@@ -515,8 +521,8 @@ export default function HeroSection() {
         /* ── MOBILE ~600px ── */
         @media (max-width: 600px) {
           .hero-section {
-            padding-top: 14rem;
-            padding-bottom: 3rem;
+            padding-top: 12.8rem;
+            padding-bottom: 2.5rem;
             display: block;
           }
 
@@ -546,16 +552,16 @@ export default function HeroSection() {
           /* Image — mobile: sits at the top of section */
           .hero-img {
             width: 100%;
-            height: 240px;
+            height: 320px;
             left: 0;
-            top: 0;
+            top: -1.5rem;
             right: 0;
             bottom: auto;
           }
 
           .hero-img-element {
             object-fit: cover;
-            object-position: center center;
+            object-position: right top;
           }
         }
       `}</style>
