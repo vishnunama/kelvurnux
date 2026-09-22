@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const col1 = [
   '3oaks.svg', 'tada.svg', 'spribe.svg', 'ruby.svg', 'octo.svg', 'blueprint.svg',
@@ -132,10 +133,10 @@ export default function ProvidersSection() {
               }`}
           >
             <h2 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-center mb-2">
-              Top Tier iGaming Ecosystem
+              Game Content Through One Integration
             </h2>
             <p className="text-[#a5a5a5] text-sm sm:text-base font-normal leading-relaxed text-center max-w-xl mx-auto">
-              Empowering platform operators with premier games and seamless integration
+              Connect your platform to a broad portfolio of slots, live casino, crash, table and other gaming content through a unified integration.
             </p>
           </div>
 
@@ -211,47 +212,40 @@ export default function ProvidersSection() {
               <div className="home_providers-top relative z-20 max-w-xl my-auto flex flex-col gap-3 sm:gap-5 text-left">
 
                 <span className="text-white text-5xl xs:text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight block leading-none">
-                  100+
+                  150+
                 </span>
 
                 <h3 className="section-gradient-title text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-tight">
-                  GAMING PROVIDERS
+                  GAME PROVIDERS
                 </h3>
 
                 <p className="text-[#a5a5a5] text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-                  At Soft2Bet, we focus on what really matters — your growth, health, and motivation are at the core of our benefits
+                  Connect your platform to a broad portfolio of slots, live casino, crash, table and other gaming content through a unified integration.
                 </p>
 
                 {/* CTA Button */}
                 <div className="mt-2 sm:mt-4">
-                  <button
-                    onClick={() => {
-                      const contactSection = document.getElementById('contact-form-section');
-                      if (contactSection) {
-                        contactSection.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
+                  <Link
+                    href="/casino-aggregator-api-solution"
                     style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      border: '1px solid rgba(0, 235, 170, 0.3)',
+                      border: 'none',
                       outline: '0',
                       width: 'fit-content',
                       borderRadius: '9999px',
-                      padding: '0.7rem 2.4rem',
+                      padding: '0.6rem 2.2rem',
                       minHeight: '2.8rem',
-                      background: 'linear-gradient(180deg, #1fa56f 0%, #0a3a27 100%)',
-                      boxShadow: '0 4px 15px rgba(0, 235, 170, 0.15)',
+                      backgroundColor: '#00ebaa',
                       cursor: 'pointer',
                       color: '#000',
-                      fontWeight: '700',
-                      transition: 'all 0.3s ease',
+                      fontWeight: 700,
+                      textDecoration: 'none',
                     }}
-                    className="hover:scale-105 hover:shadow-[0_4px_25px_rgba(0,235,170,0.3)]"
                   >
-                    <span className="relative z-10 text-black font-extrabold tracking-wide">Book a Demo</span>
-                  </button>
+                    <span className="relative z-10 text-black font-extrabold tracking-wide">Explore Game Aggregation</span>
+                  </Link>
                 </div>
 
               </div>

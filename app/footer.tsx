@@ -3,7 +3,6 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import KvaornuxLogo from '@/src/components/layout/KelvurnuxLogo';
 
 const EmailIcon = () => (
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,10 +32,10 @@ export default function Footer() {
       <div className="absolute top-0 left-1/2 w-full h-0.5 -translate-x-1/2" style={{ background: 'linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #344348 45%, #344348 55%, rgba(255, 255, 255, 0) 100%)' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 mb-12 md:mb-20">
+        {/* Main Footer Content Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 mb-12 md:mb-20">
           {/* Footer Info */}
-          <div className="lg:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="block mb-3 md:mb-4 bg-transparent">
               <img
                 src="/assets/logo.png"
@@ -57,9 +56,50 @@ export default function Footer() {
             <nav>
               <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <a href="/about-us/" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/about-us" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
                     About Kvaornux
-                  </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                    Insights &amp; Blog
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          {/* Legal Menu */}
+          <div>
+            <h3 className="text-xs md:text-sm font-medium text-gray-400 mb-3 md:mb-4">
+              Legal
+            </h3>
+            <nav>
+              <ul className="space-y-2 md:space-y-3">
+                <li>
+                  <Link href="/privacy-policy" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms-and-conditions" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                    Terms &amp; Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/responsible-gaming-policy" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                    Responsible Gaming
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/aml-kyc-policy" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                    AML &amp; KYC Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/cookie-policy" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                    Cookie Policy
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -72,43 +112,38 @@ export default function Footer() {
             </h3>
             <nav>
               <ul className="space-y-2 md:space-y-3">
-
                 <li>
-                  <a
-                    href="/crypto-igaming-Solutions"
+                  <Link
+                    href="/crypto-igaming-solutions"
                     className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300"
                   >
                     Crypto iGaming Solutions
-                  </a>
+                  </Link>
                 </li>
-
                 <li>
-                  <a
+                  <Link
                     href="/custom-igaming-solution"
                     className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300"
                   >
                     Custom iGaming Solution
-                  </a>
+                  </Link>
                 </li>
-
                 <li>
-                  <a
-                    href="/igaming-api-integration"
+                  <Link
+                    href="/casino-aggregator-api-solution"
                     className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300"
                   >
                     iGaming API Integration
-                  </a>
+                  </Link>
                 </li>
-
                 <li>
-                  <a
+                  <Link
                     href="/turnkey-sportsbook-solutions"
                     className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300"
                   >
-                    turnkey sportsbook solutions
-                  </a>
+                    Turnkey Sportsbook Solutions
+                  </Link>
                 </li>
-
               </ul>
             </nav>
           </div>
@@ -121,28 +156,47 @@ export default function Footer() {
             <nav>
               <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <a href="/white-label-casino-solutions/" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/white-label-casino-solutions" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
                     White Label Casino Solutions
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/turnkey-casino-software-solutions/" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/turnkey-casino-software-solutions" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
                     Turnkey Casino Software Solutions
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
           </div>
 
-          {/* Social Links Section */}
+          {/* Contact Section */}
           <div>
             <h3 className="text-xs md:text-sm font-medium text-gray-400 mb-3 md:mb-4">
-              Contact us
+              Contact Us
             </h3>
+            <ul className="space-y-2 mb-4 text-xs md:text-sm text-gray-300">
+              <li>
+                <span className="text-gray-400">Email: </span>
+                <a
+                  href="mailto:info@kvaornux.com"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  info@kvaornux.com
+                </a>
+              </li>
+              <li>
+                <span className="text-gray-400">Phone: </span>
+                <a
+                  href="tel:+917240328393"
+                  className="hover:text-white transition-colors duration-300"
+                >
+                  +91 72403 28393
+                </a>
+              </li>
+            </ul>
             <div className="flex gap-2">
-              {/* ✅ Email Link with aria-label */}
               <a
-                href="mailto:Kvaornux@gmail.com"
+                href="mailto:info@kvaornux.com"
                 aria-label="Email Kvaornux"
                 className="w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
                 style={{
@@ -152,7 +206,6 @@ export default function Footer() {
               >
                 <EmailIcon />
               </a>
-              {/* ✅ Telegram Link with aria-label */}
               <a
                 href="https://t.me/vikash9876g"
                 target="_blank"
@@ -166,7 +219,6 @@ export default function Footer() {
               >
                 <TelegramIcon />
               </a>
-              {/* ✅ WhatsApp Link with aria-label */}
               <a
                 href="https://wa.me/918696548657"
                 target="_blank"
@@ -200,14 +252,13 @@ export default function Footer() {
             {/* Empty Space */}
             <div className="hidden lg:block"></div>
 
-            {/* Support Logos - ✅ OPTIMIZED WITH SIZES */}
+            {/* Support Logos */}
             <div className="flex flex-wrap justify-start lg:justify-end gap-3 md:gap-4 items-center lg:col-span-1">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://cert.gcb.cw/certificate?id=ZXlKcGRpSTZJbVJPWVZkM2NqWTRia1ZKV0hwRWJXbFJUVGcyYlZFOVBTSXNJblpoYkhWbElqb2lZa1pSUVdaV1QwTk9SeTlsWVRaNE1XSmpSRm95ZHowOUlpd2liV0ZqSWpvaU5tUTVaalkzTURreE9EaG1ZelUzWVRSak1UVTVZemsxTmpjNE16QTFPV0ZtTWpsbVkyWTVORFJqWW1NeE4ySTNZMlExTURRNFptVmxZekZsWkROalpDSXNJblJoWnlJNklpSjk="
               >
-                {/* ✅ NEXT/IMAGE WITH SIZES */}
                 <Image
                   src="/assets/support-logo-1.svg"
                   alt="GCB Certificate"
@@ -219,7 +270,6 @@ export default function Footer() {
                 />
               </a>
               <div>
-                {/* ✅ NEXT/IMAGE WITH SIZES */}
                 <Image
                   src="/assets/support-logo-2.webp"
                   alt="Support Logo 2"
@@ -231,7 +281,6 @@ export default function Footer() {
                 />
               </div>
               <div>
-                {/* ✅ NEXT/IMAGE WITH SIZES */}
                 <Image
                   src="/assets/support-logo-3.webp"
                   alt="Support Logo 3"
@@ -246,17 +295,37 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Footer Terms */}
+        {/* Footer Terms Bottom Row */}
         <div className="pt-6 md:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 md:gap-6">
           <div className="text-xs md:text-sm text-gray-400">
-            ©{currentYear} Kvaornux
+            ©{currentYear} Kvaornux. All rights reserved.
           </div>
           <nav>
-            <ul className="flex gap-4 md:gap-6">
+            <ul className="flex flex-wrap gap-4 md:gap-6">
               <li>
-                <a href="/privacy-policy/" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
+                <Link href="/privacy-policy" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
                   Privacy Policy
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-and-conditions" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
+                  Terms &amp; Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/responsible-gaming-policy" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
+                  Responsible Gaming
+                </Link>
+              </li>
+              <li>
+                <Link href="/aml-kyc-policy" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
+                  AML &amp; KYC Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookie-policy" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
+                  Cookie Policy
+                </Link>
               </li>
             </ul>
           </nav>

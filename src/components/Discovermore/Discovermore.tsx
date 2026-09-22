@@ -53,56 +53,56 @@ export default function DiscoverMore() {
       title: 'White Label',
       description: 'A ready-to-launch iGaming solution with your branding, fully managed infrastructure, and minimal operational load.',
       icon: Layout,
-      link: 'https://kanggiten.com/white-label-casino-platform/'
+      link: '/white-label-casino-solutions'
     },
     {
       id: 2,
       title: 'Turnkey',
       description: 'A full-access modular iGaming platform designed for total business control, scalability, and long-term growth.',
       icon: Key,
-      link: 'https://kanggiten.com/turnkey-igaming-platform/'
+      link: '/turnkey-casino-software-solutions'
     },
     {
       id: 3,
       title: 'Casino Platform',
       description: 'Quick access to the casino world through a powerful modular platform.',
       icon: Gamepad2,
-      link: 'https://kanggiten.com/online-casino-platform/'
+      link: '/turnkey-casino-software-solutions'
     },
     {
       id: 4,
       title: 'Sports Betting Platform',
       description: 'A fully equipped, competitive sportsbook tailored for dynamic betting experiences in a fast-paced market.',
       icon: Trophy,
-      link: 'https://kanggiten.com/best-sports-betting-platform/'
+      link: '/turnkey-sportsbook-solutions'
     },
     {
       id: 5,
       title: 'Affiliate Platform',
       description: 'A premium white-label affiliate platform offering a wide range of tools to easily manage promo campaigns, track performance, and analyze results in detail.',
       icon: Handshake,
-      link: 'https://kanggiten.com/igaming-affiliate-platform/'
+      link: '/#contact-form-section'
     },
     {
       id: 6,
       title: 'CRM and Marketing System',
       description: 'A complete solution with a strong emphasis on behavior-based marketing for online casinos and betting operators.',
       icon: Sparkles,
-      link: 'https://kanggiten.com/igaming-crm/'
+      link: '/#contact-form-section'
     },
     {
       id: 7,
       title: 'Analytics',
       description: 'Advanced analytics tools for understanding player activity, traffic sources, campaign performance, and more.',
       icon: BarChart3,
-      link: 'https://kanggiten.com/igaming-analytics/'
+      link: '/#contact-form-section'
     },
     {
       id: 8,
       title: 'Game Aggregator',
       description: 'The game aggregator offers a full suite of tools and features that guarantees for successfully operating and maintaining an online casino website.',
       icon: Zap,
-      link: 'https://kanggiten.com/casino-games-aggregator/'
+      link: '/casino-aggregator-api-solution'
     }
   ];
 
@@ -431,8 +431,6 @@ export default function DiscoverMore() {
                 <a
                   key={item.id}
                   href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="more-item"
                   ref={(el) => { elementsRef.current[index + 1] = el; }}
                   data-anim="from-bottom"
@@ -468,8 +466,6 @@ export default function DiscoverMore() {
                     <SwiperSlide key={item.id} style={{ width: 'auto', overflow: 'visible' }}>
                       <a
                         href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="more-item rounded-2xl py-5 px-6 relative flex flex-col gap-4 min-h-[280px] overflow-visible block"
                         style={{ width: 'calc(100vw - 5rem)', minWidth: 'calc(100vw - 5rem)' }}
                       >

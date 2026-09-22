@@ -13,7 +13,7 @@ const brandValues = [
     id: 2,
     count: 150,
     suffix: '+',
-    label: 'API Integrations & Providers',
+    label: 'Provider & API Integrations',
   },
   {
     id: 3,
@@ -25,13 +25,13 @@ const brandValues = [
     id: 4,
     count: 20,
     suffix: 'K+',
-    label: 'Games Integrated',
+    label: 'Games Available',
   },
   {
     id: 5,
     count: 24,
     suffix: '/7',
-    label: 'Support & Maintenance',
+    label: 'Technical Support',
   },
 ];
 
@@ -138,8 +138,10 @@ export default function BrandValuesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
   const [displayCounts, setDisplayCounts] = useState<number[]>(brandValues.map(() => 0));
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const elements = elementsRef.current.filter((el): el is HTMLElement => el !== null);
     let animationStarted = false;
 
@@ -254,7 +256,7 @@ export default function BrandValuesSection() {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              What's behind the Kvaornux brand?
+              Built on Real iGaming Experience
             </h2>
           </div>
 
@@ -267,12 +269,12 @@ export default function BrandValuesSection() {
             className="text-center mb-8"
           >
             <p
-              className="text-base sm:text-base md:text-lg max-w-2xl mx-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] font-medium"
+              className="text-base sm:text-base md:text-lg max-w-3xl mx-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] font-medium"
               style={{
                 color: '#d1d5db',
               }}
             >
-              Keeping pace with the times while honoring time-tested solutions.
+              From platform development to game integrations and ongoing support, our experience comes from building and operating real iGaming projects across different markets.
             </p>
           </div>
 
@@ -313,9 +315,14 @@ export default function BrandValuesSection() {
                     color: '#fff',
                   }}
                 >
-                  <span className="sr-only">{value.count}{value.suffix}</span>
-                  <span>{displayCounts[index].toFixed(value.count === 99.9 ? 1 : 0)}</span>
-                  <span>{value.suffix}</span>
+                  <span className={isMounted ? 'sr-only' : ''}>
+                    {value.count}{value.suffix}
+                  </span>
+                  {isMounted && (
+                    <span aria-hidden="true">
+                      {displayCounts[index].toFixed(value.count === 99.9 ? 1 : 0)}{value.suffix}
+                    </span>
+                  )}
                 </div>
 
                 {/* Label */}

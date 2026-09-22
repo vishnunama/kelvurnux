@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zenavoigaming.com/sitemap.xml
+Sitemap: https://kvaornux.com/sitemap.xml

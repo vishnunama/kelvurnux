@@ -14,11 +14,44 @@ const gabarito = Gabarito({
 });
 
 export const metadata: Metadata = {
-  title: "Kvaornux - Crypto Casino Software Provider | White Label iGaming Platform Solutions",
+  metadataBase: new URL("https://kvaornux.com"),
+  title: {
+    default: "iGaming Technology, Casino & Sportsbook Platform | Kvaornux",
+    template: "%s | Kvaornux",
+  },
   description:
-    "Launch your own crypto casino platform with our ready-made iGaming solution. 150+ APIs, sportsbook, slots and full white label system with admin & affiliate features.",
-  keywords:
-    "crypto casino software, white label casino, iGaming platform provider, sportsbook API, casino script provider, crypto betting platform, turnkey casino solution, online casino software, affiliate system casino",
+    "Kvaornux provides B2B iGaming technology for casino, sportsbook, game aggregation, payments, player management and custom platform development.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Kvaornux",
+    title: "iGaming Technology, Casino & Sportsbook Platform | Kvaornux",
+    description:
+      "Kvaornux provides B2B iGaming technology for casino, sportsbook, game aggregation, payments, player management and custom platform development.",
+    url: "https://kvaornux.com/",
+    images: [
+      {
+        url: "https://kvaornux.com/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Kvaornux iGaming Technology",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "iGaming Technology, Casino & Sportsbook Platform | Kvaornux",
+    description:
+      "Kvaornux provides B2B iGaming technology for casino, sportsbook, game aggregation, payments, player management and custom platform development.",
+    images: ["https://kvaornux.com/assets/og-image.png"],
+  },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',

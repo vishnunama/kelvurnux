@@ -8,7 +8,7 @@ const blogs = [
     title: "How to Start Crypto Casino Platform Step by Step (2026 Guide + Cost)",
     description:
       "Complete beginner guide to start your crypto casino platform with games, payments, admin panel and launch strategy.",
-    href: "/how-to-start-crypto-casino-platform-step-by-step",
+    href: "/blog/how-to-start-crypto-casino-platform-step-by-step",
     tag: "Crypto Casino",
     readTime: "15 min read",
     image: "/assets/features/comprehensive-casino-platform-features-roulette-dice.webp",
@@ -165,25 +165,7 @@ export default function BlogPage() {
           background: linear-gradient(to right, rgba(255, 255, 255, 0) 0, rgba(88, 153, 152, 0.9) 49.8%, rgba(88, 153, 152, 0.9) 50.2%, rgba(255, 255, 255, 0) 100%);
         }
 
-        .hero-decor {
-          position: absolute;
-          pointer-events: none;
-          opacity: 0.6;
-        }
 
-        .hero-decor-left {
-          width: 17em;
-          left: 13%;
-          transform: translateX(-50%);
-          bottom: -7em;
-        }
-
-        .hero-decor-right {
-          width: 12em;
-          right: 17%;
-          transform: translateX(50%);
-          bottom: -4em;
-        }
 
         .search-input {
           width: 100%;
@@ -252,9 +234,7 @@ export default function BlogPage() {
         
         /* Tablet & below - 840px */
         @media (max-width: 840px) {
-          .hero-decor {
-            display: none;
-          }
+
 
           .border-line {
             margin: 0 auto 2rem;
@@ -487,29 +467,7 @@ export default function BlogPage() {
         }}
       >
 
-        {/* Decorative Cubes */}
-        <div className="hero-decor hero-decor-left">
-          <img 
-            src="https://kanggiten.com/wp-content/themes/themename/assets/img/cube-1.png" 
-            alt="Decorative cube left"
-            style={{
-              width: '100%',
-              height: 'auto',
-              display: 'block'
-            }}
-          />
-        </div>
-        <div className="hero-decor hero-decor-right">
-          <img 
-            src="https://kanggiten.com/wp-content/themes/themename/assets/img/cube-2.png" 
-            alt="Decorative cube right"
-            style={{
-              width: '100%',
-              height: 'auto',
-              display: 'block'
-            }}
-          />
-        </div>
+
 
         {/* Content Container */}
         <div 
@@ -706,16 +664,7 @@ export default function BlogPage() {
 
                   {/* Meta */}
                   <div className="post-meta">
-                    {/* Author */}
-                    <div className="post-author">
-                      <div className="post-author-img">
-                        <img
-                          src="https://kanggiten.com/wp-content/uploads/2026/05/KarinaDubina.webp"
-                          alt="Karyna Dubyna"
-                        />
-                      </div>
-                      <span className="post-author-name">Karyna Dubyna</span>
-                    </div>
+
 
                     {/* Read Time */}
                     <div className="post-read-time">

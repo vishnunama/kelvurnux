@@ -10,28 +10,28 @@ import 'swiper/css/autoplay';
 const stepsData = [
   {
     id: 1,
-    title: 'Let’s Talk',
-    text: 'Share with us your business goals and preferences regarding target markets, audience licenses, etc.',
+    title: 'Define the Project',
+    text: 'We start with your business model, target markets, product requirements and technical priorities.',
   },
   {
     id: 2,
-    title: 'Choose Your Stack',
-    text: 'Select a comprehensive solution, a specific module, or a tailored mix to meet your needs.',
+    title: 'Plan the Technology',
+    text: 'We define the platform setup, required modules, game integrations, payments and third-party services.',
   },
   {
     id: 3,
-    title: 'Customize Your Brand',
-    text: 'Use flexible branding tools to align the look and feel of your project with your brand identity and business goals.',
+    title: 'Build & Integrate',
+    text: 'Our team configures the platform, develops the required features and connects the agreed integrations.',
   },
   {
     id: 4,
-    title: 'Preparation for launch',
-    text: 'From setting up all necessary processes to creating a full-fledged product',
+    title: 'Test & Launch',
+    text: 'We test the platform, integrations and key user flows before preparing the production environment for launch.',
   },
   {
     id: 5,
-    title: 'Grow & Optimize',
-    text: 'Get continuous support, updates, and performance monitoring from our experts.',
+    title: 'Support & Scale',
+    text: 'After launch, we provide technical support and continue improving the platform as your operation grows.',
   },
 ];
 
@@ -156,7 +156,7 @@ const styles = `
     margin-bottom: 0.6rem;
     color: #9e9fa0;
     transition: all 0.3s ease-in-out;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.35;
   }
@@ -169,14 +169,14 @@ const styles = `
   .step-text {
     color: #9e9fa0;
     transition: all 0.3s ease-in-out;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.55;
   }
 
   .step-item.is-active .step-text,
   .swiper-slide-active .step-text {
-    color: #a5a5a5;
+    color: #b0b0b0;
   }
 
   .swiper-navigation-center {
@@ -274,12 +274,12 @@ export default function StepsSection() {
 
         <div className="steps-container">
           <h2 className="steps-title">
-            From idea to launch
+            From Strategy to Launch
           </h2>
 
-          <div className="steps-subtitle">
-            A few simple steps to turn all your plans into reality
-          </div>
+          <p className="steps-subtitle">
+            A clear process from initial requirements to deployment, integration and ongoing support.
+          </p>
 
           <div className="steps-slider-wrapper">
             <Swiper
@@ -320,8 +320,8 @@ export default function StepsSection() {
                         <span></span>
                       </div>
                       <div className="step-content">
-                        <div className="step-title">{step.title}</div>
-                        <div className="step-text">{step.text}</div>
+                        <h3 className="step-title">{step.title}</h3>
+                        <p className="step-text">{step.text}</p>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -382,7 +382,7 @@ export default function StepsSection() {
                 fontFamily: "'Gabarito', sans-serif",
               }}
             >
-              <span>Let’s Partner Up</span>
+              <span>Discuss Your Project</span>
             </a>
           </div>
         </div>

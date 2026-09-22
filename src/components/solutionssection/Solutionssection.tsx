@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -8,23 +9,29 @@ const solutionsData = [
   {
     id: 1,
     image: '/assets/sol-img-1.webp',
-    title: 'Startups & Entrepreneurs',
-    description: 'Launch and scale your iGaming business with ready-to-deploy casino software, sportsbook platforms, and fully integrated payment and gaming systems.',
-    alt: 'Startups & Entrepreneurs',
+    title: 'Turnkey iGaming Platform',
+    description: 'Launch a complete casino and sportsbook operation with the platform, back office, integrations and core infrastructure brought together in one solution.',
+    alt: 'Turnkey iGaming Platform',
+    ctaText: 'Explore Turnkey',
+    ctaHref: '/turnkey-casino-software-solutions',
   },
   {
     id: 2,
     image: '/assets/sol-img-2.webp',
-    title: 'Affiliates & Partner Networks',
-    description: 'Manage affiliates, multi-level referral systems, commissions, and performance tracking with a powerful back-office and automation tools.',
-    alt: 'Affiliates & Partner Networks',
+    title: 'White Label Casino',
+    description: 'Enter the market with an established technology stack, gaming content and operational tools configured around your brand.',
+    alt: 'White Label Casino',
+    ctaText: 'Explore White Label',
+    ctaHref: '/white-label-casino-solutions',
   },
   {
     id: 3,
     image: '/assets/sol-img-3.webp',
-    title: 'Game Providers & Aggregators',
-    description: 'Integrate and manage multiple game providers through a single API with scalable infrastructure, enabling seamless game aggregation and distribution.',
-    alt: 'Game Providers & Aggregators',
+    title: 'Custom iGaming Solutions',
+    description: 'Build around your own business model with custom platform development, integrations, features and infrastructure.',
+    alt: 'Custom iGaming Solutions',
+    ctaText: 'Explore Custom Solutions',
+    ctaHref: '/custom-igaming-solution',
   }
 ];
 
@@ -135,50 +142,62 @@ export default function SolutionsSection() {
         <div className="max-w-7xl mx-auto px-4 pt-[1rem] pb-[1rem] md:px-6 lg:px-8 relative z-10">
 
           {/* Title */}
-          <div
+          <h2
             ref={(el) => { if (el) elementsRef.current[0] = el; }}
             data-anim="from-bottom"
             className="solutions-title text-4xl sm:text-4xl md:text-6xl font-bold leading-tight text-center mb-4"
           >
-            Solutions for Every Stage
-          </div>
+            iGaming Solutions Built Around Your Business
+          </h2>
 
           {/* Subtitle */}
-          <div
+          <p
             ref={(el) => { if (el) elementsRef.current[1] = el; }}
             data-anim="from-bottom"
             className="text-[#a5a5a5] text-base sm:text-base md:text-lg font-normal leading-relaxed text-center max-w-[90%] mx-auto mb-12 md:mb-16"
           >
-            Whether you're launching or scaling — we've got you covered.
-          </div>
+            Choose a complete launch solution or build on Kvaornux technology with a setup tailored to your product, market and operating model.
+          </p>
 
           {/* Desktop Grid */}
-          <div className="hidden md:grid grid-cols-3 gap-6 max-w-6xl mx-auto mb-12 md:mb-16">
-            {solutionsData.map((solution, index) => (
-              <div
-                key={solution.id}
-                ref={(el) => { if (el) elementsRef.current[2 + index] = el; }}
-                data-anim="from-bottom"
-                data-anim-delay={index + 1}
-                className="solutions-item rounded-3xl pt-16 pb-8 px-8 relative flex flex-col gap-4 h-full transition-all duration-300 hover:-translate-y-1 overflow-visible"
-              >
-                {/* Image */}
-                <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-2/5 w-36 z-10 pointer-events-none overflow-visible">
-                  <img src={solution.image} alt={solution.alt} width={232} height={225} className="w-full h-auto block" />
-                </div>
+          {!isMobile && (
+            <div className="hidden md:grid grid-cols-3 gap-6 max-w-6xl mx-auto mb-12 md:mb-16">
+              {solutionsData.map((solution, index) => (
+                <div
+                  key={solution.id}
+                  ref={(el) => { if (el) elementsRef.current[2 + index] = el; }}
+                  data-anim="from-bottom"
+                  data-anim-delay={index + 1}
+                  className="solutions-item rounded-3xl pt-16 pb-8 px-8 relative flex flex-col gap-4 h-full transition-all duration-300 hover:-translate-y-1 overflow-visible"
+                >
+                  {/* Image */}
+                  <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-2/5 w-36 z-10 pointer-events-none overflow-visible">
+                    <img src={solution.image} alt={solution.alt} width={232} height={225} className="w-full h-auto block" />
+                  </div>
 
-                {/* Title */}
-                <div className="text-white text-xl font-bold leading-snug text-center mt-10">
-                  {solution.title}
-                </div>
+                  {/* Title */}
+                  <h3 className="text-white text-xl font-bold leading-snug text-center mt-10">
+                    {solution.title}
+                  </h3>
 
-                {/* Description */}
-                <div className="text-[#a5a5a5] text-base font-normal leading-relaxed text-center flex-grow">
-                  {solution.description}
+                  {/* Description */}
+                  <p className="text-[#a5a5a5] text-base font-normal leading-relaxed text-center flex-grow">
+                    {solution.description}
+                  </p>
+
+                  {/* CTA */}
+                  <div className="mt-2 flex justify-center">
+                    <Link
+                      href={solution.ctaHref}
+                      className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-bold text-black bg-[#00ebaa] hover:bg-[#00ebaa]/90 transition-colors"
+                    >
+                      {solution.ctaText}
+                    </Link>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {/* Mobile Slider */}
           {isMobile && (
@@ -203,13 +222,23 @@ export default function SolutionsSection() {
                       </div>
 
                       {/* Title */}
-                      <div className="text-white text-2xl font-bold leading-snug text-center mt-8 px-4">
+                      <h3 className="text-white text-2xl font-bold leading-snug text-center mt-8 px-4">
                         {solution.title}
-                      </div>
+                      </h3>
 
                       {/* Description */}
-                      <div className="text-[#a5a5a5] text-base font-normal leading-relaxed text-center flex-grow">
+                      <p className="text-[#a5a5a5] text-base font-normal leading-relaxed text-center flex-grow">
                         {solution.description}
+                      </p>
+
+                      {/* CTA */}
+                      <div className="mt-2 flex justify-center">
+                        <Link
+                          href={solution.ctaHref}
+                          className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-bold text-black bg-[#00ebaa] hover:bg-[#00ebaa]/90 transition-colors"
+                        >
+                          {solution.ctaText}
+                        </Link>
                       </div>
                     </div>
                   </SwiperSlide>

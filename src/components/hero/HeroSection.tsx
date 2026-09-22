@@ -354,7 +354,8 @@ export default function HeroSection() {
               transitionDelay: isLoaded ? '0.1s' : '0s',
             }}
           >
-            iGaming Software Development Company  </div>
+            GLOBAL B2B iGAMING TECHNOLOGY
+          </div>
 
           {/* Main Title */}
           <h1
@@ -368,7 +369,8 @@ export default function HeroSection() {
               transitionDelay: isLoaded ? '0.2s' : '0s',
             }}
           >
-            Start Your Casino & Sportsbook Business Today        </h1>
+            Powering the Next Generation of iGaming.
+          </h1>
 
           {/* Subtitle */}
           <p
@@ -378,7 +380,8 @@ export default function HeroSection() {
               transitionDelay: isLoaded ? '0.3s' : '0s',
             }}
           >
-            Build and scale your iGaming business with our casino software, sportsbook platforms, crypto gaming solutions, and turnkey systems powered by seamless API integration and scalable white-label infrastructure.          </p>
+            A unified technology ecosystem for casino, sportsbook, game aggregation, payments, player management and custom iGaming infrastructure.
+          </p>
 
           {/* CTA Button */}
           <div
@@ -399,22 +402,19 @@ export default function HeroSection() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                border: '1px solid rgba(0, 235, 170, 0.3)',
+                border: 'none',
                 outline: '0',
                 width: 'fit-content',
                 borderRadius: '9999px',
-                padding: '0.7rem 2.4rem',
+                padding: '0.6rem 2.2rem',
                 minHeight: '2.8rem',
-                background: 'linear-gradient(180deg, #1fa56f 0%, #0a3a27 100%)',
-                boxShadow: '0 4px 15px rgba(0, 235, 170, 0.15)',
+                backgroundColor: '#00ebaa',
                 cursor: 'pointer',
                 color: '#000',
-                fontWeight: '700',
-                transition: 'all 0.3s ease',
+                fontWeight: 700,
               }}
-              className="hover:scale-105 hover:shadow-[0_4px_25px_rgba(0,235,170,0.3)]"
             >
-              <span className="relative z-10 text-black font-extrabold tracking-wide">Book a Demo</span>
+              <span className="relative z-10 text-black font-extrabold tracking-wide">Explore Solutions</span>
             </button>
           </div>
 

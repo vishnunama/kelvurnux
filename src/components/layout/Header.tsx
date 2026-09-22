@@ -653,7 +653,7 @@ export default function Header() {
                       </div>
                       <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-[0.9rem] gap-y-[0.5rem]">
                         <li>
-                          <Link href="/crypto-igaming-Solutions" className="zg-dd-link">
+                          <Link href="/crypto-igaming-solutions" className="zg-dd-link">
                             Crypto iGaming Solutions
                           </Link>
                         </li>
@@ -774,7 +774,7 @@ export default function Header() {
 
               <div className={`zg-acc-body ${mobileAccordion.special ? 'open' : ''}`}>
                 <div className="zg-acc-inner">
-                  <Link href="/crypto-igaming-Solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                  <Link href="/crypto-igaming-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
                     Crypto iGaming Solutions
                   </Link>
 

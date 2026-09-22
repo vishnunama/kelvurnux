@@ -6,12 +6,12 @@ const MISSION_DATA = [
   {
     id: 1,
     title: 'Our mission',
-    description: "To help businesses turn their ideas into reliable, scalable, and high-quality digital solutions using modern technologies and best development practices.",
+    description: 'To build reliable and flexible iGaming technology that helps operators launch, manage and develop casino and sportsbook products across different markets.',
   },
   {
     id: 2,
     title: 'Our vision',
-    description: 'To become a trusted technology partner for global clients by delivering innovative software solutions and long-term digital value.',
+    description: 'To build Kvaornux into a global iGaming technology company known for strong platform infrastructure, flexible integrations and long-term technology partnerships.',
   },
 ];
 

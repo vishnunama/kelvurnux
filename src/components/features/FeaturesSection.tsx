@@ -1,75 +1,44 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 
 const features = [
   {
     id: 1,
-    title: 'White Label iGaming Solutions',
-    description: 'A ready-to-launch iGaming platform with your branding, fully managed infrastructure, and minimal operational overhead.',
-    items: [
-      'Fast time-to-market',
-      'API game integration (100+ providers)',
-      'No initial licensing required (client-side optional)',
-      'Built-in bonus and promotion tools',
-      'Custom front-end branding',
-      'Full support and maintenance'
-    ],
+    title: 'Casino Platform',
+    description: 'Casino infrastructure for managing content, player experiences, promotions and day-to-day gaming operations.',
+    items: [],
   },
   {
     id: 2,
-    title: 'Turnkey iGaming Platform',
-    description: 'A full-access, modular iGaming platform designed for complete business control, scalability, and long-term growth.',
-    items: [
-      'Dedicated backend and admin panel',
-      'Integrated games, payments, and core features',
-      'Support with licensing and certification (client-managed)',
-      'Multi-vertical support (Casino + Sportsbook)',
-      'Fully customizable modules',
-      'Advanced scaling and automation tools'
-    ],
+    title: 'Sportsbook',
+    description: 'Pre-match and live betting technology with flexible integrations, operational controls and risk-management capabilities.',
+    items: [],
   },
   {
     id: 3,
-    title: 'Turnkey Sportsbook Solutions',
-    description: 'A fully featured turnkey sportsbook platform designed for competitive performance in fast-paced betting markets with live odds, sportsbook API integration, and advanced betting management tools.',
-    items: [
-      'Wide range of sports, events, and betting markets',
-      'Sports API integration system',
-      'Live and pre-match odds management',
-      'In-play visualization and statistics',
-      'Risk and margin management tools',
-      'Integration with leading sports data providers'
-    ],
-    link: '/turnkey-sportsbook-solutions'
+    title: 'Game Aggregation',
+    description: 'A unified integration layer for connecting multiple game providers and casino content through a scalable API infrastructure.',
+    items: [],
   },
   {
     id: 4,
-    title: 'Back Office & Admin Panel',
-    description: 'A powerful back office system to manage users, payments, bonuses, affiliates, and reporting from a single dashboard.',
-    items: [
-      'Deposit and withdrawal management',
-      'User account management and controls',
-      'Bonus and promotion system',
-      'Affiliate management system',
-      'Real-time user monitoring',
-      'Advanced reporting and analytics'
-    ],
+    title: 'PAM & Wallet',
+    description: 'Core player account, balance, transaction and wallet infrastructure designed to work across the iGaming ecosystem.',
+    items: [],
   },
   {
     id: 5,
-    title: 'Game Aggregator System',
-    description: 'A complete game aggregation platform with access to thousands of games and seamless provider integrations.',
-    items: [
-      '20,000+ games integration',
-      'Detailed reporting and analytics',
-      'Integration with trusted providers',
-      'Multi-currency and multi-language support',
-      'Global GEO coverage',
-      'Seamless API integration'
-    ],
+    title: 'Back Office',
+    description: 'Centralized operational control for players, games, payments, reporting, permissions and platform management.',
+    items: [],
+  },
+  {
+    id: 6,
+    title: 'Payments & Integrations',
+    description: 'Flexible payment and third-party integration infrastructure designed for multi-market iGaming operations.',
+    items: [],
   },
 ];
 
@@ -191,10 +160,11 @@ export default function FeaturesSection() {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              A solid base for your business
+              One Ecosystem. Every Layer of iGaming.
             </h2>
-            <p className="text-base sm:text-base md:text-lg text-[#a5a5a5] max-w-2xl mx-auto">
-              Modular and comprehensive, time-tested casino, sportsbook, and iGaming solutions tailored to your business vision            </p>
+            <p className="text-base sm:text-base md:text-lg text-[#a5a5a5] max-w-3xl mx-auto mt-3">
+              From casino and sportsbook to game aggregation, player management and back-office technology, Kvaornux brings the core infrastructure of an iGaming operation into one scalable ecosystem.
+            </p>
           </div>
 
           {/* LAPTOP VIEW */}
@@ -235,22 +205,24 @@ export default function FeaturesSection() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-x-6 gap-y-4">
-                {current.items.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3"
-                    ref={(el) => { elementsRef.current[3 + index] = el; }}
-                    data-anim="from-bottom"
-                    data-anim-delay={String(index + 1)}
-                  >
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00ebaa" strokeWidth="2.5" className="flex-shrink-0">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span className="text-base lg:text-lg xl:text-xl text-gray-200 font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
+              {current.items && current.items.length > 0 && (
+                <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+                  {current.items.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-3"
+                      ref={(el) => { elementsRef.current[3 + index] = el; }}
+                      data-anim="from-bottom"
+                      data-anim-delay={String(index + 1)}
+                    >
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00ebaa" strokeWidth="2.5" className="flex-shrink-0">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span className="text-base lg:text-lg xl:text-xl text-gray-200 font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {/* Arrows */}
               <div className="flex items-center gap-3 mt-8">
@@ -356,22 +328,24 @@ export default function FeaturesSection() {
             >
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">{current.title}</h3>
               <p className="text-sm sm:text-base md:text-lg text-[#a5a5a5] mb-6 leading-relaxed">{current.description}</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {current.items.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3"
-                    ref={(el) => { elementsRef.current[12 + index] = el; }}
-                    data-anim="from-bottom"
-                    data-anim-delay={String(index + 2)}
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ebaa" strokeWidth="2.5" className="flex-shrink-0 mt-0.5">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                    <span className="text-sm sm:text-base text-gray-200 leading-relaxed">{item}</span>
-                  </div>
-                ))}
-              </div>
+              {current.items && current.items.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {current.items.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3"
+                      ref={(el) => { elementsRef.current[12 + index] = el; }}
+                      data-anim="from-bottom"
+                      data-anim-delay={String(index + 2)}
+                    >
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ebaa" strokeWidth="2.5" className="flex-shrink-0 mt-0.5">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span className="text-sm sm:text-base text-gray-200 leading-relaxed">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Controls */}

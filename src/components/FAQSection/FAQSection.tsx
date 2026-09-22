@@ -3,46 +3,45 @@
 import { useState, useRef, useEffect } from 'react';
 
 interface FAQItemProps {
+  id: string;
   question: string;
   answer: string;
   isOpen: boolean;
   onToggle: () => void;
 }
 
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onToggle }) => {
+const FAQItem: React.FC<FAQItemProps> = ({ id, question, answer, isOpen, onToggle }) => {
+  const buttonId = `faq-button-${id}`;
+  const panelId = `faq-answer-${id}`;
+
   return (
-    <div
-      className="border-b border-white/10 py-8 transition-all duration-300 cursor-pointer"
-      onClick={onToggle}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          onToggle();
-        }
-      }}
-    >
-      <div className="flex items-start justify-between gap-6">
+    <div className="border-b border-white/10 py-8 transition-all duration-300">
+      <button
+        id={buttonId}
+        type="button"
+        className="w-full flex items-start justify-between gap-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00ebaa] rounded-sm group cursor-pointer"
+        onClick={onToggle}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+      >
         <h3 className="flex-1 text-lg sm:text-lg md:text-xl font-medium text-white">
           {question}
         </h3>
-        <button
-          className="flex-shrink-0 text-3xl text-white/70 transition-all duration-300 hover:text-white"
+        <span
+          className="flex-shrink-0 text-3xl text-white/70 transition-all duration-300 group-hover:text-white select-none"
           style={{
             transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
           }}
-          aria-label={isOpen ? 'Close answer' : 'Open answer'}
-          onClick={(e) => {
-            e.stopPropagation();
-            onToggle();
-          }}
-          type="button"
+          aria-hidden="true"
         >
           +
-        </button>
-      </div>
+        </span>
+      </button>
 
       <div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
         className="overflow-hidden transition-all duration-300"
         style={{
           maxHeight: isOpen ? '400px' : '0px',
@@ -74,31 +73,46 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: customFaqs }) => {
 
   const defaultFaqs: FAQ[] = [
     {
-      question: 'What are the advantages of working with Kvaornux?',
+      question: 'What iGaming technology does Kvaornux provide?',
       answer:
-        'Kvaornux is powered by a team with strong experience in building and scaling iGaming development solutions for both B2B and B2C businesses. We deliver practical strategies and proven systems that help you grow faster and operate efficiently.',
+        'Kvaornux provides technology for casino and sportsbook operations, including casino platforms, sportsbook integrations, game aggregation, player and wallet systems, back-office tools, payment integrations and custom development.',
     },
     {
-      question: 'What products and services does Kvaornux offer?',
+      question: 'Can Kvaornux provide both casino and sportsbook technology?',
       answer:
-        'Kvaornux offers complete iGaming development solutions for starting a new project or upgrading an existing one. Our services include White Label development, Turnkey development, iGaming systems, turnkey sportsbook solutions, Affiliate systems, CRM tools, marketing automation, and game integration.',
-    },
-    {
-      question: 'I am not sure which solution is right for me',
-      answer:
-        'No problem! You can connect with our team for a free consultation. Just click on the Contact Us button, share your requirements, and our team will guide you with the best solution based on your business goals.',
+        'Yes. Casino and sportsbook can be delivered as part of the same platform or integrated separately, depending on the operator’s existing setup and requirements.',
     },
     {
       question:
-        'How long does it take to launch or integrate a development solution?',
+        'What is the difference between a turnkey platform and a white label solution?',
       answer:
-        'The timeline depends on your requirements and customization level. Basic setups can be launched quickly, while advanced solutions may take more time. After understanding your needs, we provide a clear and accurate timeline.',
+        'A turnkey platform gives you a complete technology setup that can be configured around your business and operating model. A white label solution is designed for a faster launch using an existing platform setup, with your own brand and selected integrations.',
+    },
+    {
+      question: 'How does Kvaornux game aggregation work?',
+      answer:
+        'Our game aggregation setup connects multiple game providers through a unified integration layer. This gives operators access to a broad game portfolio without having to build and maintain a separate integration for every provider.',
     },
     {
       question:
-        'Do you provide support after project launch?',
+        'Can you integrate third-party game providers, payment systems and APIs?',
       answer:
-        'Yes, Kvaornux provides full support even after launch. Our team assists you with technical issues, updates, and guidance whenever needed, ensuring smooth operation of your solution.',
+        'Yes. We can integrate third-party game providers, payment services and other APIs based on the technical requirements of the project and the availability of documentation and access from the provider.',
+    },
+    {
+      question: 'Can the platform support multiple currencies and markets?',
+      answer:
+        'Yes. Multi-currency and market-specific configurations can be implemented based on the project requirements, including payment methods, language support and other regional settings.',
+    },
+    {
+      question: 'How long does it take to launch an iGaming platform?',
+      answer:
+        'The timeline depends on the scope of the project, required integrations and level of customization. Once the requirements are defined, we provide a project plan with the expected development, integration, testing and launch stages.',
+    },
+    {
+      question: 'Do you provide technical support after launch?',
+      answer:
+        'Yes. We provide post-launch technical support for platform maintenance, integrations, issue resolution and agreed updates. The exact support scope is defined for each project.',
     },
   ];
 
@@ -234,6 +248,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: customFaqs }) => {
               data-anim-delay={String((index % 5) + 1)}
             >
               <FAQItem
+                id={String(index + 1)}
                 question={faq.question}
                 answer={faq.answer}
                 isOpen={openIndex === index}
