@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -7,7 +6,7 @@
   --accent-mint: #00ebaa;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-mint: var(--accent-mint);
