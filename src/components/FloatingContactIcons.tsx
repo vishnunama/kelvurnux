@@ -48,7 +48,7 @@ export default function FloatingContactIcons() {
         {/* WhatsApp Icon */}
         <div className="flex items-center gap-3 group flex-row-reverse">
           <a
-            href="https://wa.me/918696548657"
+            href="https://wa.me/917240328393"
             target="_blank"
             rel="noopener noreferrer"
             className="relative w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group/whatsapp flex-shrink-0"

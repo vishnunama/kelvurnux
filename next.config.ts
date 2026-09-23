@@ -4,11 +4,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/crypto-igaming-Solutions",
-        destination: "/crypto-igaming-solutions",
-        permanent: true,
-      },
-      {
         source: "/igaming-api-integration",
         destination: "/casino-aggregator-api-solution",
         permanent: true,

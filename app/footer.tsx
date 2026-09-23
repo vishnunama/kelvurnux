@@ -220,7 +220,7 @@ export default function Footer() {
                 <TelegramIcon />
               </a>
               <a
-                href="https://wa.me/918696548657"
+                href="https://wa.me/917240328393"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contact Kvaornux on WhatsApp"

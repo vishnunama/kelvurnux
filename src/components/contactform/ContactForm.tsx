@@ -495,7 +495,7 @@ export default function ContactForm() {
                   <p>
                     <span className="text-[#00ebaa]">*</span> Your message will be processed in
                     accordance with our{' '}
-                    <a href="/privacy-policy/" className="text-[#00ebaa] hover:underline">
+                    <a href="/privacy-policy" className="text-[#00ebaa] hover:underline">
                       Privacy Policy
                     </a>
                   </p>
