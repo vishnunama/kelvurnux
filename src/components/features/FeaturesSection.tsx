@@ -8,37 +8,79 @@ const features = [
     id: 1,
     title: 'Casino Platform',
     description: 'Casino infrastructure for managing content, player experiences, promotions and day-to-day gaming operations.',
-    items: [],
+    items: [
+      'Game management & lobby control',
+      'Real-time player bonus & promotions',
+      'Multi-currency & crypto support',
+      'API & third-party provider integration',
+      'Player retention & engagement tools',
+      'Custom front-end branding & UI'
+    ],
   },
   {
     id: 2,
     title: 'Sportsbook',
     description: 'Pre-match and live betting technology with flexible integrations, operational controls and risk-management capabilities.',
-    items: [],
+    items: [
+      'Pre-match and live in-play betting',
+      'Real-time odds & sports data feeds',
+      'Automated risk & margin controls',
+      'Wide sports & esports coverage',
+      'Flexible bet builder & cashout',
+      'Comprehensive trading dashboards'
+    ],
   },
   {
     id: 3,
     title: 'Game Aggregation',
     description: 'A unified integration layer for connecting multiple game providers and casino content through a scalable API infrastructure.',
-    items: [],
+    items: [
+      'Unified API for 100+ providers',
+      '20,000+ casino & live dealer games',
+      'Single back-office reporting',
+      'Instant content updates & deployment',
+      'Multi-currency & wallet support',
+      'High-throughput scalable architecture'
+    ],
   },
   {
     id: 4,
     title: 'PAM & Wallet',
     description: 'Core player account, balance, transaction and wallet infrastructure designed to work across the iGaming ecosystem.',
-    items: [],
+    items: [
+      'Unified player account management',
+      'Real-time multi-currency & crypto wallets',
+      'Automated KYC & AML verification',
+      'Player transaction history & ledger',
+      'Seamless bonus & balance sync',
+      'Secure data encryption & compliance'
+    ],
   },
   {
     id: 5,
     title: 'Back Office',
     description: 'Centralized operational control for players, games, payments, reporting, permissions and platform management.',
-    items: [],
+    items: [
+      'Centralized control dashboard',
+      'Real-time player & payment analytics',
+      'Granular role-based permissions',
+      'Automated reporting & statements',
+      'Affiliate & agent management',
+      'Customizable promotional tools'
+    ],
   },
   {
     id: 6,
     title: 'Payments & Integrations',
     description: 'Flexible payment and third-party integration infrastructure designed for multi-market iGaming operations.',
-    items: [],
+    items: [
+      'Multi-channel payment gateway support',
+      'Crypto, fiat, & localized payment methods',
+      'Instant deposit & withdrawal processing',
+      'Fraud detection & risk monitoring',
+      'Flexible third-party API framework',
+      '24/7 technical monitoring & support'
+    ],
   },
 ];
 
