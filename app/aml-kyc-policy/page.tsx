@@ -11,11 +11,31 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    title: 'AML & KYC Policy | Kvaornux',
+    description:
+      'Read the Kvaornux AML & KYC Policy to understand our technical capabilities for Anti-Money Laundering and Know Your Customer compliance.',
+    url: 'https://kvaornux.com/aml-kyc-policy',
+    siteName: 'Kvaornux',
+    type: 'website',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AML & KYC Policy | Kvaornux',
+    description:
+      'Read the Kvaornux AML & KYC Policy to understand our technical capabilities for Anti-Money Laundering and Know Your Customer compliance.',
+    images: ['https://kvaornux.com/assets/og-image.png'],
+  },
 };
 
 export default function AmlKycPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#0b0b0f] text-white pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-[#0b0b0f] text-white pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Spacer to push page content safely below fixed site header */}
       <div className="h-32 sm:h-44 md:h-52 w-full pointer-events-none" aria-hidden="true" />
 
@@ -234,6 +254,6 @@ export default function AmlKycPolicyPage() {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

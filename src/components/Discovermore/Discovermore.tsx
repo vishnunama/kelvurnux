@@ -10,6 +10,7 @@ import {
   BarChart3, 
   Zap
 } from 'lucide-react';
+import Link from 'next/link';
 import { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -428,7 +429,7 @@ export default function DiscoverMore() {
             {discoverItems.map((item, index) => {
               const IconComponent = item.icon;
               return (
-                <a
+                <Link
                   key={item.id}
                   href={item.link}
                   className="more-item"
@@ -441,7 +442,7 @@ export default function DiscoverMore() {
                   </div>
                   <div className="more-item-title">{item.title}</div>
                   <div className="more-item-text">{item.description}</div>
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -464,7 +465,7 @@ export default function DiscoverMore() {
                   const IconComponent = item.icon;
                   return (
                     <SwiperSlide key={item.id} style={{ width: 'auto', overflow: 'visible' }}>
-                      <a
+                      <Link
                         href={item.link}
                         className="more-item rounded-2xl py-5 px-6 relative flex flex-col gap-4 min-h-[280px] overflow-visible block"
                         style={{ width: 'calc(100vw - 5rem)', minWidth: 'calc(100vw - 5rem)' }}
@@ -474,7 +475,7 @@ export default function DiscoverMore() {
                         </div>
                         <div className="more-item-title">{item.title}</div>
                         <div className="more-item-text">{item.description}</div>
-                      </a>
+                      </Link>
                     </SwiperSlide>
                   );
                 })}

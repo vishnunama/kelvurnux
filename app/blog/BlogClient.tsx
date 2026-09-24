@@ -113,7 +113,7 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#0b0b0f] text-white">
+    <div className="min-h-screen bg-[#0b0b0f] text-white">
       <style>{`
         @keyframes gradient {
           0%, 100% { background-position: 0% 50%; }
@@ -688,6 +688,6 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

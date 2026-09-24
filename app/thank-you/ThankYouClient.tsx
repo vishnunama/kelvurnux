@@ -106,9 +106,9 @@ export default function ThankYouClient() {
 
                 {/* Title */}
                 <div className="form-response-title mb-3">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                  <h1 className="text-2xl sm:text-3xl font-bold text-white">
                     Success!
-                  </h3>
+                  </h1>
                 </div>
 
                 {/* Message */}

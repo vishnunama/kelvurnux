@@ -68,7 +68,7 @@ export default function AboutUsHero() {
                 width={188}
                 height={195}
                 src="/assets/about-us-el-1.webp"
-                alt="Decorative element"
+                alt=""
                 className="w-full h-auto"
               />
             </div>
@@ -91,7 +91,7 @@ export default function AboutUsHero() {
                 width={165}
                 height={156}
                 src="/assets/about-us-el-2.webp"
-                alt="Decorative element"
+                alt=""
                 className="w-full h-auto"
               />
             </div>
@@ -114,7 +114,7 @@ export default function AboutUsHero() {
                 width={347}
                 height={193}
                 src="/assets/about-us-el-3.webp"
-                alt="Decorative element"
+                alt=""
                 className="w-full h-auto"
               />
             </div>
@@ -137,7 +137,7 @@ export default function AboutUsHero() {
                 width={262}
                 height={168}
                 src="/assets/about-us-el-4.webp"
-                alt="Decorative element"
+                alt=""
                 className="w-full h-auto"
               />
             </div>
@@ -179,7 +179,7 @@ export default function AboutUsHero() {
               transition: 'opacity 800ms ease-out 300ms',
             }}
           >
-            Our brand essence
+            Technology Built for iGaming
           </h1>
 
           {/* Description Text */}

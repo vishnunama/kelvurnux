@@ -11,11 +11,31 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    title: 'Privacy Policy | Kvaornux',
+    description:
+      'Read the Kvaornux Privacy Policy to understand how information submitted through our website is collected, used and protected.',
+    url: 'https://kvaornux.com/privacy-policy',
+    siteName: 'Kvaornux',
+    type: 'website',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Kvaornux',
+    description:
+      'Read the Kvaornux Privacy Policy to understand how information submitted through our website is collected, used and protected.',
+    images: ['https://kvaornux.com/assets/og-image.png'],
+  },
 };
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#0b0b0f] text-white pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-[#0b0b0f] text-white pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Spacer to push page content safely below fixed site header */}
       <div className="h-32 sm:h-44 md:h-52 w-full pointer-events-none" aria-hidden="true" />
       {/* Radial Background Glow Effect */}
@@ -29,7 +49,7 @@ export default function PrivacyPolicyPage() {
 
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Simple Clean Header Section */}
-        {/* <header className="mb-12 border-b border-gray-800 pb-8">
+        <header className="mb-12 border-b border-gray-800 pb-8">
           <p className="text-[#00ebaa] font-medium text-xs sm:text-sm tracking-wider uppercase mb-2">
             Last updated: September 2026
           </p>
@@ -39,7 +59,7 @@ export default function PrivacyPolicyPage() {
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
             This Privacy Policy explains how Kvaornux collects, uses and handles information when you visit our website, contact our team or submit information through our forms.
           </p>
-        </header> */}
+        </header>
 
         {/* Content Sections */}
         <div className="space-y-10 text-gray-300 leading-relaxed font-normal">
@@ -219,6 +239,6 @@ export default function PrivacyPolicyPage() {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

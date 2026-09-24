@@ -33,6 +33,7 @@ export default function Page() {
     headline: 'How to Start a Crypto Casino Platform Step by Step in 2026',
     description:
       'Learn how to start a crypto casino platform step by step including crypto casino development, software, APIs, cost, and launch strategy.',
+    image: 'https://kvaornux.com/assets/og-image.png',
     url: 'https://kvaornux.com/blog/how-to-start-crypto-casino-platform-step-by-step',
     mainEntityOfPage: {
       '@type': 'WebPage',

@@ -12,11 +12,31 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    title: 'Terms & Conditions | Kvaornux',
+    description:
+      'Read the Kvaornux Terms & Conditions governing your use of our website, software development services, and technology solutions.',
+    url: 'https://kvaornux.com/terms-and-conditions',
+    siteName: 'Kvaornux',
+    type: 'website',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms & Conditions | Kvaornux',
+    description:
+      'Read the Kvaornux Terms & Conditions governing your use of our website, software development services, and technology solutions.',
+    images: ['https://kvaornux.com/assets/og-image.png'],
+  },
 };
 
 export default function TermsAndConditionsPage() {
   return (
-    <main className="min-h-screen bg-[#0b0b0f] text-white pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-[#0b0b0f] text-white pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Spacer to push page content safely below fixed site header */}
       <div className="h-32 sm:h-44 md:h-52 w-full pointer-events-none" aria-hidden="true" />
 
@@ -331,6 +351,6 @@ export default function TermsAndConditionsPage() {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

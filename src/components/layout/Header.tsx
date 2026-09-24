@@ -622,7 +622,7 @@ export default function Header() {
                   {/* SVG Image arrow */}
                   <img
                     src="/assets/polygon.svg"
-                    alt="Arrow"
+                    alt=""
                     className="absolute -top-[12px] left-[48%] transform -translate-x-1/2 w-[3rem] h-4 z-10"
                   />
 

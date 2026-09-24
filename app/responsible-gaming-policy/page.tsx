@@ -11,11 +11,31 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    title: 'Responsible Gaming Policy | Kvaornux',
+    description:
+      'Read the Kvaornux Responsible Gaming Policy to learn about our approach, operator responsibilities, and responsible gaming technology features.',
+    url: 'https://kvaornux.com/responsible-gaming-policy',
+    siteName: 'Kvaornux',
+    type: 'website',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Responsible Gaming Policy | Kvaornux',
+    description:
+      'Read the Kvaornux Responsible Gaming Policy to learn about our approach, operator responsibilities, and responsible gaming technology features.',
+    images: ['https://kvaornux.com/assets/og-image.png'],
+  },
 };
 
 export default function ResponsibleGamingPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#0b0b0f] text-white pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-[#0b0b0f] text-white pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Spacer to push page content safely below fixed site header */}
       <div className="h-32 sm:h-44 md:h-52 w-full pointer-events-none" aria-hidden="true" />
 
@@ -202,6 +222,6 @@ export default function ResponsibleGamingPolicyPage() {
           </section>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

@@ -333,7 +333,7 @@ export default function HeroSection() {
           sizes="100vw"
           fetchPriority="high"
           decoding="async"
-          alt="Custom iGaming Solution Solutions"
+          alt="Custom iGaming Solution"
           className="hero-img-element"
         />
       </div>

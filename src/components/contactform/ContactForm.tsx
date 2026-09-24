@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnkew4hScJ4Hy0ooHtPM5lezcts7e2y_ooMGUqCcGyDF1IAyQMunzOZNBdW97neag9/exec';
@@ -495,9 +496,9 @@ export default function ContactForm() {
                   <p>
                     <span className="text-[#00ebaa]">*</span> Your message will be processed in
                     accordance with our{' '}
-                    <a href="/privacy-policy" className="text-[#00ebaa] hover:underline">
+                    <Link href="/privacy-policy" className="text-[#00ebaa] hover:underline">
                       Privacy Policy
-                    </a>
+                    </Link>
                   </p>
                 </div>
 

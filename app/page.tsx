@@ -39,7 +39,7 @@ export default function Home() {
   };
 
   return (
-    <main className="bg-[#0b0b0f]">
+    <div className="bg-[#0b0b0f]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -58,6 +58,6 @@ export default function Home() {
       <section id="contact-form-section">
         <ContactForm />
       </section>
-    </main>
+    </div>
   );
 }

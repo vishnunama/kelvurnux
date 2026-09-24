@@ -272,7 +272,7 @@ export default function Footer() {
               <div>
                 <Image
                   src="/assets/support-logo-2.webp"
-                  alt="Support Logo 2"
+                  alt="Problem Gambling Support"
                   width={99}
                   height={50}
                   sizes="(max-width: 768px) 70px, 99px"
@@ -283,7 +283,7 @@ export default function Footer() {
               <div>
                 <Image
                   src="/assets/support-logo-3.webp"
-                  alt="Support Logo 3"
+                  alt="BeGambleAware.org"
                   width={122}
                   height={49}
                   sizes="(max-width: 768px) 80px, 122px"
