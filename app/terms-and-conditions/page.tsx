@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions | Kvaornux',
+  title: 'Terms & Conditions',
   description:
     'Read the Kvaornux Terms & Conditions governing your use of our website, software development services, and technology solutions.',
   alternates: {

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Cookie Policy | Kvaornux',
+  title: 'Cookie Policy',
   description:
     'Read the Kvaornux Cookie Policy to understand how we use cookies and similar technologies on our website.',
   alternates: {

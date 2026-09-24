@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AML & KYC Policy | Kvaornux',
+  title: 'AML & KYC Policy',
   description:
     'Read the Kvaornux AML & KYC Policy to understand our technical capabilities for Anti-Money Laundering and Know Your Customer compliance.',
   alternates: {

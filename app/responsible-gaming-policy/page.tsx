@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Responsible Gaming Policy | Kvaornux',
+  title: 'Responsible Gaming Policy',
   description:
     'Read the Kvaornux Responsible Gaming Policy to learn about our approach, operator responsibilities, and responsible gaming technology features.',
   alternates: {
