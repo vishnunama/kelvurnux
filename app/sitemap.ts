@@ -43,6 +43,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://kvaornux.com/blog/what-is-casino-game-aggregator-api",
+      priority: 0.8,
+    },
+    {
+      url: "https://kvaornux.com/blog/game-aggregator-vs-direct-provider-integration",
+      priority: 0.8,
+    },
+    {
+      url: "https://kvaornux.com/blog/how-casino-game-api-integration-works",
+      priority: 0.8,
+    },
+    {
       url: "https://kvaornux.com/privacy-policy",
       priority: 0.5,
     },

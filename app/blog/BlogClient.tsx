@@ -5,12 +5,43 @@ import Link from "next/link";
 
 const blogs = [
   {
+    title: "What Is a Casino Game Aggregator API?",
+    description:
+      "Learn how casino game aggregation connects an iGaming platform with multiple game providers through a single technical integration.",
+    href: "/blog/what-is-casino-game-aggregator-api",
+    tag: "Game Aggregation",
+    readTime: "12 min read",
+    date: "25.09.2026",
+    image: "/assets/features/casino-game-providers-api-aggregator.webp",
+  },
+  {
+    title: "Game Aggregator vs Direct Game Provider Integration",
+    description:
+      "Compare game aggregation and direct provider integrations across architecture, maintenance, commercial control and platform operations.",
+    href: "/blog/game-aggregator-vs-direct-provider-integration",
+    tag: "Game Aggregation",
+    readTime: "14 min read",
+    date: "25.09.2026",
+    image: "/assets/features/online-casino-game-aggregation-10000-plus-slots.webp",
+  },
+  {
+    title: "How Casino Game API Integration Works",
+    description:
+      "Understand the technical flow behind casino game APIs, including authentication, game launch, wallet communication, bets, wins, refunds and testing.",
+    href: "/blog/how-casino-game-api-integration-works",
+    tag: "API Integration",
+    readTime: "15 min read",
+    date: "25.09.2026",
+    image: "/assets/features/turnkey-igaming-platform-infrastructure-services.webp",
+  },
+  {
     title: "How to Start Crypto Casino Platform Step by Step (2026 Guide + Cost)",
     description:
       "Complete beginner guide to start your crypto casino platform with games, payments, admin panel and launch strategy.",
     href: "/blog/how-to-start-crypto-casino-platform-step-by-step",
     tag: "Crypto Casino",
     readTime: "15 min read",
+    date: "04.05.2026",
     image: "/assets/features/comprehensive-casino-platform-features-roulette-dice.webp",
   },
 ];
@@ -53,8 +84,6 @@ const resetAllAnimations = () => {
 };
 
 export default function BlogPage() {
-  const [searchQuery, setSearchQuery] = React.useState('');
-
   // ✅ ON MOUNT - Initialize animations
   React.useEffect(() => {
     // Immediate call
@@ -268,7 +297,7 @@ export default function BlogPage() {
 
         /* POSTS SECTION STYLES */
         .posts-container {
-          max-width: 100%;
+          max-width: 1050px;
           margin: 0 auto;
           padding: 0 4rem;
           position: relative;
@@ -283,23 +312,34 @@ export default function BlogPage() {
           background-clip: text;
         }
 
-        .posts-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 3rem 2rem;
+        .posts-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
         }
 
         .post-item {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          align-items: center;
+          gap: 2.5rem;
+          padding: 2.2rem 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.12);
+          transition: all 0.3s ease-in-out;
+          position: relative;
+        }
+
+        .post-item:last-child {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .post-img-wrapper {
           position: relative;
+          width: 340px;
+          height: 195px;
           border-radius: 0.8rem;
           overflow: hidden;
-          margin-bottom: 1rem;
-          aspect-ratio: 505 / 253;
+          flex-shrink: 0;
           cursor: pointer;
           transition: all 0.3s ease-in-out;
         }
@@ -309,151 +349,177 @@ export default function BlogPage() {
         }
 
         .post-img-wrapper img {
-          position: absolute;
           width: 100%;
           height: 100%;
           object-fit: cover;
-          top: 0;
-          left: 0;
-          transition: all 0.3s ease-in-out;
+          transition: all 0.4s ease-in-out;
         }
 
         .post-item:hover .post-img-wrapper img {
-          transform: scale(1.05);
+          transform: scale(1.06);
         }
 
         .post-content {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          flex-grow: 1;
+          flex: 1;
+          min-height: 180px;
         }
 
-        .post-date {
-          color: #759296;
-          font-size: 0.95rem;
-          font-weight: 400;
-          line-height: 1.5;
-          margin-bottom: 0.6rem;
-          user-select: none;
+        .post-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 1.5rem;
+        }
+
+        .post-title-link {
+          text-decoration: none;
+          flex: 1;
         }
 
         .post-title {
-          margin-bottom: 0.6rem;
+          color: #fff;
+          font-size: 1.4rem;
+          font-weight: 600;
+          line-height: 1.35;
+          margin-bottom: 0.75rem;
+          transition: color 0.3s ease-in-out;
+        }
+
+        .post-item:hover .post-title {
+          color: #00ebaa;
+        }
+
+        .post-description {
+          color: #a5a5a5;
+          font-size: 0.98rem;
+          line-height: 1.55;
+          margin-bottom: 0.5rem;
           display: -webkit-box;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
-          color: #fff;
-          transition: all 0.3s ease-in-out;
-          text-decoration: none;
-          font-size: 1.3rem;
-          font-weight: 500;
-          line-height: 1.3;
-          cursor: pointer;
         }
 
-        .post-item:hover .post-title {
-          color: #8EE8FF;
+        .post-arrow-icon {
+          width: 1.5rem;
+          height: 1.5rem;
+          color: rgba(255, 255, 255, 0.4);
+          flex-shrink: 0;
+          transition: all 0.3s ease;
+          margin-top: 0.2rem;
+        }
+
+        .post-item:hover .post-arrow-icon {
+          color: #00ebaa;
+          transform: translate(3px, -3px);
+        }
+
+        .post-bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: auto;
+          padding-top: 0.75rem;
         }
 
         .post-tags {
           display: flex;
           align-items: center;
-          flex-wrap: wrap;
-          margin: -0.2rem -0.2rem 0.4rem;
-          margin-bottom: 0.8rem;
+          gap: 0.6rem;
         }
 
         .post-tag {
           border-radius: 0.8rem;
-          background: rgba(117, 146, 150, 0.3);
+          background: rgba(0, 235, 170, 0.12);
+          border: 1px solid rgba(0, 235, 170, 0.25);
+          color: #00ebaa;
+          font-size: 0.85rem;
+          font-weight: 500;
+          padding: 0.25rem 0.75rem;
+        }
+
+        .post-read-time-badge {
+          color: rgba(255, 255, 255, 0.5);
+          font-size: 0.85rem;
+        }
+
+        .post-date-meta {
+          display: flex;
+          align-items: center;
+          gap: 1.2rem;
           color: #759296;
-          font-size: 0.9rem;
-          font-weight: 400;
-          line-height: 1.5;
-          padding: 0 0.4rem;
-          min-height: 2.1rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0.2rem;
-          width: max-content;
+          font-size: 0.88rem;
+          font-weight: 500;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
         }
 
-        .post-meta {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding-top: 0.8rem;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .hero-decor {
+          position: absolute;
+          pointer-events: none;
+          z-index: 1;
         }
 
-        .post-author {
-          display: flex;
-          align-items: center;
-          gap: 0.8rem;
+        .hero-decor-left {
+          left: 4%;
+          bottom: 1rem;
+          width: 14rem;
+          max-width: 22vw;
         }
 
-        .post-author-img {
-          width: 2.4rem;
-          height: 2.4rem;
-          border-radius: 50%;
-          overflow: hidden;
-          flex-shrink: 0;
+        .hero-decor-right {
+          right: 4%;
+          bottom: 1.5rem;
+          width: 12rem;
+          max-width: 18vw;
         }
 
-        .post-author-img img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .post-author-name {
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 0.95rem;
-          font-weight: 400;
-          line-height: 1.5;
-        }
-
-        .post-read-time {
-          display: flex;
-          align-items: center;
-          gap: 0.6rem;
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 0.95rem;
-          font-weight: 400;
-          line-height: 1.5;
-        }
-
-        .post-read-icon {
-          width: 1.8rem;
-          height: 1.8rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+        @media (max-width: 1024px) {
+          .hero-decor {
+            display: none;
+          }
         }
 
         /* RESPONSIVE */
-        @media (max-width: 1200px) {
+        @media (max-width: 900px) {
           .posts-container {
-            max-width: 100%;
-            padding: 0 3rem;
+            padding: 0 2.5rem;
           }
-          .posts-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 3rem 2rem;
+          .post-item {
+            gap: 1.8rem;
+          }
+          .post-img-wrapper {
+            width: 270px;
+            height: 165px;
+          }
+          .post-title {
+            font-size: 1.25rem;
           }
         }
 
-        @media (max-width: 768px) {
-          .posts-grid {
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-          }
+        @media (max-width: 680px) {
           .posts-container {
-            max-width: 100%;
-            padding: 0 1.6rem;
+            padding: 0 1.2rem;
+          }
+          .post-item {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.2rem;
+            padding: 1.8rem 0;
+          }
+          .post-img-wrapper {
+            width: 100%;
+            height: 210px;
+          }
+          .post-content {
+            min-height: auto;
+          }
+          .post-bottom {
+            flex-wrap: wrap;
+            gap: 0.8rem;
           }
         }
       `}</style>
@@ -462,12 +528,29 @@ export default function BlogPage() {
       <section
         className="relative overflow-hidden"
         style={{
-          padding: 'clamp(6rem, 12.5rem, 12.5rem) 0 4rem',
-          background: 'radial-gradient(167.61% 100% at 50% 100%, rgba(0, 235, 170, 0.22) 0, rgba(11, 11, 15, 0) 37.5%), radial-gradient(129.09% 100% at 50% 100%, rgba(0, 235, 170, 0.10) 0, rgba(11, 11, 15, 0) 71.15%), radial-gradient(64.91% 100% at 50% 100%, rgba(0, 235, 170, 0.04) 0, rgba(11, 11, 15, 0) 88.24%), #0b0b0f',
+          padding: 'clamp(5.5rem, 7.5rem, 7.5rem) 0 2rem',
+          background: 'radial-gradient(120% 100% at 50% 40%, rgba(0, 235, 170, 0.20) 0%, rgba(0, 235, 170, 0.06) 60%, rgba(11, 11, 15, 0) 100%), #0b0b0f',
         }}
       >
-
-
+        {/* Decor Images (Left & Right Cubes) */}
+        <div className="hero-decor hero-decor-left">
+          <img
+            src="/assets/about-us-el-1.webp"
+            alt=""
+            width={188}
+            height={195}
+            className="w-full h-auto"
+          />
+        </div>
+        <div className="hero-decor hero-decor-right">
+          <img
+            src="/assets/about-us-el-2.webp"
+            alt=""
+            width={165}
+            height={156}
+            className="w-full h-auto"
+          />
+        </div>
 
         {/* Content Container */}
         <div 
@@ -479,24 +562,23 @@ export default function BlogPage() {
             width: '100%',
           }}
         >
-          <div style={{ marginBottom: '4rem' }}>
-        
+          <div style={{ marginBottom: '2rem' }}>
             {/* Title */}
             <h1 
               data-anim="from-bottom"
               data-anim-delay="1"
               className="gradient-text"
               style={{
-                fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
+                fontSize: 'clamp(2.2rem, 4vw, 3.8rem)',
                 fontStyle: 'normal',
-                fontWeight: 600,
-                lineHeight: 1.3,
-                letterSpacing: '-0.052rem',
-                margin: '0 auto 2rem',
+                fontWeight: 700,
+                lineHeight: 1.25,
+                letterSpacing: '-0.03rem',
+                margin: '0 auto 1.2rem',
                 textAlign: 'center',
               }}
             >
-              Casino Software, White Label & iGaming Guides
+              Kvaornux iGaming Blog
             </h1>
 
             {/* Subtitle */}
@@ -505,83 +587,28 @@ export default function BlogPage() {
               data-anim-delay="2"
               style={{
                 color: '#a5a5a5',
-                maxWidth: 'clamp(90%, 54%, 100%)',
-                margin: '0 auto 4rem',
-                fontSize: 'clamp(0.95rem, 2vw, 1.125rem)',
+                maxWidth: '750px',
+                margin: '0 auto 2rem',
+                fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)',
                 fontStyle: 'normal',
                 fontWeight: 400,
-                lineHeight: 1.44,
+                lineHeight: 1.55,
                 textAlign: 'center',
                 position: 'relative',
                 zIndex: 2,
               }}
             >
-              Learn how to build, launch and scale casino platforms including white label, turnkey, sportsbook, crypto and API solutions.
+              Explore practical perspectives on the technology and market shifts shaping the industry. Our iGaming blog provides a behind-the-scenes look at the operations and trends currently moving the sector.
             </p>
           </div>
-
-          {/* Search Bar */}
-          <div 
-            style={{
-              maxWidth: '45rem',
-              margin: '0 auto',
-            }}
-          >
-            <div className="search-field">
-              <svg 
-                className="search-icon"
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24" 
-                fill="none"
-              >
-                <path 
-                  d="M18.031 16.617L22.314 20.899L20.899 22.314L16.617 18.031C15.0237 19.3082 13.042 20.0029 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20.0029 13.042 19.3082 15.0237 18.031 16.617ZM16.025 15.875C17.2938 14.5697 18.0025 12.8204 18 11C18 7.133 14.867 4 11 4C7.133 4 4 7.133 4 11C4 14.867 7.133 18 11 18C12.8204 18.0025 14.5697 17.2938 15.875 16.025L16.025 15.875Z" 
-                  fill="#8EE8FF"
-                />
-              </svg>
-              <input
-                type="text"
-                className="search-input"
-                placeholder="Search in News..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-              {searchQuery && (
-                <button 
-                  className="search-clear"
-                  aria-label="Clear search"
-                  onClick={() => setSearchQuery('')}
-                >
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="24" 
-                    height="24" 
-                    viewBox="0 0 24 24"
-                  >
-                    <mask id="mask0_9509_6733" style={{maskType: 'alpha'}} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-                      <rect width="24" height="24"></rect>
-                    </mask>
-                    <g mask="url(#mask0_9509_6733)">
-                      <path d="M12.0008 13.4L7.10078 18.3C6.91745 18.4833 6.68411 18.575 6.40078 18.575C6.11745 18.575 5.88411 18.4833 5.70078 18.3C5.51745 18.1167 5.42578 17.8833 5.42578 17.6C5.42578 17.3167 5.51745 17.0833 5.70078 16.9L10.6008 12L5.70078 7.09999C5.51745 6.91665 5.42578 6.68332 5.42578 6.39999C5.42578 6.11665 5.51745 5.88332 5.70078 5.69999C5.88411 5.51665 6.11745 5.42499 6.40078 5.42499C6.68411 5.42499 6.91745 5.51665 7.10078 5.69999L12.0008 10.6L16.9008 5.69999C17.0841 5.51665 17.3174 5.42499 17.6008 5.42499C17.8841 5.42499 18.1174 5.51665 18.3008 5.69999C18.4841 5.88332 18.5758 6.11665 18.5758 6.39999C18.5758 6.68332 18.4841 6.91665 18.3008 7.09999L13.4008 12L18.3008 16.9C18.4841 17.0833 18.5758 17.3167 18.5758 17.6C18.5758 17.8833 18.4841 18.1167 18.3008 18.3C18.1174 18.4833 17.8841 18.575 17.6008 18.575C17.3174 18.575 17.0841 18.4833 16.9008 18.3L12.0008 13.4Z"></path>
-                    </g>
-                  </svg>
-                </button>
-              )}
-            </div>
-          </div>
         </div>
-
-        {/* Bottom Border Line */}
-        <div className="border-line" style={{ margin: '4rem auto 0' }} />
       </section>
 
       {/* POSTS LIST SECTION */}
       <section
         className="post-list-section relative"
         style={{
-          padding: '6rem 0',
+          padding: '1.5rem 0 6rem',
           background: '#0b0b0f',
         }}
       >
@@ -618,7 +645,7 @@ export default function BlogPage() {
               fontSize: 'clamp(1.8rem, 2.5rem, 2.8rem)',
               fontWeight: 700,
               lineHeight: 1.1,
-              marginBottom: '3.2rem',
+              marginBottom: '2.5rem',
               textAlign: 'left',
               color: '#fff',
               position: 'relative',
@@ -628,58 +655,56 @@ export default function BlogPage() {
             All blogs
           </h2>
 
-          {/* Posts Grid */}
-          <div className="posts-grid">
+          {/* Posts List (Row by Row) */}
+          <div className="posts-list">
             {blogs.map((blog, index) => (
               <article 
                 key={blog.href} 
                 className="post-item" 
                 data-anim="from-bottom" 
-                data-anim-delay={String(index + 1)}
+                data-anim-delay={String((index % 3) + 1)}
               >
-                {/* Image */}
+                {/* Left Side - Image */}
                 <Link href={blog.href} className="post-img-wrapper">
                   <img
                     src={blog.image}
-                    alt="Comprehensive Casino Platform Features including Slots, Roulette, and Dice for Crypto Casino Guide"
+                    alt={blog.title}
                     loading="lazy"
                   />
                 </Link>
 
-                {/* Content */}
+                {/* Right Side - Content */}
                 <div className="post-content">
-                  {/* Date */}
-                  <div className="post-date">04.05.2026</div>
-
-                  {/* Title */}
-                  <Link href={blog.href} className="post-title">
-                    {blog.title}
-                  </Link>
-
-                  {/* Tags */}
-                  <div className="post-tags">
-                    <span className="post-tag">{blog.tag}</span>
-                    <span className="post-tag">Events</span>
-                  </div>
-
-                  {/* Meta */}
-                  <div className="post-meta">
-
-
-                    {/* Read Time */}
-                    <div className="post-read-time">
+                  <div className="post-top">
+                    <Link href={blog.href} className="post-title-link">
+                      <h3 className="post-title">{blog.title}</h3>
+                      <p className="post-description">{blog.description}</p>
+                    </Link>
+                    <Link href={blog.href} aria-label={`Read ${blog.title}`}>
                       <svg
-                        className="post-read-icon"
+                        className="post-arrow-icon"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
                       </svg>
-                      <span>{blog.readTime}</span>
+                    </Link>
+                  </div>
+
+                  <div className="post-bottom">
+                    <div className="post-tags">
+                      <span className="post-tag">{blog.tag}</span>
+                      <span className="post-read-time-badge">• {blog.readTime}</span>
+                    </div>
+
+                    <div className="post-date-meta">
+                      <span>{blog.date || "04.05.2026"}</span>
                     </div>
                   </div>
                 </div>
