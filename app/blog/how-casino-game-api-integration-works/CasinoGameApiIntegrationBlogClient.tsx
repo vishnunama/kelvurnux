@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import FAQSection from '@/src/components/FAQSection/FAQSection';
 import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBanner';
 import BlogHeaderBanner from '@/src/components/blogheaderbanner/BlogHeaderBanner';
+import BlogArticleFooter from '@/src/components/blogfooternav/BlogArticleFooter';
 
 const styles = `
   @keyframes gradient {
@@ -50,11 +51,62 @@ const styles = `
     font-weight: 700;
   }
 
-  /* TOC Sticky Sidebar */
-  .toc-sidebar {
+  /* TOC Sticky Sidebar (Right Side) */
+  .toc-card {
     position: sticky;
-    top: 2rem;
-    height: fit-content;
+    top: 6rem;
+    z-index: 10;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(0, 235, 170, 0.25);
+    background: linear-gradient(180deg, #0a2528 0%, #07151c 100%);
+    box-shadow: -2px 2px 4px 0 rgba(255, 139, 67, 0.11) inset, 0 -2px 4.6px 0 rgba(126, 201, 255, 0.16) inset, 0 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 1.8rem 1.5rem;
+    width: 100%;
+  }
+
+  .toc-card::-webkit-scrollbar {
+    width: 4px;
+  }
+  .toc-card::-webkit-scrollbar-thumb {
+    background: rgba(0, 235, 170, 0.3);
+    border-radius: 4px;
+  }
+
+  .toc-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .toc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toc-link-item {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    color: #00ebaa;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .toc-link-item:hover {
+    color: #fff;
+  }
+
+  .toc-link-item.active {
+    color: #00ebaa;
+    font-weight: 700;
   }
 
   /* Blog Article Styles */
@@ -626,36 +678,8 @@ export default function CasinoGameApiIntegrationBlogClient() {
       {/* Main Content Layout with Sticky Sidebar */}
       <section className="py-12 bg-[#0b0b0f]">
         <div className="container mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            {/* Table of Contents Sticky Sidebar */}
-            <aside className="lg:col-span-4 hidden lg:block">
-              <div className="toc-sidebar bg-[#0f1923] p-6 rounded-xl border border-gray-800/80">
-                <h3 className="text-white text-lg font-bold mb-4 pb-2 border-b border-gray-800 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-[#00ebaa]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
-                  </svg>
-                  Table of Contents
-                </h3>
-                <nav className="space-y-2.5 text-xs text-gray-400 max-h-[calc(100vh-140px)] overflow-y-auto pr-2 scrollbar-thin">
-                  {sections.map((section) => (
-                    <a
-                      key={section.id}
-                      href={`#${section.id}`}
-                      className={`block toc-link hover:text-[#00ebaa] leading-normal ${
-                        activeSection === section.id ? 'active' : ''
-                      }`}
-                    >
-                      {section.title}
-                    </a>
-                  ))}
-                  <a href="#faq-section" className="block toc-link hover:text-[#00ebaa] pt-2 border-t border-gray-800/60">
-                    Frequently Asked Questions
-                  </a>
-                </nav>
-              </div>
-            </aside>
-
-            {/* Article Main Body */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7">
+            {/* Article Main Body (Left Side) */}
             <main className="lg:col-span-8 blog-content">
               {sections.map((section) => (
                 <section id={section.id} key={section.id} className="mb-12">
@@ -672,7 +696,7 @@ export default function CasinoGameApiIntegrationBlogClient() {
                       </p>
                       <Link
                         href="/casino-aggregator-api-solution"
-                        className="inline-flex items-center gap-2 gradient-button px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-transform hover:scale-105"
+                        className="inline-flex items-center gap-2 gradient-button px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider"
                       >
                         {section.ctaText || 'Learn More About Game Aggregation'}
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -684,9 +708,38 @@ export default function CasinoGameApiIntegrationBlogClient() {
                 </section>
               ))}
             </main>
+
+            {/* Table of Contents Sticky Sidebar (Right Side) */}
+            <aside className="lg:col-span-4 hidden lg:block">
+              <div className="toc-card">
+                <h3 className="toc-title gradient-text">Table of Contents</h3>
+                <ul className="toc-list">
+                  {sections.map((section) => (
+                    <li key={section.id}>
+                      <a
+                        href={`#${section.id}`}
+                        className={`toc-link-item ${
+                          activeSection === section.id ? 'active' : ''
+                        }`}
+                      >
+                        {section.title}
+                      </a>
+                    </li>
+                  ))}
+                  <li>
+                    <a href="#faq-section" className="toc-link-item pt-2 border-t border-gray-800/60">
+                      Frequently Asked Questions
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
+
+      {/* Blog Article Footer: Previous Article Button & Experts Recommendations */}
+      <BlogArticleFooter currentSlug="how-casino-game-api-integration-works" />
 
       {/* Partnership Banner */}
       <PartnershipBanner />

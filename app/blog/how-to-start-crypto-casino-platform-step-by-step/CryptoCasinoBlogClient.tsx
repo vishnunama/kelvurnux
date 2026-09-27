@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import FAQSection from '@/src/components/FAQSection/FAQSection';
 import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBanner';
 import BlogHeaderBanner from '@/src/components/blogheaderbanner/BlogHeaderBanner';
+import BlogArticleFooter from '@/src/components/blogfooternav/BlogArticleFooter';
 
 const styles = `
   @keyframes gradient {
@@ -50,11 +51,62 @@ const styles = `
     font-weight: 700;
   }
 
-  /* TOC Sticky Sidebar */
-  .toc-sidebar {
+  /* TOC Sticky Sidebar (Right Side) */
+  .toc-card {
     position: sticky;
-    top: 2rem;
-    height: fit-content;
+    top: 6rem;
+    z-index: 10;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(0, 235, 170, 0.25);
+    background: linear-gradient(180deg, #0a2528 0%, #07151c 100%);
+    box-shadow: -2px 2px 4px 0 rgba(255, 139, 67, 0.11) inset, 0 -2px 4.6px 0 rgba(126, 201, 255, 0.16) inset, 0 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 1.8rem 1.5rem;
+    width: 100%;
+  }
+
+  .toc-card::-webkit-scrollbar {
+    width: 4px;
+  }
+  .toc-card::-webkit-scrollbar-thumb {
+    background: rgba(0, 235, 170, 0.3);
+    border-radius: 4px;
+  }
+
+  .toc-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .toc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toc-link-item {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    color: #00ebaa;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: block;
+  }
+
+  .toc-link-item:hover {
+    color: #fff;
+  }
+
+  .toc-link-item.active {
+    color: #00ebaa;
+    font-weight: 700;
   }
 
   /* Blog Article Styles */
@@ -533,32 +585,10 @@ export default function CryptoCasinoBlogPage() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-            {/* LEFT SIDEBAR - TABLE OF CONTENTS */}
-            <aside className="lg:col-span-1">
-              <div className="toc-sidebar">
-                <p className="text-lg font-bold text-white mb-6">TABLE OF CONTENTS</p>
-                <nav className="space-y-3">
-                  {blogSections.map((section) => (
-                    <a
-                      key={section.id}
-                      href={`#${section.id}`}
-                      className={`toc-link block text-sm transition-colors ${
-                        activeSection === section.id
-                          ? 'active text-cyan-400 font-semibold'
-                          : 'text-gray-400 hover:text-cyan-300'
-                      }`}
-                    >
-                      {section.title}
-                    </a>
-                  ))}
-                </nav>
-              </div>
-            </aside>
-
-            {/* MAIN CONTENT */}
-            <article className="lg:col-span-3 blog-content">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-7">
+            {/* LEFT SIDE - MAIN ARTICLE CONTENT */}
+            <article className="lg:col-span-8 blog-content">
               {blogSections.map((section, index) => (
                 <div key={section.id}>
                   {section.id === 'step1' && (
@@ -600,9 +630,33 @@ export default function CryptoCasinoBlogPage() {
                 </div>
               ))}
             </article>
+
+            {/* RIGHT SIDEBAR - STYLED TABLE OF CONTENTS CARD */}
+            <aside className="lg:col-span-4 hidden lg:block">
+              <div className="toc-card">
+                <h3 className="toc-title gradient-text">Table of Contents</h3>
+                <ul className="toc-list">
+                  {blogSections.map((section) => (
+                    <li key={section.id}>
+                      <a
+                        href={`#${section.id}`}
+                        className={`toc-link-item ${
+                          activeSection === section.id ? 'active' : ''
+                        }`}
+                      >
+                        {section.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
+
+      {/* Blog Article Footer: Previous Article Button & Experts Recommendations */}
+      <BlogArticleFooter currentSlug="how-to-start-crypto-casino-platform-step-by-step" />
 
       {/* PARTNERSHIP BANNER */}
       <PartnershipBanner />
