@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import FAQSection from '@/src/components/FAQSection/FAQSection';
+import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBanner';
+import BlogHeaderBanner from '@/src/components/blogheaderbanner/BlogHeaderBanner';
 
 const styles = `
   @keyframes gradient {
@@ -497,117 +499,15 @@ export default function CryptoCasinoBlogPage() {
     <>
       <style>{styles}</style>
 
-      {/* HERO SECTION */}
-      <section className="relative bg-[#0b0b0f] pt-16 pb-3 overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `radial-gradient(40% 80% at 50% 0, rgba(0, 235, 170, 0.25) 0, rgba(13, 11, 16, 0) 80.49%), #0b0b0f`,
-            backgroundSize: '125% 125%',
-            animation: 'gradient 20s ease infinite',
-          }}
-        />
-
-        <div
-          className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 100 0 L 0 0 0 100' fill='none' stroke='white' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E")`,
-            backgroundSize: '214.4px 169.6px',
-            backgroundPosition: '50% 50%',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent)',
-            maskImage: 'linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent)',
-            WebkitMaskRepeat: 'no-repeat',
-            maskRepeat: 'no-repeat',
-            WebkitMaskSize: 'cover',
-            maskSize: 'cover',
-          }}
-        />
-
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(91.68% 48.4% at 29.55% 73.5%, rgba(43,255,191,0.13) 0%, rgba(13,11,16,0) 46.4%)'
-          }}
-        />
-
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.05]"
-          style={{
-            backgroundImage: 'url(/assets/grid-bg.svg)',
-            backgroundRepeat: 'repeat',
-            backgroundPosition: '50% 50%',
-            backgroundSize: '8rem 6.3rem',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)',
-            maskImage: 'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)',
-          }}
-        />
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
-          <div
-            ref={(el) => { elementsRef.current[0] = el; }}
-            data-anim="from-top"
-            className="flex items-center gap-2 text-sm text-gray-400 mb-2 pt-9"
-          >
-            <Link href="/" className="hover:text-cyan-300 transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/blog" className="hover:text-cyan-300 transition-colors">Blog</Link>
-            <span>/</span>
-            <span className="text-gray-300">How to Start a Crypto Casino in 2026</span>
-          </div>
-
-          <div
-            ref={(el) => { elementsRef.current[1] = el; }}
-            data-anim="from-bottom"
-            data-anim-delay="1"
-            className="mb-6"
-          >
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              How to Start a Crypto Casino Platform Step by Step in 2026
-            </h1>
-          </div>
-
-          <div
-            ref={(el) => { elementsRef.current[2] = el; }}
-            data-anim="from-bottom"
-            data-anim-delay="2"
-            className="flex flex-col sm:flex-row sm:items-center gap-4 text-sm text-gray-400 pb-8"
-          >
-            <div className="flex items-center gap-2">
-              <span className="font-medium text-gray-300">Kvaornux Editorial Team</span>
-            </div>
-            <span className="hidden sm:block text-gray-600">•</span>
-            <span>Published: <span className="text-gray-300">September 29, 2025 at 5:26 am</span></span>
-            <span className="hidden sm:block text-gray-600">•</span>
-            <span>Last Updated: <span className="text-gray-300">30 Apr 2026, 6:33 PM</span></span>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURED IMAGE */}
-      <section className="relative bg-[#0b0b0f] pb-8">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div
-            ref={(el) => { elementsRef.current[3] = el; }}
-            data-anim="from-bottom"
-            className="rounded-lg overflow-hidden border border-gray-700/50"
-          >
-            <Image
-              src="/assets/features/comprehensive-casino-platform-features-roulette-dice.webp"
-              alt="Crypto Casino Platform Development Software Dashboard showing Slots, Roulette, and Live Games"
-              width={800}
-              height={400}
-              sizes="(max-width: 768px) 100vw, 800px"
-              priority
-              className="w-full h-auto rounded-lg"
-              onError={(e) => {
-                const target = e.currentTarget as HTMLImageElement;
-                target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzA2MGIwZiIvPjwvc3ZnPg==';
-              }}
-            />
-          </div>
-        </div>
-      </section>
+      {/* BLOG HEADER BANNER */}
+      <BlogHeaderBanner
+        title="How to Start a Crypto Casino Platform Step by Step in 2026"
+        date="04.05.2026"
+        readTime="15 min read"
+        tags={['Crypto Casino', 'Platform Development', 'Turnkey', 'White Label']}
+        bannerImage="/assets/features/comprehensive-casino-platform-features-roulette-dice.webp"
+        breadcrumbCurrent="How to Start a Crypto Casino in 2026"
+      />
 
       {/* BLOG ARTICLE WITH SIDEBAR */}
       <section className="relative bg-[#0b0b0f] py-9">
@@ -703,6 +603,9 @@ export default function CryptoCasinoBlogPage() {
           </div>
         </div>
       </section>
+
+      {/* PARTNERSHIP BANNER */}
+      <PartnershipBanner />
 
       {/* CRYPTO CASINO FAQ SECTION */}
       <FAQSection

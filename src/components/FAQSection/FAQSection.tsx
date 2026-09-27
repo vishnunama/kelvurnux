@@ -64,9 +64,10 @@ interface FAQ {
 
 interface FAQSectionProps {
   faqs?: FAQ[];
+  customFaqData?: FAQ[];
 }
 
-const FAQSection: React.FC<FAQSectionProps> = ({ faqs: customFaqs }) => {
+const FAQSection: React.FC<FAQSectionProps> = ({ faqs: propFaqs, customFaqData }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -117,7 +118,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: customFaqs }) => {
   ];
 
   // Use custom faqs if provided, otherwise use default
-  const faqs = customFaqs || defaultFaqs;
+  const activeFaqs = propFaqs || customFaqData || defaultFaqs;
 
   useEffect(() => {
     const elements = elementsRef.current.filter((el): el is HTMLElement => el !== null);
@@ -240,7 +241,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: customFaqs }) => {
 
         {/* FAQ Items */}
         <div className="space-y-0">
-          {faqs.map((faq, index) => (
+          {activeFaqs.map((faq, index) => (
             <div
               key={index}
               ref={(el) => { if (el) elementsRef.current[2 + index] = el; }}

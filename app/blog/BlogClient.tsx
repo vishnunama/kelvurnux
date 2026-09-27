@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from "next/link";
+import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBanner';
 
 const blogs = [
   {
@@ -713,6 +714,9 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+
+      {/* PARTNERSHIP BANNER */}
+      <PartnershipBanner />
     </div>
   );
 }
