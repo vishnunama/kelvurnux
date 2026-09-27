@@ -232,18 +232,17 @@ const BlogHeaderBanner: FC<BlogHeaderBannerProps> = ({
         }
 
         .post-banner-author-icon {
-          width: 2.5rem;
-          height: 2.5rem;
+          width: 1.6rem;
+          height: 1.6rem;
           border-radius: 50%;
           overflow: hidden;
-          border: 1.5px solid #00ebaa;
+          border: none;
           flex-shrink: 0;
-          background: linear-gradient(135deg, #0e2725 0%, #051413 100%);
-          box-shadow: 0 0 12px rgba(0, 235, 170, 0.25);
+          background: #1f252e;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0.35rem;
+          padding: 0.25rem;
         }
 
         .post-banner-author-icon img {
@@ -353,9 +352,9 @@ const BlogHeaderBanner: FC<BlogHeaderBannerProps> = ({
               {authorAvatar ? (
                 <img src={authorAvatar} alt={authorName} />
               ) : (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="7" r="4.5" fill="#00ebaa" fillOpacity="0.25" stroke="#00ebaa" strokeWidth="1.8" />
-                  <path d="M4.5 19.5C4.5 15.634 7.85786 12.5 12 12.5C16.1421 12.5 19.5 15.634 19.5 19.5" stroke="#00ebaa" strokeWidth="1.8" strokeLinecap="round" />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="7" r="4" stroke="#9ca3af" strokeWidth="2" />
+                  <path d="M4 21C4 16.5817 7.58172 13 12 13C16.4183 13 20 16.5817 20 21" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               )}
             </div>
@@ -370,9 +369,9 @@ const BlogHeaderBanner: FC<BlogHeaderBannerProps> = ({
               {factCheckerAvatar ? (
                 <img src={factCheckerAvatar} alt={factCheckerName} />
               ) : (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L4 5V11C4 16.52 7.41 21.6 12 23C16.59 21.6 20 16.52 20 11V5L12 2Z" fill="#00ebaa" fillOpacity="0.15" stroke="#00ebaa" strokeWidth="1.6" />
-                  <path d="M9 12L11 14L15 10" stroke="#00ebaa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L4 5V11C4 16.52 7.41 21.6 12 23C16.59 21.6 20 16.52 20 11V5L12 2Z" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M9 12L11 14L15 10" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               )}
             </div>
