@@ -3,26 +3,26 @@ import CustomIgamingClient from './CustomIgamingClient';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Custom iGaming Solution | Bespoke Casino & Sportsbook Development | Kvaornux',
+    absolute: 'Bespoke iGaming Solutions & Custom Development | Kvaornux',
   },
   description:
-    'Build a custom iGaming platform tailored to your business model with bespoke features, multi-payment gateways, game API integrations, and scalable infrastructure.',
+    'Build a bespoke iGaming platform around your business model with custom development, API integrations, platform modules and scalable infrastructure.',
   alternates: {
     canonical: '/custom-igaming-solution',
   },
   openGraph: {
-    title: 'Custom iGaming Solution | Bespoke Casino & Sportsbook Development | Kvaornux',
+    title: 'Bespoke iGaming Solutions & Custom Development | Kvaornux',
     description:
-      'Build a custom iGaming platform tailored to your business model with bespoke features, multi-payment gateways, game API integrations, and scalable infrastructure.',
+      'Build a bespoke iGaming platform around your business model with custom development, API integrations, platform modules and scalable infrastructure.',
     url: 'https://kvaornux.com/custom-igaming-solution',
     siteName: 'Kvaornux',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Custom iGaming Solution | Bespoke Casino & Sportsbook Development | Kvaornux',
+    title: 'Bespoke iGaming Solutions & Custom Development | Kvaornux',
     description:
-      'Build a custom iGaming platform tailored to your business model with bespoke features, multi-payment gateways, game API integrations, and scalable infrastructure.',
+      'Build a bespoke iGaming platform around your business model with custom development, API integrations, platform modules and scalable infrastructure.',
   },
 };
 
@@ -40,7 +40,7 @@ export default function CustomIgamingPage() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Custom iGaming Solution',
+        name: 'Bespoke iGaming Solutions',
         item: 'https://kvaornux.com/custom-igaming-solution',
       },
     ],

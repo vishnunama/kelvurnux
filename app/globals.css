@@ -20,24 +20,90 @@ body {
   font-family: 'Gabarito', sans-serif;
 }
 
-/* Primary Button Style - #00ebaa, No Hover Effect, Default Site Font */
-.btn-main, .btn-primary, button.site-btn, .btn-goldman {
+/* ==========================================================================
+   UNIFIED BUTTON SYSTEM (.btn-main, .btn-primary, .btn, etc.)
+   Standardizes all #00ebaa mint green pill buttons across the site
+   ========================================================================== */
+
+.btn-main, 
+.btn-primary, 
+.btn-gradient, 
+.btn-goldman, 
+.btn, 
+button.site-btn,
+a.site-btn {
   font-family: 'Gabarito', sans-serif;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: none;
-  outline: 0;
-  width: -moz-fit-content;
+  outline: none;
   width: fit-content;
+  max-width: 100%;
   border-radius: 9999px;
-  padding: 0.6rem 2.2rem;
-  min-height: 2.8rem;
+  padding: 0.75rem 2.25rem;
+  min-height: 3.25rem;
   background-color: #00ebaa;
   cursor: pointer;
-  color: #000;
+  color: #000000;
   font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.2;
   text-decoration: none;
+  text-align: center;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 0 15px rgba(0, 235, 170, 0.25);
+  box-sizing: border-box;
+}
+
+.btn-main:hover, 
+.btn-primary:hover, 
+.btn-gradient:hover, 
+.btn-goldman:hover, 
+.btn:hover, 
+button.site-btn:hover,
+a.site-btn:hover {
+  background-color: #3dffc0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 25px rgba(0, 235, 170, 0.45);
+  color: #000000;
+}
+
+.btn-main:active, 
+.btn-primary:active, 
+.btn-gradient:active, 
+.btn-goldman:active, 
+.btn:active, 
+button.site-btn:active,
+a.site-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 0 15px rgba(0, 235, 170, 0.25);
+}
+
+/* Compact button variation */
+.btn-sm {
+  padding: 0.5rem 1.6rem;
+  min-height: 2.6rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive scaling on mobile */
+@media (max-width: 640px) {
+  .btn-main, 
+  .btn-primary, 
+  .btn-gradient, 
+  .btn-goldman, 
+  .btn, 
+  button.site-btn,
+  a.site-btn {
+    padding: 0.65rem 1.8rem;
+    min-height: 2.9rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-full-mob {
+    width: 100% !important;
+  }
 }
 
 /* Portfolio Item Styles with #00ebaa Card Gradient */

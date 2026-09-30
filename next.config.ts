@@ -29,11 +29,6 @@ const nextConfig: NextConfig = {
         destination: "/casino-aggregator-api-solution",
         permanent: true,
       },
-      {
-        source: "/how-to-start-crypto-casino-platform-step-by-step",
-        destination: "/blog/how-to-start-crypto-casino-platform-step-by-step",
-        permanent: true,
-      },
     ];
   },
 };

@@ -96,29 +96,7 @@ const PartnershipBanner: FC<PartnershipBannerProps> = ({
           -webkit-text-fill-color: transparent;
         }
 
-        .btn {
-          outline: 0;
-          border: none;
-          cursor: pointer;
-          font-weight: 700;
-          display: inline-flex;
-          height: 3.8rem;
-          padding: 0.7rem 2.2rem;
-          align-items: center;
-          justify-content: center;
-          font-size: clamp(12px, 1.1rem, 1.1rem);
-          font-style: normal;
-          border-radius: 9999px;
-          width: max-content;
-          max-width: 100%;
-          position: relative;
-          overflow: hidden;
-          background-color: #00ebaa;
-          color: #000;
-          text-align: center;
-          line-height: 1.5;
-          text-decoration: none;
-        }
+        /* .btn uses global button system from globals.css */
 
         @media (max-width: 960px) {
           .partnership-img {

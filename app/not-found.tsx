@@ -28,7 +28,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/"
-            className="w-full sm:w-auto inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-bold text-black bg-[#00ebaa] hover:bg-[#00ebaa]/90 transition-colors"
+            className="btn-main"
           >
             Back to Home
           </Link>

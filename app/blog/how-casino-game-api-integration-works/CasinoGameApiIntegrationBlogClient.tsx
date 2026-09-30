@@ -427,7 +427,7 @@ export default function CasinoGameApiIntegrationBlogClient() {
             During active gameplay, the game client displayed on the player&apos;s screen communicates directly with the Remote Game Server. However, the game server does not hold player money. Instead, it relies on real-time API communication with the casino wallet to verify and update player account balances.
           </p>
           <p>
-            In a seamless wallet integration model, the game server issues API calls to the casino backend whenever a balance check, wager, or payout occurs. The casino wallet validates the request, updates the ledger, and returns the updated balance to the game server within milliseconds.
+            In a seamless wallet integration model, the game server issues API calls to the casino backend whenever a balance check, wager, or payout occurs. The casino wallet validates the request, updates the ledger, and returns the updated balance to the game server within milliseconds. For a detailed comparison between integration architectures, read our guide on <Link href="/blog/seamless-wallet-vs-transfer-wallet-igaming" className="text-[#00ebaa] hover:underline">seamless wallet vs transfer wallet</Link> models in iGaming.
           </p>
           <p>
             Ensuring low latency, atomic database locks, and consistent currency handling during wallet callbacks is essential for preventing game lag and balance discrepancies.

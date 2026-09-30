@@ -398,23 +398,9 @@ export default function HeroSection() {
                   contactSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: 'none',
-                outline: '0',
-                width: 'fit-content',
-                borderRadius: '9999px',
-                padding: '0.6rem 2.2rem',
-                minHeight: '2.8rem',
-                backgroundColor: '#00ebaa',
-                cursor: 'pointer',
-                color: '#000',
-                fontWeight: 700,
-              }}
+              className="btn-main"
             >
-              <span className="relative z-10 text-black font-extrabold tracking-wide">Explore Solutions</span>
+              <span>Explore Solutions</span>
             </button>
           </div>
 

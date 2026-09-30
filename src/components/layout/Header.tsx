@@ -2,26 +2,38 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { Package, Zap } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Package, Zap, Layers } from 'lucide-react';
 import KvaornuxLogo from './KelvurnuxLogo';
 
 export default function Header() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [mobileAccordion, setMobileAccordion] = useState<{ comp: boolean; special: boolean }>({ comp: false, special: false });
+  const [activeDropdown, setActiveDropdown] = useState<'solutions' | 'products' | null>(null);
+  const [mobileAccordion, setMobileAccordion] = useState<{ comprehensive: boolean; special: boolean; products: boolean }>({ comprehensive: false, special: false, products: false });
+
+  useEffect(() => {
+    setActiveDropdown(null);
+    setIsMenuOpen(false);
+  }, [pathname]);
   const [isScrolled, setIsScrolled] = useState(false);
   const isScrolledRef = useRef(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const headerRef = useRef<HTMLElement>(null);
   const lastScrollRef = useRef(0);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (menu: 'solutions' | 'products') => {
     clearTimeout(timerRef.current ?? undefined);
-    setDropdownOpen(true);
+    timerRef.current = setTimeout(() => {
+      setActiveDropdown(menu);
+    }, 180);
   };
 
   const handleMouseLeave = () => {
-    timerRef.current = setTimeout(() => setDropdownOpen(false), 250);
+    clearTimeout(timerRef.current ?? undefined);
+    timerRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 220);
   };
 
   const scrollToContactForm = () => {
@@ -178,28 +190,27 @@ export default function Header() {
 
         /* Dropdown - Hidden on mobile */
         .zg-dropdown {
-          position: fixed; 
-          top: 4.4rem; 
+          position: absolute; 
+          top: calc(100% + 0.4rem); 
           left: 50%;
           transform: translateX(-50%) translateY(-10px) scale(0.97);
-          width: min(72rem, calc(100vw - 6.4rem));
           z-index: 101; 
           opacity: 0; 
           visibility: hidden; 
           pointer-events: none;
-          transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                      visibility 0.35s linear;
+          transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                      transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                      visibility 0.5s linear;
         }
 
         /* Hover bridge to bridge cursor gap between nav link and dropdown menu */
         .zg-dropdown::before {
           content: "";
           position: absolute;
-          top: -1.5rem;
+          top: -0.6rem;
           left: 0;
           right: 0;
-          height: 1.5rem;
+          height: 0.8rem;
           pointer-events: auto;
         }
 
@@ -210,76 +221,70 @@ export default function Header() {
           }
         }
                 
-        .nav-item-dropdown:hover .zg-dropdown,
-        .zg-dropdown:hover,
         .zg-dropdown.open {
           opacity: 1; 
           visibility: visible; 
           pointer-events: auto;
           transform: translateX(-50%) translateY(0) scale(1);
-          transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+                      transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
         
-  @media (min-width: 1130px) {
-    .zg-dd-link {
- white-space: nowrap;
-    }
-  }
         .zg-dd-link {
-       
           display: flex;
           align-items: center;
-          gap: 0.8rem;
-          padding: 0.8rem 1.4rem 0.8rem 4rem;
-          color: rgba(255,255,255,0.75);
+          padding: 0.85rem 1.4rem;
+          color: rgba(255, 255, 255, 0.85);
           text-decoration: none;
-          font-size: clamp(.9rem, 1rem, 1.2rem);
+          font-size: clamp(0.95rem, 1.05rem, 1.15rem);
           font-weight: 500;
-          border-radius: 1.2rem;
-          line-height: 1.5;
+          border-radius: 0.8rem;
+          line-height: 1.4;
           letter-spacing: 0.3px;
           position: relative;
-          margin: 0 -0.5rem;
-          height: max-content;
           pointer-events: auto;
           width: 100%;
-          transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+          white-space: nowrap;
+          transition: all 0.45s ease-in-out;
+          background: transparent;
         }
         
         .zg-dd-link::before {
-          content: "→";
-          position: absolute;
-          left: 1.6rem;
-          top: 50%;
-          transform: translateY(-50%);
-          color: #00ebaa;
-          font-weight: 700;
-          font-size: 1.2rem;
+          content: "";
+          display: inline-block;
+          width: 0px;
+          height: 1.1rem;
           opacity: 0;
-          transition: all 0.3s ease-in-out;
-          pointer-events: none;
+          background-color: #00ebaa;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='4' y1='12' x2='19' y2='12'%3E%3C/line%3E%3Cpolyline points='12 5 19 12 12 19'%3E%3C/polyline%3E%3C/svg%3E") center/contain no-repeat;
+          -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='4' y1='12' x2='19' y2='12'%3E%3C/line%3E%3Cpolyline points='12 5 19 12 12 19'%3E%3C/polyline%3E%3C/svg%3E") center/contain no-repeat;
+          transition: all 0.45s ease-in-out;
+          vertical-align: middle;
+          transform: translateX(-4px);
+          margin-right: 0;
+          flex-shrink: 0;
         }
         
         .zg-dd-link:hover {
           background: rgba(0, 235, 170, 0.12);
           color: #ffffff;
-          margin: 0 -1rem;
-          transform: translateX(4px);
+          transform: translateX(2px);
         }
         
         .zg-dd-link:hover::before {
+          width: 1.15rem;
           opacity: 1;
-          transform: translateY(-50%) translateX(4px);
+          margin-right: 0.45rem;
+          transform: translateX(0);
         }
 .zg-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  margin-left: 0.4rem;
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.nav-item-dropdown:hover .zg-arrow,
 .zg-arrow.open {
   transform: rotate(180deg);
 }
@@ -596,10 +601,10 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex flex-1 justify-center">
             <ul className="flex items-center list-none m-0 p-0">
-              <li className="nav-item-dropdown group relative mx-[1.8rem]" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <li className="nav-item-dropdown group relative mx-[1.8rem]" onMouseEnter={() => handleMouseEnter('solutions')} onMouseLeave={handleMouseLeave}>
                 <span className="flex items-center text-white font-medium cursor-pointer py-5 text-[1.15rem] tracking-[0.3px] transition-all duration-200 select-none whitespace-nowrap ">
                   Solutions
-                  <span className={`zg-arrow ${dropdownOpen ? 'open' : ''}`}>
+                  <span className={`zg-arrow ${activeDropdown === 'solutions' ? 'open' : ''}`}>
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
@@ -615,68 +620,126 @@ export default function Header() {
                 </span>
 
                 <div
-                  className={`zg-dropdown ${dropdownOpen ? 'open' : ''}`}
-                  onMouseEnter={handleMouseEnter}
+                  className={`zg-dropdown ${activeDropdown === 'solutions' ? 'open' : ''}`}
+                  onMouseEnter={() => handleMouseEnter('solutions')}
                   onMouseLeave={handleMouseLeave}
+                  style={{ width: 'min(63rem, calc(100vw - 6.4rem))' }}
                 >
                   {/* SVG Image arrow */}
                   <img
                     src="/assets/polygon.svg"
                     alt=""
-                    className="absolute -top-[12px] left-[48%] transform -translate-x-1/2 w-[3rem] h-4 z-10"
+                    className="absolute -top-[12px] left-[46%] transform -translate-x-1/2 w-[3rem] h-4 z-10"
                   />
 
                   <div
-                    className="rounded-[1.4rem] p-[1.4rem] grid grid-cols-[0.95fr_1.6fr] gap-[1.2rem]"
+                    className="rounded-[1.4rem] p-[1.3rem] grid grid-cols-[1fr_1.45fr] gap-[1.2rem]"
                     style={{
-                      background: 'radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(0,235,170,0.15) 0%, rgba(8,14,16,0.95) 100%), #0a141a',
-                      boxShadow: '0 -2px 2px 0 rgba(0,235,170,0.12) inset, 0 24px 64px rgba(0,0,0,0.6)',
+                      background: 'radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(21,41,46,0.95) 0%, rgba(8,14,16,0.97) 100%)',
+                      boxShadow: '0 24px 64px rgba(0,0,0,0.75)',
+                      borderLeft: '1px solid rgba(0,235,170,0.15)',
+                      borderRight: '1px solid rgba(0,235,170,0.15)',
+                      borderBottom: '2px solid rgba(0,235,170,0.32)',
+                      borderTop: 'none',
                       backdropFilter: 'blur(20px)',
                       WebkitBackdropFilter: 'blur(20px)',
                     }}
                   >
-                    <div className="bg-white/[0.04] rounded-[1rem] p-[1.3rem] border border-white/[0.07] transition-all duration-300 hover:bg-[#00ebaa]/[0.06] hover:border-[#00ebaa]/[0.2]">
+                    <div
+                      className="rounded-[1rem] p-[1.3rem] transition-all duration-500 hover:bg-[#00ebaa]/[0.08]"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.035)',
+                        borderLeft: '1px solid rgba(255, 255, 255, 0.07)',
+                        borderRight: '1px solid rgba(255, 255, 255, 0.07)',
+                        borderBottom: '1px solid rgba(0, 235, 170, 0.22)',
+                        borderTop: 'none',
+                      }}
+                    >
                       <div className="flex items-center gap-[0.6rem] text-white font-semibold text-[1.05rem] mb-[1.2rem] tracking-[0.3px]">
                         <Package size={20} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
-                        <span>Comprehensive Solutions</span>
+                        <span>COMPREHENSIVE SOLUTIONS</span>
                       </div>
                       <ul className="list-none m-0 p-0 space-y-[0.5rem]">
-                        <li><Link href="/white-label-casino-solutions" className="zg-dd-link">White Label Casino Solutions</Link></li>
-                        <li><Link href="/turnkey-casino-software-solutions" className="zg-dd-link">Turnkey Casino Software Solutions</Link></li>
+                        <li><Link href="/turnkey-casino-software-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Turnkey Casino</Link></li>
+                        <li><Link href="/custom-igaming-solution" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Bespoke iGaming</Link></li>
                       </ul>
                     </div>
 
-                    <div className="bg-white/[0.04] rounded-[1rem] p-[1.3rem] border border-white/[0.07] transition-all duration-300 hover:bg-[#00ebaa]/[0.06] hover:border-[#00ebaa]/[0.2]">
+                    <div
+                      className="rounded-[1rem] p-[1.3rem] transition-all duration-500 hover:bg-[#00ebaa]/[0.08]"
+                      style={{
+                        background: 'rgba(255, 255, 255, 0.035)',
+                        borderLeft: '1px solid rgba(255, 255, 255, 0.07)',
+                        borderRight: '1px solid rgba(255, 255, 255, 0.07)',
+                        borderBottom: '1px solid rgba(0, 235, 170, 0.22)',
+                        borderTop: 'none',
+                      }}
+                    >
                       <div className="flex items-center gap-[0.6rem] text-white font-semibold text-[1.05rem] mb-[1.2rem] tracking-[0.3px]">
                         <Zap size={20} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
-                        <span>Special solutions</span>
+                        <span>SPECIAL SOLUTIONS</span>
                       </div>
                       <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-[0.9rem] gap-y-[0.5rem]">
-                        <li>
-                          <Link href="/crypto-igaming-solutions" className="zg-dd-link">
-                            Crypto iGaming Solutions
-                          </Link>
-                        </li>
-
-                        <li>
-                          <Link href="/custom-igaming-solution" className="zg-dd-link">
-                            Custom iGaming Solution
-                          </Link>
-                        </li>
-
-                        <li>
-                          <Link href="/casino-aggregator-api-solution" className="zg-dd-link">
-                            Casino Aggregator API Solution
-                          </Link>
-                        </li>
-
-                        <li>
-                          <Link href="/turnkey-sportsbook-solutions" className="zg-dd-link">
-                            turnkey sportsbook solutions
-                          </Link>
-                        </li>
+                        <li><Link href="/turnkey-sportsbook-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Turnkey Sportsbook</Link></li>
+                        <li><Link href="/white-label-casino-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>White Label</Link></li>
+                        <li><Link href="/crypto-igaming-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Crypto iGaming</Link></li>
                       </ul>
                     </div>
+                  </div>
+                </div>
+              </li>
+
+              <li className="nav-item-dropdown group relative mx-[1.8rem]" onMouseEnter={() => handleMouseEnter('products')} onMouseLeave={handleMouseLeave}>
+                <span className="flex items-center text-white font-medium cursor-pointer py-5 text-[1.15rem] tracking-[0.3px] transition-all duration-200 select-none whitespace-nowrap ">
+                  Products
+                  <span className={`zg-arrow ${activeDropdown === 'products' ? 'open' : ''}`}>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      strokeWidth="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+                    </svg>
+                  </span>
+                </span>
+
+                <div
+                  className={`zg-dropdown ${activeDropdown === 'products' ? 'open' : ''}`}
+                  onMouseEnter={() => handleMouseEnter('products')}
+                  onMouseLeave={handleMouseLeave}
+                  style={{ width: 'min(17.5rem, calc(100vw - 4rem))' }}
+                >
+                  {/* SVG Image arrow */}
+                  <img
+                    src="/assets/polygon.svg"
+                    alt=""
+                    className="absolute -top-[12px] left-[50%] transform -translate-x-1/2 w-[3rem] h-4 z-10"
+                  />
+
+                  <div
+                    className="rounded-[1.4rem] p-[0.9rem]"
+                    style={{
+                      background: 'radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(21,41,46,0.95) 0%, rgba(8,14,16,0.97) 100%)',
+                      boxShadow: '0 24px 64px rgba(0,0,0,0.75)',
+                      borderLeft: '1px solid rgba(0,235,170,0.15)',
+                      borderRight: '1px solid rgba(0,235,170,0.15)',
+                      borderBottom: '2px solid rgba(0,235,170,0.32)',
+                      borderTop: 'none',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                    }}
+                  >
+                    <ul className="list-none m-0 p-0 space-y-[0.4rem]">
+                      <li>
+                        <Link href="/casino-aggregator-api-solution" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                          Game Aggregation
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </li>
@@ -738,23 +801,23 @@ export default function Header() {
 
         <div className="zg-mobile-nav-scroll">
           <div className="flex flex-col gap-[0.7rem] px-[1.2rem] pt-[1.4rem] pb-[4rem]">
-            <div className={`zg-acc-wrap ${mobileAccordion.comp ? 'active' : ''}`}>
-              <button className="zg-acc-btn" onClick={() => setMobileAccordion(prev => ({ ...prev, comp: !prev.comp }))}>
+            <div className={`zg-acc-wrap ${mobileAccordion.comprehensive ? 'active' : ''}`}>
+              <button className="zg-acc-btn" onClick={() => setMobileAccordion(prev => ({ ...prev, comprehensive: !prev.comprehensive }))}>
                 <span className="zg-acc-btn-left">
                   <Package size={24} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
                   <span>Comprehensive Solutions</span>
                 </span>
-                <span className={`zg-chevron ${mobileAccordion.comp ? 'open' : ''}`}>
+                <span className={`zg-chevron ${mobileAccordion.comprehensive ? 'open' : ''}`}>
                   <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
                 </span>
               </button>
 
-              <div className={`zg-acc-body ${mobileAccordion.comp ? 'open' : ''}`}>
-                <div className="zg-acc-inner">
-                  <Link href="/white-label-casino-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>White Label Casino Solutions</Link>
-                  <Link href="/turnkey-casino-software-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Casino Software Solutions</Link>
+              <div className={`zg-acc-body ${mobileAccordion.comprehensive ? 'open' : ''}`}>
+                <div className="zg-acc-inner py-1 flex flex-col">
+                  <Link href="/turnkey-casino-software-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Casino</Link>
+                  <Link href="/custom-igaming-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Bespoke iGaming</Link>
                 </div>
               </div>
             </div>
@@ -773,21 +836,31 @@ export default function Header() {
               </button>
 
               <div className={`zg-acc-body ${mobileAccordion.special ? 'open' : ''}`}>
-                <div className="zg-acc-inner">
-                  <Link href="/crypto-igaming-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
-                    Crypto iGaming Solutions
-                  </Link>
+                <div className="zg-acc-inner py-1 flex flex-col">
+                  <Link href="/turnkey-sportsbook-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Sportsbook</Link>
+                  <Link href="/white-label-casino-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>White Label</Link>
+                  <Link href="/crypto-igaming-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Crypto iGaming</Link>
+                </div>
+              </div>
+            </div>
 
-                  <Link href="/custom-igaming-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
-                    Custom iGaming Solution
-                  </Link>
+            <div className={`zg-acc-wrap ${mobileAccordion.products ? 'active' : ''}`}>
+              <button className="zg-acc-btn" onClick={() => setMobileAccordion(prev => ({ ...prev, products: !prev.products }))}>
+                <span className="zg-acc-btn-left">
+                  <Layers size={24} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
+                  <span>Products</span>
+                </span>
+                <span className={`zg-chevron ${mobileAccordion.products ? 'open' : ''}`}>
+                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </button>
 
+              <div className={`zg-acc-body ${mobileAccordion.products ? 'open' : ''}`}>
+                <div className="zg-acc-inner py-1 flex flex-col">
                   <Link href="/casino-aggregator-api-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
-                    Casino Aggregator API Solution
-                  </Link>
-
-                  <Link href="/turnkey-sportsbook-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
-                    turnkey sportsbook solutions
+                    Game Aggregation
                   </Link>
                 </div>
               </div>

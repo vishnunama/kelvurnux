@@ -13,7 +13,7 @@ const categoryOptions = [
   'Casino Platform',
   'Sportsbook',
   'Game Aggregation',
-  'Custom iGaming Development',
+  'Bespoke iGaming Solutions',
   'Payments & API Integrations',
   'Other',
 ];
@@ -507,24 +507,9 @@ export default function ContactForm() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="disabled:opacity-50 disabled:cursor-not-allowed"
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      border: 'none',
-                      outline: '0',
-                      width: 'fit-content',
-                      borderRadius: '9999px',
-                      padding: '0.6rem 2.2rem',
-                      minHeight: '2.8rem',
-                      backgroundColor: '#00ebaa',
-                      cursor: 'pointer',
-                      color: '#000',
-                      fontWeight: '700',
-                    }}
+                    className="btn-main disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <span className="relative z-10 text-black font-bold">
+                    <span>
                       {isSubmitting ? 'Submitting...' : 'Discuss Your Project'}
                     </span>
                   </button>

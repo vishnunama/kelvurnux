@@ -158,43 +158,7 @@ const OpportunitiesSection: FC = () => {
           max-width: 100% !important;
         }
 
-        /* Button Styling */
-        .btn {
-          background: #00ebaa;
-          outline: 0;
-          border: none;
-          cursor: pointer;
-          font-weight: 600;
-          display: flex;
-          height: 4rem;
-          padding: 0.7rem 2rem;
-          align-items: center;
-          justify-content: center;
-          font-size: clamp(11px, 1.2rem, 1.2rem);
-          font-style: normal;
-          border-radius: 2.6rem;
-          width: max-content;
-          max-width: 100%;
-          position: relative;
-          overflow: hidden;
-          color: #121314;
-          text-align: center;
-          line-height: 1.5;
-          text-decoration: none;
-        }
-
-        .btn-gradient {
-          background: #00ebaa;
-        }
-
-        .btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 20px rgba(0, 235, 170, 0.4);
-        }
-
-        .btn:active {
-          transform: translateY(0);
-        }
+        /* Button Styling - relies on global .btn / .btn-gradient system */
 
         /* Animation */
         @keyframes slideInFromLeft {

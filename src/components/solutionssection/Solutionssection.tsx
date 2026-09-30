@@ -27,10 +27,10 @@ const solutionsData = [
   {
     id: 3,
     image: '/assets/sol-img-3.webp',
-    title: 'Custom iGaming Solutions',
+    title: 'Bespoke iGaming Solutions',
     description: 'Build around your own business model with custom platform development, integrations, features and infrastructure.',
-    alt: 'Custom iGaming Solutions',
-    ctaText: 'Explore Custom Solutions',
+    alt: 'Bespoke iGaming Solutions',
+    ctaText: 'Explore Bespoke Solutions',
     ctaHref: '/custom-igaming-solution',
   }
 ];
@@ -189,7 +189,7 @@ export default function SolutionsSection() {
                   <div className="mt-2 flex justify-center">
                     <Link
                       href={solution.ctaHref}
-                      className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-bold text-black bg-[#00ebaa] hover:bg-[#00ebaa]/90 transition-colors"
+                      className="btn-main"
                     >
                       {solution.ctaText}
                     </Link>
@@ -235,7 +235,7 @@ export default function SolutionsSection() {
                       <div className="mt-2 flex justify-center">
                         <Link
                           href={solution.ctaHref}
-                          className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-bold text-black bg-[#00ebaa] hover:bg-[#00ebaa]/90 transition-colors"
+                          className="btn-main"
                         >
                           {solution.ctaText}
                         </Link>
@@ -312,23 +312,9 @@ export default function SolutionsSection() {
                   section.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                border: 'none',
-                outline: '0',
-                width: 'fit-content',
-                borderRadius: '9999px',
-                padding: '0.6rem 2.2rem',
-                minHeight: '2.8rem',
-                backgroundColor: '#00ebaa',
-                cursor: 'pointer',
-                color: '#000',
-                fontWeight: '700',
-              }}
+              className="btn-main"
             >
-              <span className="relative z-10 text-black font-bold">Let's Partner Up</span>
+              <span>Let's Partner Up</span>
             </button>
           </div>
 

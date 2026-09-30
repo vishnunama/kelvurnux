@@ -354,7 +354,7 @@ export default function TurnkeyCasinoPlatform() {
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
               >
-                Create your own white label casino software with full flexibility, ownership, and long-term growth
+                Build a complete turnkey casino platform with full operational control
               </h2>
 
               <p

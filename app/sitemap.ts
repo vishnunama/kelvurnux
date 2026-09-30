@@ -39,10 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: "https://kvaornux.com/blog/how-to-start-crypto-casino-platform-step-by-step",
-      priority: 0.8,
-    },
-    {
       url: "https://kvaornux.com/blog/what-is-casino-game-aggregator-api",
       priority: 0.8,
     },
@@ -52,6 +48,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://kvaornux.com/blog/how-casino-game-api-integration-works",
+      priority: 0.8,
+    },
+    {
+      url: "https://kvaornux.com/blog/seamless-wallet-vs-transfer-wallet-igaming",
       priority: 0.8,
     },
     {

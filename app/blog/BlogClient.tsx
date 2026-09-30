@@ -36,14 +36,14 @@ const blogs = [
     image: "/assets/features/turnkey-igaming-platform-infrastructure-services.webp",
   },
   {
-    title: "How to Start Crypto Casino Platform Step by Step (2026 Guide + Cost)",
+    title: "Seamless Wallet vs Transfer Wallet in iGaming",
     description:
-      "Complete beginner guide to start your crypto casino platform with games, payments, admin panel and launch strategy.",
-    href: "/blog/how-to-start-crypto-casino-platform-step-by-step",
-    tag: "Crypto Casino",
-    readTime: "15 min read",
-    date: "04.05.2026",
-    image: "/assets/features/comprehensive-casino-platform-features-roulette-dice.webp",
+      "Understand how seamless and transfer wallet models handle player balances, gameplay transactions, fund movement and reconciliation.",
+    href: "/blog/seamless-wallet-vs-transfer-wallet-igaming",
+    tag: "Wallet Architecture",
+    readTime: "14 min read",
+    date: "28.09.2026",
+    image: "/assets/features/igaming-financial-reconciliation-auto-invoices.webp",
   },
 ];
 

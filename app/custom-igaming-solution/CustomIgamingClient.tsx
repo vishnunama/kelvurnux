@@ -270,7 +270,7 @@ export default function CustomiGamingSolution() {
               ref={(el) => { elementsRef.current[0] = el; }}
               data-anim="from-top"
             >
-              Custom iGaming Solution
+              Bespoke iGaming Solutions
             </h1>
           </div>
 
@@ -402,7 +402,7 @@ export default function CustomiGamingSolution() {
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
               >
-                Complete Custom Solution Toolkit
+                Complete Bespoke Solution Toolkit
               </h2>
 
               <p 

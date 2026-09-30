@@ -125,7 +125,7 @@ export default function Footer() {
                     href="/custom-igaming-solution"
                     className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300"
                   >
-                    Custom iGaming Solution
+                    Bespoke iGaming Solutions
                   </Link>
                 </li>
                 <li>
