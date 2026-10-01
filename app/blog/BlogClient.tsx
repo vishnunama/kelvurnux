@@ -45,6 +45,16 @@ const blogs = [
     date: "28.09.2026",
     image: "/assets/features/igaming-financial-reconciliation-auto-invoices.webp",
   },
+  {
+    title: "iGaming Software Development: A Complete Guide to Building an iGaming Platform",
+    description:
+      "Learn how iGaming software development works, from platform architecture, PAM and wallets to casino, sportsbook, game aggregation, payments, security and integrations.",
+    href: "/blog/igaming-software-development",
+    tag: "iGaming Development",
+    readTime: "18 min read",
+    date: "01.10.2026",
+    image: "/assets/features/igaming-software-development-banner.jpg",
+  },
 ];
 
 // ✅ GLOBAL FUNCTION - Reset animations anywhere

@@ -217,7 +217,7 @@ const blogSections: BlogSection[] = [
           This aggregation hub translates, normalizes, and routes technical communication between the casino central server and third-party remote game servers. Through one unified integration, operators can access slots, live dealer tables, crash games, virtual sports, and table games from dozens of studios.
         </p>
         <p>
-          It is essential to clarify that a game aggregator API is not a standalone online casino platform. It does not replace core components such as the Player Account Management (PAM) system, regulatory verification frameworks, payment gateways, or front-end branding. Rather, it serves as the content distribution pipeline powering the gaming catalog of the operator.
+          It is essential to clarify that a game aggregator API is not a standalone online casino platform. It does not replace core components of broader <Link href="/blog/igaming-software-development" className="text-cyan-400 underline hover:text-cyan-300">iGaming software development</Link>, such as the Player Account Management (PAM) system, regulatory verification frameworks, payment gateways, or front-end branding. Rather, it serves as the content distribution pipeline powering the gaming catalog of the operator.
         </p>
       </>
     ),

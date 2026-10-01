@@ -345,7 +345,7 @@ export default function GameAggregatorVsDirectBlogClient() {
             <li><strong>Direct Commercial Agreement:</strong> Licensing content directly from the provider, including direct settlement of royalty fees and minimum monthly guarantees where applicable.</li>
           </ul>
           <p>
-            Because each game studio maintains its own proprietary platform architecture, technical requirements vary significantly from one provider to another.
+            Because each game studio maintains its own proprietary platform architecture, technical requirements vary significantly from one provider to another across broader <Link href="/blog/igaming-software-development" className="text-[#00ebaa] hover:underline">iGaming platform development</Link>.
           </p>
         </>
       ),

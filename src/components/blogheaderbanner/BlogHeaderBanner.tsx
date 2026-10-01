@@ -38,7 +38,7 @@ const BlogHeaderBanner: FC<BlogHeaderBannerProps> = ({
     <section className="post-single-banner-section">
       <style>{`
         .post-single-banner-section {
-          padding: 8rem 0 4rem;
+          padding: 8rem 0 1.5rem;
           position: relative;
           background: #0b0b0f;
         }
@@ -272,7 +272,7 @@ const BlogHeaderBanner: FC<BlogHeaderBannerProps> = ({
 
         @media (max-width: 768px) {
           .post-single-banner-section {
-            padding: 6rem 0 3rem;
+            padding: 6rem 0 1rem;
           }
 
           .post-banner {
@@ -293,7 +293,43 @@ const BlogHeaderBanner: FC<BlogHeaderBannerProps> = ({
           .post-banner-authors {
             flex-direction: column;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 0.75rem;
+            margin-top: 1.75rem;
+            padding: 0;
+          }
+
+          .post-banner-author-content {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+            min-width: 0;
+          }
+
+          .post-banner-author-title {
+            font-size: 0.825rem;
+            white-space: nowrap;
+            flex-shrink: 0;
+          }
+
+          .post-banner-author-icon {
+            width: 1.35rem;
+            height: 1.35rem;
+            padding: 0.18rem;
+            flex-shrink: 0;
+          }
+
+          .post-banner-author-name {
+            font-size: 0.85rem;
+            line-height: 1.35;
+            min-width: 0;
+          }
+
+          .checkmark-icon {
+            width: 0.95rem;
+            height: 0.95rem;
+            margin-left: 0.3rem;
+            vertical-align: -0.12em;
           }
         }
       `}</style>
@@ -359,29 +395,31 @@ const BlogHeaderBanner: FC<BlogHeaderBannerProps> = ({
               )}
             </div>
             <div className="post-banner-author-name">
-              {authorName} <span>/ {authorRole}</span>
+              {authorName} {authorRole ? <span>/ {authorRole}</span> : null}
             </div>
           </div>
 
-          <div className="post-banner-author-content">
-            <span className="post-banner-author-title">Fact-checked by:</span>
-            <div className="post-banner-author-icon">
-              {factCheckerAvatar ? (
-                <img src={factCheckerAvatar} alt={factCheckerName} />
-              ) : (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L4 5V11C4 16.52 7.41 21.6 12 23C16.59 21.6 20 16.52 20 11V5L12 2Z" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M9 12L11 14L15 10" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          {factCheckerName ? (
+            <div className="post-banner-author-content">
+              <span className="post-banner-author-title">Fact-checked by:</span>
+              <div className="post-banner-author-icon">
+                {factCheckerAvatar ? (
+                  <img src={factCheckerAvatar} alt={factCheckerName} />
+                ) : (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L4 5V11C4 16.52 7.41 21.6 12 23C16.59 21.6 20 16.52 20 11V5L12 2Z" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M9 12L11 14L15 10" stroke="#9ca3af" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </div>
+              <div className="post-banner-author-name">
+                {factCheckerName} {factCheckerRole ? <span>/ {factCheckerRole}</span> : null}
+                <svg className="checkmark-icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-              )}
+              </div>
             </div>
-            <div className="post-banner-author-name">
-              {factCheckerName} <span>/ {factCheckerRole}</span>
-              <svg className="checkmark-icon" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-              </svg>
-            </div>
-          </div>
+          ) : null}
         </div>
       </div>
     </section>

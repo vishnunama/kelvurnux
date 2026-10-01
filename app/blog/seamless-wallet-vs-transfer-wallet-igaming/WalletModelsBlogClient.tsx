@@ -668,7 +668,7 @@ export default function WalletModelsBlogClient() {
             <li><strong>KYC / AML &amp; Risk Compliance:</strong> Monitors transaction velocity and flags unusual bet patterns or rapid balance drains.</li>
           </ul>
           <p>
-            Whether deploying a turnkey solution or building custom platform components, aligning wallet mechanics with core platform architecture ensures long-term scalability. Learn more about comprehensive system options through a{' '}
+            Whether deploying a turnkey solution or <Link href="/blog/igaming-software-development" className="text-[#00ebaa] hover:underline">building an iGaming platform</Link> from custom components, aligning wallet mechanics with core platform architecture ensures long-term scalability. Learn more about comprehensive system options through a{' '}
             <Link href="/turnkey-casino-software-solutions" className="text-[#00ebaa] hover:underline">
               turnkey casino platform
             </Link>{' '}

@@ -64,6 +64,19 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     authorName: 'Kvaornux Editorial Team',
     authorAvatar: '/assets/favicon.png',
   },
+  {
+    slug: 'igaming-software-development',
+    href: '/blog/igaming-software-development',
+    title: 'iGaming Software Development: A Complete Guide to Building an iGaming Platform',
+    description:
+      'Learn how iGaming software development works, from platform architecture, PAM and wallets to casino, sportsbook, game aggregation, payments, security and integrations.',
+    date: '01.10.2026',
+    readTime: '18 min read',
+    image: '/assets/features/igaming-software-development-banner.jpg',
+    tags: ['iGaming Development', 'Platform Architecture'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.png',
+  },
 ];
 
 export function getPreviousBlogPost(currentSlug: string): BlogPost {
