@@ -39,8 +39,8 @@ export default function Page() {
       '@type': 'WebPage',
       '@id': 'https://kvaornux.com/blog/igaming-software-development',
     },
-    datePublished: '2026-10-01',
-    dateModified: '2026-10-01',
+    datePublished: '2026-10-01T09:15:00+05:30',
+    dateModified: '2026-10-01T10:57:00+05:30',
     author: {
       '@type': 'Organization',
       name: 'Kvaornux',
