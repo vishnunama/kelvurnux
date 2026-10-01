@@ -323,12 +323,12 @@ export default function HeroSection() {
         />
         <img
           src="/assets/hero-img-768.webp"
-          width={1920}
-          height={1215}
+          width={1312}
+          height={830}
           srcSet={`
-            /assets/hero-img-480.webp 640w,
-            /assets/hero-img-768.webp 1200w,
-            /assets/hero-img.webp 1920w
+            /assets/hero-img-480.webp 480w,
+            /assets/hero-img-768.webp 768w,
+            /assets/hero-img.webp 1312w
           `}
           sizes="100vw"
           fetchPriority="high"

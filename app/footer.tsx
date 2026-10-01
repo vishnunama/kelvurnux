@@ -38,7 +38,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="block mb-3 md:mb-4 bg-transparent">
               <img
-                src="/assets/logo.png"
+                src="/assets/logo.webp"
                 alt="Kvaornux"
                 className="h-9 md:h-11 w-auto object-contain block bg-transparent"
               />

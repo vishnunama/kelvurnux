@@ -27,8 +27,17 @@ export default function Home() {
     name: 'Kvaornux',
     url: 'https://kvaornux.com',
     logo: 'https://kvaornux.com/assets/logo.png',
+    description:
+      'Kvaornux is an iGaming technology company providing casino platforms, sportsbook technology, game aggregation, PAM and wallet systems, back-office tools, payment integrations and bespoke iGaming development.',
     email: 'info@kvaornux.com',
     telephone: '+917240328393',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+917240328393',
+      email: 'info@kvaornux.com',
+      contactType: 'sales',
+    },
+    sameAs: ['https://www.linkedin.com/company/kvaornux/'],
   };
 
   const websiteSchema = {
