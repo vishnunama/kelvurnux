@@ -155,8 +155,10 @@ export default function CaseStudiesClient() {
           bottom: -36%;
           left: 72%;
           transform: translateX(-50%);
-          filter: drop-shadow(0 0 35px rgba(0, 235, 170, 0.2)) brightness(0.78) contrast(1.05);
-          opacity: 0.88;
+          filter: brightness(0.8) contrast(1.08) drop-shadow(0 0 35px rgba(0, 235, 170, 0.25));
+          opacity: 0.92;
+          -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.15) 100%);
+          mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.15) 100%);
         }
 
         .portfolio-hero-el-left {
@@ -307,29 +309,155 @@ export default function CaseStudiesClient() {
           background-clip: text;
         }
 
-        @media (max-width: 1024px) {
-          .portfolio-hero-el-left, .portfolio-hero-el-right {
-            display: none;
+        @media (min-width: 601px) and (max-width: 1024px) {
+          .portfolio-hero {
+            padding: 9rem 0 4rem;
+          }
+          .portfolio-hero-container {
+            padding: 0 2.5rem;
           }
           .portfolio-hero-el-main {
-            width: 100vw;
-            bottom: -45%;
-            left: 50%;
+            width: 720px;
+            max-width: 65vw;
+            bottom: -30%;
+            left: 68%;
+            top: auto;
+            transform: translateX(-50%);
+            display: block;
+            opacity: 0.95;
+            filter: brightness(0.85) contrast(1.05) drop-shadow(0 0 35px rgba(0, 235, 170, 0.3));
+            mask-image: none;
+            -webkit-mask-image: none;
+          }
+          .portfolio-hero-el-left {
+            width: 420px;
+            max-width: 40vw;
+            left: 2%;
+            top: -10%;
+            transform: translateX(-30%);
+            display: block;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 25px rgba(0, 235, 170, 0.25));
+            mask-image: none;
+            -webkit-mask-image: none;
+          }
+          .portfolio-hero-el-right {
+            width: 200px;
+            max-width: 18vw;
+            right: 0%;
+            top: -2%;
+            display: block;
+            left: auto;
+            filter: drop-shadow(0 0 25px rgba(0, 235, 170, 0.35));
+          }
+          .portfolio-hero-stats {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1.2rem;
+          }
+          .portfolio-hero-stat {
+            width: auto;
+            min-width: 0;
+            flex: 1 1 0%;
+            min-height: 9.5rem;
+            padding: 1.8rem 1.4rem;
+            border-radius: 1.8rem;
+          }
+          .portfolio-hero-stat:last-child {
+            width: auto;
+            flex: 1 1 0%;
+            min-height: 9.5rem;
+          }
+          .portfolio-hero-stat-value {
+            font-size: 1.35rem;
+          }
+          .portfolio-hero-stat-value span {
+            font-size: 1.75rem;
+          }
+          .portfolio-hero-stat-label {
+            font-size: 0.88rem;
           }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 600px) {
           .portfolio-hero {
-            padding: 5rem 0 3.5rem;
+            padding: 14rem 0 4rem;
+          }
+          .portfolio-hero-container {
+            padding: 0 1.6rem !important;
+          }
+          .portfolio-hero-el-main {
+            width: 350px;
+            max-width: 92vw;
+            top: 5%;
+            left: 68%;
+            bottom: auto;
+            transform: translateX(-35%);
+            opacity: 0.92;
+            filter: brightness(0.8) contrast(1.08) drop-shadow(0 0 35px rgba(0, 235, 170, 0.25));
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.15) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 70%, rgba(0, 0, 0, 0.15) 100%);
+          }
+          .portfolio-hero-el-left {
+            width: 260px;
+            max-width: 65vw;
+            left: -25%;
+            top: 1%;
+            transform: none;
+            opacity: 0.88;
+            filter: brightness(0.75) contrast(1.1) drop-shadow(0 0 25px rgba(0, 235, 170, 0.35));
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.45) 65%, rgba(0, 0, 0, 0.1) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.45) 65%, rgba(0, 0, 0, 0.1) 100%);
+          }
+          .portfolio-hero-el-right {
+            display: none;
           }
           .portfolio-hero-content {
             margin-bottom: 2.5rem;
           }
+          .portfolio-hero-title {
+            font-size: clamp(2.2rem, 8.2vw, 3rem);
+            line-height: 1.1;
+            margin-bottom: 1.2rem;
+          }
+          .portfolio-hero-text {
+            font-size: 1.12rem;
+            line-height: 1.45;
+            margin-bottom: 2.2rem;
+          }
           .portfolio-hero-btn {
-            width: 100%;
+            width: 240px;
+            max-width: 100%;
+          }
+          .portfolio-hero-stats {
+            gap: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
           }
           .portfolio-hero-stat {
-            max-width: 100%;
+            width: calc(50% - 0.6rem);
+            min-width: 140px;
+            flex: 1 1 calc(50% - 0.6rem);
+            min-height: 10.5rem;
+            padding: 1.8rem 1.4rem;
+            border-radius: 2rem;
+          }
+          .portfolio-hero-stat:last-child {
+            width: 100%;
+            flex: 1 1 100%;
+            min-height: 8.5rem;
+            padding: 1.8rem 1.6rem;
+          }
+          .portfolio-hero-stat-value {
+            font-size: 1.35rem;
+            line-height: 1.2;
+          }
+          .portfolio-hero-stat-value span {
+            font-size: 1.7rem;
+          }
+          .portfolio-hero-stat-label {
+            font-size: 0.88rem;
+            line-height: 1.35;
           }
         }
       `}</style>
