@@ -43,6 +43,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform/",
+      priority: 0.9,
+    },
+    {
       url: "https://kvaornux.com/blog",
       priority: 0.8,
     },

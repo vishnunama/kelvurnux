@@ -4,20 +4,20 @@ import CasinoPlatformCaseStudyClient from './Client';
 export const metadata: Metadata = {
   title: 'Casino Platform Development Case Study | Kvaornux',
   description:
-    'See how Kvaornux built a scalable mobile-first casino platform with multi-provider game integrations, NGN wallet infrastructure, payments, affiliate tools and back-office operations.',
+    'See how Kvaornux built a scalable mobile-first casino platform with game aggregator integrations, NGN wallet infrastructure, payments, affiliate tools and back-office operations.',
   alternates: {
     canonical: 'https://kvaornux.com/igaming-case-studies/casino-platform-development/',
   },
   openGraph: {
     title: 'Casino Platform Development Case Study | Kvaornux',
     description:
-      'See how Kvaornux built a scalable mobile-first casino platform with multi-provider game integrations, NGN wallet infrastructure, payments, affiliate tools and back-office operations.',
+      'See how Kvaornux built a scalable mobile-first casino platform with game aggregator integrations, NGN wallet infrastructure, payments, affiliate tools and back-office operations.',
     url: 'https://kvaornux.com/igaming-case-studies/casino-platform-development/',
     siteName: 'Kvaornux',
     type: 'article',
     images: [
       {
-        url: 'https://kvaornux.com/assets/case-studies/lakebets/hero-desktop.jpg',
+        url: 'https://kvaornux.com/assets/case-studies/lakebets/lakebets-casino-platform-development.webp',
         width: 1200,
         height: 630,
         alt: 'Lakebets Mobile-First Casino Platform Development Case Study by Kvaornux',
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Casino Platform Development Case Study | Kvaornux',
     description:
-      'See how Kvaornux built a scalable mobile-first casino platform with multi-provider game integrations, NGN wallet infrastructure, payments, affiliate tools and back-office operations.',
-    images: ['https://kvaornux.com/assets/case-studies/lakebets/hero-desktop.jpg'],
+      'See how Kvaornux built a scalable mobile-first casino platform with game aggregator integrations, NGN wallet infrastructure, payments, affiliate tools and back-office operations.',
+    images: ['https://kvaornux.com/assets/case-studies/lakebets/lakebets-casino-platform-development.webp'],
   },
 };
 
@@ -47,8 +47,8 @@ export default function Page() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'iGaming Case Studies',
-        item: 'https://kvaornux.com/igaming-case-studies',
+        name: 'Portfolio',
+        item: 'https://kvaornux.com/igaming-case-studies/',
       },
       {
         '@type': 'ListItem',
@@ -68,8 +68,8 @@ export default function Page() {
     },
     headline: 'Building a Scalable Mobile-First Casino Platform',
     description:
-      'See how Kvaornux built a scalable mobile-first casino platform with multi-provider game integrations, NGN wallet infrastructure, payments, affiliate tools and back-office operations.',
-    image: 'https://kvaornux.com/assets/case-studies/lakebets/hero-desktop.jpg',
+      'See how Kvaornux built a scalable mobile-first casino platform with game aggregator integrations, NGN wallet infrastructure, payments, affiliate tools and back-office operations.',
+    image: 'https://kvaornux.com/assets/case-studies/lakebets/lakebets-casino-platform-development.webp',
     author: {
       '@type': 'Organization',
       name: 'Kvaornux',
@@ -84,8 +84,8 @@ export default function Page() {
         url: 'https://kvaornux.com/assets/logo.png',
       },
     },
-    datePublished: '2026-01-15T00:00:00Z',
-    dateModified: '2026-10-02T00:00:00Z',
+    datePublished: '2026-10-04T00:00:00Z',
+    dateModified: '2026-10-04T00:00:00Z',
   };
 
   return (

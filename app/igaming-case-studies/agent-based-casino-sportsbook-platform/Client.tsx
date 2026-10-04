@@ -13,11 +13,11 @@ import {
 } from 'lucide-react';
 import ContactForm from '@/src/components/contactform/ContactForm';
 
-export default function CasinoPlatformCaseStudyClient() {
+export default function AgentBasedCasinoSportsbookCaseStudyClient() {
   return (
     <div className="min-h-screen bg-[#0b0b0f] text-white selection:bg-[#00ebaa] selection:text-black">
       <style>{`
-        /* EXACT CASE STUDY STYLES MATCHING THE REFERENCE HTML & CSS 100% */
+        /* EXACT CASE STUDY STYLES MATCHING THE CASINO-PLATFORM-DEVELOPMENT PAGE 100% */
         .cs-hero-section {
           position: relative;
           padding: clamp(120px, 12vw, 160px) 0 40px;
@@ -241,14 +241,18 @@ export default function CasinoPlatformCaseStudyClient() {
           position: relative;
           border-radius: 20px;
           overflow: hidden;
-          aspect-ratio: 640 / 430;
-          max-width: 480px;
+          aspect-ratio: 16 / 10;
+          max-width: 520px;
           width: 100%;
           margin: 0 auto;
           box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+          background: #0e1418;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
-        /* RESULTS IN 6 MONTHS MATCHING EXACT SPEC */
+        /* PLATFORM DELIVERED MATCHING EXACT SPEC (3 COLUMNS X 2 ROWS) */
         .cs-results {
           padding: 48px 0;
           text-align: center;
@@ -505,13 +509,13 @@ export default function CasinoPlatformCaseStudyClient() {
             <span className="breadcrumbs-sep">›</span>
             <Link href="/igaming-case-studies/" className="breadcrumbs-item">Portfolio</Link>
             <span className="breadcrumbs-sep">›</span>
-            <span className="breadcrumbs-item breadcrumbs-current">Casino Platform Development</span>
+            <span className="breadcrumbs-item breadcrumbs-current">Agent-Based Casino & Sportsbook Platform</span>
           </nav>
 
           <div className="cs-hero-banner">
             <Image
-              src="/assets/case-studies/lakebets/lakebets-casino-platform-development.webp"
-              alt="Lakebets mobile-first casino platform development"
+              src="/assets/case-studies/jeestfast24/jeetfast24-agent-based-casino-sportsbook-platform.webp"
+              alt="Jeetfast24 agent-based casino and sportsbook platform development"
               width={1600}
               height={520}
               priority
@@ -520,27 +524,31 @@ export default function CasinoPlatformCaseStudyClient() {
             <div className="cs-hero-banner-overlay"></div>
             <div className="cs-hero-banner-content">
               <h1 className="cs-hero-title">
-                Building a Scalable Mobile-First Casino Platform
+                Building a Multi-Tier Agent-Based Casino & Sportsbook Platform
               </h1>
 
               <div className="cs-hero-description">
                 <p>
-                  Kvaornux developed Lakebets as a mobile-first casino platform for the Nigerian market, bringing game aggregation, NGN wallet operations, payments, affiliate management and back-office controls into one connected platform.
+                  Kvaornux developed Jeetfast24 as a PKR-based iGaming platform combining casino games, exchange-style sportsbook functionality, multi-tier agent operations, wallet management and role-based back-office controls within one connected system.
                 </p>
               </div>
 
               <div className="cs-hero-tags">
                 <span className="cs-hero-tag">
-                  <Gamepad2 className="w-5 h-5" />
-                  <span>10 Game Aggregator Integrations</span>
+                  <Wallet className="w-5 h-5" />
+                  <span>PKR Wallet Infrastructure</span>
                 </span>
                 <span className="cs-hero-tag">
                   <Users className="w-5 h-5" />
-                  <span>6-Level Affiliate System</span>
+                  <span>Multi-Tier Agent System</span>
                 </span>
                 <span className="cs-hero-tag">
-                  <Wallet className="w-5 h-5" />
-                  <span>NGN Wallet & Payments</span>
+                  <Gamepad2 className="w-5 h-5" />
+                  <span>Casino & Sportsbook</span>
+                </span>
+                <span className="cs-hero-tag">
+                  <TrendingUp className="w-5 h-5" />
+                  <span>Real-Time Betting Operations</span>
                 </span>
               </div>
             </div>
@@ -550,15 +558,15 @@ export default function CasinoPlatformCaseStudyClient() {
           <div className="cs-facts">
             <div className="cs-facts-item">
               <span className="cs-facts-label">Project name</span>
-              <span className="cs-facts-value">Lakebets</span>
+              <span className="cs-facts-value">Jeetfast24</span>
             </div>
             <div className="cs-facts-item">
               <span className="cs-facts-label">Solution</span>
-              <span className="cs-facts-value">Custom Casino Platform</span>
+              <span className="cs-facts-value">Casino & Sportsbook Platform</span>
             </div>
             <div className="cs-facts-item">
               <span className="cs-facts-label">Market</span>
-              <span className="cs-facts-value">Nigeria</span>
+              <span className="cs-facts-value">Pakistan</span>
             </div>
             <div className="cs-facts-item">
               <span className="cs-facts-label">Platform</span>
@@ -577,17 +585,23 @@ export default function CasinoPlatformCaseStudyClient() {
               <h2 className="cs-two-col-title">The Challenge</h2>
               <div className="cs-two-col-content">
                 <p>
-                  Lakebets needed a casino platform built around the requirements of the Nigerian market rather than a generic casino template. The platform had to connect multiple game APIs, keep player balances synchronized across gameplay and payments, support NGN transactions, provide a mobile-first experience and give the operations team centralized control over players, transactions, promotions and affiliate activity.
+                  Jeetfast24 required more than a standard player-facing gaming website. The platform needed to support a structured agent-led operating model while combining casino content and sportsbook functionality within a single PKR-based environment.
+                </p>
+                <p>
+                  The architecture also needed clear operational separation between platform administrators, back-office teams, agents and players, with controlled credit distribution and reporting visibility across each level.
+                </p>
+                <p>
+                  The player experience had to remain mobile-first while supporting real-time sports markets, casino games and account operations without exposing the complexity of the underlying hierarchy.
                 </p>
               </div>
             </div>
             <div className="cs-two-col-image">
               <Image
-                src="/assets/case-studies/lakebets/lakebets-mobile-casino-platform.webp"
-                alt="Lakebets mobile-first casino platform development"
+                src="/assets/case-studies/jeestfast24/jeetfast24-mobile-casino-sportsbook.webp"
+                alt="Jeetfast24 agent-based platform challenge and multi-tier operational architecture"
                 width={640}
                 height={430}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-1"
               />
             </div>
           </div>
@@ -596,74 +610,118 @@ export default function CasinoPlatformCaseStudyClient() {
           <div className="cs-two-col-grid">
             <div className="cs-two-col-image">
               <Image
-                src="/assets/case-studies/lakebets/lakebets-platform-overview.webp"
-                alt="Lakebets casino platform with game lobby, affiliate and wallet interfaces"
+                src="/assets/case-studies/jeestfast24/jeetfast24-app-experience-showcase.webp"
+                alt="Jeetfast24 platform overview with sportsbook, casino, and agent management"
                 width={640}
                 height={430}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-1"
               />
             </div>
             <div className="cs-two-col-text">
               <h2 className="cs-two-col-title">The Solution</h2>
               <div className="cs-two-col-content">
                 <p>
-                  Kvaornux developed a custom H5 casino platform connecting the player frontend, centralized wallet, game aggregation layer, payment workflows, affiliate system and back office. Ten game aggregator/API integrations were connected with game catalogue retrieval, launch flows, wallet callbacks, bet and win processing, transaction validation and bet history. The platform was built with React, Node.js, PostgreSQL, Redis and Socket.io.
+                  Kvaornux developed a connected iGaming platform built around a multi-tier operational structure.
                 </p>
+                <p>
+                  The system combines a mobile-first H5 player interface with casino and sportsbook functionality, PKR wallet operations and dedicated administrative views for different operational roles.
+                </p>
+                <p>
+                  The hierarchy supports Super Admin, permission-based Sub-Admin access, Backoffice/Master Agent operations, Agent accounts and end players.
+                </p>
+                <p>
+                  Back-office and agent users receive access according to their operational scope, allowing platform-level administration while keeping downstream player and financial activity organized by hierarchy.
+                </p>
+                <ul>
+                  <li>Multi-tier agent and back-office architecture</li>
+                  <li>PKR-based wallet operations</li>
+                  <li>Casino and sportsbook within one player platform</li>
+                  <li>Role-based administrative access</li>
+                  <li>Agent-to-player credit management</li>
+                  <li>Mobile-first H5 player experience</li>
+                </ul>
               </div>
             </div>
           </div>
 
-          {/* GRID 3: Game Integration & Wallet Infrastructure */}
+          {/* GRID 3: Sportsbook & Casino Infrastructure */}
           <div className="cs-two-col-grid">
             <div className="cs-two-col-text">
-              <h2 className="cs-two-col-title">Game Integration & Wallet Infrastructure</h2>
+              <h2 className="cs-two-col-title">Sportsbook & Casino Infrastructure</h2>
               <div className="cs-two-col-content">
                 <p>
-                  The game layer connects multiple aggregator APIs through a unified platform workflow while the centralized NGN wallet keeps player balances aligned across deposits, withdrawals and gameplay. Real-time balance updates are delivered through Socket.io, with transaction validation and duplicate-transaction protection supporting wallet accuracy.
+                  Jeetfast24 combines exchange-style sportsbook functionality with casino and slot content through integrated gaming infrastructure.
+                </p>
+                <p>
+                  The sportsbook supports cricket-focused markets including Match Odds, Bookmaker and Fancy/Session markets alongside additional sports and racing categories.
+                </p>
+                <p>
+                  Back and Lay betting is supported together with real-time liability and exposure calculations before bet acceptance.
+                </p>
+                <p>
+                  Casino and slot content is delivered through the platform's active game aggregation infrastructure, while wallet synchronization connects gaming activity with the player's PKR balance.
                 </p>
                 <ul>
-                  <li>10 game aggregator/API integrations</li>
-                  <li>Game catalogue and launch integration</li>
-                  <li>Bet, win and rollback handling where supported</li>
-                  <li>Real-time NGN wallet synchronization</li>
+                  <li>Cricket Match Odds</li>
+                  <li>Cricket Fancy / Session markets</li>
+                  <li>Back & Lay betting</li>
+                  <li>Soccer and Tennis markets</li>
+                  <li>Horse and Greyhound Racing</li>
+                  <li>Real-time exposure and liability calculations</li>
+                  <li>Casino and slot aggregation</li>
+                  <li>Connected PKR wallet operations</li>
                 </ul>
               </div>
             </div>
             <div className="cs-two-col-image">
               <Image
-                src="/assets/case-studies/lakebets/lakebets-development-process.webp"
-                alt="Lakebets mobile-first casino platform development process"
+                src="/assets/case-studies/jeestfast24/jeetfast24-home-dashboard-process-slide.webp"
+                alt="Jeetfast24 exchange sportsbook and casino infrastructure"
                 width={640}
                 height={430}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-1"
               />
             </div>
           </div>
 
-          {/* GRID 4: Affiliate & Back-Office Operations (Image Left, Text Right) */}
+          {/* GRID 4: Agent & Back-Office Operations (Image Left, Text Right) */}
           <div className="cs-two-col-grid">
             <div className="cs-two-col-image">
               <Image
-                src="/assets/case-studies/lakebets/lakebets-platform-style-guide.webp"
-                alt="Lakebets casino platform UI and brand style guide"
+                src="/assets/case-studies/jeestfast24/jeetfast-neon-gaming-style-guide.webp"
+                alt="Jeetfast24 agent hierarchy and back-office management system"
                 width={640}
                 height={430}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-1"
               />
             </div>
             <div className="cs-two-col-text">
-              <h2 className="cs-two-col-title">Affiliate & Back-Office Operations</h2>
+              <h2 className="cs-two-col-title">Agent & Back-Office Operations</h2>
               <div className="cs-two-col-content">
                 <p>
-                  Lakebets includes a six-level referral architecture designed to support structured affiliate operations. Referral relationships, qualification criteria, player activity and commissions can be tracked through the platform. The back office gives the operations team centralized control over users, balances, deposits, withdrawals, game activity, promotions, reporting and administrative permissions.
+                  A major part of the Jeetfast24 architecture is its agent-based operational model.
+                </p>
+                <p>
+                  The system separates platform administration, delegated administrative access, master-agent operations and direct player management into controlled layers.
+                </p>
+                <p>
+                  Super Admin users retain platform-level visibility and configuration access. Permission-based Sub-Admins can be assigned selected operational modules.
+                </p>
+                <p>
+                  Backoffice/Master Agent accounts manage downstream agents and credit allocation, while Agents can manage their assigned players, distribute PKR credit and review player-level activity within their permitted scope.
+                </p>
+                <p>
+                  This creates a structured operating environment without giving every role unrestricted platform access.
                 </p>
                 <ul>
-                  <li>6-level affiliate architecture</li>
-                  <li>Referral and commission tracking</li>
-                  <li>Player and wallet management</li>
-                  <li>Deposit and withdrawal workflows</li>
-                  <li>Promotions and gift-code controls</li>
-                  <li>Role-based administrative access</li>
+                  <li>Super Admin controls</li>
+                  <li>Permission-based Sub-Admin access</li>
+                  <li>Backoffice / Master Agent layer</li>
+                  <li>Agent account management</li>
+                  <li>Agent-to-player PKR credit distribution</li>
+                  <li>Hierarchical reporting visibility</li>
+                  <li>Player and transaction management</li>
+                  <li>Role-based operational controls</li>
                 </ul>
               </div>
             </div>
@@ -671,77 +729,72 @@ export default function CasinoPlatformCaseStudyClient() {
         </div>
       </section>
 
-      {/* 3. PLATFORM DELIVERED */}
+      {/* 3. PLATFORM DELIVERED MATCHING EXACT SPEC (3 COLUMNS X 2 ROWS) */}
       <section className="cs-results">
         <div className="cs-container">
           <h2 className="cs-results-heading">Platform Delivered</h2>
           <div className="cs-results-list">
             <div className="cs-results-item">
               <div className="cs-results-icon">
-                <Gamepad2 className="w-6 h-6" />
+                <Wallet className="w-5 h-5" />
               </div>
-              <p className="cs-results-value">10</p>
-              <p className="cs-results-label">Game Aggregator Integrations</p>
+              <div className="cs-results-value">PKR</div>
+              <div className="cs-results-label">Wallet Infrastructure</div>
             </div>
 
             <div className="cs-results-item">
               <div className="cs-results-icon">
-                <Users className="w-6 h-6" />
+                <Users className="w-5 h-5" />
               </div>
-              <p className="cs-results-value">6</p>
-              <p className="cs-results-label">Affiliate Levels</p>
+              <div className="cs-results-value">Multi-Tier</div>
+              <div className="cs-results-label">Agent Architecture</div>
             </div>
 
             <div className="cs-results-item">
               <div className="cs-results-icon">
-                <Wallet className="w-6 h-6" />
+                <Gamepad2 className="w-5 h-5" />
               </div>
-              <p className="cs-results-value">NGN</p>
-              <p className="cs-results-label">Local Wallet Infrastructure</p>
+              <div className="cs-results-value">Back & Lay</div>
+              <div className="cs-results-label">Exchange-Style Sportsbook</div>
             </div>
 
             <div className="cs-results-item">
               <div className="cs-results-icon">
-                <RotateCcw className="w-6 h-6" />
+                <RotateCcw className="w-5 h-5" />
               </div>
-              <p className="cs-results-value">Real-Time</p>
-              <p className="cs-results-label">Balance Synchronization</p>
+              <div className="cs-results-value">Real-Time</div>
+              <div className="cs-results-label">Odds & Betting Operations</div>
             </div>
 
             <div className="cs-results-item">
               <div className="cs-results-icon">
-                <Handshake className="w-6 h-6" />
+                <Handshake className="w-5 h-5" />
               </div>
-              <p className="cs-results-value">Mobile-First</p>
-              <p className="cs-results-label">H5 Player Experience</p>
+              <div className="cs-results-value">Mobile-First</div>
+              <div className="cs-results-label">H5 Player Experience</div>
             </div>
 
             <div className="cs-results-item">
               <div className="cs-results-icon">
-                <TrendingUp className="w-6 h-6" />
+                <TrendingUp className="w-5 h-5" />
               </div>
-              <p className="cs-results-value">Live</p>
-              <p className="cs-results-label">Production Platform</p>
+              <div className="cs-results-value">Multi-Role</div>
+              <div className="cs-results-label">Back-Office Controls</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. CLIENT TESTIMONIAL */}
+      {/* 4. PROJECT OUTCOME EDITORIAL SUMMARY */}
       <section className="cs-testimonial">
         <div className="cs-container">
-          <h2 className="cs-testimonial-heading">Client testimonials</h2>
+          <h2 className="cs-testimonial-heading">Project Outcome</h2>
           <div className="cs-testimonial-card">
-            <div className="cs-testimonial-quote-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="44" height="34" viewBox="0 0 44 34" fill="none">
-                <path d="M10.3158 34C8.5614 34 6.87719 33.5424 5.26316 32.6273C3.7193 31.6418 2.45614 30.2691 1.47368 28.5093C0.491228 26.7495 0 24.7081 0 22.3851C0 19.9917 0.526316 17.4928 1.57895 14.8882C2.70175 12.2836 4.35088 9.71428 6.52632 7.18013C8.77193 4.64596 11.6491 2.25259 15.1579 0L20.1053 5.2795C17.8596 7.67288 16.1754 10.0311 15.0526 12.354C13.9298 14.6066 13.3684 16.7184 13.3684 18.6894C13.3684 20.8716 13.9298 22.5963 15.0526 23.8634C16.1754 25.1304 17.7193 26.3623 19.6842 27.559C19.0526 29.53 17.8246 31.1139 16 32.3106C14.2456 33.4369 12.3509 34 10.3158 34ZM34.2105 34C32.4561 34 30.7719 33.5424 29.1579 32.6273C27.614 31.6418 26.3509 30.2691 25.3684 28.5093C24.386 26.7495 23.8947 24.7081 23.8947 22.3851C23.8947 19.9917 24.4211 17.4928 25.4737 14.8882C26.5965 12.2836 28.2456 9.71428 30.4211 7.18013C32.6667 4.64596 35.5439 2.25259 39.0526 0L44 5.2795C41.7544 7.67288 40.0702 10.0311 38.9474 12.354C37.8246 14.6066 37.2632 16.7184 37.2632 18.6894C37.2632 20.8716 37.8246 22.5963 38.9474 23.8634C40.0702 25.1304 41.614 26.3623 43.5789 27.559C42.9474 29.53 41.7193 31.1139 39.8947 32.3106C38.1404 33.4369 36.2456 34 34.2105 34Z" fill="#ffffff" fillOpacity="0.2"></path>
-              </svg>
-            </div>
             <div className="cs-testimonial-quote">
-              The flexibility of Kvaornux’s modular setup is a significant plus. It lets us swap tools or tweak parts of the project without interrupting operations, which is a huge win when you’re live 24/7. Working with their team feels more like having an in-house department of experts than a standard vendor. They focus on technical execution and keep things moving.
+              The platform brings casino, sportsbook and agent operations into one connected system. The multi-tier architecture provides structured control across agents, players and operational activity, while the mobile-first H5 interface keeps the player experience straightforward.
             </div>
             <div className="cs-testimonial-role">
-              Lakebets Client
+              Jeetfast24 Project
             </div>
           </div>
         </div>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://kvaornux.com/assets/case-studies/lakebets/hero-desktop.jpg',
+        url: 'https://kvaornux.com/assets/case-studies/lakebets/lakebets-casino-platform-development.webp',
         width: 1200,
         height: 630,
         alt: 'Kvaornux iGaming Case Studies & Development Portfolio',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'iGaming Case Studies & Development Portfolio | Kvaornux',
     description:
       'Explore Kvaornux iGaming case studies covering casino platform development, game integrations, payments, wallets, affiliate systems and back-office technology.',
-    images: ['https://kvaornux.com/assets/case-studies/lakebets/hero-desktop.jpg'],
+    images: ['https://kvaornux.com/assets/case-studies/lakebets/lakebets-casino-platform-development.webp'],
   },
 };
 
@@ -78,6 +78,12 @@ export default function Page() {
           position: 1,
           url: 'https://kvaornux.com/igaming-case-studies/casino-platform-development/',
           name: 'Building a Scalable Mobile-First Casino Platform',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          url: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform/',
+          name: 'Building a Multi-Tier Agent-Based Casino & Sportsbook Platform',
         },
       ],
     },

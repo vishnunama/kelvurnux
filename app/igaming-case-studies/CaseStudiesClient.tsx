@@ -82,6 +82,171 @@ export default function CaseStudiesClient() {
     }
   };
 
+  const [activeTab, setActiveTab] = React.useState('');
+  const [searchQuery, setSearchQuery] = React.useState('');
+
+  const caseStudiesData = [
+    {
+      id: 'lakebets',
+      category: 'casino',
+      slug: 'casino-platform-development',
+      title: 'Building a Scalable Mobile-First Casino Platform',
+      description: 'Kvaornux developed a mobile-first casino platform for the Nigerian market, connecting multi-provider game integrations, NGN wallet infrastructure, payments, affiliate operations and centralized back-office management.',
+      image: '/assets/case-studies/lakebets/mobile-casino-platform-development.webp',
+      imageAlt: 'Lakebets mobile-first casino platform development case study',
+      features: [
+        'Nigeria',
+        'Mobile-First H5',
+        'NGN Wallet',
+        '10 Game Aggregator Integrations',
+        '6-Level Affiliate System',
+        'Live Platform',
+      ],
+      link: '/igaming-case-studies/casino-platform-development/',
+    },
+    {
+      id: 'jeestfast24',
+      category: 'sportsbook',
+      slug: 'agent-based-casino-sportsbook-platform',
+      title: 'Building a Multi-Tier Agent-Based Casino & Sportsbook Platform',
+      description: 'Kvaornux developed a PKR-based iGaming platform combining casino and sportsbook functionality with multi-tier agent management, wallet operations and role-based back-office controls.',
+      image: '/assets/case-studies/jeestfast24/jeetfast24-agent-based-casino-sportsbook-platform.webp',
+      imageAlt: 'Jeetfast24 agent-based casino and sportsbook platform development case study',
+      features: [
+        'Pakistan',
+        'Casino & Sportsbook',
+        'PKR Wallet',
+        'Multi-Tier Agent System',
+        'Mobile-First H5',
+        'Live Platform',
+      ],
+      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform/',
+    },
+  ];
+
+  const testimonialsData = [
+    {
+      id: 1,
+      text: "The flexibility of Kvaornux’s modular setup is a significant plus. It lets us swap tools or tweak parts of the project without interrupting operations, which is a huge win when you’re live 24/7. Working with their team feels more like having an in-house department of experts than a standard vendor. They focus on technical execution and keep things moving, so we don’t lose time on long coordination cycles.",
+      authorName: "",
+      authorPosition: "Yep Casino",
+      photo: "/assets/author-nikita.jpg",
+      rating: 5,
+    },
+    {
+      id: 2,
+      text: "Kvaornux has a clear commitment to excellence, combining operational efficiency with a deep understanding of player engagement, trends and market dynamics. Working with them has been a seamless experience. Their professionalism, responsiveness, and attention to detail have made integration and ongoing operations smooth and effective. They have shown a remarkable ability to leverage Betsoft’s portfolio, presenting our games in a way that maximizes both performance and player satisfaction.",
+      authorName: "Jonathan Crook",
+      authorPosition: "Betsoft",
+      photo: "/assets/author-nikita.jpg",
+      rating: 5,
+    },
+    {
+      id: 3,
+      text: "It has been one of the most rewarding partnerships I’ve had. From the very beginning, Kvaornux’s team has been incredibly easy to communicate with, attentive, and consistently proactive in addressing any request. Their technologically advanced platform deserves special recognition. The level of expertise Kvaornux brings to the table is evident in every interaction. They set a high standard, and I’m glad to work with a team that consistently exceeds expectations.",
+      authorName: "Kirill Miroshnichenko",
+      authorPosition: "CCO, Endorphina",
+      photo: "/assets/author-karyna.jpg",
+      rating: 5,
+    },
+    {
+      id: 4,
+      text: "For Evoplay, working with partners who share a proactive mindset and high standards is crucial. Kvaornux delivers on this through a structured approach, innovative solutions, and a strong understanding of the iGaming product landscape. The team communicates clearly, remains open to dialogue, and pays close attention to detail. I would highlight how they stay aligned throughout the process, respond quickly to adjustments requested, and maintain a consistent level of execution.",
+      authorName: "Ivan Kravchuk",
+      authorPosition: "CEO, Evoplay",
+      photo: "/assets/author-nikita.jpg",
+      rating: 5,
+    },
+    {
+      id: 5,
+      text: "Our collaboration with Kvaornux has become one of the most productive partnerships for our company. Their team is fast, professional, and consistently transparent in all technical and operational matters. The integration of our games was smooth, and their platform provides excellent stability along with access to a wide network of operators. We appreciate their commitment to innovation and high-quality service. Confidently recommend Kvaornux as a reliable and proactive B2B provider.",
+      authorName: "",
+      authorPosition: "CEO, Gamzix",
+      photo: "/assets/author-karyna.jpg",
+      rating: 5,
+    },
+    {
+      id: 6,
+      text: "In this industry, you value partners who understand the operational flow of a live environment. Our experience with Kvaornux has been consistently efficient. Their team is technically grounded and focuses on delivering results that actually save time. The platform’s stability is also clear. They operate as a professional extension of our own team. For any business prioritizing clean execution and a reliable B2B partnership, Kvaornux is a solid choice.",
+      authorName: "",
+      authorPosition: "GG Bet",
+      photo: "/assets/author-nikita.jpg",
+      rating: 5,
+    },
+    {
+      id: 7,
+      text: "You can see how it’s put together once you start using it. Kvaornux handles our volume without any lag or stability issues. Nothing breaks in the flow, and there’s no need to second-guess what’s happening under the hood. That takes a lot of pressure off the team day to day. They’re strong technically, communication is straight to the point, and the whole platform just feels reliable and well-built.",
+      authorName: "",
+      authorPosition: "Hit Spin",
+      photo: "/assets/author-karyna.jpg",
+      rating: 5,
+    },
+    {
+      id: 8,
+      text: "Usually, partnerships mean dealing with a lot of formalities and waiting on someone to ‘check with their boss.’ With Kvaornux, it’s the exact opposite. You’re talking to the people running the show. If we need to make a change, we hash it out, get a ‘yes’ right then and there, and keep moving. It’s an incredibly frictionless way to work.",
+      authorName: "",
+      authorPosition: "Ice Casino",
+      photo: "/assets/author-nikita.jpg",
+      rating: 5,
+    },
+    {
+      id: 9,
+      text: "Getting campaigns, data, and affiliate tools to actually sync is usually a massive headache. With Kvaornux, it just clicks. You can tell they have real B2C experience because the ecosystem’s logic matches how we actually operate. We didn’t spend weeks forcing modules to connect. It’s stable, it drastically cuts our daily overhead, and their team is just as no-nonsense as the tech.",
+      authorName: "",
+      authorPosition: "NV Casino",
+      photo: "/assets/author-karyna.jpg",
+      rating: 5,
+    },
+    {
+      id: 10,
+      text: "At Slotoro, we run a massive portfolio with heavy traffic spikes, and the API response times stay completely flat. No lag, no backend fires for our devs to constantly put out. It’s serious infrastructure. And because Kvaornux’s team actually understands the B2C side, we didn’t waste months arguing over requirements before launching. Recommend teaming up with them.",
+      authorName: "",
+      authorPosition: "Slotoro",
+      photo: "/assets/author-nikita.jpg",
+      rating: 5,
+    },
+    {
+      id: 11,
+      text: "As a project, Verde was very important to me. I didn’t want it lumped in with the noisy, over-designed gambling sites. I envisioned something quieter, more confident, more refined. And I thank Kvaornux for understanding that. The UI is clean, the flow makes sense, and there’s none of the visual shouting you usually see in our space. Now, its look matches the level of service we want to provide.",
+      authorName: "",
+      authorPosition: "Verde Casino",
+      photo: "/assets/author-karyna.jpg",
+      rating: 5,
+    },
+    {
+      id: 12,
+      text: "I value tools that actually change how the team works. Kvaornux helped us build a consistent experimentation process and bring more structure into how we approach product improvements. We now run experiments as a continuous process across the entire user journey. This influenced how quickly we can validate and scale new initiatives. I would recommend Kvaornux to teams looking to build a strong experimentation culture and drive sustainable product growth.",
+      authorName: "",
+      authorPosition: "VOX Casino",
+      photo: "/assets/author-nikita.jpg",
+      rating: 5,
+    },
+  ];
+
+  const [activeTestimonialIndex, setActiveTestimonialIndex] = React.useState(1);
+
+  const handlePrevTestimonial = () => {
+    setActiveTestimonialIndex((prev) =>
+      prev === 0 ? testimonialsData.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextTestimonial = () => {
+    setActiveTestimonialIndex((prev) =>
+      prev === testimonialsData.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const filteredStudies = caseStudiesData.filter((study) => {
+    const matchesTab = activeTab === '' || study.category === activeTab;
+    const matchesSearch =
+      searchQuery === '' ||
+      study.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      study.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      study.features.some((f) => f.toLowerCase().includes(searchQuery.toLowerCase()));
+    return matchesTab && matchesSearch;
+  });
+
   return (
     <div className="min-h-screen bg-[#0b0b0f] text-white selection:bg-[#00ebaa] selection:text-black">
       <style>{`
@@ -381,10 +546,10 @@ export default function CaseStudiesClient() {
 
         @media (max-width: 600px) {
           .portfolio-hero {
-            padding: 14rem 0 4rem;
+            padding: 11rem 0 3.5rem;
           }
           .portfolio-hero-container {
-            padding: 0 1.6rem !important;
+            padding: 0 1rem !important;
           }
           .portfolio-hero-el-main {
             width: 350px;
@@ -460,6 +625,579 @@ export default function CaseStudiesClient() {
             line-height: 1.35;
           }
         }
+
+        /* ALL CASE STUDIES SECTION STYLES */
+        .case-studies-section {
+          position: relative;
+          padding: 5rem 0 7rem;
+          background: #0b0b0f;
+        }
+
+        .section-padding-s {
+          padding: 5rem 0;
+        }
+
+        .cs-container {
+          max-width: 1360px;
+          margin: 0 auto;
+          padding: 0 2rem;
+          position: relative;
+          z-index: 2;
+        }
+
+        .section-title-left {
+          margin: 0 0 1.6rem;
+          text-align: left;
+        }
+
+        .section-title {
+          color: #fff;
+          text-align: left;
+          font-size: clamp(1.8rem, 2.4rem, 2.6rem);
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.2;
+          background: linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff;
+          background-blend-mode: darken, normal;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          position: relative;
+          z-index: 2;
+          width: max-content;
+          max-width: 100%;
+        }
+
+        .cs-toolbar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1.2rem;
+          margin-bottom: 2rem;
+          flex-wrap: wrap;
+        }
+
+        .cs-filter-tabs {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.8rem;
+          flex-shrink: 0;
+        }
+
+        .cs-filter-tab {
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          border-radius: 9.9rem;
+          background: rgba(255, 255, 255, 0.12);
+          display: block;
+          padding: 0.5rem 1.6rem;
+          color: #eaeaea;
+          font-family: inherit;
+          font-size: 1.15rem;
+          font-weight: 500;
+          line-height: 1.6rem;
+          white-space: nowrap;
+        }
+
+        .cs-filter-tab:hover {
+          background: rgba(255, 255, 255, 0.22);
+          color: #ffffff;
+        }
+
+        .cs-filter-tab.active {
+          background: #00ebaa;
+          color: #0b0b0f;
+          border-radius: 3.2rem;
+          font-weight: 600;
+        }
+
+        .cs-search {
+          flex-grow: 1;
+          max-width: 240px;
+          min-width: 180px;
+        }
+
+        .cs-search-field {
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+
+        .cs-search-icon {
+          position: absolute;
+          left: 1.1rem;
+          width: 1.4rem;
+          height: 1.4rem;
+          pointer-events: none;
+        }
+
+        .cs-search-input {
+          width: 100%;
+          padding: 0.55rem 2.8rem 0.55rem 3.2rem;
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          border-radius: 9.9rem;
+          color: #fff;
+          font-size: 1.15rem;
+          outline: none;
+          transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .cs-search-input::placeholder {
+          color: #71717a;
+        }
+
+        .cs-search-input:focus {
+          border-color: #00ebaa;
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        .cs-search-clear {
+          position: absolute;
+          right: 1.4rem;
+          background: transparent;
+          border: none;
+          color: #00ebaa;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+        }
+
+        .case-studies-list {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 1.4rem;
+        }
+
+        .case-studies-card {
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+          height: 100%;
+        }
+
+        .case-studies-card-img {
+          position: relative;
+          width: 100%;
+          border-radius: 0.5rem;
+          overflow: hidden;
+          display: block;
+          aspect-ratio: 505 / 253;
+          background: #141a20;
+        }
+
+        .case-studies-card-img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .case-studies-card-body {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+          padding: 1.4rem;
+          flex-grow: 1;
+          border-radius: 0.5rem;
+          background: linear-gradient(180deg, rgba(0, 235, 170, 0.12) 0%, rgba(0, 235, 170, 0.06) 40%, rgba(0, 235, 170, 0.02) 100%), #10161a;
+          border: none;
+          box-shadow: 0 -2px 4.7px 0 rgba(0, 235, 170, 0.15) inset;
+          backdrop-filter: blur(10px);
+        }
+
+        .case-studies-card-title {
+          color: #fff;
+          font-size: 1.35rem;
+          font-weight: 700;
+          line-height: 1.35;
+          text-align: left;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .case-studies-card-title:hover {
+          color: #00ebaa;
+        }
+
+        .case-studies-card-text {
+          font-size: 1rem;
+          font-weight: 400;
+          line-height: 1.5;
+          color: #a5d8d0;
+        }
+
+        .case-studies-card-features {
+          display: flex;
+          flex-direction: column;
+          gap: 0.6rem;
+          padding: 0;
+          margin: 0.2rem 0 0 0;
+          list-style: none;
+          max-width: calc(100% - 4.5rem);
+        }
+
+        .case-studies-card-feature {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.6rem;
+        }
+
+        .case-studies-card-feature-text {
+          font-size: 0.95rem;
+          color: #e2e8f0;
+          font-weight: 500;
+          line-height: 1.4;
+        }
+
+        .case-studies-card-btn {
+          position: absolute;
+          bottom: 1.2rem;
+          right: 1.2rem;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 9.9rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: radial-gradient(51.68% 146.29% at 65.07% -28.85%, #00ebaa 26.68%, #00c3b3 100%);
+          color: #121314;
+          text-decoration: none;
+          box-shadow: 0 -3px 3px 0 rgba(0, 235, 170, 0.25) inset, 0 1px 1.5px 0 rgba(255, 244, 230, 0.93) inset;
+        }
+
+        .case-studies-card-btn svg {
+          width: 1.4rem;
+          height: 1.4rem;
+        }
+
+        @media (max-width: 1024px) {
+          .case-studies-list {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .case-studies-section {
+            padding: 3rem 0 4rem !important;
+          }
+          .cs-container {
+            padding: 0 1rem !important;
+          }
+          .case-studies-list {
+            grid-template-columns: 1fr;
+            grid-gap: 1.5rem;
+          }
+          .case-studies-card-body {
+            padding: 1.1rem 1rem;
+          }
+          .cs-toolbar {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+          }
+          .cs-search {
+            max-width: 100%;
+          }
+          .title-mob-center {
+            text-align: center !important;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
+        /* CLIENT TESTIMONIALS SECTION STYLES */
+        .clients-testimonials-section {
+          position: relative;
+          padding: 6.4rem 0 8rem;
+          background: radial-gradient(105.28% 100.86% at 82.74% 0, rgba(0, 235, 170, 0.15) 0, rgba(0, 235, 170, 0) 47.08%), radial-gradient(90.07% 98.52% at 31.01% 0, rgba(0, 195, 179, 0.12) 0, rgba(0, 195, 179, 0) 47.08%), #0b0b0f;
+          overflow: hidden;
+        }
+
+        .section-padding-m {
+          padding: 6.4rem 0;
+        }
+
+        .clients-testimonials-title {
+          font-size: clamp(2.4rem, 3.2vw, 3.4rem);
+          margin-bottom: 3.5rem;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .clients-testimonials-wrapper {
+          position: relative;
+          width: 100%;
+          overflow: hidden;
+          padding: 1rem 0 2.5rem;
+          --slide-w: 660px;
+          --slide-m: 16px;
+        }
+
+        .clients-testimonials-wrapper::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 16vw;
+          height: 100%;
+          background: linear-gradient(270deg, rgba(11, 11, 15, 0) 0%, #0b0b0f 100%);
+          z-index: 5;
+          pointer-events: none;
+        }
+
+        .clients-testimonials-wrapper::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 16vw;
+          height: 100%;
+          background: linear-gradient(90deg, rgba(11, 11, 15, 0) 0%, #0b0b0f 100%);
+          z-index: 5;
+          pointer-events: none;
+        }
+
+        .clients-testimonials-slider-track {
+          display: flex;
+          align-items: center;
+          transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          width: max-content;
+        }
+
+        .clients-testimonial-slide {
+          flex-shrink: 0;
+          width: var(--slide-w);
+          max-width: 82vw;
+          margin: 0 var(--slide-m);
+          opacity: 0.35;
+          transition: opacity 0.5s ease, transform 0.5s ease;
+          pointer-events: none;
+        }
+
+        .clients-testimonial-slide.active-slide {
+          opacity: 1 !important;
+          transform: scale(1.02);
+          pointer-events: auto;
+        }
+
+        .clients-testimonial-item {
+          border-radius: 1.6rem;
+          background: linear-gradient(180deg, rgba(0, 235, 170, 0.1) 0%, rgba(0, 235, 170, 0.04) 50%, rgba(0, 235, 170, 0.01) 100%), #10161a;
+          padding: 2.8rem;
+          min-height: 240px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border: none !important;
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+          transition: background 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .clients-testimonial-slide.active-slide .clients-testimonial-item {
+          background: linear-gradient(180deg, rgba(0, 235, 170, 0.18) 0%, rgba(0, 235, 170, 0.1) 40%, rgba(0, 235, 170, 0.04) 100%), #121c19 !important;
+          border: none !important;
+          box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        .clients-testimonial-content {
+          margin-bottom: 2rem;
+        }
+
+        .clients-testimonial-text {
+          font-size: 1.2rem;
+          line-height: 1.6;
+          color: #a5d8d0;
+          font-weight: 400;
+        }
+
+        .clients-testimonial-slide.active-slide .clients-testimonial-text {
+          color: #ffffff !important;
+          font-size: 1.25rem;
+          font-weight: 400;
+        }
+
+        .clients-testimonial-info {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 1rem;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+
+        .clients-testimonial-author {
+          display: flex;
+          align-items: center;
+          gap: 0.9rem;
+        }
+
+        .clients-testimonial-author-photo {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          overflow: hidden;
+          background: rgba(0, 235, 170, 0.2);
+          border: 1px solid rgba(0, 235, 170, 0.4);
+          flex-shrink: 0;
+        }
+
+        .clients-testimonial-author-name {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #ffffff;
+          line-height: 1.2;
+        }
+
+        .clients-testimonial-author-position {
+          font-size: 1.1rem;
+          color: #00ebaa;
+          font-weight: 600;
+        }
+
+        .stars-wrapper {
+          background: rgba(0, 235, 170, 0.12);
+          padding: 0.4rem 0.8rem;
+          border-radius: 2rem;
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+
+        .star-icon {
+          width: 1.1rem;
+          height: 1.1rem;
+          color: #00ebaa;
+          fill: currentColor;
+        }
+
+        .swiper-navigation-clients-testimonials {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 2.5rem;
+          gap: 1rem;
+          position: relative;
+          z-index: 10;
+        }
+
+        .swiper-button-custom {
+          width: 46px;
+          height: 46px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.08);
+          box-shadow: 0 -3px 4px 0 rgba(6, 10, 13, 0.26) inset, 0 2px 2.8px 0 rgba(255, 255, 255, 0.13) inset;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          color: #ffffff;
+          border: none;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .swiper-button-custom:hover {
+          background: rgba(0, 235, 170, 0.25);
+          color: #00ebaa;
+          transform: scale(1.05);
+        }
+
+        .swiper-pagination-dots {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          margin: 0 1rem;
+        }
+
+        .swiper-pagination-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.25);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          border: none;
+          padding: 0;
+        }
+
+        .swiper-pagination-dot.active-dot {
+          background: #00ebaa;
+          box-shadow: 0 0 10px rgba(0, 235, 170, 0.6);
+          transform: scale(1.3);
+        }
+
+        @media (max-width: 768px) {
+          .clients-testimonials-section {
+            padding: 3rem 0 4rem;
+          }
+          .clients-testimonials-title {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+          }
+          .clients-testimonials-wrapper {
+            --slide-w: calc(100vw - 64px);
+            --slide-m: 8px;
+            padding: 0.5rem 0 1.5rem;
+          }
+          .clients-testimonials-wrapper::before,
+          .clients-testimonials-wrapper::after {
+            display: none !important;
+          }
+          .clients-testimonial-slide {
+            width: var(--slide-w);
+            max-width: calc(100vw - 40px);
+            margin: 0 var(--slide-m);
+          }
+          .clients-testimonial-item {
+            padding: 1.5rem 1.25rem !important;
+            min-height: auto !important;
+            border-radius: 1.25rem !important;
+          }
+          .clients-testimonial-content {
+            margin-bottom: 1.25rem !important;
+          }
+          .clients-testimonial-text {
+            font-size: 0.95rem !important;
+            line-height: 1.55 !important;
+          }
+          .clients-testimonial-slide.active-slide .clients-testimonial-text {
+            font-size: 0.98rem !important;
+          }
+          .clients-testimonial-info {
+            margin-top: 0.5rem !important;
+            gap: 0.75rem !important;
+          }
+          .clients-testimonial-author {
+            gap: 0.75rem !important;
+          }
+          .clients-testimonial-author-photo {
+            width: 38px !important;
+            height: 38px !important;
+          }
+          .clients-testimonial-author-name {
+            font-size: 1.05rem !important;
+          }
+          .clients-testimonial-author-position {
+            font-size: 0.9rem !important;
+          }
+          .stars-wrapper {
+            padding: 0.3rem 0.6rem !important;
+          }
+          .star-icon {
+            width: 0.9rem !important;
+            height: 0.9rem !important;
+          }
+        }
       `}</style>
 
       {/* =========================================================================
@@ -509,11 +1247,11 @@ export default function CaseStudiesClient() {
         <div className="portfolio-hero-container">
           <div className="portfolio-hero-content" data-anim="from-bottom" data-anim-delay="1">
             <h1 className="portfolio-hero-title">
-              Kvaornux Portfolio: How We Scale Casino and Sportsbook Businesses
+              iGaming case studies
             </h1>
 
             <p className="portfolio-hero-text">
-              Casino projects launched in weeks. Retention above industry benchmarks. The Kvaornux portfolio documents real iGaming case studies with metrics, not adjectives.
+              Explore real iGaming platforms and technology projects developed by Kvaornux, covering casino infrastructure, game integrations, wallets, payments, affiliate systems and back-office operations.
             </p>
 
             <a
@@ -521,7 +1259,7 @@ export default function CaseStudiesClient() {
               href="#contact-us"
               onClick={handleScrollToContact}
             >
-              <span>Learn more</span>
+              <span>Discuss project</span>
             </a>
           </div>
 
@@ -529,28 +1267,28 @@ export default function CaseStudiesClient() {
           <div className="portfolio-hero-stats" data-anim="from-bottom" data-anim-delay="2">
             <div className="portfolio-hero-stat">
               <p className="portfolio-hero-stat-value">
-                Up to <span>70%</span>
+                <span>50+</span>
               </p>
               <p className="portfolio-hero-stat-label">
-                registration-to-deposit conversion rate
+                Projects
               </p>
             </div>
 
             <div className="portfolio-hero-stat">
               <p className="portfolio-hero-stat-value">
-                Up to <span>39%</span>
+                <span>150+</span>
               </p>
               <p className="portfolio-hero-stat-label">
-                retention rate
+                Provider/API Integrations
               </p>
             </div>
 
             <div className="portfolio-hero-stat">
               <p className="portfolio-hero-stat-value">
-                Up to <span>€1,000</span>
+                <span>20K+</span>
               </p>
               <p className="portfolio-hero-stat-label">
-                ARPPU per month
+                Games
               </p>
             </div>
           </div>
@@ -558,207 +1296,249 @@ export default function CaseStudiesClient() {
       </section>
 
       {/* =========================================================================
-          SELECTED PROJECTS SECTION
+          ALL CASE STUDIES SECTION
           ========================================================================= */}
-      <section className="relative py-16 sm:py-24 border-b border-white/10 bg-[#0b0b0f]">
-        {/* Gradient Background */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(91.68% 48.4% at 29.55% 73.5%, rgba(43,255,191,0.12) 0%, rgba(13,11,16,0) 50%)',
-          }}
-        />
-
-        {/* Grid Overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.05]"
-          style={{
-            backgroundImage: 'url(/assets/grid-bg.svg)',
-            backgroundRepeat: 'repeat',
-            backgroundPosition: '50% 50%',
-            backgroundSize: '8rem 6.3rem',
-          }}
-        />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center justify-between mb-12 border-b border-white/10 pb-6">
-            <div>
-              <span className="text-[#00ebaa] font-mono text-xs font-bold uppercase tracking-wider block mb-1">
-                FEATURED WORK
-              </span>
-              <h2 className="section-title-gradient text-3xl sm:text-4xl font-bold tracking-tight text-white">
-                Selected Projects
-              </h2>
-            </div>
-            <span className="text-xs font-mono text-[#00ebaa] bg-[#00ebaa]/10 px-3.5 py-1.5 rounded-full border border-[#00ebaa]/20 hidden sm:inline-block">
-              1 Active Case Study
-            </span>
-          </div>
-
-          {/* FIRST PROJECT CARD - Premium Large Visual Card */}
-          <div
-            data-anim="from-bottom"
-            data-anim-delay="1"
-            className="group relative bg-[#12151d]/90 border border-[#00ebaa]/30 hover:border-[#00ebaa] rounded-3xl overflow-hidden transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_60px_rgba(0,235,170,0.15)]"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch">
-              {/* Left Column: Large Real Project Screenshot */}
-              <div className="lg:col-span-6 relative bg-black/60 overflow-hidden border-b lg:border-b-0 lg:border-r border-white/10 p-6 sm:p-8 flex flex-col justify-center">
-                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-[#1a1d26] shadow-2xl group-hover:scale-[1.02] transition-transform duration-500">
-                  {/* Browser Window Framing */}
-                  <div className="bg-[#1e222d] px-4 py-3 border-b border-white/10 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
-                      <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block" />
-                      <span className="w-3 h-3 rounded-full bg-green-500/80 inline-block" />
-                    </div>
-                    <div className="bg-black/60 text-gray-400 text-[11px] px-3 py-1 rounded font-mono flex items-center gap-1.5 border border-white/5">
-                      <Lock className="w-3 h-3 text-[#00ebaa]" />
-                      <span>https://lakebets.com</span>
-                    </div>
-                    <span className="text-[10px] text-[#00ebaa] font-mono font-bold">H5 WEB</span>
-                  </div>
-
-                  <div className="relative w-full aspect-[16/10] bg-black">
-                    <Image
-                      src="/assets/case-studies/lakebets/hero-desktop.jpg"
-                      alt="Lakebets mobile-first casino platform game lobby"
-                      fill
-                      priority
-                      className="object-cover object-top"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column: Project Details & Facts */}
-              <div className="lg:col-span-6 p-6 sm:p-10 flex flex-col justify-between space-y-6">
-                <div className="space-y-4">
-                  {/* Category & Client Badge */}
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="px-3 py-1 rounded-full bg-[#00ebaa]/10 border border-[#00ebaa]/30 text-[#00ebaa] text-xs font-mono font-bold tracking-wide">
-                      Casino Platform Development
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-300 bg-white/5 px-3 py-1 rounded-full border border-white/10">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      Lakebets • Live Platform
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-[#00ebaa] transition-colors leading-tight">
-                    Building a Scalable Mobile-First Casino Platform
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                    A mobile-first casino platform developed for the Nigerian market with multi-provider game integrations, NGN wallet infrastructure, payments, affiliate operations and centralized back-office management.
-                  </p>
-
-                  {/* Facts / Tags Grid */}
-                  <div className="pt-2">
-                    <span className="block text-[11px] font-mono text-gray-400 uppercase tracking-wider mb-2">
-                      Key Project Specifications:
-                    </span>
-                    <div className="flex flex-wrap gap-2">
-                      {[
-                        'Nigeria',
-                        'Mobile-First H5',
-                        'NGN',
-                        '5 Game Aggregators',
-                        '6-Level Affiliate System',
-                        'Live Platform',
-                      ].map((tag, idx) => (
-                        <span
-                          key={idx}
-                          className="text-xs font-medium text-gray-200 bg-black/50 px-3 py-1.5 rounded-lg border border-white/10 hover:border-[#00ebaa]/40 transition-colors"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTA Button */}
-                <div className="pt-4 border-t border-white/10">
-                  <Link
-                    href="/igaming-case-studies/casino-platform-development/"
-                    className="btn-main inline-flex items-center gap-2 text-sm font-bold w-full sm:w-auto justify-center"
-                  >
-                    <span>View Case Study</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          TRUST / INTRO SECTION ("Built Around Real iGaming Projects")
-          ========================================================================= */}
-      <section className="py-16 sm:py-20 border-b border-white/10 bg-[#0c0e14]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[#00ebaa] text-xs font-mono uppercase">
-            <ShieldCheck className="w-4 h-4" />
-            <span>ENGINEERING PROOF</span>
-          </div>
-
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-            Built Around Real iGaming Projects
+      <section className="case-studies-section section-padding-s">
+        <div className="cs-container">
+          <h2 className="section-title section-title-left title-mob-center">
+            All case studies
           </h2>
 
-          <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-            Our case studies document real platform development work across player experiences, game integrations, wallet infrastructure, payments, back-office operations and other core iGaming technology.
-          </p>
+          {caseStudiesData.length > 1 && (
+            <div className="cs-toolbar">
+              <div className="cs-filter-tabs">
+                <button
+                  type="button"
+                  className={`cs-filter-tab ${activeTab === '' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('')}
+                >
+                  All
+                </button>
+                <button
+                  type="button"
+                  className={`cs-filter-tab ${activeTab === 'casino' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('casino')}
+                >
+                  Casino
+                </button>
+              </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 text-left">
-            <div className="bg-[#12151f] p-5 rounded-2xl border border-white/10">
-              <span className="font-bold text-white text-sm block mb-1">Audited Architecture</span>
-              <p className="text-xs text-gray-400">
-                Technical write-ups derived directly from audited production source code and systems.
-              </p>
+              <div className="cs-search">
+                <div className="cs-search-field">
+                  <svg className="cs-search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18.031 16.617L22.314 20.899L20.899 22.314L16.617 18.031C15.0237 19.3082 13.042 20.0029 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20.0029 13.042 19.3082 15.0237 18.031 16.617ZM16.025 15.875C17.2938 14.5697 18.0025 12.8204 18 11C18 7.133 14.867 4 11 4C7.133 4 4 7.133 4 11C4 14.867 7.133 18 11 18C12.8204 18.0025 14.5697 17.2938 15.875 16.025L16.025 15.875Z" fill="#8EE8FF"></path>
+                  </svg>
+                  <input
+                    type="search"
+                    className="cs-search-input"
+                    placeholder="Search"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    autoComplete="off"
+                  />
+                  {searchQuery && (
+                    <button
+                      type="button"
+                      className="cs-search-clear"
+                      aria-label="Clear search"
+                      onClick={() => setSearchQuery('')}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
-            <div className="bg-[#12151f] p-5 rounded-2xl border border-white/10">
-              <span className="font-bold text-white text-sm block mb-1">Single-Wallet Standards</span>
-              <p className="text-xs text-gray-400">
-                Standardized multi-aggregator integrations connecting multiple providers to one ledger.
-              </p>
+          )}
+
+          {filteredStudies.length === 0 ? (
+            <div className="py-16 text-center text-[#94a3b8] text-xl font-medium">
+              No case studies found matching your criteria.
             </div>
-            <div className="bg-[#12151f] p-5 rounded-2xl border border-white/10">
-              <span className="font-bold text-white text-sm block mb-1">Operational Scalability</span>
-              <p className="text-xs text-gray-400">
-                Designed for high-concurrency player activity, multi-level affiliates, and local settlement.
-              </p>
+          ) : (
+            <div className="cs-page-content">
+              <div className="case-studies-list">
+                {filteredStudies.map((study) => (
+                  <div key={study.id} className="case-studies-card">
+                    <Link href={study.link} className="case-studies-card-img">
+                      <Image
+                        src={study.image}
+                        alt={study.imageAlt || study.title}
+                        width={505}
+                        height={253}
+                        className="w-full h-full object-cover"
+                      />
+                    </Link>
+                    <div className="case-studies-card-body">
+                      <h3 className="title-xs text-left case-studies-card-title">
+                        <Link href={study.link} title={study.title}>
+                          {study.title}
+                        </Link>
+                      </h3>
+
+                      <div className="text-s case-studies-card-text">
+                        {study.description}
+                      </div>
+
+                      <ul className="case-studies-card-features">
+                        {study.features.map((feature, idx) => (
+                          <li key={idx} className="case-studies-card-feature">
+                            <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[4px]" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                            </svg>
+                            <span className="text-m case-studies-card-feature-text">
+                              {feature}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="flex items-center justify-between mt-auto pt-4">
+                        <Link href={study.link} className="inline-flex items-center gap-2 text-[#00ebaa] font-semibold text-base hover:underline">
+                          <span>View Case Study</span>
+                        </Link>
+                        <Link
+                          href={study.link}
+                          className="case-studies-card-btn"
+                          aria-label={study.title}
+                        >
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
       {/* =========================================================================
-          CTA & CONTACT SECTION ("Planning an iGaming Project?")
+          CLIENT TESTIMONIALS SECTION
           ========================================================================= */}
-      <section id="contact-us" className="py-20 bg-[#08090c]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-[#00ebaa] font-mono text-xs font-bold uppercase tracking-wider block mb-2">
-              START YOUR PROJECT
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-4">
-              Planning an iGaming Project?
+      {testimonialsData.length > 0 && (
+        <section className="clients-testimonials-section section-padding-m">
+          <div className="cs-container">
+            <h2 className="section-title clients-testimonials-title">
+              Client testimonials
             </h2>
-            <p className="text-gray-300 text-base sm:text-lg">
-              Whether you're launching a new platform or expanding an existing operation, talk to Kvaornux about the technology, integrations and infrastructure behind your project.
-            </p>
           </div>
 
-          <ContactForm />
-        </div>
+          <div className="clients-testimonials-wrapper">
+            <div
+              className="clients-testimonials-slider-track"
+              style={{
+                transform: `translateX(calc(50vw - (${activeTestimonialIndex} * (var(--slide-w) + (var(--slide-m) * 2)) + ((var(--slide-w) + (var(--slide-m) * 2)) / 2))))`,
+              }}
+            >
+              {testimonialsData.map((testimonial, idx) => (
+                <div
+                  key={testimonial.id}
+                  className={`clients-testimonial-slide ${idx === activeTestimonialIndex ? 'active-slide' : ''
+                    }`}
+                  onClick={() => setActiveTestimonialIndex(idx)}
+                >
+                  <div className="clients-testimonial-item">
+                    <div className="clients-testimonial-content">
+                      <div className="clients-testimonial-text">
+                        <p>{testimonial.text}</p>
+                      </div>
+                    </div>
+
+                    <div className="clients-testimonial-info">
+                      <div className="clients-testimonial-author">
+                        <div className="clients-testimonial-author-photo">
+                          <Image
+                            src={testimonial.photo}
+                            alt={testimonial.authorName || testimonial.authorPosition}
+                            width={44}
+                            height={44}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                        <div className="clients-testimonial-author-content">
+                          {testimonial.authorName && (
+                            <div className="clients-testimonial-author-name">
+                              {testimonial.authorName}
+                            </div>
+                          )}
+                          <div className="clients-testimonial-author-position">
+                            {testimonial.authorPosition}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="stars-wrapper">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <svg
+                            key={i}
+                            className="star-icon"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Controls Navigation (Arrows & Pagination Dots) */}
+            <div className="swiper-navigation-clients-testimonials">
+              <button
+                type="button"
+                className="swiper-button-custom"
+                aria-label="Previous slide"
+                onClick={handlePrevTestimonial}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+
+              <div className="swiper-pagination-dots">
+                {testimonialsData.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className={`swiper-pagination-dot ${idx === activeTestimonialIndex ? 'active-dot' : ''
+                      }`}
+                    onClick={() => setActiveTestimonialIndex(idx)}
+                  />
+                ))}
+              </div>
+
+              <button
+                type="button"
+                className="swiper-button-custom"
+                aria-label="Next slide"
+                onClick={handleNextTestimonial}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Contact Form Section */}
+      <section id="contact-us" className="py-16 bg-[#0b0b0f] relative z-10 border-t border-white/10">
+        <ContactForm />
       </section>
     </div>
   );
 }
+

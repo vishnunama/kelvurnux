@@ -745,6 +745,12 @@ export default function Header() {
               </li>
 
               <li className="mx-[1.8rem]">
+                <Link href="/igaming-case-studies/" className="block text-white font-medium text-[1.15rem] py-5 transition-all duration-200 hover:text-[#00ebaa] whitespace-nowrap tracking-[0.3px] hover:scale-105 active:scale-95">
+                  Portfolio
+                </Link>
+              </li>
+
+              <li className="mx-[1.8rem]">
                 <Link href="/about-us" className="block text-white font-medium text-[1.15rem] py-5 transition-all duration-200 hover:text-[#00ebaa] whitespace-nowrap tracking-[0.3px] hover:scale-105 active:scale-95">
                   About us
                 </Link>
@@ -865,6 +871,11 @@ export default function Header() {
                 </div>
               </div>
             </div>
+
+            <Link href="/igaming-case-studies/" className="zg-mob-link" onClick={() => setIsMenuOpen(false)}>
+              Portfolio
+              <span className="zg-mob-link-arrow">→</span>
+            </Link>
 
             <Link href="/about-us" className="zg-mob-link" onClick={() => setIsMenuOpen(false)}>
               About us
