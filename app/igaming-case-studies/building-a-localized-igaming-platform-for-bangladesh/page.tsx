@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://kvaornux.com/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.png',
+        url: 'https://kvaornux.com/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.webp',
         width: 1200,
         height: 630,
         alt: 'Pori444 Mobile-First Localized iGaming Platform Case Study for Bangladesh by Kvaornux',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       'See how Kvaornux built a localized iGaming platform for Bangladesh with BDT payments, multi-provider game integration, a 7-level affiliate system, player rewards and advanced back-office operations.',
     images: [
-      'https://kvaornux.com/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.png',
+      'https://kvaornux.com/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.webp',
     ],
   },
 };
@@ -73,7 +73,7 @@ export default function Page() {
     description:
       'See how Kvaornux built a localized iGaming platform for Bangladesh with BDT payments, multi-provider game integration, a 7-level affiliate system, player rewards and advanced back-office operations.',
     image:
-      'https://kvaornux.com/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.png',
+      'https://kvaornux.com/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.webp',
     author: {
       '@type': 'Organization',
       name: 'Kvaornux',
@@ -85,7 +85,7 @@ export default function Page() {
       url: 'https://kvaornux.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kvaornux.com/assets/logo.png',
+        url: 'https://kvaornux.com/assets/logo.webp',
       },
     },
     datePublished: '2026-10-05T00:00:00Z',

@@ -33,7 +33,7 @@ export default function Page() {
     headline: 'How Casino Game API Integration Works',
     description:
       'Learn how casino game API integration works, from authentication and game launch to wallet transactions, bet and win callbacks, refunds, logging and testing.',
-    image: 'https://kvaornux.com/assets/og-image.png',
+    image: 'https://kvaornux.com/assets/og-image.webp',
     url: 'https://kvaornux.com/blog/how-casino-game-api-integration-works',
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -50,7 +50,7 @@ export default function Page() {
       name: 'Kvaornux',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kvaornux.com/assets/logo.png',
+        url: 'https://kvaornux.com/assets/logo.webp',
       },
     },
   };

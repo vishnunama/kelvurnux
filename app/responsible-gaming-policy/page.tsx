@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://kvaornux.com/assets/og-image.png',
+        url: 'https://kvaornux.com/assets/og-image.webp',
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'Responsible Gaming Policy | Kvaornux',
     description:
       'Read the Kvaornux Responsible Gaming Policy to learn about our approach, operator responsibilities, and responsible gaming technology features.',
-    images: ['https://kvaornux.com/assets/og-image.png'],
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

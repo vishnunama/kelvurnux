@@ -555,7 +555,7 @@ export default function WalletModelsBlogClient() {
           </ul>
           <p>
             Implementing a centralized wallet integration layer standardizes these varied provider specifications into a uniform internal transaction interface. To learn how platforms simplify studio connections across diverse catalog portfolios, discover how to{' '}
-            <Link href="/blog/integrate-multiple-casino-game-providers-one-api" className="text-[#00ebaa] hover:underline">
+            <Link href="/blog/what-is-casino-game-aggregator-api" className="text-[#00ebaa] hover:underline">
               integrate multiple casino game providers through one API
             </Link>.
           </p>

@@ -963,7 +963,7 @@ export default function IgamingSoftwareDevBlogClient() {
         date="01.10.2026"
         readTime="18 min read"
         tags={['iGaming Development', 'Platform Architecture', 'PAM & Wallet', 'Game Aggregation']}
-        bannerImage="/assets/features/igaming-software-development-banner.jpg"
+        bannerImage="/assets/features/igaming-software-development-banner.webp"
         breadcrumbCurrent="iGaming Software Development"
         authorName="Kvaornux"
         authorRole=""

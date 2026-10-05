@@ -592,7 +592,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="block flex-shrink-0 bg-transparent">
             <img
-              src="/assets/logo.png"
+              src="/assets/logo.webp"
               alt="Kvaornux"
               className="h-10 md:h-12 w-auto object-contain block bg-transparent"
             />

@@ -67,7 +67,7 @@ export default function Page() {
       url: 'https://kvaornux.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kvaornux.com/assets/logo.png',
+        url: 'https://kvaornux.com/assets/logo.webp',
       },
     },
     mainEntity: {

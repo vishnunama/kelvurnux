@@ -209,7 +209,7 @@ export default function BrandValuesSection() {
             width="1440"
             loading="lazy"
             alt=""
-            src="/assets/brand-values-bg.avif"
+            src="/assets/brand-values-bg.webp"
             className="image-cover is-live-casino w-full h-full object-cover object-top"
           />
           {/* Gradient: Top fades from #0b0b0f to match upper section, middle stays clear, bottom fades into #0b0b0f */}

@@ -61,6 +61,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/igaming-case-studies/" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                    Portfolio
+                  </Link>
+                </li>
+                <li>
                   <Link href="/blog" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
                     Insights &amp; Blog
                   </Link>

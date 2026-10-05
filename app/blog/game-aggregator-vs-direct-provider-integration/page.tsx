@@ -33,7 +33,7 @@ export default function Page() {
     headline: 'Game Aggregator vs Direct Game Provider Integration',
     description:
       'Compare casino game aggregation with direct provider integration, including API architecture, maintenance, commercial control, scalability and operational differences.',
-    image: 'https://kvaornux.com/assets/og-image.png',
+    image: 'https://kvaornux.com/assets/og-image.webp',
     url: 'https://kvaornux.com/blog/game-aggregator-vs-direct-provider-integration',
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -50,7 +50,7 @@ export default function Page() {
       name: 'Kvaornux',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kvaornux.com/assets/logo.png',
+        url: 'https://kvaornux.com/assets/logo.webp',
       },
     },
   };

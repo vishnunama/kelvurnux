@@ -603,7 +603,7 @@ export default function Pori444CaseStudyClient() {
             </div>
             <div className="cs-two-col-image">
               <Image
-                src="/assets/case-studies/pori444/Pori444 Mobile Casino Showcase (1).png"
+                src="/assets/case-studies/pori444/Pori444 Mobile Casino Showcase (1).webp"
                 alt="Pori444 mobile casino platform showcase"
                 width={640}
                 height={430}
@@ -616,7 +616,7 @@ export default function Pori444CaseStudyClient() {
           <div className="cs-two-col-grid">
             <div className="cs-two-col-image">
               <Image
-                src="/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.png"
+                src="/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.webp"
                 alt="Pori444 mobile iGaming platform interface"
                 width={640}
                 height={430}
@@ -658,7 +658,7 @@ export default function Pori444CaseStudyClient() {
             </div>
             <div className="cs-two-col-image">
               <Image
-                src="/assets/case-studies/pori444/Pori444 Mobile Gaming App Process.png"
+                src="/assets/case-studies/pori444/Pori444 Mobile Gaming App Process.webp"
                 alt="Pori444 iGaming platform development process"
                 width={640}
                 height={430}
@@ -671,7 +671,7 @@ export default function Pori444CaseStudyClient() {
           <div className="cs-two-col-grid">
             <div className="cs-two-col-image">
               <Image
-                src="/assets/case-studies/pori444/PORI444 Neon Casino Style Guide.png"
+                src="/assets/case-studies/pori444/PORI444 Neon Casino Style Guide.webp"
                 alt="Pori444 casino platform UI style guide"
                 width={640}
                 height={430}
@@ -720,7 +720,7 @@ export default function Pori444CaseStudyClient() {
             </div>
             <div className="cs-two-col-image">
               <Image
-                src="/assets/case-studies/pori444/Pori444 Mobile Casino Showcase (1).png"
+                src="/assets/case-studies/pori444/Pori444 Mobile Casino Showcase (1).webp"
                 alt="Pori444 mobile casino platform showcase"
                 width={640}
                 height={430}

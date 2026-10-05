@@ -23,7 +23,7 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     image: '/assets/features/casino-game-providers-api-aggregator.webp',
     tags: ['Game Aggregation', 'API Integration'],
     authorName: 'Kvaornux Editorial Team',
-    authorAvatar: '/assets/favicon.png',
+    authorAvatar: '/assets/favicon.webp',
   },
   {
     slug: 'game-aggregator-vs-direct-provider-integration',
@@ -36,7 +36,7 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     image: '/assets/features/online-casino-game-aggregation-10000-plus-slots.webp',
     tags: ['Game Aggregation', 'Casino'],
     authorName: 'Kvaornux Editorial Team',
-    authorAvatar: '/assets/favicon.png',
+    authorAvatar: '/assets/favicon.webp',
   },
   {
     slug: 'how-casino-game-api-integration-works',
@@ -49,7 +49,7 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     image: '/assets/features/turnkey-igaming-platform-infrastructure-services.webp',
     tags: ['API Integration', 'Guides'],
     authorName: 'Kvaornux Editorial Team',
-    authorAvatar: '/assets/favicon.png',
+    authorAvatar: '/assets/favicon.webp',
   },
   {
     slug: 'seamless-wallet-vs-transfer-wallet-igaming',
@@ -62,7 +62,7 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     image: '/assets/features/igaming-financial-reconciliation-auto-invoices.webp',
     tags: ['Wallet Architecture', 'Game Aggregation'],
     authorName: 'Kvaornux Editorial Team',
-    authorAvatar: '/assets/favicon.png',
+    authorAvatar: '/assets/favicon.webp',
   },
   {
     slug: 'igaming-software-development',
@@ -72,10 +72,10 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
       'Learn how iGaming software development works, from platform architecture, PAM and wallets to casino, sportsbook, game aggregation, payments, security and integrations.',
     date: '01.10.2026',
     readTime: '18 min read',
-    image: '/assets/features/igaming-software-development-banner.jpg',
+    image: '/assets/features/igaming-software-development-banner.webp',
     tags: ['iGaming Development', 'Platform Architecture'],
     authorName: 'Kvaornux Editorial Team',
-    authorAvatar: '/assets/favicon.png',
+    authorAvatar: '/assets/favicon.webp',
   },
 ];
 

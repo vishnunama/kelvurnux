@@ -26,7 +26,7 @@ export default function Home() {
     '@type': 'Organization',
     name: 'Kvaornux',
     url: 'https://kvaornux.com',
-    logo: 'https://kvaornux.com/assets/logo.png',
+    logo: 'https://kvaornux.com/assets/logo.webp',
     description:
       'Kvaornux is an iGaming technology company providing casino platforms, sportsbook technology, game aggregation, PAM and wallet systems, back-office tools, payment integrations and bespoke iGaming development.',
     email: 'info@kvaornux.com',

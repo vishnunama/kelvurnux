@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     url: "https://kvaornux.com/",
     images: [
       {
-        url: "https://kvaornux.com/assets/og-image.png",
+        url: "https://kvaornux.com/assets/og-image.webp",
         width: 1200,
         height: 630,
         alt: "Kvaornux iGaming Technology",
@@ -53,12 +53,12 @@ export const metadata: Metadata = {
     title: "iGaming Technology, Casino & Sportsbook Platform | Kvaornux",
     description:
       "Kvaornux provides B2B iGaming technology for casino, sportsbook, game aggregation, payments, player management and custom platform development.",
-    images: ["https://kvaornux.com/assets/og-image.png"],
+    images: ["https://kvaornux.com/assets/og-image.webp"],
   },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: '/assets/favicon.png',
+    apple: '/assets/favicon.webp',
   },
 };
 

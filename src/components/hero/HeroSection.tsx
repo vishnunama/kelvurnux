@@ -83,7 +83,7 @@
 //           </div>
 
 //           {/* Main Title */}
-//           <h1
+//           <div
 //             className={`font-bold leading-tight tracking-tight transition-all duration-700 hero-h1 ${
 //               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
 //             }`}
@@ -96,7 +96,7 @@
 //             }}
 //           >
 //             One Stop Solution For Your Online iGaming Business
-//           </h1>
+//           </div>
 
 //           {/* Subtitle */}
 //           <p

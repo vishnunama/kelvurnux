@@ -33,7 +33,7 @@ export default function Page() {
     headline: 'iGaming Software Development: A Complete Guide to Building an iGaming Platform',
     description:
       'Learn how iGaming software development works, from platform architecture, PAM and wallets to casino, sportsbook, game aggregation, payments, security and integrations.',
-    image: 'https://kvaornux.com/assets/features/igaming-software-development-banner.jpg',
+    image: 'https://kvaornux.com/assets/features/igaming-software-development-banner.webp',
     url: 'https://kvaornux.com/blog/igaming-software-development',
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -51,7 +51,7 @@ export default function Page() {
       name: 'Kvaornux',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kvaornux.com/assets/logo.png',
+        url: 'https://kvaornux.com/assets/logo.webp',
       },
     },
   };

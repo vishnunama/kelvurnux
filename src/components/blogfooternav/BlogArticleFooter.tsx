@@ -96,7 +96,7 @@ export default function BlogArticleFooter({ currentSlug }: BlogArticleFooterProp
                   <div className="flex items-center gap-2.5">
                     <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full overflow-hidden bg-[#1f252e] border border-gray-700/60 flex items-center justify-center p-0.5 flex-shrink-0">
                       <img
-                        src="/assets/favicon.png"
+                        src="/assets/favicon.webp"
                         alt={post.authorName}
                         className="w-full h-full object-contain"
                       />

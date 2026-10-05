@@ -128,7 +128,7 @@ export default function CaseStudiesClient() {
       slug: 'building-a-localized-igaming-platform-for-bangladesh',
       title: 'Localized iGaming Platform for Bangladesh',
       description: 'A mobile-first iGaming platform combining BDT payments, multi-provider game content, a 7-level affiliate system, player rewards and advanced back-office operations.',
-      image: '/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.png',
+      image: '/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.webp',
       imageAlt: 'Pori444 localized iGaming platform development case study',
       features: [
         'Pori444',
@@ -148,7 +148,7 @@ export default function CaseStudiesClient() {
       text: "The flexibility of Kvaornux’s modular setup is a significant plus. It lets us swap tools or tweak parts of the project without interrupting operations, which is a huge win when you’re live 24/7. Working with their team feels more like having an in-house department of experts than a standard vendor. They focus on technical execution and keep things moving, so we don’t lose time on long coordination cycles.",
       authorName: "",
       authorPosition: "Lakebets Project",
-      photo: "/assets/author-nikita.jpg",
+      photo: "/assets/author-nikita.webp",
       rating: 5,
     },
     {
@@ -156,7 +156,7 @@ export default function CaseStudiesClient() {
       text: "The platform brings casino, sportsbook and agent operations into one connected system. The multi-tier architecture provides structured control across agents, players and operational activity, while the mobile-first H5 interface keeps the player experience straightforward.",
       authorName: "",
       authorPosition: "Jeetfast24 Project",
-      photo: "/assets/author-karyna.jpg",
+      photo: "/assets/author-karyna.webp",
       rating: 5,
     },
     {
@@ -164,7 +164,7 @@ export default function CaseStudiesClient() {
       text: "Pori444 brings localized payments, game content, affiliate operations, player engagement and back-office management into one connected platform. The result is an operational system designed around the payment behaviour, language requirements and mobile-first player experience of the Bangladesh market.",
       authorName: "",
       authorPosition: "Pori444 Project",
-      photo: "/assets/author-nikita.jpg",
+      photo: "/assets/author-nikita.webp",
       rating: 5,
     },
   ];
@@ -1156,7 +1156,7 @@ export default function CaseStudiesClient() {
         <div className="portfolio-hero-bg">
           <div className="portfolio-hero-el portfolio-hero-el-main">
             <Image
-              src="/assets/case-studies/Glossy Teal Swirl Sphere Emblem.png"
+              src="/assets/case-studies/Glossy Teal Swirl Sphere Emblem.webp"
               alt=""
               aria-hidden="true"
               width={880}

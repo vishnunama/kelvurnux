@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const col1 = [
   '3oaks.svg', 'tada.svg', 'spribe.svg', 'ruby.svg', 'octo.svg', 'blueprint.svg',
-  'global.svg', 'ela-s2b.svg', 'pariplay.avif', 'ggames.svg', 'netgaming.svg',
+  'global.svg', 'ela-s2b.svg', 'pariplay.webp', 'ggames.svg', 'netgaming.svg',
   'tomhorn.svg', 'pg.svg', 'leap.svg', 'inspired.svg', 'spinomenal.svg', 'redrake.svg',
   'goldenhero.svg', 'givme.svg', 'oryxgaming2.svg', 'oryxgaming1.svg', 'casinotechnology.svg',
   'irondog.svg', '1x2.svg', 'betsoft.svg', 'playson.svg', 'nolimitcity.svg', 'playson1.svg',
@@ -22,12 +22,12 @@ const col2 = [
   'wazdan.svg', 'tomhorn.svg', 'ela-s2b.svg', 'novomatic.svg', 'amatic.svg', 'playtech.svg',
   'playson1.svg', 'playson.svg', 'betsoft.svg', 'irondog.svg', 'casinotechnology.svg',
   'oryxgaming1.svg', 'oryxgaming2.svg', 'givme.svg', 'goldenhero.svg', 'redrake.svg',
-  'inspired.svg', 'leap.svg', 'netgaming.svg', 'ggames.svg', 'pariplay.avif'
+  'inspired.svg', 'leap.svg', 'netgaming.svg', 'ggames.svg', 'pariplay.webp'
 ];
 
 const col3 = [
   'yggdrasil.svg', 'wazdan.svg', 'tomhorn.svg', 'tada.svg', 'spribe.svg', 'spinomenal.svg',
-  'skywind.svg', 'ruby.svg', 'relaxgaming.svg', 'pariplay.avif', 'redtiger.svg', 'redrake.svg',
+  'skywind.svg', 'ruby.svg', 'relaxgaming.svg', 'pariplay.webp', 'redtiger.svg', 'redrake.svg',
   'quickspin.svg', 'pragmaticplay.svg', 'playtech.svg', 'playson.svg', 'playngo.svg',
   'oryxgaming1.svg', 'octo.svg', 'nolimitcity.svg', 'netgaming.svg', 'netent.svg', 'leap.svg',
   'oryxgaming2.svg', 'irondog.svg', 'inspired.svg', 'pg.svg', 'novomatic.svg',
@@ -43,7 +43,7 @@ const col4 = [
   'ela-s2b.svg', 'novomatic.svg', 'amatic.svg', 'playtech.svg', 'playson1.svg', 'playson.svg',
   'betsoft.svg', 'irondog.svg', 'casinotechnology.svg', 'oryxgaming1.svg', 'oryxgaming2.svg',
   'givme.svg', 'goldenhero.svg', 'redrake.svg', 'inspired.svg', 'leap.svg', 'netgaming.svg',
-  'ggames.svg', 'pariplay.avif', 'global.svg', 'blueprint.svg', 'octo.svg', 'ruby.svg',
+  'ggames.svg', 'pariplay.webp', 'global.svg', 'blueprint.svg', 'octo.svg', 'ruby.svg',
   'spribe.svg', 'tada.svg', '3oaks.svg'
 ];
 
@@ -51,7 +51,7 @@ const ProviderCard = ({ fileName }: { fileName: string }) => {
   return (
     <div className="providers-card relative flex items-center justify-center w-full h-[3.4rem] xs:h-[3.8rem] sm:h-[5.2rem] lg:h-[6.5rem] border border-[#3d5042bf] rounded-[0.25rem] overflow-hidden bg-[#0e2f29]/30 transition-all duration-300 hover:border-[#00ebaa] hover:shadow-[0_0_20px_rgba(0,235,170,0.2)] shrink-0 group cursor-pointer">
       <img
-        src="/assets/providers/prov-bg.avif"
+        src="/assets/providers/prov-bg.webp"
         alt=""
         className="providers-card-bg absolute inset-0 w-full h-full object-cover z-0 opacity-80 group-hover:opacity-100 transition-opacity"
         loading="lazy"
@@ -198,7 +198,7 @@ export default function ProvidersSection() {
 
               {/* Background Graphic */}
               <img
-                src="/assets/providers/providers-bg.avif"
+                src="/assets/providers/providers-bg.webp"
                 alt=""
                 className="home_providers-bg-img absolute inset-0 z-0 h-full w-full object-cover opacity-30 pointer-events-none"
                 style={{

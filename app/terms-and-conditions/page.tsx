@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://kvaornux.com/assets/og-image.png',
+        url: 'https://kvaornux.com/assets/og-image.webp',
       },
     ],
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'Terms & Conditions | Kvaornux',
     description:
       'Read the Kvaornux Terms & Conditions governing your use of our website, software development services, and technology solutions.',
-    images: ['https://kvaornux.com/assets/og-image.png'],
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

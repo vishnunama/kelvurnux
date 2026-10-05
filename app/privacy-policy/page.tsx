@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://kvaornux.com/assets/og-image.png',
+        url: 'https://kvaornux.com/assets/og-image.webp',
       },
     ],
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'Privacy Policy | Kvaornux',
     description:
       'Read the Kvaornux Privacy Policy to understand how information submitted through our website is collected, used and protected.',
-    images: ['https://kvaornux.com/assets/og-image.png'],
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

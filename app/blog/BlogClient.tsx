@@ -53,7 +53,7 @@ const blogs = [
     tag: "iGaming Development",
     readTime: "18 min read",
     date: "01.10.2026",
-    image: "/assets/features/igaming-software-development-banner.jpg",
+    image: "/assets/features/igaming-software-development-banner.webp",
   },
 ];
 

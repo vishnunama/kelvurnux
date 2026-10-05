@@ -33,7 +33,7 @@ export default function Page() {
     headline: 'What Is a Casino Game Aggregator API?',
     description:
       'Learn how a casino game aggregator API works, how it connects operators with multiple game providers, and what to evaluate before integration.',
-    image: 'https://kvaornux.com/assets/og-image.png',
+    image: 'https://kvaornux.com/assets/og-image.webp',
     url: 'https://kvaornux.com/blog/what-is-casino-game-aggregator-api',
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -50,7 +50,7 @@ export default function Page() {
       name: 'Kvaornux',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kvaornux.com/assets/logo.png',
+        url: 'https://kvaornux.com/assets/logo.webp',
       },
     },
   };

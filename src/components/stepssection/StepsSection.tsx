@@ -260,7 +260,7 @@ export default function StepsSection() {
             width="1440"
             loading="lazy"
             alt=""
-            src="/assets/steps-bg.avif"
+            src="/assets/steps-bg.webp"
             className="image-cover w-full h-full object-cover object-center opacity-75"
           />
           {/* Gradient Filter Overlay */}

@@ -156,14 +156,14 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: propFaqs, customFaqData }
           width="1392"
           loading="lazy"
           alt=""
-          src="/assets/faq-bg.avif"
+          src="/assets/faq-bg.webp"
           className="hidden md:block w-full h-full object-cover object-top opacity-70"
         />
         <img
           width="375"
           loading="lazy"
           alt=""
-          src="/assets/faq-bg-mob.avif"
+          src="/assets/faq-bg-mob.webp"
           className="block md:hidden w-full h-full object-cover object-top opacity-75"
         />
         {/* Gradient Filter Overlay */}

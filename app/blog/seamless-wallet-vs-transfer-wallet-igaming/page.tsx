@@ -50,7 +50,7 @@ export default function Page() {
       name: 'Kvaornux',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kvaornux.com/assets/logo.png',
+        url: 'https://kvaornux.com/assets/logo.webp',
       },
     },
   };

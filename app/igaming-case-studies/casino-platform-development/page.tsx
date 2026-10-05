@@ -81,7 +81,7 @@ export default function Page() {
       url: 'https://kvaornux.com',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kvaornux.com/assets/logo.png',
+        url: 'https://kvaornux.com/assets/logo.webp',
       },
     },
     datePublished: '2026-10-04T00:00:00Z',
