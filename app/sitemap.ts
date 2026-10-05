@@ -47,6 +47,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh/",
+      priority: 0.9,
+    },
+    {
       url: "https://kvaornux.com/blog",
       priority: 0.8,
     },

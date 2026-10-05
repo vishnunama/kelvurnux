@@ -85,6 +85,12 @@ export default function Page() {
           url: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform/',
           name: 'Building a Multi-Tier Agent-Based Casino & Sportsbook Platform',
         },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          url: 'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh/',
+          name: 'Building a Localized iGaming Platform for the Bangladesh Market',
+        },
       ],
     },
   };
