@@ -78,6 +78,19 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     authorAvatar: '/assets/favicon.webp',
   },
   {
+    slug: 'sweepstakes-casino-api-integration',
+    href: '/blog/sweepstakes-casino-api-integration',
+    title: 'Sweepstakes Casino API Integration: How Games Connect to Dual-Currency Wallets',
+    description:
+      'Learn how sweepstakes casino API integration connects games, aggregators and dual-currency wallets, including Gold Coin and Sweeps Coin sessions, wallet callbacks, bet/win transactions, rollbacks and reconciliation.',
+    date: '06.10.2026',
+    readTime: '15 min read',
+    image: '/assets/features/sweepstakes-casino-api-integration-banner.jpg',
+    tags: ['Sweepstakes', 'API Integration', 'Dual Currency'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
+  {
     slug: 'what-is-sweepstakes-casino-software',
     href: '/blog/what-is-sweepstakes-casino-software',
     title: 'What Is Sweepstakes Casino Software? A Complete Guide for Operators',

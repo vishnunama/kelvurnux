@@ -377,7 +377,7 @@ const blogSections: BlogSection[] = [
     content: (
       <>
         <p>
-          Modern sweepstakes casino platforms rely on high-quality game content—including video slots, crash games, table games, and live dealer streams. Integrating these games requires specialized communication between remote game servers (RGS) and the sweepstakes dual-currency wallet.
+          Modern sweepstakes casino platforms rely on high-quality game content—including video slots, crash games, table games, and live dealer streams. Integrating these games requires specialized communication between remote game servers (RGS) and the sweepstakes dual-currency wallet. To explore how game servers dispatch real-time callbacks to dual-currency ledgers, read our in-depth technical guide on <Link href="/blog/sweepstakes-casino-api-integration" className="text-cyan-400 underline hover:text-cyan-300">sweepstakes casino API integration</Link>.
         </p>
         <p>
           Key integration mechanics include:
