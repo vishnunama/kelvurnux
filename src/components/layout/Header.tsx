@@ -683,6 +683,9 @@ export default function Header() {
                         <li><Link href="/turnkey-sportsbook-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Turnkey Sportsbook</Link></li>
                         <li><Link href="/white-label-casino-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>White Label</Link></li>
                         <li><Link href="/crypto-igaming-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Crypto iGaming</Link></li>
+                        <li><Link href="/sweepstakes-casino-software/" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Sweepstakes Casino</Link></li>
+                        <li><Link href="/turnkey-sweepstakes-casino-software/" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Turnkey Sweepstakes</Link></li>
+                        <li><Link href="/custom-sweepstakes-casino-development/" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Custom Sweepstakes</Link></li>
                       </ul>
                     </div>
                   </div>
@@ -846,6 +849,9 @@ export default function Header() {
                   <Link href="/turnkey-sportsbook-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Sportsbook</Link>
                   <Link href="/white-label-casino-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>White Label</Link>
                   <Link href="/crypto-igaming-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Crypto iGaming</Link>
+                  <Link href="/sweepstakes-casino-software/" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Sweepstakes Casino</Link>
+                  <Link href="/turnkey-sweepstakes-casino-software/" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Sweepstakes</Link>
+                  <Link href="/custom-sweepstakes-casino-development/" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Custom Sweepstakes</Link>
                 </div>
               </div>
             </div>

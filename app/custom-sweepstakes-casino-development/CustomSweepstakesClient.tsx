@@ -1,30 +1,45 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import {
-  Crown,
-  Gamepad2,
-  Rocket,
+  Wallet,
   ShieldCheck,
+  Gamepad2,
+  CreditCard,
   LayoutDashboard,
+  Sparkles,
+  RefreshCw,
+  Cpu,
+  Layers,
   HandshakeIcon,
   TrendingUp,
-  Palette,
-  Settings
+  Settings,
+  Rocket,
+  Code
 } from 'lucide-react';
 import OpportunitiesSection from '@/src/components/opportunitiessection/Opportunitiessection';
 import ContactForm from '@/src/components/contactform/ContactForm';
+import FAQSection from '@/src/components/FAQSection/FAQSection';
+import DiscoverMore from '@/src/components/Discovermore/Discovermore';
 
-export default function TurnkeyCasinoPlatform() {
+export default function CustomSweepstakesClient() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
-  const [activeTab, setActiveTab] = useState('Full platform ownership');
+  const [activeTab, setActiveTab] = useState('Custom Platform Architecture');
   const tabsContainerRef = useRef<HTMLDivElement>(null);
   const activeTabRef = useRef<HTMLButtonElement>(null);
 
   // Contact form scroll handler
   const handleScrollToContact = () => {
     const section = document.getElementById('contact-form-section');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollToSolutions = () => {
+    const section = document.getElementById('solutions');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
@@ -49,44 +64,52 @@ export default function TurnkeyCasinoPlatform() {
   }, []);
 
   const iconMap = {
-    crown: Crown,
-    'gamepad-2': Gamepad2,
-    rocket: Rocket,
+    wallet: Wallet,
     'shield-check': ShieldCheck,
+    'gamepad-2': Gamepad2,
+    'credit-card': CreditCard,
     'layout-dashboard': LayoutDashboard,
   };
 
   const tabs = [
     {
-      id: 'full-platform',
-      label: 'Full platform ownership',
-      icon: 'crown' as const,
-      title: 'Full platform ownership',
-      description: 'Take full control of your casino software platform with your own brand. Design, manage, and operate everything your way with flexible deployment options.',
+      id: 'custom-architecture',
+      label: 'Custom Platform Architecture',
+      icon: 'wallet' as const,
+      title: 'Architecture Designed Around Your Product',
+      description: 'Define the platform around your required player journeys, wallet behavior, operational model and third-party ecosystem rather than adapting the business to a fixed template. Structure services and integrations around the requirements established during technical discovery.',
       image: '/assets/features/custom-igaming-platform-design-interface.webp'
     },
     {
-      id: 'game-apis',
-      label: 'Game aggregation',
-      icon: 'gamepad-2' as const,
-      title: 'Casino game aggregation',
-      description: 'Get access to a large library of casino games, sportsbook APIs, and interactive content providers. Easily manage and integrate multiple game sources into your platform.',
-      image: '/assets/features/online-casino-game-aggregation-10000-plus-slots.webp'
-    },
-    {
-      id: 'compliance',
-      label: 'Security & User Protection Tools',
+      id: 'custom-gc-sc',
+      label: 'Custom GC / SC Logic',
       icon: 'shield-check' as const,
-      title: 'Security & User Protection Tools',
-      description: 'Keep your casino software secure with advanced protection systems, user verification flows, KYC verification, fraud prevention tools, and performance monitoring systems.',
+      title: 'Gold Coin & Sweeps Coin Logic Built Around Your Model',
+      description: 'Configure independent Gold Coin and Sweeps Coin balances, transaction ledgers, promotional allocation rules, administrative adjustments, eligibility logic and redemption-related currency workflows around the approved product requirements.',
       image: '/assets/features/igaming-security-risk-management-aml-kyc.webp'
     },
     {
-      id: 'backoffice',
-      label: 'Back Office',
+      id: 'player-workflows',
+      label: 'Player & Entry Workflows',
+      icon: 'gamepad-2' as const,
+      title: 'Custom Player, AMOE & Eligibility Workflows',
+      description: 'Design registration, player eligibility, AMOE request processing, verification, geolocation and account-control workflows around the operator\'s defined operating framework and required third-party services.',
+      image: '/assets/features/online-casino-game-aggregation-10000-plus-slots.webp'
+    },
+    {
+      id: 'payments-redemption',
+      label: 'Payments & Redemption',
+      icon: 'credit-card' as const,
+      title: 'Custom Purchase & Prize Redemption Operations',
+      description: 'Build payment and redemption workflows around the required Gold Coin packages, payment services, transaction controls, redemption thresholds, verification gates, risk review processes, approval queues and prize-processing integrations.',
+      image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp'
+    },
+    {
+      id: 'custom-backoffice',
+      label: 'Custom Back Office',
       icon: 'layout-dashboard' as const,
-      title: 'Casino Back Office Dashboard',
-      description: 'Manage everything from one dashboard — users, transactions, bonuses, reports, and system settings. Monitor activity, adjust accounts, and control casino operations easily.',
+      title: 'Back Office Built Around Your Operations Team',
+      description: 'Give operations teams the controls required by the product rather than forcing them into a generic admin panel. Manage players, GC/SC activity, redemptions, verification, games, promotions, affiliates, risk reviews, reports and staff permissions through role-based workflows.',
       image: '/assets/features/turnkey-back-office-admin-dashboard-analytics.webp'
     }
   ];
@@ -94,31 +117,185 @@ export default function TurnkeyCasinoPlatform() {
   const solutions = [
     {
       id: 1,
-      icon: HandshakeIcon,
-      title: 'End-to-End Casino Platform Setup',
+      icon: Wallet,
+      title: 'Product-Specific Platform Architecture',
       description:
-        'Complete turnkey casino software setup including frontend, backend, admin panel, and full system configuration — ready to launch under your own brand with white label options.'
+        'Structure frontend, backend and integration layers around the project\'s player journeys, operational requirements and long-term technology roadmap instead of relying on a fixed product template.'
     },
     {
       id: 2,
-      icon: TrendingUp,
-      title: 'Scalable Casino Infrastructure',
+      icon: Gamepad2,
+      title: 'Custom Dual-Currency Wallet Logic',
       description:
-        'High-performance and scalable architecture designed to handle growing traffic, player activity, and transactions without performance issues. Casino-grade infrastructure.'
+        'Define Gold Coin and Sweeps Coin balances, transaction ledgers, promotional allocation rules, administrative adjustments and currency-specific workflows around the approved product model.'
     },
     {
       id: 3,
-      icon: Palette,
-      title: 'Branding & Customization',
+      icon: CreditCard,
+      title: 'AMOE & Eligibility Workflows',
       description:
-        'Fully customizable casino software design including UI, colors, layouts, and branding elements to match your business identity. White label casino solutions available.'
+        'Implement Alternative Method of Entry processing with configurable submission, review, status tracking, eligibility checks, promotional currency allocation and auditable records.'
     },
     {
       id: 4,
-      icon: Settings,
-      title: 'Casino Back Office & Control Panel',
+      icon: ShieldCheck,
+      title: 'Custom Player Account Management',
       description:
-        'Powerful admin dashboard to manage users, payments, reports, bonuses, and casino platform settings with full operational control and real-time analytics.'
+        'Build player registration, authentication, verification status, account controls, GC/SC history and player lifecycle workflows around the operational requirements of the platform.'
+    },
+    {
+      id: 5,
+      icon: Sparkles,
+      title: 'Game & Content Integration Layer',
+      description:
+        'Connect compatible providers and aggregation APIs while defining game categories, availability rules, currency behavior and player access through a unified integration layer.'
+    },
+    {
+      id: 6,
+      icon: LayoutDashboard,
+      title: 'Payments & Transaction Infrastructure',
+      description:
+        'Integrate compatible payment services for Gold Coin purchases while maintaining transaction histories, payment statuses, operational review controls and reconciliation-ready records.'
+    },
+    {
+      id: 7,
+      icon: RefreshCw,
+      title: 'Prize Redemption & Risk Workflows',
+      description:
+        'Configure redemption thresholds, eligibility checks, verification gates, suspicious-activity review, duplicate-account checks, approval queues and connected prize-processing workflows.'
+    },
+    {
+      id: 8,
+      icon: Cpu,
+      title: 'CRM, Promotions & Affiliate Operations',
+      description:
+        'Create configurable promotional campaigns, player segments, rewards, referrals, loyalty mechanics and affiliate workflows around the acquisition and retention strategy of the product.'
+    },
+    {
+      id: 9,
+      icon: Layers,
+      title: 'Custom Operator Back Office',
+      description:
+        'Give teams role-based control over players, currencies, games, payments, redemptions, verification, promotions, affiliates, risk reviews, reports and administrative actions.'
+    },
+    {
+      id: 10,
+      icon: Rocket,
+      title: 'Modular Integrations & Future Development',
+      description:
+        'Keep platform services and third-party connections modular so new integrations, workflows and product capabilities can be introduced as the operator\'s roadmap evolves, subject to technical compatibility and project scope.'
+    }
+  ];
+
+  const customDiscoverItems = [
+    {
+      id: 1,
+      title: 'Custom Wallet Architecture',
+      description: 'Independent GC/SC balances, configurable currency rules, transaction ledgers and product-specific wallet workflows.',
+      icon: Wallet,
+      span: 2
+    },
+    {
+      id: 2,
+      title: 'AMOE & Eligibility Engine',
+      description: 'Configurable entry processing, eligibility checks, request status workflows and promotional currency allocation.',
+      icon: ShieldCheck,
+      span: 2
+    },
+    {
+      id: 3,
+      title: 'Player Account Management',
+      description: 'Custom registration, verification, account controls, player history and lifecycle management.',
+      icon: Sparkles,
+      span: 2
+    },
+    {
+      id: 4,
+      title: 'Payment Integrations',
+      description: 'Connect compatible payment services around purchase flows, transaction controls and operational requirements.',
+      icon: CreditCard,
+      span: 3
+    },
+    {
+      id: 5,
+      title: 'Redemption & Risk',
+      description: 'Configure eligibility, verification, review queues, suspicious-activity checks and prize-processing workflows.',
+      icon: RefreshCw,
+      span: 3
+    },
+    {
+      id: 6,
+      title: 'Game Integration Layer',
+      description: 'Connect compatible provider and aggregation APIs through a platform-specific content integration architecture.',
+      icon: Gamepad2,
+      span: 2
+    },
+    {
+      id: 7,
+      title: 'CRM & Growth Tools',
+      description: 'Build segmentation, promotions, rewards, referrals, loyalty and affiliate workflows around the product strategy.',
+      icon: HandshakeIcon,
+      span: 2
+    },
+    {
+      id: 8,
+      title: 'Back Office & Reporting',
+      description: 'Create role-based operational controls, reporting and administrative audit records around the team\'s workflows.',
+      icon: LayoutDashboard,
+      span: 2
+    }
+  ];
+
+  const faqs = [
+    {
+      question: 'What is custom sweepstakes casino software?',
+      answer:
+        'Custom Sweepstakes Casino software is developed around an operator\'s specific product requirements rather than being limited to a predefined platform configuration. Architecture, wallet logic, player workflows, integrations and operator tools can be designed around the agreed technical scope.'
+    },
+    {
+      question: 'How is custom Sweepstakes development different from turnkey software?',
+      answer:
+        'Turnkey development begins with an established platform core that is configured for the project. Custom development is better suited to businesses requiring deeper architectural changes, proprietary workflows, specialized integrations or product-specific platform logic.'
+    },
+    {
+      question: 'Can Gold Coin and Sweeps Coin logic be customized?',
+      answer:
+        'Yes. GC and SC balances, transaction rules, promotional allocations, administrative adjustments, eligibility logic and redemption-related workflows can be configured or developed according to the approved product requirements.'
+    },
+    {
+      question: 'Can custom AMOE workflows be developed?',
+      answer:
+        'Yes. AMOE workflows can support request submission, verification and eligibility checks, status tracking, promotional currency allocation and auditable records according to the operator\'s defined operating framework.'
+    },
+    {
+      question: 'Can KYC and geolocation services be integrated?',
+      answer:
+        'Yes. Compatible identity, age-verification and geolocation providers can be integrated into registration, account-access and redemption workflows according to technical and project requirements.'
+    },
+    {
+      question: 'Can Kvaornux integrate my preferred game providers?',
+      answer:
+        'Compatible provider and aggregation APIs can be integrated according to technical availability and the operator\'s commercial arrangements. Sweepstakes compatibility should be confirmed for each content provider.'
+    },
+    {
+      question: 'Can payment and redemption workflows be customized?',
+      answer:
+        'Yes. Gold Coin purchase flows, payment integrations, redemption thresholds, verification gates, risk reviews, approval statuses and prize-processing integrations can be structured around the project\'s requirements.'
+    },
+    {
+      question: 'Can the operator back office be customized?',
+      answer:
+        'Yes. Back-office workflows can be designed around player management, virtual currency operations, redemptions, verification, games, payments, promotions, affiliates, risk controls, reporting and staff permissions.'
+    },
+    {
+      question: 'Will I receive the source code?',
+      answer:
+        'Source-code access, ownership, handover and licensing depend on the agreed project scope and commercial model. These terms should be documented before development begins.'
+    },
+    {
+      question: 'How long does custom Sweepstakes casino development take?',
+      answer:
+        'The timeline depends on platform architecture, UI/UX requirements, custom workflows, wallet logic, game integrations, payments, verification services and overall project scope. The delivery schedule is defined after technical discovery and scope confirmation.'
     }
   ];
 
@@ -215,18 +392,18 @@ export default function TurnkeyCasinoPlatform() {
       >
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
 
-          {/* Main Title - SEO Optimized */}
+          {/* Main Title - SEO Optimized H1 */}
           <div className="text-center mb-3">
             <h1
               className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight"
               ref={(el) => { elementsRef.current[0] = el; }}
               data-anim="from-top"
             >
-              Turnkey Casino Software Solutions
+              Custom Sweepstakes Casino Software Built Around Your Operating Model
             </h1>
           </div>
 
-          {/* Subtitle/Description - SEO Keywords Added */}
+          {/* Subtitle/Description */}
           <div className="max-w-4xl mx-auto mb-9">
             <p
               className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
@@ -234,7 +411,7 @@ export default function TurnkeyCasinoPlatform() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Launch your own turnkey casino software platform with sportsbook integration, 20,000+ casino games, crypto payment solutions, KYC verification, advanced back-office dashboard, and 24/7 technical support — everything you need to start and scale your gaming business with a white label casino solution from day one.
+              Build a Sweepstakes platform around your own product requirements, player journeys and operational workflows — from custom Gold Coin and Sweeps Coin logic to integrations, redemption systems, back-office controls and scalable platform architecture.
             </p>
           </div>
 
@@ -258,9 +435,9 @@ export default function TurnkeyCasinoPlatform() {
                     key={tab.id}
                     ref={activeTab === tab.label ? activeTabRef : null}
                     onClick={() => handleTabClick(tab.label)}
-                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 ${activeTab === tab.label
-                        ? 'bg-white text-black border-2 border-white'
-                        : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
+                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${activeTab === tab.label
+                      ? 'bg-white text-black border-2 border-white'
+                      : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
                       }`}
                   >
                     {IconComponent && <IconComponent size={16} className="hidden sm:block" />}
@@ -287,7 +464,7 @@ export default function TurnkeyCasinoPlatform() {
                       style={{ animation: 'imageSlideIn 0.6s ease-out' }}
                       onError={(e) => {
                         const target = e.currentTarget as HTMLImageElement;
-                        target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI5MzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iNTMwIiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iNTAwIiB5PSIyNjUiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg=='
+                        target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI5MzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iNTMwIiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iNTAwIiB5PSIyNjUsIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg==';
                       }}
                     />
                   </div>
@@ -345,7 +522,7 @@ export default function TurnkeyCasinoPlatform() {
         {/* 🔥 Main Content */}
         <div className="container mx-auto px-4 pt-8 sm:pt-12 max-w-[1310px] relative z-10">
 
-          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 md:pt-16 pb-16 ">
+          <div className="grid lg:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 md:pt-16 pb-16">
 
             {/* LEFT STICKY */}
             <div className="relative lg:sticky lg:top-28 self-start space-y-4 sm:space-y-6 z-10">
@@ -354,7 +531,7 @@ export default function TurnkeyCasinoPlatform() {
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
               >
-                Build a complete turnkey casino platform with full operational control
+                Build the Sweepstakes Platform Your Business Actually Requires
               </h2>
 
               <p
@@ -363,7 +540,7 @@ export default function TurnkeyCasinoPlatform() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                Everything you need to launch and scale your casino platform — from backend infrastructure to player management, sportsbook integration, and white label casino solutions, all integrated and ready to deploy.
+                Custom development gives operators deeper control over platform logic, player experiences, integrations and operational workflows while keeping the technology structured around long-term product requirements.
               </p>
 
               <div
@@ -389,7 +566,7 @@ export default function TurnkeyCasinoPlatform() {
                   }}
                 >
                   <span className="relative z-10 text-sm sm:text-base font-bold text-black">
-                    Learn more
+                    Discuss Custom Requirements
                   </span>
                 </button>
               </div>
@@ -436,6 +613,19 @@ export default function TurnkeyCasinoPlatform() {
         </div>
       </section>
 
+      {/* Discover More Section */}
+      <DiscoverMore
+        customItems={customDiscoverItems}
+        customTitle="Explore Custom Sweepstakes Capabilities"
+        customSubtitle="Technology components that can be shaped around your platform architecture, operational model and long-term product roadmap."
+      />
+
+      {/* Partnership Banner */}
+      {/* <PartnershipBanner /> */}
+
+      {/* FAQ Section */}
+      <FAQSection customFaqData={faqs} hideBgImage={true} />
+
       {/* Opportunities Section */}
       <OpportunitiesSection />
       <ContactForm />
@@ -445,13 +635,13 @@ export default function TurnkeyCasinoPlatform() {
 }
 
 // Helper function for SEO-optimized alt tags
-
 function getImageAlt(tabId: string): string {
   const altMap: { [key: string]: string } = {
-    'full-platform': 'Custom iGaming Platform Design Interface and Game Lobby Dashboard',
-    'game-apis': 'Online Casino Game Aggregation Platform with 10,000+ Slots and Live Games',
-    'compliance': 'iGaming Security, Risk Management, AML/KYC Protocols and User Protection',
-    'backoffice': 'Turnkey Back-Office Admin Dashboard for Player and Transaction Management',
+    'custom-architecture': 'Custom Sweepstakes Platform Architecture and Engineering Design',
+    'custom-gc-sc': 'Custom Gold Coin and Sweeps Coin Virtual Currency Logic Architecture',
+    'player-workflows': 'Custom Sweepstakes Player Onboarding, AMOE and Geolocation Workflows',
+    'payments-redemption': 'Custom Payment Gateways and Prize Redemption Operations Architecture',
+    'custom-backoffice': 'Custom Operator Back-Office Dashboard and Player Management System',
   };
-  return altMap[tabId] || 'turnkey casino software solution';
+  return altMap[tabId] || 'custom sweepstakes casino software development solution';
 }

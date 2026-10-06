@@ -22,9 +22,8 @@ import OpportunitiesSection from '@/src/components/opportunitiessection/Opportun
 import ContactForm from '@/src/components/contactform/ContactForm';
 import FAQSection from '@/src/components/FAQSection/FAQSection';
 import DiscoverMore from '@/src/components/Discovermore/Discovermore';
-import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBanner';
 
-export default function SweepstakesClient() {
+export default function TurnkeySweepstakesClient() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
   const [activeTab, setActiveTab] = useState('Dual-Currency Wallet');
@@ -78,7 +77,7 @@ export default function SweepstakesClient() {
       label: 'Dual-Currency Wallet',
       icon: 'wallet' as const,
       title: 'Dual-Currency Virtual Currency Architecture',
-      description: 'Operate Gold Coins and Sweeps Coins through independent balances, transaction ledgers and configurable currency rules. Track purchases, promotional allocations, gameplay transactions, adjustments and redemption-related activity while maintaining a clear audit history for each currency.',
+      description: 'Maintain Gold Coins and Sweeps Coins as separate virtual currencies with independent balances, real-time transaction ledgers and configurable currency logic. Track purchases, promotional allocations, gameplay transactions, manual administrative adjustments and redemption eligibility while preserving a complete audit history for each currency.',
       image: '/assets/features/custom-igaming-platform-design-interface.webp'
     },
     {
@@ -86,7 +85,7 @@ export default function SweepstakesClient() {
       label: 'Compliance & Geolocation',
       icon: 'shield-check' as const,
       title: 'Compliance Controls & Geolocation',
-      description: 'Configure player eligibility controls across registration, gameplay and redemption workflows. Integrate age and identity verification, geolocation services, restricted-jurisdiction rules, AMOE processing and operational review controls according to the operator\'s requirements.',
+      description: 'Configure player eligibility, age and identity verification (KYC), state-level geolocation boundary rules, restricted-jurisdiction blocking, responsible-play options (such as self-exclusion or account limits) and Alternative Method of Entry (AMOE) processing. Manage entry request verification, status tracking and promotional coin allocations from the operator environment.',
       image: '/assets/features/igaming-security-risk-management-aml-kyc.webp'
     },
     {
@@ -94,7 +93,7 @@ export default function SweepstakesClient() {
       label: 'Game Integration Layer',
       icon: 'gamepad-2' as const,
       title: 'Casino Game Content Integration',
-      description: 'Connect casino content through provider and aggregation APIs while managing game categories, availability and player access from the operator environment. Support slots, table games, instant games, fish games and other compatible content based on provider availability.',
+      description: 'Connect compatible casino content through provider and aggregation APIs while managing game categories, availability, virtual currency rules and player access from the operator environment. Deliver responsive player-facing experiences configured around your brand identity without altering the established core platform architecture.',
       image: '/assets/features/online-casino-game-aggregation-10000-plus-slots.webp'
     },
     {
@@ -102,7 +101,7 @@ export default function SweepstakesClient() {
       label: 'Payments & Redemption',
       icon: 'credit-card' as const,
       title: 'Payments, Purchases & Prize Redemption',
-      description: 'Manage Gold Coin purchase flows and prize-redemption operations through connected payment and payout integrations. Configure transaction records, redemption thresholds, verification gates, review statuses, risk checks and administrative approval workflows.',
+      description: 'Manage Gold Coin purchase flows and prize-redemption operations through connected payment and payout integrations. Track purchase transaction records, set redemption thresholds, enforce KYC verification gates, manage manual review queues, review payment risk or chargeback alerts, and process approved prize payouts.',
       image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp'
     },
     {
@@ -110,7 +109,7 @@ export default function SweepstakesClient() {
       label: 'Back Office & Analytics',
       icon: 'layout-dashboard' as const,
       title: 'Operator Back Office Console',
-      description: 'Give operations teams centralized control over player accounts, GC/SC activity, redemption requests, verification reviews, jurisdiction settings, games, payments, promotions, affiliates, risk monitoring and reporting with role-based administrative access.',
+      description: 'Provide operations teams with centralized administrative control over Player Account Management (PAM), GC/SC currency ledgers, redemption approval queues, identity verification checks, game availability, promotions, affiliate tracking, risk monitoring, operational reporting and administrative audit records with role-based staff permissions.',
       image: '/assets/features/turnkey-back-office-admin-dashboard-analytics.webp'
     }
   ];
@@ -121,123 +120,182 @@ export default function SweepstakesClient() {
       icon: Wallet,
       title: 'Dual-Currency Wallet Architecture',
       description:
-        'Maintain separate Gold Coin and Sweeps Coin balances with independent transaction ledgers, configurable currency rules, promotional allocations, gameplay records, manual adjustments and complete transaction history.'
+        'Maintain separate Gold Coin and Sweeps Coin balances with independent real-time transaction ledgers, configurable currency rules, promotional allocations, gameplay logging, manual administrative adjustments and comprehensive transaction history.'
     },
     {
       id: 2,
       icon: Gamepad2,
       title: 'Game Content Integration Layer',
       description:
-        'Connect compatible casino content through provider and aggregation APIs while controlling game availability, categories, currencies and player access from the operator environment.'
+        'Connect compatible casino content through provider and aggregation APIs while controlling game availability, categories, currencies, player access and branded frontend display rules from the operator environment.'
     },
     {
       id: 3,
       icon: CreditCard,
       title: 'Payments, Coin Purchases & Prize Redemption',
       description:
-        'Manage Gold Coin packages, payment transactions and the complete redemption lifecycle — from player request and eligibility checks through verification, risk review, approval status and payout processing.'
+        'Manage Gold Coin packages, payment transaction records and the complete prize redemption lifecycle — from player request and eligibility checks through identity verification, review status queues, payment risk monitoring and approved payout processing.'
     },
     {
       id: 4,
       icon: ShieldCheck,
       title: 'Compliance Controls & Geolocation Engine',
       description:
-        'Configure AMOE workflows, age and identity verification, geolocation integrations, restricted-jurisdiction rules and operational access controls across registration, gameplay and redemption. Technology controls can support an operator\'s compliance framework; legal requirements and permitted jurisdictions should be determined with qualified legal counsel.'
+        'Configure AMOE request processing, age and identity verification, geolocation services, restricted-jurisdiction rules, responsible-play options and operational access controls. Technology controls can support an operator\'s compliance framework; legal requirements and permitted jurisdictions should be determined with qualified legal counsel.'
     },
     {
       id: 5,
       icon: Sparkles,
       title: 'Player Engagement & Retention Tools',
       description:
-        'Configure promotional coin campaigns, daily rewards, loyalty programs, referrals, tournaments, leaderboards and segmented CRM campaigns with rules based on player activity and eligibility.'
+        'Configure promotional coin campaigns, daily rewards, loyalty levels, referral incentives, tournaments, leaderboards and segmented CRM player communication based on activity and eligibility.'
     },
     {
       id: 6,
       icon: LayoutDashboard,
       title: 'Operator Back Office Dashboard',
       description:
-        'Manage player profiles, currency transactions, redemptions, verification queues, games, payments, promotions, affiliates, risk reviews and staff permissions through a centralized administrative environment.'
+        'Manage player account profiles, virtual currency ledgers, redemption queues, KYC reviews, geolocation settings, game catalogs, payment options, promotions, affiliates, risk reviews and staff role permissions through a centralized administrative environment.'
     },
     {
       id: 7,
       icon: RefreshCw,
       title: 'Built for Web & Mobile Experiences',
       description:
-        'Deliver responsive HTML5 player experiences across desktop and mobile browsers, with support for PWA and platform-specific implementation approaches where required by the project.'
+        'Deliver responsive HTML5 player experiences across desktop and mobile browsers. The player-facing frontend can be configured around your brand identity, logo, navigation and content strategy on an established platform architecture.'
     },
     {
       id: 8,
       icon: Cpu,
       title: 'Sweepstakes Platform Technology Stack',
       description:
-        'API-first platform architecture designed around modular integrations, real-time wallet activity, transaction processing and scalable operator services using the existing Kvaornux technology stack.'
+        'API-first platform architecture designed around modular integrations, real-time wallet activity, transaction processing, administrative audit logs and scalable operator services using the existing Kvaornux technology stack.'
     },
     {
       id: 9,
       icon: Layers,
       title: 'Structured Launch Process (Strategy to Support)',
       description:
-        'A structured delivery process covering requirements and operating model definition, platform architecture, UI/UX implementation, development, third-party integrations, QA, deployment and post-launch technical support.'
+        'A structured delivery process covering project scope definition, core platform configuration, UI/UX brand alignment, third-party API integrations, functional testing, production deployment and post-launch technical support.'
     },
     {
       id: 10,
       icon: Rocket,
       title: 'Turnkey & Custom Launch Options',
       description:
-        'Launch from an established Sweepstakes platform architecture or commission a custom implementation around proprietary workflows, integrations, player experience and long-term product requirements.'
+        'Launch from an established Turnkey Sweepstakes platform architecture configured around your brand and required integrations, or commission a custom development roadmap for proprietary product requirements.'
+    }
+  ];
+
+  const turnkeyDiscoverItems = [
+    {
+      id: 1,
+      title: 'Dual-Currency Economy',
+      description: 'Gold Coins and Sweeps Coins operate through separate balances, ledger logic and transaction records, supporting entertainment play, promotional distribution and prize-eligible participation workflows.',
+      icon: Wallet,
+      span: 2
+    },
+    {
+      id: 2,
+      title: 'AMOE & Entry Management',
+      description: 'Process Alternative Method of Entry requests through verification, status tracking, promotional Sweeps Coin allocation and auditable entry records from the operator environment.',
+      icon: ShieldCheck,
+      span: 2
+    },
+    {
+      id: 3,
+      title: 'Prize Redemption Engine',
+      description: 'Configure redemption eligibility, thresholds, player verification, review queues, request statuses, risk checks and payout processing through a controlled redemption workflow.',
+      icon: RefreshCw,
+      span: 2
+    },
+    {
+      id: 4,
+      title: 'KYC, Geolocation & Access Controls',
+      description: 'Connect identity and age verification, jurisdiction-level geolocation, restricted-location controls and player access rules to registration, gameplay and redemption workflows.',
+      icon: Layers,
+      span: 3
+    },
+    {
+      id: 5,
+      title: 'Fraud & Risk Management',
+      description: 'Monitor suspicious account activity, duplicate-account indicators, unusual redemption requests, payment risk and chargeback alerts with manual review queues and operational controls.',
+      icon: Cpu,
+      span: 3
+    },
+    {
+      id: 6,
+      title: 'Player Account Management & CRM',
+      description: 'Manage player profiles, verification status, GC/SC activity, segments, communications, promotions and the complete player lifecycle from one operational environment.',
+      icon: Sparkles,
+      span: 2
+    },
+    {
+      id: 7,
+      title: 'Promotions, Loyalty & Affiliates',
+      description: 'Run daily rewards, promotional coin campaigns, referrals, loyalty programs, tournaments, leaderboards and affiliate acquisition workflows with configurable campaign rules.',
+      icon: HandshakeIcon,
+      span: 2
+    },
+    {
+      id: 8,
+      title: 'Reporting & Audit Controls',
+      description: 'Track registrations, Gold Coin purchases, Sweeps Coin movements, game activity, redemptions, payments, promotions and administrative actions through operational reporting and audit records.',
+      icon: LayoutDashboard,
+      span: 2
     }
   ];
 
   const faqs = [
     {
-      question: 'What is sweepstakes casino software?',
+      question: 'What is turnkey sweepstakes casino software?',
       answer:
-        'Sweepstakes casino software is the technology used to operate a promotional gaming platform with virtual currencies such as Gold Coins and Sweeps Coins. It can combine wallet and ledger management, games, promotional entry rules, AMOE workflows, player verification, payments, prize redemption and operator administration.'
+        'Turnkey sweepstakes casino software provides an established platform architecture that can be configured around an operator\'s brand, virtual currency model, games, payments, player verification, redemption workflows and back-office requirements.'
     },
     {
-      question: 'How do Gold Coins and Sweeps Coins work?',
+      question: 'How is turnkey sweepstakes software different from custom development?',
       answer:
-        'Gold Coins and Sweeps Coins are maintained as separate virtual currencies with independent balances and transaction histories. Gold Coins are generally used for entertainment play, while Sweeps Coins may be distributed through eligible promotional methods and used within sweepstakes participation and redemption workflows defined by the operator\'s rules.'
+        'A turnkey project begins with an established core architecture and focuses on configuration, branding and required integrations. Custom development is better suited to projects requiring proprietary architecture, highly specialized workflows or deeper product-level customization.'
     },
     {
-      question: 'What is AMOE in a sweepstakes casino?',
+      question: 'Does the platform support Gold Coins and Sweeps Coins?',
       answer:
-        'AMOE means Alternative Method of Entry. It provides a no-purchase participation method under an operator\'s promotional rules. A Sweepstakes platform can support the submission, verification, status tracking and promotional currency allocation associated with AMOE requests.'
+        'Yes. The platform can maintain separate Gold Coin and Sweeps Coin balances with independent transaction histories and configurable rules for purchases, promotional allocations, gameplay activity and redemption-related workflows.'
     },
     {
-      question: 'How is a sweepstakes casino different from a real-money casino?',
+      question: 'Can AMOE workflows be configured?',
       answer:
-        'A real-money casino is built around direct cash wagering. A Sweepstakes platform uses a promotional model with virtual currencies, defined participation rules and separate redemption workflows. The exact operating requirements depend on the jurisdictions in which the operator intends to offer the service.'
-    },
-    {
-      question: 'Can Kvaornux build a custom sweepstakes casino platform?',
-      answer:
-        'Yes. Kvaornux can develop Sweepstakes technology around an operator\'s required wallet logic, player experience, game integrations, payments, redemption workflows, back-office operations and third-party services.'
-    },
-    {
-      question: 'What is included in a turnkey sweepstakes casino platform?',
-      answer:
-        'The exact scope depends on the project, but a turnkey implementation can include dual-currency wallet infrastructure, player account management, game integrations, payment flows, promotional tools, KYC and geolocation integrations, redemption management and an operator back office.'
-    },
-    {
-      question: 'Can multiple casino game providers be integrated?',
-      answer:
-        'Yes. Compatible game providers and aggregators can be connected through APIs so operators can manage game content from a unified platform layer. Available content and Sweepstakes compatibility depend on the individual provider and commercial arrangement.'
-    },
-    {
-      question: 'How does sweepstakes prize redemption work?',
-      answer:
-        'A redemption workflow can move a request through eligibility checks, identity verification, location controls, risk review and administrative approval before an approved payout method is used. Operators can configure thresholds, statuses and review requirements around their operating model.'
+        'Yes. Alternative Method of Entry workflows can support no-purchase participation requests, verification, status tracking and promotional currency allocation according to the operator\'s defined rules and legal framework.'
     },
     {
       question: 'Can KYC and geolocation providers be integrated?',
       answer:
-        'Yes. Third-party identity, age-verification and geolocation services can be integrated into account registration, access controls and redemption workflows according to the operator\'s technical and jurisdictional requirements.'
+        'Yes. Third-party identity, age-verification and geolocation services can be connected to registration, player access and redemption workflows based on project requirements and technical compatibility.'
     },
     {
-      question: 'How long does sweepstakes casino software development take?',
+      question: 'Can I choose the game providers?',
       answer:
-        'The timeline depends on the launch model, UI/UX requirements, wallet configuration, third-party integrations, game providers, payment systems and level of customization. A project timeline should be defined after the technical scope and required integrations are confirmed.'
+        'Compatible game providers and aggregation APIs can be integrated according to the project\'s commercial arrangements and technical requirements. Sweepstakes compatibility should be confirmed for each content provider.'
+    },
+    {
+      question: 'Can payment and payout providers be integrated?',
+      answer:
+        'Yes. Compatible payment services can support Gold Coin purchase flows, while payout or prize-processing integrations can be connected to approved redemption workflows.'
+    },
+    {
+      question: 'Can the frontend be branded for my business?',
+      answer:
+        'Yes. The player-facing experience can be configured around the operator\'s brand identity, visual assets, content, navigation and promotional requirements within the agreed turnkey scope.'
+    },
+    {
+      question: 'Does turnkey mean every Sweepstakes Casino looks the same?',
+      answer:
+        'No. The underlying core architecture can remain established while the player-facing brand experience, content, selected integrations and operating configuration are adapted for the project.'
+    },
+    {
+      question: 'How long does a turnkey Sweepstakes Casino take to launch?',
+      answer:
+        'The timeline depends on branding, platform configuration, game integrations, payment services, verification providers and other project requirements. Kvaornux defines the delivery schedule after the technical scope and required integrations are confirmed.'
     }
   ];
 
@@ -275,65 +333,6 @@ export default function SweepstakesClient() {
       }
     }, 0);
   };
-
-  const sweepstakesDiscoverItems = [
-    {
-      id: 1,
-      title: 'Dual-Currency Economy',
-      description: 'Gold Coins and Sweeps Coins operate through separate balances, ledger logic and transaction records, supporting entertainment play, promotional distribution and prize-eligible participation workflows.',
-      icon: Wallet,
-      span: 2
-    },
-    {
-      id: 2,
-      title: 'AMOE & Entry Management',
-      description: 'Manage alternative methods of entry, promotional coin allocation, no-purchase participation workflows, eligibility rules and auditable entry records from the operator environment.',
-      icon: ShieldCheck,
-      span: 2
-    },
-    {
-      id: 3,
-      title: 'Prize Redemption Engine',
-      description: 'Configure redemption eligibility, thresholds, player verification, review queues, request statuses, risk checks and payout processing through a controlled redemption workflow.',
-      icon: RefreshCw,
-      span: 2
-    },
-    {
-      id: 4,
-      title: 'KYC, Geolocation & Access Controls',
-      description: 'Connect identity and age verification, jurisdiction-level geolocation, restricted-location controls and player access rules to registration, gameplay and redemption workflows.',
-      icon: Layers,
-      span: 3
-    },
-    {
-      id: 5,
-      title: 'Fraud & Risk Management',
-      description: 'Monitor duplicate accounts, suspicious transactions, unusual redemption activity, payment risk and player behavior with configurable review and operational controls.',
-      icon: Cpu,
-      span: 3
-    },
-    {
-      id: 6,
-      title: 'Player Account Management & CRM',
-      description: 'Manage player profiles, verification status, GC/SC activity, segments, communications, promotions and the complete player lifecycle from one operational environment.',
-      icon: Sparkles,
-      span: 2
-    },
-    {
-      id: 7,
-      title: 'Promotions, Loyalty & Affiliates',
-      description: 'Run daily rewards, promotional coin campaigns, referrals, loyalty programs, tournaments, leaderboards and affiliate acquisition workflows with configurable campaign rules.',
-      icon: HandshakeIcon,
-      span: 2
-    },
-    {
-      id: 8,
-      title: 'Reporting & Audit Controls',
-      description: 'Track registrations, Gold Coin purchases, Sweeps Coin movements, game activity, redemptions, payments, promotions and administrative actions through operational reporting and audit records.',
-      icon: LayoutDashboard,
-      span: 2
-    }
-  ];
 
   return (
     <>
@@ -400,7 +399,7 @@ export default function SweepstakesClient() {
               ref={(el) => { elementsRef.current[0] = el; }}
               data-anim="from-top"
             >
-              Sweepstakes Casino Software Built for Modern Operators
+              Turnkey Sweepstakes Casino Software Built for Faster Market Entry
             </h1>
           </div>
 
@@ -412,7 +411,7 @@ export default function SweepstakesClient() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Build and operate a sweepstakes casino through a connected technology stack covering dual-currency wallets, promotional entry workflows, game integrations, payments, player verification, prize redemption and operator back-office controls.
+              Launch your Sweepstakes brand on an established platform architecture configured around your identity, operating model and required integrations — from Gold Coins and Sweeps Coins to games, payments, verification, redemption and back-office operations.
             </p>
           </div>
 
@@ -532,7 +531,7 @@ export default function SweepstakesClient() {
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
               >
-                Everything Operators Need in One Sweepstakes Platform
+                Everything Operators Need in a Turnkey Sweepstakes Platform
               </h2>
 
               <p
@@ -541,7 +540,7 @@ export default function SweepstakesClient() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                A connected operational stack for managing virtual currencies, player activity, game content, payments, promotional participation, prize redemption and day-to-day platform administration.
+                A connected operational stack for launching your sweepstakes brand on an established platform architecture — covering virtual currencies, player activity, game content, payments, compliance controls and back-office administration.
               </p>
 
               <div
@@ -567,7 +566,7 @@ export default function SweepstakesClient() {
                   }}
                 >
                   <span className="relative z-10 text-sm sm:text-base font-bold text-black">
-                    Discuss Sweepstakes Scope
+                    Discuss Turnkey Scope
                   </span>
                 </button>
               </div>
@@ -614,15 +613,11 @@ export default function SweepstakesClient() {
         </div>
       </section>
 
-
-
-
-
       {/* Discover More Section */}
       <DiscoverMore
-        customItems={sweepstakesDiscoverItems}
-        customTitle="Explore the Sweepstakes Platform Ecosystem"
-        customSubtitle="Core technology and operational capabilities built around the complete sweepstakes casino lifecycle."
+        customItems={turnkeyDiscoverItems}
+        customTitle="Explore Turnkey Platform Capabilities"
+        customSubtitle="Core technology and operational capabilities built around turnkey sweepstakes casino operations."
       />
 
       {/* Partnership Banner */}
@@ -642,11 +637,11 @@ export default function SweepstakesClient() {
 // Helper function for SEO-optimized alt tags
 function getImageAlt(tabId: string): string {
   const altMap: { [key: string]: string } = {
-    'dual-currency-wallet': 'Dual-Currency Virtual Currency Architecture Gold Coins and Sweeps Coins',
-    'compliance-controls': 'Sweepstakes Compliance Controls, AMOE Processing, KYC Verification and Geolocation',
-    'game-aggregation': 'Sweepstakes Casino Game Integration Layer with Slots, Live Casino and Table Games',
-    'payments-redemption': 'Payments, Coin Purchases and Prize Redemption Workflows for Sweepstakes Platform',
-    'backoffice-analytics': 'Sweepstakes Casino Operator Back Office Console and Real-Time Analytics Dashboard',
+    'dual-currency-wallet': 'Turnkey Dual-Currency Virtual Currency Architecture Gold Coins and Sweeps Coins',
+    'compliance-controls': 'Turnkey Sweepstakes Compliance Controls, AMOE Processing, KYC Verification and Geolocation',
+    'game-aggregation': 'Turnkey Sweepstakes Casino Game Integration Layer with Slots, Live Casino and Table Games',
+    'payments-redemption': 'Turnkey Payments, Coin Purchases and Prize Redemption Workflows for Sweepstakes Platform',
+    'backoffice-analytics': 'Turnkey Sweepstakes Casino Operator Back Office Console and Real-Time Analytics Dashboard',
   };
-  return altMap[tabId] || 'sweepstakes casino software platform solution';
+  return altMap[tabId] || 'turnkey sweepstakes casino software platform solution';
 }
