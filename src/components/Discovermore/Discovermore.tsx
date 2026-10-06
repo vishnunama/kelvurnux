@@ -11,24 +11,10 @@ import {
   Zap
 } from 'lucide-react';
 import Link from 'next/link';
-import { useRef, useEffect, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { useRef, useEffect } from 'react';
 
 export default function DiscoverMore() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
-  const swiperRef = useRef<any>(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 840);
-    };
-    
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     const elements = elementsRef.current.filter((el): el is HTMLElement => el !== null);
@@ -54,484 +40,192 @@ export default function DiscoverMore() {
       title: 'White Label',
       description: 'A ready-to-launch iGaming solution with your branding, fully managed infrastructure, and minimal operational load.',
       icon: Layout,
-      link: '/white-label-casino-solutions'
+      link: '/white-label-casino-solutions',
+      span: 2
     },
     {
       id: 2,
       title: 'Turnkey',
       description: 'A full-access modular iGaming platform designed for total business control, scalability, and long-term growth.',
       icon: Key,
-      link: '/turnkey-casino-software-solutions'
+      link: '/turnkey-casino-software-solutions',
+      span: 2
     },
     {
       id: 3,
-      title: 'Casino Platform',
-      description: 'Quick access to the casino world through a powerful modular platform.',
-      icon: Gamepad2,
-      link: '/turnkey-casino-software-solutions'
+      title: 'Analytics',
+      description: 'Advanced analytics tools for understanding player activity, traffic sources, campaign performance, and more.',
+      icon: BarChart3,
+      link: '/#contact-form-section',
+      span: 2
     },
     {
       id: 4,
-      title: 'Sports Betting Platform',
-      description: 'A fully equipped, competitive sportsbook tailored for dynamic betting experiences in a fast-paced market.',
-      icon: Trophy,
-      link: '/turnkey-sportsbook-solutions'
+      title: 'Game Aggregator',
+      description: 'The game aggregator offers a full suite of tools and features that guarantees for successfully operating and maintaining an online casino website.',
+      icon: Zap,
+      link: '/casino-aggregator-api-solution',
+      span: 3
     },
     {
       id: 5,
       title: 'Affiliate Platform',
       description: 'A premium white-label affiliate platform offering a wide range of tools to easily manage promo campaigns, track performance, and analyze results in detail.',
       icon: Handshake,
-      link: '/#contact-form-section'
+      link: '/#contact-form-section',
+      span: 3
     },
     {
       id: 6,
-      title: 'CRM and Marketing System',
+      title: 'CRM and Marketing system',
       description: 'A complete solution with a strong emphasis on behavior-based marketing for online casinos and betting operators.',
       icon: Sparkles,
-      link: '/#contact-form-section'
+      link: '/#contact-form-section',
+      span: 2
     },
     {
       id: 7,
-      title: 'Analytics',
-      description: 'Advanced analytics tools for understanding player activity, traffic sources, campaign performance, and more.',
-      icon: BarChart3,
-      link: '/#contact-form-section'
+      title: 'Sports Betting Platform',
+      description: 'A fully equipped, competitive sportsbook tailored for dynamic betting experiences in a fast-paced market.',
+      icon: Trophy,
+      link: '/turnkey-sportsbook-solutions',
+      span: 2
     },
     {
       id: 8,
-      title: 'Game Aggregator',
-      description: 'The game aggregator offers a full suite of tools and features that guarantees for successfully operating and maintaining an online casino website.',
-      icon: Zap,
-      link: '/casino-aggregator-api-solution'
+      title: 'Casino Platform',
+      description: 'Quick access to the casino world through a powerful modular platform.',
+      icon: Gamepad2,
+      link: '/turnkey-casino-software-solutions',
+      span: 2
     }
   ];
 
   return (
     <>
-      <style jsx>{`
-        @keyframes from-bottom {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+      <style jsx global>{`
+        .discover-card-item {
+          position: relative !important;
+          background: linear-gradient(121deg, rgba(0, 235, 170, 0.08) 10.25%, rgba(0, 235, 170, 0.02) 99.99%), #0a141a !important;
+          border-radius: 24px !important;
+          border: 1px solid rgba(0, 235, 170, 0.2) !important;
+          box-shadow: none !important;
+          transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out !important;
         }
-
-        [data-anim] { opacity: 0; }
-        [data-anim="from-bottom"].visible { 
-          animation: from-bottom 0.6s ease-out forwards; 
+        .discover-card-item::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          padding: 1px;
+          border-radius: 24px;
+          background: linear-gradient(248.1deg, rgba(255, 157, 77, 0.35) 5.35%, rgba(0, 235, 170, 0) 45.02%);
+          -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events: none;
         }
-
-        [data-anim-delay="1"].visible { animation-delay: 0.1s; }
-        [data-anim-delay="2"].visible { animation-delay: 0.2s; }
-        [data-anim-delay="3"].visible { animation-delay: 0.3s; }
-        [data-anim-delay="4"].visible { animation-delay: 0.4s; }
-        [data-anim-delay="5"].visible { animation-delay: 0.5s; }
-        [data-anim-delay="6"].visible { animation-delay: 0.6s; }
-        [data-anim-delay="7"].visible { animation-delay: 0.7s; }
-        [data-anim-delay="8"].visible { animation-delay: 0.8s; }
-
-        .discover-section {
-          position: relative;
-          padding: 6.4rem 2rem 10rem;
-          background: radial-gradient(
-            100% 70% at 48.33% 99.05%, 
-            rgba(12, 124, 149, 0.2) 0%, 
-            rgba(0, 69, 85, 0.2) 25.39%, 
-            rgba(11, 11, 15, 0.2) 73.2%
-          );
+        .discover-card-item:hover {
+          background: linear-gradient(121deg, rgba(0, 235, 170, 0.16) 10.25%, rgba(0, 235, 170, 0.05) 99.99%), #0d1a22 !important;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 15px 14.8px 0px, rgba(0, 235, 170, 0.25) 0px -2px 4.7px 0px inset !important;
+          border-color: rgba(0, 235, 170, 0.45) !important;
         }
-
-        .discover-container {
-          max-width: 124rem;
-          margin: 0 auto;
-          padding: 0 2rem;
-          position: relative;
-          z-index: 2;
+        .discover-card-item .icon-box {
+          background-color: rgb(117, 146, 150) !important;
+          border: none !important;
+          box-shadow: none !important;
+          transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out !important;
         }
-
-      
-
-        .section-title {
-          font-size: clamp(2rem, 5vw, 3.6rem);
-          font-weight: 700;
-          color: #ffffff;
-          margin-bottom: 4.8rem;
-          text-align: center;
-          line-height: 1.2;
+        .discover-card-item .icon-box svg {
+          color: #0b0b0f !important;
+          transition: color 0.3s ease-in-out !important;
         }
-
-        .more-grid {
-          display: grid;
-          grid-template-columns: repeat(6, 1fr);
-          gap: 1.2rem;
-          width: 100%;
+        .discover-card-item:hover .icon-box {
+          background-color: #00ebaa !important;
+          box-shadow: none !important;
         }
-
-        .more-item:nth-child(1),
-        .more-item:nth-child(2),
-        .more-item:nth-child(3) {
-          grid-column: span 2;
-        }
-
-        .more-item:nth-child(4),
-        .more-item:nth-child(5) {
-          grid-column: span 3;
-        }
-
-        .more-item:nth-child(6),
-        .more-item:nth-child(7),
-        .more-item:nth-child(8) {
-          grid-column: span 2;
-        }
-
-        .more-item {
-          margin: 0;
-          padding: 2rem;
-          border-radius: 2rem;
-          color: #ffffff;
-          text-decoration: none;
-          position: relative;
-          background: linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10.25%, rgba(0, 235, 170, 0.03) 99.99%), #0a141a;
-          border: 1px solid rgba(0, 235, 170, 0.3);
-          display: flex;
-          flex-direction: column;
-          height: auto;
-          overflow: hidden;
-          cursor: pointer;
-        }
-
-        .more-item:hover {
-          border-color: #00ebaa;
-        }
-
-        .more-item-icon {
-          width: 3.5rem;
-          height: 3.5rem;
-          border-radius: 50%;
-          background: rgba(0, 235, 170, 0.15);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 1.2rem;
-          transition: all 0.3s ease-in-out;
-          border: 1px solid rgba(0, 235, 170, 0.4);
-          flex-shrink: 0;
-        }
-
-        .more-item:hover .more-item-icon {
-          background: rgba(0, 235, 170, 0.25);
-          border-color: #00ebaa;
-        }
-
-        .more-item-icon svg {
-          width: 1.8rem;
-          height: 1.8rem;
-          color: #00ebaa;
-        }
-
-        .more-item-title {
-          font-size: 1.35rem;
-          font-weight: 700;
-          line-height: 1.3;
-          margin-bottom: 0.8rem;
-          color: #ffffff;
-        }
-
-        .more-item-text {
-          font-size: 0.95rem;
-          font-weight: 400;
-          line-height: 1.5;
-          color: #b3b3c4;
-          transition: color 0.3s ease-in-out;
-          margin: 0;
-        }
-
-        .more-item:hover .more-item-text {
-          color: #d1d5e8;
-        }
-
-        .nav-button {
-          transition: all 0.3s cubic-bezier(0.32, 0.72, 0.3, 1);
-        }
-        .nav-button:hover {
-          transform: scale(1.08);
-          background: rgba(255, 255, 255, 0.12) !important;
-        }
-        .nav-button:active {
-          transform: scale(0.95);
-        }
-
-        @media (max-width: 840px) {
-          .more-grid {
-            display: none;
-          }
-
-          .discover-section {
-            padding: 4.8rem 0 8rem;
-          }
-
-          .discover-container {
-            padding: 0;
-          }
-
-          .section-title {
-            margin-bottom: 3.2rem;
-            font-size: 2rem;
-            padding: 0 1rem;
-          }
-
-         
-
-          .swiper {
-            overflow: visible;
-          }
-
-          .more-item {
-            width: calc(100vw - 5rem) !important;
-            min-width: calc(100vw - 5rem) !important;
-            flex-shrink: 0;
-            margin: 0;
-            padding: 2rem;
-          }
-
-          .more-item-icon {
-            width: 3.2rem;
-            height: 3.2rem;
-            margin-bottom: 1rem;
-          }
-
-          .more-item-title {
-            font-size: 1.2rem;
-          }
-
-          .more-item-text {
-            font-size: 0.9rem;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .more-item {
-            width: calc(100vw - 5rem) !important;
-            min-width: calc(100vw - 5rem) !important;
-            padding: 2rem;
-            min-height: 300px;
-          }
-
-          .more-item-icon {
-            width: 3.2rem;
-            height: 3.2rem;
-            margin-bottom: 1rem;
-          }
-
-          .more-item-title {
-            font-size: 1.2rem;
-          }
-
-          .more-item-text {
-            font-size: 0.9rem;
-          }
-
-          .section-title {
-            padding: 0 1rem;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .discover-section {
-            padding: 3.2rem 0 6rem;
-          }
-
-          .more-item {
-            width: calc(100vw - 4rem) !important;
-            min-width: calc(100vw - 4rem) !important;
-            padding: 1.6rem;
-            min-height: 280px;
-          }
-
-          .more-item-icon {
-            width: 3rem;
-            height: 3rem;
-            margin-bottom: 0.8rem;
-          }
-
-          .more-item-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.6rem;
-          }
-
-          .more-item-text {
-            font-size: 0.85rem;
-          }
-
-          .section-title {
-            font-size: 1.75rem;
-            margin-bottom: 2.4rem;
-            padding: 0 1rem;
-          }
-
-          .nav-button {
-            width: 2.5rem;
-            height: 2.5rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .discover-section {
-            padding: 2.8rem 0 5rem;
-          }
-
-          .more-item {
-            width: calc(100vw - 3.5rem) !important;
-            min-width: calc(100vw - 3.5rem) !important;
-            padding: 1.4rem;
-            min-height: 260px;
-          }
-
-          .more-item-icon {
-            width: 2.8rem;
-            height: 2.8rem;
-            margin-bottom: 0.7rem;
-          }
-
-          .more-item-title {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-          }
-
-          .more-item-text {
-            font-size: 0.8rem;
-          }
-
-          .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-          }
-
-          .nav-button {
-            width: 2.2rem;
-            height: 2.2rem;
-          }
+        .discover-card-item:hover .icon-box svg {
+          color: #0b0b0f !important;
         }
       `}</style>
 
-      <section className="discover-section">
-
-        <div className="discover-container">
+      <section 
+        className="w-full relative py-16 md:py-24"
+        style={{
+          background: 'radial-gradient(100% 70% at 48.33% 99.05%, rgba(0, 235, 170, 0.12) 0%, rgba(0, 80, 60, 0.12) 25.39%, rgba(11, 11, 15, 0.2) 73.2%)'
+        }}
+      >
+        <div className="max-w-[1240px] w-full mx-auto px-5 relative z-10 box-border">
           <h2 
-            className="section-title"
+            className="text-center font-bold text-3xl sm:text-4xl md:text-5xl mb-8 md:mb-12"
+            style={{
+              color: '#ffffff',
+              background: 'linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%) text, rgb(255, 255, 255)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}
             ref={(el) => { elementsRef.current[0] = el; }}
-            data-anim="from-bottom"
           >
             Discover more
           </h2>
-
-          {/* Desktop Grid */}
-          <div className="more-grid">
+          
+          {/* DESKTOP & TABLET GRID */}
+          <div className="hidden md:grid grid-cols-6 gap-4 w-full">
             {discoverItems.map((item, index) => {
               const IconComponent = item.icon;
               return (
                 <Link
                   key={item.id}
                   href={item.link}
-                  className="more-item"
+                  className="discover-card-item rounded-[24px] p-8 flex flex-col relative text-decoration-none group cursor-pointer"
+                  style={{
+                    gridColumn: `span ${item.span}`,
+                    minHeight: '220px'
+                  }}
                   ref={(el) => { elementsRef.current[index + 1] = el; }}
-                  data-anim="from-bottom"
-                  data-anim-delay={String((index % 8) + 1)}
                 >
-                  <div className="more-item-icon">
-                    <IconComponent size={24} />
+                  {/* Icon */}
+                  <div className="icon-box w-12 h-12 rounded-full flex items-center justify-center mb-5 flex-shrink-0">
+                    <IconComponent size={22} />
                   </div>
-                  <div className="more-item-title">{item.title}</div>
-                  <div className="more-item-text">{item.description}</div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white mb-3 leading-snug">
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="card-desc text-[15px] leading-relaxed text-[#b3b3c4] m-0 transition-colors">
+                    {item.description}
+                  </p>
                 </Link>
               );
             })}
           </div>
 
-          {/* Mobile Slider */}
-          {isMobile && (
-            <div className="mb-0 w-full overflow-hidden relative">
-              <Swiper
-                onSwiper={(swiper) => {
-                  swiperRef.current = swiper;
-                }}
-                spaceBetween={20}
-                slidesPerView="auto"
-                centeredSlides={true}
-                grabCursor={true}
-                loop={false}
-                style={{ overflow: 'visible', padding: '0' }}
-              >
-                {discoverItems.map((item) => {
-                  const IconComponent = item.icon;
-                  return (
-                    <SwiperSlide key={item.id} style={{ width: 'auto', overflow: 'visible' }}>
-                      <Link
-                        href={item.link}
-                        className="more-item rounded-2xl py-5 px-6 relative flex flex-col gap-4 min-h-[280px] overflow-visible block"
-                        style={{ width: 'calc(100vw - 5rem)', minWidth: 'calc(100vw - 5rem)' }}
-                      >
-                        <div className="more-item-icon">
-                          <IconComponent size={24} />
-                        </div>
-                        <div className="more-item-title">{item.title}</div>
-                        <div className="more-item-text">{item.description}</div>
-                      </Link>
-                    </SwiperSlide>
-                  );
-                })}
-              </Swiper>
+          {/* MOBILE GRID */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:hidden gap-4 w-full">
+            {discoverItems.map((item) => {
+              const IconComponent = item.icon;
+              return (
+                <Link
+                  key={`mob-${item.id}`}
+                  href={item.link}
+                  className="discover-card-item rounded-[20px] p-6 flex flex-col relative text-decoration-none"
+                >
+                  <div className="icon-box w-11 h-11 rounded-full flex items-center justify-center mb-4 flex-shrink-0">
+                    <IconComponent size={20} />
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2 leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="card-desc text-sm leading-relaxed text-[#b3b3c4] m-0 transition-colors">
+                    {item.description}
+                  </p>
+                </Link>
+              );
+            })}
+          </div>
 
-              {/* Left Arrow */}
-              <button
-                onClick={() => {
-                  if (swiperRef.current) swiperRef.current.slidePrev();
-                }}
-                className="nav-button absolute left-4 top-1/2 -translate-y-1/2 z-20"
-                style={{
-                  width: '2.8rem',
-                  minWidth: '2.8rem',
-                  height: '2.8rem',
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.08)',
-                  boxShadow: '0 -3px 4px 0 rgba(6,10,13,0.26) inset, 0 2px 2.8px 0 rgba(255,255,255,0.13) inset',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
-                  <path d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-
-              {/* Right Arrow */}
-              <button
-                onClick={() => {
-                  if (swiperRef.current) swiperRef.current.slideNext();
-                }}
-                className="nav-button absolute right-4 top-1/2 -translate-y-1/2 z-20"
-                style={{
-                  width: '2.8rem',
-                  minWidth: '2.8rem',
-                  height: '2.8rem',
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.08)',
-                  boxShadow: '0 -3px 4px 0 rgba(6,10,13,0.26) inset, 0 2px 2.8px 0 rgba(255,255,255,0.13) inset',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
-                  <path d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          )}
         </div>
       </section>
     </>

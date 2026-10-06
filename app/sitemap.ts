@@ -35,6 +35,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://kvaornux.com/sweepstakes-casino-software/",
+      priority: 0.9,
+    },
+    {
       url: "https://kvaornux.com/igaming-case-studies/",
       priority: 0.9,
     },
