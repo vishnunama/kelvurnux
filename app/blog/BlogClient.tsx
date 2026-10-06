@@ -6,6 +6,16 @@ import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBan
 
 const blogs = [
   {
+    title: "What Is Sweepstakes Casino Software? A Complete Guide for Operators",
+    description:
+      "Learn how sweepstakes casino software works, including Gold Coins, Sweeps Coins, AMOE, dual-currency wallets, KYC, geolocation, game integrations, prize redemption and back-office technology.",
+    href: "/blog/what-is-sweepstakes-casino-software",
+    tag: "Sweepstakes",
+    readTime: "16 min read",
+    date: "06.10.2026",
+    image: "/assets/features/what-is-sweepstakes-casino-software-banner.jpg",
+  },
+  {
     title: "What Is a Casino Game Aggregator API?",
     description:
       "Learn how casino game aggregation connects an iGaming platform with multiple game providers through a single technical integration.",

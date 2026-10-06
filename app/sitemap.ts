@@ -87,6 +87,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://kvaornux.com/blog/what-is-sweepstakes-casino-software",
+      priority: 0.8,
+    },
+    {
       url: "https://kvaornux.com/privacy-policy",
       priority: 0.5,
     },

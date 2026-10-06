@@ -77,6 +77,19 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     authorName: 'Kvaornux Editorial Team',
     authorAvatar: '/assets/favicon.webp',
   },
+  {
+    slug: 'what-is-sweepstakes-casino-software',
+    href: '/blog/what-is-sweepstakes-casino-software',
+    title: 'What Is Sweepstakes Casino Software? A Complete Guide for Operators',
+    description:
+      'Learn how sweepstakes casino software works, including Gold Coins, Sweeps Coins, AMOE, dual-currency wallets, KYC, geolocation, game integrations, prize redemption and back-office technology.',
+    date: '06.10.2026',
+    readTime: '16 min read',
+    image: '/assets/features/what-is-sweepstakes-casino-software-banner.jpg',
+    tags: ['Sweepstakes', 'Casino Platform', 'Dual Currency'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
 ];
 
 export function getPreviousBlogPost(currentSlug: string): BlogPost {
