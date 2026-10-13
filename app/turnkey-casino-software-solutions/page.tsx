@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: "https://kvaornux.com/turnkey-casino-software-solutions",
     siteName: "Kvaornux",
     type: "website",
+    images: [
+      {
+        url: "https://kvaornux.com/assets/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Turnkey iGaming Solution | Casino & Sportsbook Platform | Kvaornux",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Turnkey iGaming Solution | Casino & Sportsbook Platform | Kvaornux",
     description:
       "Launch your turnkey iGaming platform with casino & sportsbook integration, 20,000+ games, secure payments, KYC system, and full admin control.",
+    images: ["https://kvaornux.com/assets/og-image.webp"],
   },
 };
 

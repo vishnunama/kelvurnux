@@ -503,7 +503,7 @@ export default function CasinoPlatformCaseStudyClient() {
           <nav className="breadcrumbs" aria-label="Breadcrumb">
             <Link href="/" className="breadcrumbs-item">Home</Link>
             <span className="breadcrumbs-sep">›</span>
-            <Link href="/igaming-case-studies/" className="breadcrumbs-item">Portfolio</Link>
+            <Link href="/igaming-case-studies" className="breadcrumbs-item">Portfolio</Link>
             <span className="breadcrumbs-sep">›</span>
             <span className="breadcrumbs-item breadcrumbs-current">Casino Platform Development</span>
           </nav>

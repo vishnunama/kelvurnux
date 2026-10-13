@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/blog/what-is-casino-game-aggregator-api',
     siteName: 'Kvaornux',
     type: 'article',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'What Is a Casino Game Aggregator API? | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'What Is a Casino Game Aggregator API? | Kvaornux',
     description:
       'Learn how a casino game aggregator API works, how it connects operators with multiple game providers, and what to evaluate before integration.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/about-us',
     siteName: 'Kvaornux',
     type: 'website',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'About Kvaornux | B2B iGaming Technology & Platform Provider',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Kvaornux | B2B iGaming Technology & Platform Provider',
     description:
       'Learn about Kvaornux, a global B2B iGaming technology provider building platform ecosystems, casino software, sportsbook tech, and game API integrations.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

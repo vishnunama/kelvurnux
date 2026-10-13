@@ -531,16 +531,16 @@ const blogSections: BlogSection[] = [
 
         <p>
           For operators seeking a rapid, cost-effective launch with pre-configured dual-currency ledgers, evaluating a{' '}
-          <Link href="/turnkey-sweepstakes-casino-software/" className="text-cyan-400 underline hover:text-cyan-300">
+          <Link href="/turnkey-sweepstakes-casino-software" className="text-cyan-400 underline hover:text-cyan-300">
             turnkey sweepstakes casino software solution
           </Link>{' '}
           is standard practice.
         </p>
         <p>
           Conversely, brands requiring unique frontend frameworks, custom bonus engines, or bespoke API connections benefit from dedicated{' '}
-          <Link href="/custom-sweepstakes-casino-development/" className="text-cyan-400 underline hover:text-cyan-300">
+          <Link href="/custom-sweepstakes-casino-development" className="text-cyan-400 underline hover:text-cyan-300">
             custom sweepstakes casino development
-          </Link>. Operators can review practical platform implementations across our <Link href="/igaming-case-studies/" className="text-cyan-400 underline hover:text-cyan-300">iGaming case studies</Link>.
+          </Link>. Operators can review practical platform implementations across our <Link href="/igaming-case-studies" className="text-cyan-400 underline hover:text-cyan-300">iGaming case studies</Link>.
         </p>
       </>
     ),
@@ -605,7 +605,7 @@ const blogSections: BlogSection[] = [
           Kvaornux is a dedicated iGaming technology partner providing modular, enterprise-grade platform software for digital gaming operators.
         </p>
         <p>
-          Our comprehensive <Link href="/sweepstakes-casino-software/" className="text-cyan-400 underline hover:text-cyan-300 font-bold">sweepstakes casino software</Link> platform delivers:
+          Our comprehensive <Link href="/sweepstakes-casino-software" className="text-cyan-400 underline hover:text-cyan-300 font-bold">sweepstakes casino software</Link> platform delivers:
         </p>
         <ul>
           <li><strong>Robust Dual-Currency Engine:</strong> High-throughput GC/SC balance ledger with automated playthrough tracking and isolated transaction records.</li>
@@ -740,7 +740,7 @@ export default function SweepstakesSoftwareBlogClient() {
         date="06.10.2026"
         readTime="16 min read"
         tags={['Sweepstakes', 'Casino Platform', 'Dual Currency', 'Turnkey']}
-        bannerImage="/assets/features/what-is-sweepstakes-casino-software-banner.jpg"
+        bannerImage="/assets/features/what-is-sweepstakes-casino-software-banner.webp"
         breadcrumbCurrent="What Is Sweepstakes Casino Software?"
       />
 

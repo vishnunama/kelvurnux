@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/blog/game-aggregator-vs-direct-provider-integration',
     siteName: 'Kvaornux',
     type: 'article',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Game Aggregator vs Direct Provider Integration | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Game Aggregator vs Direct Provider Integration | Kvaornux',
     description:
       'Compare casino game aggregation with direct provider integration, including API architecture, maintenance, commercial control, scalability and operational differences.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

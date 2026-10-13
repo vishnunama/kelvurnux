@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/blog/how-casino-game-api-integration-works',
     siteName: 'Kvaornux',
     type: 'article',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'How Casino Game API Integration Works | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'How Casino Game API Integration Works | Kvaornux',
     description:
       'Learn how casino game API integration works, from authentication and game launch to wallet transactions, bet and win callbacks, refunds, logging and testing.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

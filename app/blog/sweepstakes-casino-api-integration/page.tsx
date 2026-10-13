@@ -60,12 +60,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/blog/sweepstakes-casino-api-integration',
     siteName: 'Kvaornux',
     type: 'article',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Sweepstakes Casino API Integration & Dual-Currency Wallets | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sweepstakes Casino API Integration & Dual-Currency Wallets | Kvaornux',
     description:
       'Learn how sweepstakes casino API integration connects games, aggregators and dual-currency wallets, including Gold Coin and Sweeps Coin sessions, wallet callbacks, bet/win transactions, rollbacks and reconciliation.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

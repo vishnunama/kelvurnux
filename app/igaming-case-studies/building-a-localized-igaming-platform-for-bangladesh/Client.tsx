@@ -520,7 +520,7 @@ export default function Pori444CaseStudyClient() {
               Home
             </Link>
             <span className="breadcrumbs-sep">›</span>
-            <Link href="/igaming-case-studies/" className="breadcrumbs-item">
+            <Link href="/igaming-case-studies" className="breadcrumbs-item">
               Portfolio
             </Link>
             <span className="breadcrumbs-sep">›</span>

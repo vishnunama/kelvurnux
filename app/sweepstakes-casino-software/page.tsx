@@ -8,21 +8,30 @@ export const metadata: Metadata = {
   description:
     'Build and launch a custom sweepstakes casino platform with Gold Coins, Sweeps Coins, AMOE workflows, KYC, geolocation, game integrations, payments, prize redemption and back-office technology.',
   alternates: {
-    canonical: 'https://kvaornux.com/sweepstakes-casino-software/',
+    canonical: 'https://kvaornux.com/sweepstakes-casino-software',
   },
   openGraph: {
     title: 'Sweepstakes Casino Software & Platform Solutions | Kvaornux',
     description:
       'Build and launch a custom sweepstakes casino platform with Gold Coins, Sweeps Coins, AMOE workflows, KYC, geolocation, game integrations, payments, prize redemption and back-office technology.',
-    url: 'https://kvaornux.com/sweepstakes-casino-software/',
+    url: 'https://kvaornux.com/sweepstakes-casino-software',
     siteName: 'Kvaornux',
     type: 'website',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Sweepstakes Casino Software & Platform Solutions | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sweepstakes Casino Software & Platform Solutions | Kvaornux',
     description:
       'Build and launch a custom sweepstakes casino platform with Gold Coins, Sweeps Coins, AMOE workflows, KYC, geolocation, game integrations, payments, prize redemption and back-office technology.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 
@@ -41,7 +50,7 @@ export default function SweepstakesPage() {
         '@type': 'ListItem',
         position: 2,
         name: 'Sweepstakes Casino Software',
-        item: 'https://kvaornux.com/sweepstakes-casino-software/',
+        item: 'https://kvaornux.com/sweepstakes-casino-software',
       },
     ],
   };

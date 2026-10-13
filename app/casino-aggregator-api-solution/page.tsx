@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/casino-aggregator-api-solution',
     siteName: 'Kvaornux',
     type: 'website',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Casino Aggregator API Solution | Game Integration API | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Casino Aggregator API Solution | Game Integration API | Kvaornux',
     description:
       'Access thousands of casino games through a single unified aggregator API with top game providers, seamless wallet integration, and real-time reporting.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

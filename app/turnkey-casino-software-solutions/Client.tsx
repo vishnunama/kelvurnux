@@ -283,6 +283,10 @@ export default function TurnkeyCasinoPlatform() {
                     <img
                       src={activeTabData.image}
                       alt={getImageAlt(activeTabData.id)}
+                      width={1376}
+                      height={768}
+                      loading="eager"
+                      decoding="async"
                       className="relative w-full h-full rounded-xl sm:rounded-2xl shadow-2xl object-cover"
                       style={{ animation: 'imageSlideIn 0.6s ease-out' }}
                       onError={(e) => {
@@ -301,9 +305,9 @@ export default function TurnkeyCasinoPlatform() {
                       background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a',
                     }}
                   >
-                    <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
+                    <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
                       {activeTabData.title}
-                    </h3>
+                    </h2>
                     <p className="text-base sm:text-base md:text-base lg:text-lg text-[#a5a5a5] leading-relaxed font-light text-left">
                       {activeTabData.description}
                     </p>

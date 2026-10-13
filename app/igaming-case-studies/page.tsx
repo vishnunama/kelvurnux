@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     'Explore Kvaornux iGaming case studies covering casino platform development, game integrations, payments, wallets, affiliate systems and back-office technology.',
   alternates: {
-    canonical: 'https://kvaornux.com/igaming-case-studies/',
+    canonical: 'https://kvaornux.com/igaming-case-studies',
   },
   openGraph: {
     title: 'iGaming Case Studies & Development Portfolio | Kvaornux',
     description:
       'Explore Kvaornux iGaming case studies covering casino platform development, game integrations, payments, wallets, affiliate systems and back-office technology.',
-    url: 'https://kvaornux.com/igaming-case-studies/',
+    url: 'https://kvaornux.com/igaming-case-studies',
     siteName: 'Kvaornux',
     type: 'website',
     images: [
@@ -48,7 +48,7 @@ export default function Page() {
         '@type': 'ListItem',
         position: 2,
         name: 'iGaming Case Studies',
-        item: 'https://kvaornux.com/igaming-case-studies/',
+        item: 'https://kvaornux.com/igaming-case-studies',
       },
     ],
   };
@@ -56,8 +56,8 @@ export default function Page() {
   const collectionSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    '@id': 'https://kvaornux.com/igaming-case-studies/',
-    url: 'https://kvaornux.com/igaming-case-studies/',
+    '@id': 'https://kvaornux.com/igaming-case-studies',
+    url: 'https://kvaornux.com/igaming-case-studies',
     name: 'iGaming Development Case Studies',
     description:
       'Explore Kvaornux iGaming case studies covering casino platform development, game integrations, payments, wallets, affiliate systems and back-office technology.',
@@ -76,19 +76,19 @@ export default function Page() {
         {
           '@type': 'ListItem',
           position: 1,
-          url: 'https://kvaornux.com/igaming-case-studies/casino-platform-development/',
+          url: 'https://kvaornux.com/igaming-case-studies/casino-platform-development',
           name: 'Building a Scalable Mobile-First Casino Platform',
         },
         {
           '@type': 'ListItem',
           position: 2,
-          url: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform/',
+          url: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform',
           name: 'Building a Multi-Tier Agent-Based Casino & Sportsbook Platform',
         },
         {
           '@type': 'ListItem',
           position: 3,
-          url: 'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh/',
+          url: 'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
           name: 'Building a Localized iGaming Platform for the Bangladesh Market',
         },
       ],

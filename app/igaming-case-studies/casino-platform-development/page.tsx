@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     'See how Kvaornux built a scalable mobile-first casino platform with game aggregator integrations, NGN wallet infrastructure, payments, affiliate tools and back-office operations.',
   alternates: {
-    canonical: 'https://kvaornux.com/igaming-case-studies/casino-platform-development/',
+    canonical: 'https://kvaornux.com/igaming-case-studies/casino-platform-development',
   },
   openGraph: {
     title: 'Casino Platform Development Case Study | Kvaornux',
     description:
       'See how Kvaornux built a scalable mobile-first casino platform with game aggregator integrations, NGN wallet infrastructure, payments, affiliate tools and back-office operations.',
-    url: 'https://kvaornux.com/igaming-case-studies/casino-platform-development/',
+    url: 'https://kvaornux.com/igaming-case-studies/casino-platform-development',
     siteName: 'Kvaornux',
     type: 'article',
     images: [
@@ -48,13 +48,13 @@ export default function Page() {
         '@type': 'ListItem',
         position: 2,
         name: 'Portfolio',
-        item: 'https://kvaornux.com/igaming-case-studies/',
+        item: 'https://kvaornux.com/igaming-case-studies',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Casino Platform Development',
-        item: 'https://kvaornux.com/igaming-case-studies/casino-platform-development/',
+        item: 'https://kvaornux.com/igaming-case-studies/casino-platform-development',
       },
     ],
   };
@@ -64,7 +64,7 @@ export default function Page() {
     '@type': 'TechArticle',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://kvaornux.com/igaming-case-studies/casino-platform-development/',
+      '@id': 'https://kvaornux.com/igaming-case-studies/casino-platform-development',
     },
     headline: 'Building a Scalable Mobile-First Casino Platform',
     description:

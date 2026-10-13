@@ -683,9 +683,9 @@ export default function Header() {
                         <li><Link href="/turnkey-sportsbook-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Turnkey Sportsbook</Link></li>
                         <li><Link href="/white-label-casino-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>White Label</Link></li>
                         <li><Link href="/crypto-igaming-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Crypto iGaming</Link></li>
-                        <li><Link href="/sweepstakes-casino-software/" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Sweepstakes Casino</Link></li>
-                        <li><Link href="/turnkey-sweepstakes-casino-software/" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Turnkey Sweepstakes</Link></li>
-                        <li><Link href="/custom-sweepstakes-casino-development/" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Custom Sweepstakes</Link></li>
+                        <li><Link href="/sweepstakes-casino-software" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Sweepstakes Casino</Link></li>
+                        <li><Link href="/turnkey-sweepstakes-casino-software" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Turnkey Sweepstakes</Link></li>
+                        <li><Link href="/custom-sweepstakes-casino-development" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Custom Sweepstakes</Link></li>
                       </ul>
                     </div>
                   </div>
@@ -748,7 +748,7 @@ export default function Header() {
               </li>
 
               <li className="mx-[1.8rem]">
-                <Link href="/igaming-case-studies/" className="block text-white font-medium text-[1.15rem] py-5 transition-all duration-200 hover:text-[#00ebaa] whitespace-nowrap tracking-[0.3px] hover:scale-105 active:scale-95">
+                <Link href="/igaming-case-studies" className="block text-white font-medium text-[1.15rem] py-5 transition-all duration-200 hover:text-[#00ebaa] whitespace-nowrap tracking-[0.3px] hover:scale-105 active:scale-95">
                   Portfolio
                 </Link>
               </li>
@@ -849,9 +849,9 @@ export default function Header() {
                   <Link href="/turnkey-sportsbook-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Sportsbook</Link>
                   <Link href="/white-label-casino-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>White Label</Link>
                   <Link href="/crypto-igaming-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Crypto iGaming</Link>
-                  <Link href="/sweepstakes-casino-software/" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Sweepstakes Casino</Link>
-                  <Link href="/turnkey-sweepstakes-casino-software/" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Sweepstakes</Link>
-                  <Link href="/custom-sweepstakes-casino-development/" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Custom Sweepstakes</Link>
+                  <Link href="/sweepstakes-casino-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Sweepstakes Casino</Link>
+                  <Link href="/turnkey-sweepstakes-casino-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Sweepstakes</Link>
+                  <Link href="/custom-sweepstakes-casino-development" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Custom Sweepstakes</Link>
                 </div>
               </div>
             </div>
@@ -878,7 +878,7 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/igaming-case-studies/" className="zg-mob-link" onClick={() => setIsMenuOpen(false)}>
+            <Link href="/igaming-case-studies" className="zg-mob-link" onClick={() => setIsMenuOpen(false)}>
               Portfolio
               <span className="zg-mob-link-arrow">→</span>
             </Link>

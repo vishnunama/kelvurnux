@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/blog/igaming-software-development',
     siteName: 'Kvaornux',
     type: 'article',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'iGaming Software Development: Complete Guide | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'iGaming Software Development: Complete Guide | Kvaornux',
     description:
       'Learn how iGaming software development works, from platform architecture, PAM and wallets to casino, sportsbook, game aggregation, payments, security and integrations.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

@@ -8,21 +8,30 @@ export const metadata: Metadata = {
   description:
     'Build custom sweepstakes casino software around your operating model with tailored Gold Coin and Sweeps Coin logic, AMOE workflows, integrations, redemption systems, back office and platform architecture.',
   alternates: {
-    canonical: 'https://kvaornux.com/custom-sweepstakes-casino-development/',
+    canonical: 'https://kvaornux.com/custom-sweepstakes-casino-development',
   },
   openGraph: {
     title: 'Custom Sweepstakes Casino Software Development | Kvaornux',
     description:
       'Build custom sweepstakes casino software around your operating model with tailored Gold Coin and Sweeps Coin logic, AMOE workflows, integrations, redemption systems, back office and platform architecture.',
-    url: 'https://kvaornux.com/custom-sweepstakes-casino-development/',
+    url: 'https://kvaornux.com/custom-sweepstakes-casino-development',
     siteName: 'Kvaornux',
     type: 'website',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Custom Sweepstakes Casino Software Development | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Custom Sweepstakes Casino Software Development | Kvaornux',
     description:
       'Build custom sweepstakes casino software around your operating model with tailored Gold Coin and Sweeps Coin logic, AMOE workflows, integrations, redemption systems, back office and platform architecture.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 
@@ -41,7 +50,7 @@ export default function Page() {
         '@type': 'ListItem',
         position: 2,
         name: 'Custom Sweepstakes Casino Development',
-        item: 'https://kvaornux.com/custom-sweepstakes-casino-development/',
+        item: 'https://kvaornux.com/custom-sweepstakes-casino-development',
       },
     ],
   };
@@ -57,7 +66,7 @@ export default function Page() {
     },
     description:
       'Bespoke sweepstakes casino software development services. Tailored Gold Coin and Sweeps Coin architecture, custom AMOE entry workflows, payment integrations, KYC verification, geolocation controls, prize redemption operations and operator back-office tools.',
-    url: 'https://kvaornux.com/custom-sweepstakes-casino-development/',
+    url: 'https://kvaornux.com/custom-sweepstakes-casino-development',
   };
 
   const faqSchema = {

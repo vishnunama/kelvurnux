@@ -13,7 +13,7 @@ const blogs = [
     tag: "API Integration",
     readTime: "15 min read",
     date: "06.10.2026",
-    image: "/assets/features/sweepstakes-casino-api-integration-banner.jpg",
+    image: "/assets/features/sweepstakes-casino-api-integration-banner.webp",
   },
   {
     title: "What Is Sweepstakes Casino Software? A Complete Guide for Operators",
@@ -23,7 +23,7 @@ const blogs = [
     tag: "Sweepstakes",
     readTime: "16 min read",
     date: "06.10.2026",
-    image: "/assets/features/what-is-sweepstakes-casino-software-banner.jpg",
+    image: "/assets/features/what-is-sweepstakes-casino-software-banner.webp",
   },
   {
     title: "What Is a Casino Game Aggregator API?",
@@ -574,6 +574,8 @@ export default function BlogPage() {
             alt=""
             width={188}
             height={195}
+            loading="lazy"
+            decoding="async"
             className="w-full h-auto"
           />
         </div>
@@ -583,6 +585,8 @@ export default function BlogPage() {
             alt=""
             width={165}
             height={156}
+            loading="lazy"
+            decoding="async"
             className="w-full h-auto"
           />
         </div>
@@ -705,6 +709,7 @@ export default function BlogPage() {
                     src={blog.image}
                     alt={blog.title}
                     loading="lazy"
+                    decoding="async"
                   />
                 </Link>
 

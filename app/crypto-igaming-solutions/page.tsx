@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/crypto-igaming-solutions',
     siteName: 'Kvaornux',
     type: 'website',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Crypto iGaming Solutions | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Crypto iGaming Solutions | Bitcoin & Crypto Casino Software | Kvaornux',
     description:
       'Launch scalable crypto casino and sportsbook platforms with multi-currency Web3 wallets, instant deposits, game APIs, and full back-office control.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

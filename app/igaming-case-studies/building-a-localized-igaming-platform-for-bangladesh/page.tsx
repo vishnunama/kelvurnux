@@ -7,13 +7,13 @@ export const metadata: Metadata = {
     'See how Kvaornux built a localized iGaming platform for Bangladesh with BDT payments, multi-provider game integration, a 7-level affiliate system, player rewards and advanced back-office operations.',
   alternates: {
     canonical:
-      'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh/',
+      'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
   },
   openGraph: {
     title: 'Bangladesh iGaming Platform Case Study | Kvaornux',
     description:
       'See how Kvaornux built a localized iGaming platform for Bangladesh with BDT payments, multi-provider game integration, a 7-level affiliate system, player rewards and advanced back-office operations.',
-    url: 'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh/',
+    url: 'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
     siteName: 'Kvaornux',
     type: 'article',
     images: [
@@ -51,13 +51,13 @@ export default function Page() {
         '@type': 'ListItem',
         position: 2,
         name: 'Portfolio',
-        item: 'https://kvaornux.com/igaming-case-studies/',
+        item: 'https://kvaornux.com/igaming-case-studies',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Bangladesh iGaming Platform Case Study',
-        item: 'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh/',
+        item: 'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
       },
     ],
   };
@@ -67,7 +67,7 @@ export default function Page() {
     '@type': 'TechArticle',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh/',
+      '@id': 'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
     },
     headline: 'Building a Localized iGaming Platform for the Bangladesh Market',
     description:

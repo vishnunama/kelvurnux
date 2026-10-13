@@ -35,31 +35,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/sweepstakes-casino-software/",
+      url: "https://kvaornux.com/sweepstakes-casino-software",
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/turnkey-sweepstakes-casino-software/",
+      url: "https://kvaornux.com/turnkey-sweepstakes-casino-software",
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/custom-sweepstakes-casino-development/",
+      url: "https://kvaornux.com/custom-sweepstakes-casino-development",
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/igaming-case-studies/",
+      url: "https://kvaornux.com/igaming-case-studies",
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/igaming-case-studies/casino-platform-development/",
+      url: "https://kvaornux.com/igaming-case-studies/casino-platform-development",
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform/",
+      url: "https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform",
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh/",
+      url: "https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh",
       priority: 0.9,
     },
     {

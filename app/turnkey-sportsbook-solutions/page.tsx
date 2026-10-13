@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: "https://kvaornux.com/turnkey-sportsbook-solutions",
     siteName: "Kvaornux",
     type: "website",
+    images: [
+      {
+        url: "https://kvaornux.com/assets/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Turnkey Sportsbook Solutions | Sports Betting Software | Kvaornux",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Turnkey Sportsbook Solutions | Sports Betting Software | Kvaornux",
     description:
       "Launch your turnkey sportsbook platform with sports betting software, sportsbook API integration, live betting features, KYC verification, payment solutions, and white label sportsbook support.",
+    images: ["https://kvaornux.com/assets/og-image.webp"],
   },
 };
 

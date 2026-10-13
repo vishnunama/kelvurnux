@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/custom-igaming-solution',
     siteName: 'Kvaornux',
     type: 'website',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Bespoke iGaming Solutions & Custom Development | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Bespoke iGaming Solutions & Custom Development | Kvaornux',
     description:
       'Build a bespoke iGaming platform around your business model with custom development, API integrations, platform modules and scalable infrastructure.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

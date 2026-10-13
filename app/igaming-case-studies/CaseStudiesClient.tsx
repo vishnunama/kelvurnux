@@ -102,7 +102,7 @@ export default function CaseStudiesClient() {
         '6-Level Affiliate System',
         'Live Platform',
       ],
-      link: '/igaming-case-studies/casino-platform-development/',
+      link: '/igaming-case-studies/casino-platform-development',
     },
     {
       id: 'jeestfast24',
@@ -120,7 +120,7 @@ export default function CaseStudiesClient() {
         'Mobile-First H5',
         'Live Platform',
       ],
-      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform/',
+      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
     },
     {
       id: 'pori444',
@@ -138,7 +138,7 @@ export default function CaseStudiesClient() {
         '7-Level Affiliate System',
         'Live Platform',
       ],
-      link: '/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh/',
+      link: '/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
     },
   ];
 

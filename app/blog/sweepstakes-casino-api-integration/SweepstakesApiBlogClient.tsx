@@ -622,10 +622,10 @@ const blogSections: BlogSection[] = [
           Kvaornux delivers modular, enterprise-grade technology for online casino and sweepstakes operators worldwide. Our engineering team specializes in architecting high-throughput dual-currency platforms, unified game aggregator connections, and secure wallet callback engines.
         </p>
         <p>
-          Whether you require a complete <Link href="/sweepstakes-casino-software/" className="text-cyan-400 underline hover:text-cyan-300 font-bold">sweepstakes casino software</Link> platform, a dedicated <Link href="/custom-sweepstakes-casino-development/" className="text-cyan-400 underline hover:text-cyan-300">custom sweepstakes development</Link> build, or a unified <Link href="/casino-aggregator-api-solution" className="text-cyan-400 underline hover:text-cyan-300">casino aggregator API solution</Link>, Kvaornux provides the software infrastructure to power your platform.
+          Whether you require a complete <Link href="/sweepstakes-casino-software" className="text-cyan-400 underline hover:text-cyan-300 font-bold">sweepstakes casino software</Link> platform, a dedicated <Link href="/custom-sweepstakes-casino-development" className="text-cyan-400 underline hover:text-cyan-300">custom sweepstakes development</Link> build, or a unified <Link href="/casino-aggregator-api-solution" className="text-cyan-400 underline hover:text-cyan-300">casino aggregator API solution</Link>, Kvaornux provides the software infrastructure to power your platform.
         </p>
         <p>
-          To explore real-world platform builds, review our <Link href="/igaming-case-studies/" className="text-cyan-400 underline hover:text-cyan-300">iGaming case studies</Link>, or contact our technical team today to schedule a platform demonstration.
+          To explore real-world platform builds, review our <Link href="/igaming-case-studies" className="text-cyan-400 underline hover:text-cyan-300">iGaming case studies</Link>, or contact our technical team today to schedule a platform demonstration.
         </p>
       </>
     ),
@@ -740,7 +740,7 @@ export default function SweepstakesApiBlogClient() {
         date="06.10.2026"
         readTime="15 min read"
         tags={['Sweepstakes', 'API Integration', 'Dual Currency', 'Game Aggregator']}
-        bannerImage="/assets/features/sweepstakes-casino-api-integration-banner.jpg"
+        bannerImage="/assets/features/sweepstakes-casino-api-integration-banner.webp"
         breadcrumbCurrent="Sweepstakes Casino API Integration"
       />
 

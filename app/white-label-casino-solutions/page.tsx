@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: "https://kvaornux.com/white-label-casino-solutions",
     siteName: "Kvaornux",
     type: "website",
+    images: [
+      {
+        url: "https://kvaornux.com/assets/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "White Label Casino Solution | Crypto Casino Software | Kvaornux",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "White Label Casino Solution | Crypto Casino Software | Kvaornux",
     description:
       "Launch your own white label crypto casino solution with 150+ APIs, sportsbook, slots, crypto payments, and full admin & affiliate system.",
+    images: ["https://kvaornux.com/assets/og-image.webp"],
   },
 };
 

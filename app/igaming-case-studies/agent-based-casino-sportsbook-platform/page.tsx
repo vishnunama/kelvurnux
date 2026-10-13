@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     'See how Kvaornux developed a PKR-based casino and sportsbook platform with multi-tier agent management, exchange-style betting, casino games, real-time wallet operations and multi-layer back-office controls.',
   alternates: {
-    canonical: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform/',
+    canonical: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform',
   },
   openGraph: {
     title: 'Agent-Based Casino & Sportsbook Platform Case Study | Kvaornux',
     description:
       'See how Kvaornux developed a PKR-based casino and sportsbook platform with multi-tier agent management, exchange-style betting, casino games, real-time wallet operations and multi-layer back-office controls.',
-    url: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform/',
+    url: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform',
     siteName: 'Kvaornux',
     type: 'article',
     images: [
@@ -48,13 +48,13 @@ export default function Page() {
         '@type': 'ListItem',
         position: 2,
         name: 'Portfolio',
-        item: 'https://kvaornux.com/igaming-case-studies/',
+        item: 'https://kvaornux.com/igaming-case-studies',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'Agent-Based Casino & Sportsbook Platform',
-        item: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform/',
+        item: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform',
       },
     ],
   };
@@ -64,7 +64,7 @@ export default function Page() {
     '@type': 'TechArticle',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform/',
+      '@id': 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform',
     },
     headline: 'Building a Multi-Tier Agent-Based Casino & Sportsbook Platform',
     description:

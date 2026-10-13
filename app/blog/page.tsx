@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: "https://kvaornux.com/blog",
     siteName: "Kvaornux",
     type: "website",
+    images: [
+      {
+        url: "https://kvaornux.com/assets/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Casino Software & iGaming Development Blog | Kvaornux",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Casino Software & iGaming Development Blog | Kvaornux",
     description:
       "Explore guides on casino software, white label solutions, sportsbook development, crypto casino, APIs and iGaming platform setup.",
+    images: ["https://kvaornux.com/assets/og-image.webp"],
   },
 };
 

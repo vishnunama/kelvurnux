@@ -17,12 +17,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/blog/seamless-wallet-vs-transfer-wallet-igaming',
     siteName: 'Kvaornux',
     type: 'article',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Seamless Wallet vs Transfer Wallet in iGaming | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Seamless Wallet vs Transfer Wallet in iGaming | Kvaornux',
     description:
       'Compare seamless wallet and transfer wallet models in iGaming, including balance management, bet and win transactions, fund transfers, reconciliation and integration architecture.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 

@@ -70,12 +70,21 @@ export const metadata: Metadata = {
     url: 'https://kvaornux.com/blog/what-is-sweepstakes-casino-software',
     siteName: 'Kvaornux',
     type: 'article',
+    images: [
+      {
+        url: 'https://kvaornux.com/assets/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'What Is Sweepstakes Casino Software? Operator Guide | Kvaornux',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'What Is Sweepstakes Casino Software? Operator Guide | Kvaornux',
     description:
       'Learn how sweepstakes casino software works, including Gold Coins, Sweeps Coins, AMOE, dual-currency wallets, KYC, geolocation, game integrations, prize redemption and back-office technology.',
+    images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
 
