@@ -138,7 +138,7 @@ export default function SolutionsSection() {
   return (
     <>
       <style>{styles}</style>
-      <section ref={sectionRef} className="solutions-section py-9 md:py-12 relative overflow-hidden">
+      <section ref={sectionRef} id="solutions" className="solutions-section py-9 md:py-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 pt-[1rem] pb-[1rem] md:px-6 lg:px-8 relative z-10">
 
           {/* Title */}
@@ -310,6 +310,8 @@ export default function SolutionsSection() {
                 const section = document.getElementById('contact-form-section');
                 if (section) {
                   section.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#contact-form-section';
                 }
               }}
               className="btn-main"

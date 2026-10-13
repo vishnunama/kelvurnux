@@ -33,11 +33,11 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer-gradient text-white py-12 md:py-20 relative overflow-hidden">
+    <footer className="footer-gradient text-white py-12 md:py-20 relative z-0 overflow-hidden">
       {/* Top Border Line */}
       <div className="absolute top-0 left-1/2 w-full h-0.5 -translate-x-1/2" style={{ background: 'linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #344348 45%, #344348 55%, rgba(255, 255, 255, 0) 100%)' }}></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-0">
         {/* Main Footer Content Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 mb-12 md:mb-20">
           {/* Footer Info */}
@@ -54,6 +54,83 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Products Menu */}
+          <div>
+            <h3 className="text-xs md:text-sm font-medium text-gray-400 mb-3 md:mb-4">
+              Products
+            </h3>
+            <nav>
+              <ul className="space-y-2 md:space-y-3">
+                <li>
+                  <Link href="/online-casino-platform-software" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Casino Platform
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/sportsbook-platform-software" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Sportsbook Platform
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/casino-aggregator-api-solution" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Casino Game Aggregator
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          {/* Solutions Menu */}
+          <div>
+            <h3 className="text-xs md:text-sm font-medium text-gray-400 mb-3 md:mb-4">
+              Solutions
+            </h3>
+            <nav>
+              <ul className="space-y-2 md:space-y-3">
+                <li>
+                  <Link href="/turnkey-casino-software-solutions" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Turnkey Casino
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/turnkey-sportsbook-solutions" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Turnkey Sportsbook
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/white-label-casino-solutions" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    White Label Casino
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/custom-igaming-solution" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Bespoke iGaming Development
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/sweepstakes-casino-software" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Sweepstakes Casino Software
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/turnkey-sweepstakes-casino-software" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Turnkey Sweepstakes
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/custom-sweepstakes-casino-development" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Custom Sweepstakes Development
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/crypto-igaming-solutions" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Crypto iGaming Solutions
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
           {/* Company Menu */}
           <div>
             <h3 className="text-xs md:text-sm font-medium text-gray-400 mb-3 md:mb-4">
@@ -62,17 +139,17 @@ export default function Footer() {
             <nav>
               <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <Link href="/about-us" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/about-us" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     About Kvaornux
                   </Link>
                 </li>
                 <li>
-                  <Link href="/igaming-case-studies" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/igaming-case-studies" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     Portfolio
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/blog" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     Insights &amp; Blog
                   </Link>
                 </li>
@@ -88,92 +165,28 @@ export default function Footer() {
             <nav>
               <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <Link href="/privacy-policy" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/privacy-policy" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms-and-conditions" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/terms-and-conditions" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     Terms &amp; Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link href="/responsible-gaming-policy" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/responsible-gaming-policy" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     Responsible Gaming
                   </Link>
                 </li>
                 <li>
-                  <Link href="/aml-kyc-policy" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/aml-kyc-policy" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     AML &amp; KYC Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/cookie-policy" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
+                  <Link href="/cookie-policy" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     Cookie Policy
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          {/* Special Solutions Menu */}
-          <div>
-            <h3 className="text-xs md:text-sm font-medium text-gray-400 mb-3 md:mb-4">
-              Special Solutions
-            </h3>
-            <nav>
-              <ul className="space-y-2 md:space-y-3">
-                <li>
-                  <Link
-                    href="/crypto-igaming-solutions"
-                    className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300"
-                  >
-                    Crypto iGaming Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/custom-igaming-solution"
-                    className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300"
-                  >
-                    Bespoke iGaming Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/casino-aggregator-api-solution"
-                    className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300"
-                  >
-                    iGaming API Integration
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/turnkey-sportsbook-solutions"
-                    className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300"
-                  >
-                    Turnkey Sportsbook Solutions
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          {/* Comprehensive Solutions Menu */}
-          <div>
-            <h3 className="text-xs md:text-sm font-medium text-gray-400 mb-3 md:mb-4">
-              Comprehensive Solutions
-            </h3>
-            <nav>
-              <ul className="space-y-2 md:space-y-3">
-                <li>
-                  <Link href="/white-label-casino-solutions" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
-                    White Label Casino Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/turnkey-casino-software-solutions" className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
-                    Turnkey Casino Software Solutions
                   </Link>
                 </li>
               </ul>

@@ -367,6 +367,8 @@ const OpportunitiesSection: FC = () => {
                 const section = document.getElementById('contact-form-section');
                 if (section) {
                   section.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#contact-form-section';
                 }
               }}
               className="opp-btn"

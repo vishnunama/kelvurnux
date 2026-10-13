@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import {
   Crown,
   Gamepad2,
@@ -10,10 +11,12 @@ import {
   HandshakeIcon,
   TrendingUp,
   Palette,
-  Settings
+  Settings,
+  Wallet
 } from 'lucide-react';
 import OpportunitiesSection from '@/src/components/opportunitiessection/Opportunitiessection';
 import ContactForm from '@/src/components/contactform/ContactForm';
+import DiscoverMore from '@/src/components/Discovermore/Discovermore';
 
 export default function TurnkeyCasinoPlatform() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -27,6 +30,8 @@ export default function TurnkeyCasinoPlatform() {
     const section = document.getElementById('contact-form-section');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form-section';
     }
   };
 
@@ -156,6 +161,69 @@ export default function TurnkeyCasinoPlatform() {
       }
     }, 0);
   };
+
+  const turnkeyCasinoDiscoverItems = [
+    {
+      id: 1,
+      title: 'Rapid Turnkey Deployment',
+      description: 'Launch an operational online casino within weeks with pre-configured backend infrastructure, responsive lobbies, payment gateways, and game catalogs.',
+      icon: Rocket,
+      span: 2,
+    },
+    {
+      id: 2,
+      title: 'Branded UI/UX Customization',
+      description: 'Fully customizable player lobbies, color schemes, responsive web interfaces, and bespoke visual assets adapted around your brand identity.',
+      icon: Palette,
+      span: 2,
+    },
+    {
+      id: 3,
+      title: '20,000+ Pre-Integrated Games',
+      description: 'Instant access to slots, live dealer tables, crash games, and fast games from 150+ certified studios through a single unified aggregator gateway.',
+      icon: Gamepad2,
+      link: '/casino-aggregator-api-solution',
+      span: 2,
+    },
+    {
+      id: 4,
+      title: 'Multi-Currency & Crypto Payments',
+      description: 'Pre-connected localized fiat payment methods, cards, e-wallets, and crypto gateways (USDT, BTC, ETH) with real-time automated settlement.',
+      icon: Wallet,
+      span: 3,
+    },
+    {
+      id: 5,
+      title: 'Turnkey Back-Office Administration',
+      description: 'Centralized operator control over player accounts, financial ledgers, bonus campaigns, affiliate tracking, and automated regulatory reporting.',
+      icon: LayoutDashboard,
+      span: 3,
+    },
+    {
+      id: 6,
+      title: 'Casino Platform Software',
+      description: 'Looking for standalone software licensing, modular PAM, and wallet APIs? Discover our enterprise Casino Platform Software.',
+      icon: Settings,
+      link: '/online-casino-platform-software',
+      span: 2,
+    },
+    {
+      id: 7,
+      title: 'Turnkey Sportsbook Integration',
+      description: 'Seamlessly add sports betting to your casino platform with pre-match and in-play odds covering 80+ sports and 1,000+ betting markets.',
+      icon: TrendingUp,
+      link: '/turnkey-sportsbook-solutions',
+      span: 2,
+    },
+    {
+      id: 8,
+      title: 'Lakebets Case Study',
+      description: 'Explore how Kvaornux engineered a high-volume mobile-first casino platform handling 15,000+ daily active players in emerging markets.',
+      icon: HandshakeIcon,
+      link: '/igaming-case-studies/casino-platform-development',
+      span: 2,
+    },
+  ];
 
   return (
     <>
@@ -367,7 +435,7 @@ export default function TurnkeyCasinoPlatform() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                Everything you need to launch and scale your casino platform — from backend infrastructure to player management, sportsbook integration, and white label casino solutions, all integrated and ready to deploy.
+                Everything you need to launch and scale your casino platform — from backend infrastructure to player management, sportsbook integration, and white label casino solutions, all integrated and ready to deploy. Built on our enterprise <Link href="/online-casino-platform-software" className="text-[#00ebaa] hover:underline font-medium">Online Casino Platform Software</Link>, we handle end-to-end setup and launch delivery.
               </p>
 
               <div
@@ -439,6 +507,13 @@ export default function TurnkeyCasinoPlatform() {
           </div>
         </div>
       </section>
+
+      {/* Discover More Section */}
+      <DiscoverMore
+        customItems={turnkeyCasinoDiscoverItems}
+        customTitle="Explore Turnkey Casino Capabilities"
+        customSubtitle="Comprehensive technology modules, turn-key delivery workflows, and operational tools for launching an online casino."
+      />
 
       {/* Opportunities Section */}
       <OpportunitiesSection />

@@ -393,9 +393,11 @@ export default function HeroSection() {
           >
             <button
               onClick={() => {
-                const contactSection = document.getElementById('contact-form-section');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                const solutionsSection = document.getElementById('solutions');
+                if (solutionsSection) {
+                  solutionsSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#solutions';
                 }
               }}
               className="btn-main"

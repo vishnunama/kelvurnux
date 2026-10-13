@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwnkew4hScJ4Hy0ooHtPM5lezcts7e2y_ooMGUqCcGyDF1IAyQMunzOZNBdW97neag9/exec';
 
 const categoryOptions = [
   'Turnkey iGaming Platform',
@@ -13,10 +12,14 @@ const categoryOptions = [
   'Casino Platform',
   'Sportsbook',
   'Game Aggregation',
+  'Sweepstakes Casino Software',
+  'Crypto iGaming Platform',
   'Bespoke iGaming Solutions',
   'Payments & API Integrations',
   'Other',
 ];
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function ContactForm() {
   const router = useRouter();
@@ -32,7 +35,10 @@ export default function ContactForm() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [focusedOptionIndex, setFocusedOptionIndex] = useState<number>(-1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [honeypot, setHoneypot] = useState('');
 
+  const submitInProgressRef = useRef(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const categoryButtonRef = useRef<HTMLButtonElement>(null);
   const categoryOptionRefs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -78,7 +84,11 @@ export default function ContactForm() {
     const newErrors: Record<string, string> = {};
 
     if (!formData.name.trim()) newErrors.name = 'Please fill out this field.';
-    if (!formData.email.trim()) newErrors.email = 'Please fill out this field.';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Please fill out this field.';
+    } else if (!EMAIL_REGEX.test(formData.email.trim())) {
+      newErrors.email = 'Please enter a valid email address.';
+    }
     if (!formData.phone.trim()) newErrors.phone = 'Please fill out this field.';
     if (!formData.request.trim()) newErrors.request = 'Please fill out this field.';
     if (!formData.category) newErrors.category = 'Please select what you are interested in.';
@@ -97,6 +107,9 @@ export default function ContactForm() {
     }));
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
+    }
+    if (submitError) {
+      setSubmitError(null);
     }
   };
 
@@ -174,52 +187,74 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
+    if (submitInProgressRef.current || isSubmitting) {
+      return;
+    }
+
     if (!validateStep()) {
       return;
     }
 
+    submitInProgressRef.current = true;
     setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
-      await fetch(GOOGLE_SCRIPT_URL, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          _hp: honeypot,
+        }),
       });
 
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        request: '',
-        category: '',
-      });
+      let data: any = null;
+      try {
+        data = await res.json();
+      } catch {
+        // Non-JSON or broken response
+      }
 
-      // Trigger conversion tracking
-      triggerConversionTracking();
+      // Requirement 5: Require a meaningful backend acknowledgement
+      if (res.ok && data?.success === true) {
+        // Confirmed acceptance from backend!
+        triggerConversionTracking();
 
-      console.log('Form submitted successfully:', formData);
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          request: '',
+          category: '',
+        });
+        setHoneypot('');
 
-      // Navigate to thank you page in current tab
-      setTimeout(() => {
-        router.push('/thank-you');
-      }, 500);
-      
+        setTimeout(() => {
+          router.push('/thank-you');
+        }, 400);
+      } else {
+        // Backend did not confirm receipt or returned an error
+        const errorMsg = data?.error || 'Unable to submit your enquiry at the moment. Please try again or contact us directly on WhatsApp or Telegram.';
+        setSubmitError(errorMsg);
+        setIsSubmitting(false);
+        submitInProgressRef.current = false;
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
+      setSubmitError('Network connection issue. Please check your connection and try again.');
       setIsSubmitting(false);
-      alert('There was an error submitting your form. Please try again.');
+      submitInProgressRef.current = false;
     }
   };
 
   return (
     <div 
-      className="min-h-screen p-4 sm:p-6 md:p-8"
+      className="min-h-screen p-4 sm:p-6 md:p-8 pb-16 sm:pb-24 relative z-20"
       id="contact-form-section"
     >
       <div className="max-w-6xl mx-auto">
@@ -244,7 +279,7 @@ export default function ContactForm() {
 
         {/* Main Container */}
         <div 
-          className="rounded-xl sm:rounded-2xl md:rounded-[2.4rem] bg-[#141820] border border-white/10 shadow-2xl overflow-hidden"
+          className="rounded-xl sm:rounded-2xl md:rounded-[2.4rem] bg-[#141820] border border-white/10 shadow-2xl relative z-20"
           ref={(el) => { if (el) elementsRef.current[2] = el; }}
           data-anim="fade-in"
           data-anim-delay="2"
@@ -259,8 +294,8 @@ export default function ContactForm() {
                 Share a few details about your project and how we can reach you.
               </p>
               {/* Decorative Image Placeholder */}
-              <div className="hidden lg:block w-full h-48 sm:h-56 md:h-64">
-                <img src="/assets/contacts-cubes.webp" alt="Contact illustration" />
+              <div className="hidden lg:block w-full h-48 sm:h-56 md:h-64 rounded-xl overflow-hidden">
+                <img src="/assets/contacts-cubes.webp" alt="Contact illustration" className="w-full h-full object-cover" />
               </div>
             </div>
 
@@ -388,7 +423,7 @@ export default function ContactForm() {
                 </div>
 
                 {/* Business Type - Category Dropdown */}
-                <div ref={dropdownRef}>
+                <div ref={dropdownRef} className="relative z-30">
                   <label 
                     id="contact-category-label"
                     htmlFor="contact-category-button" 
@@ -440,7 +475,7 @@ export default function ContactForm() {
                         role="listbox"
                         aria-labelledby="contact-category-label"
                         tabIndex={-1}
-                        className="absolute top-full left-0 right-0 mt-2 bg-[#1a1f2e] border border-white/20 rounded-lg shadow-2xl z-[999] overflow-hidden max-h-64 overflow-y-auto"
+                        className="absolute top-full left-0 right-0 mt-2 bg-[#1a1f2e] border border-white/20 rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.9)] z-[100] max-h-64 overflow-y-auto"
                       >
                         {categoryOptions.map((option, index) => (
                           <button
@@ -502,6 +537,28 @@ export default function ContactForm() {
                   </p>
                 </div>
 
+                {/* Hidden Honeypot for spam bot mitigation */}
+                <div className="hidden" aria-hidden="true" style={{ display: 'none' }}>
+                  <input
+                    type="text"
+                    name="_hp_company"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
+
+                {/* Submission Error Banner */}
+                {submitError && (
+                  <div
+                    role="alert"
+                    className="p-3.5 bg-red-950/50 border border-red-500/60 rounded-lg text-red-200 text-sm text-center leading-relaxed"
+                  >
+                    {submitError}
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <div className="flex justify-center items-center gap-3 pt-4 sm:pt-6 flex-wrap">
                   <button
@@ -520,7 +577,7 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @keyframes fadeInFromBottom {
           from {
             opacity: 0;
@@ -559,7 +616,7 @@ export default function ContactForm() {
 
         [data-anim-delay="1"].visible { animation-delay: 0.1s; }
         [data-anim-delay="2"].visible { animation-delay: 0.2s; }
-      `}</style>
+      ` }} />
     </div>
   );
 }

@@ -76,9 +76,11 @@ export default function CaseStudiesClient() {
 
   const handleScrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    const section = document.getElementById('contact-us');
+    const section = document.getElementById('contact-us') || document.getElementById('contact-form-section');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form-section';
     }
   };
 

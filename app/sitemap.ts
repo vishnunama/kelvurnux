@@ -19,6 +19,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://kvaornux.com/online-casino-platform-software",
+      priority: 0.9,
+    },
+    {
+      url: "https://kvaornux.com/sportsbook-platform-software",
+      priority: 0.9,
+    },
+    {
       url: "https://kvaornux.com/crypto-igaming-solutions",
       priority: 0.9,
     },

@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import OpportunitiesSection from '@/src/components/opportunitiessection/Opportunitiessection';
 import ContactForm from '@/src/components/contactform/ContactForm';
+import DiscoverMore from '@/src/components/Discovermore/Discovermore';
 
 
 export default function WhiteLabelCasinoPlatform() {
@@ -32,6 +33,8 @@ export default function WhiteLabelCasinoPlatform() {
     const section = document.getElementById('contact-form-section');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form-section';
     }
   };
 
@@ -201,6 +204,69 @@ export default function WhiteLabelCasinoPlatform() {
       }
     }, 0);
   };
+
+  const whiteLabelDiscoverItems = [
+    {
+      id: 1,
+      title: 'Sub-License & Regulatory Umbrella',
+      description: 'Fast-track market entry operating under pre-established iGaming licensing frameworks, dramatically reducing legal overhead and compliance lead times.',
+      icon: Crown,
+      span: 2,
+    },
+    {
+      id: 2,
+      title: 'Branded Frontend Customization',
+      description: 'Fully bespoke player lobby tailored with your custom logo, typography, color palettes, and localized responsive design across all devices.',
+      icon: Gift,
+      span: 2,
+    },
+    {
+      id: 3,
+      title: 'Turnkey Payment Processing Suite',
+      description: 'Pre-integrated merchant accounts, fiat card processing, localized e-wallets, and cryptocurrency gateways with automated player payout flows.',
+      icon: Wallet,
+      span: 2,
+    },
+    {
+      id: 4,
+      title: '20,000+ Certified Casino Games',
+      description: 'High-performing slots, live dealer tables, crash games, and game shows from 150+ leading providers ready to engage players from day one.',
+      icon: Gamepad2,
+      link: '/casino-aggregator-api-solution',
+      span: 3,
+    },
+    {
+      id: 5,
+      title: 'Managed Operations & Infrastructure',
+      description: 'Round-the-clock technical maintenance, high-availability cloud hosting, DDoS protection, fraud monitoring, and automated system patches.',
+      icon: Headphones,
+      span: 3,
+    },
+    {
+      id: 6,
+      title: 'Turnkey Casino Solutions',
+      description: 'Need full operational independence and dedicated platform ownership? Explore our Turnkey Casino Solutions.',
+      icon: Rocket,
+      link: '/turnkey-casino-software-solutions',
+      span: 2,
+    },
+    {
+      id: 7,
+      title: 'Casino Platform Software',
+      description: 'Looking for standalone software licensing, modular PAM, and wallet APIs? Discover our enterprise Casino Platform Software.',
+      icon: LayoutDashboard,
+      link: '/online-casino-platform-software',
+      span: 2,
+    },
+    {
+      id: 8,
+      title: 'Lakebets Case Study',
+      description: 'See how Kvaornux built a scalable mobile-first casino platform with multi-provider aggregation and sub-second bet settlement.',
+      icon: HandshakeIcon,
+      link: '/igaming-case-studies/casino-platform-development',
+      span: 2,
+    },
+  ];
 
   return (
     <>
@@ -485,6 +551,13 @@ Launch fast and scale your iGaming business with a ready-made system.
           </div>
         </div>
       </section>
+
+      {/* Discover More Section */}
+      <DiscoverMore
+        customItems={whiteLabelDiscoverItems}
+        customTitle="Explore White Label Platform Capabilities"
+        customSubtitle="Complete brand customization, managed infrastructure, and pre-integrated solutions for rapid casino launches."
+      />
 
       {/* Opportunities Section */}
       <OpportunitiesSection/>

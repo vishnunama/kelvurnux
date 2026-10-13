@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import {
   Crown,
   Gamepad2,
@@ -10,10 +11,12 @@ import {
   HandshakeIcon,
   TrendingUp,
   Palette,
-  Settings
+  Settings,
+  RefreshCw
 } from 'lucide-react';
 import OpportunitiesSection from '@/src/components/opportunitiessection/Opportunitiessection';
 import ContactForm from '@/src/components/contactform/ContactForm';
+import DiscoverMore from '@/src/components/Discovermore/Discovermore';
 
 export default function TurnkeySportsbookSolutions() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -27,6 +30,8 @@ export default function TurnkeySportsbookSolutions() {
     const section = document.getElementById('contact-form-section');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form-section';
     }
   };
 
@@ -156,6 +161,68 @@ export default function TurnkeySportsbookSolutions() {
       }
     }, 0);
   };
+
+  const turnkeySportsbookDiscoverItems = [
+    {
+      id: 1,
+      title: 'Turnkey Sportsbook Setup',
+      description: 'Fast-track bookmaker launch with pre-configured betting engines, real-time odds feeds, automated margin rules, and admin control panels.',
+      icon: Rocket,
+      span: 2,
+    },
+    {
+      id: 2,
+      title: 'Live Odds & 80+ Sports',
+      description: 'Official data feeds covering 80+ sports and 1,000+ betting markets with automatic margin controls, regional markups, and redundant provider failover.',
+      icon: TrendingUp,
+      span: 2,
+    },
+    {
+      id: 3,
+      title: 'In-Play Betting & Cashout',
+      description: 'Low-latency live betting engine with real-time match visualizers, pitch trackers, and dynamic cashout algorithms supporting full, partial, and auto-cashout.',
+      icon: RefreshCw,
+      span: 2,
+    },
+    {
+      id: 4,
+      title: 'Automated Risk & Trading Desk',
+      description: 'Continuous event liability monitoring, automated sharp bettor stake throttling, dynamic bet acceptance delays, and cross-market arbitrage defense.',
+      icon: ShieldCheck,
+      span: 3,
+    },
+    {
+      id: 5,
+      title: 'Multi-Tier Agent & Retail POS',
+      description: 'Hierarchical agent credit management, betting shop cashier terminals, barcode slip printing, and real-time commission reconciliation.',
+      icon: LayoutDashboard,
+      span: 3,
+    },
+    {
+      id: 6,
+      title: 'Sportsbook Platform Software',
+      description: 'Looking for standalone betting engine licensing, odds feed APIs, and trading desk tools? Explore our enterprise Sportsbook Platform Software.',
+      icon: Settings,
+      link: '/sportsbook-platform-software',
+      span: 2,
+    },
+    {
+      id: 7,
+      title: 'Turnkey Casino Integration',
+      description: 'Combine your sportsbook with 20,000+ casino slots, crash games, and live dealers utilizing a seamless single-wallet player account.',
+      icon: Gamepad2,
+      link: '/turnkey-casino-software-solutions',
+      span: 2,
+    },
+    {
+      id: 8,
+      title: 'Jeetfast24 Case Study',
+      description: 'Discover how Kvaornux engineered an agent-based sportsbook handling 100+ agent tiers, high-volume betting, and instant ledger settlement.',
+      icon: HandshakeIcon,
+      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
+      span: 2,
+    },
+  ];
 
   return (
     <>
@@ -370,7 +437,7 @@ export default function TurnkeySportsbookSolutions() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                Everything you need to launch and scale your sportsbook business — from backend infrastructure to player management, sportsbook API integration, payment systems, risk management, and white label sportsbook software.
+                Everything you need to launch and scale your sportsbook business — from backend infrastructure to player management, sportsbook API integration, payment systems, risk management, and white label sportsbook software. Powered by our high-performance <Link href="/sportsbook-platform-software" className="text-[#00ebaa] hover:underline font-medium">Sportsbook Platform Software</Link>, we deliver a complete operational turnkey package.
               </p>
 
               <div
@@ -442,6 +509,13 @@ export default function TurnkeySportsbookSolutions() {
           </div>
         </div>
       </section>
+
+      {/* Discover More Section */}
+      <DiscoverMore
+        customItems={turnkeySportsbookDiscoverItems}
+        customTitle="Explore Turnkey Sportsbook Capabilities"
+        customSubtitle="Complete sports betting technology modules, trading tools, and operational workflows for turnkey bookmaker launches."
+      />
 
       {/* Opportunities Section */}
       <OpportunitiesSection />

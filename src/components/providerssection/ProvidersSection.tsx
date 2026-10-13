@@ -126,22 +126,19 @@ export default function ProvidersSection() {
 
       <div className="section-padding w-full h-full">
         <div className="container-new max-w-[1440px] mx-auto px-2 xs:px-4 sm:px-6 lg:px-8 relative">
-          
+
           {/* Centered Top Heading matching site sections */}
           <div
-            className={`transition-all duration-700 text-center mb-4 sm:mb-6 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            className={`transition-all duration-700 text-center mb-6 sm:mb-8 lg:mb-10 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
           >
-            <h2 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-center mb-2">
+            <h2 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-center">
               Game Content Through One Integration
             </h2>
-            <p className="text-[#a5a5a5] text-sm sm:text-base font-normal leading-relaxed text-center max-w-xl mx-auto">
-              Connect your platform to a broad portfolio of slots, live casino, crash, table and other gaming content through a unified integration.
-            </p>
           </div>
 
           {/* Main Container: Stacked Flex on Mobile, 2-Column Grid on Desktop */}
-          <div 
+          <div
             className="home_providers flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-0 relative overflow-hidden items-center lg:items-stretch"
             style={{
               WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 3%, #000 97%, transparent 100%)',

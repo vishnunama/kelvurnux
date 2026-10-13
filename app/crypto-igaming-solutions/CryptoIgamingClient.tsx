@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import OpportunitiesSection from '@/src/components/opportunitiessection/Opportunitiessection';
 import ContactForm from '@/src/components/contactform/ContactForm';
+import DiscoverMore from '@/src/components/Discovermore/Discovermore';
 
 export default function CryptoIgamingClient() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -29,6 +30,8 @@ export default function CryptoIgamingClient() {
     const section = document.getElementById('contact-form-section');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form-section';
     }
   };
 
@@ -196,6 +199,69 @@ export default function CryptoIgamingClient() {
       }
     }, 0);
   };
+
+  const cryptoDiscoverItems = [
+    {
+      id: 1,
+      title: 'Multi-Chain Crypto Wallets',
+      description: 'Native balance management across USDT, USDC, BTC, ETH, SOL, TRX, and custom tokens with automated hot/cold wallet security.',
+      icon: Wallet,
+      span: 2,
+    },
+    {
+      id: 2,
+      title: 'Instant Blockchain Deposits & Payouts',
+      description: 'Near-instant automated on-chain transaction verifications with zero chargeback risk and optimized gas-fee aggregation.',
+      icon: Zap,
+      span: 2,
+    },
+    {
+      id: 3,
+      title: 'Provably Fair Crash & Arcade Games',
+      description: 'Cryptographically verifiable games (Crash, Dice, Mines, Plinko, Limbo) providing transparent on-chain seed verification for players.',
+      icon: Gamepad2,
+      span: 2,
+    },
+    {
+      id: 4,
+      title: '20,000+ Aggregated Casino Games',
+      description: 'Integrated with top tier studios supporting direct cryptocurrency wagers, auto-conversion, and real-time exchange rate normalization.',
+      icon: Coins,
+      link: '/casino-aggregator-api-solution',
+      span: 3,
+    },
+    {
+      id: 5,
+      title: 'Web3 Login & Non-Custodial Connect',
+      description: 'Frictionless Web3 wallet login (MetaMask, Phantom, WalletConnect) enabling high registration-to-deposit conversion rates.',
+      icon: Cpu,
+      span: 3,
+    },
+    {
+      id: 6,
+      title: 'Casino Platform Software',
+      description: 'Looking for a standalone modular PAM and casino software engine? Explore our enterprise Casino Platform Software.',
+      icon: LayoutDashboard,
+      link: '/online-casino-platform-software',
+      span: 2,
+    },
+    {
+      id: 7,
+      title: 'Turnkey Casino Solutions',
+      description: 'Launch a complete turnkey crypto casino operation with pre-integrated games, hosting, and launch assistance.',
+      icon: ShieldCheck,
+      link: '/turnkey-casino-software-solutions',
+      span: 2,
+    },
+    {
+      id: 8,
+      title: 'Agent-Based Sportsbook Case Study',
+      description: 'See how Kvaornux engineered high-speed ledger architectures for high-volume transactions in emerging markets.',
+      icon: HandshakeIcon,
+      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
+      span: 2,
+    },
+  ];
 
   return (
     <>
@@ -479,6 +545,13 @@ export default function CryptoIgamingClient() {
           </div>
         </div>
       </section>
+
+      {/* Discover More Section */}
+      <DiscoverMore
+        customItems={cryptoDiscoverItems}
+        customTitle="Explore Crypto iGaming Capabilities"
+        customSubtitle="Advanced blockchain infrastructure, multi-token wallets, and provably fair technology for modern Web3 operators."
+      />
 
       {/* Opportunities Section */}
       <OpportunitiesSection />

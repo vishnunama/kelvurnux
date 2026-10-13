@@ -103,7 +103,7 @@ export default function DiscoverMore({ customItems, customTitle, customSubtitle 
       title: 'Sports Betting Platform',
       description: 'A fully equipped, competitive sportsbook tailored for dynamic betting experiences in a fast-paced market.',
       icon: Trophy,
-      link: '/turnkey-sportsbook-solutions',
+      link: '/sportsbook-platform-software',
       span: 2
     },
     {
@@ -111,7 +111,7 @@ export default function DiscoverMore({ customItems, customTitle, customSubtitle 
       title: 'Casino Platform',
       description: 'Quick access to the casino world through a powerful modular platform.',
       icon: Gamepad2,
-      link: '/turnkey-casino-software-solutions',
+      link: '/online-casino-platform-software',
       span: 2
     }
   ];

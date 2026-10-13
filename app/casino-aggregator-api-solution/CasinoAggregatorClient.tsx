@@ -32,6 +32,8 @@ export default function CasinoAggregatorAPI() {
     const section = document.getElementById('contact-form-section');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form-section';
     }
   };
 
@@ -217,6 +219,67 @@ export default function CasinoAggregatorAPI() {
       }
     }, 0);
   };
+  const aggregatorDiscoverItems = [
+    {
+      id: 1,
+      title: 'Unified Single API Gateway',
+      description: 'Access 20,000+ certified slots, live dealer streams, crash games, and table titles across 150+ game studios via one normalized integration layer.',
+      icon: Code,
+      span: 2,
+    },
+    {
+      id: 2,
+      title: 'Seamless & Transfer Wallets',
+      description: 'Sub-40ms balance debit and credit callbacks supporting simultaneous fiat and cryptocurrency operations with automated transaction reconciliation.',
+      icon: Wallet,
+      span: 2,
+    },
+    {
+      id: 3,
+      title: 'Dynamic Promo Studio',
+      description: 'Centrally configure network tournaments, automated free spins, deposit rewards, and cross-provider prize drops without custom provider code.',
+      icon: Sparkles,
+      span: 2,
+    },
+    {
+      id: 4,
+      title: 'Real-Time Analytics & Problem Round Resolvers',
+      description: 'Continuous monitoring of game round states, bet turnover, provider latency, and flagged transaction anomalies with instant technical dispute resolution.',
+      icon: BarChart3,
+      span: 3,
+    },
+    {
+      id: 5,
+      title: 'Automated Financial Invoicing & GGR Audit',
+      description: 'Transparent revenue share tracking, verified GGR statements, and automated provider billing reconciliation generated directly from live transaction logs.',
+      icon: ShieldCheck,
+      span: 3,
+    },
+    {
+      id: 6,
+      title: 'Casino Platform Software',
+      description: 'Need a complete player engine and core PAM? Connect our aggregator gateway directly into our enterprise Casino Platform Software.',
+      icon: Gamepad2,
+      link: '/online-casino-platform-software',
+      span: 2,
+    },
+    {
+      id: 7,
+      title: 'Turnkey Casino Solutions',
+      description: 'Deploy an end-to-end branded casino operation with pre-configured game libraries, turnkey setup, payments, and operational launch assistance.',
+      icon: Zap,
+      link: '/turnkey-casino-software-solutions',
+      span: 2,
+    },
+    {
+      id: 8,
+      title: 'Lakebets Case Study',
+      description: 'Discover how Kvaornux engineered a high-volume mobile casino aggregation infrastructure with sub-second bet settlement in emerging markets.',
+      icon: TrendingUp,
+      link: '/igaming-case-studies/casino-platform-development',
+      span: 2,
+    },
+  ];
 
   return (
     <>
@@ -504,8 +567,14 @@ export default function CasinoAggregatorAPI() {
         </div>
       </section>
 
+      {/* Discover More Section */}
+      <DiscoverMore
+        customItems={aggregatorDiscoverItems}
+        customTitle="Explore Aggregator Technology Capabilities"
+        customSubtitle="Modular game aggregation services, unified wallet connectivity, and promotional tools for iGaming operators."
+      />
+
       {/* Opportunities Section */}
-      {/* <DiscoverMore/> */}
       <OpportunitiesSection/>
 
       <ContactForm/>

@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import OpportunitiesSection from '@/src/components/opportunitiessection/Opportunitiessection';
 import ContactForm from '@/src/components/contactform/ContactForm';
+import DiscoverMore from '@/src/components/Discovermore/Discovermore';
 
 export default function CustomiGamingSolution() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -31,6 +32,8 @@ export default function CustomiGamingSolution() {
     const section = document.getElementById('contact-form-section');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form-section';
     }
   };
 
@@ -194,6 +197,68 @@ export default function CustomiGamingSolution() {
       }
     }, 0);
   };
+
+  const customDiscoverItems = [
+    {
+      id: 1,
+      title: 'Proprietary Platform Engineering',
+      description: 'Custom backend architecture built to your exact specifications, transactional volume thresholds, custom rule engines, and business logic.',
+      icon: Wrench,
+      span: 2,
+    },
+    {
+      id: 2,
+      title: 'Bespoke Game Development',
+      description: 'Exclusive slot games, custom crash games, live dealer environments, and unique fast games designed specifically for your brand ecosystem.',
+      icon: Palette,
+      span: 2,
+    },
+    {
+      id: 3,
+      title: 'Dedicated Microservices & APIs',
+      description: 'High-speed event streams, custom wallet webhooks, and private API adapters integrating seamlessly with legacy banking or core PAM systems.',
+      icon: Zap,
+      span: 2,
+    },
+    {
+      id: 4,
+      title: 'Bespoke Loyalty & Gamification Logic',
+      description: 'Tailored player progression mechanics, multi-tier VIP clubs, tournament brackets, and achievement systems engineered from the ground up.',
+      icon: Lightbulb,
+      span: 3,
+    },
+    {
+      id: 5,
+      title: 'Custom Risk & Regulatory Engines',
+      description: 'Specialized AML, KYC, and geolocation workflows adapted for emerging or unique jurisdictions with custom automated audit exports.',
+      icon: ShieldCheck,
+      span: 3,
+    },
+    {
+      id: 6,
+      title: 'Casino Platform Software',
+      description: 'Looking for our production-ready modular casino engine and PAM instead of custom development from scratch? Explore our Casino Platform.',
+      icon: LayoutDashboard,
+      link: '/online-casino-platform-software',
+      span: 2,
+    },
+    {
+      id: 7,
+      title: 'Turnkey Casino Solutions',
+      description: 'Prefer an established turnkey package with rapid time-to-market over custom software development? Explore our Turnkey Casino Solution.',
+      icon: Rocket,
+      link: '/turnkey-casino-software-solutions',
+      span: 2,
+    },
+    {
+      id: 8,
+      title: 'Pori444 Bangladesh Case Study',
+      description: 'Discover how Kvaornux engineered a localized iGaming platform with custom mobile banking integrations and sub-second settlement in South Asia.',
+      icon: HandshakeIcon,
+      link: '/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
+      span: 2,
+    },
+  ];
 
   return (
     <>
@@ -481,6 +546,13 @@ export default function CustomiGamingSolution() {
           </div>
         </div>
       </section>
+
+      {/* Discover More Section */}
+      <DiscoverMore
+        customItems={customDiscoverItems}
+        customTitle="Explore Custom iGaming Capabilities"
+        customSubtitle="Tailored engineering, proprietary game development, and custom integration services for unique operator roadmaps."
+      />
 
       {/* Opportunities Section */}
       <OpportunitiesSection/>

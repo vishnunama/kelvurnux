@@ -3,19 +3,46 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Package, Zap, Layers } from 'lucide-react';
+import { Package, Zap, Layers, X } from 'lucide-react';
 import KvaornuxLogo from './KelvurnuxLogo';
 
 export default function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<'solutions' | 'products' | null>(null);
-  const [mobileAccordion, setMobileAccordion] = useState<{ comprehensive: boolean; special: boolean; products: boolean }>({ comprehensive: false, special: false, products: false });
+  const [mobileAccordion, setMobileAccordion] = useState<{ products: boolean; solutions: boolean }>({
+    products: false,
+    solutions: false,
+  });
 
   useEffect(() => {
     setActiveDropdown(null);
     setIsMenuOpen(false);
   }, [pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
+  // Handle escape key to close dropdown or mobile menu
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveDropdown(null);
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
   const [isScrolled, setIsScrolled] = useState(false);
   const isScrolledRef = useRef(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -40,6 +67,8 @@ export default function Header() {
     const contactSection = document.getElementById('contact-form-section');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form-section';
     }
   };
 
@@ -86,7 +115,7 @@ export default function Header() {
 
   return (
     <>
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         * {
           box-sizing: border-box;
         }
@@ -290,40 +319,30 @@ export default function Header() {
 }
         .zg-contact-btn {
           position: relative; 
-          overflow: hidden;
-          transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
-          background: rgba(0, 235, 170, 0.08);
+          background-color: #00ebaa;
           cursor: pointer;
-          border: 2px solid #00ebaa;
+          border: none;
           border-radius: 9999px;
-          padding: 0.6rem 1.8rem;
-          color: #fff;
-          font-weight: 600;
-          font-size: 1.1rem;
+          padding: 0.55rem 1.85rem;
+          min-height: 2.75rem;
+          color: #000000;
+          font-weight: 700;
+          font-size: 1.05rem;
           white-space: nowrap;
           flex-shrink: 0;
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           text-decoration: none;
         }
         
-        .zg-contact-btn::before {
-          content: ""; 
-          position: absolute; 
-          inset: 0;
-          background: rgba(0, 235, 170, 0.15); 
-          opacity: 0; 
-          transition: opacity 0.3s cubic-bezier(0.16,1,0.3,1);
-        }
-        
         .zg-contact-btn:hover { 
-          border-color: #00ebaa;
-          background: rgba(0, 235, 170, 0.15);
-          transform: translateY(-2px);
+          background-color: #00ebaa;
+          color: #000000;
         }
-        
-        .zg-contact-btn:hover::before { 
-          opacity: 1; 
+
+        .zg-contact-btn:active { 
+          transform: none;
         }
         
         .zg-contact-btn span { 
@@ -331,12 +350,51 @@ export default function Header() {
           z-index: 1; 
         }
 
+        .zg-header-demo-btn {
+          position: relative;
+          background-color: #00ebaa;
+          cursor: pointer;
+          border: none;
+          border-radius: 9999px;
+          padding: 0.45rem 1.25rem;
+          min-height: 2.35rem;
+          color: #000000;
+          font-weight: 700;
+          font-size: 0.92rem;
+          line-height: 1;
+          white-space: nowrap;
+          flex-shrink: 0;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+        }
+
+        .zg-header-demo-btn:hover {
+          background-color: #00ebaa;
+          color: #000000;
+        }
+
+        .zg-header-demo-btn:active {
+          transform: none;
+        }
+
+        .zg-header-demo-btn span {
+          position: relative;
+          z-index: 1;
+        }
+
         @media (max-width: 768px) {
-  .zg-contact-btn {
-    padding: 0.25rem 0.8rem !important;
-    font-size: 0.8rem !important;
-  }
-}
+          .zg-contact-btn {
+            display: none !important;
+          }
+        }
+
+        @media (min-width: 769px) {
+          .zg-header-demo-btn {
+            display: none !important;
+          }
+        }
 
         .zg-ham span {
           display: block; 
@@ -348,7 +406,7 @@ export default function Header() {
         }
         
         .zg-ham.open span:nth-child(1) { 
-          transform: translateY(7px) rotate(45deg); 
+          transform: translateY(6px) rotate(45deg); 
         }
         
         .zg-ham.open span:nth-child(2) { 
@@ -357,7 +415,7 @@ export default function Header() {
         }
         
         .zg-ham.open span:nth-child(3) { 
-          transform: translateY(-7px) rotate(-45deg); 
+          transform: translateY(-6px) rotate(-45deg); 
         }
 
         .zg-mobile-menu {
@@ -575,7 +633,7 @@ export default function Header() {
         .zg-mob-contact:active { 
           transform: scale(0.98); 
         }
-      `}</style>
+      ` }} />
 
       {/* HEADER */}
       <header ref={headerRef}>
@@ -599,10 +657,99 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex flex-1 justify-center">
+          <nav className="hidden md:flex flex-1 justify-center" aria-label="Main Navigation">
             <ul className="flex items-center list-none m-0 p-0">
-              <li className="nav-item-dropdown group relative mx-[1.8rem]" onMouseEnter={() => handleMouseEnter('solutions')} onMouseLeave={handleMouseLeave}>
-                <span className="flex items-center text-white font-medium cursor-pointer py-5 text-[1.15rem] tracking-[0.3px] transition-all duration-200 select-none whitespace-nowrap ">
+              {/* Products Dropdown */}
+              <li
+                className="nav-item-dropdown group relative mx-[1.8rem]"
+                onMouseEnter={() => handleMouseEnter('products')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded={activeDropdown === 'products'}
+                  onClick={() => setActiveDropdown(activeDropdown === 'products' ? null : 'products')}
+                  className="flex items-center text-white font-medium cursor-pointer py-5 text-[1.15rem] tracking-[0.3px] transition-all duration-200 select-none whitespace-nowrap bg-transparent border-none"
+                >
+                  Products
+                  <span className={`zg-arrow ${activeDropdown === 'products' ? 'open' : ''}`}>
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      strokeWidth="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
+                    </svg>
+                  </span>
+                </button>
+
+                <div
+                  role="menu"
+                  aria-label="Products Menu"
+                  className={`zg-dropdown ${activeDropdown === 'products' ? 'open' : ''}`}
+                  onMouseEnter={() => handleMouseEnter('products')}
+                  onMouseLeave={handleMouseLeave}
+                  style={{ width: 'min(19rem, calc(100vw - 4rem))' }}
+                >
+                  {/* SVG Image arrow */}
+                  <img
+                    src="/assets/polygon.svg"
+                    alt=""
+                    className="absolute -top-[12px] left-[50%] transform -translate-x-1/2 w-[3rem] h-4 z-10"
+                  />
+
+                  <div
+                    className="rounded-[1.4rem] p-[0.9rem]"
+                    style={{
+                      background: 'radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(21,41,46,0.95) 0%, rgba(8,14,16,0.97) 100%)',
+                      boxShadow: '0 24px 64px rgba(0,0,0,0.75)',
+                      borderLeft: '1px solid rgba(0,235,170,0.15)',
+                      borderRight: '1px solid rgba(0,235,170,0.15)',
+                      borderBottom: '2px solid rgba(0,235,170,0.32)',
+                      borderTop: 'none',
+                      backdropFilter: 'blur(20px)',
+                      WebkitBackdropFilter: 'blur(20px)',
+                    }}
+                  >
+                    <ul className="list-none m-0 p-0 space-y-[0.4rem]">
+                      <li>
+                        <Link href="/online-casino-platform-software" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                          Casino Platform
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/sportsbook-platform-software" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                          Sportsbook Platform
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/casino-aggregator-api-solution" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                          Casino Game Aggregator
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+
+              {/* Solutions Dropdown */}
+              <li
+                className="nav-item-dropdown group relative mx-[1.8rem]"
+                onMouseEnter={() => handleMouseEnter('solutions')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button
+                  type="button"
+                  aria-haspopup="true"
+                  aria-expanded={activeDropdown === 'solutions'}
+                  onClick={() => setActiveDropdown(activeDropdown === 'solutions' ? null : 'solutions')}
+                  className="flex items-center text-white font-medium cursor-pointer py-5 text-[1.15rem] tracking-[0.3px] transition-all duration-200 select-none whitespace-nowrap bg-transparent border-none"
+                >
                   Solutions
                   <span className={`zg-arrow ${activeDropdown === 'solutions' ? 'open' : ''}`}>
                     <svg
@@ -617,9 +764,11 @@ export default function Header() {
                       <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
                     </svg>
                   </span>
-                </span>
+                </button>
 
                 <div
+                  role="menu"
+                  aria-label="Solutions Menu"
                   className={`zg-dropdown ${activeDropdown === 'solutions' ? 'open' : ''}`}
                   onMouseEnter={() => handleMouseEnter('solutions')}
                   onMouseLeave={handleMouseLeave}
@@ -645,6 +794,7 @@ export default function Header() {
                       WebkitBackdropFilter: 'blur(20px)',
                     }}
                   >
+                    {/* Left Card: Comprehensive Solutions */}
                     <div
                       className="rounded-[1rem] p-[1.3rem] transition-all duration-500 hover:bg-[#00ebaa]/[0.08]"
                       style={{
@@ -660,11 +810,20 @@ export default function Header() {
                         <span>COMPREHENSIVE SOLUTIONS</span>
                       </div>
                       <ul className="list-none m-0 p-0 space-y-[0.5rem]">
-                        <li><Link href="/turnkey-casino-software-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Turnkey Casino</Link></li>
-                        <li><Link href="/custom-igaming-solution" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Bespoke iGaming</Link></li>
+                        <li>
+                          <Link href="/turnkey-casino-software-solutions" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            Turnkey Casino
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/custom-igaming-solution" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            Bespoke iGaming
+                          </Link>
+                        </li>
                       </ul>
                     </div>
 
+                    {/* Right Card: Special Solutions (2-column internal grid) */}
                     <div
                       className="rounded-[1rem] p-[1.3rem] transition-all duration-500 hover:bg-[#00ebaa]/[0.08]"
                       style={{
@@ -680,69 +839,38 @@ export default function Header() {
                         <span>SPECIAL SOLUTIONS</span>
                       </div>
                       <ul className="list-none m-0 p-0 grid grid-cols-2 gap-x-[0.9rem] gap-y-[0.5rem]">
-                        <li><Link href="/turnkey-sportsbook-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Turnkey Sportsbook</Link></li>
-                        <li><Link href="/white-label-casino-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>White Label</Link></li>
-                        <li><Link href="/crypto-igaming-solutions" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Crypto iGaming</Link></li>
-                        <li><Link href="/sweepstakes-casino-software" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Sweepstakes Casino</Link></li>
-                        <li><Link href="/turnkey-sweepstakes-casino-software" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Turnkey Sweepstakes</Link></li>
-                        <li><Link href="/custom-sweepstakes-casino-development" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>Custom Sweepstakes</Link></li>
+                        <li>
+                          <Link href="/turnkey-sportsbook-solutions" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            Turnkey Sportsbook
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/white-label-casino-solutions" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            White Label
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/crypto-igaming-solutions" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            Crypto iGaming
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/sweepstakes-casino-software" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            Sweepstakes Casino
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/turnkey-sweepstakes-casino-software" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            Turnkey Sweepstakes
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/custom-sweepstakes-casino-development" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            Custom Sweepstakes
+                          </Link>
+                        </li>
                       </ul>
                     </div>
-                  </div>
-                </div>
-              </li>
-
-              <li className="nav-item-dropdown group relative mx-[1.8rem]" onMouseEnter={() => handleMouseEnter('products')} onMouseLeave={handleMouseLeave}>
-                <span className="flex items-center text-white font-medium cursor-pointer py-5 text-[1.15rem] tracking-[0.3px] transition-all duration-200 select-none whitespace-nowrap ">
-                  Products
-                  <span className={`zg-arrow ${activeDropdown === 'products' ? 'open' : ''}`}>
-                    <svg
-                      stroke="currentColor"
-                      fill="currentColor"
-                      strokeWidth="0"
-                      viewBox="0 0 512 512"
-                      height="1em"
-                      width="1em"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
-                    </svg>
-                  </span>
-                </span>
-
-                <div
-                  className={`zg-dropdown ${activeDropdown === 'products' ? 'open' : ''}`}
-                  onMouseEnter={() => handleMouseEnter('products')}
-                  onMouseLeave={handleMouseLeave}
-                  style={{ width: 'min(17.5rem, calc(100vw - 4rem))' }}
-                >
-                  {/* SVG Image arrow */}
-                  <img
-                    src="/assets/polygon.svg"
-                    alt=""
-                    className="absolute -top-[12px] left-[50%] transform -translate-x-1/2 w-[3rem] h-4 z-10"
-                  />
-
-                  <div
-                    className="rounded-[1.4rem] p-[0.9rem]"
-                    style={{
-                      background: 'radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(21,41,46,0.95) 0%, rgba(8,14,16,0.97) 100%)',
-                      boxShadow: '0 24px 64px rgba(0,0,0,0.75)',
-                      borderLeft: '1px solid rgba(0,235,170,0.15)',
-                      borderRight: '1px solid rgba(0,235,170,0.15)',
-                      borderBottom: '2px solid rgba(0,235,170,0.32)',
-                      borderTop: 'none',
-                      backdropFilter: 'blur(20px)',
-                      WebkitBackdropFilter: 'blur(20px)',
-                    }}
-                  >
-                    <ul className="list-none m-0 p-0 space-y-[0.4rem]">
-                      <li>
-                        <Link href="/casino-aggregator-api-solution" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
-                          Game Aggregation
-                        </Link>
-                      </li>
-                    </ul>
                   </div>
                 </div>
               </li>
@@ -766,100 +894,78 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Contact Button - Desktop */}
-          {/* <button
-            onClick={scrollToContactForm}
-            className="ml-auto"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: 'none',
-              outline: '0',
-              width: 'fit-content',
-              borderRadius: '1.6rem',
-              padding: '0.4rem 2rem',
-              minHeight: '2.8rem',
-              backgroundColor: '#00ebaa',
-              cursor: 'pointer',
-              color: '#000',
-              fontWeight: '700',
-              fontSize: '0.95rem',
-            }}
-          >
-            <span className="relative z-10 text-black font-bold">Contact us</span>
-          </button> */}
-          {/* Hamburger Menu */}
+          {/* Contact Sales CTA - Desktop */}
           <button
-            className={`zg-ham md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px] bg-transparent border-none cursor-pointer p-0 z-[200] relative ${isMenuOpen ? 'open' : ''}`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            onClick={scrollToContactForm}
+            className="hidden md:inline-flex zg-contact-btn ml-4"
           >
-            <span />
-            <span />
-            <span />
+            <span>Contact Sales</span>
           </button>
+
+          {/* Mobile Right Action Area: Demo CTA + Circular Hamburger */}
+          <div className="md:hidden flex items-center gap-2.5 z-[200]">
+            <button
+              onClick={() => {
+                if (isMenuOpen) setIsMenuOpen(false);
+                scrollToContactForm();
+              }}
+              className="zg-header-demo-btn"
+              aria-label="Request Demo"
+            >
+              <span>Demo</span>
+            </button>
+
+            {/* Circular Hamburger Menu */}
+            <button
+              className={`zg-ham flex flex-col justify-center items-center w-10 h-10 rounded-full border border-white/20 bg-white/[0.04] hover:border-[#00ebaa]/50 transition-all gap-[4.5px] cursor-pointer p-0 relative ${isMenuOpen ? 'open border-[#00ebaa]/60 bg-[#00ebaa]/10' : ''}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isMenuOpen}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
       </header>
 
       {/* MOBILE MENU */}
-      <div className={`zg-mobile-menu md:hidden ${isMenuOpen ? 'open' : ''}`}>
+      <div
+        className={`zg-mobile-menu md:hidden ${isMenuOpen ? 'open' : ''}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile Navigation"
+      >
+        {/* Mobile Header Bar with Logo and Close Button */}
         <div className="flex items-center justify-between px-5 h-[4.8rem] flex-shrink-0 border-b border-white/[0.08]">
-
+          <Link href="/" onClick={() => setIsMenuOpen(false)} className="block bg-transparent">
+            <img
+              src="/assets/logo.webp"
+              alt="Kvaornux"
+              className="h-9 w-auto object-contain block bg-transparent"
+            />
+          </Link>
+          <button
+            onClick={() => setIsMenuOpen(false)}
+            aria-label="Close menu"
+            className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-white/[0.04] text-white hover:text-[#00ebaa] hover:border-[#00ebaa]/50 transition-all cursor-pointer"
+          >
+            <X size={20} />
+          </button>
         </div>
 
         <div className="zg-mobile-nav-scroll">
           <div className="flex flex-col gap-[0.7rem] px-[1.2rem] pt-[1.4rem] pb-[4rem]">
-            <div className={`zg-acc-wrap ${mobileAccordion.comprehensive ? 'active' : ''}`}>
-              <button className="zg-acc-btn" onClick={() => setMobileAccordion(prev => ({ ...prev, comprehensive: !prev.comprehensive }))}>
-                <span className="zg-acc-btn-left">
-                  <Package size={24} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
-                  <span>Comprehensive Solutions</span>
-                </span>
-                <span className={`zg-chevron ${mobileAccordion.comprehensive ? 'open' : ''}`}>
-                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </span>
-              </button>
-
-              <div className={`zg-acc-body ${mobileAccordion.comprehensive ? 'open' : ''}`}>
-                <div className="zg-acc-inner py-1 flex flex-col">
-                  <Link href="/turnkey-casino-software-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Casino</Link>
-                  <Link href="/custom-igaming-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Bespoke iGaming</Link>
-                </div>
-              </div>
-            </div>
-
-            <div className={`zg-acc-wrap ${mobileAccordion.special ? 'active' : ''}`}>
-              <button className="zg-acc-btn" onClick={() => setMobileAccordion(prev => ({ ...prev, special: !prev.special }))}>
-                <span className="zg-acc-btn-left">
-                  <Zap size={24} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
-                  <span>Special solutions</span>
-                </span>
-                <span className={`zg-chevron ${mobileAccordion.special ? 'open' : ''}`}>
-                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </span>
-              </button>
-
-              <div className={`zg-acc-body ${mobileAccordion.special ? 'open' : ''}`}>
-                <div className="zg-acc-inner py-1 flex flex-col">
-                  <Link href="/turnkey-sportsbook-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Sportsbook</Link>
-                  <Link href="/white-label-casino-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>White Label</Link>
-                  <Link href="/crypto-igaming-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Crypto iGaming</Link>
-                  <Link href="/sweepstakes-casino-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Sweepstakes Casino</Link>
-                  <Link href="/turnkey-sweepstakes-casino-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Turnkey Sweepstakes</Link>
-                  <Link href="/custom-sweepstakes-casino-development" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>Custom Sweepstakes</Link>
-                </div>
-              </div>
-            </div>
-
+            {/* Products Accordion */}
             <div className={`zg-acc-wrap ${mobileAccordion.products ? 'active' : ''}`}>
-              <button className="zg-acc-btn" onClick={() => setMobileAccordion(prev => ({ ...prev, products: !prev.products }))}>
+              <button
+                className="zg-acc-btn"
+                onClick={() => setMobileAccordion(prev => ({ ...prev, products: !prev.products }))}
+                aria-expanded={mobileAccordion.products}
+              >
                 <span className="zg-acc-btn-left">
-                  <Layers size={24} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
+                  <Layers size={22} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
                   <span>Products</span>
                 </span>
                 <span className={`zg-chevron ${mobileAccordion.products ? 'open' : ''}`}>
@@ -871,8 +977,62 @@ export default function Header() {
 
               <div className={`zg-acc-body ${mobileAccordion.products ? 'open' : ''}`}>
                 <div className="zg-acc-inner py-1 flex flex-col">
+                  <Link href="/online-casino-platform-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Casino Platform
+                  </Link>
+                  <Link href="/sportsbook-platform-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Sportsbook Platform
+                  </Link>
                   <Link href="/casino-aggregator-api-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
-                    Game Aggregation
+                    Casino Game Aggregator
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Solutions Accordion */}
+            <div className={`zg-acc-wrap ${mobileAccordion.solutions ? 'active' : ''}`}>
+              <button
+                className="zg-acc-btn"
+                onClick={() => setMobileAccordion(prev => ({ ...prev, solutions: !prev.solutions }))}
+                aria-expanded={mobileAccordion.solutions}
+              >
+                <span className="zg-acc-btn-left">
+                  <Package size={22} className="text-[#00ebaa] flex-shrink-0" strokeWidth={2} />
+                  <span>Solutions</span>
+                </span>
+                <span className={`zg-chevron ${mobileAccordion.solutions ? 'open' : ''}`}>
+                  <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                </span>
+              </button>
+
+              <div className={`zg-acc-body ${mobileAccordion.solutions ? 'open' : ''}`}>
+                <div className="zg-acc-inner py-1 flex flex-col">
+                  <Link href="/turnkey-casino-software-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Turnkey Casino
+                  </Link>
+                  <Link href="/turnkey-sportsbook-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Turnkey Sportsbook
+                  </Link>
+                  <Link href="/white-label-casino-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    White Label Casino
+                  </Link>
+                  <Link href="/custom-igaming-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Bespoke iGaming Development
+                  </Link>
+                  <Link href="/sweepstakes-casino-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Sweepstakes Casino Software
+                  </Link>
+                  <Link href="/turnkey-sweepstakes-casino-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Turnkey Sweepstakes
+                  </Link>
+                  <Link href="/custom-sweepstakes-casino-development" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Custom Sweepstakes Development
+                  </Link>
+                  <Link href="/crypto-igaming-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Crypto iGaming Solutions
                   </Link>
                 </div>
               </div>
@@ -887,6 +1047,7 @@ export default function Header() {
               About us
               <span className="zg-mob-link-arrow">→</span>
             </Link>
+
             <Link href="/blog" className="zg-mob-link" onClick={() => setIsMenuOpen(false)}>
               Blog
               <span className="zg-mob-link-arrow">→</span>
@@ -899,7 +1060,7 @@ export default function Header() {
               }}
               className="zg-mob-contact mt-2"
             >
-              Contact us
+              Contact Sales
             </button>
           </div>
         </div>
