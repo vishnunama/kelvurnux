@@ -542,7 +542,11 @@ export default function TurnkeySweepstakesClient() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                A connected operational stack for launching your sweepstakes brand on an established platform architecture — covering virtual currencies, player activity, game content, payments, compliance controls and back-office administration.
+                A connected operational stack for launching your sweepstakes brand on an established platform architecture — covering virtual currencies, player activity, game content, payments, compliance controls and back-office administration. To review the overarching platform architecture and lifecycle, visit our comprehensive{' '}
+                <Link href="/sweepstakes-casino-software" className="text-[#00ebaa] hover:underline">
+                  sweepstakes casino software
+                </Link>{' '}
+                overview.
               </p>
 
               <div
