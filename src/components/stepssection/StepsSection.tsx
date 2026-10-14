@@ -7,7 +7,23 @@ import type { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 
-const stepsData = [
+export interface StepItem {
+  id: number;
+  title: string;
+  text: React.ReactNode | string;
+}
+
+export interface StepsSectionProps {
+  customSteps?: StepItem[];
+  customTitle?: string;
+  customSubtitle?: string;
+  customCtaText?: string;
+  ctaHref?: string;
+  onCtaClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  sectionId?: string;
+}
+
+export const stepsData: StepItem[] = [
   {
     id: 1,
     title: 'Define the Project',
@@ -41,8 +57,7 @@ const styles = `
     background: radial-gradient(106.74% 100.05% at 50% 100.05%, #1c1918 0, #0b0b0f 19.4%);
     position: relative;
     padding-top: 3rem;
-        padding-bottom: 9rem;
-
+    padding-bottom: 9rem;
   }
 
   @media (min-width: 768px) {
@@ -62,23 +77,22 @@ const styles = `
   .steps-title {
     color: #fff;
     text-align: center;
-    font-size: clamp(2.25rem, 4vw, 3.75rem);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.2;
     background: linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff;
     background-blend-mode: darken, normal;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0 auto 0.75rem;
-    width: max-content;
-    max-width: 100%;
+    max-width: 950px;
   }
 
   .steps-subtitle {
     color: #a5a5a5;
     text-align: center;
-    max-width: 550px;
+    max-width: 680px;
     margin: 0 auto 3rem;
     font-size: clamp(1rem, 1.25vw, 1.125rem);
     font-weight: 400;
@@ -246,14 +260,28 @@ const styles = `
   }
 `;
 
-export default function StepsSection() {
+export default function StepsSection({
+  customSteps,
+  customTitle,
+  customSubtitle,
+  customCtaText,
+  ctaHref,
+  onCtaClick,
+  sectionId,
+}: StepsSectionProps = {}) {
   const swiperRef = useRef<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const steps = customSteps || stepsData;
+  const title = customTitle || 'From Strategy to Launch';
+  const subtitle =
+    customSubtitle ||
+    'A clear process from initial requirements to deployment, integration and ongoing support.';
 
   return (
     <>
       <style>{styles}</style>
-      <section className="steps-section">
+      <section className="steps-section" id={sectionId}>
         {/* Background Image */}
         <div className="section-bg absolute inset-0 pointer-events-none z-0 overflow-hidden">
           <img
@@ -274,18 +302,18 @@ export default function StepsSection() {
 
         <div className="steps-container">
           <h2 className="steps-title">
-            From Strategy to Launch
+            {title}
           </h2>
 
           <p className="steps-subtitle">
-            A clear process from initial requirements to deployment, integration and ongoing support.
+            {subtitle}
           </p>
 
           <div className="steps-slider-wrapper">
             <Swiper
               modules={[Autoplay]}
               autoplay={{
-                delay: 3000,
+                delay: 3500,
                 disableOnInteraction: false,
               }}
               loop={true}
@@ -308,20 +336,29 @@ export default function StepsSection() {
                 },
               }}
             >
-              {stepsData.map((step, index) => {
+              {steps.map((step, index) => {
                 const isActive = index === activeIndex;
                 return (
                   <SwiperSlide key={step.id}>
                     <div
                       className={`step-item ${isActive ? 'is-active' : ''}`}
-                      onClick={() => swiperRef.current?.slideTo(index)}
+                      onClick={(e) => {
+                        if ((e.target as HTMLElement).closest('a')) return;
+                        if (swiperRef.current) {
+                          if (typeof swiperRef.current.slideToLoop === 'function') {
+                            swiperRef.current.slideToLoop(index);
+                          } else {
+                            swiperRef.current.slideTo(index);
+                          }
+                        }
+                      }}
                     >
                       <div className="step-indicator">
                         <span></span>
                       </div>
                       <div className="step-content">
                         <h3 className="step-title">{step.title}</h3>
-                        <p className="step-text">{step.text}</p>
+                        <div className="step-text">{step.text}</div>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -366,7 +403,8 @@ export default function StepsSection() {
 
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2.5rem' }}>
             <a
-              href="#contact-form-section"
+              href={ctaHref || '#contact-form-section'}
+              onClick={onCtaClick}
               className="font-bold text-black border-none cursor-pointer"
               style={{
                 backgroundColor: '#00ebaa',
@@ -382,7 +420,7 @@ export default function StepsSection() {
                 fontFamily: "'Gabarito', sans-serif",
               }}
             >
-              <span>Discuss Your Project</span>
+              <span>{customCtaText || 'Discuss Your Project'}</span>
             </a>
           </div>
         </div>

@@ -21,14 +21,18 @@ const categoryOptions = [
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export default function ContactForm() {
+interface ContactFormProps {
+  defaultCategory?: string;
+}
+
+export default function ContactForm({ defaultCategory = '' }: ContactFormProps) {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     request: '',
-    category: '',
+    category: defaultCategory,
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});

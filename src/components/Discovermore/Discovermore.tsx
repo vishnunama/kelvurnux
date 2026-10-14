@@ -17,7 +17,7 @@ export interface DiscoverItem {
   id: number;
   title: string;
   description: string;
-  icon: any;
+  icon: React.ComponentType<{ size?: number; className?: string }> | React.ElementType;
   link?: string;
   span?: number;
 }
@@ -192,33 +192,32 @@ export default function DiscoverMore({ customItems, customTitle, customSubtitle 
             )}
           </div>
           
-          {/* DESKTOP & TABLET GRID */}
-          <div className="hidden md:grid grid-cols-6 gap-4 w-full">
+          {/* RESPONSIVE GRID (Single DOM tree for desktop and mobile) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 w-full">
             {discoverItems.map((item, index) => {
               const IconComponent = item.icon;
               const cardInner = (
                 <>
-                  <div className="icon-box w-12 h-12 rounded-full flex items-center justify-center mb-5 flex-shrink-0">
+                  <div className="icon-box w-11 h-11 md:w-12 md:h-12 rounded-full flex items-center justify-center mb-4 md:mb-5 flex-shrink-0">
                     <IconComponent size={22} />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 leading-snug">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="card-desc text-[15px] leading-relaxed text-[#b3b3c4] m-0 transition-colors">
+                  <p className="card-desc text-sm md:text-[15px] leading-relaxed text-[#b3b3c4] m-0 transition-colors">
                     {item.description}
                   </p>
                 </>
               );
 
+              const spanClasses = item.span === 3 ? 'md:col-span-3' : 'md:col-span-2';
+              const baseClasses = `discover-card-item rounded-[20px] md:rounded-[24px] p-6 md:p-8 flex flex-col relative text-decoration-none group min-h-[200px] md:min-h-[220px] ${spanClasses}`;
+
               return item.link ? (
                 <Link
                   key={item.id}
                   href={item.link}
-                  className="discover-card-item rounded-[24px] p-8 flex flex-col relative text-decoration-none group cursor-pointer"
-                  style={{
-                    gridColumn: `span ${item.span}`,
-                    minHeight: '220px'
-                  }}
+                  className={`${baseClasses} cursor-pointer`}
                   ref={(el) => { elementsRef.current[index + 1] = el; }}
                 >
                   {cardInner}
@@ -226,51 +225,10 @@ export default function DiscoverMore({ customItems, customTitle, customSubtitle 
               ) : (
                 <div
                   key={item.id}
-                  className="discover-card-item rounded-[24px] p-8 flex flex-col relative text-decoration-none group"
-                  style={{
-                    gridColumn: `span ${item.span}`,
-                    minHeight: '220px'
-                  }}
+                  className={baseClasses}
                   ref={(el) => { elementsRef.current[index + 1] = el; }}
                 >
                   {cardInner}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* MOBILE GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:hidden gap-4 w-full">
-            {discoverItems.map((item) => {
-              const IconComponent = item.icon;
-              const mobileInner = (
-                <>
-                  <div className="icon-box w-11 h-11 rounded-full flex items-center justify-center mb-4 flex-shrink-0">
-                    <IconComponent size={20} />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2 leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="card-desc text-sm leading-relaxed text-[#b3b3c4] m-0 transition-colors">
-                    {item.description}
-                  </p>
-                </>
-              );
-
-              return item.link ? (
-                <Link
-                  key={`mob-${item.id}`}
-                  href={item.link}
-                  className="discover-card-item rounded-[20px] p-6 flex flex-col relative text-decoration-none"
-                >
-                  {mobileInner}
-                </Link>
-              ) : (
-                <div
-                  key={`mob-${item.id}`}
-                  className="discover-card-item rounded-[20px] p-6 flex flex-col relative text-decoration-none"
-                >
-                  {mobileInner}
                 </div>
               );
             })}
