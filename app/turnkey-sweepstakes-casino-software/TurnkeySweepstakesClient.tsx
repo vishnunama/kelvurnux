@@ -546,7 +546,10 @@ export default function TurnkeySweepstakesClient() {
                 <Link href="/sweepstakes-casino-software" className="text-[#00ebaa] hover:underline">
                   sweepstakes casino software
                 </Link>{' '}
-                overview.
+                overview, or explore our detailed technical guide on{' '}
+                <Link href="/blog/what-is-sweepstakes-casino-software" className="text-[#00ebaa] hover:underline">
+                  sweepstakes casino software fundamentals
+                </Link>.
               </p>
 
               <div

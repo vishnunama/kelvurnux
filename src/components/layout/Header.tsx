@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Package, Zap, Layers, X } from 'lucide-react';
+import { Package, Zap, Layers } from 'lucide-react';
 import KvaornuxLogo from './KelvurnuxLogo';
 
 export default function Header() {
@@ -405,6 +405,10 @@ export default function Header() {
           transition: all 0.36s cubic-bezier(0.16,1,0.3,1);
         }
         
+        .zg-ham.open span {
+          background: #00ebaa;
+        }
+
         .zg-ham.open span:nth-child(1) { 
           transform: translateY(6px) rotate(45deg); 
         }
@@ -420,12 +424,13 @@ export default function Header() {
 
         .zg-mobile-menu {
           position: fixed; 
-          top: 0rem; 
+          top: 4.8rem; 
           left: 0; 
           right: 0; 
           bottom: 0; 
+          height: calc(100dvh - 4.8rem);
           z-index: 90;
-          background: radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(0,235,170,.12) 0, rgba(8,14,16,.95) 100%);
+          background: radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(0,235,170,.12) 0, rgba(8,14,16,.98) 100%);
           backdrop-filter: blur(24px); 
           -webkit-backdrop-filter: blur(24px);
           transform: translateX(-100%);
@@ -433,6 +438,7 @@ export default function Header() {
           display: flex; 
           flex-direction: column;
           overflow: hidden;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
         
         .zg-mobile-menu.open { 
@@ -639,8 +645,8 @@ export default function Header() {
       <header ref={headerRef}>
         {/* High performance smooth transparent-to-glass header background */}
         <div
-          className={`absolute inset-0 pointer-events-none transition-all duration-300 ${isScrolled
-            ? 'bg-[rgba(4,8,10,0.84)] border-b border-white/[0.06] backdrop-blur-md'
+          className={`absolute inset-0 pointer-events-none transition-all duration-300 ${isScrolled || isMenuOpen
+            ? 'bg-[rgba(4,8,10,0.92)] border-b border-white/[0.06] backdrop-blur-md'
             : 'bg-transparent border-b border-transparent'
             }`}
         />
@@ -648,7 +654,7 @@ export default function Header() {
         {/* Header Content */}
         <div className="w-full max-w-[124rem] mx-auto lg:px-[4.5rem] px-[1rem] flex items-center justify-between relative z-[2] h-full">
           {/* Logo */}
-          <Link href="/" className="block flex-shrink-0 bg-transparent">
+          <Link href="/" className="block flex-shrink-0 bg-transparent" onClick={() => setIsMenuOpen(false)}>
             <img
               src="/assets/logo.webp"
               alt="Kvaornux"
@@ -937,26 +943,8 @@ export default function Header() {
         aria-modal="true"
         aria-label="Mobile Navigation"
       >
-        {/* Mobile Header Bar with Logo and Close Button */}
-        <div className="flex items-center justify-between px-5 h-[4.8rem] flex-shrink-0 border-b border-white/[0.08]">
-          <Link href="/" onClick={() => setIsMenuOpen(false)} className="block bg-transparent">
-            <img
-              src="/assets/logo.webp"
-              alt="Kvaornux"
-              className="h-9 w-auto object-contain block bg-transparent"
-            />
-          </Link>
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            aria-label="Close menu"
-            className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 bg-white/[0.04] text-white hover:text-[#00ebaa] hover:border-[#00ebaa]/50 transition-all cursor-pointer"
-          >
-            <X size={20} />
-          </button>
-        </div>
-
         <div className="zg-mobile-nav-scroll">
-          <div className="flex flex-col gap-[0.7rem] px-[1.2rem] pt-[1.4rem] pb-[4rem]">
+          <div className="flex flex-col gap-[0.7rem] px-[1.2rem] pt-[1.2rem] pb-[4rem]">
             {/* Products Accordion */}
             <div className={`zg-acc-wrap ${mobileAccordion.products ? 'active' : ''}`}>
               <button

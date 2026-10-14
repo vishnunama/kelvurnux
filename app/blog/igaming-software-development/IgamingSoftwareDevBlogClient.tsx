@@ -288,7 +288,11 @@ export default function IgamingSoftwareDevBlogClient() {
       content: (
         <>
           <p>
-            <strong>iGaming software development</strong> is the end-to-end process of engineering, integrating, testing, and deploying the digital software infrastructure required to operate an online casino, sportsbook, poker room, or lottery platform.
+            <strong>iGaming software development</strong> is the end-to-end process of engineering, integrating, testing, and deploying the digital software infrastructure required to operate an online casino, sportsbook, poker room, lottery platform, or promotional gaming operation. For operators launching under promotional sweepstakes models, our dedicated guide explains what{' '}
+            <Link href="/blog/what-is-sweepstakes-casino-software" className="text-[#00ebaa] hover:underline">
+              sweepstakes casino software
+            </Link>{' '}
+            is and how it manages dual-token economies, AMOE workflows, and prize redemptions.
           </p>
           <p>
             In the B2B iGaming industry, software development is often mistakenly simplified to mean creating online slot games or front-facing websites. In reality, a functioning iGaming application consists of four distinct software layers:

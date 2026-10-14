@@ -225,7 +225,15 @@ export default function SweepstakesClient() {
     {
       id: 2,
       title: 'Dual Coin Allocation',
-      text: 'Gold Coins are acquired for entertainment gameplay, while promotional Sweeps Coins are distributed complimentary via purchases, login bonuses, or promotions.'
+      text: (
+        <>
+          Gold Coins are acquired for entertainment gameplay, while promotional Sweeps Coins are distributed complimentary via purchases, login bonuses, or promotions. Learn more about dual-token mechanics in our operator guide to{' '}
+          <Link href="/blog/what-is-sweepstakes-casino-software" className="text-[#00ebaa] underline hover:text-[#00d096]">
+            sweepstakes casino software
+          </Link>
+          .
+        </>
+      )
     },
     {
       id: 3,

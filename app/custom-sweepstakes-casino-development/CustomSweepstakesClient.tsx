@@ -542,7 +542,11 @@ export default function CustomSweepstakesClient() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                Custom development gives operators deeper control over platform logic, player experiences, integrations and operational workflows while keeping the technology structured around long-term product requirements. For operators comparing bespoke engineering against pre-configured setups, explore our core{' '}
+                Custom development gives operators deeper control over platform logic, player experiences, integrations and operational workflows while keeping the technology structured around long-term product requirements. Before scoping bespoke features, review our complete technical breakdown of{' '}
+                <Link href="/blog/what-is-sweepstakes-casino-software" className="text-[#00ebaa] hover:underline">
+                  sweepstakes casino software architecture
+                </Link>{' '}
+                or explore our core{' '}
                 <Link href="/sweepstakes-casino-software" className="text-[#00ebaa] hover:underline">
                   sweepstakes casino software
                 </Link>{' '}

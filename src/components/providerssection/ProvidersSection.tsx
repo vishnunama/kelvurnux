@@ -140,17 +140,18 @@ export default function ProvidersSection() {
           {/* Main Container: Stacked Flex on Mobile, 2-Column Grid on Desktop */}
           <div
             className="home_providers flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-0 relative overflow-hidden items-center lg:items-stretch"
-            style={{
-              WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 3%, #000 97%, transparent 100%)',
-              maskImage: 'linear-gradient(to bottom, transparent 0%, #000 3%, #000 97%, transparent 100%)',
-            }}
           >
-            {/* Unified Top & Bottom Gradient Fades */}
-            <div className="absolute inset-x-0 top-0 h-10 sm:h-16 bg-gradient-to-b from-[#0b0b0f] via-[#0b0b0f]/60 to-transparent z-30 pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-10 sm:h-16 bg-gradient-to-t from-[#0b0b0f] via-[#0b0b0f]/60 to-transparent z-30 pointer-events-none" />
-
             {/* Left Side (Top on Mobile): 3-4 Vertical Columns Infinite Wall */}
-            <div className="home_providers-wr z-10 flex justify-between items-start w-full h-[19rem] xs:h-[22rem] sm:h-[30rem] lg:h-[38rem] relative overflow-hidden gap-[0.4rem] xs:gap-[0.63rem]">
+            <div
+              className="home_providers-wr z-10 flex justify-between items-start w-full h-[19rem] xs:h-[22rem] sm:h-[30rem] lg:h-[38rem] relative overflow-hidden gap-[0.4rem] xs:gap-[0.63rem]"
+              style={{
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%, #000 96%, transparent 100%)',
+                maskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%, #000 96%, transparent 100%)',
+              }}
+            >
+              {/* Top & Bottom Gradient Fades for Infinite Scroll Wall */}
+              <div className="absolute inset-x-0 top-0 h-10 sm:h-16 bg-gradient-to-b from-[#0b0b0f] via-[#0b0b0f]/60 to-transparent z-20 pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-10 sm:h-16 bg-gradient-to-t from-[#0b0b0f] via-[#0b0b0f]/60 to-transparent z-20 pointer-events-none" />
 
               {/* Column 1 - Scroll Up */}
               <div className="home_providers-item flex-1 min-w-0 flex flex-col justify-start items-center gap-[0.4rem] xs:gap-[0.63rem]">
@@ -224,24 +225,9 @@ export default function ProvidersSection() {
                 <div className="mt-2 sm:mt-4">
                   <Link
                     href="/casino-aggregator-api-solution"
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      border: 'none',
-                      outline: '0',
-                      width: 'fit-content',
-                      borderRadius: '9999px',
-                      padding: '0.6rem 2.2rem',
-                      minHeight: '2.8rem',
-                      backgroundColor: '#00ebaa',
-                      cursor: 'pointer',
-                      color: '#000',
-                      fontWeight: 700,
-                      textDecoration: 'none',
-                    }}
+                    className="btn-main"
                   >
-                    <span className="relative z-10 text-black font-extrabold tracking-wide">Explore Game Aggregation</span>
+                    <span>Explore Aggregator</span>
                   </Link>
                 </div>
 
