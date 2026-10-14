@@ -102,7 +102,7 @@ export default function Page() {
       '@id': 'https://kvaornux.com/blog/what-is-sweepstakes-casino-software',
     },
     datePublished: '2026-10-06',
-    dateModified: '2026-10-06',
+    dateModified: '2026-10-14',
     author: {
       '@type': 'Organization',
       name: 'Kvaornux Editorial Team',

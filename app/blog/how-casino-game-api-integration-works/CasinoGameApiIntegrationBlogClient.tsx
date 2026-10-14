@@ -628,7 +628,7 @@ export default function CasinoGameApiIntegrationBlogClient() {
           </p>
           <ul>
             <li><strong>PAM System:</strong> Validating player eligibility, self-exclusion records, and account statuses.</li>
-            <li><strong>Central Wallet:</strong> Executing atomic balance updates across fiat and cryptocurrency ledgers.</li>
+            <li><strong>Central Wallet:</strong> Executing atomic balance updates across fiat, cryptocurrency, or dual-currency promotional ledgers (as detailed in our architectural guide to <Link href="/blog/what-is-sweepstakes-casino-software" className="text-[#00ebaa] hover:underline">sweepstakes casino software</Link>).</li>
             <li><strong>Bonus Engine:</strong> Tracking free spins, promotional wagering contributions, and bonus turnover.</li>
             <li><strong>Reporting &amp; BI Tools:</strong> Aggregating turnover, gross gaming revenue, and player performance metrics.</li>
           </ul>

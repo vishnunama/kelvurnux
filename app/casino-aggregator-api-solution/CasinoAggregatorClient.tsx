@@ -169,8 +169,8 @@ export default function CasinoAggregatorAPI() {
     {
       id: 6,
       icon: TrendingUp,
-      title: 'Multi-Currency & Multi-Language',
-      description: 'Built-in support for 50+ currencies and multiple languages. Regional market adaptation with geo-specific routing and content.'
+      title: 'Multi-Currency & Promotional Models',
+      description: 'Built-in support for 50+ global currencies, cryptocurrencies, and dual-currency sweepstakes models with geo-specific routing and content.'
     },
     {
       id: 7,
@@ -277,6 +277,30 @@ export default function CasinoAggregatorAPI() {
       description: 'Discover how Kvaornux engineered a high-volume mobile casino aggregation infrastructure with sub-second bet settlement in emerging markets.',
       icon: TrendingUp,
       link: '/igaming-case-studies/casino-platform-development',
+      span: 2,
+    },
+    {
+      id: 9,
+      title: 'Sweepstakes Casino Software',
+      description: 'Explore how aggregator APIs connect slot titles to dual-currency Gold Coin and Sweeps Coin ledgers with compliant session wrapping.',
+      icon: Wallet,
+      link: '/blog/what-is-sweepstakes-casino-software',
+      span: 2,
+    },
+    {
+      id: 10,
+      title: 'API Integration Architecture',
+      description: 'Understand the technical mechanics of casino game API integration, round debits, win credits, and webhook rollback handling.',
+      icon: Code,
+      link: '/blog/how-casino-game-api-integration-works',
+      span: 2,
+    },
+    {
+      id: 11,
+      title: 'Agent-Based Gaming Platform',
+      description: 'Review our multi-tier agent network case study detailing granular credit hierarchies, role-based controls, and localized wallet management.',
+      icon: ShieldCheck,
+      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
       span: 2,
     },
   ];

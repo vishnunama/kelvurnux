@@ -1178,17 +1178,6 @@ export default function CaseStudiesClient() {
               className="w-full h-auto"
             />
           </div>
-          <div className="portfolio-hero-el portfolio-hero-el-right">
-            <Image
-              src="/assets/case-studies/case-studies-el-right.webp"
-              alt=""
-              aria-hidden="true"
-              width={210}
-              height={302}
-              priority
-              className="w-full h-auto"
-            />
-          </div>
         </div>
 
         {/* Hero Container */}

@@ -197,6 +197,15 @@ export default function CasinoPlatformClient() {
       link: '/turnkey-casino-software-solutions',
       linkText: 'Explore Turnkey Casino Solutions →',
     },
+    {
+      id: 11,
+      icon: CreditCard,
+      title: 'Promotional Sweepstakes & Dual-Currency Models',
+      description:
+        'Evaluating promotional social gaming? Understand how dual-currency Gold Coin and Sweeps Coin ledgers, AMOE compliance, and prize redemption workflows differ from real-money platforms in our operator guide.',
+      link: '/blog/what-is-sweepstakes-casino-software',
+      linkText: 'Read Sweepstakes Software Guide →',
+    },
   ];
 
   const casinoDiscoverItems = [
