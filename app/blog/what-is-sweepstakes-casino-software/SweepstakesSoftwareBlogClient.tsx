@@ -322,7 +322,7 @@ const blogSections: BlogSection[] = [
         </p>
         <ul>
           <li><strong>Separate Balance Ledgers:</strong> Maintains independent database columns and audit tables for Gold Coins and Sweeps Coins.</li>
-          <li><strong>Playthrough Tracking:</strong> Automatically tracks unplayed Sweeps Coins versus played (redeemable) Sweeps Coins based on operator-configured multiplier requirements (e.g., 1x playthrough).</li>
+          <li><strong>Playthrough Tracking:</strong> Automatically tracks unplayed Sweeps Coins versus played (redeemable) Sweeps Coins based on operator-configured multiplier requirements (e.g., 1x playthrough, subject to applicable promotional terms and legal requirements).</li>
           <li><strong>Transaction History Isolation:</strong> Segregates Gold Coin package purchases from Sweeps Coin promotional rewards, ensuring distinct financial reporting.</li>
           <li><strong>Bonus & Adjustment Rules:</strong> Allows administrators to grant, adjust, or lock promotional coin balances with clear administrative logs.</li>
           <li><strong>Game Round Balance Locking:</strong> Coordinates real-time server debits and credits during active game spins depending on whether the player selected GC or SC play mode.</li>
@@ -346,7 +346,7 @@ const blogSections: BlogSection[] = [
           <li><strong>Mail-In Request Processing:</strong> Administrative interface for back-office staff to log physical mail-in request cards, verify postmarks, and validate unique entry codes.</li>
           <li><strong>Unique Postal Code Generation:</strong> Algorithmic generation of single-use, time-sensitive entry codes that players generate within their account dashboard to include on physical mail-in requests.</li>
           <li><strong>Automated SC Crediting:</strong> Automated credit workflow that deposits complimentary Sweeps Coins into the player account once an AMOE submission is validated by staff.</li>
-          <li><strong>Rule Enforcement & Caps:</strong> System controls that enforce daily, weekly, or monthly AMOE request limits per verified user profile.</li>
+          <li><strong>Rule Enforcement & Caps:</strong> System controls that enforce daily, weekly, or monthly AMOE request limits per verified user profile based on applicable laws and official sweepstakes rules.</li>
           <li><strong>Audit Trail Logging:</strong> Detailed record-keeping of all incoming AMOE entries, processing timestamps, administrator approvals, and credited Sweeps Coin balances.</li>
         </ul>
       </>
@@ -364,14 +364,14 @@ const blogSections: BlogSection[] = [
           Software platforms implement multi-layered verification modules:
         </p>
         <ul>
-          <li><strong>Identity & Age Verification (KYC):</strong> Automated integration with identity verification providers (e.g., Sumsub, Persona, Veriff) to check government IDs, SSN matches, and proof of address before enabling prize redemptions.</li>
-          <li><strong>Geolocation Restriction Engine:</strong> Real-time IP and GPS location checks to block access or restrict Sweeps Coin gameplay in excluded states or jurisdictions (such as Washington, Idaho, Nevada, or Michigan depending on operator configuration).</li>
+          <li><strong>Identity & Age Verification (KYC):</strong> Automated integration with identity verification providers (e.g., Sumsub, Persona, Veriff) to check government IDs, SSN matches, and proof of address before enabling prize redemptions, with specific requirements and verification timing determined by governing laws and operator policies.</li>
+          <li><strong>Geolocation Restriction Engine:</strong> Real-time IP and GPS location checks to block access or restrict Sweeps Coin gameplay in excluded states or jurisdictions based on applicable state laws and operator compliance policy.</li>
           <li><strong>Configurable Eligibility Rules:</strong> Dynamic back-office rules engines allowing operators to toggle geographic restrictions, minimum redemption thresholds, and account verification triggers.</li>
           <li><strong>Redemption Verification Gates:</strong> Mandatory KYC completion checks hardcoded into the redemption request API flow, preventing unverified accounts from submitting payout requests.</li>
           <li><strong>Audit Trail Storage:</strong> Encrypted storage of verification logs, geo-check timestamps, and compliance flags for regulatory inspections.</li>
         </ul>
         <p>
-          <em>Note: Technology modules can support an operator&apos;s compliance framework, but final legal compliance depends on operator licensing, terms, and local state regulations.</em>
+          <em>Note: Technology modules provide technical compliance infrastructure, but specific playthrough requirements, restricted jurisdictions, identity verification requirements, and AMOE procedures depend on applicable laws and operator policies.</em>
         </p>
       </>
     ),
@@ -599,6 +599,91 @@ const blogSections: BlogSection[] = [
           <li><strong>Payment & Payout Gateway Partners:</strong> Partner with merchant processors and payout providers supportive of sweepstakes business models.</li>
           <li><strong>KYC & Geolocation Integrations:</strong> Implement automated verification tools to ensure smooth player onboarding and compliance enforcement.</li>
           <li><strong>Operational Support Team:</strong> Train customer support, compliance officers, and risk managers to handle redemption workflows efficiently.</li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    id: 'operator-evaluation-checklist',
+    title: 'Sweepstakes Casino Software Evaluation Checklist for Operators',
+    showCta: true,
+    ctaText: 'Evaluate Platform Specs',
+    content: (
+      <>
+        <p>
+          Selecting or architecting enterprise-grade sweepstakes casino software requires evaluating technical, operational, and regulatory capabilities far beyond lobby aesthetics. Because promotional sweepstakes platforms manage two parallel economic models simultaneously, any deficiency in wallet accounting, third-party API callbacks, or compliance gates can jeopardize player trust and operational viability.
+        </p>
+        <p>
+          Prospective operators evaluating sweepstakes casino software should audit platform vendors against these six foundational pillars:
+        </p>
+
+        <h3>Dual-Currency Wallet Architecture</h3>
+        <p>
+          The core differentiator of sweepstakes casino software lies in its virtual currency engine. Unlike traditional real-money platforms processing single-fiat ledgers, sweepstakes platforms must isolate social entertainment tokens (Gold Coins) from promotional sweepstakes entries (Sweeps Coins).
+        </p>
+        <ul>
+          <li><strong>Real-Time Balance Segregation:</strong> Strict database isolation between Gold Coins and Sweeps Coins to eliminate cross-currency contamination or accidental conversions.</li>
+          <li><strong>Automated Playthrough Tracking:</strong> Granular tracking that distinguishes unplayed promotional Sweeps Coins from played (redeemable) coins, automatically enforcing operator-configured playthrough rules based on promotional terms and applicable jurisdictional requirements.</li>
+          <li><strong>Atomic Transaction Reconciliation:</strong> ACID-compliant ledger writes that ensure point-in-time reconstructibility, preventing race conditions or double-spending during concurrent round debits and credits.</li>
+          <li><strong>Bonus Expiration & Forfeiture Logic:</strong> Automated lifecycle management for promotional coins, including configurable activity timers and expiration rules according to platform terms.</li>
+        </ul>
+
+        <h3>Game Provider and API Integration</h3>
+        <p>
+          Modern sweepstakes casino software must interface seamlessly with certified Remote Game Servers (RGS) and aggregation hubs while preserving dual-currency session context across every spin.
+        </p>
+        <ul>
+          <li><strong>Dynamic Currency Mode Mapping:</strong> Game launch wrappers that securely pass session tokens and active currency mode flags (<code className="text-[#00ebaa]">GC</code> vs <code className="text-[#00ebaa]">SC</code>) to external studios without requiring custom game modifications.</li>
+          <li><strong>Low-Latency Callback Architecture:</strong> High-performance webhook handlers engineered for prompt, reliable bet debit, win credit, and rollback processing to maintain responsive, seamless gameplay across mobile and desktop browsers without guaranteeing fixed response times.</li>
+          <li><strong>Game Aggregator & Studio Connectivity:</strong> Connectivity with certified game aggregation hubs to access video slots, table games, and specialty titles through unified API endpoints. Studio availability and compatibility with sweepstakes dual-currency models depend on provider commercial agreements, technical capabilities, and jurisdictional permissions; not all game providers support sweepstakes integrations without studio-specific verification.</li>
+          <li><strong>Denomination & Certified Math Configuration:</strong> Administrative controls to configure virtual coin denominations and maximum bet thresholds. Where supported and verified by individual studios and independent testing lab certifications, operators can select available Return-to-Player (RTP) profiles aligned with their operational framework.</li>
+        </ul>
+
+        <h3>KYC, Geolocation, and Compliance Controls</h3>
+        <p>
+          Reliable sweepstakes casino software incorporates automated compliance gates that assist operators in enforcing player eligibility, verification thresholds, and jurisdictional boundaries.
+        </p>
+        <ul>
+          <li><strong>Automated Identity Verification (KYC):</strong> Deep API integrations with identity verification vendors (such as Sumsub, Persona, or Veriff) to verify player identity, age, and physical address before unlocking prize redemptions. Specific verification requirements, timing, and threshold triggers depend on applicable state laws and operator risk policies.</li>
+          <li><strong>State-Level Geolocation Restrictions:</strong> Real-time IP, Wi-Fi triangulation, and GPS geolocation engines that detect VPNs, proxy networks, and enforce location boundaries. Restricted jurisdictions are determined by governing state sweepstakes laws and individual operator legal policies.</li>
+          <li><strong>AMOE Processing Systems:</strong> Automated entry code generation engines and administrative postal mail verification queues that facilitate Alternative Method of Entry processing with auditable promotional ledger records. Specific AMOE procedures, submission limits, and validation steps depend on applicable promotional sweepstakes laws and operator official rules.</li>
+          <li><strong>Jurisdiction-Specific Rule Flexibility:</strong> Dynamic rule-engine toggles that allow compliance teams to update eligibility parameters and jurisdictional access rules as governing regulations and operator policies evolve, without requiring core platform code deployments.</li>
+        </ul>
+        <p className="text-sm text-gray-400 italic">
+          *Important Compliance Notice: Software controls provide the technical infrastructure to enforce operator rules, but specific playthrough requirements, restricted jurisdictions, identity verification requirements, and AMOE procedures depend on applicable laws and operator policies. Operators must consult qualified legal counsel to establish their operational compliance framework.
+        </p>
+
+        <h3>Payment and Redemption Infrastructure</h3>
+        <p>
+          A robust sweepstakes casino software stack maintains separate financial conduits for inbound coin package purchases and outbound prize redemptions.
+        </p>
+        <ul>
+          <li><strong>Diversified Checkout Gateways:</strong> Integration with credit/debit card merchant processors, instant open-banking ACH rails, and digital payment methods specifically approved for social gaming purchases.</li>
+          <li><strong>Multi-Tier Redemption Approval Queue:</strong> Configurable back-office review pipelines that evaluate minimum redemption balance thresholds, playthrough compliance, KYC approval status, and velocity flags before dispatching prizes.</li>
+          <li><strong>Direct Payout Rails & Gift Cards:</strong> Automated integrations with payout partners (ACH direct deposit, push-to-card, or digital gift card engines such as Prizeout) for prompt, trackable prize delivery.</li>
+          <li><strong>Financial Ledger Separation:</strong> Isolated accounting pipelines ensuring commercial sales revenue and promotional prize disbursements are reported on distinct financial ledgers.</li>
+        </ul>
+
+        <h3>Security and Operational Monitoring</h3>
+        <p>
+          Enterprise sweepstakes casino software safeguards operator margins and platform integrity against bonus abuse, multi-accounting, and syndicated exploitation.
+        </p>
+        <ul>
+          <li><strong>Multi-Account & Device Fingerprinting:</strong> Heuristic detection engines flagging duplicate player profiles linked by hardware fingerprints, shared IP clusters, payment card numbers, or identical postal addresses.</li>
+          <li><strong>Velocity Monitoring & Automated Holds:</strong> Real-time anomaly detection flagging abnormal purchase frequencies, rapid consecutive redemptions, or suspicious betting patterns.</li>
+          <li><strong>Immutable System Audit Logs:</strong> Cryptographically verifiable database logs tracking every balance adjustment, manual AMOE entry, operator review, and staff permission change.</li>
+          <li><strong>Granular Role-Based Access Control (RBAC):</strong> Strict permission scoping that prevents customer support agents from altering coin balances or approving redemptions without supervisory authorization.</li>
+        </ul>
+
+        <h3>Scalability and Platform Ownership</h3>
+        <p>
+          Long-term success depends on whether your sweepstakes casino software is architected for high-concurrency player volume and transparent intellectual property rights.
+        </p>
+        <ul>
+          <li><strong>Cloud-Native Microservices Architecture:</strong> Containerized back-end services (Docker, Kubernetes) with independent horizontal autoscaling, Redis session caching, and geo-distributed database clustering capable of supporting thousands of simultaneous spins.</li>
+          <li><strong>Mobile-First Frontend Engineering:</strong> Responsive HTML5 and Progressive Web App (PWA) frontends built on modern frameworks (React, Next.js) delivering app-like performance without app store distribution hurdles.</li>
+          <li><strong>High-Availability Infrastructure & Monitoring:</strong> Distributed multi-region hosting, automated health checks, round-the-clock telemetry, DDoS mitigation, and redundant database failover clustering engineered to maintain high availability and operational continuity.</li>
+          <li><strong>Deployment Model Transparency:</strong> Clear contractual clarity between fast-deploy turnkey software (vendor-hosted, managed infrastructure, and pre-integrated catalogs) and custom bespoke development (proprietary source-code access, bespoke features, and operator architectural autonomy).</li>
         </ul>
       </>
     ),
