@@ -7,66 +7,66 @@ export const SWEEPSTAKES_FAQS: FAQItemData[] = [
   {
     question: 'What is sweepstakes casino software?',
     answer:
-      'Sweepstakes casino software is a specialized iGaming platform configured with dual-currency wallets (Gold Coins and Sweeps Coins), promotional distribution rules, AMOE (Alternative Method of Entry) processing, player management, and compliance controls to support sweepstakes-style gaming operations.',
+      'Sweepstakes casino software is a specialized gaming platform that allows operators to run promotional, sweepstakes-style casino games. Unlike traditional real-money gambling platforms, a sweepstakes casino operates using a dual-currency system—typically Gold Coins for free entertainment play and Sweeps Coins for promotional play where eligible winnings can be redeemed for real prizes. The software manages coin balances, game integrations, player accounts, and prize redemptions.',
   },
   {
     question: 'How do Gold Coins and Sweeps Coins work?',
     answer:
-      'Gold Coins are virtual currencies used strictly for entertainment gameplay and can be purchased in coin packages. Sweeps Coins are promotional virtual currencies obtained complimentary through promotions, coin purchases, or AMOE requests, and can be used to participate in sweepstakes games for prize redemption eligibility.',
+      'The platform maintains two separate virtual coin balances for each player. Gold Coins (GC) are purchased in packages strictly for entertainment gameplay and hold no real cash value. Sweeps Coins (SC) are promotional entries that players receive as complimentary bonuses—such as during account registration, daily logins, Gold Coin package purchases, or via an Alternative Method of Entry (AMOE). Players can use Sweeps Coins in promotional gameplay and request to redeem accumulated winnings for real prizes once eligibility conditions are met.',
   },
   {
-    question: 'What is AMOE in a sweepstakes casino?',
+    question: 'What is AMOE (Alternative Method of Entry) and why is it required?',
     answer:
-      'Alternative Method of Entry (AMOE) is a mechanism that allows players to request promotional Sweeps Coins for free without making a purchase, typically via digital forms or mail-in requests. The software automates the processing, verification, rate limiting, and allocation of AMOE entry credits.',
+      'Alternative Method of Entry (AMOE) is a fundamental component of legal sweepstakes promotions that allows participants to enter without making any purchase. In a sweepstakes casino, AMOE is typically handled via mail-in entry cards or digital request forms where players request free Sweeps Coins. The Kvaornux platform provides automated entry code generation, validation queues, rate-limiting, and audit ledgers to help operators process and track AMOE entries efficiently.',
   },
   {
     question: 'What is the difference between a sweepstakes casino and a real-money casino?',
     answer:
-      'A real-money casino processes direct cash wagers and payouts under gaming licenses. A sweepstakes casino operates using a dual virtual currency system where gameplay occurs using virtual coins, and promotional coins can be accumulated and reviewed for prize redemptions under specific promotional sweepstakes rules.',
+      'A real-money online casino requires a formal gambling license to accept direct cash deposits, process wagers in fiat currency, and pay out cash winnings. A sweepstakes casino operates under promotional sweepstakes laws rather than traditional gambling regulations. Players never deposit or wager real money directly on games; instead, they play with virtual Gold Coins or promotional Sweeps Coins, and eligible Sweeps Coin prizes are reviewed and redeemed through an operator-managed workflow.',
   },
   {
     question: 'Can Kvaornux build a custom sweepstakes casino platform?',
     answer:
-      'Yes. Kvaornux develops custom sweepstakes technology tailored to an operator’s proprietary workflows, branded player interfaces, specific payment gateways, and custom backend administration requirements.',
+      'Yes. Kvaornux offers custom sweepstakes software development for operators who want a bespoke solution. This includes developing tailored player interfaces (UI/UX), proprietary wallet and playthrough rules, custom backend administration consoles, specialized payment processor integrations, and bespoke loyalty and promotional mechanics built to your exact specifications.',
   },
   {
     question: 'What is included in turnkey sweepstakes casino software?',
     answer:
-      'A turnkey project starts from an established platform core, with branding, wallet rules, player management and operator workflows configured to the agreed scope. Confirm which game, payment, verification and geolocation integrations are included, which need separate provider agreements and which require additional development.',
+      'Turnkey sweepstakes casino software provides a pre-configured platform core that allows operators to launch faster with lower upfront engineering overhead. It includes an established dual-currency wallet, responsive player lobby, integrated casino game aggregators, player account management (PAM), fraud detection tools, and an operator back-office dashboard. You can customize the platform with your brand logo, color palette, and operational parameters.',
   },
   {
     question: 'Can multiple casino game providers be integrated?',
     answer:
-      'Compatible game-provider and aggregation APIs can connect multiple content studios to the platform. Before selecting a catalog, confirm each provider’s sweepstakes usage rights, supported currencies, wallet callbacks and commercial terms. A provider’s availability for a real-money casino does not by itself confirm availability for a sweepstakes product.',
+      'Yes. Compatible game studios and aggregation APIs can be integrated into the platform to offer slots, table games, live dealer streams, fish games, and crash games. During the project scoping phase, we confirm which game providers support dual-currency sweepstakes callbacks and help coordinate the technical integration to display games within your branded player lobby.',
   },
   {
-    question: 'How does sweepstakes prize redemption work?',
+    question: 'How does the prize redemption workflow operate?',
     answer:
-      'A player requests redemption from an eligible Sweeps Coin balance. The configured workflow can route that request through eligibility checks, identity and location verification, and operator review before an approved payout integration processes the prize. Available payout methods and review rules depend on the operator’s setup and provider agreements.',
+      'When a player submits a prize redemption request from their eligible Sweeps Coin balance, the platform automatically validates that minimum redemption thresholds and playthrough requirements have been satisfied. The request is then placed in an operator back-office queue where administrative staff can review identity verification (KYC), check geolocation records, and approve the payout through connected banking, gift card, or payment channels.',
   },
   {
-    question: 'Can KYC and geolocation providers be integrated?',
+    question: 'Can identity verification (KYC) and geolocation services be integrated?',
     answer:
-      'Yes. The platform includes modular API integrations for leading identity verification (KYC) and state-level geolocation providers to enforce age, identity, and jurisdictional rules.',
+      'Yes. The platform includes modular API hooks for third-party identity verification (KYC), anti-money laundering (AML), and geolocation providers. These integrations allow operators to verify player age, confirm identity documents, detect VPNs or proxies, and restrict access from jurisdictions where sweepstakes promotions are prohibited or restricted by local laws.',
   },
   {
-    question: 'How long does sweepstakes casino software development take?',
+    question: 'How long does it take to launch a sweepstakes casino?',
     answer:
-      'Development timelines depend on the project scope, level of custom UI/UX design, required third-party integrations, and operating configurations. Turnkey setups launch faster, while custom bespoke development follows a structured multi-phase roadmap.',
+      'Launch timelines depend on whether you select a turnkey platform or custom software development. Turnkey implementations can be deployed more rapidly because the core platform modules are pre-built, requiring primarily branding configuration, provider connections, and testing. Custom bespoke projects follow a phased development roadmap covering discovery, UX/UI design, custom engineering, QA, and deployment based on your technical scope.',
   },
   {
-    question: 'What affects the cost of sweepstakes casino software?',
+    question: 'What factors determine the development cost of a sweepstakes platform?',
     answer:
-      'The delivery model, branding, wallet rules, integrations and back-office requirements all affect the scope. When comparing proposals, separate platform setup or development from hosting, maintenance and third-party charges such as game content, payment processing and verification services. Ask which costs are included and which require separate agreements.',
+      'The total investment depends on your chosen delivery model (turnkey configuration vs. custom development), the depth of custom UI/UX design, the number of third-party game and payment integrations, and specific back-office requirements. In addition to software development or platform licensing fees, operators should account for ongoing operational expenses such as game aggregator revenue shares, payment processing fees, and identity/geolocation provider costs.',
   },
   {
-    question: 'Will I own the source code for my sweepstakes platform?',
+    question: 'Who owns the source code and player data?',
     answer:
-      'Source-code access and ownership depend on the agreed delivery model and contract. Custom development does not automatically mean every third-party component transfers to you. Before signing, confirm platform licensing, code access, data access, handover responsibilities and the terms for future changes.',
+      'Source-code licensing and ownership terms depend on the agreed contractual agreement and delivery model. With custom development arrangements, operators can negotiate specific intellectual property rights for custom-built frontends and proprietary logic, while standard turnkey deployments typically involve licensed platform access. In all cases, operators maintain full ownership and access to their customer and operational player data.',
   },
   {
-    question: 'What should I prepare before requesting a platform proposal?',
+    question: 'What should I prepare before contacting Kvaornux for a proposal?',
     answer:
-      'Share your preferred delivery model, intended operating markets, player journeys, wallet and redemption requirements, existing systems and preferred providers. Include your budget range and target launch date so the team can assess the scope and dependencies. Provider compatibility and commercial arrangements need to be confirmed during scoping.',
+      'To help us provide an accurate proposal, prepare an overview of your target operating jurisdictions, preferred delivery model (turnkey vs. custom), estimated project budget, desired launch timeline, and any specific game studios, payment processors, or verification providers you want to integrate. Our team will review your requirements and outline recommended technical options.',
   },
 ];

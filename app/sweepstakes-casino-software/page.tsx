@@ -4,17 +4,17 @@ import { SWEEPSTAKES_FAQS } from './faqData';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Sweepstakes Casino Software for Operators | KVAORNUX',
+    absolute: 'Sweepstakes Casino Software & Platform Solutions | Kvaornux',
   },
   description:
-    'Sweepstakes casino software with dual-currency wallets, game integrations and operator tools. Explore turnkey and custom options for your platform.',
+    'Launch your sweepstakes casino platform with dual-currency wallets, game integrations, AMOE support, and back-office management. Explore turnkey and custom software solutions.',
   alternates: {
     canonical: 'https://kvaornux.com/sweepstakes-casino-software',
   },
   openGraph: {
-    title: 'Sweepstakes Casino Software for Operators | KVAORNUX',
+    title: 'Sweepstakes Casino Software & Platform Solutions | Kvaornux',
     description:
-      'Sweepstakes casino software with dual-currency wallets, game integrations and operator tools. Explore turnkey and custom options for your platform.',
+      'Launch your sweepstakes casino platform with dual-currency wallets, game integrations, AMOE support, and back-office management. Explore turnkey and custom software solutions.',
     url: 'https://kvaornux.com/sweepstakes-casino-software',
     siteName: 'Kvaornux',
     type: 'website',
@@ -23,15 +23,15 @@ export const metadata: Metadata = {
         url: 'https://kvaornux.com/assets/og-image.webp',
         width: 1200,
         height: 630,
-        alt: 'Sweepstakes Casino Software for Operators | KVAORNUX',
+        alt: 'Sweepstakes Casino Software & Platform Solutions | Kvaornux',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sweepstakes Casino Software for Operators | KVAORNUX',
+    title: 'Sweepstakes Casino Software & Platform Solutions | Kvaornux',
     description:
-      'Sweepstakes casino software with dual-currency wallets, game integrations and operator tools. Explore turnkey and custom options for your platform.',
+      'Launch your sweepstakes casino platform with dual-currency wallets, game integrations, AMOE support, and back-office management. Explore turnkey and custom software solutions.',
     images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
@@ -60,7 +60,7 @@ export default function SweepstakesPage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': 'https://kvaornux.com/sweepstakes-casino-software#service',
-    name: 'Sweepstakes Casino Software for Operators',
+    name: 'Sweepstakes Casino Software & Platform Solutions',
     url: 'https://kvaornux.com/sweepstakes-casino-software',
     provider: {
       '@type': 'Organization',
@@ -69,7 +69,7 @@ export default function SweepstakesPage() {
       url: 'https://kvaornux.com/',
     },
     description:
-      'Sweepstakes casino software with dual-currency wallets, game integrations and operator tools. Explore turnkey and custom options for your platform.',
+      'Launch your sweepstakes casino platform with dual-currency wallets, game integrations, AMOE support, and back-office management. Explore turnkey and custom software solutions.',
     areaServed: 'Global',
     serviceType: 'iGaming Platform Development',
   };

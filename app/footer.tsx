@@ -231,7 +231,7 @@ export default function Footer() {
                 <EmailIcon />
               </a>
               <a
-                href="https://t.me/vikash9876g"
+                href="https://t.me/kvaornux"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contact Kvaornux on Telegram"

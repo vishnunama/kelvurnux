@@ -413,7 +413,7 @@ export default function TurnkeySweepstakesClient() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Launch your online sweepstakes casino on an established platform core. Kvaornux configures branding, Gold Coin and Sweeps Coin workflows, compatible integrations and operator tools around your agreed project scope.
+              Launch your online sweepstakes casino on established turnkey sweepstakes systems built around a proven platform core. Essential modules—including dual-currency wallets, AMOE entry tracking, and operator back-office administration—are ready to deploy, while Kvaornux configures your brand identity, compatible game integrations, and payment workflows around agreed project requirements.
             </p>
           </div>
 
