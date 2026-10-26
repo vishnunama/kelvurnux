@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { faqList } from './faqData';
 import { usePathname } from 'next/navigation';
 import FAQSection from '@/src/components/FAQSection/FAQSection';
 import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBanner';
@@ -507,8 +508,8 @@ const blogSections: BlogSection[] = [
             <tbody>
               <tr>
                 <td><strong>Time to Market</strong></td>
-                <td>Rapid deployment (2-4 weeks typical)</td>
-                <td>Extended build timeline (3-6 months typical)</td>
+                <td>Configuration-led delivery; timing depends on scope and provider readiness</td>
+                <td>Development milestones defined after technical discovery</td>
               </tr>
               <tr>
                 <td><strong>Front-End Customization</strong></td>
@@ -661,21 +662,21 @@ const blogSections: BlogSection[] = [
               </tr>
               <tr>
                 <td><strong>Ongoing Platform Model</strong></td>
-                <td>Higher monthly revenue-share percentage</td>
-                <td>Tiered revenue share + baseline platform fee</td>
-                <td>Predictable infrastructure & maintenance overhead</td>
+                <td>Check setup fees, recurring charges, minimums and any revenue share</td>
+                <td>Confirm licensing, support and third-party service charges separately</td>
+                <td>Budget development, hosting, maintenance and any licensed components</td>
               </tr>
               <tr>
                 <td><strong>Source Code & IP Rights</strong></td>
-                <td>Vendor-owned SaaS (no code access)</td>
-                <td>Vendor-licensed core (optional modular licensing)</td>
-                <td>Operator-owned source code or perpetual IP license</td>
+                <td>Check platform licensing, permitted access and data-export rights</td>
+                <td>Confirm core licensing, code access and handover terms in the contract</td>
+                <td>Define ownership of commissioned code and third-party license exclusions</td>
               </tr>
               <tr>
                 <td><strong>Game Studio Flexibility</strong></td>
                 <td>Restricted to vendor&apos;s pre-contracted catalog</td>
                 <td>Broad selection of pre-integrated aggregation hubs</td>
-                <td>Total autonomy to integrate any studio or proprietary RGS</td>
+                <td>Scope selected studios or RGS integrations subject to compatibility and content rights</td>
               </tr>
               <tr>
                 <td><strong>Payment Gateway Selection</strong></td>
@@ -706,7 +707,7 @@ const blogSections: BlogSection[] = [
         </div>
 
         <p>
-          When evaluating software proposals, operators should look beyond initial setup quotes and model the total cost of ownership (TCO) across 12 to 24 months. Clarifying game provider minimums, payment gateway transaction fees, KYC verification unit costs, and revenue-share thresholds upfront ensures a transparent commercial roadmap aligned with long-term platform profitability. Learn more about our comprehensive platform capabilities in our <Link href="/sweepstakes-casino-software" className="text-cyan-400 underline hover:text-cyan-300">sweepstakes casino software</Link> overview.
+          Compare proposals using the same scope and planning period. Delivery-model labels do not establish the fees, ownership rights or third-party approvals in your contract. Public offerings from <a href="https://www.tecpinion.com/sweepstakes-management-software/" className="text-cyan-400 underline hover:text-cyan-300" target="_blank" rel="noopener noreferrer">Tecpinion</a> and <a href="https://omisoft.net/service/sweepstakes-casino-software-development/" className="text-cyan-400 underline hover:text-cyan-300" target="_blank" rel="noopener noreferrer">OmiSoft</a> illustrate vendor-specific packaging; they are examples, not independently tested recommendations. Ask for itemized setup, maintenance and provider charges, and review Kvaornux&apos;s <Link href="/sweepstakes-casino-software" className="text-cyan-400 underline hover:text-cyan-300">sweepstakes casino software</Link> options against your requirements.
         </p>
       </>
     ),
@@ -1072,58 +1073,7 @@ const blogSections: BlogSection[] = [
   },
 ];
 
-export const faqList = [
-  {
-    question: 'What is sweepstakes casino software?',
-    answer:
-      'Sweepstakes casino software is the core technology platform that manages dual-currency balances (Gold Coins and Sweeps Coins), player accounts, game API integrations, AMOE entry processing, KYC verification, geolocation controls, and prize redemption approval queues.',
-  },
-  {
-    question: 'How do Gold Coins and Sweeps Coins work?',
-    answer:
-      'Gold Coins are virtual social tokens used strictly for fun gameplay with zero cash value. Sweeps Coins are promotional tokens given complimentary via bonuses, AMOE, or GC package gifts; eligible SC winnings can be redeemed for prizes after meeting playthrough and verification requirements.',
-  },
-  {
-    question: 'What is AMOE in a sweepstakes casino?',
-    answer:
-      'Alternative Method of Entry (AMOE) is a promotional requirement allowing players to request free Sweeps Coins without making a purchase, typically processed via mail-in requests or digital code generation tools managed in the back office.',
-  },
-  {
-    question: 'Is sweepstakes casino software the same as real-money casino software?',
-    answer:
-      'No. While both integrate casino games and player account management, sweepstakes software operates on a dual-currency ledger with promotional rules, AMOE processing, and prize redemption workflows instead of direct real-money wagering.',
-  },
-  {
-    question: 'Can sweepstakes casino software integrate multiple game providers?',
-    answer:
-      'Yes. Modern sweepstakes software connects to multiple game studios and game aggregation APIs to deliver video slots, table games, crash games, and live dealer streams adapted for dual-currency play.',
-  },
-  {
-    question: 'How does prize redemption work?',
-    answer:
-      'Players submit a redemption request for eligible Sweeps Coins. The platform verifies minimum balance thresholds, playthrough history, and KYC identity verification before sending the request to the back-office queue for approval and payout.',
-  },
-  {
-    question: 'Why are KYC and geolocation controls used?',
-    answer:
-      'KYC (Know Your Customer) verifies player identity, age, and address before prize redemptions. Geolocation controls check player location in real time to restrict access in non-permitted jurisdictions based on operator configuration.',
-  },
-  {
-    question: 'What is the difference between turnkey and custom sweepstakes software?',
-    answer:
-      'Turnkey software provides a pre-configured platform with ready-to-launch templates, game catalogs, and payment channels for fast deployment. Custom development builds tailored UI/UX, bespoke feature logic, and proprietary API integrations.',
-  },
-  {
-    question: 'Can a sweepstakes platform support web and mobile users?',
-    answer:
-      'Yes. Modern sweepstakes casino platforms are built using responsive web frameworks (like React or Next.js) and Progressive Web Apps (PWAs) that run seamlessly on desktop, tablet, and smartphone browsers.',
-  },
-  {
-    question: 'How long does it take to build a sweepstakes casino platform?',
-    answer:
-      'A turnkey sweepstakes casino platform can typically be configured and launched within 2 to 4 weeks, whereas a fully custom platform build generally takes 3 to 6 months depending on feature requirements.',
-  },
-];
+
 
 export default function SweepstakesSoftwareBlogClient() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -1241,12 +1191,12 @@ export default function SweepstakesSoftwareBlogClient() {
 
                     {section.showCta && (
                       <div className="mt-8 pt-8 border-t border-gray-700/50">
-                        <a
+                        <Link
                           href="/#contact-form-section"
                           className="gradient-button px-6 py-3 rounded-lg font-bold text-black inline-block text-base hover:shadow-lg transition-shadow"
                         >
                           {section.ctaText || 'Get Demo'}
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </div>

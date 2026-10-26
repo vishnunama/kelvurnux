@@ -297,7 +297,7 @@ export default function CustomSweepstakesClient() {
     {
       question: 'How long does custom Sweepstakes casino development take?',
       answer:
-        'The timeline depends on platform architecture, UI/UX requirements, custom workflows, wallet logic, game integrations, payments, verification services and overall project scope. The delivery schedule is defined after technical discovery and scope confirmation.'
+        'The schedule depends on architecture, player experience, wallet rules, integrations and testing requirements. Define deliverables, acceptance criteria, provider dependencies and handover responsibilities during technical discovery before agreeing development milestones.'
     }
   ];
 
@@ -401,7 +401,7 @@ export default function CustomSweepstakesClient() {
               ref={(el) => { elementsRef.current[0] = el; }}
               data-anim="from-top"
             >
-              Custom Sweepstakes Casino Software Built Around Your Operating Model
+              Custom Sweepstakes Casino Software Development
             </h1>
           </div>
 
@@ -413,7 +413,7 @@ export default function CustomSweepstakesClient() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Build a Sweepstakes platform around your own product requirements, player journeys and operational workflows — from custom Gold Coin and Sweeps Coin logic to integrations, redemption systems, back-office controls and scalable platform architecture.
+              Kvaornux develops custom sweepstakes casino platforms around your product requirements. Define Gold Coin and Sweeps Coin logic, player journeys, integrations, redemption workflows and operator tools within an agreed development scope.
             </p>
           </div>
 
@@ -533,7 +533,7 @@ export default function CustomSweepstakesClient() {
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
               >
-                Build the Sweepstakes Platform Your Business Actually Requires
+                Sweepstakes Software Development Around Your Requirements
               </h2>
 
               <p
@@ -576,7 +576,7 @@ export default function CustomSweepstakesClient() {
                   }}
                 >
                   <span className="relative z-10 text-sm sm:text-base font-bold text-black">
-                    Discuss Custom Requirements
+                    Discuss Your Development Project
                   </span>
                 </button>
               </div>
@@ -638,7 +638,7 @@ export default function CustomSweepstakesClient() {
 
       {/* Opportunities Section */}
       <OpportunitiesSection />
-      <ContactForm />
+      <ContactForm defaultCategory="Sweepstakes Casino Software" />
 
     </>
   );

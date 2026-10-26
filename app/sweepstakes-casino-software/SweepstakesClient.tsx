@@ -423,7 +423,7 @@ export default function SweepstakesClient() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Build and operate a sweepstakes casino through a connected technology stack covering dual-currency wallets, promotional entry workflows, game integrations, payments, player verification, prize redemption and operator back-office controls.
+              Kvaornux provides sweepstakes casino software connecting Gold Coin and Sweeps Coin wallets, player accounts, promotional entries, game integrations and prize-redemption workflows. Choose turnkey configuration or custom development around your operating requirements.
             </p>
           </div>
 
@@ -567,7 +567,7 @@ export default function SweepstakesClient() {
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
               >
-                Everything Operators Need in One Sweepstakes Platform
+                Core Capabilities of a Sweepstakes Casino Platform
               </h2>
 
               <p
@@ -576,7 +576,7 @@ export default function SweepstakesClient() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                A connected operational stack for managing virtual currencies, player activity, game content, payments, promotional participation, prize redemption and day-to-day platform administration.
+                Manage player activity, virtual-currency records, promotional participation and redemption reviews through a connected operator environment. Confirm the required modules, compatible providers and integration responsibilities when defining your project scope.
               </p>
 
               <div
@@ -602,7 +602,7 @@ export default function SweepstakesClient() {
                   }}
                 >
                   <span className="relative z-10 text-sm sm:text-base font-bold text-black">
-                    Discuss Sweepstakes Scope
+                    Discuss Your Sweepstakes Project
                   </span>
                 </button>
               </div>
@@ -657,7 +657,7 @@ export default function SweepstakesClient() {
               Turnkey vs Custom Sweepstakes Casino Software
             </h2>
             <p className="text-[#a5a5a5] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">
-              Evaluate the right delivery model for your business based on speed-to-market, custom workflow requirements, and long-term technical control.
+              Choose turnkey configuration when an established platform core fits your requirements. Consider custom development for proprietary workflows or deeper architectural changes, and confirm integration, licensing and handover terms before selecting a delivery model.
             </p>
           </div>
 

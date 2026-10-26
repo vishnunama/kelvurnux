@@ -164,9 +164,14 @@ export default function ContactForm({ defaultCategory = '' }: ContactFormProps) 
 
   const triggerConversionTracking = () => {
     try {
+      if (typeof window === 'undefined') return;
+      const trackingWindow = window as Window & {
+        gtag?: (...args: unknown[]) => void;
+        dataLayer?: { push: (event: Record<string, unknown>) => unknown };
+      };
       // Google Ads conversion tracking
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'conversion', {
+      if (typeof trackingWindow.gtag === 'function') {
+        trackingWindow.gtag('event', 'conversion', {
           'send_to': 'AW-17927403225/2YcnCLDf-rsCEar22e0p',
           'value': 1.0,
           'currency': 'USD'
@@ -174,16 +179,18 @@ export default function ContactForm({ defaultCategory = '' }: ContactFormProps) 
       }
 
       // Google Tag Manager event
-      if (typeof window !== 'undefined' && (window as any).dataLayer) {
-        (window as any).dataLayer.push({
+      if (trackingWindow.dataLayer && typeof trackingWindow.dataLayer.push === 'function') {
+        trackingWindow.dataLayer.push({
           'event': 'form_submission',
           'eventCategory': 'engagement',
           'eventAction': 'form_submit',
-          'eventLabel': 'contact_form_success'
+          'eventLabel': 'contact_form_success',
+          // Public route and selected solution only; never include enquiry text or contact details.
+          'page_path': window.location.pathname,
+          'solution_category': formData.category
         });
       }
 
-      console.log('Form submitted - Conversion tracked');
     } catch (error) {
       console.error('Error tracking conversion:', error);
     }
@@ -216,9 +223,12 @@ export default function ContactForm({ defaultCategory = '' }: ContactFormProps) 
         }),
       });
 
-      let data: any = null;
+      let data: { success?: unknown; error?: unknown } | null = null;
       try {
-        data = await res.json();
+        const acknowledgement: unknown = await res.json();
+        if (acknowledgement && typeof acknowledgement === 'object') {
+          data = acknowledgement;
+        }
       } catch {
         // Non-JSON or broken response
       }
@@ -243,7 +253,9 @@ export default function ContactForm({ defaultCategory = '' }: ContactFormProps) 
         }, 400);
       } else {
         // Backend did not confirm receipt or returned an error
-        const errorMsg = data?.error || 'Unable to submit your enquiry at the moment. Please try again or contact us directly on WhatsApp or Telegram.';
+        const errorMsg = typeof data?.error === 'string' && data.error
+          ? data.error
+          : 'Unable to submit your enquiry at the moment. Please try again or contact us directly on WhatsApp or Telegram.';
         setSubmitError(errorMsg);
         setIsSubmitting(false);
         submitInProgressRef.current = false;
@@ -292,7 +304,7 @@ export default function ContactForm({ defaultCategory = '' }: ContactFormProps) 
             {/* Left Side - Content */}
             <div className="flex flex-col justify-top">
               <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent">
-                Tell Us What You're Building
+                Tell Us What You&apos;re Building
               </h3>
               <p className="text-[#a5a5a5] text-base sm:text-lg md:text-lg lg:text-xl mb-6 sm:mb-8 font-light">
                 Share a few details about your project and how we can reach you.

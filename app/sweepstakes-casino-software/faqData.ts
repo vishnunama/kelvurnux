@@ -32,17 +32,17 @@ export const SWEEPSTAKES_FAQS: FAQItemData[] = [
   {
     question: 'What is included in turnkey sweepstakes casino software?',
     answer:
-      'A turnkey sweepstakes software solution includes pre-configured dual-currency wallet ledgers, game aggregation, payment processing, KYC/geolocation integrations, bonus engines, player account management, and a complete admin back office.',
+      'A turnkey project starts from an established platform core, with branding, wallet rules, player management and operator workflows configured to the agreed scope. Confirm which game, payment, verification and geolocation integrations are included, which need separate provider agreements and which require additional development.',
   },
   {
     question: 'Can multiple casino game providers be integrated?',
     answer:
-      'Yes. Through Kvaornux’s game aggregation layer, operators can integrate slots, live dealer, table games, crash games, and fish games from multiple content studios into a single sweepstakes platform environment.',
+      'Compatible game-provider and aggregation APIs can connect multiple content studios to the platform. Before selecting a catalog, confirm each provider’s sweepstakes usage rights, supported currencies, wallet callbacks and commercial terms. A provider’s availability for a real-money casino does not by itself confirm availability for a sweepstakes product.',
   },
   {
     question: 'How does sweepstakes prize redemption work?',
     answer:
-      'Players submit a redemption request for eligible Sweeps Coins balance. The platform routes the request through automated playthrough verification, identity verification (KYC), location checks, and administrative risk review before processing payouts via bank transfer, gift cards, or approved payout gateways.',
+      'A player requests redemption from an eligible Sweeps Coin balance. The configured workflow can route that request through eligibility checks, identity and location verification, and operator review before an approved payout integration processes the prize. Available payout methods and review rules depend on the operator’s setup and provider agreements.',
   },
   {
     question: 'Can KYC and geolocation providers be integrated?',
@@ -53,5 +53,20 @@ export const SWEEPSTAKES_FAQS: FAQItemData[] = [
     question: 'How long does sweepstakes casino software development take?',
     answer:
       'Development timelines depend on the project scope, level of custom UI/UX design, required third-party integrations, and operating configurations. Turnkey setups launch faster, while custom bespoke development follows a structured multi-phase roadmap.',
+  },
+  {
+    question: 'What affects the cost of sweepstakes casino software?',
+    answer:
+      'The delivery model, branding, wallet rules, integrations and back-office requirements all affect the scope. When comparing proposals, separate platform setup or development from hosting, maintenance and third-party charges such as game content, payment processing and verification services. Ask which costs are included and which require separate agreements.',
+  },
+  {
+    question: 'Will I own the source code for my sweepstakes platform?',
+    answer:
+      'Source-code access and ownership depend on the agreed delivery model and contract. Custom development does not automatically mean every third-party component transfers to you. Before signing, confirm platform licensing, code access, data access, handover responsibilities and the terms for future changes.',
+  },
+  {
+    question: 'What should I prepare before requesting a platform proposal?',
+    answer:
+      'Share your preferred delivery model, intended operating markets, player journeys, wallet and redemption requirements, existing systems and preferred providers. Include your budget range and target launch date so the team can assess the scope and dependencies. Provider compatibility and commercial arrangements need to be confirmed during scoping.',
   },
 ];

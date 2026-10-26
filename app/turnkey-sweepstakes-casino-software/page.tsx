@@ -3,17 +3,17 @@ import TurnkeySweepstakesClient from './TurnkeySweepstakesClient';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Turnkey Sweepstakes Casino Software & Platform | Kvaornux',
+    absolute: 'Turnkey Sweepstakes Casino Software & Systems | Kvaornux',
   },
   description:
-    'Launch a branded turnkey sweepstakes casino platform with Gold Coins, Sweeps Coins, AMOE workflows, game integrations, payments, KYC, geolocation, prize redemption and operator back office.',
+    'Turnkey sweepstakes casino software with dual-currency wallets, game integrations and back-office tools. Discuss configuration and launch requirements with Kvaornux.',
   alternates: {
     canonical: 'https://kvaornux.com/turnkey-sweepstakes-casino-software',
   },
   openGraph: {
-    title: 'Turnkey Sweepstakes Casino Software & Platform | Kvaornux',
+    title: 'Turnkey Sweepstakes Casino Software & Systems | Kvaornux',
     description:
-      'Launch a branded turnkey sweepstakes casino platform with Gold Coins, Sweeps Coins, AMOE workflows, game integrations, payments, KYC, geolocation, prize redemption and operator back office.',
+      'Turnkey sweepstakes casino software with dual-currency wallets, game integrations and back-office tools. Discuss configuration and launch requirements with Kvaornux.',
     url: 'https://kvaornux.com/turnkey-sweepstakes-casino-software',
     siteName: 'Kvaornux',
     type: 'website',
@@ -22,15 +22,15 @@ export const metadata: Metadata = {
         url: 'https://kvaornux.com/assets/og-image.webp',
         width: 1200,
         height: 630,
-        alt: 'Turnkey Sweepstakes Casino Software & Platform | Kvaornux',
+        alt: 'Turnkey Sweepstakes Casino Software & Systems | Kvaornux',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Turnkey Sweepstakes Casino Software & Platform | Kvaornux',
+    title: 'Turnkey Sweepstakes Casino Software & Systems | Kvaornux',
     description:
-      'Launch a branded turnkey sweepstakes casino platform with Gold Coins, Sweeps Coins, AMOE workflows, game integrations, payments, KYC, geolocation, prize redemption and operator back office.',
+      'Turnkey sweepstakes casino software with dual-currency wallets, game integrations and back-office tools. Discuss configuration and launch requirements with Kvaornux.',
     images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
@@ -150,7 +150,7 @@ export default function Page() {
         name: 'How long does a turnkey Sweepstakes Casino take to launch?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The timeline depends on branding, platform configuration, game integrations, payment services, verification providers and other project requirements. Kvaornux defines the delivery schedule after the technical scope and required integrations are confirmed.',
+          text: 'Launch timing depends on branding, platform configuration, integration work, provider onboarding and acceptance testing. Kvaornux defines the delivery schedule after scope confirmation; game-content rights, payment approvals and the operator’s legal review must also be considered before launch.',
         },
       },
     ],

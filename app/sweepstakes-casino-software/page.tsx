@@ -7,14 +7,14 @@ export const metadata: Metadata = {
     absolute: 'Sweepstakes Casino Software for Operators | KVAORNUX',
   },
   description:
-    'Sweepstakes casino software for operators. Launch dual-currency wallets (GC/SC), AMOE processing, KYC, geolocation controls, game aggregation & back office.',
+    'Sweepstakes casino software with dual-currency wallets, game integrations and operator tools. Explore turnkey and custom options for your platform.',
   alternates: {
     canonical: 'https://kvaornux.com/sweepstakes-casino-software',
   },
   openGraph: {
     title: 'Sweepstakes Casino Software for Operators | KVAORNUX',
     description:
-      'Sweepstakes casino software for operators. Launch dual-currency wallets (GC/SC), AMOE processing, KYC, geolocation controls, game aggregation & back office.',
+      'Sweepstakes casino software with dual-currency wallets, game integrations and operator tools. Explore turnkey and custom options for your platform.',
     url: 'https://kvaornux.com/sweepstakes-casino-software',
     siteName: 'Kvaornux',
     type: 'website',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Sweepstakes Casino Software for Operators | KVAORNUX',
     description:
-      'Sweepstakes casino software for operators. Launch dual-currency wallets (GC/SC), AMOE processing, KYC, geolocation controls, game aggregation & back office.',
+      'Sweepstakes casino software with dual-currency wallets, game integrations and operator tools. Explore turnkey and custom options for your platform.',
     images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
@@ -69,7 +69,7 @@ export default function SweepstakesPage() {
       url: 'https://kvaornux.com/',
     },
     description:
-      'Sweepstakes casino software for operators. Launch dual-currency wallets (GC/SC), AMOE processing, KYC, geolocation controls, game aggregation & back office.',
+      'Sweepstakes casino software with dual-currency wallets, game integrations and operator tools. Explore turnkey and custom options for your platform.',
     areaServed: 'Global',
     serviceType: 'iGaming Platform Development',
   };

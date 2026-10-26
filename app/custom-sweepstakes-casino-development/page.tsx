@@ -6,14 +6,14 @@ export const metadata: Metadata = {
     absolute: 'Custom Sweepstakes Casino Software Development | Kvaornux',
   },
   description:
-    'Build custom sweepstakes casino software around your operating model with tailored Gold Coin and Sweeps Coin logic, AMOE workflows, integrations, redemption systems, back office and platform architecture.',
+    'Custom sweepstakes casino software development for tailored wallet logic, player workflows and integrations. Discuss your platform requirements with Kvaornux.',
   alternates: {
     canonical: 'https://kvaornux.com/custom-sweepstakes-casino-development',
   },
   openGraph: {
     title: 'Custom Sweepstakes Casino Software Development | Kvaornux',
     description:
-      'Build custom sweepstakes casino software around your operating model with tailored Gold Coin and Sweeps Coin logic, AMOE workflows, integrations, redemption systems, back office and platform architecture.',
+      'Custom sweepstakes casino software development for tailored wallet logic, player workflows and integrations. Discuss your platform requirements with Kvaornux.',
     url: 'https://kvaornux.com/custom-sweepstakes-casino-development',
     siteName: 'Kvaornux',
     type: 'website',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Custom Sweepstakes Casino Software Development | Kvaornux',
     description:
-      'Build custom sweepstakes casino software around your operating model with tailored Gold Coin and Sweeps Coin logic, AMOE workflows, integrations, redemption systems, back office and platform architecture.',
+      'Custom sweepstakes casino software development for tailored wallet logic, player workflows and integrations. Discuss your platform requirements with Kvaornux.',
     images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
@@ -150,7 +150,7 @@ export default function Page() {
         name: 'How long does custom Sweepstakes casino development take?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The timeline depends on platform architecture, UI/UX requirements, custom workflows, wallet logic, game integrations, payments, verification services and overall project scope. The delivery schedule is defined after technical discovery and scope confirmation.',
+          text: 'The schedule depends on architecture, player experience, wallet rules, integrations and testing requirements. Define deliverables, acceptance criteria, provider dependencies and handover responsibilities during technical discovery before agreeing development milestones.',
         },
       },
     ],

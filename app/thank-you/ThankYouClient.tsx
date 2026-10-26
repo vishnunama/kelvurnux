@@ -1,33 +1,9 @@
 'use client';
 
-import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function ThankYouClient() {
   const router = useRouter();
-
-  useEffect(() => {
-    // Trigger conversion event when page loads
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'conversion', {
-        'send_to': 'AW-17927403225/2YcnCLDf-rsCEar22e0p',
-        'value': 1.0,
-        'currency': 'USD'
-      });
-    }
-
-    // Google Tag Manager event
-    if (typeof window !== 'undefined' && (window as any).dataLayer) {
-      (window as any).dataLayer.push({
-        'event': 'form_submission',
-        'eventCategory': 'engagement',
-        'eventAction': 'form_submit',
-        'eventLabel': 'contact_form_success'
-      });
-    }
-
-    console.log('Thank you page loaded - Conversion tracked');
-  }, []);
 
   const handleClose = () => {
     router.push('/');

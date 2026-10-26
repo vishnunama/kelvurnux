@@ -183,9 +183,9 @@ export default function TurnkeySweepstakesClient() {
     {
       id: 10,
       icon: Rocket,
-      title: 'Turnkey & Custom Launch Options',
+      title: 'Turnkey Configuration or Custom Development',
       description:
-        'Launch from an established Turnkey Sweepstakes platform architecture configured around your brand and required integrations, or commission a custom development roadmap for proprietary product requirements.'
+        'Choose a turnkey sweepstakes system when an established platform core fits your requirements. Scope custom development separately for proprietary architecture, specialized wallet rules or deeper operational changes.'
     }
   ];
 
@@ -297,7 +297,7 @@ export default function TurnkeySweepstakesClient() {
     {
       question: 'How long does a turnkey Sweepstakes Casino take to launch?',
       answer:
-        'The timeline depends on branding, platform configuration, game integrations, payment services, verification providers and other project requirements. Kvaornux defines the delivery schedule after the technical scope and required integrations are confirmed.'
+        'Launch timing depends on branding, platform configuration, integration work, provider onboarding and acceptance testing. Kvaornux defines the delivery schedule after scope confirmation; game-content rights, payment approvals and the operator’s legal review must also be considered before launch.'
     }
   ];
 
@@ -401,7 +401,7 @@ export default function TurnkeySweepstakesClient() {
               ref={(el) => { elementsRef.current[0] = el; }}
               data-anim="from-top"
             >
-              Turnkey Sweepstakes Casino Software Built for Faster Market Entry
+              Turnkey Sweepstakes Casino Software
             </h1>
           </div>
 
@@ -413,7 +413,7 @@ export default function TurnkeySweepstakesClient() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Launch your Sweepstakes brand on an established platform architecture configured around your identity, operating model and required integrations — from Gold Coins and Sweeps Coins to games, payments, verification, redemption and back-office operations.
+              Launch your online sweepstakes casino on an established platform core. Kvaornux configures branding, Gold Coin and Sweeps Coin workflows, compatible integrations and operator tools around your agreed project scope.
             </p>
           </div>
 
@@ -533,7 +533,7 @@ export default function TurnkeySweepstakesClient() {
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
               >
-                Everything Operators Need in a Turnkey Sweepstakes Platform
+                Core Capabilities of Our Turnkey Sweepstakes System
               </h2>
 
               <p
@@ -637,7 +637,7 @@ export default function TurnkeySweepstakesClient() {
 
       {/* Opportunities Section */}
       <OpportunitiesSection />
-      <ContactForm />
+      <ContactForm defaultCategory="Sweepstakes Casino Software" />
 
     </>
   );
