@@ -49,45 +49,28 @@ export default function SportsbookPlatformSoftwarePage() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Products',
-        item: 'https://kvaornux.com/sportsbook-platform-software',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
         name: 'Sportsbook Platform Software',
         item: 'https://kvaornux.com/sportsbook-platform-software',
       },
     ],
   };
 
-  const softwareApplicationSchema = {
+  const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'Kvaornux Sportsbook Platform Software',
-    applicationCategory: 'BusinessApplication',
-    operatingSystem: 'Cloud-Native, Linux, Web, iOS, Android',
+    '@type': 'Service',
+    '@id': 'https://kvaornux.com/sportsbook-platform-software#service',
+    name: 'Sportsbook Platform Software',
+    serviceType: 'Sportsbook Platform Software',
     description:
       'High-throughput sportsbook betting engine, real-time odds feed management, dynamic risk controls, live in-play wagering, and multi-tier agent network management software.',
     url: 'https://kvaornux.com/sportsbook-platform-software',
     provider: {
       '@type': 'Organization',
+      '@id': 'https://kvaornux.com/#organization',
       name: 'Kvaornux',
       url: 'https://kvaornux.com/',
     },
-    offers: {
-      '@type': 'Offer',
-      price: 'Contact for Quote',
-      priceCurrency: 'USD',
-    },
-    featureList: [
-      'High-Throughput In-Play & Pre-Match Betting Engine',
-      'Real-Time Multi-Source Odds Feeds & Margin Automation',
-      'Dynamic Risk Management & Liability Exposure Desk',
-      'Dynamic Cash-Out & Bet Builder (Same-Game Parlay) Engine',
-      'Multi-Tier Agent & Retail Shop Cashier Network',
-      'Seamless PAM & Multi-Currency Sportsbook Wallet',
-    ],
+    areaServed: 'Global',
   };
 
   const faqSchema = {
@@ -145,7 +128,7 @@ export default function SportsbookPlatformSoftwarePage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
         type="application/ld+json"

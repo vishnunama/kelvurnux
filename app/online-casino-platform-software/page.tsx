@@ -49,45 +49,28 @@ export default function OnlineCasinoPlatformSoftwarePage() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Products',
-        item: 'https://kvaornux.com/online-casino-platform-software',
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
         name: 'Online Casino Platform Software',
         item: 'https://kvaornux.com/online-casino-platform-software',
       },
     ],
   };
 
-  const softwareApplicationSchema = {
+  const serviceSchema = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'Kvaornux Online Casino Platform Software',
-    applicationCategory: 'BusinessApplication',
-    operatingSystem: 'Cloud-Native, Linux, Web, iOS, Android',
+    '@type': 'Service',
+    '@id': 'https://kvaornux.com/online-casino-platform-software#service',
+    name: 'Online Casino Platform Software',
+    serviceType: 'Online Casino Platform Software',
     description:
       'Enterprise online casino platform software featuring modular PAM architecture, unified wallet gateway, 20,000+ game aggregation, bonus studio, and operator back office.',
     url: 'https://kvaornux.com/online-casino-platform-software',
     provider: {
       '@type': 'Organization',
+      '@id': 'https://kvaornux.com/#organization',
       name: 'Kvaornux',
       url: 'https://kvaornux.com/',
     },
-    offers: {
-      '@type': 'Offer',
-      price: 'Contact for Quote',
-      priceCurrency: 'USD',
-    },
-    featureList: [
-      'Player Account Management (PAM)',
-      'Multi-Currency Unified Wallet Engine (Seamless & Transfer API)',
-      '20,000+ Certified Casino Games from 150+ Providers',
-      'Dynamic Bonus Studio & Wagering Requirement Engine',
-      'Real-Time Back Office with Role-Based Access Control',
-      'Anti-Fraud & Anomaly Detection Modules',
-    ],
+    areaServed: 'Global',
   };
 
   const faqSchema = {
@@ -145,7 +128,7 @@ export default function OnlineCasinoPlatformSoftwarePage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
         type="application/ld+json"
