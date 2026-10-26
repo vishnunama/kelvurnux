@@ -383,14 +383,45 @@ export default function HeroSection() {
             A unified technology ecosystem for casino, sportsbook, game aggregation, payments, player management and custom iGaming infrastructure.
           </p>
 
-          {/* CTA Button */}
+          {/* Dual Action CTA Buttons */}
           <div
-            className={`transition-all duration-700 w-fit ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            className={`transition-all duration-700 flex flex-wrap items-center gap-3 sm:gap-4 w-full ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
             style={{
               transitionDelay: isLoaded ? '0.4s' : '0s',
             }}
           >
+            <button
+              onClick={() => {
+                const contactSection = document.getElementById('contact-form-section');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.href = '/#contact-form-section';
+                }
+              }}
+              className="btn-main group"
+              aria-label="Request Live Demo"
+            >
+              <span className="flex items-center gap-2">
+                Request Live Demo
+                <svg
+                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 12L10 8L6 4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+
             <button
               onClick={() => {
                 const solutionsSection = document.getElementById('solutions');
@@ -400,10 +431,37 @@ export default function HeroSection() {
                   window.location.href = '/#solutions';
                 }
               }}
-              className="btn-main"
+              className="btn-secondary"
+              aria-label="Explore Solutions"
             >
               <span>Explore Solutions</span>
             </button>
+          </div>
+
+          {/* Quick Trust Highlights */}
+          <div
+            className={`transition-all duration-700 pt-2 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2.5 sm:gap-4 text-xs sm:text-sm text-[#8e8e93] ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`}
+            style={{
+              transitionDelay: isLoaded ? '0.5s' : '0s',
+            }}
+          >
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
+              <span>150+ Game Providers</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
+              <span>Sub-ms Seamless API</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
+              <span>Crypto & Fiat Cashier</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
+              <span>99.99% Uptime SLA</span>
+            </div>
           </div>
 
         </div>

@@ -80,6 +80,43 @@ a.site-btn:active {
   box-shadow: 0 0 15px rgba(0, 235, 170, 0.25);
 }
 
+/* Secondary Outline Glassmorphism Button */
+.btn-secondary {
+  font-family: 'Gabarito', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  border-radius: 9999px;
+  padding: 0.75rem 2.25rem;
+  min-height: 3.25rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+  box-sizing: border-box;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 235, 170, 0.08);
+  border-color: rgba(0, 235, 170, 0.6);
+  color: #00ebaa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 235, 170, 0.2);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
 /* Compact button variation */
 .btn-sm {
   padding: 0.5rem 1.6rem;
@@ -90,6 +127,7 @@ a.site-btn:active {
 /* Responsive scaling on mobile */
 @media (max-width: 640px) {
   .btn-main, 
+  .btn-secondary,
   .btn-primary, 
   .btn-gradient, 
   .btn-goldman, 

@@ -5,6 +5,7 @@ import FAQSection from "@/src/components/FAQSection/FAQSection";
 import FeaturesSection from "@/src/components/features/FeaturesSection";
 import HeroSection from "@/src/components/hero/HeroSection";
 import ProvidersSection from "@/src/components/providerssection/ProvidersSection";
+import PaymentGatewaysSection from "@/src/components/paymentgateways/PaymentGatewaysSection";
 import SolutionsSection from "@/src/components/solutionssection/Solutionssection";
 import StepsSection from "@/src/components/stepssection/StepsSection";
 
@@ -61,6 +62,7 @@ export default function Home() {
       <FeaturesSection />
       <BrandValuesSection />
       <ProvidersSection />
+      <PaymentGatewaysSection />
       <SolutionsSection />
       <StepsSection />
       <FAQSection />
