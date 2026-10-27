@@ -6,6 +6,16 @@ import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBan
 
 const blogs = [
   {
+    title: "How to Choose a Sweepstakes Casino Software Provider",
+    description:
+      "Compare sweepstakes software providers on features, AMOE support, game integrations, development costs, contracts, and source code ownership.",
+    href: "/blog/choosing-sweepstakes-casino-software-provider",
+    tag: "Sweepstakes",
+    readTime: "14 min read",
+    date: "27.10.2026",
+    image: "/assets/features/choosing-sweepstakes-casino-software-provider-banner.webp",
+  },
+  {
     title: "Sweepstakes Casino API Integration: How Games Connect to Dual-Currency Wallets",
     description:
       "Learn how sweepstakes casino API integration connects games, aggregators and dual-currency wallets, including Gold Coin and Sweeps Coin sessions, wallet callbacks, bet/win transactions, rollbacks and reconciliation.",

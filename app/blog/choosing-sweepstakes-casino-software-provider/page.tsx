@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import ProviderChecklistClient from './ProviderChecklistClient';
-import { articleTitle, articleDescription, articleImage, faqList } from './articleData';
+import { articleTitle, articleSeoTitle, articleDescription, articleImage, faqList } from './articleData';
 
 const url = 'https://kvaornux.com/blog/choosing-sweepstakes-casino-software-provider';
 
 // Local editorial preview: remove draft restrictions only during a human-led release.
 export const metadata: Metadata = {
-  title: { absolute: 'Choosing a Sweepstakes Casino Software Provider | Kvaornux' },
+  title: { absolute: articleSeoTitle },
   description: articleDescription,
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
   alternates: { canonical: url },
   openGraph: {
     title: articleTitle,

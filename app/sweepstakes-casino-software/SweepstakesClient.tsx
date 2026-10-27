@@ -74,14 +74,14 @@ export default function SweepstakesClient() {
       icon: 'wallet' as const,
       title: 'Dual-Currency Virtual Coin Wallet',
       description: 'Manage Gold Coins for fun play and Sweeps Coins for promotional games. The platform keeps balances completely separate, tracks every transaction, and gives players a seamless two-coin experience.',
-      image: '/assets/features/custom-igaming-platform-design-interface.webp'
+      image: '/assets/features/sweepstakes-dual-currency-wallet-system.webp'
     },
     {
       id: 'compliance-controls',
       label: 'Verification & Geolocation',
       icon: 'shield-check' as const,
       title: 'Player Verification & Location Controls',
-      description: 'Verify player age and identity before prize redemptions, and automatically block restricted states. Built-in free entry (AMOE) features let players request promotional coins without making a purchase.',
+      description: 'Verify player age and identity before prize redemptions, and restrict access from prohibited jurisdictions. The platform can support tracking and management for Alternative Method of Entry (AMOE) requests based on your configured promotional rules.',
       image: '/assets/features/igaming-security-risk-management-aml-kyc.webp'
     },
     {
@@ -137,7 +137,7 @@ export default function SweepstakesClient() {
       icon: ShieldCheck,
       title: 'Fraud Prevention, Geofencing & Security',
       description:
-        'Protect platform revenue using IP intelligence, proxy and VPN detection, multi-accounting alerts, and velocity controls on purchases and redemptions. Suspicious behaviors are automatically flagged for manual review before payouts occur.'
+        'Protect platform integrity by detecting suspicious repeat transactions, flagging multiple accounts, and identifying potential VPN or location-related abuse. Configurable review rules help operators investigate flagged player activity before prize redemptions are approved.'
     },
     {
       id: 5,
@@ -239,14 +239,14 @@ export default function SweepstakesClient() {
     {
       id: 3,
       title: 'AMOE Entry Request Processing',
-      text: 'Players who wish to enter without making a purchase can submit Alternative Method of Entry (AMOE) requests. The software automatically issues unique tracking codes and logs complimentary entries for auditable record-keeping.'
+      text: 'For promotional models supporting free participation, players can submit Alternative Method of Entry (AMOE) requests. The platform supports request tracking, reference codes, and review queues with configurable crediting workflows.'
     },
     {
       id: 4,
       title: 'Dual-Mode Game Sessions',
       text: (
         <>
-          Players seamlessly switch between Gold Coin mode and Sweeps Coin mode. Game servers process spin outcomes in real time via secure API callbacks. Explore our{' '}
+          Players seamlessly switch between Gold Coin mode and Sweeps Coin mode. Game results are processed in real time, and player balances update automatically. Explore our{' '}
           <Link href="/casino-aggregator-api-solution" className="text-[#00ebaa] underline hover:text-[#00d096]">
             casino game aggregator
           </Link>{' '}
@@ -285,7 +285,7 @@ export default function SweepstakesClient() {
     {
       id: 3,
       title: 'Casino Game Aggregator API',
-      description: 'Connect slots, table games, live dealer, and crash titles from certified studios through a single unified aggregation layer.',
+      description: 'Connect slots, table games, live dealer, and crash titles from compatible third-party game providers through a single unified aggregation layer.',
       icon: Gamepad2,
       link: '/casino-aggregator-api-solution',
       span: 2
@@ -424,7 +424,7 @@ export default function SweepstakesClient() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Kvaornux provides sweepstakes casino software and custom development services to help operators launch and scale their own gaming platforms. Whether you need an established turnkey platform core or custom engineering tailored to your business model, our solutions connect dual-currency wallets, certified game studios, player accounts, and prize-redemption workflows into an easy-to-manage platform.
+              Kvaornux provides sweepstakes casino software and custom development services to help operators launch and scale their own gaming platforms. Whether you need an established turnkey platform core or custom engineering tailored to your business model, our solutions connect dual-currency wallets, compatible third-party game providers, player accounts, and prize-redemption workflows into an easy-to-manage platform.
             </p>
           </div>
 
@@ -653,6 +653,7 @@ export default function SweepstakesClient() {
       {/* Platform Architecture & Operational Lifecycle Section */}
       <StepsSection
         sectionId="architecture"
+        scrollSticky={true}
         customTitle="How a Sweepstakes Casino Platform Works"
         customSubtitle="Follow the complete operational lifecycle from initial player registration and virtual coin distribution to game sessions and verified prize redemptions."
         customSteps={sweepstakesArchitectureSteps}

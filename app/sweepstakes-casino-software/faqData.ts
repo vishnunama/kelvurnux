@@ -15,9 +15,9 @@ export const SWEEPSTAKES_FAQS: FAQItemData[] = [
       'The platform maintains two separate virtual coin balances for each player. Gold Coins (GC) are purchased in packages strictly for entertainment gameplay and hold no real cash value. Sweeps Coins (SC) are promotional entries that players receive as complimentary bonuses—such as during account registration, daily logins, Gold Coin package purchases, or via an Alternative Method of Entry (AMOE). Players can use Sweeps Coins in promotional gameplay and request to redeem accumulated winnings for real prizes once eligibility conditions are met.',
   },
   {
-    question: 'What is AMOE (Alternative Method of Entry) and why is it required?',
+    question: 'What is AMOE (Alternative Method of Entry) and how does it work?',
     answer:
-      'Alternative Method of Entry (AMOE) is a fundamental component of legal sweepstakes promotions that allows participants to enter without making any purchase. In a sweepstakes casino, AMOE is typically handled via mail-in entry cards or digital request forms where players request free Sweeps Coins. The Kvaornux platform provides automated entry code generation, validation queues, rate-limiting, and audit ledgers to help operators process and track AMOE entries efficiently.',
+      'Many sweepstakes models provide an Alternative Method of Entry (AMOE), allowing eligible participants to enter without making a purchase. In practice, players may request free promotional Sweeps Coins through digital forms or mail-in requests. The platform can support the tracking and management of these requests based on the operator’s configured rules, including request queues, reference codes, and review workflows. Legal requirements vary by jurisdiction and should be reviewed with qualified legal counsel.',
   },
   {
     question: 'What is the difference between a sweepstakes casino and a real-money casino?',
@@ -37,7 +37,7 @@ export const SWEEPSTAKES_FAQS: FAQItemData[] = [
   {
     question: 'Can multiple casino game providers be integrated?',
     answer:
-      'Yes. Compatible game studios and aggregation APIs can be integrated into the platform to offer slots, table games, live dealer streams, fish games, and crash games. During the project scoping phase, we confirm which game providers support dual-currency sweepstakes callbacks and help coordinate the technical integration to display games within your branded player lobby.',
+      'Yes. Compatible third-party game providers can be integrated into the platform to offer slots, table games, live dealer streams, fish games, and crash titles. During project scoping, we confirm which providers support dual-currency sweepstakes operations and coordinate the technical connection so games launch smoothly within your branded player lobby.',
   },
   {
     question: 'How does the prize redemption workflow operate?',

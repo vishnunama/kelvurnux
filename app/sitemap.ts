@@ -103,6 +103,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://kvaornux.com/blog/choosing-sweepstakes-casino-software-provider",
+      priority: 0.8,
+    },
+    {
       url: "https://kvaornux.com/privacy-policy",
       priority: 0.5,
     },

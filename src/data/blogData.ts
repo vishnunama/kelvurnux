@@ -103,6 +103,19 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     authorName: 'Kvaornux Editorial Team',
     authorAvatar: '/assets/favicon.webp',
   },
+  {
+    slug: 'choosing-sweepstakes-casino-software-provider',
+    href: '/blog/choosing-sweepstakes-casino-software-provider',
+    title: 'How to Choose a Sweepstakes Casino Software Provider',
+    description:
+      'Compare sweepstakes software providers on features, AMOE support, game integrations, development costs, contracts, and source code ownership.',
+    date: '27.10.2026',
+    readTime: '14 min read',
+    image: '/assets/features/choosing-sweepstakes-casino-software-provider-banner.webp',
+    tags: ['Sweepstakes', 'Buyer Guide', 'Turnkey vs Custom'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
 ];
 
 export function getPreviousBlogPost(currentSlug: string): BlogPost {
