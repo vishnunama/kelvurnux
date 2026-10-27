@@ -256,8 +256,14 @@ export default function CustomSweepstakesClient() {
     },
     {
       question: 'How is custom Sweepstakes development different from turnkey software?',
-      answer:
-        'Turnkey development begins with an established platform core that is configured for the project. Custom development is better suited to businesses requiring deeper architectural changes, proprietary workflows, specialized integrations or product-specific platform logic.'
+      answer: (
+        <>
+          <Link href="/turnkey-sweepstakes-casino-software" className="text-[#00ebaa] hover:underline">
+            Turnkey sweepstakes systems
+          </Link>{' '}
+          begin with an established platform core that is configured for the project. Custom development is better suited to businesses requiring deeper architectural changes, proprietary workflows, specialized integrations or product-specific platform logic.
+        </>
+      ) as unknown as string,
     },
     {
       question: 'Can Gold Coin and Sweeps Coin logic be customized?',
@@ -550,7 +556,11 @@ export default function CustomSweepstakesClient() {
                 <Link href="/sweepstakes-casino-software" className="text-[#00ebaa] hover:underline">
                   sweepstakes casino software
                 </Link>{' '}
-                platform to evaluate delivery models.
+                platform and pre-configured{' '}
+                <Link href="/turnkey-sweepstakes-casino-software" className="text-[#00ebaa] hover:underline">
+                  turnkey sweepstakes systems
+                </Link>{' '}
+                to evaluate delivery models.
               </p>
 
               <div
