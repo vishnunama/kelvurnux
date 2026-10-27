@@ -79,19 +79,21 @@ const styles = `
     left: 0;
     right: 0;
     height: 100vh;
+    height: 100dvh;
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3.5rem 0;
+    padding: clamp(0.75rem, 2vh, 1.75rem) 0;
     box-sizing: border-box;
     z-index: 20;
   }
 
   @media (min-width: 768px) {
     .steps-section.is-sticky-mode {
-      padding: 4.5rem 0;
+      padding: clamp(1rem, 2.5vh, 2.25rem) 0;
     }
   }
 
@@ -310,6 +312,142 @@ const styles = `
     transform: translateY(-2px);
     box-shadow: inset 0 -5px 3.5px 0 rgba(132, 202, 255, 0.25), inset 0 1px 1.8px 0 rgba(255, 244, 230, 0.95);
   }
+
+  /* Section background image responsiveness */
+  .section-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .section-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+  }
+
+  @media (max-width: 1024px) {
+    .section-bg img {
+      object-fit: cover;
+      object-position: center center;
+      opacity: 0.65;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section-bg img {
+      object-fit: cover;
+      object-position: 50% 35%;
+      opacity: 0.5;
+    }
+  }
+
+  /* CTA Button & Responsive Spacing (Font sizes strictly preserved) */
+  .steps-cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .steps-cta-button {
+    background-color: #00ebaa;
+    padding: 0.7rem 2.5rem;
+    border-radius: 2.6rem;
+    height: 3.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    font-family: 'Gabarito', sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 0 25px rgba(0, 235, 170, 0.35);
+    cursor: pointer;
+    border: none;
+  }
+
+  .steps-cta-button:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 30px rgba(0, 235, 170, 0.5);
+  }
+
+  .steps-cta-button:active {
+    transform: scale(0.96);
+  }
+
+  /* Sticky mode vertical spacing overrides with balanced breathing room (Font sizes strictly preserved) */
+  .steps-section.is-sticky-mode .steps-title {
+    margin: 0 auto clamp(0.5rem, 1.2vh, 0.85rem);
+  }
+
+  .steps-section.is-sticky-mode .steps-subtitle {
+    margin: 0 auto clamp(1rem, 2.2vh, 2rem);
+  }
+
+  .steps-section.is-sticky-mode .step-indicator {
+    margin-bottom: clamp(1rem, 2vh, 1.75rem);
+  }
+
+  .steps-section.is-sticky-mode .steps-slider {
+    margin-bottom: clamp(0.5rem, 1vh, 1rem);
+  }
+
+  .steps-section.is-sticky-mode .swiper-navigation-center {
+    margin: clamp(1.25rem, 2.5vh, 2.25rem) auto 0;
+  }
+
+  .steps-section.is-sticky-mode .steps-cta-wrapper {
+    margin-top: clamp(1.5rem, 3vh, 2.5rem) !important;
+  }
+
+  /* Screen height media queries for shorter laptop viewports with proper breathing room */
+  @media (max-height: 850px) {
+    .steps-section.is-sticky-mode {
+      padding: 1rem 0;
+    }
+    .steps-section.is-sticky-mode .steps-title {
+      margin: 0 auto 0.5rem;
+    }
+    .steps-section.is-sticky-mode .steps-subtitle {
+      margin: 0 auto 1.5rem;
+    }
+    .steps-section.is-sticky-mode .step-indicator {
+      margin-bottom: 1.25rem;
+    }
+    .steps-section.is-sticky-mode .swiper-navigation-center {
+      margin-top: 1.5rem;
+    }
+    .steps-section.is-sticky-mode .steps-cta-wrapper {
+      margin-top: 2rem !important;
+    }
+  }
+
+  @media (max-height: 720px) {
+    .steps-section.is-sticky-mode {
+      padding: 0.5rem 0;
+    }
+    .steps-section.is-sticky-mode .steps-title {
+      margin: 0 auto 0.35rem;
+    }
+    .steps-section.is-sticky-mode .steps-subtitle {
+      margin: 0 auto 1rem;
+    }
+    .steps-section.is-sticky-mode .step-indicator {
+      margin-bottom: 0.85rem;
+    }
+    .steps-section.is-sticky-mode .swiper-navigation-center {
+      margin-top: 1rem;
+    }
+    .steps-section.is-sticky-mode .steps-cta-wrapper {
+      margin-top: 1.25rem !important;
+    }
+  }
 `;
 
 export default function StepsSection({
@@ -480,9 +618,9 @@ export default function StepsSection({
               scrollSticky
                 ? false
                 : {
-                    delay: 3500,
-                    disableOnInteraction: false,
-                  }
+                  delay: 3500,
+                  disableOnInteraction: false,
+                }
             }
             loop={!scrollSticky}
             centeredSlides={true}
@@ -575,24 +713,11 @@ export default function StepsSection({
           </div>
         </div>
 
-        <div className="steps-cta-wrapper" style={{ display: 'flex', justifyContent: 'center', marginTop: '2.5rem' }}>
+        <div className="steps-cta-wrapper">
           <a
             href={ctaHref || '#contact-form-section'}
             onClick={onCtaClick}
-            className="font-bold text-black border-none cursor-pointer"
-            style={{
-              backgroundColor: '#00ebaa',
-              padding: '0.7rem 2.5rem',
-              borderRadius: '2.6rem',
-              height: '3.6rem',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: 700,
-              textDecoration: 'none',
-              color: '#000',
-              fontFamily: "'Gabarito', sans-serif",
-            }}
+            className="steps-cta-button"
           >
             <span>{customCtaText || 'Discuss Your Project'}</span>
           </a>

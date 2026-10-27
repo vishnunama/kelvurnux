@@ -22,6 +22,7 @@ import OpportunitiesSection from '@/src/components/opportunitiessection/Opportun
 import ContactForm from '@/src/components/contactform/ContactForm';
 import FAQSection from '@/src/components/FAQSection/FAQSection';
 import DiscoverMore from '@/src/components/Discovermore/Discovermore';
+import StepsSection, { StepItem } from '@/src/components/stepssection/StepsSection';
 
 export default function TurnkeySweepstakesClient() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -79,15 +80,15 @@ export default function TurnkeySweepstakesClient() {
       label: 'Dual-Currency Wallet',
       icon: 'wallet' as const,
       title: 'Dual-Currency Virtual Currency Architecture',
-      description: 'Maintain Gold Coins and Sweeps Coins as separate virtual currencies with independent balances, real-time transaction ledgers and configurable currency logic. Track purchases, promotional allocations, gameplay transactions, manual administrative adjustments and redemption eligibility while preserving a complete audit history for each currency.',
+      description: 'Built on a pre-configured platform core, the dual-currency engine maintains separate, real-time ledgers for Gold Coins (entertainment play) and Sweeps Coins (promotional participation). The core ledger handles atomic transaction commits, gameplay deductions, unredeemable vs. redeemable partitioning, and complete audit histories. Operators configure package pricing, bonus coin ratios, and 1x playthrough rules, while live balance calls connect seamlessly to external game server APIs.',
       image: '/assets/features/custom-igaming-platform-design-interface.webp'
     },
     {
       id: 'compliance-controls',
       label: 'Compliance & Geolocation',
       icon: 'shield-check' as const,
-      title: 'Compliance Controls & Geolocation',
-      description: 'Configure player eligibility, age and identity verification (KYC), state-level geolocation boundary rules, restricted-jurisdiction blocking, responsible-play options (such as self-exclusion or account limits) and Alternative Method of Entry (AMOE) processing. Manage entry request verification, status tracking and promotional coin allocations from the operator environment.',
+      title: 'Compliance Controls, Geolocation & AMOE',
+      description: 'Pre-built administrative modules provide end-to-end Alternative Method of Entry (AMOE) processing, unique request code tracking, automated promotional Sweeps Coin crediting, and responsible-play controls. Third-party identity verification (KYC) and geolocation services connect via API to enforce operator-configured jurisdictional blocklists (such as Washington, Idaho, Michigan, or Nevada), ensuring compliant player onboarding before gameplay or prize redemption.',
       image: '/assets/features/igaming-security-risk-management-aml-kyc.webp'
     },
     {
@@ -95,7 +96,7 @@ export default function TurnkeySweepstakesClient() {
       label: 'Game Integration Layer',
       icon: 'gamepad-2' as const,
       title: 'Casino Game Content Integration',
-      description: 'Connect compatible casino content through provider and aggregation APIs while managing game categories, availability, virtual currency rules and player access from the operator environment. Deliver responsive player-facing experiences configured around your brand identity without altering the established core platform architecture.',
+      description: 'Connect compatible casino content through standardized aggregation APIs while managing game categories, active studios, and player lobby display rules from the back office. The platform core provides game launch URL generation, session token management, and bet/win webhook settlement. Game availability and content distribution rights depend on the operator’s direct commercial agreements with certified game studios.',
       image: '/assets/features/online-casino-game-aggregation-10000-plus-slots.webp'
     },
     {
@@ -103,7 +104,7 @@ export default function TurnkeySweepstakesClient() {
       label: 'Payments & Redemption',
       icon: 'credit-card' as const,
       title: 'Payments, Purchases & Prize Redemption',
-      description: 'Manage Gold Coin purchase flows and prize-redemption operations through connected payment and payout integrations. Track purchase transaction records, set redemption thresholds, enforce KYC verification gates, manage manual review queues, review payment risk or chargeback alerts, and process approved prize payouts.',
+      description: 'Manage Gold Coin package purchases and prize redemptions through a controlled operational pipeline. The platform core includes purchase checkout session handlers, redemption request intake, and a multi-stage administrative review queue (Pending, In Review, Approved, Disbursed). Operators set minimum/maximum redemption thresholds and integrate external payment gateways and payout rails subject to merchant underwriting approval.',
       image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp'
     },
     {
@@ -111,7 +112,7 @@ export default function TurnkeySweepstakesClient() {
       label: 'Back Office & Analytics',
       icon: 'layout-dashboard' as const,
       title: 'Operator Back Office Console',
-      description: 'Provide operations teams with centralized administrative control over Player Account Management (PAM), GC/SC currency ledgers, redemption approval queues, identity verification checks, game availability, promotions, affiliate tracking, risk monitoring, operational reporting and administrative audit records with role-based staff permissions.',
+      description: 'A centralized administrative command center providing role-based staff permissions (Super Admin, Support, Compliance, Risk) across Player Account Management (PAM), real-time GGR/NGR reporting, transaction audit trails, and player verification status. Operators retain complete access to exportable raw data and ledgers, with configurable fraud alert thresholds for suspicious account velocity and duplicate profiles.',
       image: '/assets/features/turnkey-back-office-admin-dashboard-analytics.webp'
     }
   ];
@@ -120,129 +121,190 @@ export default function TurnkeySweepstakesClient() {
     {
       id: 1,
       icon: Wallet,
-      title: 'Dual-Currency Wallet Architecture',
+      title: 'Dual-Currency Wallet Engine (Platform Core)',
       description:
-        'Maintain separate Gold Coin and Sweeps Coin balances with independent real-time transaction ledgers, configurable currency rules, promotional allocations, gameplay logging, manual administrative adjustments and comprehensive transaction history.'
+        'Maintain separate Gold Coin and Sweeps Coin balances with independent real-time transaction ledgers, atomic wager debit/credit locking, configurable promotional rules, and immutable audit trails built directly into the platform core for clean financial reconciliation.'
     },
     {
       id: 2,
       icon: Gamepad2,
-      title: 'Game Content Integration Layer',
+      title: 'Game Content Integration Layer (Third-Party APIs)',
       description:
-        'Connect compatible casino content through provider and aggregation APIs while controlling game availability, categories, currencies, player access and branded frontend display rules from the operator environment.'
+        'Connect certified slot, table, and live-dealer content via standardized aggregation APIs. Operators configure lobby categorization and jurisdictional game visibility, while commercial distribution agreements remain directly between the operator and game providers.'
     },
     {
       id: 3,
       icon: CreditCard,
-      title: 'Payments, Coin Purchases & Prize Redemption',
+      title: 'Payments, Coin Purchases & Prize Redemption (Configurable Rails)',
       description:
-        'Manage Gold Coin packages, payment transaction records and the complete prize redemption lifecycle — from player request and eligibility checks through identity verification, review status queues, payment risk monitoring and approved payout processing.'
+        'Configure Gold Coin bundle price points and multi-stage Sweeps Coin redemption workflows (Pending, In Review, Approved, Disbursed). External payment gateways and payout disbursement rails connect via third-party merchant accounts based on underwriter approval.'
     },
     {
       id: 4,
       icon: ShieldCheck,
-      title: 'Compliance Controls & Geolocation Engine',
+      title: 'AMOE & Regulatory Compliance Controls (Core Tools & Geolocation)',
       description:
-        'Configure AMOE request processing, age and identity verification, geolocation services, restricted-jurisdiction rules, responsible-play options and operational access controls. Technology controls can support an operator\'s compliance framework; legal requirements and permitted jurisdictions should be determined with qualified legal counsel.'
+        'Native administrative tools support Alternative Method of Entry (AMOE) code verification, mail-in queue management, and responsible-play limits. Third-party KYC and geolocation APIs integrate to enforce state-level boundary exclusions determined with qualified legal counsel.'
     },
     {
       id: 5,
       icon: Sparkles,
-      title: 'Player Engagement & Retention Tools',
+      title: 'Player Engagement & Retention Tools (Platform Core)',
       description:
-        'Configure promotional coin campaigns, daily rewards, loyalty levels, referral incentives, tournaments, leaderboards and segmented CRM player communication based on activity and eligibility.'
+        'Operational marketing teams can configure daily login bonus streaks, tiered VIP loyalty programs, referral rewards, and leaderboard tournaments directly through the back-office console without requiring recurring engineering modifications.'
     },
     {
       id: 6,
       icon: LayoutDashboard,
-      title: 'Operator Back Office Dashboard',
+      title: 'Player Account Management (PAM) & Governance (Platform Core)',
       description:
-        'Manage player account profiles, virtual currency ledgers, redemption queues, KYC reviews, geolocation settings, game catalogs, payment options, promotions, affiliates, risk reviews and staff role permissions through a centralized administrative environment.'
+        'Centralize player lifecycle management with role-based staff permissions separating cashier, support, compliance, and administrator access. Features comprehensive player audit timelines, session logs, and manual balance adjustment tracking.'
     },
     {
       id: 7,
       icon: RefreshCw,
-      title: 'Built for Web & Mobile Experiences',
+      title: 'Branded Web & Mobile Browser Experience (Frontend Customization)',
       description:
-        'Deliver responsive HTML5 player experiences across desktop and mobile browsers. The player-facing frontend can be configured around your brand identity, logo, navigation and content strategy on an established platform architecture.'
+        'Deliver a responsive HTML5 player experience tailored to your brand identity, color palette, custom logos, and lobby navigation. Engineered for optimal performance across mobile and desktop browsers without native app store friction.'
     },
     {
       id: 8,
       icon: Cpu,
-      title: 'Sweepstakes Platform Technology Stack',
+      title: 'Modular Platform Architecture & Audit Records (Platform Core)',
       description:
-        'API-first platform architecture designed around modular integrations, real-time wallet activity, transaction processing, administrative audit logs and scalable operator services using the existing Kvaornux technology stack.'
+        'API-first architecture designed with modular microservices, idempotent webhook handling, and real-time database replication. Ensures high availability, data integrity under peak concurrent traffic, and full operator data exportability.'
     },
     {
       id: 9,
       icon: Layers,
-      title: 'Structured Launch Process (Strategy to Support)',
+      title: 'Structured Launch Delivery Process (Phased Delivery)',
       description:
-        'A structured delivery process covering project scope definition, core platform configuration, UI/UX brand alignment, third-party API integrations, functional testing, production deployment and post-launch technical support.'
+        'A structured onboarding roadmap covering scope definition, platform configuration, brand styling, third-party API integration, sandbox testing, back-office staff training, and production handover with clear milestone deliverables.'
     },
     {
       id: 10,
       icon: Rocket,
-      title: 'Turnkey Configuration or Custom Development',
+      title: 'Turnkey Platform vs. Custom Engineering (Scope Pathways)',
       description:
-        'Choose a turnkey sweepstakes system when an established platform core fits your requirements. Scope custom development separately for proprietary architecture, specialized wallet rules or deeper operational changes.'
+        'Deploy turnkey sweepstakes systems when an established, tested platform core accelerates market entry and lowers initial capital requirements. Scope custom engineering separately for proprietary game math engines or non-standard architectures.'
     }
+  ];
+
+  const turnkeyLaunchSteps: StepItem[] = [
+    {
+      id: 1,
+      title: 'Requirements & Platform Configuration',
+      text: (
+        <>
+          Define commercial operating parameters, Gold Coin and Sweeps Coin virtual
+          currency rules, prize redemption thresholds, AMOE processing procedures, and
+          administrative staff role permissions on the established Kvaornux core architecture.
+        </>
+      ),
+    },
+    {
+      id: 2,
+      title: 'Branding & Interface Customization',
+      text: (
+        <>
+          Tailor the responsive HTML5 player interface to your brand identity,
+          incorporating your visual assets, color palette, custom logo, game
+          lobby navigation, and promotional campaign banners.
+        </>
+      ),
+    },
+    {
+      id: 3,
+      title: 'Game, Payment & Verification Integrations',
+      text: (
+        <>
+          Connect external service providers based on your commercial
+          agreements—including compatible game studio feeds, payment gateways
+          for coin package sales, payout rails for prize redemptions, and
+          third-party KYC or geolocation verification APIs.
+        </>
+      ),
+    },
+    {
+      id: 4,
+      title: 'Testing & Operator Acceptance',
+      text: (
+        <>
+          Conduct rigorous sandbox and end-to-end acceptance testing across
+          player registration, coin purchasing, game server callbacks, wallet
+          ledger balancing, AMOE request handling, and administrative prize
+          redemption approval workflows.
+        </>
+      ),
+    },
+    {
+      id: 5,
+      title: 'Production Launch Preparation',
+      text: (
+        <>
+          Deploy the configured turnkey system to live production infrastructure,
+          perform final connectivity and security checks, train operational staff
+          on back-office PAM and risk management consoles, and prepare for live
+          player onboarding.
+        </>
+      ),
+    },
   ];
 
   const turnkeyDiscoverItems = [
     {
       id: 1,
       title: 'Dual-Currency Economy',
-      description: 'Gold Coins and Sweeps Coins operate through separate balances, ledger logic and transaction records, supporting entertainment play, promotional distribution and prize-eligible participation workflows.',
+      description: 'Pre-configured GC/SC balance engine with independent ledgers, automated wager deduction, and separate promotional allocation channels.',
       icon: Wallet,
       span: 2
     },
     {
       id: 2,
       title: 'AMOE & Entry Management',
-      description: 'Process Alternative Method of Entry requests through verification, status tracking, promotional Sweeps Coin allocation and auditable entry records from the operator environment.',
+      description: 'Administrative queue for processing mail-in requests, verifying unique participant codes, and crediting promotional Sweeps Coins.',
       icon: ShieldCheck,
       span: 2
     },
     {
       id: 3,
       title: 'Prize Redemption Engine',
-      description: 'Configure redemption eligibility, thresholds, player verification, review queues, request statuses, risk checks and payout processing through a controlled redemption workflow.',
+      description: 'Multi-stage redemption approval pipeline with configurable thresholds, identity verification checks, and automated payout disbursement hooks.',
       icon: RefreshCw,
       span: 2
     },
     {
       id: 4,
       title: 'KYC, Geolocation & Access Controls',
-      description: 'Connect identity and age verification, jurisdiction-level geolocation, restricted-location controls and player access rules to registration, gameplay and redemption workflows.',
+      description: 'Integration-ready modules for connecting identity verification and boundary detection to enforce state-level compliance rules.',
       icon: Layers,
       span: 3
     },
     {
       id: 5,
       title: 'Fraud & Risk Management',
-      description: 'Monitor suspicious account activity, duplicate-account indicators, unusual redemption requests, payment risk and chargeback alerts with manual review queues and operational controls.',
+      description: 'Operational monitoring tools covering velocity limits, multiple account detection, suspicious redemption alerts, and risk review flags.',
       icon: Cpu,
       span: 3
     },
     {
       id: 6,
       title: 'Player Account Management & CRM',
-      description: 'Manage player profiles, verification status, GC/SC activity, segments, communications, promotions and the complete player lifecycle from one operational environment.',
+      description: 'Centralized PAM console for managing user profiles, tracking lifetime player activity, setting promotional rules, and segmenting users.',
       icon: Sparkles,
       span: 2
     },
     {
       id: 7,
       title: 'Promotions, Loyalty & Affiliates',
-      description: 'Run daily rewards, promotional coin campaigns, referrals, loyalty programs, tournaments, leaderboards and affiliate acquisition workflows with configurable campaign rules.',
+      description: 'Turnkey promotional engine supporting daily login streaks, spin-the-wheel rewards, leaderboard tournaments, and affiliate tracking.',
       icon: HandshakeIcon,
       span: 2
     },
     {
       id: 8,
       title: 'Reporting & Audit Controls',
-      description: 'Track registrations, Gold Coin purchases, Sweeps Coin movements, game activity, redemptions, payments, promotions and administrative actions through operational reporting and audit records.',
+      description: 'Real-time GGR, purchase volume, and redemption reporting with immutable administrative action logs for operator financial accounting.',
       icon: LayoutDashboard,
       span: 2
     }
@@ -250,58 +312,57 @@ export default function TurnkeySweepstakesClient() {
 
   const faqs = [
     {
-      question: 'What is turnkey sweepstakes casino software?',
+      question: 'What is included in turnkey sweepstakes systems?',
       answer:
-        'Turnkey sweepstakes casino software provides an established platform architecture that can be configured around an operator\'s brand, virtual currency model, games, payments, player verification, redemption workflows and back-office requirements.'
+        'A turnkey sweepstakes system includes an established software platform core: a dual-currency (Gold Coins and Sweeps Coins) wallet engine, Player Account Management (PAM), an Alternative Method of Entry (AMOE) processing queue, a multi-stage prize redemption approval workflow, and a back-office administration console. It also includes integration adapters for game aggregators, payment gateways, KYC identity verification, and geolocation boundary detection, paired with a customized HTML5 player frontend.'
+    },
+    {
+      question: 'Which parts of the turnkey platform can be customized?',
+      answer:
+        'Operators can fully customize the player-facing interface (branding, color palettes, logos, promotional banners, and navigation layouts), virtual currency packages and pricing, promotional bonuses (sign-up gifts, daily login streaks), prize redemption thresholds, jurisdictional restricted-state rules, game catalog categories, and administrative staff permission roles.'
     },
     {
       question: 'How is turnkey sweepstakes software different from custom development?',
       answer:
-        'A turnkey project begins with an established core architecture and focuses on configuration, branding and required integrations. Custom development is better suited to projects requiring proprietary architecture, highly specialized workflows or deeper product-level customization.'
+        'Turnkey sweepstakes systems build upon a pre-existing, tested core architecture, dramatically reducing time-to-market and initial capital investment. Custom development involves engineering proprietary architecture from scratch, which is best suited for operators requiring bespoke game math engines, patented mechanics, or highly unusual backend configurations.'
     },
     {
-      question: 'Does the platform support Gold Coins and Sweeps Coins?',
+      question: 'Who handles game provider and payment processing approvals?',
       answer:
-        'Yes. The platform can maintain separate Gold Coin and Sweeps Coin balances with independent transaction histories and configurable rules for purchases, promotional allocations, gameplay activity and redemption-related workflows.'
+        'The operator contracts directly with game studios and payment merchant processors. Kvaornux provides the technical API integration adapters, sandbox testing, and webhook listeners, while commercial agreements, merchant underwriting, fee negotiations, and account approvals remain between the operator and the third-party providers.'
     },
     {
-      question: 'Can AMOE workflows be configured?',
+      question: 'Does the platform maintain separate Gold Coin and Sweeps Coin ledgers?',
       answer:
-        'Yes. Alternative Method of Entry workflows can support no-purchase participation requests, verification, status tracking and promotional currency allocation according to the operator\'s defined rules and legal framework.'
+        'Yes. The platform core maintains two completely distinct virtual currency ledgers. Gold Coins (used for recreational entertainment) and Sweeps Coins (used for promotional sweepstakes participation) are tracked separately with immutable real-time transaction records, dedicated playthrough multipliers, and segregated redemption eligibility.'
     },
     {
-      question: 'Can KYC and geolocation providers be integrated?',
+      question: 'Can Alternative Method of Entry (AMOE) workflows be configured?',
       answer:
-        'Yes. Third-party identity, age-verification and geolocation services can be connected to registration, player access and redemption workflows based on project requirements and technical compatibility.'
+        'Yes. The platform includes a dedicated administrative AMOE portal. Players generate a unique entry request code through their player account, mail in their physical request card, and operational staff verify and enter the code in the back office. The system validates code authenticity, enforces submission limits, and credits promotional Sweeps Coins with auditable logs.'
     },
     {
-      question: 'Can I choose the game providers?',
+      question: 'What third-party services must an operator integrate before launching?',
       answer:
-        'Compatible game providers and aggregation APIs can be integrated according to the project\'s commercial arrangements and technical requirements. Sweepstakes compatibility should be confirmed for each content provider.'
+        'A fully operational sweepstakes casino typically requires four categories of third-party integrations: payment processing gateways (credit/debit cards, ACH, or instant bank transfer), prize payout disbursement rails, identity and age verification (KYC/AML) services, and geolocation boundary detection APIs to enforce state-level access rules.'
     },
     {
-      question: 'Can payment and payout providers be integrated?',
+      question: 'What factors affect the turnkey platform launch timeline?',
       answer:
-        'Yes. Compatible payment services can support Gold Coin purchase flows, while payout or prize-processing integrations can be connected to approved redemption workflows.'
+        'While Kvaornux configures the core software in a structured delivery timeline, overall launch timing largely depends on external factors: brand design approvals, game provider commercial agreements, merchant payment processor underwriting (which often takes 2 to 6 weeks), and the operator completing independent legal review of their sweepstakes rules.'
     },
     {
-      question: 'Can the frontend be branded for my business?',
+      question: 'Can the platform restrict access in specific US states?',
       answer:
-        'Yes. The player-facing experience can be configured around the operator\'s brand identity, visual assets, content, navigation and promotional requirements within the agreed turnkey scope.'
+        'Yes. The platform provides a configurable jurisdictional rules engine that works with geolocation and IP verification APIs. Operators can block player registration, purchases, or gameplay in restricted jurisdictions (such as Washington, Idaho, Nevada, Michigan, or other states determined with qualified gaming counsel).'
     },
     {
-      question: 'Does turnkey mean every Sweepstakes Casino looks the same?',
+      question: 'What should an operator evaluate in a turnkey software proposal?',
       answer:
-        'No. The underlying core architecture can remain established while the player-facing brand experience, content, selected integrations and operating configuration are adapted for the project.'
-    },
-    {
-      question: 'How long does a turnkey Sweepstakes Casino take to launch?',
-      answer:
-        'Launch timing depends on branding, platform configuration, integration work, provider onboarding and acceptance testing. Kvaornux defines the delivery schedule after scope confirmation; game-content rights, payment approvals and the operator’s legal review must also be considered before launch.'
+        'Before executing a contract, operators should clarify: (1) what setup deliverables are covered vs. billable customizations, (2) monthly recurring licensing or revenue-share fee structures, (3) direct third-party API transaction costs, (4) cloud hosting responsibilities and costs, (5) guaranteed technical support response times (SLAs), and (6) full data portability and player database ownership.'
     }
   ];
 
-  const activeTabData = tabs.find(tab => tab.label === activeTab);
   const solutionsElementsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
@@ -386,7 +447,7 @@ export default function TurnkeySweepstakesClient() {
       {/* Hero Section */}
       <section
         ref={sectionRef}
-        className="relative pt-32 overflow-hidden"
+        className="relative pt-28 sm:pt-32 pb-2 overflow-hidden"
         style={{
           background:
             'radial-gradient(71.13% 100% at 50% 0, rgba(0,235,170,0.15) 0%, rgba(13,11,16,0.2) 65.41%), #0b0b0f'
@@ -394,10 +455,25 @@ export default function TurnkeySweepstakesClient() {
       >
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
 
+          {/* Accessible Visual Breadcrumbs */}
+          <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6 flex items-center justify-center text-xs sm:text-sm text-gray-400">
+            <ol className="flex items-center space-x-2">
+              <li>
+                <Link href="/" className="hover:text-[#00ebaa] transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-gray-600">/</li>
+              <li className="text-white font-medium" aria-current="page">
+                Turnkey Sweepstakes Casino Software
+              </li>
+            </ol>
+          </nav>
+
           {/* Main Title - SEO Optimized H1 */}
           <div className="text-center mb-3">
             <h1
-              className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-white leading-tight tracking-tight"
               ref={(el) => { elementsRef.current[0] = el; }}
               data-anim="from-top"
             >
@@ -406,7 +482,7 @@ export default function TurnkeySweepstakesClient() {
           </div>
 
           {/* Subtitle/Description */}
-          <div className="max-w-4xl mx-auto mb-9">
+          <div className="max-w-4xl mx-auto mb-4 sm:mb-6">
             <p
               className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
               ref={(el) => { elementsRef.current[1] = el; }}
@@ -421,23 +497,33 @@ export default function TurnkeySweepstakesClient() {
       </section>
 
       {/* Tab Features Section */}
-      <section id="solutions" className="relative from-black via-gray-900 to-black">
-        <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
+      <section id="platform-capabilities" className="relative pb-12 md:pb-16 from-black via-gray-900 to-black">
+        <div className="container mx-auto px-4 max-w-7xl">
+
+          {/* Accessible Heading for SEO & Screen Readers */}
+          <h2 className="sr-only">Core Turnkey Sweepstakes Platform Capabilities</h2>
 
           {/* Tab Buttons */}
           <div
             ref={tabsContainerRef}
-            className="overflow-x-auto py-2 pb-3 mb-8 sm:mb-10 md:mb-12 lg:mb-14 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
+            className="overflow-x-auto py-2 pb-3 mb-8 sm:mb-10 md:mb-12 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
+            role="tablist"
+            aria-label="Turnkey Sweepstakes Platform Capabilities"
           >
             <div className="flex gap-1 sm:gap-1.5 md:gap-2 flex-nowrap py-1.5 px-1">
               {tabs.map((tab) => {
                 const IconComponent = iconMap[tab.icon];
+                const isActive = activeTab === tab.label;
                 return (
                   <button
                     key={tab.id}
-                    ref={activeTab === tab.label ? activeTabRef : null}
+                    id={`tab-btn-${tab.id}`}
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`tab-panel-${tab.id}`}
+                    ref={isActive ? activeTabRef : null}
                     onClick={() => handleTabClick(tab.label)}
-                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${activeTab === tab.label
+                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${isActive
                       ? 'bg-white text-black border-2 border-white'
                       : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
                       }`}
@@ -450,54 +536,67 @@ export default function TurnkeySweepstakesClient() {
             </div>
           </div>
 
-          {/* Tab Content */}
-          {activeTabData && (
-            <div key={activeTabData.id} className="animate-in">
-              <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 sm:gap-6 md:gap-7 lg:gap-8 items-stretch">
+          {/* All 5 Tab Panels rendered in DOM for 100% crawlability */}
+          <div className="relative">
+            {tabs.map((tab) => {
+              const isActive = activeTab === tab.label;
+              return (
+                <div
+                  key={tab.id}
+                  id={`tab-panel-${tab.id}`}
+                  role="tabpanel"
+                  aria-labelledby={`tab-btn-${tab.id}`}
+                  className={isActive ? 'block animate-in' : 'hidden'}
+                >
+                  <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 sm:gap-6 md:gap-7 lg:gap-8 items-stretch">
 
-                {/* Image Card — first on mobile, right on desktop */}
-                <div className="col-span-1 lg:col-span-3 order-1 lg:order-2">
-                  <div className="relative w-full aspect-video lg:aspect-auto lg:h-full rounded-xl sm:rounded-2xl md:rounded-2xl overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#00ebaa]/20 to-[#00ebaa]/5 rounded-xl sm:rounded-2xl blur-3xl animate-pulse"></div>
-                    <img
-                      src={activeTabData.image}
-                      alt={getImageAlt(activeTabData.id)}
-                      className="relative w-full h-full rounded-xl sm:rounded-2xl shadow-2xl object-cover"
-                      style={{ animation: 'imageSlideIn 0.6s ease-out' }}
-                      onError={(e) => {
-                        const target = e.currentTarget as HTMLImageElement;
-                        target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI5MzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iNTMwIiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iNTAwIiB5PSIyNjUsIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg==';
-                      }}
-                    />
+                    {/* Image Card */}
+                    <div className="col-span-1 lg:col-span-3 order-1 lg:order-2">
+                      <div className="relative w-full aspect-video lg:aspect-auto lg:h-full rounded-xl sm:rounded-2xl overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#00ebaa]/20 to-[#00ebaa]/5 rounded-xl sm:rounded-2xl blur-3xl animate-pulse"></div>
+                        <img
+                          src={tab.image}
+                          alt={getImageAlt(tab.id)}
+                          width={960}
+                          height={540}
+                          className="relative w-full h-full rounded-xl sm:rounded-2xl shadow-2xl object-cover"
+                          style={{ animation: isActive ? 'imageSlideIn 0.6s ease-out' : 'none' }}
+                          onError={(e) => {
+                            const target = e.currentTarget as HTMLImageElement;
+                            target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI5MzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iNTMwIiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iNTAwIiB5PSIyNjUsIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg==';
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Info Card */}
+                    <div className="col-span-1 lg:col-span-2 order-2 lg:order-1 h-auto min-h-[280px]">
+                      <div
+                        className="w-full h-full rounded-xl sm:rounded-2xl p-6 sm:p-7 md:p-10 lg:p-12 backdrop-blur-sm flex flex-col justify-center border border-[#00ebaa]/30"
+                        style={{
+                          background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a',
+                        }}
+                      >
+                        <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
+                          {tab.title}
+                        </h3>
+                        <p className="text-base text-[#a5a5a5] leading-relaxed font-light text-left">
+                          {tab.description}
+                        </p>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
-
-                {/* Info Card — second on mobile, left on desktop */}
-                <div className="col-span-1 lg:col-span-2 order-2 lg:order-1 h-[280px] lg:h-auto">
-                  <div
-                    className="w-full h-full rounded-xl sm:rounded-2xl md:rounded-2xl p-6 sm:p-7 md:p-10 lg:p-12 backdrop-blur-sm flex flex-col justify-center border border-[#00ebaa]/30"
-                    style={{
-                      background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a',
-                    }}
-                  >
-                    <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
-                      {activeTabData.title}
-                    </h3>
-                    <p className="text-base sm:text-base md:text-base lg:text-lg text-[#a5a5a5] leading-relaxed font-light text-left">
-                      {activeTabData.description}
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          )}
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* All-in-One Solutions Section */}
       <section id="solutions" className="relative bg-[#0b0b0f]">
-        {/* 🔵 Gradient Background */}
+        {/* Gradient Background */}
         <div
           className="absolute inset-0"
           style={{
@@ -506,7 +605,7 @@ export default function TurnkeySweepstakesClient() {
           }}
         />
 
-        {/* 🟣 Grid Overlay */}
+        {/* Grid Overlay */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.05]"
           style={{
@@ -521,7 +620,7 @@ export default function TurnkeySweepstakesClient() {
           }}
         />
 
-        {/* 🔥 Main Content */}
+        {/* Main Content */}
         <div className="container mx-auto px-4 pt-8 sm:pt-12 max-w-[1310px] relative z-10">
 
           <div className="grid lg:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 md:pt-16 pb-16">
@@ -622,15 +721,27 @@ export default function TurnkeySweepstakesClient() {
         </div>
       </section>
 
+      {/* Turnkey Launch Process Section (Horizontal Sticky Scroll Slider) */}
+      <StepsSection
+        sectionId="launch-process"
+        scrollSticky={true}
+        customTitle="Turnkey Sweepstakes Platform Launch Process"
+        customSubtitle="Launch your turnkey sweepstakes systems through a structured process, from platform configuration and integrations to testing and deployment."
+        customSteps={turnkeyLaunchSteps}
+        customCtaText="Discuss Your Turnkey Platform"
+        ctaHref="#contact-form-section"
+        onCtaClick={(e) => {
+          e.preventDefault();
+          handleScrollToContact();
+        }}
+      />
+
       {/* Discover More Section */}
       <DiscoverMore
         customItems={turnkeyDiscoverItems}
         customTitle="Explore Turnkey Platform Capabilities"
         customSubtitle="Core technology and operational capabilities built around turnkey sweepstakes casino operations."
       />
-
-      {/* Partnership Banner */}
-      {/* <PartnershipBanner /> */}
 
       {/* FAQ Section */}
       <FAQSection customFaqData={faqs} hideBgImage={true} />

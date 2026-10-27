@@ -75,10 +75,18 @@ export default function Page() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What is turnkey sweepstakes casino software?',
+        name: 'What is included in turnkey sweepstakes systems?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Turnkey sweepstakes casino software provides an established platform architecture that can be configured around an operator\'s brand, virtual currency model, games, payments, player verification, redemption workflows and back-office requirements.',
+          text: 'A turnkey sweepstakes system includes an established software platform core: a dual-currency (Gold Coins and Sweeps Coins) wallet engine, Player Account Management (PAM), an Alternative Method of Entry (AMOE) processing queue, a multi-stage prize redemption approval workflow, and a back-office administration console. It also includes integration adapters for game aggregators, payment gateways, KYC identity verification, and geolocation boundary detection, paired with a customized HTML5 player frontend.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Which parts of the turnkey platform can be customized?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Operators can fully customize the player-facing interface (branding, color palettes, logos, promotional banners, and navigation layouts), virtual currency packages and pricing, promotional bonuses (sign-up gifts, daily login streaks), prize redemption thresholds, jurisdictional restricted-state rules, game catalog categories, and administrative staff permission roles.',
         },
       },
       {
@@ -86,71 +94,63 @@ export default function Page() {
         name: 'How is turnkey sweepstakes software different from custom development?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'A turnkey project begins with an established core architecture and focuses on configuration, branding and required integrations. Custom development is better suited to projects requiring proprietary architecture, highly specialized workflows or deeper product-level customization.',
+          text: 'Turnkey sweepstakes systems build upon a pre-existing, tested core architecture, dramatically reducing time-to-market and initial capital investment. Custom development involves engineering proprietary architecture from scratch, which is best suited for operators requiring bespoke game math engines, patented mechanics, or highly unusual backend configurations.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Does the platform support Gold Coins and Sweeps Coins?',
+        name: 'Who handles game provider and payment processing approvals?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. The platform can maintain separate Gold Coin and Sweeps Coin balances with independent transaction histories and configurable rules for purchases, promotional allocations, gameplay activity and redemption-related workflows.',
+          text: 'The operator contracts directly with game studios and payment merchant processors. Kvaornux provides the technical API integration adapters, sandbox testing, and webhook listeners, while commercial agreements, merchant underwriting, fee negotiations, and account approvals remain between the operator and the third-party providers.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Can AMOE workflows be configured?',
+        name: 'Does the platform maintain separate Gold Coin and Sweeps Coin ledgers?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. Alternative Method of Entry workflows can support no-purchase participation requests, verification, status tracking and promotional currency allocation according to the operator\'s defined rules and legal framework.',
+          text: 'Yes. The platform core maintains two completely distinct virtual currency ledgers. Gold Coins (used for recreational entertainment) and Sweeps Coins (used for promotional sweepstakes participation) are tracked separately with immutable real-time transaction records, dedicated playthrough multipliers, and segregated redemption eligibility.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Can KYC and geolocation providers be integrated?',
+        name: 'Can Alternative Method of Entry (AMOE) workflows be configured?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. Third-party identity, age-verification and geolocation services can be connected to registration, player access and redemption workflows based on project requirements and technical compatibility.',
+          text: 'Yes. The platform includes a dedicated administrative AMOE portal. Players generate a unique entry request code through their player account, mail in their physical request card, and operational staff verify and enter the code in the back office. The system validates code authenticity, enforces submission limits, and credits promotional Sweeps Coins with auditable logs.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Can I choose the game providers?',
+        name: 'What third-party services must an operator integrate before launching?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Compatible game providers and aggregation APIs can be integrated according to the project\'s commercial arrangements and technical requirements. Sweepstakes compatibility should be confirmed for each content provider.',
+          text: 'A fully operational sweepstakes casino typically requires four categories of third-party integrations: payment processing gateways (credit/debit cards, ACH, or instant bank transfer), prize payout disbursement rails, identity and age verification (KYC/AML) services, and geolocation boundary detection APIs to enforce state-level access rules.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Can payment and payout providers be integrated?',
+        name: 'What factors affect the turnkey platform launch timeline?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. Compatible payment services can support Gold Coin purchase flows, while payout or prize-processing integrations can be connected to approved redemption workflows.',
+          text: 'While Kvaornux configures the core software in a structured delivery timeline, overall launch timing largely depends on external factors: brand design approvals, game provider commercial agreements, merchant payment processor underwriting (which often takes 2 to 6 weeks), and the operator completing independent legal review of their sweepstakes rules.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Can the frontend be branded for my business?',
+        name: 'Can the platform restrict access in specific US states?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. The player-facing experience can be configured around the operator\'s brand identity, visual assets, content, navigation and promotional requirements within the agreed turnkey scope.',
+          text: 'Yes. The platform provides a configurable jurisdictional rules engine that works with geolocation and IP verification APIs. Operators can block player registration, purchases, or gameplay in restricted jurisdictions (such as Washington, Idaho, Nevada, Michigan, or other states determined with qualified gaming counsel).',
         },
       },
       {
         '@type': 'Question',
-        name: 'Does turnkey mean every Sweepstakes Casino looks the same?',
+        name: 'What should an operator evaluate in a turnkey software proposal?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'No. The underlying core architecture can remain established while the player-facing brand experience, content, selected integrations and operating configuration are adapted for the project.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'How long does a turnkey Sweepstakes Casino take to launch?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Launch timing depends on branding, platform configuration, integration work, provider onboarding and acceptance testing. Kvaornux defines the delivery schedule after scope confirmation; game-content rights, payment approvals and the operator’s legal review must also be considered before launch.',
+          text: 'Before executing a contract, operators should clarify: (1) what setup deliverables are covered vs. billable customizations, (2) monthly recurring licensing or revenue-share fee structures, (3) direct third-party API transaction costs, (4) cloud hosting responsibilities and costs, (5) guaranteed technical support response times (SLAs), and (6) full data portability and player database ownership.',
         },
       },
     ],
