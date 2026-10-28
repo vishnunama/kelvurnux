@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
 import CustomIgamingClient from './CustomIgamingClient';
+import { BESPOKE_FAQS } from './faqData';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Bespoke iGaming Solutions & Custom Development | Kvaornux',
+    absolute: 'Custom iGaming Software Development Services | KVAORNUX',
   },
   description:
-    'Build a bespoke iGaming platform around your business model with custom development, API integrations, platform modules and scalable infrastructure.',
+    'KVAORNUX provides custom iGaming software development from scratch. Build bespoke casino and sportsbook platforms with tailored features and source code included.',
   alternates: {
-    canonical: '/custom-igaming-solution',
+    canonical: 'https://kvaornux.com/custom-igaming-solution',
   },
   openGraph: {
-    title: 'Bespoke iGaming Solutions & Custom Development | Kvaornux',
+    title: 'Custom iGaming Software Development Services | KVAORNUX',
     description:
-      'Build a bespoke iGaming platform around your business model with custom development, API integrations, platform modules and scalable infrastructure.',
+      'KVAORNUX provides custom iGaming software development from scratch. Build bespoke casino and sportsbook platforms with tailored features and source code included.',
     url: 'https://kvaornux.com/custom-igaming-solution',
     siteName: 'Kvaornux',
     type: 'website',
@@ -22,15 +23,15 @@ export const metadata: Metadata = {
         url: 'https://kvaornux.com/assets/og-image.webp',
         width: 1200,
         height: 630,
-        alt: 'Bespoke iGaming Solutions & Custom Development | Kvaornux',
+        alt: 'Custom iGaming Software Development Services | KVAORNUX',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bespoke iGaming Solutions & Custom Development | Kvaornux',
+    title: 'Custom iGaming Software Development Services | KVAORNUX',
     description:
-      'Build a bespoke iGaming platform around your business model with custom development, API integrations, platform modules and scalable infrastructure.',
+      'KVAORNUX provides custom iGaming software development from scratch. Build bespoke casino and sportsbook platforms with tailored features and source code included.',
     images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };
@@ -55,11 +56,50 @@ export default function CustomIgamingPage() {
     ],
   };
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://kvaornux.com/custom-igaming-solution#service',
+    name: 'Custom iGaming Software Development Services',
+    url: 'https://kvaornux.com/custom-igaming-solution',
+    provider: {
+      '@type': 'Organization',
+      '@id': 'https://kvaornux.com/#organization',
+      name: 'Kvaornux',
+      url: 'https://kvaornux.com/',
+    },
+    description:
+      'KVAORNUX provides custom iGaming software development from scratch. Build bespoke casino and sportsbook platforms with tailored features and source code included.',
+    areaServed: 'Global',
+    serviceType: 'Custom iGaming Software Development',
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: BESPOKE_FAQS.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, '\\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c') }}
       />
       <CustomIgamingClient />
     </>

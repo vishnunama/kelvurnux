@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import {
   Wrench,
   Lightbulb,
@@ -19,13 +20,16 @@ import {
 import OpportunitiesSection from '@/src/components/opportunitiessection/Opportunitiessection';
 import ContactForm from '@/src/components/contactform/ContactForm';
 import DiscoverMore from '@/src/components/Discovermore/Discovermore';
+import StepsSection, { StepItem } from '@/src/components/stepssection/StepsSection';
+import FAQSection from '@/src/components/FAQSection/FAQSection';
+import { BESPOKE_FAQS } from './faqData';
 
 export default function CustomiGamingSolution() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
   const [activeTab, setActiveTab] = useState('Your Custom Requirements');
-  const tabsContainerRef = useRef(null);
-  const activeTabRef = useRef(null);
+  const tabsContainerRef = useRef<HTMLDivElement>(null);
+  const activeTabRef = useRef<HTMLButtonElement>(null);
 
   // Contact form scroll handler
   const handleScrollToContact = () => {
@@ -68,45 +72,45 @@ export default function CustomiGamingSolution() {
     {
       id: 'custom-requirements',
       label: 'Your Custom Requirements',
-      icon: 'wrench',
+      icon: 'wrench' as const,
       title: 'Your Custom Requirements',
-      description: 'We build iGaming solutions tailored to your exact business needs. Whether you need custom workflows, unique game mechanics, specific feature sets, or proprietary integrations, our experienced development team creates a platform that matches your vision perfectly. Every component is built according to your specifications with no compromises.',
+      description: 'We develop bespoke iGaming platforms planned and engineered entirely around your business model, operational workflows, and target markets. Whether you are launching an online casino, a sportsbook, or a combined gaming platform, every component is developed from scratch according to your exact specifications.',
       image: '/assets/features/end-to-end-igaming-business-support-stages.webp',
       alt: 'End-to-End iGaming Business Support and Custom Requirements Development'
     },
     {
-      id: 'wide-range-of-features',
+      id: 'flexible-features',
       label: 'Flexible Feature Architecture',
-      icon: 'lightbulb',
+      icon: 'lightbulb' as const,
       title: 'Flexible Feature Architecture',
-      description: 'Choose exactly which features matter for your business. Custom game selection and filtering, unique bonus mechanics, specialized tournament systems, branded user experiences, and tailored reporting tools. Build your platform with only the features you need, optimized for your player base and revenue model.',
+      description: 'Build only the features and systems your business requires. We engineer custom casino game lobbies, sportsbook betting engines, player account management (PAM), agent networks, bonus systems, and centralized admin tools tailored to your operational roadmap.',
       image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp',
       alt: 'Comprehensive Casino Platform Features including Slots, Roulette, and Dice Architecture'
     },
     {
       id: 'custom-design',
       label: 'Custom Design & Branding',
-      icon: 'settings',
+      icon: 'settings' as const,
       title: 'Custom Design & Branding',
-      description: 'Complete UI/UX customization to create a unique brand experience. Custom design system, branded player interface, personalized user journeys, and market-specific localization. Your platform reflects your brand identity and resonates with your target audience.',
+      description: 'Create a distinctive player experience with bespoke UI/UX design. We design custom player interfaces, tailored navigation, branded visual assets, and responsive layouts that deliver seamless performance across mobile, tablet, and desktop devices.',
       image: '/assets/features/custom-white-label-igaming-platform-branding.webp',
       alt: 'Custom White Label iGaming Platform Branding and UI UX Design'
     },
     {
       id: 'payment-solutions',
       label: 'Payment Integration',
-      icon: 'shield-check',
+      icon: 'shield-check' as const,
       title: 'Payment Integration',
-      description: 'Custom payment infrastructure supporting your target markets. Connect with your preferred payment providers, support multiple currencies and payment methods, implement custom KYC/AML workflows, and deploy fraud prevention tailored to your user base. Every transaction is secured and optimized for your operations.',
+      description: 'Connect multi-currency fiat payment gateways, credit cards, localized e-wallets, and cryptocurrency processing rails based on your approved merchant accounts, target jurisdictions, and integration requirements. Custom transaction workflows are configured to support your compliance needs.',
       image: '/assets/features/igaming-security-risk-management-aml-kyc.webp',
       alt: 'iGaming Payment Integration, Security Risk Management, and AML/KYC Protocols'
     },
     {
-      id: 'fast-launch',
-      label: 'Fast Deployment',
-      icon: 'rocket',
-      title: 'Fast Deployment',
-      description: 'Launch your custom platform quickly using our robust infrastructure and development framework. Accelerated development cycles, continuous integration/deployment, and testing automation ensure you go live fast without compromising quality or security.',
+      id: 'custom-development-launch',
+      label: 'Custom Development & Launch',
+      icon: 'rocket' as const,
+      title: 'Custom Development & Launch',
+      description: 'Bring your custom iGaming platform to life through a structured development lifecycle—including architecture planning, custom development, third-party integrations, comprehensive quality assurance testing, and live launch preparation with full source code delivered under agreed terms.',
       image: '/assets/features/turnkey-igaming-platform-infrastructure-services.webp',
       alt: 'Turnkey iGaming Platform Fast Deployment Infrastructure'
     },
@@ -117,49 +121,49 @@ export default function CustomiGamingSolution() {
       id: 1,
       icon: Palette,
       title: 'Custom Brand & UI/UX Design',
-      description: 'Complete design customization from concept to deployment. Design your interface exactly as you envision it with custom branding, unique visual identity, personalized user experience flows, and market-specific UI adaptations that engage your target players.'
+      description: 'Create a distinctive player experience with bespoke frontend design. We build tailored casino and sportsbook interfaces with custom visual branding, intuitive betting navigation, and responsive layouts optimized for all devices.'
     },
     {
       id: 2,
       icon: Lightbulb,
       title: 'Specialized Feature Development',
-      description: 'Build unique features tailored to your business model and market. Custom game mechanics, proprietary bonus systems, specialized tournament structures, unique VIP programs, and market-specific features that give you competitive advantage.'
+      description: 'Build proprietary capabilities tailored to your operational model. We develop custom casino mechanics, specialized sportsbook betting markets, bespoke bonus systems, and connect to existing integration infrastructure supporting 150+ game providers based on project scope and commercial agreements.'
     },
     {
       id: 3,
       icon: Wallet,
       title: 'Multi-Payment Gateway Integration',
-      description: 'Connect with payment providers of your choice across regions. Support multiple currencies, payment methods, deposit/withdrawal options, and local payment solutions. Custom payment flows with fraud detection and compliance built-in for every transaction.'
+      description: 'Connect fiat payment processors, credit and debit cards, localized digital wallets, and cryptocurrency rails based on your approved merchant accounts and operating jurisdictions.'
     },
     {
       id: 4,
       icon: Users,
       title: 'Custom User Management System',
-      description: 'Implement user workflows exactly as your business requires. Custom registration processes, flexible verification systems, user segmentation and personalization, custom user roles, loyalty programs, and player lifecycle management tailored to your strategy.'
+      description: 'Implement tailored Player Account Management (PAM) workflows. Configure custom registration steps, player verification protocols, flexible user roles, loyalty tier rules, and transaction history tracking.'
     },
     {
       id: 5,
       icon: BarChart3,
       title: 'Custom Analytics & Reporting',
-      description: 'Build dashboards and reports that drive your business decisions. Track your specific KPIs and metrics, custom business intelligence, real-time performance data, player behavior analytics, and actionable insights that matter to your organization.'
+      description: 'Monitor your gaming operations with custom business intelligence dashboards. Track gross gaming revenue (GGR), player acquisition, turnover, and betting activity with exportable reports to support business decisions.'
     },
     {
       id: 6,
       icon: Zap,
       title: 'Scalable & Resilient Architecture',
-      description: 'Cloud-native infrastructure designed for your growth. Auto-scaling systems, load balancing, high availability, disaster recovery, and security hardening. Handle millions of concurrent players with reliable performance and zero downtime.'
+      description: 'Deploy on cloud-native infrastructure engineered for high availability and growth. Auto-scaling microservices, load balancing, and performance monitoring ensure stable operations during peak betting events.'
     },
     {
       id: 7,
       icon: ShieldCheck,
       title: 'Compliance & Regulatory Framework',
-      description: 'Build compliance into your platform from day one. Custom compliance frameworks for your jurisdictions, KYC/AML implementation, fraud prevention and risk management, security audit trails, and regulatory reporting tailored to your market requirements.'
+      description: 'Incorporate jurisdictional compliance tools into your platform architecture. We implement configurable Know Your Customer (KYC), Anti-Money Laundering (AML), and fraud prevention workflows tailored to your operational requirements.'
     },
     {
       id: 8,
       icon: HandshakeIcon,
       title: 'Dedicated Development Team',
-      description: 'Work with experienced developers dedicated to your project. Understand your vision and business goals, provide regular updates and transparent communication, continuous platform optimization, feature additions, and ongoing technical support for your success.'
+      description: 'Collaborate with experienced iGaming software developers dedicated to your custom build. Full source code is included with your custom-developed iGaming platform. Delivery scope, ownership, and intellectual property rights are defined in your project agreement.'
     }
   ];
 
@@ -197,6 +201,79 @@ export default function CustomiGamingSolution() {
       }
     }, 0);
   };
+
+  const handleTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, currentIndex: number) => {
+    let nextIndex = currentIndex;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      nextIndex = (currentIndex + 1) % tabs.length;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      nextIndex = 0;
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      nextIndex = tabs.length - 1;
+    } else {
+      return;
+    }
+    const targetTab = tabs[nextIndex];
+    handleTabClick(targetTab.label);
+    const targetBtn = document.getElementById(`tab-${targetTab.id}`);
+    if (targetBtn) {
+      targetBtn.focus();
+    }
+  };
+
+  const bespokeDevelopmentSteps: StepItem[] = [
+    {
+      id: 1,
+      title: 'Requirements & Planning',
+      text: (
+        <>
+          Understand the client&apos;s business model, casino or sportsbook requirements, target markets, and custom features.
+        </>
+      ),
+    },
+    {
+      id: 2,
+      title: 'UI/UX & Architecture',
+      text: (
+        <>
+          Design the player experience, admin workflows, platform architecture, and technical requirements.
+        </>
+      ),
+    },
+    {
+      id: 3,
+      title: 'Custom Development',
+      text: (
+        <>
+          Develop the casino, sportsbook, player management, payment integrations, and other agreed features from scratch.
+        </>
+      ),
+    },
+    {
+      id: 4,
+      title: 'Testing & Optimization',
+      text: (
+        <>
+          Test platform functionality, integrations, security controls, and performance before launch.
+        </>
+      ),
+    },
+    {
+      id: 5,
+      title: 'Launch & Handover',
+      text: (
+        <>
+          Prepare deployment and deliver the custom-developed source code according to the project agreement.
+        </>
+      ),
+    },
+  ];
 
   const customDiscoverItems = [
     {
@@ -253,7 +330,7 @@ export default function CustomiGamingSolution() {
     {
       id: 8,
       title: 'Pori444 Bangladesh Case Study',
-      description: 'Discover how Kvaornux engineered a localized iGaming platform with custom mobile banking integrations and sub-second settlement in South Asia.',
+      description: 'Discover how KVAORNUX engineered a localized iGaming platform with custom mobile banking integrations and fast bet settlement in South Asia.',
       icon: HandshakeIcon,
       link: '/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
       span: 2,
@@ -313,7 +390,7 @@ export default function CustomiGamingSolution() {
       {/* Hero Section */}
       <section 
         ref={sectionRef}
-        className="relative pt-32 overflow-hidden"
+        className="relative pt-28 sm:pt-32 pb-2 overflow-hidden"
         style={{
           background:
             'radial-gradient(71.13% 100% at 50% 0, rgba(0,235,170,0.15) 0%, rgba(13,11,16,0.2) 65.41%), #0b0b0f'
@@ -328,6 +405,21 @@ export default function CustomiGamingSolution() {
 
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           
+          {/* Accessible Visual Breadcrumbs */}
+          <nav aria-label="Breadcrumb" className="mb-4 sm:mb-6 flex items-center justify-center text-xs sm:text-sm text-gray-400">
+            <ol className="flex items-center space-x-2">
+              <li>
+                <Link href="/" className="hover:text-[#00ebaa] transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true" className="text-gray-600">/</li>
+              <li className="text-white font-medium" aria-current="page">
+                Bespoke iGaming Solutions
+              </li>
+            </ol>
+          </nav>
+
           {/* Main Title */}
           <div className="text-center mb-3">
             <h1 
@@ -340,54 +432,93 @@ export default function CustomiGamingSolution() {
           </div>
 
           {/* Subtitle/Description */}
-          <div className="max-w-4xl mx-auto mb-9">
+          <div className="max-w-4xl mx-auto mb-6 sm:mb-8">
             <p 
               className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
               ref={(el) => { elementsRef.current[1] = el; }}
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Build your iGaming platform exactly your way. Custom architecture, tailored features, flexible payment integration, and scalable infrastructure designed specifically for your business model and market. Full control over design, functionality, and operations with dedicated team support and continuous optimization.
+              Build your casino, sportsbook, or complete iGaming platform from scratch with KVAORNUX. Our custom iGaming software development services are tailored to your business requirements, including unique features, payment integrations, player management, and full source code.
             </p>
+          </div>
+
+          {/* Hero CTA Button */}
+          <div
+            ref={(el) => { elementsRef.current[2] = el; }}
+            data-anim="from-bottom"
+            data-anim-delay="2"
+            className="flex justify-center mb-8 sm:mb-10"
+          >
+            <button
+              type="button"
+              onClick={handleScrollToContact}
+              className="inline-flex items-center justify-center font-bold text-sm sm:text-base text-black transition-all duration-300 hover:scale-105 cursor-pointer rounded-full shadow-[0_0_25px_rgba(0,235,170,0.3)] hover:shadow-[0_0_35px_rgba(0,235,170,0.5)] active:scale-95"
+              style={{
+                padding: '0.75rem 2.25rem',
+                minHeight: '2.9rem',
+                background: 'radial-gradient(51.68% 146.29% at 65.07% -28.85%, #00ebaa 26.68%, #00c3b3 100%)',
+                border: 'none',
+                outline: 'none',
+              }}
+            >
+              Discuss Your Custom Project
+            </button>
           </div>
 
         </div>
       </section>
 
       {/* Tab Features Section */}
-      <section id="solutions" className="relative bg-gradient-to-b from-black via-gray-900 to-black">
+      <section id="solutions" className="relative pb-12 md:pb-16 bg-gradient-to-b from-black via-gray-900 to-black">
         <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
 
-         {/* Tab Buttons */}
-         <div
-          ref={tabsContainerRef}
-          className="overflow-x-auto pb-3 mb-8 sm:mb-10 md:mb-12 lg:mb-14 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
-        >
-          <div className="flex gap-1 sm:gap-1.5 md:gap-2 flex-nowrap">
-            {tabs.map((tab) => {
-              const IconComponent = iconMap[tab.icon as keyof typeof iconMap];
-              return (
-                <button
-                  key={tab.id}
-                  ref={activeTab === tab.label ? activeTabRef : null}
-                  onClick={() => handleTabClick(tab.label)}
-                  className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-xs sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
-                    activeTab === tab.label
-                      ? 'bg-white text-black border-2 border-white'
-                      : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
-                  }`}
-                >
-                  {IconComponent && <IconComponent size={16} className="hidden sm:block" />}
-                  <span className="leading-none">{tab.label}</span>
-                </button>
-              );
-            })}
+          {/* Tab Buttons */}
+          <div
+            ref={tabsContainerRef}
+            className="overflow-x-auto pb-3 mb-8 sm:mb-10 md:mb-12 lg:mb-14 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
+            role="tablist"
+            aria-label="Custom Platform Categories"
+          >
+            <div className="flex gap-1 sm:gap-1.5 md:gap-2 flex-nowrap py-1.5 px-1">
+              {tabs.map((tab, index) => {
+                const IconComponent = iconMap[tab.icon as keyof typeof iconMap];
+                const isSelected = activeTab === tab.label;
+                return (
+                  <button
+                    key={tab.id}
+                    id={`tab-${tab.id}`}
+                    role="tab"
+                    aria-selected={isSelected}
+                    aria-controls={`tabpanel-${tab.id}`}
+                    tabIndex={isSelected ? 0 : -1}
+                    ref={isSelected ? activeTabRef : null}
+                    onClick={() => handleTabClick(tab.label)}
+                    onKeyDown={(e) => handleTabKeyDown(e, index)}
+                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-xs sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${
+                      isSelected
+                        ? 'bg-white text-black border-2 border-white'
+                        : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
+                    }`}
+                  >
+                    {IconComponent && <IconComponent size={16} className="hidden sm:block" />}
+                    <span className="leading-none">{tab.label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
           {/* Tab Content */}
           {activeTabData && (
-            <div key={activeTabData.id} className="animate-in">
+            <div
+              key={activeTabData.id}
+              id={`tabpanel-${activeTabData.id}`}
+              role="tabpanel"
+              aria-labelledby={`tab-${activeTabData.id}`}
+              tabIndex={0}
+              className="animate-in focus:outline-none"
+            >
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 sm:gap-6 md:gap-7 lg:gap-8 items-stretch">
 
                 {/* Image Card — first on mobile, right on desktop */}
@@ -400,7 +531,7 @@ export default function CustomiGamingSolution() {
                       className="relative w-full h-full rounded-xl sm:rounded-2xl shadow-2xl object-cover"
                       style={{ animation: 'imageSlideIn 0.6s ease-out' }}
                       onError={(e) => {
-                        e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI5MzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iNTMwIiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iNTAwIiB5PSIyNjUsIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg=='
+                        e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI1MzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMDAiIGhlaWdodD0iNTMwIiBmaWxsPSIjMjIyIi8+PHRleHQgeD0iNTAwIiB5PSIyNjUsIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiM2NjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5JbWFnZSBOb3QgQXZhaWxhYmxlPC90ZXh0Pjwvc3ZnPg=='
                       }}
                     />
                   </div>
@@ -414,9 +545,9 @@ export default function CustomiGamingSolution() {
                       background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a',
                     }}
                   >
-                    <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
+                    <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
                       {activeTabData.title}
-                    </h3>
+                    </h2>
                     <p className="text-base sm:text-base md:text-base lg:text-lg text-[#a5a5a5] leading-relaxed font-light text-left">
                       {activeTabData.description}
                     </p>
@@ -429,8 +560,8 @@ export default function CustomiGamingSolution() {
         </div>
       </section>
 
-      {/* All-in-One Solutions Section */}
-      <section id="solutions" className="relative bg-[#0b0b0f]">
+      {/* Platform Features / Solutions Section */}
+      <section id="platform-features" className="relative bg-[#0b0b0f] pb-16 md:pb-24">
         {/* 🔵 Gradient Background */}
         <div
           className="absolute inset-0"
@@ -467,7 +598,7 @@ export default function CustomiGamingSolution() {
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
               >
-                Complete Bespoke Solution Toolkit
+                Custom iGaming Software Development Services
               </h2>
 
               <p 
@@ -476,7 +607,7 @@ export default function CustomiGamingSolution() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                Every tool and service you need to build your custom iGaming solution. Full flexibility, complete control over features and design, scalable infrastructure, and dedicated expert support to bring your vision to life.
+                Every module, integration, and tool needed to build your bespoke casino and sportsbook platform from scratch. Full technical autonomy, tailored feature development, and source code included.
               </p>
 
               <div
@@ -547,6 +678,300 @@ export default function CustomiGamingSolution() {
         </div>
       </section>
 
+      {/* Development Process Steps Slider */}
+      <StepsSection
+        sectionId="development-process"
+        className="my-8 md:my-16"
+        scrollSticky={true}
+        customTitle="How We Build Your Custom iGaming Platform"
+        customSubtitle="Follow our structured engineering path from initial discovery and platform architecture to custom development, testing, and production handover."
+        customSteps={bespokeDevelopmentSteps}
+        customCtaText="Discuss Your Custom Project"
+        ctaHref="#contact-form-section"
+        onCtaClick={(e) => {
+          e.preventDefault();
+          handleScrollToContact();
+        }}
+      />
+
+      {/* Three-Solution Comparison Section: White Label vs Turnkey vs Bespoke */}
+      <section id="solution-comparison" className="relative py-16 md:py-24 bg-[#080b0f] border-t border-white/10">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
+          <div className="text-center mb-10 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              White Label vs Turnkey vs Bespoke iGaming Development
+            </h2>
+            <p className="text-[#a5a5a5] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">
+              Compare our software delivery models to choose the right platform architecture, time to market, and source code ownership for your business.
+            </p>
+          </div>
+
+          {/* Comparison Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+            {/* Card 1: White Label Casino */}
+            <div
+              className="rounded-xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-[#00ebaa]/50 hover:shadow-[0_0_25px_rgba(0,235,170,0.15)] relative h-full"
+              style={{
+                background: 'linear-gradient(180deg, rgba(0, 235, 170, 0.12) 0%, rgba(0, 235, 170, 0.06) 40%, rgba(0, 235, 170, 0.02) 100%), #10161a',
+                border: '1px solid rgba(0, 235, 170, 0.22)',
+                boxShadow: '0 -2px 4.7px 0 rgba(0, 235, 170, 0.15) inset',
+                backdropFilter: 'blur(10px)',
+              }}
+            >
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">
+                  <Link href="/white-label-casino-solutions" className="hover:text-[#00ebaa] transition-colors">
+                    White Label Casino Software
+                  </Link>
+                </h3>
+                <p className="text-sm sm:text-base text-[#a5d8d0] mb-6 leading-relaxed font-normal">
+                  Launch your branded casino using our already-developed platform. Ideal for operators who want a fast market launch without building software from scratch.
+                </p>
+
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Existing platform with custom branding
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Fast deployment for eligible configurations
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Custom branding and responsive player UI
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Integration infrastructure for 150+ game providers
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Source code available separately at additional cost
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+                <Link
+                  href="/white-label-casino-solutions"
+                  className="inline-flex items-center gap-2 text-[#00ebaa] font-semibold text-base hover:underline"
+                >
+                  <span>Explore White Label</span>
+                </Link>
+                <Link
+                  href="/white-label-casino-solutions"
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-[#121314] transition-all duration-300 hover:scale-105 shrink-0"
+                  style={{
+                    background: 'radial-gradient(51.68% 146.29% at 65.07% -28.85%, #00ebaa 26.68%, #00c3b3 100%)',
+                    boxShadow: '0 -3px 3px 0 rgba(0, 235, 170, 0.25) inset, 0 1px 1.5px 0 rgba(255, 244, 230, 0.93) inset',
+                  }}
+                  aria-label="Explore White Label"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2: Turnkey Casino Software */}
+            <div
+              className="rounded-xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-[#00ebaa]/50 hover:shadow-[0_0_25px_rgba(0,235,170,0.15)] relative h-full"
+              style={{
+                background: 'linear-gradient(180deg, rgba(0, 235, 170, 0.12) 0%, rgba(0, 235, 170, 0.06) 40%, rgba(0, 235, 170, 0.02) 100%), #10161a',
+                border: '1px solid rgba(0, 235, 170, 0.22)',
+                boxShadow: '0 -2px 4.7px 0 rgba(0, 235, 170, 0.15) inset',
+                backdropFilter: 'blur(10px)',
+              }}
+            >
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">
+                  <Link href="/turnkey-casino-software-solutions" className="hover:text-[#00ebaa] transition-colors">
+                    Turnkey Casino Software
+                  </Link>
+                </h3>
+                <p className="text-sm sm:text-base text-[#a5d8d0] mb-6 leading-relaxed font-normal">
+                  Complete casino and sportsbook platform with source code included at no extra charge. Pre-configured for swift setup with extensive operational tools.
+                </p>
+
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Complete casino and sportsbook platform
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Source code included at no extra charge
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Configurable games and payment integrations
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Player, bonus, and affiliate management tools
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Fast deployment for established configurations
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+                <Link
+                  href="/turnkey-casino-software-solutions"
+                  className="inline-flex items-center gap-2 text-[#00ebaa] font-semibold text-base hover:underline"
+                >
+                  <span>Explore Turnkey Solution</span>
+                </Link>
+                <Link
+                  href="/turnkey-casino-software-solutions"
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-[#121314] transition-all duration-300 hover:scale-105 shrink-0"
+                  style={{
+                    background: 'radial-gradient(51.68% 146.29% at 65.07% -28.85%, #00ebaa 26.68%, #00c3b3 100%)',
+                    boxShadow: '0 -3px 3px 0 rgba(0, 235, 170, 0.25) inset, 0 1px 1.5px 0 rgba(255, 244, 230, 0.93) inset',
+                  }}
+                  aria-label="Explore Turnkey Solution"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 3: Bespoke iGaming Development (Current Solution - Highlighted) */}
+            <div
+              className="rounded-xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-[#00ebaa]/50 hover:shadow-[0_0_25px_rgba(0,235,170,0.15)] relative h-full"
+              style={{
+                background: 'linear-gradient(180deg, rgba(0, 235, 170, 0.16) 0%, rgba(0, 235, 170, 0.08) 40%, rgba(0, 235, 170, 0.03) 100%), #10161a',
+                border: '1.5px solid rgba(0, 235, 170, 0.45)',
+                boxShadow: '0 -2px 6px 0 rgba(0, 235, 170, 0.25) inset',
+                backdropFilter: 'blur(10px)',
+              }}
+            >
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">
+                  Bespoke iGaming Development
+                </h3>
+                <p className="text-sm sm:text-base text-[#a5d8d0] mb-6 leading-relaxed font-normal">
+                  A fully custom platform developed from scratch around the client&apos;s business requirements. Engineered for complete operational autonomy and proprietary features.
+                </p>
+
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      100% custom platform engineered from scratch
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Bespoke UI/UX, player journeys, and branding
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Custom casino mechanics and specialized sportsbook
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Tailored payment gateways and third-party APIs
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                    </svg>
+                    <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
+                      Source code included, with ownership and IP rights defined in the project agreement
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/5">
+                <button
+                  type="button"
+                  onClick={handleScrollToContact}
+                  className="inline-flex items-center gap-2 text-[#00ebaa] font-semibold text-base hover:underline text-left cursor-pointer"
+                >
+                  <span>Discuss Your Custom Project</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={handleScrollToContact}
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-[#121314] transition-all duration-300 hover:scale-105 shrink-0 cursor-pointer"
+                  style={{
+                    background: 'radial-gradient(51.68% 146.29% at 65.07% -28.85%, #00ebaa 26.68%, #00c3b3 100%)',
+                    boxShadow: '0 -3px 3px 0 rgba(0, 235, 170, 0.25) inset, 0 1px 1.5px 0 rgba(255, 244, 230, 0.93) inset',
+                  }}
+                  aria-label="Discuss Your Custom Project"
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Discover More Section */}
       <DiscoverMore
         customItems={customDiscoverItems}
@@ -554,9 +979,12 @@ export default function CustomiGamingSolution() {
         customSubtitle="Tailored engineering, proprietary game development, and custom integration services for unique operator roadmaps."
       />
 
+      {/* 13 Operator-Focused FAQs */}
+      <FAQSection customFaqData={BESPOKE_FAQS} hideBgImage={true} />
+
       {/* Opportunities Section */}
       <OpportunitiesSection/>
-      <ContactForm/>
+      <ContactForm defaultCategory="Bespoke iGaming Solutions" />
     
     </>
   );
