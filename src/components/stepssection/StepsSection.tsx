@@ -22,6 +22,7 @@ export interface StepsSectionProps {
   onCtaClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   sectionId?: string;
   scrollSticky?: boolean;
+  className?: string;
 }
 
 export const stepsData: StepItem[] = [
@@ -57,13 +58,12 @@ const styles = `
     overflow: hidden;
     background: radial-gradient(106.74% 100.05% at 50% 100.05%, #1c1918 0, #0b0b0f 19.4%);
     position: relative;
-    padding-top: 3rem;
-    padding-bottom: 9rem;
+    padding: 5rem 0 6rem;
   }
 
   @media (min-width: 768px) {
     .steps-section {
-      padding: 4.5rem 0;
+      padding: 6.5rem 0 7.5rem;
     }
   }
 
@@ -71,6 +71,15 @@ const styles = `
   .steps-scroll-track {
     position: relative;
     width: 100%;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .steps-scroll-track {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
   }
 
   .steps-section.is-sticky-mode {
@@ -86,14 +95,14 @@ const styles = `
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: clamp(0.75rem, 2vh, 1.75rem) 0;
+    padding: clamp(2.75rem, 5vh, 4.5rem) 1.5rem;
     box-sizing: border-box;
     z-index: 20;
   }
 
   @media (min-width: 768px) {
     .steps-section.is-sticky-mode {
-      padding: clamp(1rem, 2.5vh, 2.25rem) 0;
+      padding: clamp(3.25rem, 6vh, 5.5rem) 1.5rem;
     }
   }
 
@@ -155,12 +164,24 @@ const styles = `
     margin-bottom: 2rem;
     position: relative;
     overflow: visible;
+    transform: translateZ(0);
+  }
+
+  .steps-slider .swiper-wrapper {
+    will-change: transform;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1) !important;
+  }
+
+  .steps-slider .swiper-slide {
+    will-change: transform, opacity;
   }
 
   .step-item {
     position: relative;
     z-index: 1;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   .step-indicator {
@@ -172,7 +193,7 @@ const styles = `
     justify-content: center;
     align-items: center;
     background: #282a2c;
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     margin-bottom: 2rem;
     position: relative;
     z-index: 2;
@@ -181,10 +202,33 @@ const styles = `
   .step-indicator span {
     width: 1.6rem;
     height: 1.6rem;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+  }
+
+  /* Pre-rendered GPU layers for lag-free sphere transition */
+  .step-indicator span::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
     background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .2) 100%), radial-gradient(72.77% 73.74% at 44.19% 24.61%, rgba(255, 255, 255, .8) 0, rgba(75, 64, 88, .5) 62.98%, rgba(67, 61, 75, .8) 92.31%), rgba(255, 255, 255, .6);
     background-blend-mode: normal, darken, normal;
-    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    transition: opacity 0.35s ease;
+  }
+
+  .step-indicator span::after {
+    content: '';
+    position: absolute;
+    inset: 0;
     border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #00ebaa 60%, #00a87a 100%);
+    box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   /* Active step indicator styling */
@@ -195,17 +239,20 @@ const styles = `
     box-shadow: none;
   }
 
-  .step-item.is-active .step-indicator span,
-  .swiper-slide-active .step-indicator span {
-    background: radial-gradient(circle at 35% 35%, #ffffff 0%, #00ebaa 60%, #00a87a 100%);
-    background-blend-mode: normal;
-    box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.3);
+  .step-item.is-active .step-indicator span::before,
+  .swiper-slide-active .step-indicator span::before {
+    opacity: 0;
+  }
+
+  .step-item.is-active .step-indicator span::after,
+  .swiper-slide-active .step-indicator span::after {
+    opacity: 1;
   }
 
   .step-title {
     margin-bottom: 0.6rem;
     color: #9e9fa0;
-    transition: all 0.3s ease-in-out;
+    transition: color 0.3s ease;
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.35;
@@ -218,7 +265,7 @@ const styles = `
 
   .step-text {
     color: #9e9fa0;
-    transition: all 0.3s ease-in-out;
+    transition: color 0.3s ease;
     font-size: 1.05rem;
     font-weight: 400;
     line-height: 1.55;
@@ -238,22 +285,33 @@ const styles = `
     width: max-content;
   }
 
-  .step-counter-pill {
+  .steps-pagination-dots {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    padding: 0.45rem 1rem;
-    border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #00ebaa;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    gap: 0.65rem;
+    padding: 0.35rem 0.5rem;
   }
 
-  .counter-sep {
-    color: rgba(255, 255, 255, 0.3);
+  .steps-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: #414349;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .steps-dot:hover {
+    background: #5a5c64;
+    transform: scale(1.15);
+  }
+
+  .steps-dot.is-active {
+    background: #00ebaa;
+    box-shadow: 0 0 12px rgba(0, 235, 170, 0.75);
+    transform: scale(1.08);
   }
 
   .swiper-button-custom {
@@ -267,19 +325,20 @@ const styles = `
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
     color: #fff;
     border: none;
     outline: none;
+    will-change: transform;
   }
 
   .swiper-button-custom:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
+    transform: scale(1.06);
   }
 
   .swiper-button-custom:active {
-    transform: scale(0.95);
+    transform: scale(0.94);
   }
 
   .btn-center {
@@ -409,43 +468,43 @@ const styles = `
   /* Screen height media queries for shorter laptop viewports with proper breathing room */
   @media (max-height: 850px) {
     .steps-section.is-sticky-mode {
-      padding: 1rem 0;
+      padding: 2.25rem 1.5rem;
     }
     .steps-section.is-sticky-mode .steps-title {
-      margin: 0 auto 0.5rem;
+      margin: 0 auto 0.4rem;
     }
     .steps-section.is-sticky-mode .steps-subtitle {
-      margin: 0 auto 1.5rem;
+      margin: 0 auto 1.25rem;
     }
     .steps-section.is-sticky-mode .step-indicator {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
     .steps-section.is-sticky-mode .swiper-navigation-center {
-      margin-top: 1.5rem;
+      margin-top: 1.25rem;
     }
     .steps-section.is-sticky-mode .steps-cta-wrapper {
-      margin-top: 2rem !important;
+      margin-top: 1.5rem !important;
     }
   }
 
   @media (max-height: 720px) {
     .steps-section.is-sticky-mode {
-      padding: 0.5rem 0;
+      padding: 1.5rem 1rem;
     }
     .steps-section.is-sticky-mode .steps-title {
-      margin: 0 auto 0.35rem;
+      margin: 0 auto 0.3rem;
     }
     .steps-section.is-sticky-mode .steps-subtitle {
-      margin: 0 auto 1rem;
+      margin: 0 auto 0.85rem;
     }
     .steps-section.is-sticky-mode .step-indicator {
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.75rem;
     }
     .steps-section.is-sticky-mode .swiper-navigation-center {
-      margin-top: 1rem;
+      margin-top: 0.85rem;
     }
     .steps-section.is-sticky-mode .steps-cta-wrapper {
-      margin-top: 1.25rem !important;
+      margin-top: 1.1rem !important;
     }
   }
 `;
@@ -459,11 +518,14 @@ export default function StepsSection({
   onCtaClick,
   sectionId,
   scrollSticky = false,
+  className,
 }: StepsSectionProps = {}) {
   const swiperRef = useRef<SwiperType | null>(null);
   const scrollWrapperRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const activeIndexRef = useRef(0);
+  const isProgrammaticScrollRef = useRef(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const steps = customSteps || stepsData;
   const title = customTitle || 'From Strategy to Launch';
@@ -478,6 +540,7 @@ export default function StepsSection({
     let isRunning = false;
 
     const handleScroll = () => {
+      if (isProgrammaticScrollRef.current) return;
       if (isRunning) return;
       isRunning = true;
 
@@ -493,21 +556,23 @@ export default function StepsSection({
         const totalDist = track.offsetHeight - windowH;
 
         if (totalDist > 0) {
-          // Progress from 0 (top enters sticky position) to 1 (track ends)
           const scrolled = -rect.top;
-          const progress = Math.max(0, Math.min(1, scrolled / totalDist));
+          // Only process when track is inside or near the sticky range
+          if (scrolled >= -30 && scrolled <= totalDist + 30) {
+            const progress = Math.max(0, Math.min(1, scrolled / totalDist));
 
-          // Map progress directly to slide index
-          const targetIndex = Math.min(
-            Math.floor(progress * steps.length),
-            steps.length - 1
-          );
+            // Map progress smoothly to slide index
+            const targetIndex = Math.min(
+              Math.floor(progress * steps.length),
+              steps.length - 1
+            );
 
-          if (targetIndex !== activeIndexRef.current) {
-            activeIndexRef.current = targetIndex;
-            setActiveIndex(targetIndex);
-            if (swiperRef.current && !swiperRef.current.destroyed) {
-              swiperRef.current.slideTo(targetIndex, 450);
+            if (targetIndex !== activeIndexRef.current) {
+              activeIndexRef.current = targetIndex;
+              setActiveIndex(targetIndex);
+              if (swiperRef.current && !swiperRef.current.destroyed) {
+                swiperRef.current.slideTo(targetIndex, 550);
+              }
             }
           }
         }
@@ -521,6 +586,7 @@ export default function StepsSection({
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
     };
   }, [scrollSticky, steps.length]);
 
@@ -531,9 +597,9 @@ export default function StepsSection({
       setActiveIndex(targetIdx);
       if (swiperRef.current && !swiperRef.current.destroyed) {
         if (typeof swiperRef.current.slideToLoop === 'function') {
-          swiperRef.current.slideToLoop(targetIdx);
+          swiperRef.current.slideToLoop(targetIdx, 550);
         } else {
-          swiperRef.current.slideTo(targetIdx);
+          swiperRef.current.slideTo(targetIdx, 550);
         }
       }
       return;
@@ -549,10 +615,17 @@ export default function StepsSection({
     const targetProgress = (targetIdx + 0.5) * stepFraction;
     const targetScrollY = trackTopInDoc + targetProgress * totalDist;
 
+    // Temporarily lock scroll listener to eliminate fighting between smooth scroll and swiper
+    isProgrammaticScrollRef.current = true;
+    if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    scrollTimeoutRef.current = setTimeout(() => {
+      isProgrammaticScrollRef.current = false;
+    }, 750);
+
     activeIndexRef.current = targetIdx;
     setActiveIndex(targetIdx);
     if (swiperRef.current && !swiperRef.current.destroyed) {
-      swiperRef.current.slideTo(targetIdx, 450);
+      swiperRef.current.slideTo(targetIdx, 550);
     }
 
     window.scrollTo({
@@ -581,7 +654,7 @@ export default function StepsSection({
 
   const sectionContent = (
     <section
-      className={`steps-section ${scrollSticky ? 'is-sticky-mode' : ''}`}
+      className={`steps-section ${scrollSticky ? 'is-sticky-mode' : ''} ${!scrollSticky && className ? className : ''}`}
       id={scrollSticky ? undefined : sectionId}
     >
       {/* Background Image */}
@@ -624,11 +697,20 @@ export default function StepsSection({
             }
             loop={!scrollSticky}
             centeredSlides={true}
+            speed={550}
+            grabCursor={true}
+            touchRatio={1.2}
+            resistance={true}
+            resistanceRatio={0.85}
+            preventInteractionOnTransition={false}
+            watchSlidesProgress={true}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             onSlideChange={(swiper) => {
               const newIdx = swiper.realIndex ?? swiper.activeIndex;
-              activeIndexRef.current = newIdx;
-              setActiveIndex(newIdx);
+              if (newIdx !== activeIndexRef.current) {
+                activeIndexRef.current = newIdx;
+                setActiveIndex(newIdx);
+              }
             }}
             className="steps-slider"
             spaceBetween={30}
@@ -687,13 +769,22 @@ export default function StepsSection({
               </svg>
             </button>
 
-            {scrollSticky && (
-              <div className="step-counter-pill">
-                <span>Step 0{activeIndex + 1}</span>
-                <span className="counter-sep">/</span>
-                <span>0{steps.length}</span>
-              </div>
-            )}
+            <div className="steps-pagination-dots" role="tablist" aria-label="Step pagination">
+              {steps.map((_, index) => {
+                const isActive = index === activeIndex;
+                return (
+                  <button
+                    key={index}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-label={`Go to step ${index + 1}`}
+                    className={`steps-dot ${isActive ? 'is-active' : ''}`}
+                    onClick={() => scrollToStep(index)}
+                  />
+                );
+              })}
+            </div>
 
             <button
               type="button"
@@ -733,7 +824,7 @@ export default function StepsSection({
         <style>{styles}</style>
         <div
           ref={scrollWrapperRef}
-          className="steps-scroll-track"
+          className={`steps-scroll-track ${className || ''}`}
           id={sectionId}
           style={{ height: trackHeight }}
         >

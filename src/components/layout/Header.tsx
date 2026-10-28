@@ -826,6 +826,11 @@ export default function Header() {
                             Bespoke iGaming
                           </Link>
                         </li>
+                        <li>
+                          <Link href="/white-label-casino-solutions" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            White Label Casino
+                          </Link>
+                        </li>
                       </ul>
                     </div>
 
@@ -848,11 +853,6 @@ export default function Header() {
                         <li>
                           <Link href="/turnkey-sportsbook-solutions" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
                             Turnkey Sportsbook
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/white-label-casino-solutions" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
-                            White Label
                           </Link>
                         </li>
                         <li>
