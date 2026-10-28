@@ -151,7 +151,7 @@ export default function CustomiGamingSolution() {
       id: 6,
       icon: Zap,
       title: 'Scalable & Resilient Architecture',
-      description: 'Deploy on cloud-native infrastructure engineered for high availability and growth. Auto-scaling microservices, load balancing, and performance monitoring ensure stable operations during peak betting events.'
+      description: 'Build your custom iGaming platform with scalable infrastructure, load balancing, and performance monitoring designed to support business growth and high-traffic gaming activity.'
     },
     {
       id: 7,
