@@ -1,19 +1,20 @@
 import type { Metadata } from 'next';
-import TurnkeyIgamingPlatform from "./Client";
+import TurnkeyCasinoPlatform from "./Client";
+import { TURNKEY_FAQS } from "./faqData";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Turnkey iGaming Solution | Casino & Sportsbook Platform | Kvaornux",
+    absolute: "Turnkey Casino Software & Solutions | KVAORNUX",
   },
   description:
-    "Launch your turnkey iGaming platform with casino & sportsbook integration, 20,000+ games, secure payments, KYC system, and full admin control.",
+    "Launch your casino and sportsbook with KVAORNUX turnkey casino software. Get a complete gaming platform with source code, game integrations, and admin tools.",
   alternates: {
     canonical: "/turnkey-casino-software-solutions",
   },
   openGraph: {
-    title: "Turnkey iGaming Solution | Casino & Sportsbook Platform | Kvaornux",
+    title: "Turnkey Casino Software & Solutions | KVAORNUX",
     description:
-      "Launch your turnkey iGaming platform with casino & sportsbook integration, 20,000+ games, secure payments, KYC system, and full admin control.",
+      "Launch your casino and sportsbook with KVAORNUX turnkey casino software. Get a complete gaming platform with source code, game integrations, and admin tools.",
     url: "https://kvaornux.com/turnkey-casino-software-solutions",
     siteName: "Kvaornux",
     type: "website",
@@ -22,15 +23,15 @@ export const metadata: Metadata = {
         url: "https://kvaornux.com/assets/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Turnkey iGaming Solution | Casino & Sportsbook Platform | Kvaornux",
+        alt: "Turnkey Casino Software & Solutions | KVAORNUX",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Turnkey iGaming Solution | Casino & Sportsbook Platform | Kvaornux",
+    title: "Turnkey Casino Software & Solutions | KVAORNUX",
     description:
-      "Launch your turnkey iGaming platform with casino & sportsbook integration, 20,000+ games, secure payments, KYC system, and full admin control.",
+      "Launch your casino and sportsbook with KVAORNUX turnkey casino software. Get a complete gaming platform with source code, game integrations, and admin tools.",
     images: ["https://kvaornux.com/assets/og-image.webp"],
   },
 };
@@ -55,13 +56,52 @@ export default function Page() {
     ],
   };
 
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://kvaornux.com/turnkey-casino-software-solutions#service',
+    name: 'Turnkey Casino Software & Solutions',
+    url: 'https://kvaornux.com/turnkey-casino-software-solutions',
+    provider: {
+      '@type': 'Organization',
+      '@id': 'https://kvaornux.com/#organization',
+      name: 'Kvaornux',
+      url: 'https://kvaornux.com/',
+    },
+    description:
+      "Launch your casino and sportsbook with KVAORNUX turnkey casino software. Get a complete gaming platform with source code, game integrations, and admin tools.",
+    areaServed: 'Global',
+    serviceType: 'iGaming Platform Development',
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: TURNKEY_FAQS.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
       />
-      <TurnkeyIgamingPlatform />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, '\\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, '\\u003c') }}
+      />
+      <TurnkeyCasinoPlatform />
     </>
   );
 }
