@@ -6,6 +6,16 @@ import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBan
 
 const blogs = [
   {
+    title: "Game Aggregation for Sweepstakes Operators: A Complete Guide for 2026",
+    description:
+      "Learn how game aggregation works for sweepstakes operators in 2026. Explore game catalog sourcing, Gold Coin and Sweeps Coin availability, commercial pricing models, and studio licensing.",
+    href: "/blog/sweepstakes-game-aggregation",
+    tag: "Sweepstakes",
+    readTime: "15 min read",
+    date: "29.10.2026",
+    image: "/assets/features/sweepstakes-game-aggregation-banner.webp",
+  },
+  {
     title: "Sweepstakes Casino Payments in 2026: Methods, Gateways & Redemptions",
     description:
       "Explore sweepstakes casino payment processing in 2026. Learn how operators handle Gold Coin purchases, Sweeps Coin prize redemptions, merchant gateways, and KYC verification.",

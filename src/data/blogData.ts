@@ -129,6 +129,19 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     authorName: 'Kvaornux Editorial Team',
     authorAvatar: '/assets/favicon.webp',
   },
+  {
+    slug: 'sweepstakes-game-aggregation',
+    href: '/blog/sweepstakes-game-aggregation',
+    title: 'Game Aggregation for Sweepstakes Operators: A Complete Guide for 2026',
+    description:
+      'Learn how game aggregation works for sweepstakes operators in 2026. Explore game catalog sourcing, Gold Coin and Sweeps Coin availability, commercial pricing models, and studio licensing.',
+    date: '29.10.2026',
+    readTime: '15 min read',
+    image: '/assets/features/sweepstakes-game-aggregation-banner.webp',
+    tags: ['Sweepstakes', 'Game Aggregation', 'API Integration'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
 ];
 
 export function getPreviousBlogPost(currentSlug: string): BlogPost {
