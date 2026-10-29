@@ -6,6 +6,16 @@ import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBan
 
 const blogs = [
   {
+    title: "Sweepstakes Casino Payments in 2026: Methods, Gateways & Redemptions",
+    description:
+      "Explore sweepstakes casino payment processing in 2026. Learn how operators handle Gold Coin purchases, Sweeps Coin prize redemptions, merchant gateways, and KYC verification.",
+    href: "/blog/sweepstakes-casino-payments",
+    tag: "Sweepstakes",
+    readTime: "16 min read",
+    date: "29.10.2026",
+    image: "/assets/features/sweepstakes-casino-payments-banner.webp",
+  },
+  {
     title: "How to Choose a Sweepstakes Casino Software Provider",
     description:
       "Compare sweepstakes software providers on features, AMOE support, game integrations, development costs, contracts, and source code ownership.",

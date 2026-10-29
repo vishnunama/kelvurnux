@@ -116,6 +116,19 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     authorName: 'Kvaornux Editorial Team',
     authorAvatar: '/assets/favicon.webp',
   },
+  {
+    slug: 'sweepstakes-casino-payments',
+    href: '/blog/sweepstakes-casino-payments',
+    title: 'Sweepstakes Casino Payments in 2026: Methods, Gateways & Redemptions',
+    description:
+      'Explore sweepstakes casino payment processing in 2026. Learn how operators handle Gold Coin purchases, Sweeps Coin prize redemptions, merchant gateways, and KYC verification.',
+    date: '29.10.2026',
+    readTime: '16 min read',
+    image: '/assets/features/sweepstakes-casino-payments-banner.webp',
+    tags: ['Sweepstakes', 'Payments & Banking', 'Prize Redemptions'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
 ];
 
 export function getPreviousBlogPost(currentSlug: string): BlogPost {
