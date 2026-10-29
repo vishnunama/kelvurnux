@@ -783,3 +783,5 @@ export default function SweepstakesPaymentsClient() {
     </>
   );
 }
+
+export { SweepstakesPaymentsClient };

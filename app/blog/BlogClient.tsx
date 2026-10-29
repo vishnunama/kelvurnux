@@ -6,6 +6,16 @@ import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBan
 
 const blogs = [
   {
+    title: "Sweepstakes Fraud Prevention in 2026: An Operator's Guide",
+    description:
+      "Learn how sweepstakes operators prevent fraud in 2026. Explore multi-accounting defense, payment chargeback mitigation, KYC workflows, and wallet protection.",
+    href: "/blog/sweepstakes-fraud-prevention",
+    tag: "Sweepstakes",
+    readTime: "16 min read",
+    date: "29.10.2026",
+    image: "/assets/features/sweepstakes-fraud-prevention-banner.webp",
+  },
+  {
     title: "Game Aggregation for Sweepstakes Operators: A Complete Guide for 2026",
     description:
       "Learn how game aggregation works for sweepstakes operators in 2026. Explore game catalog sourcing, Gold Coin and Sweeps Coin availability, commercial pricing models, and studio licensing.",

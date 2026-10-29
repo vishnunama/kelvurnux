@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { faqList } from './faqData';
-import SweepstakesPaymentsClient from './SweepstakesPaymentsClient';
+import SweepstakesPaymentsClient from '@/app/blog/sweepstakes-casino-payments/SweepstakesPaymentsClient';
 
 export const metadata: Metadata = {
   title: {

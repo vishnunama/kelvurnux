@@ -142,6 +142,19 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     authorName: 'Kvaornux Editorial Team',
     authorAvatar: '/assets/favicon.webp',
   },
+  {
+    slug: 'sweepstakes-fraud-prevention',
+    href: '/blog/sweepstakes-fraud-prevention',
+    title: "Sweepstakes Fraud Prevention in 2026: An Operator's Guide",
+    description:
+      'Learn how sweepstakes operators prevent fraud in 2026. Explore multi-accounting defense, payment chargeback mitigation, KYC workflows, and wallet protection.',
+    date: '29.10.2026',
+    readTime: '16 min read',
+    image: '/assets/features/sweepstakes-fraud-prevention-banner.webp',
+    tags: ['Sweepstakes', 'Fraud Prevention', 'Risk Management', 'Security'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
 ];
 
 export function getPreviousBlogPost(currentSlug: string): BlogPost {
