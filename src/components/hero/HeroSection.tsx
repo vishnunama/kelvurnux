@@ -315,22 +315,9 @@ export default function HeroSection() {
 
       {/* Hero Image */}
       <div className="hero-img">
-        <div
-          className="absolute inset-0 pointer-events-none z-10"
-          style={{
-            backgroundImage: 'linear-gradient(rgba(11, 11, 15, 0) 67.16%, rgb(11, 11, 15) 100%)',
-          }}
-        />
+        <div className="hero-img-overlay" />
         <img
-          src="/assets/hero-img-768.webp"
-          width={1312}
-          height={830}
-          srcSet={`
-            /assets/hero-img-480.webp 480w,
-            /assets/hero-img-768.webp 768w,
-            /assets/hero-img.webp 1312w
-          `}
-          sizes="100vw"
+          src="/assets/hero-img.webp?v=kvaornux-final"
           fetchPriority="high"
           decoding="async"
           alt="Kvaornux B2B iGaming Technology Solution"
@@ -380,7 +367,7 @@ export default function HeroSection() {
               transitionDelay: isLoaded ? '0.3s' : '0s',
             }}
           >
-            A unified technology ecosystem for casino, sportsbook, game aggregation, payments, player management and custom iGaming infrastructure.
+            From white-label casino and sportsbook solutions to custom sweepstakes platforms, KVAORNUX delivers complete iGaming technology backed by 150+ game provider API integrations, payment infrastructure, and player management systems.
           </p>
 
           {/* Dual Action CTA Buttons */}
@@ -519,16 +506,28 @@ export default function HeroSection() {
           width: 100%;
           height: 100%;
           pointer-events: none;
-          display: flex;
+          display: block;
           z-index: 1;
           overflow: hidden;
         }
 
+        .hero-img-overlay {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          z-index: 2;
+          background-image: linear-gradient(rgba(11, 11, 15, 0) 67.16%, rgb(11, 11, 15) 100%);
+        }
+
         .hero-img-element {
+          position: absolute;
+          right: 0;
+          top: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
           object-position: right center;
+          display: block;
         }
 
         /* ── TABLET ~840px ── */
