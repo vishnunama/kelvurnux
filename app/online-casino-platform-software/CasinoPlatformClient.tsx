@@ -175,9 +175,9 @@ export default function CasinoPlatformClient() {
     {
       id: 8,
       icon: Cpu,
-      title: 'High-Availability Infrastructure & 99.99% SLA',
+      title: 'High-Availability & Reliable Platform Infrastructure',
       description:
-        'Cloud-native containerized architecture (Docker/Kubernetes) deployable on AWS, GCP, or private clouds with multi-region failover, automated backups, and guaranteed platform uptime.',
+        'Cloud-native containerized architecture (Docker/Kubernetes) deployable on AWS, GCP, or private clouds with multi-region failover, automated backups, and reliable platform operations.',
     },
     {
       id: 9,

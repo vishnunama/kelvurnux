@@ -181,7 +181,7 @@ export default function SportsbookPlatformClient() {
       icon: Cpu,
       title: 'Decoupled Microservices & Cloud Scalability',
       description:
-        'High-concurrency distributed betting engine built on high-throughput message streams, capable of evaluating millions of bet slips per hour with 99.99% platform availability.',
+        'High-concurrency distributed betting engine built on high-throughput message streams, engineered to evaluate high-volume bet slip traffic during peak sporting events with reliable platform infrastructure.',
     },
     {
       id: 9,

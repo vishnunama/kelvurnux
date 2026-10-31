@@ -333,7 +333,7 @@ export default function HeroSection() {
           sizes="100vw"
           fetchPriority="high"
           decoding="async"
-          alt="Custom iGaming Solution"
+          alt="Kvaornux B2B iGaming Technology Solution"
           className="hero-img-element"
         />
       </div>
@@ -452,7 +452,7 @@ export default function HeroSection() {
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
-              <span>Sub-ms Seamless API</span>
+              <span>Low-latency Seamless Wallet API</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
@@ -460,7 +460,7 @@ export default function HeroSection() {
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
-              <span>99.99% Uptime SLA</span>
+              <span>Reliable Platform Infrastructure</span>
             </div>
           </div>
 

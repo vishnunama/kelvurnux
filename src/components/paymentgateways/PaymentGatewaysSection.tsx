@@ -226,7 +226,7 @@ export default function PaymentGatewaysSection() {
                     href="/crypto-igaming-solutions"
                     className="btn-main"
                   >
-                    <span>Explore Solutions</span>
+                    <span>Explore Crypto Payment Solutions</span>
                   </Link>
                 </div>
 

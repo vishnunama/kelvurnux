@@ -274,7 +274,7 @@ export default function BrandValuesSection() {
                 color: '#d1d5db',
               }}
             >
-              From platform development to game integrations and ongoing support, our experience comes from building and operating real iGaming projects across different markets.
+              From platform development to game integrations and ongoing support, our experience comes from building and supporting real iGaming projects across different markets.
             </p>
           </div>
 
