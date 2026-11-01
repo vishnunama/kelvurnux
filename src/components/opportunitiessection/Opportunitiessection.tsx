@@ -220,7 +220,7 @@ const OpportunitiesSection: FC = () => {
         /* Responsive - Mobile 600px */
         @media (max-width: 600px) {
           .opportunities-section {
-            padding: 1rem 0;
+            padding: 7.5rem 0 2rem;
           }
 
           .opportunities-block {

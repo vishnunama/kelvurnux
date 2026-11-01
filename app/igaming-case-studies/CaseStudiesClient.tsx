@@ -607,7 +607,7 @@ export default function CaseStudiesClient() {
         .section-title {
           color: #fff;
           text-align: left;
-          font-size: clamp(1.8rem, 2.4rem, 2.6rem);
+          font-size: 1.875rem;
           font-style: normal;
           font-weight: 700;
           line-height: 1.2;
@@ -620,6 +620,24 @@ export default function CaseStudiesClient() {
           z-index: 2;
           width: max-content;
           max-width: 100%;
+        }
+
+        @media (min-width: 640px) {
+          .section-title {
+            font-size: 2.25rem;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .section-title {
+            font-size: 3rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .section-title {
+            font-size: 3.75rem;
+          }
         }
 
         .cs-toolbar {

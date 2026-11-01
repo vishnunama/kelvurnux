@@ -8,6 +8,7 @@ import ProvidersSection from "@/src/components/providerssection/ProvidersSection
 import PaymentGatewaysSection from "@/src/components/paymentgateways/PaymentGatewaysSection";
 import SolutionsSection from "@/src/components/solutionssection/Solutionssection";
 import StepsSection from "@/src/components/stepssection/StepsSection";
+import TestimonialsSection from "@/src/components/testimonials/TestimonialsSection";
 
 export const metadata: Metadata = {
   title: {
@@ -65,6 +66,7 @@ export default function Home() {
       <PaymentGatewaysSection />
       <SolutionsSection />
       <StepsSection />
+      <TestimonialsSection />
       <FAQSection />
       <section id="contact-form-section">
         <ContactForm />

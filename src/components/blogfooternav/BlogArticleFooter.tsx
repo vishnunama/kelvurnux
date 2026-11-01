@@ -70,7 +70,7 @@ export default function BlogArticleFooter({ currentSlug }: BlogArticleFooterProp
       >
         <div className="max-w-[78rem] mx-auto relative z-10">
           {/* Experts' Recommendations Heading */}
-          <h2 className="text-2xl sm:text-3xl md:text-[2.4rem] font-bold text-white tracking-tight mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-8 leading-tight">
             Experts' Recommendations
           </h2>
 

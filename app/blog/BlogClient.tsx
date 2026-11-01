@@ -386,32 +386,54 @@ export default function BlogPage() {
         .posts-list {
           display: flex;
           flex-direction: column;
-          gap: 0;
+          gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+          .posts-list {
+            gap: 1.75rem;
+          }
         }
 
         .post-item {
           display: flex;
           flex-direction: row;
-          align-items: center;
-          gap: 2.5rem;
-          padding: 2.2rem 0;
-          border-top: 1px solid rgba(255, 255, 255, 0.12);
-          transition: all 0.3s ease-in-out;
+          align-items: stretch;
+          background: linear-gradient(121deg, rgba(0, 235, 170, 0.25) 10.25%, rgba(0, 235, 170, 0.05) 99.99%), #0a141a;
+          border: none;
+          border-radius: 1.5rem;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
           position: relative;
+          overflow: hidden;
+          padding: 0 !important;
+          margin: 0;
+          transition: none !important;
+          transform: none !important;
+          -webkit-mask-image: -webkit-radial-gradient(white, black);
         }
 
-        .post-item:last-child {
-          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        .post-item:hover {
+          transform: none !important;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+          border: none !important;
         }
 
         .post-img-wrapper {
           position: relative;
-          width: 340px;
-          height: 195px;
-          border-radius: 0.8rem;
+          display: block;
+          width: 360px;
+          min-height: 220px;
+          border-radius: 0;
+          border-top-left-radius: 1.5rem;
+          border-bottom-left-radius: 1.5rem;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
           overflow: hidden;
           flex-shrink: 0;
           cursor: pointer;
+          border: none;
+          margin: 0 !important;
+          padding: 0 !important;
           transform: none !important;
           transition: none !important;
         }
@@ -428,6 +450,15 @@ export default function BlogPage() {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          display: block;
+          margin: 0 !important;
+          padding: 0 !important;
+          border: none;
+          border-radius: 0;
+          border-top-left-radius: 1.5rem;
+          border-bottom-left-radius: 1.5rem;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
           transform: none !important;
           transition: none !important;
         }
@@ -437,7 +468,8 @@ export default function BlogPage() {
           flex-direction: column;
           justify-content: space-between;
           flex: 1;
-          min-height: 180px;
+          padding: 1.75rem 2rem;
+          min-height: auto;
         }
 
         .post-top {
@@ -559,38 +591,100 @@ export default function BlogPage() {
         }
 
         /* RESPONSIVE */
-        @media (max-width: 900px) {
+        @media (max-width: 900px) and (min-width: 769px) {
           .posts-container {
-            padding: 0 2.5rem;
+            padding: 0 1.5rem;
           }
           .post-item {
-            gap: 1.8rem;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 0;
+            padding: 0 !important;
+            margin: 0;
+            border: none;
+            border-radius: 1.35rem;
+            overflow: hidden;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
           }
           .post-img-wrapper {
-            width: 270px;
-            height: 165px;
+            display: block;
+            width: 260px;
+            min-height: 180px;
+            height: auto;
+            border-radius: 0;
+            border-top-left-radius: 1.35rem;
+            border-bottom-left-radius: 1.35rem;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none;
+            overflow: hidden;
+          }
+          .post-img-wrapper img {
+            border-top-left-radius: 1.35rem;
+            border-bottom-left-radius: 1.35rem;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+          .post-content {
+            padding: 1.25rem 1.5rem;
           }
           .post-title {
             font-size: 1.25rem;
           }
         }
 
-        @media (max-width: 680px) {
+        @media (max-width: 768px) {
           .posts-container {
-            padding: 0 1.2rem;
+            padding: 0 1rem;
+          }
+          .posts-list {
+            gap: 1.25rem;
           }
           .post-item {
             flex-direction: column;
             align-items: stretch;
-            gap: 1.2rem;
-            padding: 1.8rem 0;
+            gap: 0;
+            padding: 0 !important;
+            margin: 0;
+            border: none;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            -webkit-mask-image: -webkit-radial-gradient(white, black);
           }
           .post-img-wrapper {
-            width: 100%;
-            height: 210px;
+            display: block;
+            width: 100% !important;
+            height: clamp(200px, 52vw, 240px) !important;
+            min-height: unset !important;
+            border-radius: 0 !important;
+            border-top-left-radius: 1.25rem !important;
+            border-top-right-radius: 1.25rem !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            overflow: hidden;
+          }
+          .post-img-wrapper img {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            border-radius: 0 !important;
+            border-top-left-radius: 1.25rem !important;
+            border-top-right-radius: 1.25rem !important;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
           }
           .post-content {
             min-height: auto;
+            padding: 1.25rem 1.25rem 1.5rem 1.25rem;
           }
           .post-bottom {
             flex-wrap: wrap;
@@ -719,11 +813,8 @@ export default function BlogPage() {
         <div className="posts-container">
           {/* Section Title */}
           <h2
-            className="section-title-gradient"
+            className="section-title-gradient text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
             style={{
-              fontSize: 'clamp(1.8rem, 2.5rem, 2.8rem)',
-              fontWeight: 700,
-              lineHeight: 1.1,
               marginBottom: '2.5rem',
               textAlign: 'left',
               color: '#fff',

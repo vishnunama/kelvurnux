@@ -382,7 +382,7 @@ export default function SweepstakesClient() {
       {/* Hero Section */}
       <section
         ref={sectionRef}
-        className="relative pt-28 sm:pt-32 pb-2 overflow-hidden"
+        className="relative pt-24 sm:pt-28 md:pt-32 pb-2 overflow-hidden"
         style={{
           background:
             'radial-gradient(71.13% 100% at 50% 0, rgba(0,235,170,0.15) 0%, rgba(13,11,16,0.2) 65.41%), #0b0b0f'
@@ -417,7 +417,7 @@ export default function SweepstakesClient() {
           </div>
 
           {/* Subtitle/Description */}
-          <div className="max-w-4xl mx-auto mb-4 sm:mb-6">
+          <div className="max-w-4xl mx-auto mb-5 sm:mb-7 md:mb-8">
             <p
               className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
               ref={(el) => { elementsRef.current[1] = el; }}
@@ -441,7 +441,7 @@ export default function SweepstakesClient() {
           {/* Tab Buttons */}
           <div
             ref={tabsContainerRef}
-            className="overflow-x-auto py-2 pb-3 mb-8 sm:mb-10 md:mb-12 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
+            className="overflow-x-auto pt-0 pb-3 mb-6 sm:mb-8 md:mb-10 lg:mb-12 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
             role="tablist"
             aria-label="Sweepstakes Platform Capabilities"
           >
@@ -458,7 +458,7 @@ export default function SweepstakesClient() {
                     aria-controls={`tab-panel-${tab.id}`}
                     ref={isActive ? activeTabRef : null}
                     onClick={() => handleTabClick(tab.label)}
-                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${isActive
+                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${isActive
                       ? 'bg-white text-black border-2 border-white'
                       : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
                       }`}
@@ -512,10 +512,10 @@ export default function SweepstakesClient() {
                           background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a',
                         }}
                       >
-                        <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
                           {tab.title}
                         </h3>
-                        <p className="text-base text-[#a5a5a5] leading-relaxed font-light text-left">
+                        <p className="text-sm sm:text-base md:text-base lg:text-lg text-[#a5a5a5] leading-relaxed font-light text-left">
                           {tab.description}
                         </p>
                       </div>
@@ -566,7 +566,7 @@ export default function SweepstakesClient() {
               <h2
                 ref={(el) => { solutionsElementsRef.current[0] = el; }}
                 data-anim="from-top"
-                className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+                className="text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
               >
                 Essential Features & Operator Management Tools
               </h2>
@@ -643,7 +643,7 @@ export default function SweepstakesClient() {
       {/* Platform Architecture & Operational Lifecycle Section */}
       <StepsSection
         sectionId="architecture"
-        scrollSticky={true}
+        scrollSticky={false}
         customTitle="How a Sweepstakes Casino Platform Works"
         customSubtitle="Follow the complete operational lifecycle from initial player registration and virtual coin distribution to game sessions and verified prize redemptions."
         customSteps={sweepstakesArchitectureSteps}
@@ -659,7 +659,7 @@ export default function SweepstakesClient() {
       <section id="turnkey-vs-custom" className="relative py-16 md:py-24 bg-[#080b0f] border-t border-white/10">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
               Turnkey vs Custom Sweepstakes Casino Software
             </h2>
             <p className="text-[#a5a5a5] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">

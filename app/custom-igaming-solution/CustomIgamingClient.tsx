@@ -390,19 +390,12 @@ export default function CustomiGamingSolution() {
       {/* Hero Section */}
       <section 
         ref={sectionRef}
-        className="relative pt-28 sm:pt-32 pb-2 overflow-hidden"
+        className="relative pt-24 sm:pt-28 md:pt-32 pb-2 overflow-hidden"
         style={{
           background:
             'radial-gradient(71.13% 100% at 50% 0, rgba(0,235,170,0.15) 0%, rgba(13,11,16,0.2) 65.41%), #0b0b0f'
         }}
       >
-        
-        {/* Animated background elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#00ebaa]/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-32 right-10 w-96 h-96 bg-[#00ebaa]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
-
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           
           {/* Accessible Visual Breadcrumbs */}
@@ -432,7 +425,7 @@ export default function CustomiGamingSolution() {
           </div>
 
           {/* Subtitle/Description */}
-          <div className="max-w-4xl mx-auto mb-6 sm:mb-8">
+          <div className="max-w-4xl mx-auto mb-5 sm:mb-7 md:mb-8">
             <p 
               className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
               ref={(el) => { elementsRef.current[1] = el; }}
@@ -467,13 +460,13 @@ export default function CustomiGamingSolution() {
       </section>
 
       {/* Tab Features Section */}
-      <section id="solutions" className="relative pb-12 md:pb-16 bg-gradient-to-b from-black via-gray-900 to-black">
+      <section id="solutions" className="relative pb-12 md:pb-16 from-black via-gray-900 to-black">
         <div className="container mx-auto px-2 sm:px-4 max-w-7xl">
 
           {/* Tab Buttons */}
           <div
             ref={tabsContainerRef}
-            className="overflow-x-auto pb-3 mb-8 sm:mb-10 md:mb-12 lg:mb-14 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
+            className="overflow-x-auto pt-0 pb-3 mb-6 sm:mb-8 md:mb-10 lg:mb-12 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
             role="tablist"
             aria-label="Custom Platform Categories"
           >
@@ -492,7 +485,7 @@ export default function CustomiGamingSolution() {
                     ref={isSelected ? activeTabRef : null}
                     onClick={() => handleTabClick(tab.label)}
                     onKeyDown={(e) => handleTabKeyDown(e, index)}
-                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-xs sm:text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${
+                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-2.5 sm:px-3 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${
                       isSelected
                         ? 'bg-white text-black border-2 border-white'
                         : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
@@ -535,17 +528,17 @@ export default function CustomiGamingSolution() {
                 </div>
 
                 {/* Info Card — second on mobile, left on desktop */}
-                <div className="col-span-1 lg:col-span-2 order-2 lg:order-1 h-[280px] lg:h-auto">
+                <div className="col-span-1 lg:col-span-2 order-2 lg:order-1 h-auto min-h-[280px]">
                   <div
                     className="w-full h-full rounded-xl sm:rounded-2xl md:rounded-2xl p-6 sm:p-7 md:p-10 lg:p-12 backdrop-blur-sm flex flex-col justify-center border border-[#00ebaa]/30"
                     style={{
                       background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a',
                     }}
                   >
-                    <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
                       {activeTabData.title}
                     </h2>
-                    <p className="text-base sm:text-base md:text-base lg:text-lg text-[#a5a5a5] leading-relaxed font-light text-left">
+                    <p className="text-sm sm:text-base md:text-base lg:text-lg text-[#a5a5a5] leading-relaxed font-light text-left">
                       {activeTabData.description}
                     </p>
                   </div>
@@ -593,7 +586,7 @@ export default function CustomiGamingSolution() {
               <h2 
                 ref={(el) => { solutionsElementsRef.current[0] = el; }}
                 data-anim="from-top"
-                className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+                className="text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
               >
                 Custom iGaming Software Development Services
               </h2>
@@ -668,8 +661,7 @@ export default function CustomiGamingSolution() {
       {/* Development Process Steps Slider */}
       <StepsSection
         sectionId="development-process"
-        className="my-8 md:my-16"
-        scrollSticky={true}
+        scrollSticky={false}
         customTitle="How We Build Your Custom iGaming Platform"
         customSubtitle="Follow our structured engineering path from initial discovery and platform architecture to custom development, testing, and production handover."
         customSteps={bespokeDevelopmentSteps}
@@ -685,7 +677,7 @@ export default function CustomiGamingSolution() {
       <section id="solution-comparison" className="relative py-16 md:py-24 bg-[#080b0f] border-t border-white/10">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
               White Label vs Turnkey vs Bespoke iGaming Development
             </h2>
             <p className="text-[#a5a5a5] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">

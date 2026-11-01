@@ -34,15 +34,7 @@ export default function AboutUsHero() {
         `,
       }}
     >
-      {/* Border Line Top */}
-      <div
-        className="absolute left-1/2 top-0 h-px w-3/4 -translate-x-1/2 md:w-4/5"
-        style={{
-          background: 'linear-gradient(to right, rgba(0, 235, 170, 0) 0%, rgba(0, 235, 170, 0.8) 50%, rgba(0, 235, 170, 0) 100%)',
-          opacity: isVisible ? 0.9 : 0,
-          transition: 'opacity 600ms ease-out',
-        }}
-      />
+
 
       <div className="container relative mx-auto max-w-6xl px-4 sm:px-6 md:px-8 z-10 pt-8 sm:pt-12 md:pt-16">
         <div

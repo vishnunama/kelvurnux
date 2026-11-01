@@ -121,7 +121,7 @@ const solutions = [
               <h2 
                 ref={(el) => { elementsRef.current[0] = el; }}
                 data-anim="from-top"
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
               >
 All-in-one resources to launch your software development platform fast              </h2>
               <p 

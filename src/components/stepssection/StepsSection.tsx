@@ -58,57 +58,13 @@ const styles = `
     overflow: hidden;
     background: radial-gradient(106.74% 100.05% at 50% 100.05%, #1c1918 0, #0b0b0f 19.4%);
     position: relative;
-    padding: 5rem 0 6rem;
+    padding: 1.5rem 0 2rem;
   }
 
   @media (min-width: 768px) {
     .steps-section {
-      padding: 6.5rem 0 7.5rem;
+      padding: 2.5rem 0 3rem;
     }
-  }
-
-  /* Sticky Scroll Track & Section */
-  .steps-scroll-track {
-    position: relative;
-    width: 100%;
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .steps-scroll-track {
-      margin-top: 5rem;
-      margin-bottom: 5rem;
-    }
-  }
-
-  .steps-section.is-sticky-mode {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
-    height: 100dvh;
-    min-height: 100vh;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: clamp(2.75rem, 5vh, 4.5rem) 1.5rem;
-    box-sizing: border-box;
-    z-index: 20;
-  }
-
-  @media (min-width: 768px) {
-    .steps-section.is-sticky-mode {
-      padding: clamp(3.25rem, 6vh, 5.5rem) 1.5rem;
-    }
-  }
-
-  .steps-section.is-sticky-mode .steps-container {
-    width: 100%;
-    max-width: 1280px;
   }
 
   .steps-container {
@@ -156,7 +112,7 @@ const styles = `
     color: #a5a5a5;
     text-align: center;
     max-width: 48rem;
-    margin: 0 auto 3rem;
+    margin: 0 auto 1.5rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.625;
@@ -165,6 +121,7 @@ const styles = `
   @media (min-width: 768px) {
     .steps-subtitle {
       font-size: 1.125rem;
+      margin: 0 auto 2.25rem;
     }
   }
 
@@ -284,7 +241,15 @@ const styles = `
 
   @media (min-width: 768px) {
     .step-title {
-      font-size: 1.25rem;
+      font-size: 1.35rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .step-title {
+      font-size: 1.55rem;
+      margin-bottom: 0.75rem;
     }
   }
 
@@ -301,6 +266,20 @@ const styles = `
     line-height: 1.55;
   }
 
+  @media (min-width: 768px) {
+    .step-text {
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .step-text {
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+  }
+
   .step-item.is-active .step-text,
   .swiper-slide-active .step-text {
     color: #b0b0b0;
@@ -315,11 +294,25 @@ const styles = `
     width: max-content;
   }
 
+  @media (min-width: 768px) {
+    .swiper-navigation-center {
+      margin: 2.75rem auto 0;
+      gap: 0.85rem;
+    }
+  }
+
   .steps-pagination-dots {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
     padding: 0.2rem 0.35rem;
+  }
+
+  @media (min-width: 768px) {
+    .steps-pagination-dots {
+      gap: 0.6rem;
+      padding: 0.25rem 0.4rem;
+    }
   }
 
   .steps-dot {
@@ -331,6 +324,13 @@ const styles = `
     padding: 0;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  @media (min-width: 768px) {
+    .steps-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
   }
 
   .steps-dot:hover {
@@ -362,11 +362,22 @@ const styles = `
     will-change: transform;
   }
 
+  .swiper-button-custom svg {
+    width: 15px;
+    height: 15px;
+    transition: width 0.2s ease, height 0.2s ease;
+  }
+
   @media (min-width: 768px) {
     .swiper-button-custom {
-      width: 2.6rem;
-      min-width: 2.6rem;
-      height: 2.6rem;
+      width: 2.9rem;
+      min-width: 2.9rem;
+      height: 2.9rem;
+    }
+
+    .swiper-button-custom svg {
+      width: 18px;
+      height: 18px;
     }
   }
 
@@ -676,27 +687,17 @@ export default function StepsSection({
   };
 
   const handlePrev = () => {
-    if (scrollSticky) {
-      const prevIdx = Math.max(activeIndex - 1, 0);
-      scrollToStep(prevIdx);
-    } else {
-      swiperRef.current?.slidePrev();
-    }
+    swiperRef.current?.slidePrev();
   };
 
   const handleNext = () => {
-    if (scrollSticky) {
-      const nextIdx = Math.min(activeIndex + 1, steps.length - 1);
-      scrollToStep(nextIdx);
-    } else {
-      swiperRef.current?.slideNext();
-    }
+    swiperRef.current?.slideNext();
   };
 
   const sectionContent = (
     <section
-      className={`steps-section ${scrollSticky ? 'is-sticky-mode' : ''} ${!scrollSticky && className ? className : ''}`}
-      id={scrollSticky ? undefined : sectionId}
+      className={`steps-section ${className ? className : ''}`}
+      id={sectionId}
     >
       {/* Background Image */}
       <div className="section-bg absolute inset-0 pointer-events-none z-0 overflow-hidden">
@@ -728,15 +729,11 @@ export default function StepsSection({
         <div className="steps-slider-wrapper">
           <Swiper
             modules={[Autoplay]}
-            autoplay={
-              scrollSticky
-                ? false
-                : {
-                  delay: 3500,
-                  disableOnInteraction: false,
-                }
-            }
-            loop={!scrollSticky}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
+            loop={true}
             centeredSlides={true}
             speed={550}
             grabCursor={true}
@@ -847,23 +844,6 @@ export default function StepsSection({
       </div>
     </section>
   );
-
-  if (scrollSticky) {
-    const trackHeight = `${(steps.length + 1) * 60}vh`;
-    return (
-      <>
-        <style>{styles}</style>
-        <div
-          ref={scrollWrapperRef}
-          className={`steps-scroll-track ${className || ''}`}
-          id={sectionId}
-          style={{ height: trackHeight }}
-        >
-          {sectionContent}
-        </div>
-      </>
-    );
-  }
 
   return (
     <>

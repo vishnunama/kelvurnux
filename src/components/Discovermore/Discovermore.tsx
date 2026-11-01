@@ -26,9 +26,10 @@ interface DiscoverMoreProps {
   customItems?: DiscoverItem[];
   customTitle?: string;
   customSubtitle?: string;
+  className?: string;
 }
 
-export default function DiscoverMore({ customItems, customTitle, customSubtitle }: DiscoverMoreProps) {
+export default function DiscoverMore({ customItems, customTitle, customSubtitle, className }: DiscoverMoreProps) {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
@@ -166,18 +167,19 @@ export default function DiscoverMore({ customItems, customTitle, customSubtitle 
       `}</style>
 
       <section 
-        className="w-full relative py-16 md:py-24"
+        className={`w-full relative pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-16 md:pb-24 ${className || ''}`}
         style={{
           background: 'radial-gradient(100% 70% at 48.33% 99.05%, rgba(0, 235, 170, 0.12) 0%, rgba(0, 80, 60, 0.12) 25.39%, rgba(11, 11, 15, 0.2) 73.2%)'
         }}
       >
         <div className="max-w-[1240px] w-full mx-auto px-5 relative z-10 box-border">
-          <div className="text-center mb-8 md:mb-12">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12">
             <h2 
-              className={`text-center font-bold text-3xl sm:text-4xl md:text-5xl ${customSubtitle ? 'mb-3 md:mb-4' : ''}`}
+              className={`text-center font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight max-w-4xl mx-auto ${customSubtitle ? 'mb-3 md:mb-4' : 'mb-4'}`}
               style={{
                 color: '#ffffff',
-                background: 'linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%) text, rgb(255, 255, 255)',
+                background: 'linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff',
+                backgroundBlendMode: 'darken, normal',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}

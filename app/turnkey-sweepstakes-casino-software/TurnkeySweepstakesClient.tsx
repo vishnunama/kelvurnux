@@ -447,7 +447,7 @@ export default function TurnkeySweepstakesClient() {
       {/* Hero Section */}
       <section
         ref={sectionRef}
-        className="relative pt-28 sm:pt-32 pb-2 overflow-hidden"
+        className="relative pt-24 sm:pt-28 md:pt-32 pb-2 overflow-hidden"
         style={{
           background:
             'radial-gradient(71.13% 100% at 50% 0, rgba(0,235,170,0.15) 0%, rgba(13,11,16,0.2) 65.41%), #0b0b0f'
@@ -482,7 +482,7 @@ export default function TurnkeySweepstakesClient() {
           </div>
 
           {/* Subtitle/Description */}
-          <div className="max-w-4xl mx-auto mb-4 sm:mb-6">
+          <div className="max-w-4xl mx-auto mb-5 sm:mb-7 md:mb-8">
             <p
               className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
               ref={(el) => { elementsRef.current[1] = el; }}
@@ -506,7 +506,7 @@ export default function TurnkeySweepstakesClient() {
           {/* Tab Buttons */}
           <div
             ref={tabsContainerRef}
-            className="overflow-x-auto py-2 pb-3 mb-8 sm:mb-10 md:mb-12 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
+            className="overflow-x-auto pt-0 pb-3 mb-6 sm:mb-8 md:mb-10 lg:mb-12 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
             role="tablist"
             aria-label="Turnkey Sweepstakes Platform Capabilities"
           >
@@ -523,7 +523,7 @@ export default function TurnkeySweepstakesClient() {
                     aria-controls={`tab-panel-${tab.id}`}
                     ref={isActive ? activeTabRef : null}
                     onClick={() => handleTabClick(tab.label)}
-                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-sm sm:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${isActive
+                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${isActive
                       ? 'bg-white text-black border-2 border-white'
                       : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
                       }`}
@@ -577,10 +577,10 @@ export default function TurnkeySweepstakesClient() {
                           background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10%, rgba(0, 235, 170, 0.03) 100%), #0a141a',
                         }}
                       >
-                        <h3 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-left">
                           {tab.title}
                         </h3>
-                        <p className="text-base text-[#a5a5a5] leading-relaxed font-light text-left">
+                        <p className="text-sm sm:text-base md:text-base lg:text-lg text-[#a5a5a5] leading-relaxed font-light text-left">
                           {tab.description}
                         </p>
                       </div>
@@ -630,7 +630,7 @@ export default function TurnkeySweepstakesClient() {
               <h2
                 ref={(el) => { solutionsElementsRef.current[0] = el; }}
                 data-anim="from-top"
-                className="text-center md:text-left text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+                className="text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
               >
                 Core Capabilities of Our Turnkey Sweepstakes System
               </h2>
@@ -711,10 +711,10 @@ export default function TurnkeySweepstakesClient() {
         </div>
       </section>
 
-      {/* Turnkey Launch Process Section (Horizontal Sticky Scroll Slider) */}
+      {/* Turnkey Launch Process Section */}
       <StepsSection
         sectionId="launch-process"
-        scrollSticky={true}
+        scrollSticky={false}
         customTitle="Turnkey Sweepstakes Platform Launch Process"
         customSubtitle="Launch your turnkey sweepstakes systems through a structured process, from platform configuration and integrations to testing and deployment."
         customSteps={turnkeyLaunchSteps}

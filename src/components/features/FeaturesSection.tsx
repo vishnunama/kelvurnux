@@ -175,7 +175,7 @@ export default function FeaturesSection() {
       <style>{styles}</style>
       <section
         ref={sectionRef}
-        className="relative overflow-hidden bg-[#0b0b0f]"
+        className="relative overflow-hidden bg-[#0b0b0f] -mt-8 sm:-mt-14 md:-mt-20 lg:-mt-28"
       >
         <div
           className="absolute inset-0 opacity-5 pointer-events-none"
@@ -185,11 +185,11 @@ export default function FeaturesSection() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pt-12 md:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 pt-0 md:px-8">
 
           {/* Title */}
           <div
-            className="text-center mb-6 md:mb-8"
+            className="text-center mb-2 sm:mb-4 lg:mb-6"
             ref={(el) => { elementsRef.current[0] = el; }}
             data-anim="from-top"
           >
@@ -339,10 +339,10 @@ export default function FeaturesSection() {
 
             {/* Image */}
             <div
-              className="w-screen -mx-[calc(50vw-50%)] flex items-center justify-center relative z-10 mb-[-250px] md:mb-[-290px] overflow-hidden"
+              className="w-screen -mx-[calc(50vw-50%)] flex items-center justify-center relative z-10 -mt-10 xs:-mt-14 sm:-mt-20 md:-mt-24 mb-[-250px] md:mb-[-290px] overflow-hidden"
               style={{
-                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%)',
-                maskImage: 'linear-gradient(to bottom, transparent 0%, #000 12%, #000 88%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%, #000 90%, transparent 100%)',
+                maskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%, #000 90%, transparent 100%)',
               }}
               ref={(el) => { elementsRef.current[10] = el; }}
               data-anim="from-top"
