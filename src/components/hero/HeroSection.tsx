@@ -469,7 +469,7 @@ export default function HeroSection() {
         }
 
         .hero-h1 {
-          font-size: clamp(2.4rem, 3.6vw, 3.5rem);
+          font-size: clamp(2.85rem, 4vw, 4rem);
         }
 
         .hero-subtitle {
@@ -558,7 +558,7 @@ export default function HeroSection() {
           }
 
           .hero-h1 {
-            font-size: clamp(2rem, 3.8vw, 2.4rem);
+            font-size: clamp(2.4rem, 4.2vw, 2.85rem);
           }
 
           .hero-subtitle {
@@ -603,7 +603,7 @@ export default function HeroSection() {
           }
 
           .hero-h1 {
-            font-size: clamp(1.6rem, 6.2vw, 1.85rem);
+            font-size: clamp(1.95rem, 7.2vw, 2.35rem);
           }
 
           .hero-subtitle {

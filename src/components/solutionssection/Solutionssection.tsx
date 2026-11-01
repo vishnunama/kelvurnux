@@ -145,7 +145,7 @@ export default function SolutionsSection() {
           <h2
             ref={(el) => { if (el) elementsRef.current[0] = el; }}
             data-anim="from-bottom"
-            className="solutions-title text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto mb-4"
+            className="solutions-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto mb-4"
           >
             iGaming Solutions Built Around Your Business
           </h2>

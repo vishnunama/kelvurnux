@@ -122,7 +122,7 @@ const styles = `
   .steps-title {
     color: #fff;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     font-weight: 700;
     line-height: 1.25;
     background: linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff;
@@ -136,7 +136,7 @@ const styles = `
 
   @media (min-width: 640px) {
     .steps-title {
-      font-size: 1.875rem;
+      font-size: 2.25rem;
     }
   }
 

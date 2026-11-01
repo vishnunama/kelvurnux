@@ -137,7 +137,7 @@ export default function ProvidersSection() {
             className={`transition-all duration-700 text-center mb-6 sm:mb-8 lg:mb-10 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
           >
-            <h2 className="section-gradient-title text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto">
+            <h2 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto">
               Game Content Through One Integration
             </h2>
           </div>

@@ -277,7 +277,7 @@ export default function ContactForm({ defaultCategory = '' }: ContactFormProps) 
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <h2 
-            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4 max-w-4xl mx-auto text-center"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4 max-w-4xl mx-auto text-center"
             style={{
               background: 'linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff',
               backgroundClip: 'text',

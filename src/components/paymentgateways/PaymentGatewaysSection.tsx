@@ -191,7 +191,7 @@ export default function PaymentGatewaysSection() {
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
-            <h2 className="section-gradient-title text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto">
+            <h2 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto">
               Payment Methods Through One Integration
             </h2>
           </div>

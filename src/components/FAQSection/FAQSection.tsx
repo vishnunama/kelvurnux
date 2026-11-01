@@ -226,7 +226,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: propFaqs, customFaqData, 
         {/* Header */}
         <div className="mb-10 text-center md:mb-20">
           <h2
-            className="mb-4 text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto"
+            className="mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto"
             style={{
               background: 'linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff',
               backgroundClip: 'text',
