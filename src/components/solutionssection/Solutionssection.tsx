@@ -145,7 +145,7 @@ export default function SolutionsSection() {
           <h2
             ref={(el) => { if (el) elementsRef.current[0] = el; }}
             data-anim="from-bottom"
-            className="solutions-title text-4xl sm:text-4xl md:text-6xl font-bold leading-tight text-center mb-4"
+            className="solutions-title text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto mb-4"
           >
             iGaming Solutions Built Around Your Business
           </h2>
@@ -154,7 +154,7 @@ export default function SolutionsSection() {
           <p
             ref={(el) => { if (el) elementsRef.current[1] = el; }}
             data-anim="from-bottom"
-            className="text-[#a5a5a5] text-base sm:text-base md:text-lg font-normal leading-relaxed text-center max-w-[90%] mx-auto mb-12 md:mb-16"
+            className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed text-center max-w-3xl mx-auto mb-12 md:mb-16"
           >
             Choose a complete launch solution or build on Kvaornux technology with a setup tailored to your product, market and operating model.
           </p>
@@ -184,16 +184,6 @@ export default function SolutionsSection() {
                   <p className="text-[#a5a5a5] text-base font-normal leading-relaxed text-center flex-grow">
                     {solution.description}
                   </p>
-
-                  {/* CTA */}
-                  <div className="mt-2 flex justify-center">
-                    <Link
-                      href={solution.ctaHref}
-                      className="btn-main"
-                    >
-                      {solution.ctaText}
-                    </Link>
-                  </div>
                 </div>
               ))}
             </div>
@@ -230,16 +220,6 @@ export default function SolutionsSection() {
                       <p className="text-[#a5a5a5] text-base font-normal leading-relaxed text-center flex-grow">
                         {solution.description}
                       </p>
-
-                      {/* CTA */}
-                      <div className="mt-2 flex justify-center">
-                        <Link
-                          href={solution.ctaHref}
-                          className="btn-main"
-                        >
-                          {solution.ctaText}
-                        </Link>
-                      </div>
                     </div>
                   </SwiperSlide>
                 ))}
@@ -314,7 +294,12 @@ export default function SolutionsSection() {
                   window.location.href = '/#contact-form-section';
                 }
               }}
-              className="btn-main"
+              className="btn-main overflow-hidden"
+              style={{
+                background: 'radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%)',
+                boxShadow: '0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset',
+                color: '#04160f',
+              }}
             >
               <span>Let's Partner Up</span>
             </button>

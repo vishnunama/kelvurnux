@@ -633,23 +633,13 @@ export default function CasinoPlatformClient() {
               >
                 <button
                   onClick={handleScrollToContact}
+                  className="btn-main overflow-hidden"
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: 'none',
-                    outline: '0',
-                    width: 'fit-content',
-                    borderRadius: '9999px',
                     padding: '0.6rem 2.2rem',
                     minHeight: '2.8rem',
-                    backgroundColor: '#00ebaa',
-                    cursor: 'pointer',
-                    color: '#000',
-                    fontWeight: '700',
                   }}
                 >
-                  <span className="relative z-10 text-sm sm:text-base font-bold text-black">
+                  <span className="relative z-10 text-sm sm:text-base font-bold">
                     Discuss Platform Specs
                   </span>
                 </button>

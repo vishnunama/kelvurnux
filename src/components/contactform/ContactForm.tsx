@@ -277,14 +277,20 @@ export default function ContactForm({ defaultCategory = '' }: ContactFormProps) 
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <h2 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-white via-white to-white bg-clip-text text-transparent"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4 max-w-4xl mx-auto text-center"
+            style={{
+              background: 'linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
             ref={(el) => { if (el) elementsRef.current[0] = el; }}
             data-anim="from-bottom"
           >
             Talk to Our Team
           </h2>
           <p 
-            className="text-[#a5a5a5] text-base sm:text-lg md:text-lg lg:text-xl max-w-2xl mx-auto px-2 font-light"
+            className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto text-center px-2"
             ref={(el) => { if (el) elementsRef.current[1] = el; }}
             data-anim="from-bottom"
             data-anim-delay="1"

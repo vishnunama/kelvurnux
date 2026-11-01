@@ -122,16 +122,34 @@ const styles = `
   .steps-title {
     color: #fff;
     text-align: center;
-    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.25;
     background: linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff;
     background-blend-mode: darken, normal;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0 auto 0.75rem;
-    max-width: 950px;
+    max-width: 56rem;
+  }
+
+  @media (min-width: 640px) {
+    .steps-title {
+      font-size: 1.875rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .steps-title {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .steps-title {
+      font-size: 3.75rem;
+    }
   }
 
   .steps-subtitle {
@@ -139,9 +157,15 @@ const styles = `
     text-align: center;
     max-width: 48rem;
     margin: 0 auto 3rem;
-    font-size: clamp(1rem, 1.25vw, 1.125rem);
+    font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.625;
+  }
+
+  @media (min-width: 768px) {
+    .steps-subtitle {
+      font-size: 1.125rem;
+    }
   }
 
   .steps-slider-wrapper {
@@ -414,7 +438,8 @@ const styles = `
   }
 
   .steps-cta-button {
-    background-color: #00ebaa;
+    background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
+    box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
     padding: 0.7rem 2.5rem;
     border-radius: 2.6rem;
     height: 3.6rem;
@@ -423,21 +448,23 @@ const styles = `
     justify-content: center;
     font-weight: 700;
     text-decoration: none;
-    color: #000;
+    color: #04160f;
     font-family: 'Gabarito', sans-serif;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-    box-shadow: 0 0 25px rgba(0, 235, 170, 0.35);
+    overflow: hidden;
+    transition: filter 0.25s ease;
     cursor: pointer;
     border: none;
   }
 
   .steps-cta-button:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 30px rgba(0, 235, 170, 0.5);
+    transform: none;
+    filter: brightness(0.92);
+    color: #04160f;
   }
 
   .steps-cta-button:active {
-    transform: scale(0.96);
+    transform: none;
+    filter: brightness(0.86);
   }
 
   /* Sticky mode vertical spacing overrides with balanced breathing room (Font sizes strictly preserved) */

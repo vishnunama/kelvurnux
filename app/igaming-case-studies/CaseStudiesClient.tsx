@@ -349,18 +349,24 @@ export default function CaseStudiesClient() {
           border-radius: 3.2rem;
           position: relative;
           overflow: hidden;
-          color: #121314;
+          color: #04160f;
           text-decoration: none;
           text-align: center;
           line-height: 1.5;
-          background: radial-gradient(51.68% 146.29% at 65.07% -28.85%, #00ebaa 26.68%, #00c3b3 100%);
-          box-shadow: 0 -5px 3.5px 0 rgba(0, 235, 170, 0.25) inset, 0 1px 1.8px 0 rgba(255, 244, 230, 0.93) inset;
-          transition: transform 0.25s ease, box-shadow 0.25s ease;
+          background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
+          box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
+          transition: filter 0.25s ease;
         }
 
         .portfolio-hero-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 20px rgba(0, 235, 170, 0.45);
+          transform: none;
+          filter: brightness(0.92);
+          color: #04160f;
+        }
+
+        .portfolio-hero-btn:active {
+          transform: none;
+          filter: brightness(0.86);
         }
 
         .portfolio-hero-stats {
@@ -815,10 +821,20 @@ export default function CaseStudiesClient() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: radial-gradient(51.68% 146.29% at 65.07% -28.85%, #00ebaa 26.68%, #00c3b3 100%);
-          color: #121314;
+          background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
+          color: #04160f;
           text-decoration: none;
-          box-shadow: 0 -3px 3px 0 rgba(0, 235, 170, 0.25) inset, 0 1px 1.5px 0 rgba(255, 244, 230, 0.93) inset;
+          box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
+          overflow: hidden;
+          transition: filter 0.25s ease;
+        }
+
+        .case-studies-card-btn:hover {
+          filter: brightness(0.92);
+        }
+
+        .case-studies-card-btn:active {
+          filter: brightness(0.86);
         }
 
         .case-studies-card-btn svg {

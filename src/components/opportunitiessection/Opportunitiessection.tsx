@@ -326,18 +326,26 @@ const OpportunitiesSection: FC = () => {
           border-radius: 9999px;
           padding: 0.8rem 2.2rem;
           min-height: 3.2rem;
-          background-color: #00ebaa;
+          background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
+          box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
           cursor: pointer;
-          color: #000;
+          color: #04160f;
           font-weight: 700;
           font-size: 1.1rem;
           width: fit-content;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          overflow: hidden;
+          transition: filter 0.25s ease;
         }
 
         .opp-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 20px rgba(0, 235, 170, 0.4);
+          transform: none;
+          filter: brightness(0.92);
+          color: #04160f;
+        }
+
+        .opp-btn:active {
+          transform: none;
+          filter: brightness(0.86);
         }
       `}</style>
 
@@ -373,7 +381,7 @@ const OpportunitiesSection: FC = () => {
               }}
               className="opp-btn"
             >
-              <span className="relative z-10 text-black font-bold">Get started</span>
+              <span className="relative z-10 font-bold">Get started</span>
             </button>
           </div>
         </div>

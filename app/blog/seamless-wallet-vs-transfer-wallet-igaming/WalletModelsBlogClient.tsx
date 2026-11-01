@@ -44,9 +44,23 @@ const styles = `
   }
 
   .gradient-button {
-    background: #00ebaa;
-    color: #000;
+    background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
+    box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
+    color: #04160f;
     font-weight: 700;
+    overflow: hidden;
+    transition: filter 0.25s ease;
+  }
+
+  .gradient-button:hover {
+    transform: none;
+    filter: brightness(0.92);
+    color: #04160f;
+  }
+
+  .gradient-button:active {
+    transform: none;
+    filter: brightness(0.86);
   }
 
   /* TOC Sticky Sidebar (Right Side) */

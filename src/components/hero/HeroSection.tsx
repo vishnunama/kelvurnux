@@ -388,7 +388,12 @@ export default function HeroSection() {
                   window.location.href = '/#contact-form-section';
                 }
               }}
-              className="btn-main group"
+              className="btn-main hero-btn-demo group overflow-hidden"
+              style={{
+                background: 'radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%)',
+                boxShadow: '0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset',
+                color: '#04160f',
+              }}
               aria-label="Request Live Demo"
             >
               <span className="flex items-center gap-2">
@@ -419,7 +424,7 @@ export default function HeroSection() {
                   window.location.href = '/#solutions';
                 }
               }}
-              className="btn-secondary"
+              className="btn-secondary hero-btn-secondary hidden sm:inline-flex"
               aria-label="Explore Solutions"
             >
               <span>Explore Solutions</span>
@@ -476,6 +481,33 @@ export default function HeroSection() {
         .hero-btn {
           padding: 0.85rem 2rem;
           font-size: 1.05rem;
+        }
+
+        :global(.hero-btn-demo) {
+          transition: filter 0.25s ease !important;
+        }
+
+        :global(.hero-btn-demo:hover) {
+          transform: none !important;
+          filter: brightness(0.92) !important;
+        }
+
+        :global(.hero-btn-demo:active) {
+          transform: none !important;
+          filter: brightness(0.86) !important;
+        }
+
+        :global(.hero-btn-secondary) {
+          transition: none !important;
+        }
+
+        :global(.hero-btn-secondary:hover),
+        :global(.hero-btn-secondary:active) {
+          transform: none !important;
+          background-color: rgba(255, 255, 255, 0.05) !important;
+          border-color: rgba(255, 255, 255, 0.16) !important;
+          color: #ffffff !important;
+          box-shadow: none !important;
         }
 
         /* Image — desktop: full width & height background */
@@ -547,6 +579,12 @@ export default function HeroSection() {
         }
 
         /* ── MOBILE ~600px ── */
+        @media (max-width: 640px) {
+          :global(.hero-btn-secondary) {
+            display: none !important;
+          }
+        }
+
         @media (max-width: 600px) {
           .hero-section {
             padding-top: 12.8rem;

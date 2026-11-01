@@ -109,9 +109,14 @@ const col4 = [
 
 const PaymentCard = ({ fileName }: { fileName: string }) => {
   return (
-    <div className="providers-card relative flex items-center justify-center w-full h-[3.4rem] xs:h-[3.8rem] sm:h-[5.2rem] lg:h-[6.5rem] border border-[#3d5042bf] rounded-[0.25rem] overflow-hidden bg-[#0e2f29]/30 transition-all duration-300 hover:border-[#00ebaa] hover:shadow-[0_0_20px_rgba(0,235,170,0.2)] shrink-0 group cursor-pointer">
+    <div
+      className="providers-card relative flex items-center justify-center w-full h-[3.4rem] xs:h-[3.8rem] sm:h-[5.2rem] lg:h-[6.5rem] border border-[rgba(0,235,170,0.3)] rounded-[0.5rem] overflow-hidden bg-[#0a141a] transition-all duration-300 hover:border-[#00ebaa]/70 hover:shadow-[0_0_20px_rgba(0,235,170,0.25)] shrink-0 group cursor-pointer"
+      style={{
+        background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.25) 10.25%, rgba(0, 235, 170, 0.05) 99.99%), #0a141a',
+      }}
+    >
       <img
-        src="/assets/payments/prov-bg.avif"
+        src="/assets/payments/prov-bg.avif?v=2"
         alt=""
         className="providers-card-bg absolute inset-0 w-full h-full object-cover z-0 opacity-80 group-hover:opacity-100 transition-opacity"
         loading="lazy"
@@ -186,7 +191,7 @@ export default function PaymentGatewaysSection() {
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
-            <h2 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-center">
+            <h2 className="section-gradient-title text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto">
               Payment Methods Through One Integration
             </h2>
           </div>

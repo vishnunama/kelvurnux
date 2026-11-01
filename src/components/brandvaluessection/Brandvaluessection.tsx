@@ -245,12 +245,12 @@ export default function BrandValuesSection() {
               if (el) elementsRef.current[0] = el;
             }}
             data-anim="from-bottom"
-            className="text-center mb-3 md:mb-8"
+            className="text-center mb-3 md:mb-6"
           >
             <h2
-              className="text-4xl sm:text-4xl md:text-6xl font-bold leading-tight max-w-4xl mx-auto drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl mx-auto text-center"
               style={{
-                background: 'linear-gradient(180deg, #ffffff 0%, #d1d5db 100%)',
+                background: 'linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -268,12 +268,7 @@ export default function BrandValuesSection() {
             data-anim="from-bottom"
             className="text-center mb-8"
           >
-            <p
-              className="text-base sm:text-base md:text-lg max-w-3xl mx-auto drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] font-medium"
-              style={{
-                color: '#d1d5db',
-              }}
-            >
+            <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto text-center">
               From platform development to game integrations and ongoing support, our experience comes from building and operating real iGaming projects across different markets.
             </p>
           </div>

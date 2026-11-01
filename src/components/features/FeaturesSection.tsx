@@ -189,12 +189,12 @@ export default function FeaturesSection() {
 
           {/* Title */}
           <div
-            className="text-center mb-0 md:mb-6"
+            className="text-center mb-6 md:mb-8"
             ref={(el) => { elementsRef.current[0] = el; }}
             data-anim="from-top"
           >
             <h2
-              className="text-4xl sm:text-4xl md:text-6xl font-bold leading-tight max-w-4xl mx-auto"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl mx-auto text-center"
               style={{
                 background: 'linear-gradient(147deg, rgba(255,255,255,0.33) 10%, rgba(61,75,71,0.33) 90%), #fff',
                 backgroundClip: 'text',
@@ -204,7 +204,7 @@ export default function FeaturesSection() {
             >
               One Ecosystem. Every Layer of iGaming.
             </h2>
-            <p className="text-base sm:text-base md:text-lg text-[#a5a5a5] max-w-3xl mx-auto mt-3">
+            <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto mt-3 text-center">
               From casino and sportsbook to game aggregation, player management and back-office technology, Kvaornux brings the core infrastructure of an iGaming operation into one scalable ecosystem.
             </p>
           </div>
@@ -252,13 +252,13 @@ export default function FeaturesSection() {
                   {current.items.map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-center gap-3"
+                      className="flex items-start gap-3"
                       ref={(el) => { elementsRef.current[3 + index] = el; }}
                       data-anim="from-bottom"
                       data-anim-delay={String(index + 1)}
                     >
-                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00ebaa" strokeWidth="2.5" className="flex-shrink-0">
-                        <polyline points="20 6 9 17 4 12" />
+                      <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[4px]" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 12l10 10 10-10L12 2z" />
                       </svg>
                       <span className="text-base lg:text-lg xl:text-xl text-gray-200 font-medium">{item}</span>
                     </div>
@@ -368,7 +368,7 @@ export default function FeaturesSection() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">{current.title}</h3>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4">{current.title}</h3>
               <p className="text-sm sm:text-base md:text-lg text-[#a5a5a5] mb-6 leading-relaxed">{current.description}</p>
               {current.items && current.items.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -380,8 +380,8 @@ export default function FeaturesSection() {
                       data-anim="from-bottom"
                       data-anim-delay={String(index + 2)}
                     >
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00ebaa" strokeWidth="2.5" className="flex-shrink-0 mt-0.5">
-                        <polyline points="20 6 9 17 4 12" />
+                      <svg className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[4px]" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 12l10 10 10-10L12 2z" />
                       </svg>
                       <span className="text-sm sm:text-base text-gray-200 leading-relaxed">{item}</span>
                     </div>

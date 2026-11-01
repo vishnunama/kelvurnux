@@ -586,23 +586,13 @@ export default function SweepstakesClient() {
               >
                 <button
                   onClick={handleScrollToContact}
+                  className="btn-main overflow-hidden"
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    border: 'none',
-                    outline: '0',
-                    width: 'fit-content',
-                    borderRadius: '9999px',
                     padding: '0.6rem 2.2rem',
                     minHeight: '2.8rem',
-                    backgroundColor: '#00ebaa',
-                    cursor: 'pointer',
-                    color: '#000',
-                    fontWeight: '700',
                   }}
                 >
-                  <span className="relative z-10 text-sm sm:text-base font-bold text-black">
+                  <span className="relative z-10 text-sm sm:text-base font-bold">
                     Discuss Your Sweepstakes Project
                   </span>
                 </button>
@@ -752,10 +742,11 @@ export default function SweepstakesClient() {
                 </Link>
                 <Link
                   href="/turnkey-sweepstakes-casino-software"
-                  className="w-12 h-12 rounded-full flex items-center justify-center text-[#121314] transition-all duration-300 hover:scale-105 shrink-0"
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-[#04160f] transition-all duration-300 hover:brightness-92 shrink-0 overflow-hidden"
                   style={{
-                    background: 'radial-gradient(51.68% 146.29% at 65.07% -28.85%, #00ebaa 26.68%, #00c3b3 100%)',
-                    boxShadow: '0 -3px 3px 0 rgba(0, 235, 170, 0.25) inset, 0 1px 1.5px 0 rgba(255, 244, 230, 0.93) inset',
+                    background: 'radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%)',
+                    boxShadow: '0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset',
+                    color: '#04160f',
                   }}
                   aria-label="Explore Turnkey Sweepstakes Systems"
                 >
@@ -839,10 +830,11 @@ export default function SweepstakesClient() {
                 </Link>
                 <Link
                   href="/custom-sweepstakes-casino-development"
-                  className="w-12 h-12 rounded-full flex items-center justify-center text-[#121314] transition-all duration-300 hover:scale-105 shrink-0"
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-[#04160f] transition-all duration-300 hover:brightness-92 shrink-0 overflow-hidden"
                   style={{
-                    background: 'radial-gradient(51.68% 146.29% at 65.07% -28.85%, #00ebaa 26.68%, #00c3b3 100%)',
-                    boxShadow: '0 -3px 3px 0 rgba(0, 235, 170, 0.25) inset, 0 1px 1.5px 0 rgba(255, 244, 230, 0.93) inset',
+                    background: 'radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%)',
+                    boxShadow: '0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset',
+                    color: '#04160f',
                   }}
                   aria-label="Explore Custom Sweepstakes Development"
                 >

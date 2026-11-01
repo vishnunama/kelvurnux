@@ -37,10 +37,15 @@ export default function BlogArticleFooter({ currentSlug }: BlogArticleFooterProp
       <div className="flex justify-center items-center py-12 md:py-16 border-t border-b border-gray-800/30 px-4 bg-[#0b0b0f]">
         <Link
           href={previousPost.href}
-          className="btn-main gap-3"
+          className="btn-main gap-3 overflow-hidden"
+          style={{
+            background: 'radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%)',
+            boxShadow: '0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset',
+            color: '#04160f',
+          }}
         >
           <svg
-            className="w-5 h-5 md:w-6 md:h-6 text-black flex-shrink-0"
+            className="w-5 h-5 md:w-6 md:h-6 text-[#04160f] flex-shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

@@ -226,14 +226,20 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: propFaqs, customFaqData, 
         {/* Header */}
         <div className="mb-10 text-center md:mb-20">
           <h2
-            className="mb-4 text-4xl sm:text-4xl md:text-6xl font-bold text-white"
+            className="mb-4 text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto"
+            style={{
+              background: 'linear-gradient(147deg, rgba(255, 255, 255, 0.33) 10%, rgba(61, 75, 71, 0.33) 90%), #fff',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
             ref={(el) => { if (el) elementsRef.current[0] = el; }}
             data-anim="from-bottom"
           >
             Frequently Asked Questions
           </h2>
           <p
-            className="text-base sm:text-base md:text-lg text-gray-400"
+            className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed text-center max-w-3xl mx-auto"
             ref={(el) => { if (el) elementsRef.current[1] = el; }}
             data-anim="from-bottom"
             data-anim-delay="1"

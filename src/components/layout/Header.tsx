@@ -319,13 +319,14 @@ export default function Header() {
 }
         .zg-contact-btn {
           position: relative; 
-          background-color: #00ebaa;
+          background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
+          box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
           cursor: pointer;
           border: none;
           border-radius: 9999px;
           padding: 0.55rem 1.85rem;
           min-height: 2.75rem;
-          color: #000000;
+          color: #04160f;
           font-weight: 700;
           font-size: 1.05rem;
           white-space: nowrap;
@@ -334,15 +335,19 @@ export default function Header() {
           align-items: center;
           justify-content: center;
           text-decoration: none;
+          overflow: hidden;
+          transition: filter 0.25s ease;
         }
         
         .zg-contact-btn:hover { 
-          background-color: #00ebaa;
-          color: #000000;
+          transform: none;
+          filter: brightness(0.92);
+          color: #04160f;
         }
 
         .zg-contact-btn:active { 
           transform: none;
+          filter: brightness(0.86);
         }
         
         .zg-contact-btn span { 
@@ -352,13 +357,14 @@ export default function Header() {
 
         .zg-header-demo-btn {
           position: relative;
-          background-color: #00ebaa;
+          background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
+          box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
           cursor: pointer;
           border: none;
           border-radius: 9999px;
           padding: 0.45rem 1.25rem;
           min-height: 2.35rem;
-          color: #000000;
+          color: #04160f;
           font-weight: 700;
           font-size: 0.92rem;
           line-height: 1;
@@ -368,15 +374,19 @@ export default function Header() {
           align-items: center;
           justify-content: center;
           text-decoration: none;
+          overflow: hidden;
+          transition: filter 0.25s ease;
         }
 
         .zg-header-demo-btn:hover {
-          background-color: #00ebaa;
-          color: #000000;
+          transform: none;
+          filter: brightness(0.92);
+          color: #04160f;
         }
 
         .zg-header-demo-btn:active {
           transform: none;
+          filter: brightness(0.86);
         }
 
         .zg-header-demo-btn span {
@@ -604,40 +614,28 @@ export default function Header() {
           text-align: center;
           padding: 1.1rem 2rem;
           border-radius: 10rem;
-          background: rgba(0, 235, 170, 0.08);
-          border: 2px solid #00ebaa;
-          color: #fff; 
+          background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
+          box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
+          border: none;
+          color: #04160f; 
           text-decoration: none;
           font-size: 1.05rem; 
           font-weight: 700;
           position: relative; 
           overflow: hidden;
-          transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+          transition: filter 0.25s ease;
           letter-spacing: 0.3px;
           cursor: pointer;
         }
         
-        .zg-mob-contact::before {
-          content: ""; 
-          position: absolute; 
-          inset: 0;
-          background: rgba(0, 235, 170, 0.15); 
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-        
         .zg-mob-contact:hover { 
-          background: rgba(0, 235, 170, 0.15);
-          border-color: #00ebaa;
-          transform: translateY(-2px);
-        }
-        
-        .zg-mob-contact:hover::before { 
-          opacity: 1; 
+          transform: none;
+          filter: brightness(0.92);
         }
         
         .zg-mob-contact:active { 
-          transform: scale(0.98); 
+          transform: none;
+          filter: brightness(0.86);
         }
       ` }} />
 
