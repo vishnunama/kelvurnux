@@ -274,12 +274,18 @@ const styles = `
   }
 
   .step-title {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
     color: #9e9fa0;
     transition: color 0.3s ease;
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     font-weight: 700;
     line-height: 1.35;
+  }
+
+  @media (min-width: 768px) {
+    .step-title {
+      font-size: 1.25rem;
+    }
   }
 
   .step-item.is-active .step-title,
@@ -290,7 +296,7 @@ const styles = `
   .step-text {
     color: #9e9fa0;
     transition: color 0.3s ease;
-    font-size: 1.05rem;
+    font-size: 0.92rem;
     font-weight: 400;
     line-height: 1.55;
   }
@@ -301,24 +307,24 @@ const styles = `
   }
 
   .swiper-navigation-center {
-    margin: 2.5rem auto 0;
+    margin: 2rem auto 0;
     justify-content: center;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.65rem;
     width: max-content;
   }
 
   .steps-pagination-dots {
     display: inline-flex;
     align-items: center;
-    gap: 0.65rem;
-    padding: 0.35rem 0.5rem;
+    gap: 0.45rem;
+    padding: 0.2rem 0.35rem;
   }
 
   .steps-dot {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 0.38rem;
+    height: 0.38rem;
     border-radius: 50%;
     background: #414349;
     border: none;
@@ -329,22 +335,22 @@ const styles = `
 
   .steps-dot:hover {
     background: #5a5c64;
-    transform: scale(1.15);
+    transform: scale(1.2);
   }
 
   .steps-dot.is-active {
     background: #00ebaa;
-    box-shadow: 0 0 12px rgba(0, 235, 170, 0.75);
-    transform: scale(1.08);
+    box-shadow: 0 0 8px rgba(0, 235, 170, 0.85);
+    transform: scale(1.15);
   }
 
   .swiper-button-custom {
-    width: 3.2rem;
-    min-width: 3.2rem;
-    height: 3.2rem;
+    width: 2.35rem;
+    min-width: 2.35rem;
+    height: 2.35rem;
     border-radius: 9.9rem;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: inset 0 -3px 4px 0 rgba(6, 10, 13, 0.26), inset 0 2px 2.8px 0 rgba(255, 255, 255, 0.13);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 -2px 3px 0 rgba(6, 10, 13, 0.26), inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.13);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -354,6 +360,14 @@ const styles = `
     border: none;
     outline: none;
     will-change: transform;
+  }
+
+  @media (min-width: 768px) {
+    .swiper-button-custom {
+      width: 2.6rem;
+      min-width: 2.6rem;
+      height: 2.6rem;
+    }
   }
 
   .swiper-button-custom:hover {
@@ -786,7 +800,7 @@ export default function StepsSection({
               aria-label="Previous slide"
               onClick={handlePrev}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="mask0_prev" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
                   <rect width="24" height="24" transform="matrix(-1 0 0 1 24 0)" fill="currentColor"></rect>
                 </mask>
@@ -819,7 +833,7 @@ export default function StepsSection({
               aria-label="Next slide"
               onClick={handleNext}
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <mask id="mask0_next" style={{ maskType: 'alpha' }} maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
                   <rect width="24" height="24" transform="matrix(-1 0 0 1 24 0)" fill="currentColor"></rect>
                 </mask>
@@ -829,16 +843,6 @@ export default function StepsSection({
               </svg>
             </button>
           </div>
-        </div>
-
-        <div className="steps-cta-wrapper">
-          <a
-            href={ctaHref || '#contact-form-section'}
-            onClick={onCtaClick}
-            className="steps-cta-button"
-          >
-            <span>{customCtaText || 'Discuss Your Project'}</span>
-          </a>
         </div>
       </div>
     </section>
