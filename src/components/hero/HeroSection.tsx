@@ -356,7 +356,8 @@ export default function HeroSection() {
               transitionDelay: isLoaded ? '0.2s' : '0s',
             }}
           >
-            Powering the Next Generation of iGaming.
+            Powering the Next <br className="hidden sm:inline" />
+            <span className="whitespace-nowrap">Generation of iGaming.</span>
           </h1>
 
           {/* Subtitle */}
@@ -425,31 +426,7 @@ export default function HeroSection() {
             </button>
           </div>
 
-          {/* Quick Trust Highlights */}
-          <div
-            className={`transition-all duration-700 pt-2 grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2.5 sm:gap-4 text-xs sm:text-sm text-[#8e8e93] ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-            style={{
-              transitionDelay: isLoaded ? '0.5s' : '0s',
-            }}
-          >
-            <div className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
-              <span>150+ Game Providers</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
-              <span>Low-latency Seamless Wallet API</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
-              <span>Crypto & Fiat Cashier</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]"></span>
-              <span>Reliable Platform Infrastructure</span>
-            </div>
-          </div>
+
 
         </div>
       </div>
@@ -482,16 +459,18 @@ export default function HeroSection() {
           flex-direction: column;
           justify-content: center;
           min-height: 460px;
-          max-width: 42%;
+          max-width: 52%;
           gap: 1.2rem;
         }
 
         .hero-h1 {
-          font-size: 3.5rem;
+          font-size: clamp(2.4rem, 3.6vw, 3.5rem);
         }
 
         .hero-subtitle {
-          font-size: 1.125rem;
+          font-size: 1.1rem;
+          max-width: 510px;
+          line-height: 1.6;
         }
 
         .hero-btn {
@@ -542,16 +521,17 @@ export default function HeroSection() {
           }
 
           .hero-content-wrap {
-            max-width: 55%;
+            max-width: 65%;
             min-height: 380px;
           }
 
           .hero-h1 {
-            font-size: 2.4rem;
+            font-size: clamp(2rem, 3.8vw, 2.4rem);
           }
 
           .hero-subtitle {
             font-size: 1rem;
+            max-width: 480px;
           }
 
           .hero-img {
@@ -585,7 +565,7 @@ export default function HeroSection() {
           }
 
           .hero-h1 {
-            font-size: 1.8rem;
+            font-size: clamp(1.6rem, 6.2vw, 1.85rem);
           }
 
           .hero-subtitle {
