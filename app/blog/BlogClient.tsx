@@ -6,6 +6,56 @@ import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBan
 
 const blogs = [
   {
+    title: "White Label vs Turnkey Casino: Which Should You Choose?",
+    description:
+      "Compare white label and turnkey casino packages by launch time, upfront cost, sportsbook inclusion, source code rights and ongoing support.",
+    href: "/blog/white-label-vs-turnkey-casino",
+    tag: "White Label vs Turnkey",
+    readTime: "5 min read",
+    date: "03.11.2026",
+    image: "/assets/features/white-label-vs-turnkey-casino-banner.webp",
+  },
+  {
+    title: "Gambling Software for Sale: What to Check Before Buying a Casino Platform",
+    description:
+      "Buying gambling software? Compare casino platform quotes, source code rights, game API fees and support before you sign.",
+    href: "/blog/gambling-software-for-sale",
+    tag: "Gambling Software for Sale",
+    readTime: "6 min read",
+    date: "03.11.2026",
+    image: "/assets/features/gambling-software-for-sale-banner.webp",
+  },
+  {
+    title: "Sportsbook Integration: How to Add Sports Betting to an Existing Casino",
+    description:
+      "Adding sports betting to your casino? Compare sportsbook integration options and test player login, wallets, bet settlement and reporting before launch.",
+    href: "/blog/sportsbook-integration",
+    tag: "Sportsbook Integration",
+    readTime: "6 min read",
+    date: "03.11.2026",
+    image: "/assets/features/sportsbook-integration-banner.webp",
+  },
+  {
+    title: "How to Start Your Own iGaming Business: A Launch Checklist for Operators",
+    description:
+      "Start your own iGaming business with a practical operator checklist. Compare quotes, test games and payments, and decide when you’re ready to launch.",
+    href: "/blog/start-your-own-igaming-business",
+    tag: "iGaming Business",
+    readTime: "7 min read",
+    date: "03.11.2026",
+    image: "/assets/features/start-your-own-igaming-business-banner.webp",
+  },
+  {
+    title: "Crypto Casino White Label: 7 Checks Before You Sign",
+    description:
+      "Choosing a crypto casino white label provider? Use these seven demo and contract checks to compare wallets, games, fees, withdrawals and ownership.",
+    href: "/blog/crypto-casino-white-label",
+    tag: "Crypto Casino",
+    readTime: "8 min read",
+    date: "03.11.2026",
+    image: "/assets/features/crypto-casino-white-label-banner.webp",
+  },
+  {
     title: "Sweepstakes Fraud Prevention in 2026: An Operator's Guide",
     description:
       "Learn how sweepstakes operators prevent fraud in 2026. Explore multi-accounting defense, payment chargeback mitigation, KYC workflows, and wallet protection.",

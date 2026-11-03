@@ -155,6 +155,71 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     authorName: 'Kvaornux Editorial Team',
     authorAvatar: '/assets/favicon.webp',
   },
+  {
+    slug: 'crypto-casino-white-label',
+    href: '/blog/crypto-casino-white-label',
+    title: 'Crypto Casino White Label: 7 Checks Before You Sign',
+    description:
+      'Choosing a crypto casino white label provider? Use these seven demo and contract checks to compare wallets, games, fees, withdrawals and ownership.',
+    date: '03.11.2026',
+    readTime: '8 min read',
+    image: '/assets/features/crypto-casino-white-label-banner.webp',
+    tags: ['Crypto Casino', 'White Label', 'Operator Checklist'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
+  {
+    slug: 'start-your-own-igaming-business',
+    href: '/blog/start-your-own-igaming-business',
+    title: 'How to Start Your Own iGaming Business: A Launch Checklist for Operators',
+    description:
+      'Start your own iGaming business with a practical operator checklist. Compare quotes, test games and payments, and decide when you’re ready to launch.',
+    date: '03.11.2026',
+    readTime: '7 min read',
+    image: '/assets/features/start-your-own-igaming-business-banner.webp',
+    tags: ['iGaming Launch', 'Operator Checklist', 'Platform Demo'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
+  {
+    slug: 'sportsbook-integration',
+    href: '/blog/sportsbook-integration',
+    title: 'Sportsbook Integration: How to Add Sports Betting to an Existing Casino',
+    description:
+      'Adding sports betting to your casino? Compare sportsbook integration options and test player login, wallets, bet settlement and reporting before launch.',
+    date: '03.11.2026',
+    readTime: '6 min read',
+    image: '/assets/features/sportsbook-integration-banner.webp',
+    tags: ['Sportsbook Integration', 'Sports Betting API', 'Turnkey', 'Shared Wallet'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
+  {
+    slug: 'gambling-software-for-sale',
+    href: '/blog/gambling-software-for-sale',
+    title: 'Gambling Software for Sale: What to Check Before Buying a Casino Platform',
+    description:
+      'Buying gambling software? Compare casino platform quotes, source code rights, game API fees and support before you sign.',
+    date: '03.11.2026',
+    readTime: '6 min read',
+    image: '/assets/features/gambling-software-for-sale-banner.webp',
+    tags: ['Gambling Software for Sale', 'Casino Source Code', 'Casino Game API', 'White Label', 'Turnkey'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
+  {
+    slug: 'white-label-vs-turnkey-casino',
+    href: '/blog/white-label-vs-turnkey-casino',
+    title: 'White Label vs Turnkey Casino: Which Should You Choose?',
+    description:
+      'Compare white label and turnkey casino packages by launch time, upfront cost, sportsbook inclusion, source code rights and ongoing support.',
+    date: '03.11.2026',
+    readTime: '5 min read',
+    image: '/assets/features/white-label-vs-turnkey-casino-banner.webp',
+    tags: ['White Label', 'Turnkey Casino', 'Platform Comparison', 'Casino Source Code'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
 ];
 
 export function getPreviousBlogPost(currentSlug: string): BlogPost {

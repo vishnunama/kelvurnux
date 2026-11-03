@@ -119,6 +119,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://kvaornux.com/blog/crypto-casino-white-label",
+      priority: 0.8,
+    },
+    {
+      url: "https://kvaornux.com/blog/start-your-own-igaming-business",
+      priority: 0.8,
+    },
+    {
+      url: "https://kvaornux.com/blog/sportsbook-integration",
+      priority: 0.8,
+    },
+    {
+      url: "https://kvaornux.com/blog/gambling-software-for-sale",
+      priority: 0.8,
+    },
+    {
+      url: "https://kvaornux.com/blog/white-label-vs-turnkey-casino",
+      priority: 0.8,
+    },
+    {
       url: "https://kvaornux.com/privacy-policy",
       priority: 0.5,
     },
