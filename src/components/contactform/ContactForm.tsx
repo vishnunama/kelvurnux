@@ -270,7 +270,7 @@ export default function ContactForm({ defaultCategory = '' }: ContactFormProps) 
 
   return (
     <div 
-      className="min-h-screen p-4 sm:p-6 md:p-8 pb-16 sm:pb-24 relative z-20"
+      className="min-h-screen px-4 sm:px-6 md:px-8 pt-12 sm:pt-16 md:pt-20 pb-16 sm:pb-24 relative z-20"
       id="contact-form-section"
     >
       <div className="max-w-6xl mx-auto">

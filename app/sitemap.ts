@@ -139,6 +139,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://kvaornux.com/blog/white-label-casino-integration",
+      priority: 0.8,
+    },
+    {
+      url: "https://kvaornux.com/blog/white-label-sportsbook-providers",
+      priority: 0.8,
+    },
+    {
       url: "https://kvaornux.com/privacy-policy",
       priority: 0.5,
     },

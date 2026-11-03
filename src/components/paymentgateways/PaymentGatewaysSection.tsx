@@ -139,7 +139,7 @@ export default function PaymentGatewaysSection() {
   }, []);
 
   return (
-    <section className="section bg-[#0b0b0f] text-white relative py-6 sm:py-10 lg:py-16 overflow-hidden border-t border-white/[0.04]">
+    <section className="section bg-[#0b0b0f] text-white relative py-12 sm:py-16 lg:py-24 overflow-hidden border-t border-white/[0.04]">
       <style jsx global>{`
         @keyframes paymentScrollUp {
           0% {
@@ -183,11 +183,11 @@ export default function PaymentGatewaysSection() {
       `}</style>
 
       <div className="section-padding w-full h-full">
-        <div className="container-new max-w-[1440px] mx-auto px-2 xs:px-4 sm:px-6 lg:px-8 relative">
+        <div className="container-new max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative">
 
           {/* Centered Top Heading matching site sections */}
           <div
-            className={`transition-all duration-700 text-center mb-6 sm:mb-8 lg:mb-10 ${
+            className={`transition-all duration-700 text-center mb-8 sm:mb-10 lg:mb-14 ${
               isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
@@ -197,10 +197,10 @@ export default function PaymentGatewaysSection() {
           </div>
 
           {/* Main Container: Stacked Flex on Mobile, 2-Column Grid on Desktop */}
-          <div className="home_providers flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-0 relative overflow-hidden items-center lg:items-stretch">
+          <div className="home_providers flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-0 relative overflow-hidden items-center lg:items-stretch">
             
             {/* Left Side on Desktop, Bottom on Mobile: Content & CTA */}
-            <div className="home_providers-content flex flex-col justify-center items-start p-4 sm:p-8 lg:p-14 min-h-auto lg:min-h-[40rem] relative overflow-hidden w-full order-2 lg:order-1">
+            <div className="home_providers-content flex flex-col justify-center items-start p-6 sm:p-8 lg:p-14 min-h-auto lg:min-h-[40rem] relative overflow-hidden w-full order-2 lg:order-1">
 
               {/* Background Graphic */}
               <img
@@ -215,7 +215,7 @@ export default function PaymentGatewaysSection() {
               />
 
               {/* Content Wrap */}
-              <div className="home_providers-top relative z-20 max-w-xl my-auto flex flex-col gap-3 sm:gap-5 text-left">
+              <div className="home_providers-top relative z-20 max-w-xl my-auto flex flex-col gap-4 sm:gap-5 text-left">
 
                 <h3 className="section-gradient-title text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-tight">
                   <span className="text-[#00ebaa]">DIVERSE PORTFOLIO</span> OF GLOBAL & LOCAL PROVIDERS
@@ -226,7 +226,7 @@ export default function PaymentGatewaysSection() {
                 </p>
 
                 {/* CTA Button */}
-                <div className="mt-2 sm:mt-4">
+                <div className="mt-4 sm:mt-6">
                   <Link
                     href="/crypto-igaming-solutions"
                     className="btn-main"

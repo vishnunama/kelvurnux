@@ -6,6 +6,26 @@ import PartnershipBanner from '@/src/components/partnershipbanner/PartnershipBan
 
 const blogs = [
   {
+    title: "White Label Sportsbook Providers: How to Compare",
+    description:
+      "Compare white label sportsbook providers by sports coverage, trading controls, fees, match-day support and player data access before signing.",
+    href: "/blog/white-label-sportsbook-providers",
+    tag: "Sportsbook Providers",
+    readTime: "7 min read",
+    date: "03.11.2026",
+    image: "/assets/features/white-label-sportsbook-providers-banner.webp",
+  },
+  {
+    title: "White Label Casino Integration: Games, Payments & Wallets",
+    description:
+      "Learn how white label casino integration connects games, payments and wallets. See what to confirm in your quote and test before launch.",
+    href: "/blog/white-label-casino-integration",
+    tag: "Casino Integration",
+    readTime: "6 min read",
+    date: "03.11.2026",
+    image: "/assets/features/white-label-casino-integration-banner.webp",
+  },
+  {
     title: "White Label vs Turnkey Casino: Which Should You Choose?",
     description:
       "Compare white label and turnkey casino packages by launch time, upfront cost, sportsbook inclusion, source code rights and ongoing support.",

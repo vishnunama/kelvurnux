@@ -292,7 +292,7 @@ export default function TestimonialsSection() {
 
         @media (max-width: 768px) {
           .clients-testimonials-section {
-            padding: 3.5rem 0 4.5rem;
+            padding: 4rem 0 5rem;
           }
           .clients-testimonials-wrapper {
             --slide-w: calc(100vw - 48px);

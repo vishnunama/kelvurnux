@@ -58,12 +58,12 @@ const styles = `
     overflow: hidden;
     background: radial-gradient(106.74% 100.05% at 50% 100.05%, #1c1918 0, #0b0b0f 19.4%);
     position: relative;
-    padding: 1.5rem 0 2rem;
+    padding: 3.5rem 0 4rem;
   }
 
   @media (min-width: 768px) {
     .steps-section {
-      padding: 2.5rem 0 3rem;
+      padding: 4.5rem 0 5.5rem;
     }
   }
 
@@ -112,7 +112,7 @@ const styles = `
     color: #a5a5a5;
     text-align: center;
     max-width: 48rem;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 2rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.625;

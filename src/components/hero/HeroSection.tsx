@@ -587,27 +587,30 @@ export default function HeroSection() {
 
         @media (max-width: 600px) {
           .hero-section {
-            padding-top: 12.8rem;
-            padding-bottom: 2.5rem;
+            padding-top: 13.5rem;
+            padding-bottom: 4.5rem;
             display: block;
           }
 
           .container-hero {
-            padding: 0 1.6rem;
+            padding: 0 1.25rem;
           }
 
           .hero-content-wrap {
             max-width: 100%;
             min-height: unset;
-            gap: 0.9rem;
+            gap: 1.25rem;
           }
 
           .hero-h1 {
             font-size: clamp(1.95rem, 7.2vw, 2.35rem);
+            line-height: 1.18;
           }
 
           .hero-subtitle {
             font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 0.25rem;
           }
 
           .hero-btn {

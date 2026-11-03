@@ -220,6 +220,32 @@ export const ALL_BLOG_POSTS: BlogPost[] = [
     authorName: 'Kvaornux Editorial Team',
     authorAvatar: '/assets/favicon.webp',
   },
+  {
+    slug: 'white-label-casino-integration',
+    href: '/blog/white-label-casino-integration',
+    title: 'White Label Casino Integration: Games, Payments & Wallets',
+    description:
+      'Learn how white label casino integration connects games, payments and wallets. See what to confirm in your quote and test before launch.',
+    date: '03.11.2026',
+    readTime: '6 min read',
+    image: '/assets/features/white-label-casino-integration-banner.webp',
+    tags: ['White Label', 'Game API', 'Payment Integration', 'Casino Wallet'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
+  {
+    slug: 'white-label-sportsbook-providers',
+    href: '/blog/white-label-sportsbook-providers',
+    title: 'White Label Sportsbook Providers: How to Compare',
+    description:
+      'Compare white label sportsbook providers by sports coverage, trading controls, fees, match-day support and player data access before signing.',
+    date: '03.11.2026',
+    readTime: '7 min read',
+    image: '/assets/features/white-label-sportsbook-providers-banner.webp',
+    tags: ['Sportsbook', 'White Label', 'Sports Betting', 'Trading & Risk'],
+    authorName: 'Kvaornux Editorial Team',
+    authorAvatar: '/assets/favicon.webp',
+  },
 ];
 
 export function getPreviousBlogPost(currentSlug: string): BlogPost {

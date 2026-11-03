@@ -149,7 +149,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: propFaqs, customFaqData, 
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#0b0b0f] py-6 sm:py-10 md:py-16 overflow-hidden"
+      className="relative bg-[#0b0b0f] py-14 sm:py-18 md:py-24 overflow-hidden"
     >
       {/* Background Image - anchored to top with object-top to prevent shaking on accordion toggle */}
       {!hideBgImage && (
@@ -224,7 +224,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: propFaqs, customFaqData, 
 
       <div className="relative z-10 mx-auto max-w-5xl px-6 md:px-12 lg:px-20">
         {/* Header */}
-        <div className="mb-6 sm:mb-10 text-center md:mb-16">
+        <div className="mb-8 sm:mb-12 md:mb-16 text-center">
           <h2
             className="mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto"
             style={{

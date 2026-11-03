@@ -19,16 +19,16 @@ export default function FloatingContactIcons() {
 
   return (
     // ✅ FIXED WIDTH CONTAINER - PREVENTS CLS
-    <div className="fixed bottom-6 right-3 md:bottom-8 md:right-8 z-50 flex flex-col gap-4 w-[64px] md:w-[80px]">
+    <div className="fixed bottom-5 right-3 md:bottom-8 md:right-8 z-50 flex flex-col gap-3 md:gap-4 w-[54px] md:w-[80px]">
       {/* Floating Icons Container */}
-      <div className="flex flex-col gap-3 md:gap-4">
+      <div className="flex flex-col gap-2.5 md:gap-4">
         {/* Telegram Icon */}
         <div className="flex items-center gap-3 group flex-row-reverse">
           <a
             href="https://t.me/kvaornux"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group/telegram flex-shrink-0"
+            className="relative w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group/telegram flex-shrink-0"
             style={{
               background: 'linear-gradient(135deg, rgba(0, 136, 204, 0.8) 0%, rgba(0, 150, 221, 0.8) 100%)',
               boxShadow: 'inset 0 -3px 4px 0 rgba(6, 10, 13, 0.26), inset 0 2px 2.8px 0 rgba(255, 255, 255, 0.13)',
@@ -51,7 +51,7 @@ export default function FloatingContactIcons() {
             href="https://wa.me/917240328393"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group/whatsapp flex-shrink-0"
+            className="relative w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group/whatsapp flex-shrink-0"
             style={{
               background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.8) 0%, rgba(22, 163, 74, 0.8) 100%)',
               boxShadow: 'inset 0 -3px 4px 0 rgba(6, 10, 13, 0.26), inset 0 2px 2.8px 0 rgba(255, 255, 255, 0.13)',
@@ -72,7 +72,7 @@ export default function FloatingContactIcons() {
       {/* Floating Badge */}
       <div className="flex items-center justify-center">
         <div
-          className="text-xs font-semibold text-white px-2 py-1 rounded-full backdrop-blur-sm text-center"
+          className="text-[11px] md:text-xs font-semibold text-white px-2 py-0.5 md:py-1 rounded-full backdrop-blur-sm text-center"
           style={{
             background: 'rgba(0, 235, 170, 0.2)',
             border: '1px solid #00ebaa',

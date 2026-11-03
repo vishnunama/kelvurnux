@@ -85,14 +85,14 @@ const styles = `
   .brand-values-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.75rem;
     margin: 0 auto;
     width: 100%;
     justify-content: center;
   }
 
   .brand-value {
-    width: calc(50% - 0.25rem);
+    width: calc(50% - 0.375rem);
     box-sizing: border-box;
   }
 
@@ -201,7 +201,7 @@ export default function BrandValuesSection() {
       <style>{styles}</style>
       <section
         ref={sectionRef}
-        className="relative overflow-hidden pt-12 md:pt-16 pb-12 md:pb-20 bg-[#0b0b0f]"
+        className="relative overflow-hidden py-14 sm:py-18 md:py-24 bg-[#0b0b0f]"
       >
         {/* Background Image */}
         <div className="section-bg absolute top-0 inset-x-0 h-[450px] sm:h-[550px] md:h-[650px] pointer-events-none z-0 overflow-hidden">
@@ -238,14 +238,14 @@ export default function BrandValuesSection() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-3 md:px-12 pt-50 sm:pt-50 md:pt-60 lg:pt-90">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-28 sm:pt-40 md:pt-48 lg:pt-64">
           {/* Title */}
           <div
             ref={(el) => {
               if (el) elementsRef.current[0] = el;
             }}
             data-anim="from-bottom"
-            className="text-center mb-3 md:mb-6"
+            className="text-center mb-4 sm:mb-5 md:mb-6"
           >
             <h2
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl mx-auto text-center"
@@ -266,9 +266,9 @@ export default function BrandValuesSection() {
               if (el) elementsRef.current[1] = el;
             }}
             data-anim="from-bottom"
-            className="text-center mb-8"
+            className="text-center mb-8 sm:mb-10 md:mb-12"
           >
-            <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto text-center">
+            <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto text-center px-2">
               From platform development to game integrations and ongoing support, our experience comes from building and operating real iGaming projects across different markets.
             </p>
           </div>

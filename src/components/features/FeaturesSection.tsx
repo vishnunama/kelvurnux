@@ -175,7 +175,7 @@ export default function FeaturesSection() {
       <style>{styles}</style>
       <section
         ref={sectionRef}
-        className="relative overflow-hidden bg-[#0b0b0f] -mt-8 sm:-mt-14 md:-mt-20 lg:-mt-28"
+        className="relative overflow-hidden bg-[#0b0b0f] mt-0 lg:-mt-28 py-10 sm:py-16 md:py-20 lg:py-24"
       >
         <div
           className="absolute inset-0 opacity-5 pointer-events-none"
@@ -185,11 +185,11 @@ export default function FeaturesSection() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 pt-0 md:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 
           {/* Title */}
           <div
-            className="text-center mb-2 sm:mb-4 lg:mb-6"
+            className="text-center mb-6 sm:mb-8 lg:mb-12"
             ref={(el) => { elementsRef.current[0] = el; }}
             data-anim="from-top"
           >
@@ -204,7 +204,7 @@ export default function FeaturesSection() {
             >
               One Ecosystem. Every Layer of iGaming.
             </h2>
-            <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto mt-3 text-center">
+            <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto mt-3 sm:mt-4 text-center px-2">
               From casino and sportsbook to game aggregation, player management and back-office technology, Kvaornux brings the core infrastructure of an iGaming operation into one scalable ecosystem.
             </p>
           </div>

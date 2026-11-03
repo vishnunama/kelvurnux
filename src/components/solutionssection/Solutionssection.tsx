@@ -138,8 +138,8 @@ export default function SolutionsSection() {
   return (
     <>
       <style>{styles}</style>
-      <section ref={sectionRef} id="solutions" className="solutions-section py-9 md:py-12 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 pt-[1rem] pb-[1rem] md:px-6 lg:px-8 relative z-10">
+      <section ref={sectionRef} id="solutions" className="solutions-section py-14 sm:py-18 md:py-24 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Title */}
           <h2
@@ -154,7 +154,7 @@ export default function SolutionsSection() {
           <p
             ref={(el) => { if (el) elementsRef.current[1] = el; }}
             data-anim="from-bottom"
-            className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed text-center max-w-3xl mx-auto mb-12 md:mb-16"
+            className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-16 px-2"
           >
             Choose a complete launch solution or build on Kvaornux technology with a setup tailored to your product, market and operating model.
           </p>

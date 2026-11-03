@@ -79,7 +79,7 @@ export default function ProvidersSection() {
   }, []);
 
   return (
-    <section className="section bg-[#0b0b0f] text-white relative py-6 sm:py-10 lg:py-16 overflow-hidden">
+    <section className="section bg-[#0b0b0f] text-white relative py-12 sm:py-16 lg:py-24 overflow-hidden">
       <style jsx global>{`
         @keyframes logoScrollUp {
           0% {
@@ -130,11 +130,11 @@ export default function ProvidersSection() {
       `}</style>
 
       <div className="section-padding w-full h-full">
-        <div className="container-new max-w-[1440px] mx-auto px-2 xs:px-4 sm:px-6 lg:px-8 relative">
+        <div className="container-new max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative">
 
           {/* Centered Top Heading matching site sections */}
           <div
-            className={`transition-all duration-700 text-center mb-6 sm:mb-8 lg:mb-10 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            className={`transition-all duration-700 text-center mb-8 sm:mb-10 lg:mb-14 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
           >
             <h2 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto">
@@ -144,7 +144,7 @@ export default function ProvidersSection() {
 
           {/* Main Container: Stacked Flex on Mobile, 2-Column Grid on Desktop */}
           <div
-            className="home_providers flex flex-col lg:grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-0 relative overflow-hidden items-center lg:items-stretch"
+            className="home_providers flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-0 relative overflow-hidden items-center lg:items-stretch"
           >
             {/* Left Side (Top on Mobile): 3-4 Vertical Columns Infinite Wall */}
             <div
@@ -197,7 +197,7 @@ export default function ProvidersSection() {
             </div>
 
             {/* Right Side (Bottom on Mobile): Text Content & CTA */}
-            <div className="home_providers-content flex flex-col justify-center items-start p-4 sm:p-8 lg:p-14 min-h-auto lg:min-h-[40rem] relative overflow-hidden w-full">
+            <div className="home_providers-content flex flex-col justify-center items-start p-6 sm:p-8 lg:p-14 min-h-auto lg:min-h-[40rem] relative overflow-hidden w-full">
 
               {/* Background Graphic */}
               <img
@@ -212,7 +212,7 @@ export default function ProvidersSection() {
               />
 
               {/* Content Wrap */}
-              <div className="home_providers-top relative z-20 max-w-xl my-auto flex flex-col gap-3 sm:gap-5 text-left">
+              <div className="home_providers-top relative z-20 max-w-xl my-auto flex flex-col gap-4 sm:gap-5 text-left">
 
                 <span className="text-white text-5xl xs:text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight block leading-none">
                   150+
@@ -227,7 +227,7 @@ export default function ProvidersSection() {
                 </p>
 
                 {/* CTA Button */}
-                <div className="mt-2 sm:mt-4">
+                <div className="mt-4 sm:mt-6">
                   <Link
                     href="/casino-aggregator-api-solution"
                     className="btn-main"
