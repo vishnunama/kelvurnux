@@ -230,7 +230,7 @@ export default function CasinoAggregatorAPI() {
     {
       id: 2,
       title: 'Seamless & Transfer Wallets',
-      description: 'Sub-40ms balance debit and credit callbacks supporting simultaneous fiat and cryptocurrency operations with automated transaction reconciliation.',
+      description: 'Reliable balance debit and credit callbacks for processing wallet transactions and updating balances across fiat and cryptocurrency operations.',
       icon: Wallet,
       span: 2,
     },
@@ -244,7 +244,7 @@ export default function CasinoAggregatorAPI() {
     {
       id: 4,
       title: 'Real-Time Analytics & Problem Round Resolvers',
-      description: 'Continuous monitoring of game round states, bet turnover, provider latency, and flagged transaction anomalies with instant technical dispute resolution.',
+      description: 'Continuous monitoring of game round states, bet turnover, provider latency, and flagged transaction anomalies, with tools and technical support for investigating game-round and transaction issues.',
       icon: BarChart3,
       span: 3,
     },
@@ -385,7 +385,7 @@ export default function CasinoAggregatorAPI() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Integrate 150+ gaming providers with 20,000+ games through a single powerful API. Get instant access to slots, live casino, table games, fishing, fast games, and mini games. Complete integration support, real-time analytics, and multi-currency operations included.
+              Connect your casino to slots, live casino, crash, table games and more through one API. Manage game content from one back office, with integration support from our team.
             </p>
           </div>
 

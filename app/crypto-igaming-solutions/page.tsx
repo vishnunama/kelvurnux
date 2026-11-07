@@ -6,14 +6,14 @@ export const metadata: Metadata = {
     absolute: 'Crypto iGaming Solutions | Bitcoin & Crypto Casino Software | Kvaornux',
   },
   description:
-    'Launch scalable crypto casino and sportsbook platforms with multi-currency Web3 wallets, instant deposits, game APIs, and full back-office control.',
+    'Launch scalable crypto casino and sportsbook platforms with multi-currency Web3 wallets, crypto deposits, game APIs, and full back-office control.',
   alternates: {
     canonical: '/crypto-igaming-solutions',
   },
   openGraph: {
     title: 'Crypto iGaming Solutions | Bitcoin & Crypto Casino Software | Kvaornux',
     description:
-      'Launch scalable crypto casino and sportsbook platforms with multi-currency Web3 wallets, instant deposits, game APIs, and full back-office control.',
+      'Launch scalable crypto casino and sportsbook platforms with multi-currency Web3 wallets, crypto deposits, game APIs, and full back-office control.',
     url: 'https://kvaornux.com/crypto-igaming-solutions',
     siteName: 'Kvaornux',
     type: 'website',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Crypto iGaming Solutions | Bitcoin & Crypto Casino Software | Kvaornux',
     description:
-      'Launch scalable crypto casino and sportsbook platforms with multi-currency Web3 wallets, instant deposits, game APIs, and full back-office control.',
+      'Launch scalable crypto casino and sportsbook platforms with multi-currency Web3 wallets, crypto deposits, game APIs, and full back-office control.',
     images: ['https://kvaornux.com/assets/og-image.webp'],
   },
 };

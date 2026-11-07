@@ -106,7 +106,7 @@ export default function SportsbookPlatformSoftwarePage() {
         name: 'How fast is live bet validation during high-intensity in-play sporting events?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'In-play bet validation executes in under 100 milliseconds with configurable integrity delays, ensuring bookmakers are shielded from pitch-side latency exploitation while delivering a frictionless player experience.',
+          text: 'In-play bet validation executes with configurable integrity delays, protecting bookmakers from pitch-side latency exploitation while delivering a responsive player experience.',
         },
       },
       {

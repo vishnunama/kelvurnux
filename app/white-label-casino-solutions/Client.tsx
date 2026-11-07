@@ -764,7 +764,7 @@ export default function WhiteLabelCasinoPlatform() {
                   </Link>
                 </h3>
                 <p className="text-sm sm:text-base text-[#a5d8d0] mb-6 leading-relaxed font-normal">
-                  Get a complete casino software package configured for your business, with integrated gaming tools, payment options, and operational controls.
+                  Get a complete casino and sportsbook software platform configured for your business, with integrated gaming tools, payment options, and operational controls.
                 </p>
 
                 <ul className="space-y-3 mb-8">
@@ -773,7 +773,7 @@ export default function WhiteLabelCasinoPlatform() {
                       <path d="M12 2L2 12l10 10 10-10L12 2z" />
                     </svg>
                     <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
-                      Configured casino platform and back office
+                      Casino and sportsbook are included
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -781,7 +781,7 @@ export default function WhiteLabelCasinoPlatform() {
                       <path d="M12 2L2 12l10 10 10-10L12 2z" />
                     </svg>
                     <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
-                      Game and payment integrations based on package
+                      Platform source code is included in the package, with rights and delivery terms defined in the project agreement
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -789,7 +789,7 @@ export default function WhiteLabelCasinoPlatform() {
                       <path d="M12 2L2 12l10 10 10-10L12 2z" />
                     </svg>
                     <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
-                      Player, bonus, and affiliate management tools
+                      Game and payment integrations depend on the agreed package and provider approvals
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -797,7 +797,7 @@ export default function WhiteLabelCasinoPlatform() {
                       <path d="M12 2L2 12l10 10 10-10L12 2z" />
                     </svg>
                     <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
-                      Tailored branding and operational customization
+                      Branding and operational settings can be customized
                     </span>
                   </li>
                   <li className="flex items-start gap-2.5">
@@ -805,7 +805,7 @@ export default function WhiteLabelCasinoPlatform() {
                       <path d="M12 2L2 12l10 10 10-10L12 2z" />
                     </svg>
                     <span className="text-sm sm:text-[0.95rem] text-[#e2e8f0] font-medium leading-relaxed">
-                      Deployment timeline based on project requirements
+                      Delivery timeline is confirmed after reviewing requirements
                     </span>
                   </li>
                 </ul>

@@ -90,7 +90,7 @@ export default function CasinoPlatformClient() {
       icon: 'wallet' as const,
       title: 'High-Throughput Multi-Currency Wallet (Seamless & Transfer API)',
       description:
-        'Engineered to handle millions of transactions per day with sub-50ms latency. The Kvaornux wallet engine supports dual operating modes: Seamless Single-Wallet for operators with existing ledgers and Transfer Wallet with real-time balance sync across fiat and cryptocurrencies.',
+        'Built for processing wallet transactions and updating balances smoothly. The Kvaornux wallet engine supports dual operating modes: Seamless Single-Wallet for operators with existing ledgers and Transfer Wallet with real-time balance sync across fiat and cryptocurrencies.',
       image: '/assets/features/igaming-financial-reconciliation-auto-invoices.webp',
     },
     {
@@ -135,14 +135,14 @@ export default function CasinoPlatformClient() {
       icon: Wallet,
       title: 'High-Throughput Wallet Architecture (Seamless & Transfer)',
       description:
-        'Sub-50ms transaction processing for high-volume game rounds. Simultaneous support for fiat and cryptocurrency balances, idempotent transaction handling, and automated ledger reconciliation.',
+        'Reliable transaction processing for active game rounds. Simultaneous support for fiat and cryptocurrency balances, idempotent transaction handling, and automated ledger reconciliation.',
     },
     {
       id: 3,
       icon: Gamepad2,
       title: '20,000+ Game Aggregation Gateway',
       description:
-        'One API connection grants immediate access to 150+ top game providers with tokenized game launches, normalized metadata, RTP controls, and zero-downtime game catalog synchronization.',
+        'Connect to 150+ top game providers through one API, with tokenized game launches, normalized metadata, RTP controls, and game catalog management.',
     },
     {
       id: 4,
@@ -175,9 +175,9 @@ export default function CasinoPlatformClient() {
     {
       id: 8,
       icon: Cpu,
-      title: 'High-Availability Infrastructure & 99.99% SLA',
+      title: 'Scalable Cloud Infrastructure & Deployment',
       description:
-        'Cloud-native containerized architecture (Docker/Kubernetes) deployable on AWS, GCP, or private clouds with multi-region failover, automated backups, and guaranteed platform uptime.',
+        'Cloud-native containerized architecture (Docker/Kubernetes) deployable on AWS, GCP, or private clouds, with hosting, backup and recovery arrangements configured according to the agreed project scope.',
     },
     {
       id: 9,
@@ -229,7 +229,7 @@ export default function CasinoPlatformClient() {
       id: 3,
       title: '20,000+ Games Aggregation',
       description:
-        'Single API gateway providing instant access to 150+ world-class studios, spanning slots, live dealer tables, crash games, and fast games.',
+        'Connect and manage titles from 150+ game studios through one API, offering slots, live dealer tables, crash games, and fast games from a unified lobby.',
       icon: Gamepad2,
       link: '/casino-aggregator-api-solution',
       span: 2,
@@ -262,7 +262,7 @@ export default function CasinoPlatformClient() {
       id: 7,
       title: 'Lakebets Case Study',
       description:
-        'How Kvaornux engineered a high-concurrency mobile casino platform with custom PAM, multi-provider aggregation, and sub-40ms settlement.',
+        'How Kvaornux engineered a mobile casino platform with custom PAM, multi-provider aggregation, and real-time transaction settlement.',
       icon: Rocket,
       link: '/igaming-case-studies/casino-platform-development',
       span: 2,
@@ -287,7 +287,7 @@ export default function CasinoPlatformClient() {
     {
       question: 'What wallet integration models does the Kvaornux casino platform software support?',
       answer:
-        'We support two core architectures: (1) Seamless Single-Wallet, where our casino engine communicates directly with your existing core banking/PAM ledger via sub-50ms REST or WebSocket callbacks for debits, credits, and rollbacks; and (2) Transfer Wallet mode, where players transfer funds into an integrated gaming wallet with automated reconciliation back to the core ledger.',
+        'We support two core architectures: (1) Seamless Single-Wallet, where our casino engine communicates directly with your existing core banking/PAM ledger via REST or WebSocket callbacks for debits, credits, and rollbacks; and (2) Transfer Wallet mode, where players transfer funds into an integrated gaming wallet with automated reconciliation back to the core ledger.',
     },
     {
       question: 'Can we build a custom frontend on top of your casino platform software?',
@@ -297,12 +297,12 @@ export default function CasinoPlatformClient() {
     {
       question: 'How does the platform handle peak concurrency and high transaction volume?',
       answer:
-        'Our platform relies on a distributed microservices architecture decoupled by asynchronous message brokers and in-memory Redis clustering. Even during mega jackpots or synchronized tournament drops, the platform handles tens of thousands of concurrent spins per second without latency degradation.',
+        'Our platform relies on a distributed microservices architecture decoupled by asynchronous message brokers and in-memory Redis caching. The platform is designed for processing wallet transactions, validating bets, managing game sessions, and supporting growth according to the agreed setup.',
     },
     {
       question: 'What game content is integrated into the casino platform software?',
       answer:
-        'The platform connects with over 20,000 certified casino titles from 150+ world-class studios, spanning online slots, live dealer tables, roulette, blackjack, baccarat, crash games, fishing, and fast games via a single normalized aggregator gateway.',
+        'The platform connects with over 20,000 certified casino titles from 150+ world-class studios, spanning online slots, live dealer tables, roulette, blackjack, baccarat, crash games, fishing, and fast games via a single normalized aggregator gateway. Specific game and provider availability depends on commercial agreements, target-market regulations, and provider approvals.',
     },
     {
       question: 'What is the difference between Casino Platform Software and the Turnkey Casino Solution?',

@@ -82,7 +82,7 @@ export default function OnlineCasinoPlatformSoftwarePage() {
         name: 'What wallet integration models does the Kvaornux casino platform software support?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Kvaornux supports both Seamless Single-Wallet (where the platform requests debit/credit authorizations directly from your existing core ledger via sub-50ms REST/WebSocket callbacks) and Transfer Wallet modes with automated ledger reconciliation.',
+          text: 'Kvaornux supports both Seamless Single-Wallet (where the platform requests debit/credit authorizations directly from your existing core ledger via REST/WebSocket callbacks) and Transfer Wallet modes with automated ledger reconciliation.',
         },
       },
       {
@@ -98,7 +98,7 @@ export default function OnlineCasinoPlatformSoftwarePage() {
         name: 'How does the platform handle high-concurrency game rounds during peak hours?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Our architecture leverages distributed microservices, Redis caching layers, and decoupled event-driven message brokers capable of processing tens of thousands of simultaneous spins and bets per second with sub-50ms response latency.',
+          text: 'Our architecture leverages distributed microservices, Redis caching layers, and event-driven message brokers designed for processing wallet transactions, validating bets, managing game sessions, and supporting growth according to the agreed setup.',
         },
       },
       {
@@ -106,7 +106,7 @@ export default function OnlineCasinoPlatformSoftwarePage() {
         name: 'What game content is integrated into the casino platform software?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'The platform connects with over 20,000 certified casino titles from 150+ world-class studios, spanning online slots, live dealer tables, roulette, blackjack, baccarat, crash games, fishing, and fast games via a single normalized aggregator gateway.',
+          text: 'The platform connects with over 20,000 certified casino titles from 150+ world-class studios, spanning online slots, live dealer tables, roulette, blackjack, baccarat, crash games, fishing, and fast games via a single normalized aggregator gateway. Specific game and provider availability depends on commercial agreements, target-market regulations, and provider approvals.',
         },
       },
       {

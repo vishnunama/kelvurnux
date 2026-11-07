@@ -583,7 +583,7 @@ export default function StepsSection({
   const title = customTitle || 'From Strategy to Launch';
   const subtitle =
     customSubtitle ||
-    'A clear process from initial requirements to deployment, integration and ongoing support.';
+    'We agree on your requirements, customize your platform, connect the selected services and help you prepare for launch.';
 
   // Scroll listener for sticky scroll-driven slide progression
   React.useEffect(() => {

@@ -138,6 +138,16 @@ export default function PaymentGatewaysSection() {
     setIsLoaded(true);
   }, []);
 
+  const handleScrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const section = document.getElementById('contact-form-section');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact-form-section';
+    }
+  };
+
   return (
     <section className="section bg-[#0b0b0f] text-white relative py-12 sm:py-16 lg:py-24 overflow-hidden border-t border-white/[0.04]">
       <style jsx global>{`
@@ -222,16 +232,17 @@ export default function PaymentGatewaysSection() {
                 </h3>
 
                 <p className="text-[#a5a5a5] text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-                  Connect to a diverse portfolio of global and local providers from cards and wallets to bank transfers and regional solutions. All methods are pre‑integrated and available through one API, supported by smart routing, multi‑currency conversion, and automated withdrawals.
+                  Connect card payments, e-wallets, bank transfers and regional payment methods to your platform. We integrate the payment providers selected for your business and bring deposit and withdrawal records into your back office.
                 </p>
 
                 {/* CTA Button */}
                 <div className="mt-4 sm:mt-6">
                   <Link
-                    href="/crypto-igaming-solutions"
+                    href="#contact-form-section"
+                    onClick={handleScrollToContact}
                     className="btn-main"
                   >
-                    <span>Explore Solutions</span>
+                    <span>Discuss Payment Integration</span>
                   </Link>
                 </div>
 

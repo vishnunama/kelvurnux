@@ -269,7 +269,7 @@ export default function BrandValuesSection() {
             className="text-center mb-8 sm:mb-10 md:mb-12"
           >
             <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto text-center px-2">
-              From platform development to game integrations and ongoing support, our experience comes from building and operating real iGaming projects across different markets.
+              Our experience comes from developing casino and sportsbook platforms, connecting game providers and supporting client projects across different markets.
             </p>
           </div>
 

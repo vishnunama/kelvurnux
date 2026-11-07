@@ -76,7 +76,7 @@ const features = [
     items: [
       'Multi-channel payment gateway support',
       'Crypto, fiat, & localized payment methods',
-      'Instant deposit & withdrawal processing',
+      'Manage player deposits and withdrawals',
       'Fraud detection & risk monitoring',
       'Flexible third-party API framework',
       '24/7 technical monitoring & support'
@@ -202,10 +202,10 @@ export default function FeaturesSection() {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              One Ecosystem. Every Layer of iGaming.
+              Casino, Sportsbook and the Tools to Run Your Platform
             </h2>
             <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto mt-3 sm:mt-4 text-center px-2">
-              From casino and sportsbook to game aggregation, player management and back-office technology, Kvaornux brings the core infrastructure of an iGaming operation into one scalable ecosystem.
+              Manage games, players, bonuses and daily operations with casino and sportsbook software built for your business. Connect the providers and payment services you need.
             </p>
           </div>
 

@@ -85,7 +85,7 @@ export default function SportsbookPlatformClient() {
       icon: 'zap' as const,
       title: 'High-Throughput Bet Slip & Execution Architecture',
       description:
-        'Engineered to handle massive wager spikes during global sports finals and derby matches. Validates thousands of bets per second with sub-100ms processing. Supports single bets, accumulators, system wagers, and bet builders with instant ticket settlement.',
+        'Built for validating bets during busy sports matches. Supports single bets, accumulators, system wagers, and bet builders, with bet settlement based on confirmed results from the selected sportsbook provider.',
       image: '/assets/features/products-and-portfolio-of-white-label-sportsbook-platform.webp',
     },
     {
@@ -130,9 +130,9 @@ export default function SportsbookPlatformClient() {
     {
       id: 1,
       icon: Zap,
-      title: 'Sub-100ms Bet Slip Validation Engine',
+      title: 'Bet Slip Validation Engine',
       description:
-        'Near-instant bet slip execution during peak sports matches. Supports single bets, accumulators, system wagers, chain bets, and same-game parlays with configurable latency guards.',
+        'Responsive bet slip execution during peak sports matches. Supports single bets, accumulators, system wagers, chain bets, and same-game parlays with configurable integrity guards.',
     },
     {
       id: 2,
@@ -174,21 +174,21 @@ export default function SportsbookPlatformClient() {
       icon: RefreshCw,
       title: 'Automated Event Results & Settlement',
       description:
-        'Direct connection to verified sports official data feeds enables automatic event result confirmation, ticket grading, and instant winning payouts within seconds of whistle completion.',
+        'Direct connection to verified sports data feeds enables automatic result confirmation, ticket grading, and bet settlement based on confirmed results from the selected sportsbook provider.',
     },
     {
       id: 8,
       icon: Cpu,
       title: 'Decoupled Microservices & Cloud Scalability',
       description:
-        'High-concurrency distributed betting engine built on high-throughput message streams, capable of evaluating millions of bet slips per hour with 99.99% platform availability.',
+        'Distributed betting engine built for validating bets and updating balances reliably, with hosting, backup and recovery arrangements configured according to the agreed project scope.',
     },
     {
       id: 9,
       icon: Rocket,
       title: 'Case Study: Jeetfast24 Agent-Based Sportsbook',
       description:
-        'See how Kvaornux engineered a high-volume PKR-based sportsbook and casino platform with multi-tier agent hierarchy, exchange-style betting, and instant ledger settlement.',
+        'See how Kvaornux engineered an agent-based sportsbook and casino platform with multi-tier agent hierarchy, exchange-style betting, and automated ledger settlement.',
       link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
       linkText: 'Read Jeetfast24 Case Study →',
     },
@@ -208,7 +208,7 @@ export default function SportsbookPlatformClient() {
       id: 1,
       title: 'High-Throughput Betting Engine',
       description:
-        'Sub-100ms bet slip execution supporting singles, accumulators, system wagers, and same-game parlays during peak worldwide sporting fixtures.',
+        'Bet slip validation supporting singles, accumulators, system wagers, and same-game parlays during peak sporting fixtures.',
       icon: Zap,
       span: 2,
     },
@@ -296,7 +296,7 @@ export default function SportsbookPlatformClient() {
     {
       question: 'How fast is live bet validation during high-intensity in-play sporting events?',
       answer:
-        'In-play bet validation executes in under 100 milliseconds with configurable integrity delays, ensuring bookmakers are shielded from pitch-side latency exploitation while delivering a frictionless player experience.',
+        'In-play bet validation executes with configurable integrity delays, protecting bookmakers from pitch-side latency exploitation while delivering a responsive player experience.',
     },
     {
       question: 'What is the difference between Sportsbook Platform Software and the Turnkey Sportsbook Solution?',
@@ -316,7 +316,7 @@ export default function SportsbookPlatformClient() {
     {
       question: 'How are event results and winning bets settled?',
       answer:
-        'Event settlements are executed automatically upon receipt of official verified sports result feeds. Winning bet slips are graded and credited to player accounts within seconds of match conclusion.',
+        'Event settlements are executed based on official verified sports result feeds. Winning bet slips are graded and settled based on confirmed results from the selected sportsbook provider.',
     },
     {
       question: 'What customization options are available for branding and UI/UX?',

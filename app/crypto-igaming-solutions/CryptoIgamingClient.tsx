@@ -112,13 +112,13 @@ export default function CryptoIgamingClient() {
     },
     {
       id: 'fast-payouts',
-      label: 'Instant Automated Withdrawals',
+      label: 'Automated Crypto Withdrawals',
       icon: 'zap' as const,
-      title: 'Instant Automated Withdrawals',
+      title: 'Automated Crypto Withdrawals',
       description:
-        'Accelerate player payouts with automated crypto processing rules, threshold alerts, multi-sig hot wallet security, and zero manual delay for verified players.',
+        'Manage player payouts with automated crypto processing rules, threshold alerts, and multi-sig wallet security.',
       image: '/assets/features/turnkey-igaming-platform-infrastructure-services.webp',
-      alt: 'Instant Automated Crypto Withdrawals & Infrastructure'
+      alt: 'Automated Crypto Withdrawals & Infrastructure'
     },
     {
       id: 'crypto-backoffice',
@@ -210,8 +210,8 @@ export default function CryptoIgamingClient() {
     },
     {
       id: 2,
-      title: 'Instant Blockchain Deposits & Payouts',
-      description: 'Near-instant automated on-chain transaction verifications with zero chargeback risk and optimized gas-fee aggregation.',
+      title: 'Blockchain Deposits & Payouts',
+      description: 'Connect blockchain deposits and payouts to your platform’s wallet and transaction records.',
       icon: Zap,
       span: 2,
     },
@@ -343,7 +343,7 @@ export default function CryptoIgamingClient() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Launch scalable crypto casino and sportsbook platforms with multi-currency Web3 wallets, instant deposits, provably fair games, API integrations, and complete back-office operational control.
+              Launch scalable crypto casino and sportsbook platforms with multi-currency Web3 wallets, crypto deposits, provably fair games, API integrations, and complete back-office operational control.
             </p>
           </div>
 
@@ -545,6 +545,21 @@ export default function CryptoIgamingClient() {
 
       {/* Opportunities Section */}
       <OpportunitiesSection />
+
+      {/* Q&A Section */}
+      <section className="relative z-10 py-10 sm:py-14 md:py-16 bg-[#0b0b0f]">
+        <div className="mx-auto max-w-5xl px-6 md:px-12 lg:px-20">
+          <div className="border-t border-b border-white/10 py-8 sm:py-10">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-3 sm:mb-4">
+              How long do crypto deposits and withdrawals take?
+            </h2>
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light">
+              Timing varies by cryptocurrency, network confirmations and the payment provider. Withdrawals may also require checks under the operator’s payout rules.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <ContactForm />
     </>
   );

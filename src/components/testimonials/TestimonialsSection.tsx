@@ -352,7 +352,7 @@ export default function TestimonialsSection() {
 
       {/* Title & Subtitle */}
       <div className="max-w-4xl mx-auto px-4 text-center mb-8 sm:mb-12">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.85rem] font-bold tracking-tight text-white mb-3 sm:mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white mb-3 sm:mb-4">
           What Our Clients Say
         </h2>
         <p className="text-sm sm:text-base md:text-lg text-[#94a3b8] font-normal leading-relaxed max-w-2xl mx-auto">
