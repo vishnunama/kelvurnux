@@ -356,8 +356,7 @@ export default function HeroSection() {
               transitionDelay: isLoaded ? '0.2s' : '0s',
             }}
           >
-            Powering the Next <br className="hidden sm:inline" />
-            <span className="whitespace-nowrap">Generation of iGaming.</span>
+            iGaming Software Built Around Your Business
           </h1>
 
           {/* Subtitle */}
@@ -368,7 +367,7 @@ export default function HeroSection() {
               transitionDelay: isLoaded ? '0.3s' : '0s',
             }}
           >
-            From white-label casino and sportsbook solutions to custom sweepstakes platforms, KVAORNUX delivers complete iGaming technology backed by 150+ game provider API integrations, payment infrastructure, and player management systems.
+            Start with a white-label casino, a turnkey casino and sportsbook, or a sweepstakes platform. We customize the design, connect games and payments, and build the features your business needs.
           </p>
 
           {/* Dual Action CTA Buttons */}
