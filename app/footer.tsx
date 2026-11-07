@@ -123,8 +123,8 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/crypto-igaming-solutions" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
-                    Crypto iGaming Solutions
+                  <Link href="/crypto-casino-software" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Crypto Casino Software
                   </Link>
                 </li>
               </ul>

@@ -854,8 +854,8 @@ export default function Header() {
                           </Link>
                         </li>
                         <li>
-                          <Link href="/crypto-igaming-solutions" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
-                            Crypto iGaming
+                          <Link href="/crypto-casino-software" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            Crypto Casino Software
                           </Link>
                         </li>
                         <li>
@@ -1017,8 +1017,8 @@ export default function Header() {
                   <Link href="/custom-sweepstakes-casino-development" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
                     Custom Sweepstakes Development
                   </Link>
-                  <Link href="/crypto-igaming-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
-                    Crypto iGaming Solutions
+                  <Link href="/crypto-casino-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    Crypto Casino Software
                   </Link>
                 </div>
               </div>

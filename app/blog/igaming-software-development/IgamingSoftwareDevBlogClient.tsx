@@ -620,7 +620,7 @@ export default function IgamingSoftwareDevBlogClient() {
             </li>
             <li>
               <strong>Cryptocurrency &amp; Web3 Infrastructure:</strong> Processing deposits and payouts in Bitcoin (BTC), Ethereum (ETH), USDT, USDC, and other digital assets via automated crypto gateways. Key requirements include automated wallet address generation, on-chain deposit sweeps, hot/cold wallet separation, and dynamic network gas fee handling. For operators focusing on crypto-native gambling, learn more on our{' '}
-              <Link href="/crypto-igaming-solutions" className="text-[#00ebaa] hover:underline">
+              <Link href="/crypto-casino-software" className="text-[#00ebaa] hover:underline">
                 crypto iGaming solutions page
               </Link>.
             </li>

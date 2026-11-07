@@ -706,7 +706,7 @@ export default function TurnkeyCasinoPlatform() {
       />
 
       {/* Three-Solution Comparison Section: White Label vs Turnkey vs Custom */}
-      <section id="turnkey-vs-custom" className="relative py-16 md:py-24 bg-[#080b0f] border-t border-white/10">
+      <section id="turnkey-vs-custom" className="relative py-16 md:py-24 bg-[#080b0f]">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">

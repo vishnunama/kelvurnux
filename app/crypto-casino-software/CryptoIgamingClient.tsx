@@ -16,11 +16,13 @@ import {
 import OpportunitiesSection from '@/src/components/opportunitiessection/Opportunitiessection';
 import ContactForm from '@/src/components/contactform/ContactForm';
 import DiscoverMore from '@/src/components/Discovermore/Discovermore';
+import StepsSection, { StepItem } from '@/src/components/stepssection/StepsSection';
+import FAQSection from '@/src/components/FAQSection/FAQSection';
 
 export default function CryptoIgamingClient() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
-  const [activeTab, setActiveTab] = useState('Multi-Currency Crypto Wallets');
+  const [activeTab, setActiveTab] = useState('Crypto Payments');
   const tabsContainerRef = useRef<HTMLDivElement>(null);
   const activeTabRef = useRef<HTMLButtonElement>(null);
   const solutionsElementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -81,54 +83,54 @@ export default function CryptoIgamingClient() {
 
   const tabs = [
     {
-      id: 'crypto-wallets',
-      label: 'Multi-Currency Crypto Wallets',
+      id: 'crypto-payments',
+      label: 'Crypto Payments',
       icon: 'wallet' as const,
-      title: 'Multi-Currency Crypto Wallets',
+      title: 'Crypto Deposits and Withdrawals',
       description:
-        'Support native deposits and withdrawals across major cryptocurrencies including Bitcoin (BTC), Ethereum (ETH), USDT, USDC, Solana (SOL), and TRON (TRX). Non-custodial and API wallet gateway integrations with automated transaction confirmations.',
+        'Connect crypto payment services to your casino or sportsbook. Bring player deposits, withdrawals and payment records into your platform’s back office.',
       image: '/assets/features/igaming-security-risk-management-aml-kyc.webp',
-      alt: 'Crypto iGaming Wallet Integration & Security'
+      alt: 'Crypto Deposits and Withdrawals'
     },
     {
-      id: 'web3-integration',
-      label: 'Web3 & Decentralized Payments',
-      icon: 'coins' as const,
-      title: 'Web3 & Decentralized Payments',
-      description:
-        'Enable instant wallet connections via MetaMask, WalletConnect, and Phantom. Facilitate direct Web3 gaming payments with low latency, automated gas management, and seamless player onboarding.',
-      image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp',
-      alt: 'Web3 Gaming & Decentralized Wallet Payments'
-    },
-    {
-      id: 'provably-fair',
-      label: 'Provably Fair Gaming Content',
+      id: 'games-providers',
+      label: 'Games and Providers',
       icon: 'cpu' as const,
-      title: 'Provably Fair Gaming Content',
+      title: 'Casino Games for Your Crypto Platform',
       description:
-        'Offer cryptographic provably fair games where players can independently verify game outcomes. Integrated crash games, dice, plinko, and custom crypto-native titles alongside 20,000+ traditional casino games.',
+        'Connect slots, live casino, crash and table games from selected providers. Organize your game lobby around the content you want to offer your players.',
+      image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp',
+      alt: 'Casino Games for Your Crypto Platform'
+    },
+    {
+      id: 'branding-features',
+      label: 'Branding and Features',
+      icon: 'coins' as const,
+      title: 'Your Brand, Your Player Experience',
+      description:
+        'Customize the design, navigation and player-facing pages. Add the features your business needs through our crypto casino software development services.',
       image: '/assets/features/casino-game-providers-api-aggregator.webp',
-      alt: 'Provably Fair Gaming Content & Crypto Slots'
+      alt: 'Your Brand, Your Player Experience'
     },
     {
-      id: 'fast-payouts',
-      label: 'Automated Crypto Withdrawals',
+      id: 'casino-sportsbook',
+      label: 'Casino and Sportsbook',
       icon: 'zap' as const,
-      title: 'Automated Crypto Withdrawals',
+      title: 'Crypto Casino and Sportsbook Software',
       description:
-        'Manage player payouts with automated crypto processing rules, threshold alerts, and multi-sig wallet security.',
+        'Offer casino games and sports betting through a combined platform. Our turnkey package includes casino and sportsbook, with a back office for managing daily operations.',
       image: '/assets/features/turnkey-igaming-platform-infrastructure-services.webp',
-      alt: 'Automated Crypto Withdrawals & Infrastructure'
+      alt: 'Crypto Casino and Sportsbook Software'
     },
     {
-      id: 'crypto-backoffice',
-      label: 'Crypto Back Office & Analytics',
+      id: 'back-office',
+      label: 'Back Office',
       icon: 'layout-dashboard' as const,
-      title: 'Crypto Back Office & Analytics',
+      title: 'Manage Your Platform in One Place',
       description:
-        'Real-time administrative control of deposits, withdrawals, exchange rate conversions, player wallet activity, and comprehensive crypto financial reporting.',
+        'Manage player accounts, balances, bonuses and transaction records. Give your team a clear view of the information they need for daily casino and sportsbook operations.',
       image: '/assets/features/turnkey-back-office-admin-dashboard-analytics.webp',
-      alt: 'Crypto iGaming Back Office Dashboard & Real-Time Analytics'
+      alt: 'Manage Your Platform in One Place'
     }
   ];
 
@@ -136,51 +138,51 @@ export default function CryptoIgamingClient() {
     {
       id: 1,
       icon: Coins,
-      title: 'Bitcoin & Altcoin Support',
+      title: 'White Label Crypto Casino',
       description:
-        'Accept major cryptocurrencies and stablecoins (BTC, ETH, USDT, USDC, SOL, TRX, LTC) with automated rate conversion and balance tracking.'
+        'Launch using a ready-made casino platform customized for your brand, with a lower upfront development cost. Platform source code is available for an additional fee.'
     },
     {
       id: 2,
       icon: Wallet,
-      title: 'Direct Web3 Wallet Connect',
+      title: 'Turnkey Crypto Casino and Sportsbook',
       description:
-        'One-click player login and payment authorization using Web3 wallets like MetaMask, Trust Wallet, Phantom, and Coinbase Wallet.'
+        'Get casino, sportsbook and platform source code in one package. Ownership and transfer terms are defined in your project agreement.'
     },
     {
       id: 3,
       icon: ShieldCheck,
-      title: 'Crypto Security & Anti-Fraud',
+      title: 'Custom Crypto Casino Development',
       description:
-        'Multi-layer security architecture featuring hot/cold wallet isolation, automated transaction limits, address screening, and AML transaction monitoring.'
+        'Build a platform around your own design, features and operating requirements. We agree on the development scope before work begins.'
     },
     {
       id: 4,
       icon: Gamepad2,
-      title: 'Crypto Game Aggregator API',
+      title: 'Game Provider Integration',
       description:
-        'Unified integration providing access to crypto-native crash games, slots, live casino tables, and sportsbook markets in a single API.'
+        'Connect the selected casino game providers and organize their content within your platform.'
     },
     {
       id: 5,
       icon: BarChart3,
-      title: 'Real-Time Financial Back Office',
+      title: 'Crypto Payment Integration',
       description:
-        'Comprehensive administrative dashboard to monitor deposits, withdrawals, player wallet balances, conversion rates, and profit reporting.'
+        'Connect your chosen payment services and bring deposit and withdrawal records into the back office.'
     },
     {
       id: 6,
       icon: Globe,
-      title: 'Global Market Scalability',
+      title: 'Player and Back-Office Tools',
       description:
-        'Deploy borderless crypto gaming platforms with multi-language support, regional geo-routing, and high-throughput blockchain node infrastructure.'
+        'Manage player accounts, balances, bonuses and daily operations through your platform’s administrative tools.'
     },
     {
       id: 7,
       icon: HandshakeIcon,
-      title: 'Full Technical Support',
+      title: 'Launch and Technical Support',
       description:
-        'Dedicated onboarding, 24/7 technical monitoring, infrastructure support, and continuous protocol updates for your crypto platform.'
+        'Get help with platform setup, integration and launch preparation. Post-launch maintenance and support follow your agreed package.'
     }
   ];
 
@@ -203,44 +205,43 @@ export default function CryptoIgamingClient() {
   const cryptoDiscoverItems = [
     {
       id: 1,
-      title: 'Multi-Chain Crypto Wallets',
-      description: 'Native balance management across USDT, USDC, BTC, ETH, SOL, TRX, and custom tokens with automated hot/cold wallet security.',
+      title: 'Bitcoin and Crypto Payments',
+      description: 'Accept Bitcoin and other selected cryptocurrencies through your chosen payment provider, with payment records connected to your back office.',
       icon: Wallet,
       span: 2,
     },
     {
       id: 2,
-      title: 'Blockchain Deposits & Payouts',
-      description: 'Connect blockchain deposits and payouts to your platform’s wallet and transaction records.',
+      title: 'Deposits and Withdrawals',
+      description: 'Connect payment activity with player balances and transaction records so your team can review deposits and payouts.',
       icon: Zap,
       span: 2,
     },
     {
       id: 3,
-      title: 'Provably Fair Crash & Arcade Games',
-      description: 'Cryptographically verifiable games (Crash, Dice, Mines, Plinko, Limbo) providing transparent on-chain seed verification for players.',
+      title: 'Casino Game Integration',
+      description: 'Bring selected slots, live casino, crash and table games into your branded casino lobby.',
       icon: Gamepad2,
       span: 2,
     },
     {
       id: 4,
-      title: '20,000+ Aggregated Casino Games',
-      description: 'Integrated with top tier studios supporting direct cryptocurrency wagers, auto-conversion, and real-time exchange rate normalization.',
+      title: 'Player and Bonus Management',
+      description: 'Manage player accounts, balances, bonuses and promotions from your platform’s back office.',
       icon: Coins,
-      link: '/casino-aggregator-api-solution',
       span: 3,
     },
     {
       id: 5,
-      title: 'Web3 Login & Non-Custodial Connect',
-      description: 'Frictionless Web3 wallet login (MetaMask, Phantom, WalletConnect) enabling high registration-to-deposit conversion rates.',
+      title: 'Custom Design and Integrations',
+      description: 'Adapt the player experience to your brand and connect the third-party services included in your project.',
       icon: Cpu,
       span: 3,
     },
     {
       id: 6,
       title: 'Casino Platform Software',
-      description: 'Looking for a standalone modular PAM and casino software engine? Explore our enterprise Casino Platform Software.',
+      description: 'Explore our casino software for managing games, players, bonuses and daily operations.',
       icon: LayoutDashboard,
       link: '/online-casino-platform-software',
       span: 2,
@@ -248,7 +249,7 @@ export default function CryptoIgamingClient() {
     {
       id: 7,
       title: 'Turnkey Casino Solutions',
-      description: 'Launch a complete turnkey crypto casino operation with pre-integrated games, hosting, and launch assistance.',
+      description: 'Explore our casino and sportsbook package, including platform source code under the agreed contract terms.',
       icon: ShieldCheck,
       link: '/turnkey-casino-software-solutions',
       span: 2,
@@ -256,10 +257,101 @@ export default function CryptoIgamingClient() {
     {
       id: 8,
       title: 'Agent-Based Sportsbook Case Study',
-      description: 'See how Kvaornux engineered high-speed ledger architectures for high-volume transactions in emerging markets.',
+      description: 'See an example of our work on sportsbook and agent-management features.',
       icon: HandshakeIcon,
       link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
       span: 2,
+    },
+  ];
+
+  const cryptoLaunchSteps: StepItem[] = [
+    {
+      id: 1,
+      title: 'Plan Your Platform',
+      text: 'Tell us whether you need a casino, sportsbook or both. We review your preferred currencies, features, budget and target markets.',
+    },
+    {
+      id: 2,
+      title: 'Customize Your Brand',
+      text: 'Adapt the platform’s design, navigation and player-facing pages to your brand.',
+    },
+    {
+      id: 3,
+      title: 'Connect Games and Services',
+      text: 'Integrate the selected game providers and other services included in your project.',
+    },
+    {
+      id: 4,
+      title: 'Set Up Crypto Payments',
+      text: 'Connect your selected crypto payment provider and configure deposit and withdrawal settings for the agreed currencies and networks.',
+    },
+    {
+      id: 5,
+      title: 'Test and Prepare for Launch',
+      text: 'Check game loading, deposits, withdrawals and back-office settings. Resolve issues found during testing before launch.',
+    },
+    {
+      id: 6,
+      title: 'Launch and Ongoing Support',
+      text: 'Launch the platform and continue with maintenance and technical support according to your agreed support package.',
+    },
+  ];
+
+  const cryptoFaqs = [
+    {
+      question: 'What is crypto casino software?',
+      answer:
+        'Crypto casino software lets a business manage an online casino with cryptocurrency payment options. It connects games, player accounts, balances, payment records and back-office tools.',
+    },
+    {
+      question: 'Can you build both a crypto casino and sportsbook?',
+      answer:
+        'Yes. We can deliver a casino, sportsbook or combined platform. Our turnkey package includes both casino and sportsbook.',
+    },
+    {
+      question: 'Do you offer white label crypto casino software?',
+      answer:
+        'Yes. Our white-label option uses a ready-made platform customized for your brand, with selected game and payment integrations. Source code is available for an additional fee.',
+    },
+    {
+      question: 'Is platform source code included?',
+      answer:
+        'Platform source code is included in our turnkey package and is available for an additional fee with white label. Custom development ownership and delivery terms are defined in the project agreement. Third-party games and services remain subject to their own terms.',
+    },
+    {
+      question: 'Which cryptocurrencies can the platform support?',
+      answer:
+        'We confirm the currencies and networks with you before development. Options such as Bitcoin, Ethereum, USDT and USDC depend on the selected payment provider and integration.',
+    },
+    {
+      question: 'Can you add crypto payments to an existing casino?',
+      answer:
+        'Yes. We review your current platform and the selected payment provider to define the integration work required.',
+    },
+    {
+      question: 'How much does crypto casino software cost?',
+      answer:
+        'The cost depends on your platform model, design changes, features and integrations. Tell us what you need, and we will prepare a quote showing the development scope and applicable third-party costs.',
+    },
+    {
+      question: 'How long does it take to launch?',
+      answer:
+        'A ready-made setup generally requires less development than a custom build. We confirm the delivery schedule after reviewing customization, integrations, testing and launch requirements.',
+    },
+    {
+      question: 'Which casino games can I offer?',
+      answer:
+        'We integrate selected game providers. Game availability depends on provider agreements, target markets and required approvals.',
+    },
+    {
+      question: 'How long do crypto deposits and withdrawals take?',
+      answer:
+        'Timing varies by cryptocurrency, network confirmations and the payment provider. Withdrawals may also require checks under the operator’s payout rules.',
+    },
+    {
+      question: 'Do you provide support after launch?',
+      answer:
+        'Yes. Maintenance, technical support and updates are provided according to your agreed support package.',
     },
   ];
 
@@ -331,7 +423,7 @@ export default function CryptoIgamingClient() {
               ref={(el) => { elementsRef.current[0] = el; }}
               data-anim="from-top"
             >
-              Crypto iGaming Solutions
+              Crypto Casino Software Built for Your Business
             </h1>
           </div>
 
@@ -343,7 +435,7 @@ export default function CryptoIgamingClient() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Launch scalable crypto casino and sportsbook platforms with multi-currency Web3 wallets, crypto deposits, provably fair games, API integrations, and complete back-office operational control.
+              Launch a branded crypto casino or casino and sportsbook platform. Choose a white-label setup, a turnkey package or custom development. We connect games and crypto payments and customize the platform for your business.
             </p>
           </div>
 
@@ -464,7 +556,7 @@ export default function CryptoIgamingClient() {
                 data-anim="from-top"
                 className="text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
               >
-                Complete Crypto iGaming Package
+                Choose Your Crypto Casino Setup
               </h2>
 
               <p 
@@ -473,7 +565,7 @@ export default function CryptoIgamingClient() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                Everything required to launch, manage, and scale a high-performance crypto casino and sports betting platform — integrated and ready to deploy.
+                Start with a ready-made platform or choose custom development. We help you define the features, integrations and ownership options that fit your project.
               </p>
 
               <div
@@ -489,7 +581,7 @@ export default function CryptoIgamingClient() {
                   }}
                 >
                   <span className="relative z-10 text-sm sm:text-base font-bold">
-                    Choose this solution
+                    Discuss Your Crypto Platform
                   </span>
                 </button>
               </div>
@@ -539,26 +631,30 @@ export default function CryptoIgamingClient() {
       {/* Discover More Section */}
       <DiscoverMore
         customItems={cryptoDiscoverItems}
-        customTitle="Explore Crypto iGaming Capabilities"
-        customSubtitle="Advanced blockchain infrastructure, multi-token wallets, and provably fair technology for modern Web3 operators."
+        customTitle="Crypto Casino Features for Daily Operations"
+        customSubtitle="Connect games, payments and player management in a platform customized for your business."
+      />
+
+      {/* Launch Process Steps Section */}
+      <StepsSection
+        sectionId="launch-process"
+        scrollSticky={false}
+        customTitle="How to Launch Your Crypto Casino Platform"
+        customSubtitle="From choosing your platform to connecting crypto payments, testing and preparing for launch."
+        customSteps={cryptoLaunchSteps}
+        customCtaText="Discuss Your Project"
+        ctaHref="#contact-form-section"
+        onCtaClick={(e) => {
+          e.preventDefault();
+          handleScrollToContact();
+        }}
       />
 
       {/* Opportunities Section */}
       <OpportunitiesSection />
 
-      {/* Q&A Section */}
-      <section className="relative z-10 py-10 sm:py-14 md:py-16 bg-[#0b0b0f]">
-        <div className="mx-auto max-w-5xl px-6 md:px-12 lg:px-20">
-          <div className="border-t border-b border-white/10 py-8 sm:py-10">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-3 sm:mb-4">
-              How long do crypto deposits and withdrawals take?
-            </h2>
-            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-light">
-              Timing varies by cryptocurrency, network confirmations and the payment provider. Withdrawals may also require checks under the operator’s payout rules.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* FAQ Section */}
+      <FAQSection customFaqData={cryptoFaqs} hideBgImage={true} />
 
       <ContactForm />
     </>

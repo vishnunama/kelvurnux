@@ -6,7 +6,7 @@ export function proxy(request: NextRequest) {
 
   if (pathname === '/crypto-igaming-Solutions') {
     const url = request.nextUrl.clone();
-    url.pathname = '/crypto-igaming-solutions';
+    url.pathname = '/crypto-casino-software';
     return NextResponse.redirect(url, 308);
   }
 

@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/crypto-igaming-solutions",
+      url: "https://kvaornux.com/crypto-casino-software",
       priority: 0.9,
     },
     {

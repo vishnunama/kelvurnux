@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         destination: "/casino-aggregator-api-solution",
         permanent: true,
       },
+      {
+        source: "/crypto-igaming-solutions",
+        destination: "/crypto-casino-software",
+        permanent: true,
+      },
     ];
   },
 };

@@ -385,7 +385,7 @@ const blogSections: BlogSection[] = [
         <p>
           If crypto payments are central to your launch, share your preferred coins, networks, game studios and target markets when you request a demo. The{' '}
           <Link
-            href="/crypto-igaming-solutions"
+            href="/crypto-casino-software"
             className="text-cyan-400 underline hover:text-cyan-300 font-bold"
           >
             Crypto iGaming Solutions page
