@@ -15,9 +15,9 @@ export default function BlogArticleFooter({ currentSlug }: BlogArticleFooterProp
   const previousPost = getPreviousBlogPost(currentSlug);
   const swiperRef = useRef<SwiperType | null>(null);
 
-  // Dynamically include all blogs except the current post so future blogs appear automatically
-  const recommendedPosts = ALL_BLOG_POSTS.filter((post) => post.slug !== currentSlug);
-  const displayPosts = recommendedPosts.length > 0 ? recommendedPosts : ALL_BLOG_POSTS;
+  // Dynamically include recommended blogs (limited to 6 so dots stay clean on mobile & desktop)
+  const recommendedPosts = ALL_BLOG_POSTS.filter((post) => post.slug !== currentSlug).slice(0, 6);
+  const displayPosts = recommendedPosts.length > 0 ? recommendedPosts : ALL_BLOG_POSTS.slice(0, 6);
 
   const [activeSnapIndex, setActiveSnapIndex] = useState(0);
   const [snapCount, setSnapCount] = useState(
@@ -108,10 +108,15 @@ export default function BlogArticleFooter({ currentSlug }: BlogArticleFooterProp
               <SwiperSlide key={post.slug} className="!h-auto flex">
                 <Link
                   href={post.href}
-                  className="group flex flex-col bg-transparent w-full h-full"
+                  className="group flex flex-col w-full h-full rounded-[1.25rem] sm:rounded-[1.5rem] overflow-hidden transition-all duration-300 relative border border-[rgba(0,235,170,0.18)] hover:border-[rgba(0,235,170,0.45)] hover:shadow-[0_8px_30px_rgba(0,235,170,0.12)]"
+                  style={{
+                    background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.25) 10.25%, rgba(0, 235, 170, 0.05) 99.99%), #0a141a',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.35)',
+                    WebkitMaskImage: '-webkit-radial-gradient(white, black)',
+                  }}
                 >
                   {/* Card Cover Image */}
-                  <div className="relative w-full h-[210px] sm:h-[240px] rounded-xl overflow-hidden mb-4 bg-gray-900 border border-white/5">
+                  <div className="relative w-full h-[190px] sm:h-[220px] overflow-hidden bg-gray-900 border-b border-white/5 flex-shrink-0">
                     <img
                       src={post.image}
                       alt={post.title}
@@ -120,59 +125,51 @@ export default function BlogArticleFooter({ currentSlug }: BlogArticleFooterProp
                     />
                   </div>
 
-                  {/* Date */}
-                  <div className="text-xs sm:text-sm font-medium text-gray-400 mb-2 tracking-wide">
-                    {post.date}
-                  </div>
-
-                  {/* Article Card Title */}
-                  <h3 className="text-white font-bold text-lg sm:text-xl md:text-[1.35rem] leading-[1.35] group-hover:text-[#00ebaa] transition-colors line-clamp-2 mb-3">
-                    {post.title}
-                  </h3>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3.5 py-1 text-xs sm:text-sm font-medium rounded-full bg-[#1b1e28] text-gray-300 border border-white/5"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Footer: Author & Read Time */}
-                  <div className="mt-auto flex items-center justify-between pt-3 text-xs sm:text-sm text-gray-400">
-                    {/* Author Info */}
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full overflow-hidden bg-[#1f252e] border border-gray-700/60 flex items-center justify-center p-0.5 flex-shrink-0">
-                        <img
-                          src="/assets/favicon.webp"
-                          alt={post.authorName}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                      <span className="text-gray-300 font-medium">
-                        {post.authorName}
-                      </span>
-                    </div>
-
-                    {/* Read Time with Clock Icon */}
-                    <div className="flex items-center gap-1.5 text-gray-400 font-medium">
+                  {/* Content Area */}
+                  <div className="p-5 sm:p-6 flex flex-col flex-1">
+                    {/* Top row: Title + Arrow Icon */}
+                    <div className="flex items-start justify-between gap-3 mb-2.5">
+                      <h3 className="text-white font-bold text-lg sm:text-xl leading-[1.35] group-hover:text-[#00ebaa] transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
                       <svg
-                        className="w-4 h-4 text-gray-400 flex-shrink-0"
+                        className="w-5 h-5 text-white/40 flex-shrink-0 group-hover:text-[#00ebaa] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 mt-0.5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        viewBox="0 0 24 24"
                       >
-                        <circle cx="12" cy="12" r="9" />
-                        <polyline points="12 7 12 12 15 14" />
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
                       </svg>
-                      <span>{post.readTime}</span>
+                    </div>
+
+                    {/* Description */}
+                    {post.description && (
+                      <p className="text-[#a5a5a5] text-xs sm:text-sm leading-relaxed line-clamp-2 mb-4">
+                        {post.description}
+                      </p>
+                    )}
+
+                    {/* Bottom: Tags, Read Time & Date */}
+                    <div className="mt-auto flex items-center justify-between pt-3 border-t border-white/5 text-xs sm:text-sm">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        {post.tags && post.tags.length > 0 && (
+                          <span className="px-2.5 py-0.5 text-xs font-medium rounded-lg bg-[rgba(0,235,170,0.12)] text-[#00ebaa] border border-[rgba(0,235,170,0.25)]">
+                            {post.tags[0]}
+                          </span>
+                        )}
+                        <span className="text-white/50 text-xs">
+                          • {post.readTime}
+                        </span>
+                      </div>
+
+                      <span className="text-[#759296] text-xs font-medium tracking-wide">
+                        {post.date}
+                      </span>
                     </div>
                   </div>
                 </Link>
@@ -233,6 +230,7 @@ export default function BlogArticleFooter({ currentSlug }: BlogArticleFooterProp
           align-items: center;
           justify-content: center;
           width: max-content;
+          max-width: 100%;
         }
 
         .swiper-button-custom {
@@ -286,6 +284,29 @@ export default function BlogArticleFooter({ currentSlug }: BlogArticleFooterProp
           background: #00ebaa;
           box-shadow: 0 0 12px rgba(0, 235, 170, 0.7);
           transform: scale(1.3);
+        }
+
+        @media (max-width: 640px) {
+          .swiper-navigation-center {
+            margin: 2rem auto 0;
+          }
+
+          .swiper-button-custom {
+            width: 2.6rem;
+            min-width: 2.6rem;
+            height: 2.6rem;
+            margin: 0 0.35rem;
+          }
+
+          .swiper-pagination-dots {
+            gap: 0.45rem;
+            margin: 0 0.6rem;
+          }
+
+          .swiper-pagination-dot {
+            width: 7px;
+            height: 7px;
+          }
         }
       `}} />
     </div>
