@@ -23,6 +23,8 @@ export interface StepsSectionProps {
   sectionId?: string;
   scrollSticky?: boolean;
   className?: string;
+  hideBgImage?: boolean;
+  startFromFirst?: boolean;
 }
 
 export const stepsData: StepItem[] = [
@@ -571,6 +573,8 @@ export default function StepsSection({
   sectionId,
   scrollSticky = false,
   className,
+  hideBgImage = false,
+  startFromFirst = false,
 }: StepsSectionProps = {}) {
   const swiperRef = useRef<SwiperType | null>(null);
   const scrollWrapperRef = useRef<HTMLDivElement | null>(null);
@@ -648,7 +652,7 @@ export default function StepsSection({
       activeIndexRef.current = targetIdx;
       setActiveIndex(targetIdx);
       if (swiperRef.current && !swiperRef.current.destroyed) {
-        if (typeof swiperRef.current.slideToLoop === 'function') {
+        if (!startFromFirst && typeof swiperRef.current.slideToLoop === 'function') {
           swiperRef.current.slideToLoop(targetIdx, 550);
         } else {
           swiperRef.current.slideTo(targetIdx, 550);
@@ -700,22 +704,24 @@ export default function StepsSection({
       id={sectionId}
     >
       {/* Background Image */}
-      <div className="section-bg absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <img
-          width="1440"
-          loading="lazy"
-          alt=""
-          src="/assets/steps-bg.webp"
-          className="image-cover w-full h-full object-cover object-center opacity-75"
-        />
-        {/* Gradient Filter Overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(180deg, #0b0b0f 0%, rgba(11,11,15,0.45) 25%, rgba(11,11,15,0.65) 75%, #0b0b0f 100%)',
-          }}
-        />
-      </div>
+      {!hideBgImage && (
+        <div className="section-bg absolute inset-0 pointer-events-none z-0 overflow-hidden">
+          <img
+            width="1440"
+            loading="lazy"
+            alt=""
+            src="/assets/steps-bg.webp"
+            className="image-cover w-full h-full object-cover object-center opacity-75"
+          />
+          {/* Gradient Filter Overlay */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(180deg, #0b0b0f 0%, rgba(11,11,15,0.45) 25%, rgba(11,11,15,0.65) 75%, #0b0b0f 100%)',
+            }}
+          />
+        </div>
+      )}
 
       <div className="steps-container">
         <h2 className="steps-title">
@@ -729,12 +735,16 @@ export default function StepsSection({
         <div className="steps-slider-wrapper">
           <Swiper
             modules={[Autoplay]}
-            autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
-            }}
-            loop={true}
-            centeredSlides={true}
+            autoplay={
+              startFromFirst
+                ? false
+                : {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                  }
+            }
+            loop={!startFromFirst}
+            centeredSlides={!startFromFirst}
             speed={550}
             grabCursor={true}
             touchRatio={1.2}
@@ -757,12 +767,12 @@ export default function StepsSection({
               640: {
                 slidesPerView: 2,
                 spaceBetween: 40,
-                centeredSlides: true,
+                centeredSlides: !startFromFirst,
               },
               1024: {
                 slidesPerView: 3,
                 spaceBetween: 50,
-                centeredSlides: true,
+                centeredSlides: !startFromFirst,
               },
             }}
           >

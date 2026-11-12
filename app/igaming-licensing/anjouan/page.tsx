@@ -3,7 +3,7 @@ import JurisdictionDetailClient from '../JurisdictionDetailClient';
 import { anjouanData } from './data';
 
 export const metadata: Metadata = {
-  title: 'Anjouan Gaming License: Costs & Requirements | Kvaornux',
+  title: 'Anjouan Gaming License: Costs & Requirements',
   description:
     'Explore Anjouan gaming licence fees, requirements, application steps and verification checks. Understand what to confirm before planning your casino platform.',
   alternates: {

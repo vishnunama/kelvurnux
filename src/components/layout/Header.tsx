@@ -115,7 +115,8 @@ export default function Header() {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         * {
           box-sizing: border-box;
         }
@@ -890,13 +891,13 @@ export default function Header() {
                   About us
                 </Link>
               </li>
-              {/* PREPARED FOR LATER ACTIVATION (Uncomment when ready to publish):
+
               <li className="mx-[1.8rem]">
                 <Link href="/igaming-licensing" className="block text-white font-medium text-[1.15rem] py-5 transition-all duration-200 hover:text-[#00ebaa] whitespace-nowrap tracking-[0.3px] hover:scale-105 active:scale-95">
-                  Licensing &amp; Regulations
+                  Licensing
                 </Link>
               </li>
-              */}
+
               <li className="mx-[1.8rem]">
                 <Link href="/blog" className="block text-white font-medium text-[1.15rem] py-5 transition-all duration-200 hover:text-[#00ebaa]">
                   Blog
@@ -1041,12 +1042,10 @@ export default function Header() {
               <span className="zg-mob-link-arrow">→</span>
             </Link>
 
-            {/* PREPARED FOR LATER ACTIVATION (Uncomment when ready to publish):
             <Link href="/igaming-licensing" className="zg-mob-link" onClick={() => setIsMenuOpen(false)}>
               Licensing &amp; Regulations
               <span className="zg-mob-link-arrow">→</span>
             </Link>
-            */}
 
             <Link href="/blog" className="zg-mob-link" onClick={() => setIsMenuOpen(false)}>
               Blog

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { Layout, Key, Zap, ShieldCheck, Layers } from 'lucide-react';
 import ContactForm from '@/src/components/contactform/ContactForm';
 import DiscoverMore from '@/src/components/Discovermore/Discovermore';
-import StepsSection from '@/src/components/stepssection/StepsSection';
 
 // Global function to initialize or reset animations consistent with Kvaornux Portfolio & Blog
 const resetAllAnimations = () => {
@@ -44,6 +43,7 @@ const resetAllAnimations = () => {
 export default function LicensingHubClient() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [activeCompareIndex, setActiveCompareIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
@@ -147,6 +147,87 @@ export default function LicensingHubClient() {
       ],
     },
   ];
+
+  const comparisonCards = [
+    {
+      id: 'anjouan',
+      title: 'Anjouan Licensing',
+      description:
+        'B2C Operator Licence listed by Anjouan Gaming. Confirm company setup, target-market legal recognition, banking acceptance, and the Anjouan legal-status note before applying.',
+      bullets: [
+        'Licence: B2C Operator Licence',
+        'Issuance Fee: €17,828 on issuance (separate application fee not specified)',
+        'Annual Renewal: €17,828 (+ €500 per additional B2C domain)',
+        'Setup Focus: Company setup, banking acceptance & legal-status note',
+      ],
+      href: '/igaming-licensing/anjouan',
+      ctaLabel: 'Explore Anjouan',
+    },
+    {
+      id: 'curacao',
+      title: 'Curaçao Licensing (LOK)',
+      description:
+        'B2C Online Gaming Licence under Curaçao’s LOK framework. Requires a company established under Curaçao law with a registered office in Curaçao and ownership/local management disclosures with the CGA.',
+      bullets: [
+        'Licence: B2C Online Gaming Licence (LOK)',
+        'Application Fee: €4,592 (one-time application fee)',
+        'Annual Fee: €47,450 total (€24,490 licence + €22,960 supervision)',
+        'Setup Focus: Curaçao entity, registered office & CGA disclosures',
+      ],
+      href: '/igaming-licensing/curacao',
+      ctaLabel: 'Explore Curaçao',
+    },
+    {
+      id: 'malta',
+      title: 'Malta Licensing (MGA)',
+      description:
+        'B2C Gaming Service Licence regulated by the Malta Gaming Authority. Requires an EU/EEA company meeting capital, financial reporting, and system audit requirements, with compliance contributions and taxes budgeted separately.',
+      bullets: [
+        'Licence: B2C Gaming Service Licence (MGA)',
+        'Application Fee: €5,000 (non-refundable)',
+        'Annual Fee: €25,000 standard (€10,000 for Type 4 only)',
+        'Setup Focus: EU/EEA entity, capital, financial reporting & system audit',
+      ],
+      href: '/igaming-licensing/malta',
+      ctaLabel: 'Explore Malta',
+    },
+    {
+      id: 'kahnawake',
+      title: 'Kahnawake Licensing (CPA)',
+      description:
+        'Client Provider Authorization (CPA) regulated by the Kahnawake Gaming Commission. Operations must be hosted from the licensed hosting facility in Kahnawà:ke with Key Person Permit vetting and Control System Submission.',
+      bullets: [
+        'Licence: Client Provider Authorization (CPA)',
+        'Application Fee: US$35,000 before 1 Jan 2027; US$40,000 from 1 Jan 2027 (incl. Year 1)',
+        'Annual Fee: US$20,000 regular (up to 6 domains; US$500/yr extra)',
+        'Setup Focus: Kahnawà:ke hosting, Key Person vetting & Control System',
+      ],
+      href: '/igaming-licensing/kahnawake',
+      ctaLabel: 'Explore Kahnawake',
+    },
+    {
+      id: 'isle-of-man',
+      title: 'Isle of Man Licensing (OGRA)',
+      description:
+        'Full Online Gambling Licence or Sub-Licence under OGRA. Requires an Isle of Man company, at least two locally resident directors, designated management roles, local hosting, and player fund arrangements.',
+      bullets: [
+        'Licence: Full Online Gambling Licence / Sub-Licence (OGRA)',
+        'Application Fee: £5,250',
+        'Annual Fee: £36,750 (Full Licence) / £5,250 (Sub-Licence)',
+        'Setup Focus: Isle of Man company, 2 resident directors & local hosting',
+      ],
+      href: '/igaming-licensing/isle-of-man',
+      ctaLabel: 'Explore Isle of Man',
+    },
+  ];
+
+  const handleComparePrev = () => {
+    setActiveCompareIndex((prev) => (prev - 1 + comparisonCards.length) % comparisonCards.length);
+  };
+
+  const handleCompareNext = () => {
+    setActiveCompareIndex((prev) => (prev + 1) % comparisonCards.length);
+  };
 
   const filteredJurisdictions = jurisdictions.filter((j) => {
     const q = searchQuery.toLowerCase().trim();
@@ -924,6 +1005,190 @@ export default function LicensingHubClient() {
             width: 20px;
           }
         }
+
+        .licensing-compare-carousel-section {
+          position: relative;
+          padding: 5.5rem 0 6.5rem;
+          background: radial-gradient(105.28% 100.86% at 82.74% 0, rgba(0, 235, 170, 0.15) 0, rgba(0, 235, 170, 0) 47.08%),
+                      radial-gradient(90.07% 98.52% at 31.01% 0, rgba(0, 195, 179, 0.12) 0, rgba(0, 195, 179, 0) 47.08%),
+                      #0b0b0f;
+          overflow: hidden;
+        }
+
+        .licensing-compare-wrapper {
+          position: relative;
+          width: 100%;
+          overflow: hidden;
+          padding: 1.25rem 0 2rem;
+          --slide-w: 620px;
+          --slide-m: 16px;
+        }
+
+        .licensing-compare-wrapper::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 14vw;
+          height: 100%;
+          background: linear-gradient(270deg, rgba(11, 11, 15, 0) 0%, #0b0b0f 100%);
+          z-index: 5;
+          pointer-events: none;
+        }
+
+        .licensing-compare-wrapper::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 14vw;
+          height: 100%;
+          background: linear-gradient(90deg, rgba(11, 11, 15, 0) 0%, #0b0b0f 100%);
+          z-index: 5;
+          pointer-events: none;
+        }
+
+        .licensing-compare-track {
+          display: flex;
+          align-items: stretch;
+          transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+          width: max-content;
+        }
+
+        .licensing-compare-slide {
+          flex-shrink: 0;
+          width: var(--slide-w);
+          max-width: 84vw;
+          margin: 0 var(--slide-m);
+          opacity: 0.32;
+          transition: opacity 0.5s ease, transform 0.5s ease;
+          cursor: pointer;
+          display: flex;
+        }
+
+        .licensing-compare-slide.active-slide {
+          opacity: 1 !important;
+          transform: scale(1.02);
+          cursor: default;
+        }
+
+        .licensing-compare-card {
+          width: 100%;
+          border-radius: 1.5rem;
+          background: linear-gradient(180deg, rgba(0, 235, 170, 0.1) 0%, rgba(0, 235, 170, 0.04) 50%, rgba(0, 235, 170, 0.01) 100%), #10161a;
+          padding: 2.25rem 2.25rem 1.85rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border: 1px solid rgba(0, 235, 170, 0.14);
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+          transition: background 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
+        }
+
+        .licensing-compare-slide.active-slide .licensing-compare-card {
+          background: linear-gradient(180deg, rgba(0, 235, 170, 0.16) 0%, rgba(0, 235, 170, 0.08) 40%, rgba(0, 235, 170, 0.03) 100%), #121c19 !important;
+          border-color: rgba(0, 235, 170, 0.28) !important;
+          box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6) !important;
+        }
+
+        .licensing-compare-arrow-btn {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 9.9rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
+          color: #04160f;
+          text-decoration: none;
+          box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
+          transition: filter 0.25s ease;
+          flex-shrink: 0;
+        }
+
+        .licensing-compare-arrow-btn:hover {
+          filter: brightness(0.92);
+        }
+
+        .licensing-compare-nav {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 1.75rem;
+          gap: 1rem;
+          position: relative;
+          z-index: 10;
+        }
+
+        .licensing-compare-nav-btn {
+          width: 46px;
+          height: 46px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.08);
+          box-shadow: 0 -3px 4px 0 rgba(6, 10, 13, 0.26) inset, 0 2px 2.8px 0 rgba(255, 255, 255, 0.13) inset;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          color: #ffffff;
+          border: none;
+          transition: all 0.3s ease-in-out;
+        }
+
+        .licensing-compare-nav-btn:hover {
+          background: rgba(0, 235, 170, 0.25);
+          color: #00ebaa;
+          transform: scale(1.05);
+        }
+
+        .licensing-compare-dots {
+          display: flex;
+          align-items: center;
+          gap: 0.65rem;
+          margin: 0 1rem;
+        }
+
+        .licensing-compare-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.25);
+          cursor: pointer;
+          transition: all 0.3s ease;
+          border: none;
+          padding: 0;
+        }
+
+        .licensing-compare-dot.active-dot {
+          width: 26px;
+          border-radius: 9999px;
+          background: #00ebaa;
+          box-shadow: 0 0 12px rgba(0, 235, 170, 0.6);
+        }
+
+        @media (max-width: 768px) {
+          .licensing-compare-carousel-section {
+            padding: 4rem 0 5rem;
+          }
+          .licensing-compare-wrapper {
+            --slide-w: calc(100vw - 48px);
+            --slide-m: 8px;
+            padding: 0.75rem 0 1.5rem;
+          }
+          .licensing-compare-wrapper::before,
+          .licensing-compare-wrapper::after {
+            display: none !important;
+          }
+          .licensing-compare-slide {
+            width: var(--slide-w);
+            max-width: calc(100vw - 32px);
+            margin: 0 var(--slide-m);
+          }
+          .licensing-compare-card {
+            padding: 1.65rem 1.35rem 1.45rem !important;
+            border-radius: 1.35rem !important;
+          }
+        }
       `}</style>
 
       {/* =========================================================================
@@ -965,7 +1230,7 @@ export default function LicensingHubClient() {
           </div>
 
           <p className="events-hero-desc" data-anim="from-bottom" data-anim-delay="2">
-            Explore gaming licence requirements, costs and application steps. Find official resources and understand what to prepare for your casino or sportsbook platform.
+            Compare licensing requirements, fees and application steps for five iGaming jurisdictions. Use the official sources to check your options, then plan the software for your casino or sportsbook.
           </p>
 
           <div data-anim="from-bottom" data-anim-delay="3">
@@ -1145,39 +1410,240 @@ export default function LicensingHubClient() {
       </section>
 
       {/* =========================================================================
-          WHAT EACH GUIDE COVERS (Reusing existing StepsSection component)
+          COMPARE IGAMING LICENSING OPTIONS (Testimonials-style Carousel + Case-Study Cards)
           ========================================================================= */}
-      <StepsSection
-        customTitle="What Each Guide Covers"
-        customSubtitle="Find the key information to prepare for a licensing discussion and plan the software your business needs."
-        customSteps={[
-          {
-            id: 1,
-            title: 'Licensing Authority',
-            text: 'Find the regulator’s official website and relevant application and verification resources.',
-          },
-          {
-            id: 2,
-            title: 'Requirements and Documents',
-            text: 'Understand the company information and supporting documents described in the official application requirements.',
-          },
-          {
-            id: 3,
-            title: 'Application Process',
-            text: 'Review the application stages and what needs to be prepared before submission.',
-          },
-          {
-            id: 4,
-            title: 'Costs and Renewals',
-            text: 'Understand published fees, renewal charges and other costs to confirm when planning your budget.',
-          },
-          {
-            id: 5,
-            title: 'Platform Planning',
-            text: 'See how licensing requirements affect your choice of casino software, games and payment services.',
-          },
-        ]}
-      />
+      <section className="licensing-compare-carousel-section relative z-10 border-t border-white/5">
+        <div className="max-w-[124rem] mx-auto lg:px-[4.5rem] px-[1.2rem] text-center mb-10">
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white mb-4">
+            Compare iGaming Licensing Options
+          </h2>
+          <p className="text-gray-300 text-base max-w-3xl mx-auto leading-relaxed">
+            Review key operator routes, published regulatory fees and local setup considerations across five jurisdictions. Confirm current requirements and total startup costs directly with each authority before applying.
+          </p>
+        </div>
+
+        <div className="licensing-compare-wrapper">
+          <div
+            className="licensing-compare-track"
+            style={{
+              transform: `translateX(calc(50vw - (${comparisonCards.length + activeCompareIndex} * (var(--slide-w) + (var(--slide-m) * 2)) + ((var(--slide-w) + (var(--slide-m) * 2)) / 2))))`,
+            }}
+          >
+            {[...comparisonCards, ...comparisonCards, ...comparisonCards].map((card, idx) => {
+              const realIdx = idx % comparisonCards.length;
+              const isCenterSlide = idx === comparisonCards.length + activeCompareIndex;
+              return (
+              <div
+                key={`${card.id}-${idx}`}
+                className={`licensing-compare-slide ${isCenterSlide ? 'active-slide' : ''}`}
+                onClick={() => setActiveCompareIndex(realIdx)}
+              >
+                <div className="licensing-compare-card">
+                  <div>
+                    <h3 className="text-2xl sm:text-[1.65rem] font-bold text-white mb-4 leading-snug">
+                      {card.title}
+                    </h3>
+                    <p className="text-gray-300 text-[0.98rem] leading-relaxed mb-6">
+                      {card.description}
+                    </p>
+                    <ul className="space-y-3 mb-8">
+                      {card.bullets.map((bullet, bIdx) => (
+                        <li key={bIdx} className="flex items-start gap-3 text-[0.95rem] text-white/90">
+                          <svg
+                            className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                          </svg>
+                          <span className="leading-snug">{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
+                    <Link
+                      href={card.href}
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-flex items-center gap-2 text-[#00ebaa] font-semibold text-base hover:underline"
+                    >
+                      <span>{card.ctaLabel}</span>
+                    </Link>
+                    <Link
+                      href={card.href}
+                      onClick={(e) => e.stopPropagation()}
+                      className="licensing-compare-arrow-btn"
+                      aria-label={card.title}
+                    >
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                        <path
+                          d="M5 12H19M19 12L13 6M19 12L13 18"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              );
+            })}
+          </div>
+
+          {/* Controls Navigation (Arrows & Pagination Dots) */}
+          <div className="licensing-compare-nav">
+            <button
+              type="button"
+              className="licensing-compare-nav-btn"
+              aria-label="Previous jurisdiction"
+              onClick={handleComparePrev}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+            </button>
+
+            <div className="licensing-compare-dots">
+              {comparisonCards.map((card, idx) => (
+                <button
+                  key={card.id}
+                  type="button"
+                  className={`licensing-compare-dot ${idx === activeCompareIndex ? 'active-dot' : ''}`}
+                  aria-label={`View ${card.title}`}
+                  onClick={() => setActiveCompareIndex(idx)}
+                />
+              ))}
+            </div>
+
+            <button
+              type="button"
+              className="licensing-compare-nav-btn"
+              aria-label="Next jurisdiction"
+              onClick={handleCompareNext}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          OPERATOR PLANNING GUIDES (Checklist & Market Access — 2-Column Emerald Cards)
+          ========================================================================= */}
+      <section className="py-16 md:py-20 bg-[#0b0b0f] relative z-10 border-t border-white/5">
+        <div className="max-w-[124rem] mx-auto lg:px-[4.5rem] px-[1.2rem]">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white mb-4">
+              Operator Planning Guides
+            </h2>
+            <p className="text-gray-300 text-base max-w-3xl mx-auto leading-relaxed">
+              Organize your application requirements and target-market checks before scoping your platform.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: 'Online Casino Licensing Checklist',
+                description:
+                  'Prepare your company documents, launch budget and platform requirements before submitting a licensing application.',
+                bullets: [
+                  '7-step preparation sequence from offer scope to final review',
+                  'Company, ownership, budget, games and payment checks',
+                  'Platform & technical brief aligned with regulator checklists',
+                ],
+                href: '/igaming-licensing/checklist',
+                ctaLabel: 'Open Licensing Checklist',
+              },
+              {
+                title: 'iGaming Market Access',
+                description:
+                  'Find out what to check before accepting players in a new country, state or province.',
+                bullets: [
+                  'Six practical market checks across product, payments and marketing',
+                  'Local vs. cross-border licensing considerations',
+                  'Official regulator examples for Great Britain and Ontario',
+                ],
+                href: '/igaming-licensing/market-access',
+                ctaLabel: 'Explore Market Access',
+              },
+            ].map((guide) => (
+              <div
+                key={guide.title}
+                className="rounded-xl p-8 md:p-10 flex flex-col justify-between transition-all duration-300 hover:border-[#00ebaa]/50"
+                style={{
+                  background:
+                    'linear-gradient(180deg, rgba(0, 235, 170, 0.12) 0%, rgba(0, 235, 170, 0.06) 40%, rgba(0, 235, 170, 0.02) 100%), #10161a',
+                  border: '1px solid rgba(0, 235, 170, 0.22)',
+                }}
+              >
+                <div>
+                  <h3 className="text-2xl md:text-[1.75rem] font-bold text-white mb-4">
+                    {guide.title}
+                  </h3>
+                  <p className="text-gray-300 text-[0.98rem] leading-relaxed mb-6">
+                    {guide.description}
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {guide.bullets.map((bullet, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-start gap-3 text-[0.95rem] text-white/90"
+                      >
+                        <svg
+                          className="w-2.5 h-2.5 text-[#00ebaa] shrink-0 mt-[6px]"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                        >
+                          <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                        </svg>
+                        <span className="leading-snug">{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex items-center justify-between pt-4 border-t border-white/5 mt-auto">
+                  <Link
+                    href={guide.href}
+                    className="inline-flex items-center gap-2 text-[#00ebaa] font-semibold text-base hover:underline"
+                  >
+                    <span>{guide.ctaLabel}</span>
+                  </Link>
+                  <Link
+                    href={guide.href}
+                    aria-label={guide.title}
+                    className="w-12 h-12 rounded-full flex items-center justify-center text-[#04160f] transition-transform hover:scale-105 shrink-0"
+                    style={{
+                      background:
+                        'radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%)',
+                      boxShadow:
+                        '0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset',
+                    }}
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M5 12H19M19 12L13 6M19 12L13 18"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* =========================================================================
           RELATED PLATFORM SOLUTIONS (Reusing existing DiscoverMore component)

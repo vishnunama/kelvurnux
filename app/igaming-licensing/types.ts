@@ -66,6 +66,7 @@ export interface JurisdictionGuideData {
   factsNote?: string;
   heroTags?: string[];
   authorityHeading?: string;
+  authorityText?: string[];
   licensingAuthority: {
     name: string;
     description?: string;
@@ -73,6 +74,7 @@ export interface JurisdictionGuideData {
   };
   eligibilityHeading?: string;
   eligibilityIntro?: string;
+  eligibilityText?: string[];
   eligibilityRequirements?: string[];
   documentsHeading?: string;
   documentsIntro?: string;
@@ -102,6 +104,7 @@ export interface JurisdictionGuideData {
   };
   faqs?: FAQItem[];
   sources?: SourceReference[];
+  reviewDateLabel?: string;
   reviewDate?: string;
 }
 

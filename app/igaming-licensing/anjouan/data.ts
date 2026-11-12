@@ -290,5 +290,6 @@ export const anjouanData: JurisdictionGuideData = {
       notes: 'FATF published report',
     },
   ],
-  reviewDate: 'Sources checked: 9 November 2026',
+  reviewDateLabel: 'Sources checked:',
+  reviewDate: '9 November 2026',
 };

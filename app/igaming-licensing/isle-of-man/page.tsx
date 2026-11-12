@@ -3,9 +3,9 @@ import JurisdictionDetailClient from '../JurisdictionDetailClient';
 import { isleOfManData } from './data';
 
 export const metadata: Metadata = {
-  title: 'Isle of Man Gaming License | iGaming Licensing & Regulations | Kvaornux',
+  title: 'Isle of Man Gaming License: Costs & Requirements',
   description:
-    'Operational guide for the Isle of Man Gambling Supervision Commission (GSC) Tier-1 framework, OGRA licensing standards, and platform technical readiness.',
+    'See Isle of Man gaming licence fees, Full Licence and Sub-Licence options, application requirements and the official GSC register.',
   alternates: {
     canonical: 'https://kvaornux.com/igaming-licensing/isle-of-man',
   },
@@ -17,9 +17,21 @@ export const metadata: Metadata = {
       follow: true,
     },
   },
+  openGraph: {
+    title: 'Isle of Man Gaming License: Costs & Requirements | Kvaornux',
+    description:
+      'See Isle of Man gaming licence fees, Full Licence and Sub-Licence options, application requirements and the official GSC register.',
+    url: 'https://kvaornux.com/igaming-licensing/isle-of-man',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Isle of Man Gaming License: Costs & Requirements | Kvaornux',
+    description:
+      'See Isle of Man gaming licence fees, Full Licence and Sub-Licence options, application requirements and the official GSC register.',
+  },
 };
 
 export default function IsleOfManLicensingPage() {
   return <JurisdictionDetailClient data={isleOfManData} />;
 }
-

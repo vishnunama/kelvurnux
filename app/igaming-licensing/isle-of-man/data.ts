@@ -2,77 +2,285 @@ import { JurisdictionGuideData } from '../types';
 
 export const isleOfManData: JurisdictionGuideData = {
   slug: 'isle-of-man',
-  title: 'Isle of Man Gaming License',
+  title: 'Isle of Man Gaming License: Costs, Requirements & Application',
   jurisdiction: 'Isle of Man (British Crown Dependency)',
   summary:
-    'Operational guide for the Isle of Man Gambling Supervision Commission (GSC) regulatory framework, OGRA licensing models, player fund segregation, and platform architecture planning.',
-  status: 'draft',
+    'Planning an online casino or sportsbook? Compare Isle of Man licence fees, check the local setup requirements and see what to prepare before you apply.',
+  status: 'verified',
+  noticeBadge: 'Application Information',
+  noticeHeading: 'Confirm Licence Route, Local Presence and Hosting',
   noticeText:
-    'Research pending — review draft: This jurisdiction guide is currently in draft review status. Factual figures, official fee schedules, and statutory registry links are undergoing technical and regulatory verification. Placeholders are maintained where research is pending.',
+    'Confirm which licence route fits your business, along with local Isle of Man presence and hosting requirements, before committing to your platform setup.',
+  noticeLinks: [
+    {
+      label: 'GSC Online Gambling Licence',
+      url: 'https://www.isleofmangsc.com/gambling/licensing/online-gambling-licence/',
+    },
+  ],
+  heroTags: ['Isle of Man', 'OGRA 2001', 'GSC Regulated'],
+  overviewHeading: 'Overview',
   overviewText: [
-    'The Isle of Man is a premier British Crown Dependency renowned for its world-class financial infrastructure and high-integrity regulatory ecosystem. Regulated under the Online Gambling Regulation Act 2001 (OGRA) by the Gambling Supervision Commission (GSC), an Isle of Man license is considered one of the most prestigious Tier-1 credentials globally.',
-    'The jurisdiction offers several licensing tiers: a Full OGRA License (allowing direct B2C operations and white-label sub-licensing), a Sub-License (operating under an existing full licensee), a Network Services License (allowing onboarding of players from external partners without re-registration), and a B2B Software Supplier License.',
-    'Key attractions of the Isle of Man include 0% corporation tax, no capital gains tax, zero gaming duty on B2B activities, and world-leading player protection standards requiring 100% segregated player deposits.',
+    'The Isle of Man Gambling Supervision Commission regulates online gambling under the Online Gambling Regulation Act 2001. The Full Online Gambling Licence can cover activities such as online casino and sportsbook, subject to the licence conditions.',
+    'A Sub-Licence is an option for an Isle of Man business using the technology platform of an existing Isle of Man Full Licence holder. The GSC also lists separate options for network services, software suppliers and token-based software. Confirm the licence that fits your planned activities before choosing a platform.',
   ],
   facts: [
-    { label: 'Jurisdiction', value: 'Isle of Man (British Crown Dependency)' },
-    { label: 'Regulatory Authority', value: 'Gambling Supervision Commission (GSC)' },
-    { label: 'Permitted Activities', value: 'Online Casino, Sportsbook, Poker, Exchanges, Esports, Lottery' },
-    { label: 'Licensing Model', value: 'Full OGRA License, Sub-License, Network Services License' },
-    { label: 'Typical Processing Time', value: '10–12 Weeks' },
-    { label: 'Corporate Entity Requirement', value: 'Isle of Man Incorporated Company (1931 or 2006 Act)' },
-    { label: 'Hosting & Server Requirements', value: 'Primary hosting servers located in Isle of Man data centers' },
+    { label: 'Regulator', value: 'Gambling Supervision Commission (GSC)' },
+    { label: 'Framework', value: 'Online Gambling Regulation Act 2001 (OGRA)' },
+    { label: 'Application fee', value: '£5,250' },
+    { label: 'Full Licence annual fee', value: '£36,750' },
+  ],
+  factsNote:
+    'Note: Regulatory charges published by the Isle of Man Gambling Supervision Commission in GBP.',
+  authorityHeading: 'How to Check an Isle of Man Gaming Licence',
+  authorityText: [
+    'Use the official GSC Online Gambling Licensee Register. Open the company’s entry and compare its licence type, status and website domain where listed.',
   ],
   licensingAuthority: {
     name: 'Gambling Supervision Commission (GSC)',
     description:
-      'Independent statutory board established in 1962, regulating land-based and online gambling activities with an emphasis on player fund protection, anti-crime measures, and fair gaming.',
+      'Use the official GSC Online Gambling Licensee Register. Open the company’s entry and compare its licence type, status and website domain where listed.',
     officialResources: [
       {
-        name: 'GSC Official Portal',
+        name: 'GSC Online Gambling Licensee Register',
+        url: 'https://www.isleofmangsc.com/gambling/supervision/online-gambling-licensee-register/',
         verified: true,
-        url: 'https://gov.im/gambling',
-        description: 'Official Commission portal and register of approved licensees.',
+        linkLabel: 'Check the GSC Licence Register',
+        description: 'Official register of approved Isle of Man online gambling licensees.',
       },
     ],
   },
-  eligibilityRequirements: [
-    'Incorporation of an Isle of Man company with at least two local resident directors.',
-    'Appointment of a resident Designated Official (DO) or Operations Manager.',
-    'Mandatory segregation of player balances in verified trust or escrow accounts with approved banks.',
-    'Hosting of primary transaction servers on the Isle of Man.',
-    'RNG and game software certification by an approved independent testing house (e.g. GLI, BMM, eCOGRA).',
+  eligibilityHeading: 'What Do Operators Need on the Isle of Man?',
+  eligibilityText: [
+    'The GSC expects applicants to establish a genuine local operating presence. Its published requirements cover an Isle of Man company, at least two locally resident directors and designated management roles. Operators should also confirm local hosting for player registration and gameplay, along with their player fund arrangements.',
+    'Requirements vary by licence and operating model. Check the GSC guidance for your route before committing to hosting, banking or software. Keep any software-only supplier exceptions separate from operator requirements.',
   ],
+  eligibilityIntro:
+    'The GSC expects applicants to establish a genuine local operating presence. Its published requirements cover an Isle of Man company, at least two locally resident directors and designated management roles. Operators should also confirm local hosting for player registration and gameplay, along with their player fund arrangements.',
+  eligibilityRequirements: [],
+  documentsHeading: 'Documents to Prepare',
+  documentsIntro:
+    'Use the GSC’s current forms to prepare the company application, vetting forms for the relevant individuals and the supporting documents for your licence route. Confirm the full checklist and application fee before submitting to the Inspectorate.',
   applicationDocuments: [
-    { title: 'Company incorporation documents and register of members/directors', mandatory: true },
-    { title: 'Comprehensive Personal Declaration Forms for all UBOs and Directors', mandatory: true },
-    { title: 'Detailed 3-Year Business Plan and Financial Projections', mandatory: true },
-    { title: 'Independent Game Software & RNG Testing Certificates', mandatory: true },
-    { title: 'System Architecture & Data Hosting Documentation with IOM Data Center', mandatory: true },
-    { title: 'Player Fund Protection Mechanism Documentation (Bank Escrow / Trust Deed)', mandatory: true },
-    { title: 'AML / CFT and Responsible Gaming Policy Manuals', mandatory: true },
+    {
+      title: 'Company application form',
+      description: '',
+      mandatory: true,
+    },
+    {
+      title: 'Vetting forms for relevant individuals',
+      description: '',
+      mandatory: true,
+    },
+    {
+      title: 'Supporting documents for your chosen licence route',
+      description: '',
+      mandatory: true,
+    },
   ],
+  documentsClosing:
+    'Confirm the full checklist and application fee directly on the GSC website before submitting to the Inspectorate.',
+  processHeading: 'How to Apply for an Isle of Man Gaming Licence',
+  processIntro:
+    'Follow the GSC’s application steps from route selection through formal hearing and launch confirmation.',
   applicationProcessSteps: [
-    { step: 1, title: 'Corporate Incorporation & Local Substance', text: 'Form an Isle of Man company, appoint two local resident directors, and secure local physical presence.' },
-    { step: 2, title: 'Pre-Application Meeting with GSC', text: 'Engage with the Gambling Supervision Commission to discuss operational scope, platform architecture, and timelines.' },
-    { step: 3, title: 'Formal Application Submission', text: 'Submit comprehensive personal, technical, financial, and policy documentation alongside statutory application fees.' },
-    { step: 4, title: 'Commission Hearing & Review', text: 'The Commissioners review the findings of the inspectorate and determine the approval of the license.' },
-    { step: 5, title: 'License Grant & Go-Live Inspection', text: 'Following payment of the license duty, the 5-year renewable license is formally issued.' },
+    {
+      step: 1,
+      title: 'Choose Your Licence Route',
+      text: 'Confirm which licence fits your activities and platform model.',
+    },
+    {
+      step: 2,
+      title: 'Plan Your Local Setup',
+      text: 'Check your company, management, hosting and player fund arrangements.',
+    },
+    {
+      step: 3,
+      title: 'Gather Your Documents',
+      text: 'Complete the application and vetting forms and collect the required supporting records.',
+    },
+    {
+      step: 4,
+      title: 'Submit the Application',
+      text: 'Send the completed forms, supporting documents and fee to the Inspectorate.',
+    },
+    {
+      step: 5,
+      title: 'Complete the Review and Hearing',
+      text: 'Respond to questions and prepare the relevant officials for any requested meeting and the formal hearing.',
+    },
+    {
+      step: 6,
+      title: 'Confirm Before Launch',
+      text: 'Check the decision, licence conditions and outstanding requirements before opening to players.',
+    },
   ],
+  processTimingNote:
+    'Timing note: Application timing depends on application completeness and the review. Avoid relying on fixed approval or launch promises.',
+  feesHeading: 'How Much Does an Isle of Man Gaming Licence Cost?',
+  feesIntro:
+    'All amounts below are listed in GBP from the official GSC fee schedule:',
   fees: [
-    { item: 'Application Fee', amount: 'Content pending verification', currency: 'GBP' },
-    { item: 'Annual License Duty', amount: 'Content pending verification', currency: 'GBP' },
+    {
+      item: 'Application fee',
+      amount: '£5,250',
+      currency: 'GBP',
+      notes: 'On submission',
+      source: 'GSC published fee schedule',
+    },
+    {
+      item: 'Full Online Gambling Licence',
+      amount: '£36,750',
+      currency: 'GBP',
+      notes: 'On approval and annually thereafter',
+      source: 'GSC published fee schedule',
+    },
+    {
+      item: 'Sub-Licence',
+      amount: '£5,250',
+      currency: 'GBP',
+      notes: 'On approval and annually thereafter',
+      source: 'GSC published fee schedule',
+    },
+    {
+      item: 'Network Services Licence',
+      amount: '£52,500',
+      currency: 'GBP',
+      notes: 'On approval and annually thereafter',
+      source: 'GSC published fee schedule',
+    },
+    {
+      item: 'Software Suppliers Licence',
+      amount: '£36,750',
+      currency: 'GBP',
+      notes: 'On approval and annually thereafter',
+      source: 'GSC published fee schedule',
+    },
+    {
+      item: 'Token Based Software Licence',
+      amount: '£52,500',
+      currency: 'GBP',
+      notes: 'On approval and annually thereafter',
+      source: 'GSC published fee schedule',
+    },
   ],
-  ongoingObligations: [
-    'Strict maintenance and periodic external auditing of segregated player funds.',
-    'Annual license duty payment and quarterly regulatory reporting.',
-    'Compliance with Isle of Man AML/CFT Code 2019 and reporting of suspicious activity to the FIU.',
-    'Prompt reporting of any changes in corporate ownership, directors, or gaming software.',
+  feesSupportingText: [
+    'Budget separately for company setup, hosting, software, professional advice and any applicable gambling duty. Confirm the latest amounts on the official GSC fee schedule.',
   ],
+  obligationsHeading: 'Check Your Target Markets and Ongoing Responsibilities',
+  obligationsIntro:
+    'Check the rules of each country you plan to serve alongside the conditions of your Isle of Man licence. Plan for ongoing responsibilities such as protecting player funds and meeting the reporting and supervision requirements that apply to your licence.',
+  ongoingObligations: [],
+  platformHeading: 'Plan Your Casino or Sportsbook Software',
+  platformIntro:
+    'Kvaornux develops white-label, turnkey and custom casino and sportsbook software. Share the licence route you are considering, your hosting requirements and your planned games and payments so we can discuss the software scope. Arrange your gambling licence separately.',
+  platformSupportingCopy:
+    'Licensing and legal advice are separate from Kvaornux’s software development services. Contact our team to discuss your platform technology scope.',
   platformPlanning: {
-    casinoTech: 'Enterprise-grade hosting architecture compliant with IOM data protection and disaster recovery requirements.',
-    gameAggregation: 'Curated library of RNG-certified game providers meeting stringent GSC technical compliance standards.',
-    paymentsAndWallets: 'Direct access to premier UK and European corporate banking institutions with segregated account structures.',
+    casinoTech:
+      'Choose a turnkey setup or a custom platform with the features your business needs.',
+    gameAggregation:
+      'Connect the selected game providers and organize your casino’s game selection.',
+    paymentsAndWallets:
+      'Connect your selected crypto payment provider and bring payment records into your back office.',
+    cards: [
+      {
+        title: 'Casino & Sportsbook Software',
+        description:
+          'Choose a turnkey setup or a custom platform with the features your business needs.',
+        linkHref: '/turnkey-casino-software-solutions',
+        linkText: 'Explore Turnkey Casino Software',
+      },
+      {
+        title: 'Games & Provider Integrations',
+        description:
+          'Connect the selected game providers and organize your casino’s game selection.',
+        linkHref: '/casino-aggregator-api-solution',
+        linkText: 'Explore Game Aggregator API',
+      },
+      {
+        title: 'Crypto Payment Integration',
+        description:
+          'Connect your selected crypto payment provider and bring payment records into your back office.',
+        linkHref: '/crypto-casino-software',
+        linkText: 'Explore Crypto Casino Software',
+      },
+    ],
   },
+  faqs: [
+    {
+      question: 'How much does an Isle of Man gaming licence cost?',
+      answer:
+        'The GSC lists a £5,250 application fee and a £36,750 annual fee for the Full Online Gambling Licence. Other licence types have different annual fees. Budget for business and operating costs separately.',
+    },
+    {
+      question: 'What is the difference between a Full Licence and a Sub-Licence?',
+      answer:
+        'The Full Licence supports approved online gambling activities. The Sub-Licence is for an Isle of Man business using the technology platform of an existing Isle of Man Full Licence holder.',
+    },
+    {
+      question: 'Can a Full Licence cover online casino and sportsbook?',
+      answer:
+        'The GSC lists both under the Full Licence route. Confirm your proposed activities and any conditions with the GSC.',
+    },
+    {
+      question: 'What documents do I need?',
+      answer:
+        'Start with the GSC company application, the relevant vetting forms and the supporting documents requested for your licence route.',
+    },
+    {
+      question: 'How long does approval take?',
+      answer:
+        'Allow time for the Inspectorate’s review, any follow-up requests and the formal hearing. Ask the GSC about your application before setting a launch date.',
+    },
+    {
+      question: 'How do I check an Isle of Man gaming licence?',
+      answer:
+        'Open the company’s entry in the GSC Online Gambling Licensee Register. Compare the licence status, type and website domain where listed.',
+    },
+    {
+      question: 'Does Kvaornux software include a gambling licence?',
+      answer:
+        'Kvaornux provides software development. Arrange the appropriate gambling licence separately.',
+    },
+  ],
+  sources: [
+    {
+      title: 'Licence routes, forms and application process',
+      url: 'https://www.isleofmangsc.com/gambling/licensing/online-gambling-licence/',
+      verified: true,
+      notes: 'Official GSC online gambling licence overview',
+    },
+    {
+      title: 'Published fees',
+      url: 'https://www.isleofmangsc.com/media/mxhgu2pg/ogra-licence-fees-v1025.pdf',
+      verified: true,
+      notes: 'OGRA Licence Fees schedule',
+    },
+    {
+      title: 'Full Licence',
+      url: 'https://www.isleofmangsc.com/media/ra1ktfkw/ogra-full-licence-v1025.pdf',
+      verified: true,
+      notes: 'OGRA Full Licence documentation',
+    },
+    {
+      title: 'Licensing requirements',
+      url: 'https://www.isleofmangsc.com/media/550ih5x3/ogra-licensing-licensing-requirements-v1025.pdf',
+      verified: true,
+      notes: 'OGRA licensing requirements',
+    },
+    {
+      title: 'Application guidance',
+      url: 'https://www.isleofmangsc.com/media/fd3nmwma/online-gambling-guidance-for-making-a-licence-application-v1-16.pdf',
+      verified: true,
+      notes: 'Guidance for making a licence application',
+    },
+    {
+      title: 'Licence register',
+      url: 'https://www.isleofmangsc.com/gambling/supervision/online-gambling-licensee-register/',
+      verified: true,
+      notes: 'Online Gambling Licensee Register',
+    },
+  ],
+  reviewDateLabel: 'Sources checked:',
+  reviewDate: '12 November 2026',
 };
-

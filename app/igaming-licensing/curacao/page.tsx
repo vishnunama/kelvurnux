@@ -3,7 +3,7 @@ import JurisdictionDetailClient from '../JurisdictionDetailClient';
 import { curacaoData } from './data';
 
 export const metadata: Metadata = {
-  title: 'Curaçao Gaming License: Costs & Requirements | Kvaornux',
+  title: 'Curaçao Gaming License: Costs & Requirements',
   description:
     'Explore Curaçao gaming licence costs, requirements, application steps and official CGA resources. Plan your casino or sportsbook software with Kvaornux.',
   alternates: {

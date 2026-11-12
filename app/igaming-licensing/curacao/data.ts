@@ -34,13 +34,17 @@ export const curacaoData: JurisdictionGuideData = {
   factsNote:
     'Note: Regulatory charges published by the CGA. Application fees are separate from annual charges.',
   authorityHeading: 'How to Check a Curaçao Gaming Licence',
+  authorityText: [
+    'Use the licence register linked from the CGA website. Compare the company and licence details with the business you are checking.',
+    'The CGA warns that its published overviews do not guarantee current licence validity. For an important or time-sensitive decision, confirm the current status with the CGA.',
+  ],
   licensingAuthority: {
     name: 'Curaçao Gaming Authority',
     description:
       'Use the licence register linked from the CGA website. Compare the company and licence details with the business you are checking. The CGA warns that its published overviews do not guarantee current licence validity. For an important or time-sensitive decision, confirm the current status with the CGA.',
     officialResources: [
       {
-        name: 'CGA Official Licence Register',
+        name: 'CGA licence register',
         url: 'https://www.cga.cw/en/133i348441001',
         verified: true,
         linkLabel: 'View the CGA Licence Register',
@@ -49,6 +53,10 @@ export const curacaoData: JurisdictionGuideData = {
     ],
   },
   eligibilityHeading: 'Who Can Apply?',
+  eligibilityText: [
+    'The published online gaming licence conditions require the operator company to be established under Curaçao law and have its registered office in Curaçao.',
+    'Confirm the company setup, ownership disclosures and local management requirements for your application with the CGA and your legal adviser. Buying software does not replace these requirements.',
+  ],
   eligibilityIntro:
     'The published online gaming licence conditions require the operator company to be established under Curaçao law and have its registered office in Curaçao. Confirm the company setup, ownership disclosures and local management requirements for your application with the CGA and your legal adviser. Buying software does not replace these requirements.',
   eligibilityRequirements: [],
@@ -57,20 +65,17 @@ export const curacaoData: JurisdictionGuideData = {
   applicationDocuments: [
     {
       title: 'Online Gaming Application Form, or the Supplier Licence Application Form',
-      description:
-        'Primary statutory application form depending on whether applying as a B2C operator or B2B supplier.',
+      description: '',
       mandatory: true,
     },
     {
       title: 'Business and Corporate Information Form',
-      description:
-        'Comprehensive disclosure of applicant entity structure, operational model, and commercial arrangements.',
+      description: '',
       mandatory: true,
     },
     {
       title: 'Personal History Disclosure forms for the relevant individuals',
-      description:
-        'Background vetting, financial integrity, and personal disclosure for directors and beneficial owners.',
+      description: '',
       mandatory: true,
     },
   ],
@@ -248,35 +253,36 @@ export const curacaoData: JurisdictionGuideData = {
   ],
   sources: [
     {
-      title: 'CGA — Online Gaming Rules & Regulations',
+      title: 'CGA online gaming rules, forms, fee schedule and conditions',
       url: 'https://www.cga.cw/regulation/online-gaming/',
       verified: true,
       notes: 'Official regulations, forms, fee schedule and conditions',
     },
     {
-      title: 'CGA — Online Application Portal',
+      title: 'Current new-application link, accessed from the CGA website',
       url: 'https://apply.cga.cw/',
       verified: true,
-      notes: 'Current new-application link accessed from the CGA website',
+      notes: 'Application portal accessed from CGA website',
     },
     {
-      title: 'CGA — Licence Register',
+      title: 'CGA licence register',
       url: 'https://www.cga.cw/en/133i348441001',
       verified: true,
       notes: 'Official register overview',
     },
     {
-      title: 'CGA — Schedule of License Fees under LOK',
+      title: 'CGA fee schedule',
       url: 'https://gamingcontrol.spin-cdn.com/media/online_gaming_policies_and_guidelines/20261012_license_fees_under_the_national_ordinance_on_games_of_chance_15_oct_2025.pdf',
       verified: true,
-      notes: 'Official fee schedule publication',
+      notes: 'Schedule of licence fees under LOK',
     },
     {
-      title: 'CGA — Indefinite-Term Online Gaming License Conditions',
+      title: 'CGA indefinite-term operator licence conditions',
       url: 'https://gamingcontrol.spin-cdn.com/media/online_gaming/20261028_license_conditions_for_an_indefinite_term_online_gaming_license.pdf',
       verified: true,
       notes: 'Statutory licence conditions',
     },
   ],
-  reviewDate: 'Sources checked: 9 November 2026',
+  reviewDateLabel: 'Sources checked:',
+  reviewDate: '9 November 2026',
 };

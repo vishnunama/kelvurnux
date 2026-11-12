@@ -153,13 +153,11 @@ export default function Footer() {
                     Insights &amp; Blog
                   </Link>
                 </li>
-                {/* PREPARED FOR LATER ACTIVATION (Uncomment when ready to publish):
                 <li>
                   <Link href="/igaming-licensing" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     Licensing &amp; Regulations
                   </Link>
                 </li>
-                */}
               </ul>
             </nav>
           </div>

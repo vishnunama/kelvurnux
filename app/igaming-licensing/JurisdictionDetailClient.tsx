@@ -737,7 +737,11 @@ export default function JurisdictionDetailClient({ data }: Props) {
               {/* 2. LICENSING AUTHORITY AND OFFICIAL RESOURCES */}
               <section id="licensing-authority-and-official-resources" className="mb-14 scroll-mt-28">
                 <h2>{data.authorityHeading || 'Licensing Authority and Official Resources'}</h2>
-                {data.licensingAuthority.description ? (
+                {data.authorityText && data.authorityText.length > 0 ? (
+                  data.authorityText.map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))
+                ) : data.licensingAuthority.description ? (
                   <p>{data.licensingAuthority.description}</p>
                 ) : (
                   <p className="placeholder-tag">Licensing authority description pending verification.</p>
@@ -769,9 +773,15 @@ export default function JurisdictionDetailClient({ data }: Props) {
               {/* 3. ELIGIBILITY AND COMPANY REQUIREMENTS */}
               <section id="eligibility-and-company-requirements" className="mb-14 scroll-mt-28">
                 <h2>{data.eligibilityHeading || 'Eligibility and Company Requirements'}</h2>
-                <p>
-                  {data.eligibilityIntro || `To apply for a licence under ${data.jurisdiction.split('(')[0].trim()} regulations, applicants must satisfy established corporate governance criteria, director fit-and-proper assessments, and compliance standards.`}
-                </p>
+                {data.eligibilityText && data.eligibilityText.length > 0 ? (
+                  data.eligibilityText.map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))
+                ) : (
+                  <p>
+                    {data.eligibilityIntro || `To apply for a licence under ${data.jurisdiction.split('(')[0].trim()} regulations, applicants must satisfy established corporate governance criteria, director fit-and-proper assessments, and compliance standards.`}
+                  </p>
+                )}
                 {data.eligibilityRequirements && data.eligibilityRequirements.length > 0 && (
                   <ul>
                     {data.eligibilityRequirements.map((req, idx) => (
@@ -1065,7 +1075,7 @@ export default function JurisdictionDetailClient({ data }: Props) {
                   </div>
 
                   <div>
-                    <span className="text-gray-400 block mb-1 font-medium">Review Date:</span>
+                    <span className="text-gray-400 block mb-1 font-medium">{data.reviewDateLabel || 'Review Date:'}</span>
                     {data.reviewDate ? (
                       <span className="text-white font-semibold flex items-center gap-2">
                         <Calendar size={16} className="text-[#00ebaa]" />
