@@ -14,10 +14,19 @@ import {
   HelpCircle,
   Calendar,
   AlertTriangle,
+  Gamepad2,
 } from 'lucide-react';
 import { JurisdictionGuideData } from './types';
 import ContactForm from '@/src/components/contactform/ContactForm';
 import FAQSection from '@/src/components/FAQSection/FAQSection';
+
+const licenseImages: Record<string, string> = {
+  anjouan: '/assets/licensing/anjouan-gaming-license.webp',
+  curacao: '/assets/licensing/curacao-gaming-license.webp',
+  malta: '/assets/licensing/malta-mga-license.webp',
+  kahnawake: '/assets/licensing/kahnawake-license-3d.webp',
+  'isle-of-man': '/assets/licensing/isle-of-man-license-3d.webp',
+};
 
 interface Props {
   data: JurisdictionGuideData;
@@ -25,6 +34,20 @@ interface Props {
 
 export default function JurisdictionDetailClient({ data }: Props) {
   const [activeSection, setActiveSection] = useState<string>('overview');
+
+  const heroBgImage = licenseImages[data.slug] || '/assets/licensing/anjouan-gaming-license.webp';
+
+  const factsList = data.facts && data.facts.length >= 4
+    ? data.facts.slice(0, 4)
+    : [
+        { label: 'Jurisdiction', value: data.jurisdiction },
+        { label: 'Regulatory Authority', value: data.licensingAuthority.name },
+        { label: 'Permitted Activities', value: 'Content pending verification' },
+        { label: 'Licensing Model', value: 'Content pending verification' },
+      ];
+
+  const permittedFact = data.facts?.find((f) => f.label.toLowerCase().includes('permitted'));
+  const modelFact = data.facts?.find((f) => f.label.toLowerCase().includes('licensing model'));
 
   const handleScrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -59,16 +82,16 @@ export default function JurisdictionDetailClient({ data }: Props) {
   const hasFaqs = Boolean(data.faqs && data.faqs.length > 0);
 
   const tocItems = [
-    { id: 'overview', title: 'Overview' },
-    { id: 'licensing-authority-and-official-resources', title: 'Licensing Authority and Official Resources' },
-    { id: 'eligibility-and-company-requirements', title: 'Eligibility and Company Requirements' },
-    { id: 'application-documents', title: 'Application Documents' },
-    { id: 'application-process', title: 'Application Process' },
-    { id: 'fees-and-ongoing-costs', title: 'Fees and Ongoing Costs' },
-    { id: 'ongoing-obligations', title: 'Ongoing Obligations' },
-    { id: 'platform-games-and-payment-planning', title: 'Platform, Games and Payment Planning' },
-    ...(hasFaqs ? [{ id: 'frequently-asked-questions', title: 'Frequently Asked Questions' }] : []),
+    { id: 'overview', title: data.overviewHeading || 'Overview' },
+    { id: 'licensing-authority-and-official-resources', title: data.authorityHeading || 'Licensing Authority and Official Resources' },
+    { id: 'eligibility-and-company-requirements', title: data.eligibilityHeading || 'Eligibility and Company Requirements' },
+    { id: 'application-documents', title: data.documentsHeading || 'Application Documents' },
+    { id: 'application-process', title: data.processHeading || 'Application Process' },
+    { id: 'fees-and-ongoing-costs', title: data.feesHeading || 'Fees and Ongoing Costs' },
+    { id: 'ongoing-obligations', title: data.obligationsHeading || 'Ongoing Obligations' },
+    { id: 'platform-games-and-payment-planning', title: data.platformHeading || 'Platform, Games and Payment Planning' },
     { id: 'sources-and-review-date', title: 'Sources and Review Date' },
+    ...(hasFaqs ? [{ id: 'frequently-asked-questions', title: 'Frequently Asked Questions' }] : []),
   ];
 
   return (
@@ -97,258 +120,225 @@ export default function JurisdictionDetailClient({ data }: Props) {
         [data-anim-delay="2"] { animation-delay: 0.2s !important; }
 
         /* =========================================================================
-           EVENTS HERO STYLES (2nd Image Layout + 1st Image Emerald Color Theme)
-           Full-width background image, edge-to-edge, NO card borders, pure clean hero
+           CASE STUDY STYLE HERO SECTION & BANNER (Matching Image 2 Spec 100%)
            ========================================================================= */
-        .events-hero-section {
-          padding: clamp(7.5rem, 11vw, 11rem) 0 4rem;
+        .cs-hero-section {
           position: relative;
-          background: radial-gradient(120% 100% at 50% 40%, rgba(0, 235, 170, 0.2) 0%, rgba(0, 235, 170, 0.06) 60%, rgba(11, 11, 15, 0) 100%), rgb(11, 11, 15);
+          padding: clamp(120px, 12vw, 160px) 0 40px;
+          background: #0b0b0f;
           overflow: hidden;
-          width: 100%;
+        }
+
+        .cs-container {
+          max-width: 1240px;
+          margin: 0 auto;
+          padding: 0 24px;
+          position: relative;
+          z-index: 2;
+        }
+
+        .breadcrumbs {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 15px;
+          color: #a5d8d0;
+          margin-bottom: 32px;
+          flex-wrap: wrap;
+        }
+
+        .breadcrumbs-item {
+          color: #a5d8d0;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+
+        .breadcrumbs-item:hover {
+          color: #00ebaa;
+        }
+
+        .breadcrumbs-sep {
+          color: #4a6863;
+        }
+
+        .breadcrumbs-current {
+          color: #ffffff;
+          font-weight: 500;
+        }
+
+        .cs-hero-banner {
+          position: relative;
+          border-radius: 32px;
+          overflow: hidden;
+          background: radial-gradient(ellipse at center, rgba(0, 45, 40, 0.6) 0%, rgba(0, 55, 48, 0.45) 60%, rgba(8, 32, 28, 0.5) 100%), #081a18;
+          min-height: 440px;
           display: flex;
           align-items: center;
           justify-content: center;
+          padding: clamp(48px, 6vw, 68px) clamp(24px, 4vw, 44px);
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+          margin-bottom: 44px;
+          border: none;
         }
 
-        .events-hero-bg {
-          z-index: 1;
+        .cs-hero-banner-bg {
           position: absolute;
           inset: 0;
           width: 100%;
           height: 100%;
-          pointer-events: none;
-          overflow: hidden;
-          -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
-          mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
-        }
-
-        .events-hero-bg img,
-        .events-hero-bg-img {
           object-fit: cover;
-          object-position: center 25%;
-          width: 100% !important;
-          height: 100% !important;
-          display: block;
           opacity: 0.85;
-          filter: hue-rotate(-120deg) saturate(1.15) brightness(0.68) contrast(1.18);
+          pointer-events: none;
         }
 
-        /* Subtle emerald glow matching exact user specification */
-        .events-hero-bg:before {
-          content: "";
-          z-index: 2;
+        .cs-hero-banner-overlay {
           position: absolute;
           inset: 0;
+          background: radial-gradient(ellipse at center, rgba(0, 40, 35, 0.45) 0%, rgba(0, 55, 48, 0.38) 60%, rgba(0, 50, 45, 0.35) 100%);
           pointer-events: none;
-          background: radial-gradient(120% 100% at 50% 40%, rgba(0, 235, 170, 0.2) 0%, rgba(0, 235, 170, 0.06) 60%, rgba(11, 11, 15, 0) 100%);
         }
 
-        /* Top header dark vignette and bottom smooth fade into #0b0b0f */
-        .events-hero-bg:after {
-          content: "";
-          z-index: 3;
-          position: absolute;
-          inset: 0;
-          pointer-events: none;
-          background: linear-gradient(180deg, #0b0b0f 0%, rgba(11, 11, 15, 0.85) 12%, transparent 35%, transparent 68%, rgba(11, 11, 15, 0.85) 90%, #0b0b0f 100%);
-        }
-
-        .events-hero-container {
-          max-width: 1240px;
-          width: 100%;
+        .cs-hero-banner-content {
+          position: relative;
+          z-index: 5;
+          max-width: 900px;
           margin: 0 auto;
-          padding: 0 clamp(1.2rem, 3vw, 2.5rem);
-          position: relative;
-          z-index: 10;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
           text-align: center;
+          width: 100%;
         }
 
-        .events-hero-title {
-          letter-spacing: -0.04em;
-          color: #fff;
-          font-size: clamp(2.4rem, 5.2vw, 4.6rem);
-          font-weight: 700;
+        .cs-hero-title {
+          font-size: clamp(28px, 4.2vw, 48px);
+          font-weight: 800;
           line-height: 1.15;
-          margin: 0 auto 2.2rem;
-          text-align: center;
-          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.85), 0 2px 6px rgba(0, 0, 0, 0.9);
+          letter-spacing: -0.02em;
+          color: #ffffff;
+          margin-bottom: 24px;
         }
 
-        .events-hero-logo {
-          justify-content: center;
-          align-items: center;
-          height: auto;
+        .cs-hero-description {
+          font-size: clamp(16px, 1.6vw, 18px);
+          line-height: 1.65;
+          color: #d1f2ec;
+          margin-bottom: 32px;
+          font-weight: 400;
+        }
+
+        .cs-hero-tags {
           display: flex;
-          margin-bottom: 1.25rem;
+          flex-wrap: wrap;
+          gap: 16px;
+          justify-content: center;
         }
 
-        .events-hero-logo img {
-          width: auto;
-          max-width: 340px;
-          height: clamp(3.2rem, 5.5vw, 4.8rem);
-          display: block;
-          filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 25px rgba(0, 235, 170, 0.45));
-        }
-
-        .events-hero-name {
-          color: #fff;
-          font-size: clamp(1.35rem, 2.5vw, 2rem);
-          font-weight: 600;
-          line-height: 1.3;
-          letter-spacing: -0.015em;
-          margin-bottom: 0.85rem;
-          text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
-        }
-
-        .events-hero-desc {
-          font-size: clamp(1rem, 1.4vw, 1.15rem);
-          line-height: 1.6;
-          color: #bdf6eb !important;
-          max-width: 680px;
-          margin: 0 auto 2.2rem;
-          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
-        }
-
-        .events-hero-btn {
+        .cs-hero-tag {
           display: inline-flex;
           align-items: center;
-          justify-content: center;
-          outline: 0;
-          border: none;
-          cursor: pointer;
-          font-weight: 700;
-          min-width: 270px;
-          height: 3.6rem;
-          padding: 0.85rem 2.4rem;
-          font-size: 1.05rem;
-          border-radius: 9999px;
-          position: relative;
-          color: #04160f;
-          text-decoration: none;
-          text-align: center;
-          line-height: 1.5;
-          background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
-          box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.65) inset, 0 10px 24px rgba(0, 235, 170, 0.32);
-          transition: filter 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-          margin-bottom: 0.5rem;
-        }
-
-        .events-hero-btn:hover {
-          filter: brightness(0.92);
-          transform: translateY(-2px);
-          color: #04160f;
-          box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.65) inset, 0 14px 30px rgba(0, 235, 170, 0.45);
-        }
-
-        .events-hero-btn:active {
-          filter: brightness(0.86);
-          transform: translateY(0);
-        }
-
-        .events-hero-meta {
-          border-top: 1px solid rgba(255, 255, 255, 0.18);
-          width: 100%;
-          padding-top: 2rem;
-          margin-top: 2.75rem;
-        }
-
-        .event-info-wrapper {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 1.25rem;
-          width: 100%;
-          flex-wrap: wrap;
-        }
-
-        .event-location {
-          display: flex;
-          align-items: center;
-          gap: 0.85rem;
-          flex-wrap: wrap;
-        }
-
-        .event-chip {
-          color: #fff;
-          white-space: nowrap;
-          background: rgba(11, 15, 18, 0.72);
-          border: 1px solid rgba(255, 255, 255, 0.18);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border-radius: 9999px;
-          justify-content: center;
-          align-items: center;
-          gap: 0.75rem;
-          height: 3rem;
-          padding: 0 1.5rem;
-          font-size: 0.95rem;
-          font-weight: 500;
-          display: inline-flex;
-          box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-        }
-          border: 1px solid rgba(255, 255, 255, 0.14);
+          gap: 10px;
+          padding: 8px 18px;
+          border-radius: 999px;
+          background: rgba(0, 235, 170, 0.1);
           backdrop-filter: blur(10px);
           -webkit-backdrop-filter: blur(10px);
-          border-radius: 9999px;
-          justify-content: center;
-          align-items: center;
-          gap: 0.75rem;
-          height: 3rem;
-          padding: 0 1.5rem;
-          font-size: 0.95rem;
+          border: none;
+          color: #ffffff;
+          font-size: 15px;
           font-weight: 500;
-          display: inline-flex;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
         }
 
-        .event-chip-icon {
-          width: 1.25rem;
-          height: 1.25rem;
+        .cs-hero-tag svg {
           color: #00ebaa;
           flex-shrink: 0;
         }
 
-        .event-chip--accent {
-          color: #04160f;
-          background: #00ebaa;
-          border-color: #00ebaa;
-          font-weight: 700;
-          box-shadow: 0 0 18px rgba(0, 235, 170, 0.4);
+        /* FACTS CARDS MATCHING EXACT CASE STUDY SPEC */
+        .cs-facts {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
+          margin-bottom: 36px;
+        }
+
+        .cs-facts-item {
+          flex: 1;
+          min-width: 200px;
+          max-width: 280px;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          padding: 24px 20px;
+          border-radius: 24px;
+          border: 1px solid rgba(0, 235, 170, 0.28);
+          background: linear-gradient(180deg, rgba(0, 235, 170, 0.14) 0%, rgba(0, 235, 170, 0.06) 40%, rgba(0, 235, 170, 0.02) 100%), #10161a;
+          box-shadow: 0 -2px 4.7px 0 rgba(0, 235, 170, 0.2) inset;
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          justify-content: center;
+          align-items: flex-start;
+          text-align: left;
+        }
+
+        .cs-facts-label {
+          font-size: 15px;
+          color: #d1e5e8;
+          font-weight: 400;
+          line-height: 1.4;
+          text-align: left;
+        }
+
+        .cs-facts-value {
+          font-size: 17px;
+          color: #ffffff;
+          font-weight: 600;
+          line-height: 1.4;
+          text-align: left;
         }
 
         @media (max-width: 768px) {
-          .events-hero-section {
-            padding: 8.5rem 0 3.5rem;
+          .cs-hero-section {
+            padding: 100px 0 24px;
           }
-          .events-hero-title {
-            margin-bottom: 1.6rem;
+          .cs-container {
+            padding: 0 16px;
           }
-          .events-hero-meta {
-            padding-top: 1.5rem;
-            margin-top: 2rem;
+          .cs-hero-banner {
+            min-height: auto;
+            padding: 32px 18px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            border: none;
           }
-          .event-info-wrapper {
-            flex-direction: column;
-            align-items: stretch;
-            gap: 0.85rem;
+          .cs-hero-title {
+            font-size: 24px;
+            margin-bottom: 12px;
           }
-          .event-location {
-            flex-direction: column;
+          .cs-hero-description {
+            font-size: 14px;
+            margin-bottom: 18px;
+          }
+          .cs-hero-tags {
+            gap: 8px;
+          }
+          .cs-hero-tag {
+            padding: 6px 12px;
+            font-size: 13px;
+          }
+          .cs-facts {
+            gap: 12px;
+            margin-bottom: 20px;
+          }
+          .cs-facts-item {
+            min-width: 100%;
             width: 100%;
-            gap: 0.85rem;
+            padding: 16px 16px;
+            border-radius: 18px;
           }
-          .event-chip {
-            width: 100%;
-            justify-content: center;
-            height: 2.85rem;
-            font-size: 0.9rem;
+          .cs-facts-label {
+            font-size: 13px;
           }
-          .events-hero-btn {
-            width: 100%;
+          .cs-facts-value {
+            font-size: 16px;
           }
         }
 
@@ -579,90 +569,87 @@ export default function JurisdictionDetailClient({ data }: Props) {
       `}</style>
 
       {/* =========================================================================
-          HERO SECTION (2nd Image Layout + 1st Image Emerald Color Theme)
-          Full-width background image, edge-to-edge, NO card borders
+          HERO SECTION & BANNER (Matching Case Study Spec / Image 2)
           ========================================================================= */}
-      <section className="events-hero-section">
-        {/* Full-width Background Image & Dark Emerald Overlay */}
-        <div className="events-hero-bg">
-          <Image
-            src="/assets/event-hero-1-scaled.webp"
-            alt=""
-            aria-hidden="true"
-            fill
-            priority
-            className="events-hero-bg-img"
-          />
-        </div>
-
-        {/* Hero Content Container directly over full-width background */}
-        <div className="events-hero-container">
+      <section className="cs-hero-section">
+        <div className="cs-container">
           {/* Breadcrumbs */}
-          <nav aria-label="Breadcrumb" className="breadcrumbs justify-center mb-4" data-anim="from-top">
+          <nav className="breadcrumbs" aria-label="Breadcrumb">
             <Link href="/" className="breadcrumbs-item">
               Home
             </Link>
-            <span className="breadcrumbs-sep">/</span>
+            <span className="breadcrumbs-sep">›</span>
             <Link href="/igaming-licensing" className="breadcrumbs-item">
               Licensing &amp; Regulations
             </Link>
-            <span className="breadcrumbs-sep">/</span>
-            <span className="breadcrumbs-current">
+            <span className="breadcrumbs-sep">›</span>
+            <span className="breadcrumbs-item breadcrumbs-current">
               {data.title}
             </span>
           </nav>
 
-          <h1 className="events-hero-title" data-anim="from-top">
-            {data.title}
-          </h1>
-
-          <div className="events-hero-logo" data-anim="from-bottom" data-anim-delay="1">
+          {/* Hero Banner with 3D License Background */}
+          <div className="cs-hero-banner">
             <Image
-              src="/assets/logo.webp"
-              alt="Kvaornux"
-              width={320}
-              height={80}
-              className="w-auto h-12 sm:h-14 md:h-16 object-contain"
+              src={heroBgImage}
+              alt={data.title}
+              width={1600}
+              height={520}
               priority
+              className="cs-hero-banner-bg"
             />
-          </div>
+            <div className="cs-hero-banner-overlay"></div>
+            <div className="cs-hero-banner-content">
+              <h1 className="cs-hero-title">
+                {data.title}
+              </h1>
 
-          <div className="events-hero-name" data-anim="from-bottom" data-anim-delay="2">
-            {data.jurisdiction}
-          </div>
-
-          <p className="events-hero-desc" data-anim="from-bottom" data-anim-delay="2">
-            {data.summary}
-          </p>
-
-          <div data-anim="from-bottom" data-anim-delay="3">
-            <a
-              href="#contact-us"
-              onClick={handleScrollToContact}
-              className="btn btn-fill events-hero-btn"
-            >
-              <span>Discuss Your Casino Platform</span>
-            </a>
-          </div>
-
-          {/* Bottom Meta Chips Divider */}
-          <div className="events-hero-meta" data-anim="from-bottom" data-anim-delay="3">
-            <div className="event-info-wrapper">
-              <div className="event-chip">
-                <ShieldCheck className="event-chip-icon" size={20} />
-                <span>Anjouan, Union of Comoros</span>
+              <div className="cs-hero-description">
+                <p>{data.summary}</p>
               </div>
 
-              <div className="event-location">
-                <div className="event-chip">
-                  <Layers className="event-chip-icon" size={20} />
-                  <span>Casino &amp; Sportsbook</span>
-                </div>
-                <div className="event-chip event-chip--accent">
-                  <span>B2B &amp; B2C Scope</span>
-                </div>
+              <div className="cs-hero-tags">
+                {data.heroTags && data.heroTags.length > 0 ? (
+                  data.heroTags.map((tag, idx) => (
+                    <span key={idx} className="cs-hero-tag">
+                      {idx === 0 && <ShieldCheck className="w-5 h-5 text-[#00ebaa]" />}
+                      {idx === 1 && <Gamepad2 className="w-5 h-5 text-[#00ebaa]" />}
+                      {idx >= 2 && <Layers className="w-5 h-5 text-[#00ebaa]" />}
+                      <span>{tag}</span>
+                    </span>
+                  ))
+                ) : (
+                  <>
+                    <span className="cs-hero-tag">
+                      <ShieldCheck className="w-5 h-5 text-[#00ebaa]" />
+                      <span>{data.jurisdiction.split('(')[0].trim()}</span>
+                    </span>
+                    {permittedFact && (
+                      <span className="cs-hero-tag">
+                        <Gamepad2 className="w-5 h-5 text-[#00ebaa]" />
+                        <span>{permittedFact.value.includes('verification') ? 'Permitted Scope: Verification in Progress' : permittedFact.value}</span>
+                      </span>
+                    )}
+                    {modelFact && (
+                      <span className="cs-hero-tag">
+                        <Layers className="w-5 h-5 text-[#00ebaa]" />
+                        <span>{modelFact.value.includes('verification') ? 'Licensing Model: Verification in Progress' : modelFact.value}</span>
+                      </span>
+                    )}
+                  </>
+                )}
               </div>
             </div>
+          </div>
+
+          {/* FACTS CARDS (Matching Case Study 4-Card Spec) */}
+          <div className="cs-facts">
+            {factsList.map((fact, idx) => (
+              <div key={idx} className="cs-facts-item">
+                <span className="cs-facts-label">{fact.label}</span>
+                <span className="cs-facts-value">{fact.value}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -677,12 +664,28 @@ export default function JurisdictionDetailClient({ data }: Props) {
             <AlertTriangle className="text-yellow-400 shrink-0 mt-0.5" size={24} />
             <div>
               <div className="flex items-center gap-3 mb-1">
-                <span className="draft-badge">Review Draft</span>
-                <span className="text-yellow-400 text-sm font-semibold">Verification in Progress</span>
+                <span className="draft-badge">{data.noticeBadge || 'Review Draft'}</span>
+                <span className="text-yellow-400 text-sm font-semibold">{data.noticeHeading || 'Verification in Progress'}</span>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed m-0">
                 {data.noticeText}
               </p>
+              {data.noticeLinks && data.noticeLinks.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs">
+                  {data.noticeLinks.map((link, idx) => (
+                    <a
+                      key={idx}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#00ebaa] hover:underline inline-flex items-center gap-1 font-medium bg-[#00ebaa]/10 px-2.5 py-1 rounded"
+                    >
+                      <span>{link.label}</span>
+                      <ExternalLink size={12} />
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -691,7 +694,7 @@ export default function JurisdictionDetailClient({ data }: Props) {
             <main className="lg:col-span-8 blog-content">
               {/* 1. OVERVIEW */}
               <section id="overview" className="mb-14 scroll-mt-28">
-                <h2>Overview</h2>
+                <h2>{data.overviewHeading || 'Overview'}</h2>
                 {data.overviewText.map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
                 ))}
@@ -724,18 +727,20 @@ export default function JurisdictionDetailClient({ data }: Props) {
                         </tbody>
                       </table>
                     </div>
+                    {data.factsNote && (
+                      <p className="text-xs text-gray-400 mt-2 italic">{data.factsNote}</p>
+                    )}
                   </div>
                 )}
               </section>
 
               {/* 2. LICENSING AUTHORITY AND OFFICIAL RESOURCES */}
               <section id="licensing-authority-and-official-resources" className="mb-14 scroll-mt-28">
-                <h2>Licensing Authority and Official Resources</h2>
-                <p>
-                  Regulatory oversight for interactive gaming operations in Anjouan is managed through the local administrative gaming board and offshore authority framework.
-                </p>
-                {data.licensingAuthority.description && (
+                <h2>{data.authorityHeading || 'Licensing Authority and Official Resources'}</h2>
+                {data.licensingAuthority.description ? (
                   <p>{data.licensingAuthority.description}</p>
+                ) : (
+                  <p className="placeholder-tag">Licensing authority description pending verification.</p>
                 )}
 
                 <div className="glass-card p-6 rounded-xl my-6">
@@ -748,8 +753,9 @@ export default function JurisdictionDetailClient({ data }: Props) {
                       <li key={idx} className="flex items-center justify-between text-sm py-2 border-b border-white/5 last:border-none">
                         <span className="text-gray-300 font-medium">{resource.name}</span>
                         {resource.verified && resource.url ? (
-                          <a href={resource.url} target="_blank" rel="noopener noreferrer" className="text-[#00ebaa] hover:underline">
-                            Visit Official Site
+                          <a href={resource.url} target="_blank" rel="noopener noreferrer" className="text-[#00ebaa] hover:underline inline-flex items-center gap-1 font-medium">
+                            <span>{resource.linkLabel || 'Visit Official Site'}</span>
+                            <ExternalLink size={14} />
                           </a>
                         ) : (
                           <span className="placeholder-tag">{resource.description || 'Content pending verification'}</span>
@@ -762,31 +768,33 @@ export default function JurisdictionDetailClient({ data }: Props) {
 
               {/* 3. ELIGIBILITY AND COMPANY REQUIREMENTS */}
               <section id="eligibility-and-company-requirements" className="mb-14 scroll-mt-28">
-                <h2>Eligibility and Company Requirements</h2>
+                <h2>{data.eligibilityHeading || 'Eligibility and Company Requirements'}</h2>
                 <p>
-                  To apply for an offshore gaming license, applicants must satisfy standard corporate governance criteria, director fit-and-proper assessments, and AML operational standards.
+                  {data.eligibilityIntro || `To apply for a licence under ${data.jurisdiction.split('(')[0].trim()} regulations, applicants must satisfy established corporate governance criteria, director fit-and-proper assessments, and compliance standards.`}
                 </p>
-                <ul>
-                  {data.eligibilityRequirements.map((req, idx) => (
-                    <li key={idx}>
-                      {req.includes('verification') ? (
-                        <>
-                          {req.replace('(Content pending verification).', '')}
-                          <span className="placeholder-tag ml-1">Content pending verification</span>
-                        </>
-                      ) : (
-                        req
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                {data.eligibilityRequirements && data.eligibilityRequirements.length > 0 && (
+                  <ul>
+                    {data.eligibilityRequirements.map((req, idx) => (
+                      <li key={idx}>
+                        {req.includes('verification') ? (
+                          <>
+                            {req.replace('(Content pending verification).', '')}
+                            <span className="placeholder-tag ml-1">Content pending verification</span>
+                          </>
+                        ) : (
+                          req
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </section>
 
               {/* 4. APPLICATION DOCUMENTS */}
               <section id="application-documents" className="mb-14 scroll-mt-28">
-                <h2>Application Documents</h2>
+                <h2>{data.documentsHeading || 'Application Documents'}</h2>
                 <p>
-                  The following checklist reflects standard document dossier requirements typical for offshore gaming license applications. Individual requirements are confirmed during pre-submission due diligence.
+                  {data.documentsIntro || `The following checklist reflects standard document dossier requirements described in regulatory guidance for ${data.jurisdiction.split('(')[0].trim()}. Individual requirements are confirmed during pre-submission due diligence.`}
                 </p>
                 <div className="glass-card p-6 rounded-xl my-6">
                   <div className="space-y-4">
@@ -812,13 +820,16 @@ export default function JurisdictionDetailClient({ data }: Props) {
                     ))}
                   </div>
                 </div>
+                {data.documentsClosing && (
+                  <p className="text-gray-400 text-sm mt-2">{data.documentsClosing}</p>
+                )}
               </section>
 
               {/* 5. APPLICATION PROCESS */}
               <section id="application-process" className="mb-14 scroll-mt-28">
-                <h2>Application Process</h2>
+                <h2>{data.processHeading || 'Application Process'}</h2>
                 <p>
-                  The typical licensing workflow moves through legal formation, technical readiness assessment, formal submission, and operational clearance.
+                  {data.processIntro || 'The typical licensing workflow moves through legal formation, technical readiness assessment, formal submission, and operational clearance.'}
                 </p>
                 <div className="space-y-4 my-6">
                   {data.applicationProcessSteps.map((step) => (
@@ -833,125 +844,191 @@ export default function JurisdictionDetailClient({ data }: Props) {
                     </div>
                   ))}
                 </div>
+                {data.processTimingNote && (
+                  <p className="text-gray-400 text-sm mt-4 italic">{data.processTimingNote}</p>
+                )}
               </section>
 
               {/* 6. FEES AND ONGOING COSTS */}
               <section id="fees-and-ongoing-costs" className="mb-14 scroll-mt-28">
-                <h2>Fees and Ongoing Costs</h2>
+                <h2>{data.feesHeading || 'Fees and Ongoing Costs'}</h2>
                 <p>
-                  Statutory fees and renewal charges must be verified directly against official licensing authority schedules. Kvaornux does not broker licenses or publish unverified commercial fees.
+                  {data.feesIntro || 'Statutory fees and renewal charges must be verified directly against official licensing authority schedules. Kvaornux does not broker licenses or publish unverified commercial fees.'}
                 </p>
                 {data.fees && data.fees.length > 0 && (
                   <div className="overflow-x-auto my-6">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Fee Component</th>
-                          <th>Amount</th>
-                          <th>Currency</th>
-                          <th>Source &amp; Notes</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {data.fees.map((fee, idx) => (
-                          <tr key={idx}>
-                            <td className="font-medium text-white">{fee.item}</td>
-                            <td>
-                              <span className="placeholder-tag">{fee.amount}</span>
-                            </td>
-                            <td>{fee.currency}</td>
-                            <td className="text-xs text-gray-400">
-                              <div>{fee.notes}</div>
-                              <span className="text-[#00ebaa]/80 italic">({fee.source})</span>
-                            </td>
+                    {data.fees.some((f) => f.b2bAmount) ? (
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>{data.feesTableHeaders?.charge || 'Charge'}</th>
+                            <th>{data.feesTableHeaders?.b2c || 'B2C: serving players'}</th>
+                            <th>{data.feesTableHeaders?.b2b || 'B2B: supplying operators'}</th>
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
+                        </thead>
+                        <tbody>
+                          {data.fees.map((fee, idx) => (
+                            <tr key={idx}>
+                              <td className="font-medium text-white">{fee.item}</td>
+                              <td className="text-white">{fee.amount}</td>
+                              <td className="text-gray-300">{fee.b2bAmount || 'Not applicable'}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    ) : (
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Fee Component</th>
+                            <th>Amount</th>
+                            <th>Currency</th>
+                            <th>Source &amp; Notes</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {data.fees.map((fee, idx) => (
+                            <tr key={idx}>
+                              <td className="font-medium text-white">{fee.item}</td>
+                              <td>
+                                {fee.amount.includes('verification') ? (
+                                  <span className="placeholder-tag">{fee.amount}</span>
+                                ) : (
+                                  <span className="text-white font-medium">{fee.amount}</span>
+                                )}
+                              </td>
+                              <td>{fee.currency}</td>
+                              <td className="text-xs text-gray-400">
+                                <div>{fee.notes}</div>
+                                <span className="text-[#00ebaa]/80 italic">({fee.source})</span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    )}
+                  </div>
+                )}
+                {data.feesSupportingText && data.feesSupportingText.length > 0 && (
+                  <div className="space-y-3 mt-4">
+                    {data.feesSupportingText.map((p, idx) => (
+                      <p key={idx} className="text-gray-300 text-sm leading-relaxed m-0">{p}</p>
+                    ))}
                   </div>
                 )}
               </section>
 
               {/* 7. ONGOING OBLIGATIONS */}
               <section id="ongoing-obligations" className="mb-14 scroll-mt-28">
-                <h2>Ongoing Obligations</h2>
+                <h2>{data.obligationsHeading || 'Ongoing Obligations'}</h2>
                 <p>
-                  Licensed operators are required to uphold standard regulatory compliance, maintain transactional records, and observe operational standards on an ongoing basis:
+                  {data.obligationsIntro || 'Licensed operators are required to uphold standard regulatory compliance, maintain transactional records, and observe operational standards on an ongoing basis:'}
                 </p>
-                <ul>
-                  {data.ongoingObligations.map((obl, idx) => (
-                    <li key={idx}>{obl}</li>
-                  ))}
-                </ul>
+                {data.obligationsText && data.obligationsText.length > 0 && (
+                  <div className="space-y-3 mb-4">
+                    {data.obligationsText.map((p, idx) => (
+                      <p key={idx} className="text-gray-300 text-sm leading-relaxed m-0">{p}</p>
+                    ))}
+                  </div>
+                )}
+                {data.ongoingObligations && data.ongoingObligations.length > 0 && (
+                  <ul>
+                    {data.ongoingObligations.map((obl, idx) => (
+                      <li key={idx}>{obl}</li>
+                    ))}
+                  </ul>
+                )}
               </section>
 
               {/* 8. PLATFORM, GAMES AND PAYMENT PLANNING */}
               <section id="platform-games-and-payment-planning" className="mb-14 scroll-mt-28">
-                <h2>Platform, Games and Payment Planning</h2>
+                <h2>{data.platformHeading || 'Platform, Games and Payment Planning'}</h2>
                 <p>
-                  Operating an interactive gaming brand requires robust technical infrastructure designed to align with jurisdictional requirements:
+                  {data.platformIntro || 'Operating an interactive gaming brand requires robust technical infrastructure designed to align with jurisdictional requirements:'}
                 </p>
+                {data.platformSupportingCopy && (
+                  <p className="text-gray-300 text-sm leading-relaxed mb-6">
+                    {data.platformSupportingCopy}
+                  </p>
+                )}
 
                 <div className="space-y-5 my-6">
-                  <div className="glass-card p-6 rounded-xl">
-                    <h3 className="text-white font-bold text-lg mb-2 mt-0 flex items-center gap-2">
-                      <Layers className="text-[#00ebaa]" size={20} />
-                      <span>Platform Infrastructure</span>
-                    </h3>
-                    <p className="text-gray-300 text-sm mb-3">
-                      {data.platformPlanning.casinoTech}
-                    </p>
-                    <Link href="/turnkey-casino-software-solutions" className="text-xs uppercase font-semibold tracking-wider text-[#00ebaa] hover:underline inline-flex items-center gap-1">
-                      <span>Explore Turnkey Platform Architecture</span>
-                      <ArrowRight size={14} />
-                    </Link>
-                  </div>
+                  {data.platformPlanning.cards && data.platformPlanning.cards.length > 0 ? (
+                    data.platformPlanning.cards.map((card, idx) => (
+                      <div key={idx} className="glass-card p-6 rounded-xl">
+                        <h3 className="text-white font-bold text-lg mb-2 mt-0 flex items-center gap-2">
+                          <Layers className="text-[#00ebaa]" size={20} />
+                          <span>{card.title}</span>
+                        </h3>
+                        <p className="text-gray-300 text-sm mb-3">
+                          {card.description}
+                        </p>
+                        <Link href={card.linkHref} className="text-xs uppercase font-semibold tracking-wider text-[#00ebaa] hover:underline inline-flex items-center gap-1">
+                          <span>{card.linkText || (idx === 0 ? 'Explore Turnkey Platform Architecture' : idx === 1 ? 'Explore Game Aggregator API' : 'Explore Crypto & Fiat Wallet Capabilities')}</span>
+                          <ArrowRight size={14} />
+                        </Link>
+                      </div>
+                    ))
+                  ) : (
+                    <>
+                      <div className="glass-card p-6 rounded-xl">
+                        <h3 className="text-white font-bold text-lg mb-2 mt-0 flex items-center gap-2">
+                          <Layers className="text-[#00ebaa]" size={20} />
+                          <span>Platform Infrastructure</span>
+                        </h3>
+                        <p className="text-gray-300 text-sm mb-3">
+                          {data.platformPlanning.casinoTech}
+                        </p>
+                        <Link href="/turnkey-casino-software-solutions" className="text-xs uppercase font-semibold tracking-wider text-[#00ebaa] hover:underline inline-flex items-center gap-1">
+                          <span>Explore Turnkey Platform Architecture</span>
+                          <ArrowRight size={14} />
+                        </Link>
+                      </div>
 
-                  <div className="glass-card p-6 rounded-xl">
-                    <h3 className="text-white font-bold text-lg mb-2 mt-0 flex items-center gap-2">
-                      <Layers className="text-[#00ebaa]" size={20} />
-                      <span>Game Content &amp; Aggregation</span>
-                    </h3>
-                    <p className="text-gray-300 text-sm mb-3">
-                      {data.platformPlanning.gameAggregation}
-                    </p>
-                    <Link href="/casino-aggregator-api-solution" className="text-xs uppercase font-semibold tracking-wider text-[#00ebaa] hover:underline inline-flex items-center gap-1">
-                      <span>Explore Game Aggregator API</span>
-                      <ArrowRight size={14} />
-                    </Link>
-                  </div>
+                      <div className="glass-card p-6 rounded-xl">
+                        <h3 className="text-white font-bold text-lg mb-2 mt-0 flex items-center gap-2">
+                          <Layers className="text-[#00ebaa]" size={20} />
+                          <span>Game Content &amp; Aggregation</span>
+                        </h3>
+                        <p className="text-gray-300 text-sm mb-3">
+                          {data.platformPlanning.gameAggregation}
+                        </p>
+                        <Link href="/casino-aggregator-api-solution" className="text-xs uppercase font-semibold tracking-wider text-[#00ebaa] hover:underline inline-flex items-center gap-1">
+                          <span>Explore Game Aggregator API</span>
+                          <ArrowRight size={14} />
+                        </Link>
+                      </div>
 
-                  <div className="glass-card p-6 rounded-xl">
-                    <h3 className="text-white font-bold text-lg mb-2 mt-0 flex items-center gap-2">
-                      <Layers className="text-[#00ebaa]" size={20} />
-                      <span>Payments &amp; Ledger Reconciliation</span>
-                    </h3>
-                    <p className="text-gray-300 text-sm mb-3">
-                      {data.platformPlanning.paymentsAndWallets}
-                    </p>
-                    <Link href="/crypto-casino-software" className="text-xs uppercase font-semibold tracking-wider text-[#00ebaa] hover:underline inline-flex items-center gap-1">
-                      <span>Explore Crypto &amp; Fiat Wallet Capabilities</span>
-                      <ArrowRight size={14} />
-                    </Link>
-                  </div>
+                      <div className="glass-card p-6 rounded-xl">
+                        <h3 className="text-white font-bold text-lg mb-2 mt-0 flex items-center gap-2">
+                          <Layers className="text-[#00ebaa]" size={20} />
+                          <span>Payments &amp; Ledger Reconciliation</span>
+                        </h3>
+                        <p className="text-gray-300 text-sm mb-3">
+                          {data.platformPlanning.paymentsAndWallets}
+                        </p>
+                        <Link href="/crypto-casino-software" className="text-xs uppercase font-semibold tracking-wider text-[#00ebaa] hover:underline inline-flex items-center gap-1">
+                          <span>Explore Crypto &amp; Fiat Wallet Capabilities</span>
+                          <ArrowRight size={14} />
+                        </Link>
+                      </div>
+                    </>
+                  )}
                 </div>
 
-                {/* Software Provider Scope Notice */}
-                <div className="p-5 rounded-xl border border-white/10 bg-white/[0.02] text-xs text-gray-400 leading-relaxed my-6">
-                  <strong className="text-white block mb-1">Notice of Software Scope:</strong>
-                  Kvaornux is a B2B technology provider supplying gaming software, game aggregation, and platform infrastructure. Kvaornux does not issue gaming licenses, provide legal advice, represent regulatory authorities, or guarantee licensing approval. Licensing remains the sole responsibility of the operating entity.
+                <div className="mt-8 pt-2">
+                  <a
+                    href="#contact-us"
+                    onClick={handleScrollToContact}
+                    className="inline-flex items-center justify-center rounded-full bg-[#00ebaa] text-black font-semibold text-sm px-6 py-3 hover:bg-[#00d69b] transition-all gap-2"
+                  >
+                    <span>Discuss Your Platform</span>
+                    <ArrowRight size={16} />
+                  </a>
                 </div>
               </section>
 
-              {/* 9. FREQUENTLY ASKED QUESTIONS (Conditionally rendered) */}
-              {hasFaqs && (
-                <section id="frequently-asked-questions" className="mb-14 scroll-mt-28">
-                  <h2>Frequently Asked Questions</h2>
-                  <FAQSection faqs={data.faqs} hideBgImage />
-                </section>
-              )}
-
-              {/* 10. SOURCES AND REVIEW DATE */}
+              {/* 9. SOURCES AND REVIEW DATE */}
               <section id="sources-and-review-date" className="mb-14 scroll-mt-28">
                 <h2>Sources and Review Date</h2>
                 <p>
@@ -960,12 +1037,24 @@ export default function JurisdictionDetailClient({ data }: Props) {
 
                 <div className="glass-card p-6 rounded-xl my-4 text-sm">
                   <div className="mb-4">
-                    <span className="text-gray-400 block mb-1 font-medium">Source References:</span>
+                    <span className="text-gray-400 block mb-2 font-medium">Source References:</span>
                     {data.sources && data.sources.length > 0 ? (
-                      <ul className="list-disc pl-5 m-0 space-y-1 text-gray-300">
+                      <ul className="list-disc pl-5 m-0 space-y-2 text-gray-300">
                         {data.sources.map((src, idx) => (
                           <li key={idx}>
-                            <span>{src.title}</span>
+                            {src.url ? (
+                              <a
+                                href={src.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-[#00ebaa] hover:underline inline-flex items-center gap-1"
+                              >
+                                <span>{src.title}</span>
+                                <ExternalLink size={12} />
+                              </a>
+                            ) : (
+                              <span>{src.title}</span>
+                            )}
                             {src.notes && <span className="text-gray-400 ml-1">({src.notes})</span>}
                           </li>
                         ))}
@@ -1020,7 +1109,7 @@ export default function JurisdictionDetailClient({ data }: Props) {
                     onClick={handleScrollToContact}
                     className="portfolio-hero-btn text-xs py-2 px-4 h-auto w-full font-bold"
                   >
-                    <span>Discuss Your Casino Platform</span>
+                    <span>Discuss Your Platform</span>
                   </a>
                 </div>
               </div>
@@ -1028,6 +1117,15 @@ export default function JurisdictionDetailClient({ data }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Frequently Asked Questions (Standalone Full-Width matching CustomSweepstakesClient design) */}
+      {hasFaqs && (
+        <FAQSection
+          id="frequently-asked-questions"
+          customFaqData={data.faqs}
+          hideBgImage={true}
+        />
+      )}
 
       {/* Contact Section */}
       <section id="contact-us" className="py-16 bg-[#0b0b0f] relative z-10 border-t border-white/10">

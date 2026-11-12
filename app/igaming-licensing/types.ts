@@ -7,6 +7,7 @@ export interface FeeItem {
   item: string;
   amount: string;
   currency: string;
+  b2bAmount?: string;
   source?: string;
   notes?: string;
 }
@@ -22,6 +23,7 @@ export interface OfficialResource {
   url?: string;
   verified: boolean;
   description?: string;
+  linkLabel?: string;
 }
 
 export interface FAQItem {
@@ -36,29 +38,67 @@ export interface SourceReference {
   notes?: string;
 }
 
+export interface NoticeLink {
+  label: string;
+  url: string;
+}
+
+export interface PlatformPlanningCard {
+  title: string;
+  description: string;
+  linkText?: string;
+  linkHref: string;
+}
+
 export interface JurisdictionGuideData {
   slug: string;
   title: string;
   jurisdiction: string;
   summary: string;
   status: 'draft' | 'verified';
+  noticeBadge?: string;
+  noticeHeading?: string;
   noticeText: string;
+  noticeLinks?: NoticeLink[];
+  overviewHeading?: string;
   overviewText: string[];
   facts?: JurisdictionFact[];
+  factsNote?: string;
+  heroTags?: string[];
+  authorityHeading?: string;
   licensingAuthority: {
     name: string;
     description?: string;
     officialResources?: OfficialResource[];
   };
-  eligibilityRequirements: string[];
+  eligibilityHeading?: string;
+  eligibilityIntro?: string;
+  eligibilityRequirements?: string[];
+  documentsHeading?: string;
+  documentsIntro?: string;
+  documentsClosing?: string;
   applicationDocuments: DocumentChecklistItem[];
+  processHeading?: string;
+  processIntro?: string;
+  processTimingNote?: string;
   applicationProcessSteps: { step: number; title: string; text: string }[];
+  feesHeading?: string;
+  feesIntro?: string;
+  feesTableHeaders?: { charge?: string; b2c?: string; b2b?: string };
+  feesSupportingText?: string[];
   fees?: FeeItem[];
+  obligationsHeading?: string;
+  obligationsIntro?: string;
+  obligationsText?: string[];
   ongoingObligations: string[];
+  platformHeading?: string;
+  platformIntro?: string;
+  platformSupportingCopy?: string;
   platformPlanning: {
     casinoTech: string;
     gameAggregation: string;
     paymentsAndWallets: string;
+    cards?: PlatformPlanningCard[];
   };
   faqs?: FAQItem[];
   sources?: SourceReference[];

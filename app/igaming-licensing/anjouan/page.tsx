@@ -3,9 +3,9 @@ import JurisdictionDetailClient from '../JurisdictionDetailClient';
 import { anjouanData } from './data';
 
 export const metadata: Metadata = {
-  title: 'Anjouan Gaming License | iGaming Licensing & Regulations | Kvaornux',
+  title: 'Anjouan Gaming License: Costs & Requirements | Kvaornux',
   description:
-    'Operational and regulatory reference guide for the Anjouan offshore gaming license, covering statutory frameworks, application requirements, and technical casino platform planning.',
+    'Explore Anjouan gaming licence fees, requirements, application steps and verification checks. Understand what to confirm before planning your casino platform.',
   alternates: {
     canonical: 'https://kvaornux.com/igaming-licensing/anjouan',
   },
@@ -16,6 +16,19 @@ export const metadata: Metadata = {
       index: false,
       follow: true,
     },
+  },
+  openGraph: {
+    title: 'Anjouan Gaming License: Costs & Requirements | Kvaornux',
+    description:
+      'Explore Anjouan gaming licence fees, requirements, application steps and verification checks. Understand what to confirm before planning your casino platform.',
+    url: 'https://kvaornux.com/igaming-licensing/anjouan',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Anjouan Gaming License: Costs & Requirements | Kvaornux',
+    description:
+      'Explore Anjouan gaming licence fees, requirements, application steps and verification checks. Understand what to confirm before planning your casino platform.',
   },
 };
 

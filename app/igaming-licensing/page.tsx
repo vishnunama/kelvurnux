@@ -4,7 +4,7 @@ import LicensingHubClient from './LicensingHubClient';
 export const metadata: Metadata = {
   title: 'iGaming Licensing & Regulations | Kvaornux',
   description:
-    'Explore licensing requirements, application steps and official resources to help you plan your casino or sportsbook project.',
+    'Explore gaming licence requirements, costs, application steps and official resources. Plan the software for your casino or sportsbook with Kvaornux.',
   alternates: {
     canonical: 'https://kvaornux.com/igaming-licensing',
   },

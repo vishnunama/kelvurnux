@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Layout, Key, Zap, ShieldCheck, Layers, ArrowRight } from 'lucide-react';
+import { Layout, Key, Zap, ShieldCheck, Layers } from 'lucide-react';
 import ContactForm from '@/src/components/contactform/ContactForm';
 import DiscoverMore from '@/src/components/Discovermore/Discovermore';
 import StepsSection from '@/src/components/stepssection/StepsSection';
@@ -44,6 +44,8 @@ const resetAllAnimations = () => {
 export default function LicensingHubClient() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   useEffect(() => {
     resetAllAnimations();
@@ -70,14 +72,78 @@ export default function LicensingHubClient() {
       slug: 'anjouan',
       link: '/igaming-licensing/anjouan',
       description:
-        'Offshore regulatory framework covering online casino, sportsbook, and game aggregation operations under a unified license model.',
+        'Explore Anjouan gaming licence requirements, application steps, costs and official resources for planning your project.',
       image: '/assets/licensing/anjouan-gaming-license.webp',
       imageAlt: 'Anjouan Gaming License Regulatory Framework and Compliance',
       features: [
-        'Anjouan (Union of Comoros)',
-        'Casino & Sportsbook Scope',
-        'B2B & B2C Operations',
-        'Review Draft Available',
+        'Licensing requirements',
+        'Application documents',
+        'Fees and ongoing costs',
+        'Official resources',
+      ],
+    },
+    {
+      id: 'curacao',
+      title: 'Curaçao Gaming License',
+      slug: 'curacao',
+      link: '/igaming-licensing/curacao',
+      description:
+        'Explore Curaçao gaming licence requirements, application steps, costs and official resources for planning your project.',
+      image: '/assets/licensing/curacao-gaming-license.webp',
+      imageAlt: 'Curaçao Gaming License GCB Regulatory Framework',
+      features: [
+        'Licensing requirements',
+        'Application documents',
+        'Fees and ongoing costs',
+        'Official resources',
+      ],
+    },
+    {
+      id: 'malta',
+      title: 'Malta Gaming License',
+      slug: 'malta',
+      link: '/igaming-licensing/malta',
+      description:
+        'Explore Malta gaming licence requirements, application steps, costs and official resources for planning your project.',
+      image: '/assets/licensing/malta-mga-license.webp',
+      imageAlt: 'Malta Gaming Authority MGA Regulatory Framework',
+      features: [
+        'Licensing requirements',
+        'Application documents',
+        'Fees and ongoing costs',
+        'Official resources',
+      ],
+    },
+    {
+      id: 'kahnawake',
+      title: 'Kahnawake Gaming License',
+      slug: 'kahnawake',
+      link: '/igaming-licensing/kahnawake',
+      description:
+        'Explore Kahnawake gaming licence requirements, application steps, costs and official resources for planning your project.',
+      image: '/assets/licensing/kahnawake-license-3d.webp',
+      imageAlt: 'Kahnawake Gaming Commission Regulatory Framework',
+      features: [
+        'Licensing requirements',
+        'Application documents',
+        'Fees and ongoing costs',
+        'Official resources',
+      ],
+    },
+    {
+      id: 'isle-of-man',
+      title: 'Isle of Man Gaming License',
+      slug: 'isle-of-man',
+      link: '/igaming-licensing/isle-of-man',
+      description:
+        'Explore Isle of Man gaming licence requirements, application steps, costs and official resources for planning your project.',
+      image: '/assets/licensing/isle-of-man-license-3d.webp',
+      imageAlt: 'Isle of Man Gambling Supervision Commission Regulatory Framework',
+      features: [
+        'Licensing requirements',
+        'Application documents',
+        'Fees and ongoing costs',
+        'Official resources',
       ],
     },
   ];
@@ -91,6 +157,53 @@ export default function LicensingHubClient() {
       j.features.some((f) => f.toLowerCase().includes(q))
     );
   });
+
+  const handlePrev = () => {
+    if (filteredJurisdictions.length <= 1) return;
+    setActiveSlideIndex((prev) => (prev - 1 + filteredJurisdictions.length) % filteredJurisdictions.length);
+  };
+
+  const handleNext = () => {
+    if (filteredJurisdictions.length <= 1) return;
+    setActiveSlideIndex((prev) => (prev + 1) % filteredJurisdictions.length);
+  };
+
+  // Keyboard navigation (ArrowLeft & ArrowRight)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'ArrowRight') handleNext();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [filteredJurisdictions.length]);
+
+  // Autoplay with pause on hover
+  useEffect(() => {
+    if (isPaused || filteredJurisdictions.length <= 1) return;
+    const interval = setInterval(() => {
+      setActiveSlideIndex((prev) => (prev + 1) % filteredJurisdictions.length);
+    }, 6500);
+    return () => clearInterval(interval);
+  }, [isPaused, filteredJurisdictions.length]);
+
+  // Mobile Touch Swipe Navigation
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (diff > 50) {
+      handleNext();
+    } else if (diff < -50) {
+      handlePrev();
+    }
+    setTouchStartX(null);
+  };
 
   const currentItem = filteredJurisdictions[activeSlideIndex] || filteredJurisdictions[0];
 
@@ -160,7 +273,7 @@ export default function LicensingHubClient() {
           height: 100% !important;
           display: block;
           opacity: 0.85;
-          filter: hue-rotate(-120deg) saturate(1.15) brightness(0.68) contrast(1.18);
+          filter: hue-rotate(-95deg) saturate(1.2) brightness(0.48) contrast(1.22);
         }
 
         /* Subtle emerald glow matching exact user specification */
@@ -243,39 +356,42 @@ export default function LicensingHubClient() {
         }
 
         .events-hero-btn {
+          font-family: 'Gabarito', sans-serif;
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          outline: 0;
           border: none;
-          cursor: pointer;
-          font-weight: 700;
-          min-width: 270px;
-          height: 3.6rem;
-          padding: 0.85rem 2.4rem;
-          font-size: 1.05rem;
+          outline: none;
+          width: fit-content;
+          max-width: 100%;
           border-radius: 9999px;
-          position: relative;
+          padding: 0.75rem 2.25rem;
+          min-height: 3.25rem;
+          background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
+          cursor: pointer;
           color: #04160f;
+          font-weight: 700;
+          font-size: 1.05rem;
+          line-height: 1.2;
           text-decoration: none;
           text-align: center;
-          line-height: 1.5;
-          background: radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%);
-          box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.65) inset, 0 10px 24px rgba(0, 235, 170, 0.32);
-          transition: filter 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+          overflow: hidden;
+          transition: filter 0.25s ease;
+          box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
+          box-sizing: border-box;
           margin-bottom: 0.5rem;
         }
 
         .events-hero-btn:hover {
+          transform: none;
           filter: brightness(0.92);
-          transform: translateY(-2px);
           color: #04160f;
-          box-shadow: 0 1px 2px 0 rgba(255, 255, 255, 0.65) inset, 0 14px 30px rgba(0, 235, 170, 0.45);
+          box-shadow: 0 1px 1.5px 0 rgba(255, 255, 255, 0.65) inset, 0 -2px 3.5px 0 rgba(0, 130, 85, 0.3) inset;
         }
 
         .events-hero-btn:active {
+          transform: none;
           filter: brightness(0.86);
-          transform: translateY(0);
         }
 
         .events-hero-meta {
@@ -419,68 +535,14 @@ export default function LicensingHubClient() {
           -webkit-text-fill-color: transparent;
         }
 
-        /* REUSABLE SEARCH CONTROL */
-        .cs-search {
-          flex-grow: 1;
-          max-width: 320px;
-          min-width: 200px;
-        }
-
-        .cs-search-field {
-          position: relative;
-          display: flex;
-          align-items: center;
-        }
-
-        .cs-search-icon {
-          position: absolute;
-          left: 1.1rem;
-          width: 1.4rem;
-          height: 1.4rem;
-          pointer-events: none;
-        }
-
-        .cs-search-input {
-          width: 100%;
-          padding: 0.65rem 2.8rem 0.65rem 3.2rem;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.18);
-          border-radius: 9.9rem;
-          color: #fff;
-          font-size: 1.05rem;
-          outline: none;
-          transition: border-color 0.3s ease, background 0.3s ease;
-        }
-
-        .cs-search-input::placeholder {
-          color: #71717a;
-        }
-
-        .cs-search-input:focus {
-          border-color: #00ebaa;
-          background: rgba(255, 255, 255, 0.08);
-        }
-
-        .cs-search-clear {
-          position: absolute;
-          right: 1.4rem;
-          background: transparent;
-          border: none;
-          color: #00ebaa;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0;
-        }
-
-        /* Large Outer Card Panel (matching exact user specification) */
+        /* Large Outer Card Panel */
         .events-gallery-panel {
           position: relative;
           border-radius: 2.2rem;
           overflow: hidden;
-          background: linear-gradient(180deg, rgba(0, 235, 170, 0.18) 0%, rgba(0, 235, 170, 0.12) 32.21%, rgba(0, 235, 170, 0.07) 68.75%, rgba(0, 235, 170, 0.03) 100%), #10161a;
-          box-shadow: 0 -2px 4.7px 0 rgba(0, 235, 170, 0.3) inset, 0 24px 70px rgba(0, 0, 0, 0.65);
+          background: linear-gradient(180deg, rgba(0, 235, 170, 0.10) 0%, rgba(0, 235, 170, 0.04) 40%, rgba(0, 235, 170, 0.01) 100%), #12181d;
+          border: none;
+          box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           padding: 0;
@@ -525,38 +587,23 @@ export default function LicensingHubClient() {
           transform: scale(1.02);
         }
 
-        /* Left Floating Info Box - Directly attached / overlapping the image */
+        /* Left Floating Info Box - Directly attached / overlapping the image with site theme */
         .events-gallery-slide-info {
           position: relative;
           z-index: 2;
           width: 440px;
           max-width: 44%;
           margin: clamp(1.2rem, 2vw, 2rem) 0 clamp(1.2rem, 2vw, 2rem) clamp(1.2rem, 2vw, 2rem);
-          background: rgba(7, 22, 17, 0.92);
-          backdrop-filter: blur(24px);
-          -webkit-backdrop-filter: blur(24px);
+          background: linear-gradient(180deg, rgba(0, 235, 170, 0.18) 0%, rgba(0, 235, 170, 0.12) 32.21%, rgba(0, 235, 170, 0.07) 68.75%, rgba(0, 235, 170, 0.03) 100%), #0a141a;
+          border: 1px solid rgba(0, 235, 170, 0.35);
+          box-shadow: 0 -2px 4.7px 0 rgba(0, 235, 170, 0.3) inset, 0 20px 50px rgba(0, 0, 0, 0.7);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
           border-radius: 1.8rem;
           padding: clamp(1.8rem, 2.4vw, 2.4rem);
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          border: none;
-          box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7);
-        }
-
-        .events-gallery-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          font-size: 0.8rem;
-          font-weight: 600;
-          color: #00ebaa;
-          background: rgba(0, 235, 170, 0.12);
-          border: none;
-          padding: 0.35rem 0.85rem;
-          border-radius: 9999px;
-          width: fit-content;
-          margin-bottom: 1rem;
         }
 
         .events-gallery-slide-title {
@@ -595,7 +642,6 @@ export default function LicensingHubClient() {
         .events-gallery-btn-row {
           display: flex;
           align-items: center;
-          justify-content: space-between;
           margin-top: auto;
           padding-top: 1rem;
         }
@@ -603,36 +649,36 @@ export default function LicensingHubClient() {
         .events-guide-btn {
           display: inline-flex;
           align-items: center;
-          gap: 0.6rem;
-          font-size: 1rem;
+          font-size: 1.05rem;
           font-weight: 700;
           color: #00ebaa;
           text-decoration: none;
-          transition: gap 0.25s ease, color 0.25s ease;
+          background: transparent;
+          border: none;
+          outline: none;
+          padding: 0;
+          transition: color 0.25s ease, opacity 0.25s ease;
+          letter-spacing: -0.01em;
+          cursor: pointer;
         }
 
         .events-guide-btn:hover {
-          gap: 0.85rem;
           color: #46ffc8;
+          opacity: 0.9;
         }
 
-        .events-guide-btn-arrow {
+        .events-gallery-toolbar-actions {
           display: flex;
           align-items: center;
-          justify-content: center;
-          width: 2.75rem;
-          height: 2.75rem;
-          border-radius: 9999px;
-          background: #00ebaa;
-          color: #04160f;
-          box-shadow: 0 0 16px rgba(0, 235, 170, 0.45);
-          transition: transform 0.25s ease, filter 0.25s ease;
-          border: none;
+          gap: 1rem;
         }
 
-        .events-guide-btn-arrow:hover {
-          transform: scale(1.08);
-          filter: brightness(1.05);
+        .events-gallery-controls-footer {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 1.4rem;
+          gap: 1rem;
         }
 
         /* Dots Pagination matching Image 1 */
@@ -640,7 +686,7 @@ export default function LicensingHubClient() {
           display: flex;
           align-items: center;
           gap: 0.55rem;
-          margin-top: 1.4rem;
+          margin-top: 0;
         }
 
         .events-gallery-dot {
@@ -655,12 +701,79 @@ export default function LicensingHubClient() {
         }
 
         .events-gallery-dot.active {
-          width: 22px;
+          width: 24px;
           background: #00ebaa;
           box-shadow: 0 0 10px rgba(0, 235, 170, 0.6);
         }
 
+        /* Slider Navigation Buttons matching Image 2 */
+        .events-slider-nav,
+        .events-toolbar-nav {
+          display: flex;
+          align-items: center;
+          gap: 0.65rem;
+        }
+
+        .events-toolbar-nav {
+          display: none;
+        }
+
+        @media (min-width: 768px) {
+          .events-toolbar-nav {
+            display: flex;
+          }
+        }
+
+        .events-nav-btn {
+          width: 2.85rem;
+          min-width: 2.85rem;
+          height: 2.85rem;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.08);
+          box-shadow: 0 -3px 4px 0 rgba(6, 10, 13, 0.26) inset, 0 2px 2.8px 0 rgba(255, 255, 255, 0.13) inset;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          color: #ffffff;
+          transition: all 0.25s cubic-bezier(0.32, 0.72, 0.3, 1);
+          outline: none;
+        }
+
+        .events-nav-btn:hover {
+          background: rgba(0, 235, 170, 0.22);
+          border-color: rgba(0, 235, 170, 0.4);
+          color: #00ebaa;
+          transform: scale(1.08);
+        }
+
+        .events-nav-btn:active {
+          transform: scale(0.94);
+        }
+
+        .events-slide-animated {
+          animation: slideCrossFade 0.4s ease-out;
+        }
+
+        @keyframes slideCrossFade {
+          from {
+            opacity: 0.4;
+            transform: translateY(6px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         @media (max-width: 1024px) {
+          .events-gallery-panel {
+            border-radius: 1.8rem;
+            background: linear-gradient(180deg, rgba(0, 235, 170, 0.12) 0%, rgba(0, 235, 170, 0.05) 40%, rgba(0, 235, 170, 0.01) 100%), #12181d;
+            border: none !important;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5);
+          }
           .events-gallery-slide {
             flex-direction: column-reverse;
             min-height: auto;
@@ -668,12 +781,147 @@ export default function LicensingHubClient() {
           .events-gallery-slide-img {
             position: relative;
             width: 100%;
-            height: 320px;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            max-height: 280px;
+            min-height: 200px;
+            display: block;
+            border: none !important;
+            border-bottom: none !important;
+            outline: none;
           }
           .events-gallery-slide-info {
             width: 100%;
             max-width: 100%;
-            margin: 1.2rem;
+            margin: 0;
+            background: transparent;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 1.5rem 1.35rem 1.6rem;
+            border: none !important;
+            border-top: none !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .events-gallery-section {
+            padding: 2.5rem 0 3.5rem;
+          }
+          .events-gallery-container {
+            padding: 0 1rem;
+          }
+          .events-gallery-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+          }
+          .events-gallery-title-group {
+            width: auto;
+            display: flex;
+            align-items: center;
+          }
+          .events-gallery-title {
+            font-size: 1.85rem;
+          }
+          .events-gallery-toolbar-actions {
+            width: auto;
+          }
+          .cs-search {
+            width: 100%;
+            max-width: 100%;
+          }
+          .cs-search-input {
+            font-size: 0.95rem;
+            padding: 0.6rem 2.4rem 0.6rem 2.8rem;
+          }
+
+          /* Mobile Card Panel: single clean unified card without border */
+          .events-gallery-panel {
+            border-radius: 1.6rem;
+            background: linear-gradient(180deg, rgba(0, 235, 170, 0.12) 0%, rgba(0, 235, 170, 0.05) 40%, rgba(0, 235, 170, 0.01) 100%), #12181d;
+            border: none !important;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5);
+          }
+
+          .events-gallery-slide-img {
+            max-height: 220px;
+            min-height: 180px;
+            border: none !important;
+            border-bottom: none !important;
+          }
+
+          .events-gallery-slide-info {
+            padding: 1.25rem 1.15rem 1.35rem;
+            border: none !important;
+            border-top: none !important;
+          }
+
+          .events-gallery-slide-title {
+            font-size: 1.4rem;
+            line-height: 1.25;
+            margin-bottom: 0.65rem;
+          }
+
+          .events-gallery-slide-desc {
+            font-size: 0.88rem;
+            line-height: 1.55;
+            margin-bottom: 1rem;
+          }
+
+          .events-gallery-features {
+            gap: 0.55rem;
+            margin-bottom: 1.25rem;
+          }
+
+          .events-gallery-feature {
+            font-size: 0.85rem;
+          }
+
+          /* Mobile View Guide Link */
+          .events-gallery-btn-row {
+            padding-top: 0.25rem;
+            width: 100%;
+          }
+
+          .events-guide-btn {
+            font-size: 0.98rem;
+          }
+
+          /* Mobile Slider Controls: Prev/Next on LEFT, Dots on RIGHT/CENTER */
+          /* Padded away from floating WhatsApp/Telegram buttons on bottom-right */
+          .events-gallery-controls-footer {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 1.15rem;
+            padding-right: 3.5rem;
+          }
+
+          .events-slider-nav {
+            gap: 0.5rem;
+          }
+
+          .events-nav-btn {
+            width: 2.5rem;
+            min-width: 2.5rem;
+            height: 2.5rem;
+          }
+
+          .events-gallery-dots {
+            gap: 0.45rem;
+          }
+
+          .events-gallery-dot {
+            width: 7px;
+            height: 7px;
+          }
+
+          .events-gallery-dot.active {
+            width: 20px;
           }
         }
       `}</style>
@@ -717,7 +965,7 @@ export default function LicensingHubClient() {
           </div>
 
           <p className="events-hero-desc" data-anim="from-bottom" data-anim-delay="2">
-            Explore licensing requirements, application steps and official resources to help you plan your casino or sportsbook project.
+            Explore gaming licence requirements, costs and application steps. Find official resources and understand what to prepare for your casino or sportsbook platform.
           </p>
 
           <div data-anim="from-bottom" data-anim-delay="3">
@@ -726,7 +974,7 @@ export default function LicensingHubClient() {
               onClick={handleScrollToContact}
               className="btn btn-fill events-hero-btn"
             >
-              <span>Discuss Your Casino Platform</span>
+              <span>Discuss Your Platform</span>
             </a>
           </div>
 
@@ -758,38 +1006,38 @@ export default function LicensingHubClient() {
       <section className="events-gallery-section events-panel">
         <div className="events-gallery-container">
           <div className="events-gallery-toolbar" data-anim="from-top">
-            <h2 className="events-gallery-title">
-              Jurisdictions
-            </h2>
+            <div className="flex items-center">
+              <h2 className="events-gallery-title">
+                Jurisdictions
+              </h2>
+            </div>
 
-            {/* Jurisdiction Search Field */}
-            <div className="cs-search">
-              <div className="cs-search-field">
-                <svg className="cs-search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M18.031 16.617L22.314 20.899L20.899 22.314L16.617 18.031C15.0237 19.3082 13.042 20.0029 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20.0029 13.042 19.3082 15.0237 18.031 16.617ZM16.025 15.875C17.2938 14.5697 18.0025 12.8204 18 11C18 7.133 14.867 4 11 4C7.133 4 4 7.133 4 11C4 14.867 7.133 18 11 18C12.8204 18.0025 14.5697 17.2938 15.875 16.025L16.025 15.875Z" fill="#8EE8FF"></path>
-                </svg>
-                <input
-                  type="search"
-                  className="cs-search-input"
-                  placeholder="Search jurisdictions..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  autoComplete="off"
-                />
-                {searchQuery && (
+            <div className="events-gallery-toolbar-actions">
+              {/* Toolbar Navigation Buttons (matching Image 2) */}
+              {filteredJurisdictions.length > 1 && (
+                <div className="events-toolbar-nav">
                   <button
                     type="button"
-                    className="cs-search-clear"
-                    aria-label="Clear search"
-                    onClick={() => setSearchQuery('')}
+                    className="events-nav-btn"
+                    onClick={handlePrev}
+                    aria-label="Previous license"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="6" x2="6" y2="18"></line>
-                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
-                )}
-              </div>
+                  <button
+                    type="button"
+                    className="events-nav-btn"
+                    onClick={handleNext}
+                    aria-label="Next license"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
 
@@ -799,15 +1047,19 @@ export default function LicensingHubClient() {
               No jurisdictions found matching your criteria.
             </div>
           ) : (
-            <div className="events-gallery-panel" data-anim="from-bottom" data-anim-delay="1">
-              <div className="events-gallery-slide">
+            <div
+              className="events-gallery-panel"
+              data-anim="from-bottom"
+              data-anim-delay="1"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div key={currentItem.id} className="events-gallery-slide events-slide-animated">
                 {/* Left Floating Info Box */}
                 <div className="events-gallery-slide-info">
                   <div>
-                    <span className="events-gallery-badge">
-                      Union of Comoros · Unified License
-                    </span>
-
                     <h3 className="events-gallery-slide-title">
                       {currentItem.title}
                     </h3>
@@ -833,26 +1085,45 @@ export default function LicensingHubClient() {
                       <Link href={currentItem.link} className="events-guide-btn">
                         <span>View Guide</span>
                       </Link>
-                      <Link
-                        href={currentItem.link}
-                        className="events-guide-btn-arrow"
-                        aria-label={`View ${currentItem.title}`}
-                      >
-                        <ArrowRight size={20} />
-                      </Link>
                     </div>
 
-                    {/* Pagination Dots (matching Image 2) */}
-                    <div className="events-gallery-dots">
-                      {Array.from({ length: 6 }).map((_, idx) => (
+                    {/* Controls Footer: Pagination Dots + Prev/Next Buttons (matching Image 1 & Image 2) */}
+                    <div className="events-gallery-controls-footer">
+                      <div className="events-gallery-dots">
+                        {filteredJurisdictions.map((_, idx) => (
+                          <button
+                            key={idx}
+                            type="button"
+                            className={`events-gallery-dot ${idx === activeSlideIndex ? 'active' : ''}`}
+                            onClick={() => setActiveSlideIndex(idx)}
+                            aria-label={`Go to ${filteredJurisdictions[idx].title}`}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Slider Navigation Buttons (matching Image 2) */}
+                      <div className="events-slider-nav">
                         <button
-                          key={idx}
                           type="button"
-                          className={`events-gallery-dot ${idx === activeSlideIndex ? 'active' : ''}`}
-                          onClick={() => setActiveSlideIndex(idx % filteredJurisdictions.length)}
-                          aria-label={`Slide ${idx + 1}`}
-                        />
-                      ))}
+                          className="events-nav-btn"
+                          onClick={handlePrev}
+                          aria-label="Previous license"
+                        >
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M15 19l-7-7 7-7" />
+                          </svg>
+                        </button>
+                        <button
+                          type="button"
+                          className="events-nav-btn"
+                          onClick={handleNext}
+                          aria-label="Next license"
+                        >
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M9 5l7 7-7 7" />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -878,32 +1149,32 @@ export default function LicensingHubClient() {
           ========================================================================= */}
       <StepsSection
         customTitle="What Each Guide Covers"
-        customSubtitle="Structured, factual overviews designed to help operators evaluate jurisdictional requirements before deploying platform infrastructure."
+        customSubtitle="Find the key information to prepare for a licensing discussion and plan the software your business needs."
         customSteps={[
           {
             id: 1,
-            title: 'Regulatory Authority & Official Framework',
-            text: 'Official regulatory bodies, governing legislation, and public registry portals for licensee verification.',
+            title: 'Licensing Authority',
+            text: 'Find the regulator’s official website and relevant application and verification resources.',
           },
           {
             id: 2,
-            title: 'Eligibility & Corporate Requirements',
-            text: 'Corporate entity structuring, director vetting standards, and AML compliance obligations.',
+            title: 'Requirements and Documents',
+            text: 'Understand the company information and supporting documents described in the official application requirements.',
           },
           {
             id: 3,
-            title: 'Application Dossier & Process',
-            text: 'Required corporate documentation, procedural stages, and regulatory evaluation checkpoints.',
+            title: 'Application Process',
+            text: 'Review the application stages and what needs to be prepared before submission.',
           },
           {
             id: 4,
-            title: 'Statutory Fees & Ongoing Costs',
-            text: 'Transparent statutory fees, annual license renewals, and recurring compliance levies.',
+            title: 'Costs and Renewals',
+            text: 'Understand published fees, renewal charges and other costs to confirm when planning your budget.',
           },
           {
             id: 5,
-            title: 'Platform & Technical Readiness',
-            text: 'Configuring turnkey or white-label casino and sportsbook software to align with regulatory requirements.',
+            title: 'Platform Planning',
+            text: 'See how licensing requirements affect your choice of casino software, games and payment services.',
           },
         ]}
       />
@@ -913,12 +1184,12 @@ export default function LicensingHubClient() {
           ========================================================================= */}
       <DiscoverMore
         customTitle="Related Platform Solutions"
-        customSubtitle="Connect your licensed operations with battle-tested casino and sportsbook technology."
+        customSubtitle="Explore software options for your casino or sportsbook project."
         customItems={[
           {
             id: 1,
             title: 'White Label Casino',
-            description: 'A ready-to-launch iGaming solution with your branding, fully managed infrastructure, and minimal operational load.',
+            description: 'Start with a ready-made casino platform customized for your brand. Source code is available for an additional fee.',
             icon: Layout,
             link: '/white-label-casino-solutions',
             span: 2,
@@ -926,7 +1197,7 @@ export default function LicensingHubClient() {
           {
             id: 2,
             title: 'Turnkey Casino',
-            description: 'A full-access modular iGaming platform designed for total business control, scalability, and long-term growth.',
+            description: 'Get casino, sportsbook and platform source code in one package, with ownership terms defined in your agreement.',
             icon: Key,
             link: '/turnkey-casino-software-solutions',
             span: 2,
@@ -934,7 +1205,7 @@ export default function LicensingHubClient() {
           {
             id: 3,
             title: 'Crypto Casino Software',
-            description: 'Crypto-ready gaming platform supporting multi-currency digital asset payments, secure transactions, and player wallets.',
+            description: 'Build a branded casino or sportsbook platform with selected crypto payment services and back-office tools.',
             icon: Zap,
             link: '/crypto-casino-software',
             span: 2,
@@ -942,12 +1213,7 @@ export default function LicensingHubClient() {
         ]}
       />
 
-      {/* Software Scope Notice */}
-      <div className="max-w-4xl mx-auto px-6 py-6 text-center text-xs text-gray-400">
-        <p className="m-0">
-          Kvaornux is a B2B technology provider supplying gaming software, game aggregation, and platform infrastructure. Kvaornux does not issue gaming licenses, provide legal advice, represent regulatory authorities, or guarantee licensing approval.
-        </p>
-      </div>
+
 
       {/* Contact Section */}
       <section id="contact-us" className="py-16 bg-[#0b0b0f] relative z-10 border-t border-white/10">

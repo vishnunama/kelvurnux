@@ -63,12 +63,13 @@ interface FAQ {
 }
 
 interface FAQSectionProps {
+  id?: string;
   faqs?: FAQ[];
   customFaqData?: FAQ[];
   hideBgImage?: boolean;
 }
 
-const FAQSection: React.FC<FAQSectionProps> = ({ faqs: propFaqs, customFaqData, hideBgImage = false }) => {
+const FAQSection: React.FC<FAQSectionProps> = ({ id, faqs: propFaqs, customFaqData, hideBgImage = false }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -149,6 +150,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs: propFaqs, customFaqData, 
   return (
     <section
       ref={sectionRef}
+      id={id}
       className="relative bg-[#0b0b0f] py-14 sm:py-18 md:py-24 overflow-hidden"
     >
       {/* Background Image - anchored to top with object-top to prevent shaking on accordion toggle */}
