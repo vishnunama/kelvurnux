@@ -256,10 +256,11 @@ export default function CryptoIgamingClient() {
     },
     {
       id: 8,
-      title: 'Agent-Based Sportsbook Case Study',
-      description: 'See an example of our work on sportsbook and agent-management features.',
+      title: 'Crypto & Fiat Casino Case Study (NDA)',
+      description:
+        'Explore our 8-decimal precision multi-currency casino architecture with automated AML/KYC triggers and VIP loyalty engine.',
       icon: HandshakeIcon,
-      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
+      link: '/igaming-case-studies/multi-currency-crypto-casino-platform',
       span: 2,
     },
   ];

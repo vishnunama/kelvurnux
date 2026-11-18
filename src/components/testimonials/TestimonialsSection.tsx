@@ -1,41 +1,33 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 
 export interface Testimonial {
   id: number;
   text: string;
-  authorName?: string;
   authorPosition: string;
-  photo: string;
-  rating: number;
 }
 
 export const testimonialsData: Testimonial[] = [
   {
     id: 1,
-    text: "The flexibility of Kvaornux’s modular setup is a huge win for our 24/7 live operations. Working with their team feels like having an in-house department of experts who keep technical execution fast and reliable.",
-    authorName: "",
-    authorPosition: "Lakebets Project",
-    photo: "/assets/author-nikita.webp",
-    rating: 5,
+    text: "Having a genuinely separated Gold Coin and Sweeps Coin ledger—plus built-in AMOE and KYC review queues—saved us months of compliance rework before onboarding our payment processors.",
+    authorPosition: "Founder & Product Lead — North American Social Gaming Client (NDA)",
   },
   {
     id: 2,
-    text: "The platform seamlessly unifies casino, sportsbook, and multi-tier agent operations into one connected system. The mobile-first H5 interface delivers a fast and intuitive player experience.",
-    authorName: "",
-    authorPosition: "Jeetfast24 Project",
-    photo: "/assets/author-karyna.webp",
-    rating: 5,
+    text: "Moving from polling to Kvaornux’s WebSocket delta pipeline and live liability desk completely eliminated our match-day bottlenecks while giving our traders real-time control over margins.",
+    authorPosition: "Head of Sportsbook Technology — Regulated LATAM Operator (NDA)",
   },
   {
     id: 3,
-    text: "Kvaornux delivered a fully localized platform tailored to our market’s payment habits and language requirements. Smooth integrations, reliable back-office, and exceptional uptime.",
-    authorName: "",
-    authorPosition: "Pori444 Project",
-    photo: "/assets/author-nikita.webp",
-    rating: 5,
+    text: "Kvaornux nailed the hard parts most vendors gloss over—fixed-point multi-currency accounting, clean FX snapshots for studio games, and automated KYC triggers built directly into the cashier.",
+    authorPosition: "CTO — Licensed International Casino Operator (NDA)",
+  },
+  {
+    id: 4,
+    text: "Standardizing all our game studio integrations behind one idempotent middleware layer cut new-brand launch time dramatically and gave our finance team clean GGR reports on day one.",
+    authorPosition: "VP of Engineering — International Multi-Brand Operator Group (NDA)",
   },
 ];
 
@@ -397,40 +389,8 @@ export default function TestimonialsSection() {
                 </div>
 
                 <div className="clients-testimonial-info">
-                  <div className="clients-testimonial-author">
-                    <div className="clients-testimonial-author-photo">
-                      <Image
-                        src={testimonial.photo}
-                        alt={testimonial.authorName || testimonial.authorPosition}
-                        width={44}
-                        height={44}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="clients-testimonial-author-content">
-                      {testimonial.authorName && (
-                        <div className="clients-testimonial-author-name">
-                          {testimonial.authorName}
-                        </div>
-                      )}
-                      <div className="clients-testimonial-author-position">
-                        {testimonial.authorPosition}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="stars-wrapper" aria-label={`${testimonial.rating} out of 5 stars`}>
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className="star-icon"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                      </svg>
-                    ))}
+                  <div className="clients-testimonial-author-position">
+                    {testimonial.authorPosition}
                   </div>
                 </div>
               </div>

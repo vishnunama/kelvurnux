@@ -329,10 +329,10 @@ export default function CustomiGamingSolution() {
     },
     {
       id: 8,
-      title: 'Pori444 Bangladesh Case Study',
-      description: 'Discover how KVAORNUX engineered a localized iGaming platform with custom mobile banking integrations and fast bet settlement in South Asia.',
+      title: 'US Sweepstakes Platform Case Study (NDA)',
+      description: 'Discover how KVAORNUX engineered a dual-currency Gold Coin & Sweeps Coin platform with AMOE workflows, state geo-fencing, and KYC webhooks.',
       icon: HandshakeIcon,
-      link: '/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
+      link: '/igaming-case-studies/us-sweepstakes-casino-platform-development',
       span: 2,
     },
   ];

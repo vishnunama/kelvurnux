@@ -182,11 +182,11 @@ export default function CasinoPlatformClient() {
     {
       id: 9,
       icon: Rocket,
-      title: 'Case Study: Lakebets Mobile-First Casino Platform',
+      title: 'Case Study: Multi-Currency Crypto & Fiat Casino Platform (NDA)',
       description:
-        'See how Kvaornux engineered a scalable mobile-first casino platform with 15,000+ daily players, multi-provider aggregation, NGN wallet infrastructure, and sub-second bet settlement.',
-      link: '/igaming-case-studies/casino-platform-development',
-      linkText: 'Read Lakebets Case Study →',
+        'See how Kvaornux engineered a modular multi-currency casino platform with 8-decimal precision ledgers, VIP loyalty gamification, and automated AML/KYC compliance hooks.',
+      link: '/igaming-case-studies/multi-currency-crypto-casino-platform',
+      linkText: 'Read Crypto & Fiat Casino Case Study →',
     },
     {
       id: 10,
@@ -260,11 +260,11 @@ export default function CasinoPlatformClient() {
     },
     {
       id: 7,
-      title: 'Lakebets Case Study',
+      title: 'Crypto & Fiat Casino Case Study (NDA)',
       description:
-        'How Kvaornux engineered a mobile casino platform with custom PAM, multi-provider aggregation, and real-time transaction settlement.',
+        'How Kvaornux engineered a hybrid multi-currency casino platform with custom PAM, fixed-point ledgers, and real-time AML/KYC triggers.',
       icon: Rocket,
-      link: '/igaming-case-studies/casino-platform-development',
+      link: '/igaming-case-studies/multi-currency-crypto-casino-platform',
       span: 2,
     },
     {

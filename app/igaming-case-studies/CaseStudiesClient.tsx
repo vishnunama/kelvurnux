@@ -89,85 +89,99 @@ export default function CaseStudiesClient() {
 
   const caseStudiesData = [
     {
-      id: 'lakebets',
-      category: 'casino',
-      slug: 'casino-platform-development',
-      title: 'Building a Scalable Mobile-First Casino Platform',
-      description: 'Kvaornux developed a mobile-first casino platform for the Nigerian market, connecting multi-provider game integrations, NGN wallet infrastructure, payments, affiliate operations and centralized back-office management.',
-      image: '/assets/case-studies/lakebets/mobile-casino-platform-development.webp',
-      imageAlt: 'Lakebets mobile-first casino platform development case study',
+      id: 'us-sweepstakes-platform',
+      category: 'sweepstakes',
+      slug: 'us-sweepstakes-casino-platform-development',
+      title: 'Dual-Currency Sweepstakes & Social Casino Platform (NDA)',
+      description: 'North American social gaming platform featuring isolated Gold Coin & Sweeps Coin ledgers, automated AMOE compliance workflows, state-level geo-fencing, and KYC webhooks.',
+      image: '/assets/case-studies/sweepstakes-platform/hero-showcase.webp',
+      imageAlt: 'US Dual-Currency Sweepstakes Casino Platform Engineering Case Study',
       features: [
-        'Nigeria',
-        'Mobile-First H5',
-        'NGN Wallet',
-        '10 Game Aggregator Integrations',
-        '6-Level Affiliate System',
-        'Live Platform',
+        'North America (NDA)',
+        'Isolated GC / SC Ledger',
+        'AMOE Workflow Engine',
+        'State Geo-Fencing + KYC',
+        '10-Week Delivery',
+        '< 115ms Wallet API',
       ],
-      link: '/igaming-case-studies/casino-platform-development',
+      link: '/igaming-case-studies/us-sweepstakes-casino-platform-development',
     },
     {
-      id: 'jeestfast24',
+      id: 'latam-sportsbook-platform',
       category: 'sportsbook',
-      slug: 'agent-based-casino-sportsbook-platform',
-      title: 'Building a Multi-Tier Agent-Based Casino & Sportsbook Platform',
-      description: 'Kvaornux developed a PKR-based iGaming platform combining casino and sportsbook functionality with multi-tier agent management, wallet operations and role-based back-office controls.',
-      image: '/assets/case-studies/jeestfast24/jeetfast24-mobile-casino-sportsbook.webp',
-      imageAlt: 'Jeetfast24 agent-based casino and sportsbook platform development case study',
+      slug: 'high-load-sportsbook-platform-development',
+      title: 'High-Load Sportsbook & Live Betting Platform (NDA)',
+      description: 'Event-driven live sportsbook engine for a regulated LATAM operator with WebSocket odds streaming, Bet Builder, dynamic cashout, single-wallet PAM, and real-time liability controls.',
+      image: '/assets/case-studies/sportsbook-platform/hero-showcase.webp',
+      imageAlt: 'High-Load Live Sportsbook and Trading Desk Platform Case Study',
       features: [
-        'Pakistan',
-        'Casino & Sportsbook',
-        'PKR Wallet',
-        'Multi-Tier Agent System',
-        'Mobile-First H5',
-        'Live Platform',
+        'Regulated LATAM (NDA)',
+        'WebSocket Live Odds',
+        'Dynamic Cashout Engine',
+        'Live Risk & Liability Desk',
+        '12-Week Delivery',
+        '< 140ms Bet Validation',
       ],
-      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
+      link: '/igaming-case-studies/high-load-sportsbook-platform-development',
     },
     {
-      id: 'pori444',
-      category: 'casino',
-      slug: 'building-a-localized-igaming-platform-for-bangladesh',
-      title: 'Localized iGaming Platform for Bangladesh',
-      description: 'A mobile-first iGaming platform combining BDT payments, multi-provider game content, a 7-level affiliate system, player rewards and advanced back-office operations.',
-      image: '/assets/case-studies/pori444/Pori444 Mobile Casino Gaming Platform.webp',
-      imageAlt: 'Pori444 localized iGaming platform development case study',
+      id: 'crypto-fiat-casino',
+      category: 'crypto',
+      slug: 'multi-currency-crypto-casino-platform',
+      title: 'Multi-Currency Crypto & Fiat Casino Platform (NDA)',
+      description: 'Hybrid crypto and fiat online casino architecture with 8-decimal fixed-point wallet accounting, automated AML/KYC threshold triggers, and VIP rakeback gamification.',
+      image: '/assets/case-studies/crypto-casino/hero-showcase.webp',
+      imageAlt: 'Multi-Currency Crypto and Fiat Casino Platform Architecture Case Study',
       features: [
-        'Pori444',
-        'Bangladesh',
-        'Mobile-First H5 + Android',
-        'BDT Wallet & Local Payments',
-        '7-Level Affiliate System',
-        'Live Platform',
+        'Licensed EU / Intl (NDA)',
+        '8-Decimal Precision Ledger',
+        'Crypto & Fiat Webhooks',
+        'Automated AML / KYC Rules',
+        '8-Week Delivery',
+        'VIP Loyalty Engine',
       ],
-      link: '/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
+      link: '/igaming-case-studies/multi-currency-crypto-casino-platform',
+    },
+    {
+      id: 'game-aggregator-api',
+      category: 'aggregator',
+      slug: 'casino-game-aggregator-api-architecture',
+      title: 'Unified Casino Game Aggregator API & Back-Office Engine (NDA)',
+      description: 'Single normalized game integration middleware connecting client-licensed studios behind one idempotent Seamless Wallet API with automated rollback recovery and GGR audit reports.',
+      image: '/assets/case-studies/game-aggregator/hero-showcase.webp',
+      imageAlt: 'Unified Casino Game Aggregator API Gateway Architecture Case Study',
+      features: [
+        'Multi-Brand Group (NDA)',
+        'Single Normalized API',
+        'Idempotent Seamless Wallet',
+        'Automated Rollback Queue',
+        '9-Week Delivery',
+        '< 95ms Gateway Overhead',
+      ],
+      link: '/igaming-case-studies/casino-game-aggregator-api-architecture',
     },
   ];
 
   const testimonialsData = [
     {
       id: 1,
-      text: "The flexibility of Kvaornux’s modular setup is a significant plus. It lets us swap tools or tweak parts of the project without interrupting operations, which is a huge win when you’re live 24/7. Working with their team feels more like having an in-house department of experts than a standard vendor. They focus on technical execution and keep things moving, so we don’t lose time on long coordination cycles.",
-      authorName: "",
-      authorPosition: "Lakebets Project",
-      photo: "/assets/author-nikita.webp",
-      rating: 5,
+      text: "Having a genuinely separated Gold Coin and Sweeps Coin ledger—plus built-in AMOE and KYC review queues—saved us months of compliance rework before onboarding our payment processors.",
+      authorPosition: "Founder & Product Lead — North American Social Gaming Client (NDA)",
     },
     {
       id: 2,
-      text: "The platform brings casino, sportsbook and agent operations into one connected system. The multi-tier architecture provides structured control across agents, players and operational activity, while the mobile-first H5 interface keeps the player experience straightforward.",
-      authorName: "",
-      authorPosition: "Jeetfast24 Project",
-      photo: "/assets/author-karyna.webp",
-      rating: 5,
+      text: "Moving from polling to Kvaornux’s WebSocket delta pipeline and live liability desk completely eliminated our match-day bottlenecks while giving our traders real-time control over margins.",
+      authorPosition: "Head of Sportsbook Technology — Regulated LATAM Operator (NDA)",
     },
     {
       id: 3,
-      text: "Pori444 brings localized payments, game content, affiliate operations, player engagement and back-office management into one connected platform. The result is an operational system designed around the payment behaviour, language requirements and mobile-first player experience of the Bangladesh market.",
-      authorName: "",
-      authorPosition: "Pori444 Project",
-      photo: "/assets/author-nikita.webp",
-      rating: 5,
+      text: "Kvaornux nailed the hard parts most vendors gloss over—fixed-point multi-currency accounting, clean FX snapshots for studio games, and automated KYC triggers built directly into the cashier.",
+      authorPosition: "CTO — Licensed International Casino Operator (NDA)",
+    },
+    {
+      id: 4,
+      text: "Standardizing all our game studio integrations behind one idempotent middleware layer cut new-brand launch time dramatically and gave our finance team clean GGR reports on day one.",
+      authorPosition: "VP of Engineering — International Multi-Brand Operator Group (NDA)",
     },
   ];
 
@@ -1217,12 +1231,16 @@ export default function CaseStudiesClient() {
         {/* Hero Container */}
         <div className="portfolio-hero-container">
           <div className="portfolio-hero-content" data-anim="from-bottom" data-anim-delay="1">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#00ebaa]/10 text-[#00ebaa] border border-[#00ebaa]/25 mb-5">
+              <span>Enterprise B2B Portfolio • NDA-Protected Client Architectures</span>
+            </div>
+
             <h1 className="portfolio-hero-title">
               iGaming case studies
             </h1>
 
             <p className="portfolio-hero-text">
-              Explore real iGaming platforms and technology projects developed by Kvaornux, covering casino infrastructure, game integrations, wallets, payments, affiliate systems and back-office operations.
+              Explore production-grade iGaming architectures engineered by Kvaornux—covering dual-currency sweepstakes platforms, high-load sportsbooks, hybrid crypto casinos, and unified game aggregator APIs built for licensed international operators.
             </p>
 
             <a
@@ -1287,10 +1305,31 @@ export default function CaseStudiesClient() {
                 </button>
                 <button
                   type="button"
-                  className={`cs-filter-tab ${activeTab === 'casino' ? 'active' : ''}`}
-                  onClick={() => setActiveTab('casino')}
+                  className={`cs-filter-tab ${activeTab === 'sweepstakes' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('sweepstakes')}
                 >
-                  Casino
+                  Sweepstakes
+                </button>
+                <button
+                  type="button"
+                  className={`cs-filter-tab ${activeTab === 'sportsbook' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('sportsbook')}
+                >
+                  Sportsbook
+                </button>
+                <button
+                  type="button"
+                  className={`cs-filter-tab ${activeTab === 'crypto' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('crypto')}
+                >
+                  Crypto
+                </button>
+                <button
+                  type="button"
+                  className={`cs-filter-tab ${activeTab === 'aggregator' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('aggregator')}
+                >
+                  Aggregator API
                 </button>
               </div>
 
@@ -1423,38 +1462,8 @@ export default function CaseStudiesClient() {
                     </div>
 
                     <div className="clients-testimonial-info">
-                      <div className="clients-testimonial-author">
-                        <div className="clients-testimonial-author-photo">
-                          <Image
-                            src={testimonial.photo}
-                            alt={testimonial.authorName || testimonial.authorPosition}
-                            width={44}
-                            height={44}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="clients-testimonial-author-content">
-                          {testimonial.authorName && (
-                            <div className="clients-testimonial-author-name">
-                              {testimonial.authorName}
-                            </div>
-                          )}
-                          <div className="clients-testimonial-author-position">
-                            {testimonial.authorPosition}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="stars-wrapper">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <svg
-                            key={i}
-                            className="star-icon"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                          </svg>
-                        ))}
+                      <div className="clients-testimonial-author-position">
+                        {testimonial.authorPosition}
                       </div>
                     </div>
                   </div>

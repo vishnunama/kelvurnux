@@ -973,7 +973,7 @@ const blogSections: BlogSection[] = [
                   Monolithic legacy LAMP stack; single shared database instance for all tenants; database deadlocks during promotional marketing drops.
                 </td>
                 <td>
-                  Horizontally autoscaling microservices architecture supporting thousands of concurrent spins, demonstrated in our <Link href="/igaming-case-studies/casino-platform-development" className="text-cyan-400 underline hover:text-cyan-300">Lakebets mobile-first platform case study</Link> featuring sub-second settlement.
+                  Horizontally autoscaling microservices architecture supporting high-concurrency gameplay, demonstrated in our <Link href="/igaming-case-studies/us-sweepstakes-casino-platform-development" className="text-cyan-400 underline hover:text-cyan-300">US dual-currency sweepstakes platform case study</Link> featuring isolated GC/SC ledgers and sub-115ms callbacks.
                 </td>
               </tr>
               <tr>
@@ -985,7 +985,7 @@ const blogSections: BlogSection[] = [
                   Email-only ticketing with multi-day response delays; lack of critical incident response guarantees; abandonment of legacy codebases after launch.
                 </td>
                 <td>
-                  Proactive infrastructure telemetry, contractually defined enterprise SLA commitments, dedicated engineering support, and multi-tier role-based operational controls as demonstrated in our <Link href="/igaming-case-studies/agent-based-casino-sportsbook-platform" className="text-cyan-400 underline hover:text-cyan-300">agent-based platform architecture case study</Link>.
+                  Proactive infrastructure telemetry, contractually defined enterprise SLA commitments, dedicated engineering support, and role-based operational controls delivered through our <Link href="/custom-igaming-solution" className="text-cyan-400 underline hover:text-cyan-300">custom iGaming platform engineering services</Link>.
                 </td>
               </tr>
             </tbody>

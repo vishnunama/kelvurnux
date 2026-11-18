@@ -350,10 +350,10 @@ export default function TurnkeyCasinoPlatform() {
     },
     {
       id: 7,
-      title: 'Lakebets Case Study',
-      description: 'See how KVAORNUX developed a mobile-first casino platform with multi-provider game aggregation and fast bet settlement.',
+      title: 'Crypto & Fiat Casino Case Study (NDA)',
+      description: 'See how KVAORNUX engineered a hybrid multi-currency casino platform with precision wallet accounting, VIP loyalty, and automated KYC triggers.',
       icon: HandshakeIcon,
-      link: '/igaming-case-studies/casino-platform-development',
+      link: '/igaming-case-studies/multi-currency-crypto-casino-platform',
       span: 2,
     },
     {

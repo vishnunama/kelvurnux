@@ -7,9 +7,7 @@ const col1 = [
   'applepay.svg',
   'mobilepay.svg',
   'klarna2.svg',
-  'netbanking.svg',
   'paysafecard.svg',
-  'gpay.svg',
   'klarna.svg',
   'boleto.svg',
   'zimpler.svg',
@@ -47,9 +45,7 @@ const col2 = [
   'zimpler.svg',
   'boleto.svg',
   'klarna.svg',
-  'gpay.svg',
   'paysafecard.svg',
-  'netbanking.svg',
   'klarna2.svg',
   'mobilepay.svg',
   'applepay.svg'
@@ -66,14 +62,12 @@ const col3 = [
   'siru1.svg',
   'paysafecard.svg',
   'neteller1.svg',
-  'netbanking.svg',
   'neosurf.svg',
   'mobilepay.svg',
   'mastercard.svg',
   'klarna.svg',
   'interaconline.svg',
   'inpay-bank.svg',
-  'gpay.svg',
   'ezeewallet1.webp',
   'ecopayz.svg',
   'boleto.svg',
@@ -85,7 +79,6 @@ const col4 = [
   'mastercard.svg',
   'visa.svg',
   'applepay.svg',
-  'gpay.svg',
   'skrill.svg',
   'neteller1.svg',
   'trustly.svg',
@@ -93,7 +86,6 @@ const col4 = [
   'sofort.svg',
   'klarna.svg',
   'interaconline.svg',
-  'netbanking.svg',
   'boleto.svg',
   'zimpler.svg',
   'switch.webp',
@@ -232,7 +224,7 @@ export default function PaymentGatewaysSection() {
                 </h3>
 
                 <p className="text-[#a5a5a5] text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-                  Connect card payments, e-wallets, bank transfers and regional payment methods to your platform. We integrate the payment providers selected for your business and bring deposit and withdrawal records into your back office.
+                  Connect card payments, e-wallets, bank transfers and regional payment methods to your platform. We perform technical API integration with the licensed payment providers contracted directly by your business and bring deposit and withdrawal records into your back office.
                 </p>
 
                 {/* CTA Button */}

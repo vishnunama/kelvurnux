@@ -250,8 +250,8 @@ export default function CasinoAggregatorAPI() {
     },
     {
       id: 5,
-      title: 'Automated Financial Invoicing & GGR Audit',
-      description: 'Transparent revenue share tracking, verified GGR statements, and automated provider billing reconciliation generated directly from live transaction logs.',
+      title: 'GGR Reporting & Provider Reconciliation',
+      description: 'Back-office reporting tools for tracking operator GGR statements, game performance analytics, and third-party provider billing reconciliation generated directly from transaction logs.',
       icon: ShieldCheck,
       span: 3,
     },
@@ -273,10 +273,10 @@ export default function CasinoAggregatorAPI() {
     },
     {
       id: 8,
-      title: 'Lakebets Case Study',
-      description: 'Discover how Kvaornux engineered a high-volume mobile casino aggregation infrastructure with sub-second bet settlement in emerging markets.',
+      title: 'US Sweepstakes Case Study (NDA)',
+      description: 'Discover how Kvaornux engineered a North American dual-currency sweepstakes platform with isolated GC/SC ledgers and compliant API wrapping.',
       icon: TrendingUp,
-      link: '/igaming-case-studies/casino-platform-development',
+      link: '/igaming-case-studies/us-sweepstakes-casino-platform-development',
       span: 2,
     },
     {
@@ -297,10 +297,10 @@ export default function CasinoAggregatorAPI() {
     },
     {
       id: 11,
-      title: 'Agent-Based Gaming Platform',
-      description: 'Review our multi-tier agent network case study detailing granular credit hierarchies, role-based controls, and localized wallet management.',
+      title: 'Unified Game Aggregator Case Study (NDA)',
+      description: 'See how Kvaornux engineered a single normalized API gateway with sub-95ms overhead, idempotent seamless wallets, and automated GGR reconciliation.',
       icon: ShieldCheck,
-      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
+      link: '/igaming-case-studies/casino-game-aggregator-api-architecture',
       span: 2,
     },
   ];

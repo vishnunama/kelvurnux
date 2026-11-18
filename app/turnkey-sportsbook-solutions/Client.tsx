@@ -216,10 +216,10 @@ export default function TurnkeySportsbookSolutions() {
     },
     {
       id: 8,
-      title: 'Jeetfast24 Case Study',
-      description: 'Discover how Kvaornux engineered an agent-based sportsbook handling 100+ agent tiers, high-volume betting, and instant ledger settlement.',
+      title: 'High-Load Sportsbook Case Study (NDA)',
+      description: 'Discover how Kvaornux engineered a sub-140ms live sportsbook with WebSocket odds feeds, Bet Builder, dynamic cashout, and real-time liability desk.',
       icon: HandshakeIcon,
-      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
+      link: '/igaming-case-studies/high-load-sportsbook-platform-development',
       span: 2,
     },
   ];

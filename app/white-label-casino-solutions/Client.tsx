@@ -332,10 +332,10 @@ export default function WhiteLabelCasinoPlatform() {
     },
     {
       id: 8,
-      title: 'Lakebets Case Study',
-      description: 'See how KVAORNUX developed a mobile-first casino platform with multi-provider game aggregation and fast bet settlement.',
+      title: 'Crypto & Fiat Casino Case Study (NDA)',
+      description: 'See how KVAORNUX engineered a hybrid multi-currency casino platform with 8-decimal precision ledgers, VIP loyalty, and automated AML/KYC triggers.',
       icon: HandshakeIcon,
-      link: '/igaming-case-studies/casino-platform-development',
+      link: '/igaming-case-studies/multi-currency-crypto-casino-platform',
       span: 2,
     },
   ];
@@ -569,6 +569,10 @@ export default function WhiteLabelCasinoPlatform() {
               >
                 Everything you need to launch and scale your white label gaming platform — from core back-office infrastructure to unified player management, all configured and ready to deploy.
               </p>
+
+              <div className="rounded-xl border border-[#00ebaa]/25 bg-[#00ebaa]/5 p-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
+                <strong className="text-[#00ebaa]">Software-Only B2B Solution:</strong> Kvaornux delivers platform engineering and technical API integration only. We do not issue gaming licenses, sub-licenses, or merchant accounts — operators must hold valid licenses and direct provider agreements in permitted jurisdictions.
+              </div>
 
               <div
                 ref={(el) => { solutionsElementsRef.current[20] = el; }}

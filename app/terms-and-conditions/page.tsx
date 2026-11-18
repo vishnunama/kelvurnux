@@ -56,7 +56,7 @@ export default function TermsAndConditionsPage() {
             Terms &amp; Conditions
           </h1>
           <p className="text-[#00ebaa] font-medium text-xs sm:text-sm tracking-wider uppercase mb-6">
-            Last Updated: September 2026
+            Last Updated: November 2026
           </p>
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
             Welcome to Kvaornux. These Terms &amp; Conditions govern your use of our website, services, and communication channels. By accessing our website or engaging our services, you agree to these Terms &amp; Conditions.
@@ -118,35 +118,41 @@ export default function TermsAndConditionsPage() {
           {/* Section 4 */}
           <section>
             <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              4. Gambling and Regulatory Compliance
+              4. Gambling, Licensing &amp; Restricted Jurisdictions
             </h2>
             <p className="mb-4">
-              Kvaornux provides technology services and does not provide legal advice.
+              Kvaornux provides independent B2B software development and technical integration services only and does not provide legal, regulatory, or licensing advice. Kvaornux does not issue gaming licenses, sub-licenses, or merchant accounts, and does not operate as a gambling partner, operator, or payment intermediary.
             </p>
             <p className="mb-4">
-              Gambling, betting, sweepstakes, gaming, payment processing, cryptocurrency, and related activities may be regulated differently across jurisdictions.
+              Gambling, betting, sweepstakes, gaming, payment processing, cryptocurrency, and related activities are heavily regulated and vary across jurisdictions. Our services are strictly intended for legally incorporated businesses operating under valid gaming licenses or legal authorizations in permitted international jurisdictions.
             </p>
             <p className="mb-4">
-              The client is solely responsible for determining whether its proposed business model is permitted in its target jurisdiction and for obtaining any required licenses, registrations, approvals, certifications, or professional legal advice before launching or operating the platform.
+              <strong className="text-white">Restricted Jurisdictions (Including India):</strong> Kvaornux does not develop, deploy, host, or support real-money gambling, casino, or betting platforms targeting India or any other prohibited, sanctioned, or unregulated jurisdiction. Clients are strictly required to implement and maintain geo-blocking, IP restriction, and compliance controls to prevent unauthorized access from restricted territories, including India.
             </p>
-            <p>
-              Kvaornux may request information regarding licensing, compliance, or intended use where reasonably necessary for a project.
+            <p className="mb-4">
+              <strong className="text-white">Client Verification &amp; Compliance Responsibility:</strong> The client is solely responsible for determining whether its business model is permitted in its target jurisdiction and for obtaining all required licenses, registrations, approvals, certifications, and independent legal advice prior to launch. Kvaornux reserves the right to request and verify corporate registration, client KYC, and valid gaming license documentation prior to production deployment, and to refuse, suspend, or immediately terminate services if a client operates without required approvals or targets restricted jurisdictions.
             </p>
           </section>
 
           {/* Section 5 */}
           <section>
             <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              5. Third-Party Services and APIs
+              5. Third-Party Services, Game APIs &amp; Payment Gateways
             </h2>
             <p className="mb-4">
-              Projects may use third-party services such as game providers, sports-data providers, payment processors, KYC providers, hosting services, cloud infrastructure, SMS providers, cryptocurrency services, or other external APIs.
+              Projects may integrate third-party services such as game providers, game aggregators, sports-data feeds, payment processors, KYC/AML providers, hosting services, cloud infrastructure, SMS providers, or other external APIs.
             </p>
             <p className="mb-4">
-              These services are governed by their own terms, pricing, availability, technical limitations, and policies.
+              <strong className="text-white">Direct Client Contracting:</strong> Clients are solely responsible for directly contracting with, paying, and maintaining their own accounts, merchant agreements, and API credentials with any third-party game provider, aggregator, or payment gateway. Kvaornux acts strictly as an independent technical integrator connecting APIs supplied or authorized by the client and does not resell third-party gaming licenses or process player transactions.
+            </p>
+            <p className="mb-4">
+              Clients bear sole responsibility for verifying the licensing, intellectual property authorization, and legal compliance of any third-party game APIs, content feeds, or payment channels they instruct Kvaornux to integrate. Third-party services are governed by their own terms, pricing, availability, and policies, and Kvaornux is not responsible for outages, account restrictions, API changes, or compliance disputes involving third-party providers.
+            </p>
+            <p className="mb-4">
+              <strong className="text-white">Game Provider &amp; Studio Trademarks:</strong> All third-party game provider brand names and logos displayed on this website are trademarks of their respective owners and are shown solely to illustrate technical API integration compatibility. Kvaornux is an independent B2B software integrator and is not affiliated with, endorsed by, or an official reseller of these studios. Clients obtain their own direct commercial agreements, API credentials, and applicable licenses.
             </p>
             <p>
-              Kvaornux is not responsible for outages, pricing changes, account restrictions, API modifications, service discontinuation, or other actions controlled by third-party providers.
+              <strong className="text-white">Payment Gateway &amp; Processor Trademarks:</strong> All payment brand logos and trademarks displayed on this website belong to their respective owners and are shown solely to illustrate technical gateway integration capabilities. Kvaornux is an independent software integrator, not a payment processor, merchant acquirer, or reseller. Clients must open and maintain their own direct merchant accounts in permitted jurisdictions.
             </p>
           </section>
 
@@ -276,7 +282,24 @@ export default function TermsAndConditionsPage() {
           {/* Section 13 */}
           <section>
             <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              13. Limitation of Liability
+              13. Indemnification
+            </h2>
+            <p className="mb-4">
+              To the maximum extent permitted by applicable law, the client agrees to indemnify, defend, and hold harmless Kvaornux and its directors, employees, and contractors from and against any claims, liabilities, regulatory penalties, investigations, damages, losses, or legal expenses arising out of or relating to:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 mb-4">
+              <li>The client&apos;s operation, marketing, or monetization of any platform developed or integrated by Kvaornux</li>
+              <li>Any failure by the client to obtain or maintain required gaming licenses, regulatory approvals, or geo-blocking controls</li>
+              <li>Use of the software in India or any other prohibited or restricted jurisdiction</li>
+              <li>Any third-party game APIs, content feeds, payment gateways, or credentials supplied by the client</li>
+              <li>Any breach of applicable laws, regulations, or third-party intellectual property rights by the client</li>
+            </ul>
+          </section>
+
+          {/* Section 14 */}
+          <section>
+            <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">
+              14. Limitation of Liability
             </h2>
             <p className="mb-4">
               To the extent permitted by applicable law, Kvaornux will not be liable for indirect, incidental, consequential, or special losses arising from the use or inability to use our website, software, or services.
@@ -289,10 +312,10 @@ export default function TermsAndConditionsPage() {
             </p>
           </section>
 
-          {/* Section 14 */}
+          {/* Section 15 */}
           <section>
             <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              14. Changes to Services or Terms
+              15. Changes to Services or Terms
             </h2>
             <p className="mb-4">
               We may update these Terms &amp; Conditions when our services, business practices, technologies, or applicable requirements change.
@@ -302,10 +325,10 @@ export default function TermsAndConditionsPage() {
             </p>
           </section>
 
-          {/* Section 15 */}
+          {/* Section 16 */}
           <section>
             <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              15. Privacy
+              16. Privacy
             </h2>
             <p>
               Personal information collected through our website or services is handled according to our{' '}
@@ -319,10 +342,10 @@ export default function TermsAndConditionsPage() {
             </p>
           </section>
 
-          {/* Section 16 - Contact Us */}
+          {/* Section 17 - Contact Us */}
           <section className="border-t border-gray-800 pt-8 mt-12">
             <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">
-              16. Contact Us
+              17. Contact Us
             </h2>
             <p className="mb-6">
               For questions regarding these Terms &amp; Conditions or our services, contact:

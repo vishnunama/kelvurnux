@@ -95,10 +95,10 @@ export default function SportsbookPlatformSoftwarePage() {
       },
       {
         '@type': 'Question',
-        name: 'Does the sportsbook platform software support retail betting shops and agent networks?',
+        name: 'Does the sportsbook platform software support role-based back office and licensed retail operations?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes. The platform includes a comprehensive hierarchical agent module (Master Agent, Agent, Cashier) with physical slip barcode printing, POS cashier terminal interfaces, credit allocation, and automated multi-tier commission distribution.',
+          text: 'Yes. The platform includes role-based staff access controls, full audit logging, and optional POS cashier terminal interfaces with barcode ticket printing and operational reporting for licensed retail betting operators.',
         },
       },
       {

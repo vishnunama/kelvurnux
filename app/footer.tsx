@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const EmailIcon = () => (
@@ -39,7 +38,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-0">
         {/* Main Footer Content Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 mb-12 md:mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 mb-10 md:mb-14">
           {/* Footer Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="block mb-3 md:mb-4 bg-transparent">
@@ -278,99 +277,31 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Footer Support Section */}
-        <div className="relative pt-6 md:pt-8 mb-6 md:mb-8">
+        {/* Footer Compliance & B2B Disclaimer Section */}
+        <div className="relative pt-6 md:pt-7 mb-6 md:mb-7">
           <div className="absolute top-0 left-1/2 w-full h-px -translate-x-1/2" style={{ background: 'linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #2b2e33 45%, #2b2e33 55%, rgba(255, 255, 255, 0) 100%)' }}></div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-            {/* Disclaimer */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 md:gap-3 lg:col-span-1">
-              <div className="text-lg md:text-2xl font-semibold text-gray-400 min-w-fit">18+</div>
-              <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
-                Kvaornux provides software development services only. We do not operate any gaming or betting platforms.
-              </p>
-            </div>
-
-            {/* Empty Space */}
-            <div className="hidden lg:block"></div>
-
-            {/* Support Logos */}
-            <div className="flex flex-wrap justify-start lg:justify-end gap-3 md:gap-4 items-center lg:col-span-1">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://cert.gcb.cw/certificate?id=ZXlKcGRpSTZJbVJPWVZkM2NqWTRia1ZKV0hwRWJXbFJUVGcyYlZFOVBTSXNJblpoYkhWbElqb2lZa1pSUVdaV1QwTk9SeTlsWVRaNE1XSmpSRm95ZHowOUlpd2liV0ZqSWpvaU5tUTVaalkzTURreE9EaG1ZelUzWVRSak1UVTVZemsxTmpjNE16QTFPV0ZtTWpsbVkyWTVORFJqWW1NeE4ySTNZMlExTURRNFptVmxZekZsWkROalpDSXNJblJoWnlJNklpSjk="
-              >
-                <Image
-                  src="/assets/support-logo-1.svg"
-                  alt="GCB Certificate"
-                  width={80}
-                  height={40}
-                  sizes="(max-width: 768px) 60px, 80px"
-                  className="h-6 md:h-8 w-auto"
-                  priority={false}
-                />
-              </a>
-              <div>
-                <Image
-                  src="/assets/support-logo-2.webp"
-                  alt="Problem Gambling Support"
-                  width={99}
-                  height={50}
-                  sizes="(max-width: 768px) 70px, 99px"
-                  className="h-6 md:h-8 w-auto"
-                  priority={false}
-                />
-              </div>
-              <div>
-                <Image
-                  src="/assets/support-logo-3.webp"
-                  alt="BeGambleAware.org"
-                  width={122}
-                  height={49}
-                  sizes="(max-width: 768px) 80px, 122px"
-                  className="h-6 md:h-8 w-auto"
-                  priority={false}
-                />
-              </div>
-            </div>
-          </div>
+          <p className="text-xs text-gray-400/90 leading-relaxed">
+            Kvaornux provides B2B software development and API integration services only — we do not operate gaming platforms, hold player funds, or issue licenses. Services are strictly for licensed operators in permitted jurisdictions (not for real-money gaming in India or restricted territories). See our{' '}
+            <Link href="/terms-and-conditions" className="text-gray-300 hover:text-[#00ebaa] underline underline-offset-2 transition-colors">
+              Terms &amp; Conditions
+            </Link>.
+          </p>
         </div>
 
-        {/* Footer Terms Bottom Row */}
-        <div className="pt-6 md:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 md:gap-6">
+        {/* Footer Bottom Row */}
+        <div className="pt-6 md:pt-7 border-t border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 md:gap-6">
           <div className="text-xs md:text-sm text-gray-400">
             ©{currentYear} Kvaornux. All rights reserved.
           </div>
-          <nav>
-            <ul className="flex flex-wrap gap-4 md:gap-6">
-              <li>
-                <Link href="/privacy-policy" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms-and-conditions" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
-                  Terms &amp; Conditions
-                </Link>
-              </li>
-              <li>
-                <Link href="/responsible-gaming-policy" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
-                  Responsible Gaming
-                </Link>
-              </li>
-              <li>
-                <Link href="/aml-kyc-policy" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
-                  AML &amp; KYC Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookie-policy" className="text-xs md:text-sm text-gray-400 hover:text-gray-300 transition-colors duration-300">
-                  Cookie Policy
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <span className="px-3 py-1.5 rounded-full text-[11px] font-medium tracking-wide text-gray-300 bg-white/[0.04] border border-white/10">
+              B2B Software Only
+            </span>
+            <span className="px-3 py-1.5 rounded-full text-[11px] font-medium tracking-wide text-gray-300 bg-white/[0.04] border border-white/10">
+              Licensed Markets Only
+            </span>
+          </div>
         </div>
       </div>
     </footer>

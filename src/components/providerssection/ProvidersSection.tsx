@@ -223,7 +223,7 @@ export default function ProvidersSection() {
                 </h3>
 
                 <p className="text-[#a5a5a5] text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-                  Connect your platform to a broad portfolio of slots, live casino, crash, table and other gaming content through a unified integration.
+                  Connect your platform to a broad portfolio of slots, live casino, crash, table and other gaming content through technical API integration using your licensed game provider or aggregator agreements.
                 </p>
 
                 {/* CTA Button */}

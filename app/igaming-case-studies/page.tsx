@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://kvaornux.com/assets/case-studies/lakebets/lakebets-casino-platform-development.webp',
-        width: 1200,
-        height: 630,
+        url: 'https://kvaornux.com/assets/case-studies/sweepstakes-platform/hero-showcase.webp',
+        width: 1440,
+        height: 810,
         alt: 'Kvaornux iGaming Case Studies & Development Portfolio',
       },
     ],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: 'iGaming Case Studies & Development Portfolio | Kvaornux',
     description:
       'Explore Kvaornux iGaming case studies covering casino platform development, game integrations, payments, wallets, affiliate systems and back-office technology.',
-    images: ['https://kvaornux.com/assets/case-studies/lakebets/lakebets-casino-platform-development.webp'],
+    images: ['https://kvaornux.com/assets/case-studies/sweepstakes-platform/hero-showcase.webp'],
   },
 };
 
@@ -76,20 +76,26 @@ export default function Page() {
         {
           '@type': 'ListItem',
           position: 1,
-          url: 'https://kvaornux.com/igaming-case-studies/casino-platform-development',
-          name: 'Building a Scalable Mobile-First Casino Platform',
+          url: 'https://kvaornux.com/igaming-case-studies/us-sweepstakes-casino-platform-development',
+          name: 'Dual-Currency Sweepstakes & Social Casino Platform Engineering',
         },
         {
           '@type': 'ListItem',
           position: 2,
-          url: 'https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform',
-          name: 'Building a Multi-Tier Agent-Based Casino & Sportsbook Platform',
+          url: 'https://kvaornux.com/igaming-case-studies/high-load-sportsbook-platform-development',
+          name: 'High-Load Sportsbook & Live Betting Platform Engineering',
         },
         {
           '@type': 'ListItem',
           position: 3,
-          url: 'https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh',
-          name: 'Building a Localized iGaming Platform for the Bangladesh Market',
+          url: 'https://kvaornux.com/igaming-case-studies/multi-currency-crypto-casino-platform',
+          name: 'Multi-Currency Crypto & Fiat Casino Platform Architecture',
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          url: 'https://kvaornux.com/igaming-case-studies/casino-game-aggregator-api-architecture',
+          name: 'Unified Casino Game Aggregator API & Back-Office Reconciliation Engine',
         },
       ],
     },

@@ -116,12 +116,12 @@ export default function SportsbookPlatformClient() {
       image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp',
     },
     {
-      id: 'agent-network',
-      label: 'Agent & Cashier Module',
+      id: 'back-office-operations',
+      label: 'Role-Based Back Office',
       icon: 'store' as const,
-      title: 'Multi-Tier Agent Hierarchy & Retail Cashier Module',
+      title: 'Role-Based Back Office & Regulated Retail Module',
       description:
-        'Equip online and retail bookmakers with a hierarchical agent and cashier architecture. Manage Master Agents, Super Agents, and Shop Cashiers with credit delegation, thermal ticket barcode printing, and real-time commission reconciliation.',
+        'Equip licensed online and retail bookmakers with structured role-based back-office permissions, audit logs, POS shop terminal interfaces, thermal ticket barcode printing, and real-time operational reporting.',
       image: '/assets/features/turnkey-igaming-platform-infrastructure-services.webp',
     },
   ];
@@ -158,9 +158,9 @@ export default function SportsbookPlatformClient() {
     {
       id: 5,
       icon: Store,
-      title: 'Hierarchical Agent & Retail Cashier Module',
+      title: 'Role-Based Back Office & Regulated Retail Module',
       description:
-        'Multi-tier agent network management (Master Agent, Sub-Agent, Cashier) with point-of-sale shop cashier terminals, barcode slip printing, credit delegation, and real-time commission calculations.',
+        'Structured staff permission levels and optional point-of-sale terminal interfaces for licensed retail betting operators, complete with barcode slip printing, activity audit trails, and real-time reporting.',
     },
     {
       id: 6,
@@ -186,11 +186,11 @@ export default function SportsbookPlatformClient() {
     {
       id: 9,
       icon: Rocket,
-      title: 'Case Study: Jeetfast24 Agent-Based Sportsbook',
+      title: 'Custom Sportsbook & Platform Engineering',
       description:
-        'See how Kvaornux engineered an agent-based sportsbook and casino platform with multi-tier agent hierarchy, exchange-style betting, and automated ledger settlement.',
-      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
-      linkText: 'Read Jeetfast24 Case Study →',
+        'Need custom betting UI/UX, tailored sportsbook workflows, or integration with your licensed odds feeds and payment providers? Explore our bespoke engineering services.',
+      link: '/custom-igaming-solution',
+      linkText: 'Explore Custom Development →',
     },
     {
       id: 10,
@@ -238,9 +238,9 @@ export default function SportsbookPlatformClient() {
     },
     {
       id: 5,
-      title: 'Agent & Retail Cashier Module',
+      title: 'Role-Based Back Office & Retail Module',
       description:
-        'Hierarchical agent management with POS counter terminal software, thermal slip barcode printing, credit delegation, and commissions.',
+        'Granular staff access controls, audit logging, and optional POS terminal software with barcode slip printing for licensed retail operators.',
       icon: Store,
       span: 3,
     },
@@ -254,11 +254,11 @@ export default function SportsbookPlatformClient() {
     },
     {
       id: 7,
-      title: 'Jeetfast24 Case Study',
+      title: 'High-Load Sportsbook Case Study (NDA)',
       description:
-        'How Kvaornux engineered an agent-based sportsbook and casino platform managing 100+ agent tiers, high-volume betting, and real-time settlement.',
+        'See how Kvaornux engineered a sub-140ms live sportsbook with WebSocket odds streaming, dynamic cashout, and real-time liability desk for regulated LATAM.',
       icon: Rocket,
-      link: '/igaming-case-studies/agent-based-casino-sportsbook-platform',
+      link: '/igaming-case-studies/high-load-sportsbook-platform-development',
       span: 2,
     },
     {
@@ -289,9 +289,9 @@ export default function SportsbookPlatformClient() {
         'Our risk engine continuously calculates real-time liability exposure per event, market, and selection. It features automated max-stake throttling for sharp bettors, dynamic bet acceptance delays, arbitrage protection, and automated margin adjustments.',
     },
     {
-      question: 'Does the sportsbook platform software support retail betting shops and agent networks?',
+      question: 'Does the sportsbook platform software support role-based back office and licensed retail operations?',
       answer:
-        'Yes. The platform includes a comprehensive hierarchical agent module (Master Agent, Agent, Cashier) with physical slip barcode printing, POS cashier terminal interfaces, credit allocation, and automated multi-tier commission distribution.',
+        'Yes. The platform includes role-based staff access controls, full audit logging, and optional POS cashier terminal interfaces with barcode ticket printing and operational reporting for licensed retail betting operators.',
     },
     {
       question: 'How fast is live bet validation during high-intensity in-play sporting events?',

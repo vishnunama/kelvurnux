@@ -59,15 +59,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/igaming-case-studies/casino-platform-development",
+      url: "https://kvaornux.com/igaming-case-studies/us-sweepstakes-casino-platform-development",
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/igaming-case-studies/agent-based-casino-sportsbook-platform",
+      url: "https://kvaornux.com/igaming-case-studies/high-load-sportsbook-platform-development",
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/igaming-case-studies/building-a-localized-igaming-platform-for-bangladesh",
+      url: "https://kvaornux.com/igaming-case-studies/multi-currency-crypto-casino-platform",
+      priority: 0.9,
+    },
+    {
+      url: "https://kvaornux.com/igaming-case-studies/casino-game-aggregator-api-architecture",
       priority: 0.9,
     },
     {
