@@ -23,7 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: "https://kvaornux.com/sportsbook-platform-software",
+      url: "https://kvaornux.com/sportsbook-software",
+      priority: 0.9,
+    },
+    {
+      url: "https://kvaornux.com/sportsbook-developer",
       priority: 0.9,
     },
     {

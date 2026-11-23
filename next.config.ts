@@ -25,6 +25,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/sportsbook-platform-software",
+        destination: "/sportsbook-software",
+        permanent: true,
+      },
+      {
         source: "/igaming-api-integration",
         destination: "/casino-aggregator-api-solution",
         permanent: true,

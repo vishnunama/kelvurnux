@@ -104,7 +104,7 @@ export default function DiscoverMore({ customItems, customTitle, customSubtitle,
       title: 'Sports Betting Platform',
       description: 'A fully equipped, competitive sportsbook tailored for dynamic betting experiences in a fast-paced market.',
       icon: Trophy,
-      link: '/sportsbook-platform-software',
+      link: '/sportsbook-software',
       span: 2
     },
     {

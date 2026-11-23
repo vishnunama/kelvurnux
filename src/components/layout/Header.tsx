@@ -728,7 +728,7 @@ export default function Header() {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/sportsbook-platform-software" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                        <Link href="/sportsbook-software" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
                           Sportsbook Platform
                         </Link>
                       </li>
@@ -974,7 +974,7 @@ export default function Header() {
                   <Link href="/online-casino-platform-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
                     Casino Platform
                   </Link>
-                  <Link href="/sportsbook-platform-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                  <Link href="/sportsbook-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
                     Sportsbook Platform
                   </Link>
                   <Link href="/casino-aggregator-api-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>

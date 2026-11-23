@@ -593,7 +593,7 @@ export const ENTERPRISE_CASE_STUDIES: Record<string, EnterpriseCaseStudyData> = 
         title: 'Sportsbook Platform Software',
         description:
           'Explore our standalone betting engine, odds feed adapters, and trading desk features.',
-        href: '/sportsbook-platform-software',
+        href: '/sportsbook-software',
       },
       {
         title: 'Turnkey Sportsbook Solutions',

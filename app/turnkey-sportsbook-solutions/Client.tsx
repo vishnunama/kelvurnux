@@ -203,7 +203,7 @@ export default function TurnkeySportsbookSolutions() {
       title: 'Sportsbook Platform Software',
       description: 'Looking for standalone betting engine licensing, odds feed APIs, and trading desk tools? Explore our enterprise Sportsbook Platform Software.',
       icon: Settings,
-      link: '/sportsbook-platform-software',
+      link: '/sportsbook-software',
       span: 2,
     },
     {
@@ -437,7 +437,7 @@ export default function TurnkeySportsbookSolutions() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                Everything you need to launch and scale your sportsbook business — from backend infrastructure to player management, sportsbook API integration, payment systems, risk management, and white label sportsbook software. Powered by our high-performance <Link href="/sportsbook-platform-software" className="text-[#00ebaa] hover:underline font-medium">Sportsbook Platform Software</Link>, we deliver a complete operational turnkey package.
+                Everything you need to launch and scale your sportsbook business — from backend infrastructure to player management, sportsbook API integration, payment systems, risk management, and white label sportsbook software. Powered by our high-performance <Link href="/sportsbook-software" className="text-[#00ebaa] hover:underline font-medium">Sportsbook Platform Software</Link>, we deliver a complete operational turnkey package.
               </p>
 
               <div

@@ -66,7 +66,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/sportsbook-platform-software" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                  <Link href="/sportsbook-software" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     Sportsbook Platform
                   </Link>
                 </li>

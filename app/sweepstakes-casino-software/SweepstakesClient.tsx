@@ -311,7 +311,7 @@ export default function SweepstakesClient() {
       title: 'Sportsbook Platform Software',
       description: 'Comprehensive sports betting technology with live odds feeds, risk management, and multi-market coverage.',
       icon: RefreshCw,
-      link: '/sportsbook-platform-software',
+      link: '/sportsbook-software',
       span: 2
     },
     {
