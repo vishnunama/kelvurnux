@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 export interface Testimonial {
   id: number;
@@ -32,9 +32,26 @@ export const testimonialsData: Testimonial[] = [
 ];
 
 export default function TestimonialsSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchEndX, setTouchEndX] = useState<number | null>(null);
+  const elementsRef = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    const elements = elementsRef.current.filter((el): el is HTMLElement => el !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => elements.forEach((el) => observer.unobserve(el));
+  }, []);
 
   const minSwipeDistance = 45;
 
@@ -73,9 +90,7 @@ export default function TestimonialsSection() {
         .clients-testimonials-section {
           position: relative;
           padding: 5.5rem 0 6.5rem;
-          background: radial-gradient(105.28% 100.86% at 82.74% 0, rgba(0, 235, 170, 0.15) 0, rgba(0, 235, 170, 0) 47.08%),
-                      radial-gradient(90.07% 98.52% at 31.01% 0, rgba(0, 195, 179, 0.12) 0, rgba(0, 195, 179, 0) 47.08%),
-                      #0b0b0f;
+          background: #0b0b0f;
           overflow: hidden;
         }
 
@@ -340,20 +355,46 @@ export default function TestimonialsSection() {
             height: 0.95rem !important;
           }
         }
+
+        @keyframes test-from-bottom {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes test-fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        [data-anim] { opacity: 0; }
+        [data-anim="from-bottom"].visible { animation: test-from-bottom 0.6s ease-out forwards; }
+        [data-anim="fade-in"].visible { animation: test-fade-in 0.6s ease-out forwards; }
+        [data-anim-delay="1"].visible { animation-delay: 0.1s; }
+        [data-anim-delay="2"].visible { animation-delay: 0.2s; }
       `}</style>
 
       {/* Title & Subtitle */}
       <div className="max-w-4xl mx-auto px-4 text-center mb-8 sm:mb-12">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white mb-3 sm:mb-4">
+        <h2
+          ref={(el) => { elementsRef.current[0] = el; }}
+          data-anim="from-bottom"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white mb-3 sm:mb-4"
+        >
           What Our Clients Say
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-[#94a3b8] font-normal leading-relaxed max-w-2xl mx-auto">
+        <p
+          ref={(el) => { elementsRef.current[1] = el; }}
+          data-anim="from-bottom"
+          data-anim-delay="1"
+          className="text-sm sm:text-base md:text-lg text-[#94a3b8] font-normal leading-relaxed max-w-2xl mx-auto"
+        >
           Feedback from teams who use our solutions in daily operations.
         </p>
       </div>
 
       {/* Slider Carousel Matching Image 2 */}
       <div
+        ref={(el) => { elementsRef.current[2] = el; }}
+        data-anim="fade-in"
+        data-anim-delay="2"
         className="clients-testimonials-wrapper"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
@@ -362,40 +403,45 @@ export default function TestimonialsSection() {
         <div
           className="clients-testimonials-slider-track"
           style={{
-            transform: `translateX(calc(50vw - (${activeIndex} * (var(--slide-w) + (var(--slide-m) * 2)) + ((var(--slide-w) + (var(--slide-m) * 2)) / 2))))`,
+            transform: `translateX(calc(50vw - (${activeIndex + 1} * (var(--slide-w) + (var(--slide-m) * 2)) + ((var(--slide-w) + (var(--slide-m) * 2)) / 2))))`,
           }}
         >
-          {testimonialsData.map((testimonial, idx) => (
-            <div
-              key={testimonial.id}
-              className={`clients-testimonial-slide ${
-                idx === activeIndex ? 'active-slide' : ''
-              }`}
-              onClick={() => setActiveIndex(idx)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  setActiveIndex(idx);
-                }
-              }}
-              aria-label={`View testimonial from ${testimonial.authorPosition}`}
-            >
-              <div className="clients-testimonial-item">
-                <div className="clients-testimonial-content">
-                  <div className="clients-testimonial-text">
-                    <p>{testimonial.text}</p>
+          {[
+            { ...testimonialsData[testimonialsData.length - 1], targetIndex: testimonialsData.length - 1, key: 'flank-start', isFlank: true },
+            ...testimonialsData.map((t, idx) => ({ ...t, targetIndex: idx, key: `slide-${t.id}`, isFlank: false })),
+            { ...testimonialsData[0], targetIndex: 0, key: 'flank-end', isFlank: true },
+          ].map((testimonial, trackIdx) => {
+            const isActive = !testimonial.isFlank && trackIdx === activeIndex + 1;
+            return (
+              <div
+                key={testimonial.key}
+                className={`clients-testimonial-slide ${isActive ? 'active-slide' : ''}`}
+                onClick={() => setActiveIndex(testimonial.targetIndex)}
+                role="button"
+                tabIndex={testimonial.isFlank ? -1 : 0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    setActiveIndex(testimonial.targetIndex);
+                  }
+                }}
+                aria-label={`View testimonial from ${testimonial.authorPosition}`}
+              >
+                <div className="clients-testimonial-item">
+                  <div className="clients-testimonial-content">
+                    <div className="clients-testimonial-text">
+                      <p>{testimonial.text}</p>
+                    </div>
                   </div>
-                </div>
 
-                <div className="clients-testimonial-info">
-                  <div className="clients-testimonial-author-position">
-                    {testimonial.authorPosition}
+                  <div className="clients-testimonial-info">
+                    <div className="clients-testimonial-author-position">
+                      {testimonial.authorPosition}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Controls Navigation (Arrows & Capsule Pagination Dots) */}

@@ -17,6 +17,8 @@ import {
 import OpportunitiesSection from '@/src/components/opportunitiessection/Opportunitiessection';
 import ContactForm from '@/src/components/contactform/ContactForm';
 import DiscoverMore from '@/src/components/Discovermore/Discovermore';
+import FAQSection from '@/src/components/FAQSection/FAQSection';
+import { TURNKEY_SPORTSBOOK_FAQS } from './faqData';
 
 export default function TurnkeySportsbookSolutions() {
   const elementsRef = useRef<(HTMLElement | null)[]>([]);
@@ -304,7 +306,7 @@ export default function TurnkeySportsbookSolutions() {
               data-anim="from-bottom"
               data-anim-delay="1"
             >
-              Launch your turnkey sportsbook platform with sports betting software, sportsbook API integration, live betting features, secure payment solutions, KYC verification, risk management tools, advanced back-office control, and white label sportsbook support for online betting operators.
+              Launch your turnkey sportsbook platform with enterprise turnkey sportsbook software, turnkey sports betting solutions, sportsbook API integration, live betting and turnkey sports streaming solutions, secure payment gateways, KYC verification, automated risk management tools, advanced back-office control, and full B2B bookmaking autonomy for online betting operators.
             </p>
           </div>
 
@@ -437,7 +439,7 @@ export default function TurnkeySportsbookSolutions() {
                 data-anim-delay="1"
                 className="hidden md:block text-base lg:text-lg text-gray-400 leading-relaxed"
               >
-                Everything you need to launch and scale your sportsbook business — from backend infrastructure to player management, sportsbook API integration, payment systems, risk management, and white label sportsbook software. Powered by our high-performance <Link href="/sportsbook-software" className="text-[#00ebaa] hover:underline font-medium">Sportsbook Platform Software</Link>, we deliver a complete operational turnkey package.
+                Everything you need to launch and scale your B2B betting business — from backend infrastructure and turnkey online casino and sportsbook software solution architecture to player management, sportsbook API integration, payment systems, risk management, turnkey betting exchange modules, mobile betting apps, and white label sportsbook comparisons. As an experienced turnkey sportsbook development company and turnkey betting provider, we deliver a complete operational turnkey package powered by our <Link href="/sportsbook-software" className="text-[#00ebaa] hover:underline font-medium">Sportsbook Platform Software</Link>.
               </p>
 
               <div
@@ -507,9 +509,12 @@ export default function TurnkeySportsbookSolutions() {
         customSubtitle="Complete sports betting technology modules, trading tools, and operational workflows for turnkey bookmaker launches."
       />
 
+      {/* Turnkey Sportsbook FAQs */}
+      <FAQSection customFaqData={TURNKEY_SPORTSBOOK_FAQS} hideBgImage={true} />
+
       {/* Opportunities Section */}
       <OpportunitiesSection />
-      <ContactForm />
+      <ContactForm defaultCategory="Sportsbook" />
 
     </>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -113,12 +113,31 @@ export default function EnterpriseCaseStudyTemplate({
   data: EnterpriseCaseStudyData;
 }) {
   const [activeModuleId, setActiveModuleId] = useState(data.moduleTabs[0]?.id || '');
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const root = pageRef.current;
+    if (!root) return;
+    const elements = Array.from(root.querySelectorAll<HTMLElement>('[data-anim]'));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   const activeModule =
     data.moduleTabs.find((tab) => tab.id === activeModuleId) || data.moduleTabs[0];
 
   return (
-    <div className="min-h-screen bg-[#0b0b0f] text-white selection:bg-[#00ebaa] selection:text-black">
+    <div ref={pageRef} className="cs-page-anim min-h-screen bg-[#0b0b0f] text-white selection:bg-[#00ebaa] selection:text-black">
       <style>{`
         /* EXACT CASE STUDY DESIGN SYSTEM MATCHING /igaming-case-studies/casino-platform-development 100% */
         .cs-hero-section {
@@ -712,6 +731,20 @@ export default function EnterpriseCaseStudyTemplate({
             font-size: 15px;
           }
         }
+
+        @keyframes cs-from-bottom {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes cs-fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .cs-page-anim [data-anim] { opacity: 0; }
+        .cs-page-anim [data-anim="from-bottom"].visible { animation: cs-from-bottom 0.6s ease-out forwards; }
+        .cs-page-anim [data-anim="fade-in"].visible { animation: cs-fade-in 0.6s ease-out forwards; }
+        .cs-page-anim [data-anim-delay="1"].visible { animation-delay: 0.1s; }
+        .cs-page-anim [data-anim-delay="2"].visible { animation-delay: 0.2s; }
       `}</style>
 
       {/* 1. HERO SECTION & BANNER (EXACT /casino-platform-development DESIGN) */}
@@ -731,7 +764,7 @@ export default function EnterpriseCaseStudyTemplate({
             </span>
           </nav>
 
-          <div className="cs-hero-banner">
+          <div data-anim="from-bottom" className="cs-hero-banner">
             <Image
               src={data.heroImage}
               alt={data.heroImageAlt}
@@ -768,7 +801,7 @@ export default function EnterpriseCaseStudyTemplate({
           </div>
 
           {/* FACTS CARDS (EXACT 4-CARD ROW FROM /casino-platform-development) */}
-          <dl className="cs-facts">
+          <dl data-anim="fade-in" data-anim-delay="1" className="cs-facts">
             <div className="cs-facts-item">
               <dt className="cs-facts-label">Client</dt>
               <dd className="cs-facts-value">{data.facts.clientProfile}</dd>
@@ -794,7 +827,7 @@ export default function EnterpriseCaseStudyTemplate({
         <div className="cs-container">
           {/* GRID 1: The Challenge (Text Left, Hero Visual Right) */}
           <div className="cs-two-col-grid">
-            <div className="cs-two-col-text">
+            <div data-anim="from-bottom" className="cs-two-col-text">
               <h2 className="cs-two-col-title">The Challenge</h2>
               <div className="cs-two-col-content">
                 {data.challengeParagraphs.map((p, idx) => (
@@ -807,7 +840,7 @@ export default function EnterpriseCaseStudyTemplate({
                 </ul>
               </div>
             </div>
-            <div className="cs-two-col-image">
+            <div data-anim="fade-in" data-anim-delay="1" className="cs-two-col-image">
               <Image
                 src={data.heroImage}
                 alt={data.heroImageAlt}
@@ -820,7 +853,7 @@ export default function EnterpriseCaseStudyTemplate({
 
           {/* GRID 2: The Solution (Dashboard Visual Left, Text Right) */}
           <div className="cs-two-col-grid">
-            <div className="cs-two-col-image">
+            <div data-anim="fade-in" className="cs-two-col-image">
               <Image
                 src={data.dashboardImage}
                 alt={data.dashboardImageAlt}
@@ -829,7 +862,7 @@ export default function EnterpriseCaseStudyTemplate({
                 className="object-cover"
               />
             </div>
-            <div className="cs-two-col-text">
+            <div data-anim="from-bottom" data-anim-delay="1" className="cs-two-col-text">
               <h2 className="cs-two-col-title">The Solution</h2>
               <div className="cs-two-col-content">
                 {data.solutionParagraphs.map((p, idx) => (
@@ -846,7 +879,7 @@ export default function EnterpriseCaseStudyTemplate({
 
           {/* GRID 3: Security & Regulatory Readiness (Text Left, Compliance Cards Right) */}
           <div className="cs-two-col-grid">
-            <div className="cs-two-col-text">
+            <div data-anim="from-bottom" className="cs-two-col-text">
               <h2 className="cs-two-col-title">{data.complianceHeading}</h2>
               <div className="cs-two-col-content">
                 <p>{data.complianceIntro}</p>
@@ -860,7 +893,7 @@ export default function EnterpriseCaseStudyTemplate({
                 </ul>
               </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+            <div data-anim="fade-in" data-anim-delay="1" className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
               {data.complianceItems.map((item, idx) => (
                 <div key={idx} className="cs-glass-card p-5 text-left">
                   <div className="flex items-center gap-2 mb-2">
@@ -882,12 +915,12 @@ export default function EnterpriseCaseStudyTemplate({
       {/* 3. CORE ENGINEERING MODULES DELIVERED (STYLED 100% TO MATCH KVAORNUX SITE) */}
       <section className="cs-modules-section">
         <div className="cs-container">
-          <h2 className="cs-section-heading">Core Engineering Modules Delivered</h2>
-          <p className="cs-section-sub">
+          <h2 data-anim="from-bottom" className="cs-section-heading">Core Engineering Modules Delivered</h2>
+          <p data-anim="from-bottom" data-anim-delay="1" className="cs-section-sub">
             Interactive breakdown of the production software modules, wallet controls, and back-office tooling built for this engagement.
           </p>
 
-          <div className="cs-module-tabs">
+          <div data-anim="fade-in" data-anim-delay="2" className="cs-module-tabs">
             {data.moduleTabs.map((tab) => (
               <button
                 key={tab.id}
@@ -900,7 +933,7 @@ export default function EnterpriseCaseStudyTemplate({
             ))}
           </div>
 
-          <div className="cs-module-grid">
+          <div data-anim="fade-in" data-anim-delay="2" className="cs-module-grid">
             <div className="cs-glass-card p-7 sm:p-8 text-left">
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">
                 {activeModule.title}
@@ -934,10 +967,10 @@ export default function EnterpriseCaseStudyTemplate({
       {/* 4. SYSTEM ARCHITECTURE & TECHNICAL SPEC TABLE (AEO / GEO ENGINE IN EXACT SITE STYLE) */}
       <section id="system-architecture" className="cs-arch-section">
         <div className="cs-container">
-          <h2 className="cs-section-heading">{data.architectureHeading}</h2>
-          <p className="cs-section-sub">{data.architectureIntro}</p>
+          <h2 data-anim="from-bottom" className="cs-section-heading">{data.architectureHeading}</h2>
+          <p data-anim="from-bottom" data-anim-delay="1" className="cs-section-sub">{data.architectureIntro}</p>
 
-          <div className="cs-arch-grid">
+          <div data-anim="fade-in" data-anim-delay="1" className="cs-arch-grid">
             {data.architectureNodes.map((node, idx) => (
               <div key={idx} className="cs-glass-card p-6 text-left flex flex-col">
                 <span className="inline-block w-fit px-3 py-1 rounded-full text-xs font-bold bg-[#00ebaa]/15 text-[#00ebaa] mb-4">
@@ -950,7 +983,7 @@ export default function EnterpriseCaseStudyTemplate({
             ))}
           </div>
 
-          <div className="cs-glass-card overflow-hidden">
+          <div data-anim="fade-in" data-anim-delay="2" className="cs-glass-card overflow-hidden">
             <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between">
               <h3 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
                 <Cpu className="w-5 h-5 text-[#00ebaa]" />
@@ -983,8 +1016,8 @@ export default function EnterpriseCaseStudyTemplate({
       {/* 5. PLATFORM DELIVERED (EXACT 3x2 RESULTS GRID FROM /casino-platform-development) */}
       <section className="cs-results">
         <div className="cs-container">
-          <h2 className="cs-results-heading">Platform Delivered</h2>
-          <div className="cs-results-list">
+          <h2 data-anim="from-bottom" className="cs-results-heading">Platform Delivered</h2>
+          <div data-anim="fade-in" data-anim-delay="1" className="cs-results-list">
             {data.metrics.map((metric, idx) => {
               const IconComp = resultIcons[idx % resultIcons.length];
               return (
@@ -1005,8 +1038,8 @@ export default function EnterpriseCaseStudyTemplate({
       {/* 6. CLIENT TESTIMONIAL (EXACT CARD FROM /casino-platform-development) */}
       <section className="cs-testimonial">
         <div className="cs-container">
-          <h2 className="cs-testimonial-heading">Client testimonials</h2>
-          <div className="cs-testimonial-card">
+          <h2 data-anim="from-bottom" className="cs-testimonial-heading">Client testimonials</h2>
+          <div data-anim="fade-in" data-anim-delay="1" className="cs-testimonial-card">
             <div className="cs-testimonial-quote-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="44" height="34" viewBox="0 0 44 34" fill="none">
                 <path d="M10.3158 34C8.5614 34 6.87719 33.5424 5.26316 32.6273C3.7193 31.6418 2.45614 30.2691 1.47368 28.5093C0.491228 26.7495 0 24.7081 0 22.3851C0 19.9917 0.526316 17.4928 1.57895 14.8882C2.70175 12.2836 4.35088 9.71428 6.52632 7.18013C8.77193 4.64596 11.6491 2.25259 15.1579 0L20.1053 5.2795C17.8596 7.67288 16.1754 10.0311 15.0526 12.354C13.9298 14.6066 13.3684 16.7184 13.3684 18.6894C13.3684 20.8716 13.9298 22.5963 15.0526 23.8634C16.1754 25.1304 17.7193 26.3623 19.6842 27.559C19.0526 29.53 17.8246 31.1139 16 32.3106C14.2456 33.4369 12.3509 34 10.3158 34ZM34.2105 34C32.4561 34 30.7719 33.5424 29.1579 32.6273C27.614 31.6418 26.3509 30.2691 25.3684 28.5093C24.386 26.7495 23.8947 24.7081 23.8947 22.3851C23.8947 19.9917 24.4211 17.4928 25.4737 14.8882C26.5965 12.2836 28.2456 9.71428 30.4211 7.18013C32.6667 4.64596 35.5439 2.25259 39.0526 0L44 5.2795C41.7544 7.67288 40.0702 10.0311 38.9474 12.354C37.8246 14.6066 37.2632 16.7184 37.2632 18.6894C37.2632 20.8716 37.8246 22.5963 38.9474 23.8634C40.0702 25.1304 41.614 26.3623 43.5789 27.559C42.9474 29.53 41.7193 31.1139 39.8947 32.3106C38.1404 33.4369 36.2456 34 34.2105 34Z" fill="#ffffff" fillOpacity="0.2"></path>
@@ -1028,8 +1061,8 @@ export default function EnterpriseCaseStudyTemplate({
       {/* 8. RELATED SOLUTIONS (EXACT KVAORNUX GLASS CARDS) */}
       <section className="py-12 bg-[#0b0b0f]">
         <div className="cs-container">
-          <h2 className="cs-section-heading">Explore Related Solutions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
+          <h2 data-anim="from-bottom" className="cs-section-heading">Explore Related Solutions</h2>
+          <div data-anim="fade-in" data-anim-delay="1" className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
             {data.relatedLinks.map((item, idx) => (
               <Link
                 key={idx}

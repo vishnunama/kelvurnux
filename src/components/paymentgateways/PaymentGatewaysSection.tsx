@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
 
 const col1 = [
@@ -124,10 +124,22 @@ const PaymentCard = ({ fileName }: { fileName: string }) => {
 };
 
 export default function PaymentGatewaysSection() {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const elementsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
-    setIsLoaded(true);
+    const elements = elementsRef.current.filter((el): el is HTMLElement => el !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => elements.forEach((el) => observer.unobserve(el));
   }, []);
 
   const handleScrollToContact = (e: React.MouseEvent) => {
@@ -182,6 +194,20 @@ export default function PaymentGatewaysSection() {
         .payment-scroll-down:hover {
           animation-play-state: paused;
         }
+
+        @keyframes pay-from-bottom {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pay-fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        [data-anim] { opacity: 0; }
+        [data-anim="from-bottom"].visible { animation: pay-from-bottom 0.6s ease-out forwards; }
+        [data-anim="fade-in"].visible { animation: pay-fade-in 0.6s ease-out forwards; }
+        [data-anim-delay="1"].visible { animation-delay: 0.1s; }
+        [data-anim-delay="2"].visible { animation-delay: 0.2s; }
       `}</style>
 
       <div className="section-padding w-full h-full">
@@ -189,9 +215,9 @@ export default function PaymentGatewaysSection() {
 
           {/* Centered Top Heading matching site sections */}
           <div
-            className={`transition-all duration-700 text-center mb-8 sm:mb-10 lg:mb-14 ${
-              isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
+            ref={(el) => { elementsRef.current[0] = el; }}
+            data-anim="from-bottom"
+            className="text-center mb-8 sm:mb-10 lg:mb-14"
           >
             <h2 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto">
               Payment Methods Through One Integration
@@ -202,7 +228,12 @@ export default function PaymentGatewaysSection() {
           <div className="home_providers flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-0 relative overflow-hidden items-center lg:items-stretch">
             
             {/* Left Side on Desktop, Bottom on Mobile: Content & CTA */}
-            <div className="home_providers-content flex flex-col justify-center items-start p-6 sm:p-8 lg:p-14 min-h-auto lg:min-h-[40rem] relative overflow-hidden w-full order-2 lg:order-1">
+            <div
+              ref={(el) => { elementsRef.current[1] = el; }}
+              data-anim="from-bottom"
+              data-anim-delay="1"
+              className="home_providers-content flex flex-col justify-center items-start p-6 sm:p-8 lg:p-14 min-h-auto lg:min-h-[40rem] relative overflow-hidden w-full order-2 lg:order-1"
+            >
 
               {/* Background Graphic */}
               <img
@@ -244,6 +275,9 @@ export default function PaymentGatewaysSection() {
 
             {/* Right Side on Desktop, Top on Mobile: 3-4 Vertical Columns Infinite Wall */}
             <div
+              ref={(el) => { elementsRef.current[2] = el; }}
+              data-anim="fade-in"
+              data-anim-delay="2"
               className="home_providers-wr z-10 flex justify-between items-start w-full h-[19rem] xs:h-[22rem] sm:h-[30rem] lg:h-[38rem] relative overflow-hidden gap-[0.4rem] xs:gap-[0.63rem] order-1 lg:order-2"
               style={{
                 WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%, #000 96%, transparent 100%)',

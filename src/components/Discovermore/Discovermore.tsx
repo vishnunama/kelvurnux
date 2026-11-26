@@ -164,10 +164,24 @@ export default function DiscoverMore({ customItems, customTitle, customSubtitle,
         .discover-card-item:hover .icon-box svg {
           color: #0b0b0f !important;
         }
+        @keyframes dm-from-bottom {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes dm-fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .discover-section [data-anim] { opacity: 0; }
+        .discover-section [data-anim="from-bottom"].visible { animation: dm-from-bottom 0.6s ease-out forwards; }
+        .discover-section [data-anim="fade-in"].visible { animation: dm-fade-in 0.6s ease-out forwards; }
+        .discover-section [data-anim-delay="1"].visible { animation-delay: 0.1s; }
+        .discover-section [data-anim-delay="2"].visible { animation-delay: 0.2s; }
+        .discover-section [data-anim-delay="3"].visible { animation-delay: 0.3s; }
       `}</style>
 
       <section 
-        className={`w-full relative pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-16 md:pb-24 ${className || ''}`}
+        className={`discover-section w-full relative pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-16 md:pb-24 ${className || ''}`}
         style={{
           background: 'radial-gradient(100% 70% at 48.33% 99.05%, rgba(0, 235, 170, 0.12) 0%, rgba(0, 80, 60, 0.12) 25.39%, rgba(11, 11, 15, 0.2) 73.2%)'
         }}
@@ -184,11 +198,17 @@ export default function DiscoverMore({ customItems, customTitle, customSubtitle,
                 WebkitTextFillColor: 'transparent'
               }}
               ref={(el) => { elementsRef.current[0] = el; }}
+              data-anim="from-bottom"
             >
               {customTitle || 'Discover more'}
             </h2>
             {customSubtitle && (
-              <p className="text-[#b3b3c4] text-base sm:text-lg md:text-xl max-w-3xl mx-auto font-normal leading-relaxed m-0">
+              <p
+                className="text-[#b3b3c4] text-base sm:text-lg md:text-xl max-w-3xl mx-auto font-normal leading-relaxed m-0"
+                ref={(el) => { elementsRef.current[20] = el; }}
+                data-anim="from-bottom"
+                data-anim-delay="1"
+              >
                 {customSubtitle}
               </p>
             )}
@@ -221,6 +241,8 @@ export default function DiscoverMore({ customItems, customTitle, customSubtitle,
                   href={item.link}
                   className={`${baseClasses} cursor-pointer`}
                   ref={(el) => { elementsRef.current[index + 1] = el; }}
+                  data-anim="fade-in"
+                  data-anim-delay={String((index % 3) + 1)}
                 >
                   {cardInner}
                 </Link>
@@ -229,6 +251,8 @@ export default function DiscoverMore({ customItems, customTitle, customSubtitle,
                   key={item.id}
                   className={baseClasses}
                   ref={(el) => { elementsRef.current[index + 1] = el; }}
+                  data-anim="fade-in"
+                  data-anim-delay={String((index % 3) + 1)}
                 >
                   {cardInner}
                 </div>

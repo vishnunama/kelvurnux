@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -23,6 +23,7 @@ export interface StepsSectionProps {
   sectionId?: string;
   scrollSticky?: boolean;
   className?: string;
+  sectionStyle?: React.CSSProperties;
   hideBgImage?: boolean;
   startFromFirst?: boolean;
 }
@@ -58,13 +59,17 @@ export const stepsData: StepItem[] = [
 const styles = `
   .steps-section {
     overflow: hidden;
-    background: radial-gradient(106.74% 100.05% at 50% 100.05%, #1c1918 0, #0b0b0f 19.4%);
+    width: 100%;
+    border: none;
+    border-radius: 36px 36px 0 0;
+    background: linear-gradient(180deg, rgba(14, 46, 41, 0.82) 0%, rgba(10, 34, 31, 0.72) 65%, rgba(9, 25, 24, 0.35) 82%, #0b0b0f 92%, #0b0b0f 100%);
     position: relative;
     padding: 3.5rem 0 4rem;
   }
 
   @media (min-width: 768px) {
     .steps-section {
+      border-radius: 64px 64px 0 0;
       padding: 4.5rem 0 5.5rem;
     }
   }
@@ -561,6 +566,20 @@ const styles = `
       margin-top: 1.1rem !important;
     }
   }
+
+  @keyframes steps-from-bottom {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes steps-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .steps-section [data-anim] { opacity: 0; }
+  .steps-section [data-anim="from-bottom"].visible { animation: steps-from-bottom 0.6s ease-out forwards; }
+  .steps-section [data-anim="fade-in"].visible { animation: steps-fade-in 0.6s ease-out forwards; }
+  .steps-section [data-anim-delay="1"].visible { animation-delay: 0.1s; }
+  .steps-section [data-anim-delay="2"].visible { animation-delay: 0.2s; }
 `;
 
 export default function StepsSection({
@@ -573,7 +592,8 @@ export default function StepsSection({
   sectionId,
   scrollSticky = false,
   className,
-  hideBgImage = false,
+  sectionStyle,
+  hideBgImage = true,
   startFromFirst = false,
 }: StepsSectionProps = {}) {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -582,6 +602,23 @@ export default function StepsSection({
   const activeIndexRef = useRef(0);
   const isProgrammaticScrollRef = useRef(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const animElementsRef = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    const elements = animElementsRef.current.filter((el): el is HTMLElement => el !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => elements.forEach((el) => observer.unobserve(el));
+  }, []);
 
   const steps = customSteps || stepsData;
   const title = customTitle || 'From Strategy to Launch';
@@ -702,6 +739,7 @@ export default function StepsSection({
     <section
       className={`steps-section ${className ? className : ''}`}
       id={sectionId}
+      style={sectionStyle}
     >
       {/* Background Image */}
       {!hideBgImage && (
@@ -724,24 +762,38 @@ export default function StepsSection({
       )}
 
       <div className="steps-container">
-        <h2 className="steps-title">
+        <h2
+          ref={(el) => { animElementsRef.current[0] = el; }}
+          data-anim="from-bottom"
+          className="steps-title"
+        >
           {title}
         </h2>
 
-        <p className="steps-subtitle">
+        <p
+          ref={(el) => { animElementsRef.current[1] = el; }}
+          data-anim="from-bottom"
+          data-anim-delay="1"
+          className="steps-subtitle"
+        >
           {subtitle}
         </p>
 
-        <div className="steps-slider-wrapper">
+        <div
+          ref={(el) => { animElementsRef.current[2] = el; }}
+          data-anim="fade-in"
+          data-anim-delay="2"
+          className="steps-slider-wrapper"
+        >
           <Swiper
             modules={[Autoplay]}
             autoplay={
               startFromFirst
                 ? false
                 : {
-                    delay: 3500,
-                    disableOnInteraction: false,
-                  }
+                  delay: 3500,
+                  disableOnInteraction: false,
+                }
             }
             loop={!startFromFirst}
             centeredSlides={!startFromFirst}

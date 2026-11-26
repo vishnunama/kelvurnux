@@ -75,6 +75,26 @@ export default function Footer() {
                     Casino Game Aggregator
                   </Link>
                 </li>
+                <li>
+                  <Link href="/sportsbook-api-integration" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Sportsbook API Integration
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/bookmaker-software" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Bookmaker Software
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/casino-website-developer" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Casino Website Developer
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/hire-igaming-developer" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    Hire iGaming Developer
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>
@@ -102,6 +122,11 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/white-label-sportsbook" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
+                    White Label Sportsbook
+                  </Link>
+                </li>
+                <li>
                   <Link href="/custom-igaming-solution" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     Bespoke iGaming Development
                   </Link>
@@ -114,6 +139,11 @@ export default function Footer() {
                 <li>
                   <Link href="/turnkey-sweepstakes-casino-software" className="text-xs md:text-sm text-gray-300 hover:text-[#00ebaa] transition-colors duration-300">
                     Turnkey Sweepstakes
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions" className="text-xs md:text-sm text-[#00ebaa] font-medium hover:underline transition-colors duration-300">
+                    All Solutions →
                   </Link>
                 </li>
                 <li>

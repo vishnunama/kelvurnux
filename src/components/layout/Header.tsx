@@ -296,7 +296,7 @@ export default function Header() {
         }
         
         .zg-dd-link:hover {
-          background: rgba(0, 235, 170, 0.12);
+          background: rgba(0, 235, 170, 0.14);
           color: #ffffff;
           transform: translateX(2px);
         }
@@ -701,21 +701,24 @@ export default function Header() {
                   onMouseLeave={handleMouseLeave}
                   style={{ width: 'min(19rem, calc(100vw - 4rem))' }}
                 >
-                  {/* SVG Image arrow */}
-                  <img
-                    src="/assets/polygon.svg"
-                    alt=""
-                    className="absolute -top-[12px] left-[50%] transform -translate-x-1/2 w-[3rem] h-4 z-10"
-                  />
+                  {/* SVG arrow */}
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 39 9"
+                    preserveAspectRatio="none"
+                    className="absolute -top-[9px] left-[50%] -translate-x-1/2 w-[3rem] h-[10px] z-10 pointer-events-none"
+                  >
+                    <path d="M19.5 0L38.9856 9H0.0144291L19.5 0Z" fill="#091D1A" fillOpacity="0.98" />
+                  </svg>
 
                   <div
                     className="rounded-[1.4rem] p-[0.9rem]"
                     style={{
-                      background: 'radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(21,41,46,0.95) 0%, rgba(8,14,16,0.97) 100%)',
-                      boxShadow: '0 24px 64px rgba(0,0,0,0.75)',
-                      borderLeft: '1px solid rgba(0,235,170,0.15)',
-                      borderRight: '1px solid rgba(0,235,170,0.15)',
-                      borderBottom: '2px solid rgba(0,235,170,0.32)',
+                      background: 'linear-gradient(180deg, rgba(9, 29, 26, 0.98) 0%, rgba(11, 37, 33, 0.97) 45%, rgba(14, 46, 41, 0.97) 100%)',
+                      boxShadow: '0 24px 64px rgba(0, 0, 0, 0.65)',
+                      borderLeft: '1px solid rgba(0, 235, 170, 0.2)',
+                      borderRight: '1px solid rgba(0, 235, 170, 0.2)',
+                      borderBottom: '2px solid rgba(0, 235, 170, 0.35)',
                       borderTop: 'none',
                       backdropFilter: 'blur(20px)',
                       WebkitBackdropFilter: 'blur(20px)',
@@ -779,21 +782,24 @@ export default function Header() {
                   onMouseLeave={handleMouseLeave}
                   style={{ width: 'min(63rem, calc(100vw - 6.4rem))' }}
                 >
-                  {/* SVG Image arrow */}
-                  <img
-                    src="/assets/polygon.svg"
-                    alt=""
-                    className="absolute -top-[12px] left-[46%] transform -translate-x-1/2 w-[3rem] h-4 z-10"
-                  />
+                  {/* SVG arrow */}
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 39 9"
+                    preserveAspectRatio="none"
+                    className="absolute -top-[9px] left-[50%] -translate-x-1/2 w-[3rem] h-[10px] z-10 pointer-events-none"
+                  >
+                    <path d="M19.5 0L38.9856 9H0.0144291L19.5 0Z" fill="#091D1A" fillOpacity="0.98" />
+                  </svg>
 
                   <div
                     className="rounded-[1.4rem] p-[1.3rem] grid grid-cols-[1fr_1.45fr] gap-[1.2rem]"
                     style={{
-                      background: 'radial-gradient(106.93% 100.62% at 50.09% 100%, rgba(21,41,46,0.95) 0%, rgba(8,14,16,0.97) 100%)',
-                      boxShadow: '0 24px 64px rgba(0,0,0,0.75)',
-                      borderLeft: '1px solid rgba(0,235,170,0.15)',
-                      borderRight: '1px solid rgba(0,235,170,0.15)',
-                      borderBottom: '2px solid rgba(0,235,170,0.32)',
+                      background: 'linear-gradient(180deg, rgba(9, 29, 26, 0.98) 0%, rgba(11, 37, 33, 0.97) 45%, rgba(14, 46, 41, 0.97) 100%)',
+                      boxShadow: '0 24px 64px rgba(0, 0, 0, 0.65)',
+                      borderLeft: '1px solid rgba(0, 235, 170, 0.2)',
+                      borderRight: '1px solid rgba(0, 235, 170, 0.2)',
+                      borderBottom: '2px solid rgba(0, 235, 170, 0.35)',
                       borderTop: 'none',
                       backdropFilter: 'blur(20px)',
                       WebkitBackdropFilter: 'blur(20px)',
@@ -801,13 +807,13 @@ export default function Header() {
                   >
                     {/* Left Card: Comprehensive Solutions */}
                     <div
-                      className="rounded-[1rem] p-[1.3rem] transition-all duration-500 hover:bg-[#00ebaa]/[0.08]"
+                      className="rounded-[1rem] p-[1.3rem] transition-all duration-500"
                       style={{
-                        background: 'rgba(255, 255, 255, 0.035)',
-                        borderLeft: '1px solid rgba(255, 255, 255, 0.07)',
-                        borderRight: '1px solid rgba(255, 255, 255, 0.07)',
-                        borderBottom: '1px solid rgba(0, 235, 170, 0.22)',
-                        borderTop: 'none',
+                        background: 'rgba(255, 255, 255, 0.055)',
+                        borderLeft: '1px solid rgba(255, 255, 255, 0.08)',
+                        borderRight: '1px solid rgba(255, 255, 255, 0.08)',
+                        borderBottom: '1px solid rgba(0, 235, 170, 0.28)',
+                        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                       }}
                     >
                       <div className="flex items-center gap-[0.6rem] text-white font-semibold text-[1.05rem] mb-[1.2rem] tracking-[0.3px]">
@@ -830,18 +836,23 @@ export default function Header() {
                             White Label Casino
                           </Link>
                         </li>
+                        <li>
+                          <Link href="/white-label-sportsbook" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
+                            White Label Sportsbook
+                          </Link>
+                        </li>
                       </ul>
                     </div>
 
                     {/* Right Card: Special Solutions (2-column internal grid) */}
                     <div
-                      className="rounded-[1rem] p-[1.3rem] transition-all duration-500 hover:bg-[#00ebaa]/[0.08]"
+                      className="rounded-[1rem] p-[1.3rem] transition-all duration-500"
                       style={{
-                        background: 'rgba(255, 255, 255, 0.035)',
-                        borderLeft: '1px solid rgba(255, 255, 255, 0.07)',
-                        borderRight: '1px solid rgba(255, 255, 255, 0.07)',
-                        borderBottom: '1px solid rgba(0, 235, 170, 0.22)',
-                        borderTop: 'none',
+                        background: 'rgba(255, 255, 255, 0.055)',
+                        borderLeft: '1px solid rgba(255, 255, 255, 0.08)',
+                        borderRight: '1px solid rgba(255, 255, 255, 0.08)',
+                        borderBottom: '1px solid rgba(0, 235, 170, 0.28)',
+                        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
                       }}
                     >
                       <div className="flex items-center gap-[0.6rem] text-white font-semibold text-[1.05rem] mb-[1.2rem] tracking-[0.3px]">
@@ -872,6 +883,16 @@ export default function Header() {
                         <li>
                           <Link href="/custom-sweepstakes-casino-development" role="menuitem" className="zg-dd-link" onClick={() => setActiveDropdown(null)}>
                             Custom Sweepstakes
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            href="/solutions"
+                            role="menuitem"
+                            className="zg-dd-link"
+                            onClick={() => setActiveDropdown(null)}
+                          >
+                            All Solutions
                           </Link>
                         </li>
                       </ul>
@@ -1013,6 +1034,9 @@ export default function Header() {
                   <Link href="/white-label-casino-solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
                     White Label Casino
                   </Link>
+                  <Link href="/white-label-sportsbook" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    White Label Sportsbook
+                  </Link>
                   <Link href="/custom-igaming-solution" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
                     Bespoke iGaming Development
                   </Link>
@@ -1027,6 +1051,9 @@ export default function Header() {
                   </Link>
                   <Link href="/crypto-casino-software" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
                     Crypto Casino Software
+                  </Link>
+                  <Link href="/solutions" className="zg-mob-sub" onClick={() => setIsMenuOpen(false)}>
+                    All Solutions
                   </Link>
                 </div>
               </div>

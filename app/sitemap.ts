@@ -11,6 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://kvaornux.com/solutions",
+      priority: 0.9,
+    },
+    {
       url: "https://kvaornux.com/white-label-casino-solutions",
       priority: 0.9,
     },
@@ -44,6 +48,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: "https://kvaornux.com/turnkey-sportsbook-solutions",
+      priority: 0.9,
+    },
+    {
+      url: "https://kvaornux.com/white-label-sportsbook",
+      priority: 0.9,
+    },
+    {
+      url: "https://kvaornux.com/sportsbook-api-integration",
+      priority: 0.9,
+    },
+    {
+      url: "https://kvaornux.com/bookmaker-software",
+      priority: 0.9,
+    },
+    {
+      url: "https://kvaornux.com/casino-website-developer",
+      priority: 0.9,
+    },
+    {
+      url: "https://kvaornux.com/hire-igaming-developer",
       priority: 0.9,
     },
     {

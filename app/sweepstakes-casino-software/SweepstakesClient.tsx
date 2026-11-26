@@ -659,16 +659,30 @@ export default function SweepstakesClient() {
       <section id="turnkey-vs-custom" className="relative py-16 md:py-24 bg-[#080b0f] border-t border-white/10">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-10 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+            <h2
+              ref={(el) => { solutionsElementsRef.current[30] = el; }}
+              data-anim="from-bottom"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
+            >
               Turnkey vs Custom Sweepstakes Casino Software
             </h2>
-            <p className="text-[#a5a5a5] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed">
+            <p
+              ref={(el) => { solutionsElementsRef.current[31] = el; }}
+              data-anim="from-bottom"
+              data-anim-delay="1"
+              className="text-[#a5a5a5] text-base sm:text-lg max-w-3xl mx-auto font-light leading-relaxed"
+            >
               Choose turnkey configuration when an established platform core fits your requirements. Consider custom development for proprietary workflows or deeper architectural changes, and confirm integration, licensing and handover terms before selecting a delivery model.
             </p>
           </div>
 
           {/* Comparison Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div
+            ref={(el) => { solutionsElementsRef.current[32] = el; }}
+            data-anim="fade-in"
+            data-anim-delay="2"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto"
+          >
             {/* Turnkey Card */}
             <div
               className="rounded-xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:border-[#00ebaa]/50 hover:shadow-[0_0_25px_rgba(0,235,170,0.15)] relative"

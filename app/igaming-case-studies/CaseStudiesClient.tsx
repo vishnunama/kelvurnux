@@ -45,14 +45,6 @@ const resetAllAnimations = () => {
 
 export default function CaseStudiesClient() {
   React.useEffect(() => {
-    resetAllAnimations();
-    const timer = setTimeout(() => {
-      resetAllAnimations();
-    }, 200);
-    return () => clearTimeout(timer);
-  }, []);
-
-  React.useEffect(() => {
     const handlePopState = () => {
       setTimeout(() => {
         resetAllAnimations();
@@ -86,6 +78,14 @@ export default function CaseStudiesClient() {
 
   const [activeTab, setActiveTab] = React.useState('');
   const [searchQuery, setSearchQuery] = React.useState('');
+
+  React.useEffect(() => {
+    resetAllAnimations();
+    const timer = setTimeout(() => {
+      resetAllAnimations();
+    }, 200);
+    return () => clearTimeout(timer);
+  }, [activeTab, searchQuery]);
 
   const caseStudiesData = [
     {
@@ -1289,12 +1289,12 @@ export default function CaseStudiesClient() {
           ========================================================================= */}
       <section className="case-studies-section section-padding-s">
         <div className="cs-container">
-          <h2 className="section-title section-title-left title-mob-center">
+          <h2 data-anim="from-bottom" className="section-title section-title-left title-mob-center">
             All case studies
           </h2>
 
           {caseStudiesData.length > 1 && (
-            <div className="cs-toolbar">
+            <div data-anim="from-bottom" data-anim-delay="1" className="cs-toolbar">
               <div className="cs-filter-tabs">
                 <button
                   type="button"
@@ -1371,8 +1371,13 @@ export default function CaseStudiesClient() {
           ) : (
             <div className="cs-page-content">
               <div className="case-studies-list">
-                {filteredStudies.map((study) => (
-                  <div key={study.id} className="case-studies-card">
+                {filteredStudies.map((study, index) => (
+                  <div
+                    key={study.id}
+                    data-anim="fade-in"
+                    data-anim-delay={String((index % 3) + 1)}
+                    className="case-studies-card"
+                  >
                     <Link href={study.link} className="case-studies-card-img">
                       <Image
                         src={study.image}
@@ -1435,12 +1440,12 @@ export default function CaseStudiesClient() {
       {testimonialsData.length > 0 && (
         <section className="clients-testimonials-section section-padding-m">
           <div className="cs-container">
-            <h2 className="section-title clients-testimonials-title">
+            <h2 data-anim="from-bottom" className="section-title clients-testimonials-title">
               Client testimonials
             </h2>
           </div>
 
-          <div className="clients-testimonials-wrapper">
+          <div data-anim="fade-in" data-anim-delay="1" className="clients-testimonials-wrapper">
             <div
               className="clients-testimonials-slider-track"
               style={{
