@@ -586,7 +586,7 @@ export default function HeroSection() {
 
         @media (max-width: 600px) {
           .hero-section {
-            padding-top: 13.5rem;
+            padding-top: 16rem;
             padding-bottom: 4.5rem;
             display: block;
           }

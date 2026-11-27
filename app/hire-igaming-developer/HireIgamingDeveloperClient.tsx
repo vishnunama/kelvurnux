@@ -18,7 +18,7 @@ const TABS: SolutionTabItem[] = [
     title: 'Senior React / Next.js & Node.js / Go iGaming Engineers',
     description:
       'Hire specialist engineers experienced in high-concurrency casino lobbies, sub-140ms WebSocket sportsbooks, mobile betting apps, and double-entry wallet ledgers with strict NDA and contractual IP ownership.',
-    image: '/assets/features/igaming-software-development-banner.webp',
+    image: '/assets/features/hire-dev-engineering-banner.webp',
     alt: 'Senior React, Next.js, Node.js and Go iGaming Engineers',
   },
   {
@@ -28,7 +28,7 @@ const TABS: SolutionTabItem[] = [
     title: 'Game Aggregators, Odds Feeds & Payment Integrators',
     description:
       'Accelerate your roadmap with dedicated iGaming integration services connecting 10,000+ slot studios, live dealers, Betradar/Pinnacle sportsbook odds feeds, and regional fiat or crypto payment processors.',
-    image: '/assets/features/casino-game-providers-api-aggregator.webp',
+    image: '/assets/features/hire-dev-api-integrations-banner.webp',
     alt: 'Game Aggregators, Odds Feeds and Payment Gateway Integrators',
   },
   {

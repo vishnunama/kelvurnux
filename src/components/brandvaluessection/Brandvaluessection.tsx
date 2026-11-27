@@ -29,6 +29,12 @@ const brandValues = [
   },
   {
     id: 5,
+    count: 50,
+    suffix: '+',
+    label: 'Payment Gateways',
+  },
+  {
+    id: 6,
     count: 24,
     suffix: '/7',
     label: 'Technical Support',
@@ -73,63 +79,160 @@ const styles = `
   [data-anim-delay="3"].visible { animation-delay: 0.15s; }
   [data-anim-delay="4"].visible { animation-delay: 0.2s; }
   [data-anim-delay="5"].visible { animation-delay: 0.25s; }
+  [data-anim-delay="6"].visible { animation-delay: 0.3s; }
 
-  .brand-value {
-    transition: background 0.3s ease-in-out;
-  }
-
-  .brand-value:hover {
-    background: radial-gradient(114.85% 105.23% at 87.17% -18.95%, rgba(0, 235, 170, 0.25) 0, rgba(10, 20, 26, 0) 69.85%), radial-gradient(84.91% 94.78% at 69.5% 94.35%, #0a1c20 0, #0a141a 82.26%);
-  }
-
-  .brand-values-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin: 0 auto;
+  .brand-values-card {
+    overflow: hidden;
     width: 100%;
-    justify-content: center;
-  }
-
-  .brand-value {
-    width: calc(50% - 0.375rem);
-    box-sizing: border-box;
+    border: none;
+    border-radius: 36px 36px 0 0;
+    background: linear-gradient(180deg, rgba(14, 46, 41, 0.48) 0%, rgba(10, 34, 31, 0.58) 45%, rgba(10, 34, 31, 0.68) 65%, rgba(9, 25, 24, 0.35) 82%, #0b0b0f 92%, #0b0b0f 100%);
+    position: relative;
   }
 
   @media (min-width: 768px) {
-    .brand-values-grid {
-      gap: 1rem;
-      padding: 0 2rem;
-    }
-
-    .brand-value {
-      width: calc(33.333% - 0.67rem);
-      flex-basis: calc(33.333% - 0.67rem);
-    }
-
-    .brand-value:nth-child(4),
-    .brand-value:nth-child(5) {
-      width: calc(33.333% - 0.67rem);
-      flex-basis: calc(33.333% - 0.67rem);
+    .brand-values-card {
+      border-radius: 64px 64px 0 0;
     }
   }
 
-  @media (min-width: 1024px) {
-    .brand-values-grid {
-      gap: 1.2rem;
-      max-width: 1200px;
-      padding: 0 2rem;
+  .numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .numbers-grid-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 0.5rem;
+    padding: 3.5rem 2.5rem;
+    transition: background 0.3s ease;
+  }
+
+  .numbers-grid-cell:hover {
+    background: radial-gradient(circle at center, rgba(0, 235, 170, 0.06) 0%, transparent 75%);
+  }
+
+  .numbers-grid-value {
+    letter-spacing: -0.02em;
+    text-align: center;
+    width: 100%;
+    font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+    font-weight: 700;
+    line-height: 1;
+    isolation: isolate;
+    display: inline-block;
+    position: relative;
+  }
+
+  .numbers-grid-value::before {
+    content: attr(data-text);
+    text-align: inherit;
+    z-index: -1;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    position: absolute;
+    -webkit-text-stroke: 1.5px rgba(0, 235, 170, 0.45);
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .numbers-grid-value > span {
+    background: linear-gradient(96deg, rgba(0, 235, 170, 0.92) 2.34%, rgba(0, 168, 120, 0.72) 98.88%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .numbers-grid-name {
+    text-align: right;
+    letter-spacing: -0.02em;
+    color: #e2e8f0;
+    font-size: clamp(0.95rem, 1.35vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  /* Desktop 3-column borders & cross markers */
+  @media (min-width: 841px) {
+    .numbers-grid-cell:nth-child(3n) {
+      border-right: none;
     }
 
-    .brand-value {
-      width: calc(33.333% - 0.8rem);
-      flex-basis: calc(33.333% - 0.8rem);
+    .numbers-grid-cell:nth-last-child(-n+3) {
+      border-bottom: none;
     }
 
-    .brand-value:nth-child(4),
-    .brand-value:nth-child(5) {
-      width: calc(33.333% - 0.8rem);
-      flex-basis: calc(33.333% - 0.8rem);
+    .numbers-grid-cell:not(:nth-child(3n)):not(:nth-last-child(-n+3))::after {
+      content: "+";
+      position: absolute;
+      bottom: -0.65rem;
+      right: -0.45rem;
+      z-index: 2;
+      color: rgba(0, 235, 170, 0.65);
+      font-size: 1.15rem;
+      font-weight: 300;
+      line-height: 1;
+      pointer-events: none;
+    }
+  }
+
+  /* Mobile / Tablet 2-column borders & cross markers */
+  @media (max-width: 840px) {
+    .numbers-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .numbers-grid-cell {
+      padding: 2.25rem 1.25rem;
+      min-height: 10.5rem;
+      gap: 0.85rem;
+    }
+
+    .numbers-grid-cell:nth-child(2n) {
+      border-right: none;
+    }
+
+    .numbers-grid-cell:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    .numbers-grid-cell:nth-child(odd):not(:nth-last-child(-n+2))::after {
+      content: "+";
+      position: absolute;
+      bottom: -0.65rem;
+      right: -0.45rem;
+      z-index: 2;
+      color: rgba(0, 235, 170, 0.65);
+      font-size: 1.15rem;
+      font-weight: 300;
+      line-height: 1;
+      pointer-events: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .numbers-grid-cell {
+      padding: 2rem 1rem;
+      min-height: 9.5rem;
+    }
+
+    .numbers-grid-value {
+      font-size: 2.65rem;
+      line-height: 0.9;
+    }
+
+    .numbers-grid-name {
+      font-size: 0.9rem;
+      line-height: 1.2;
     }
   }
 `;
@@ -238,14 +341,15 @@ export default function BrandValuesSection() {
           }}
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pt-28 sm:pt-40 md:pt-48 lg:pt-64">
-          {/* Title */}
+        <div className="brand-values-card relative z-10 w-full mt-44 sm:mt-52 md:mt-60 lg:mt-64 pt-10 sm:pt-14 md:pt-16 pb-6 sm:pb-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+            {/* Title */}
           <div
             ref={(el) => {
               if (el) elementsRef.current[0] = el;
             }}
             data-anim="from-bottom"
-            className="text-center mb-4 sm:mb-5 md:mb-6"
+            className="text-center mb-8 sm:mb-10 md:mb-12"
           >
             <h2
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-4xl mx-auto text-center"
@@ -260,79 +364,45 @@ export default function BrandValuesSection() {
             </h2>
           </div>
 
-          {/* Description */}
-          <div
-            ref={(el) => {
-              if (el) elementsRef.current[1] = el;
-            }}
-            data-anim="from-bottom"
-            className="text-center mb-8 sm:mb-10 md:mb-12"
-          >
-            <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto text-center px-2">
-              Our experience comes from developing casino and sportsbook platforms, connecting game providers and supporting client projects across different markets.
-            </p>
-          </div>
+          {/* Numbers Grid */}
+          <div className="numbers-grid">
+            {brandValues.map((value, index) => {
+              const formattedValue = isMounted
+                ? `${displayCounts[index].toFixed(value.count === 99.9 ? 1 : 0)}${value.suffix}`
+                : `${value.count}${value.suffix}`;
+              const fullText = `${value.count}${value.suffix}`;
 
-          {/* Brand Values Grid */}
-          <div className="brand-values-grid max-w-6xl mx-auto">
-            {brandValues.map((value, index) => (
-              <div
-                key={value.id}
-                ref={(el) => {
-                  if (el) elementsRef.current[2 + index] = el;
-                }}
-                data-anim="from-bottom"
-                data-anim-delay={index + 1}
-                className="brand-value"
-                style={{
-                  borderRadius: 'clamp(1rem, 2vw, 2.4rem)',
-                  paddingTop: 'clamp(1.2rem, 3vw, 2rem)',
-                  paddingBottom: 'clamp(1.2rem, 3vw, 2rem)',
-                  paddingLeft: 'clamp(1rem, 2vw, 1.8rem)',
-                  paddingRight: 'clamp(1rem, 2vw, 1.8rem)',
-                  border: '1px solid rgba(0, 235, 170, 0.3)',
-                  background: 'linear-gradient(121deg, rgba(0, 235, 170, 0.25) 10.25%, rgba(0, 235, 170, 0.05) 99.99%), #0a141a',
-                  textAlign: 'left',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  minHeight: 'clamp(90px, 20vw, 160px)',
-                }}
-              >
-                {/* Count */}
+              return (
                 <div
-                  className="mb-1"
-                  style={{
-                    marginBottom: 'clamp(0.5rem, 2vw, 0.8rem)',
-                    fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
-                    fontWeight: '700',
-                    lineHeight: '1.2',
-                    color: '#fff',
+                  key={value.id}
+                  ref={(el) => {
+                    if (el) elementsRef.current[2 + index] = el;
                   }}
+                  data-anim="from-bottom"
+                  data-anim-delay={index + 1}
+                  className="numbers-grid-cell"
                 >
-                  <span className={isMounted ? 'sr-only' : ''}>
-                    {value.count}{value.suffix}
-                  </span>
-                  {isMounted && (
-                    <span aria-hidden="true">
-                      {displayCounts[index].toFixed(value.count === 99.9 ? 1 : 0)}{value.suffix}
+                  <span
+                    className="numbers-grid-value"
+                    data-text={formattedValue}
+                  >
+                    <span className={isMounted ? 'sr-only' : ''}>
+                      {fullText}
                     </span>
-                  )}
-                </div>
+                    {isMounted && (
+                      <span aria-hidden="true">
+                        {formattedValue}
+                      </span>
+                    )}
+                  </span>
 
-                {/* Label */}
-                <div
-                  style={{
-                    fontSize: 'clamp(0.85rem, 2.2vw, 1.1rem)',
-                    fontWeight: '400',
-                    lineHeight: '1.4',
-                    color: '#a5a5a5',
-                  }}
-                >
-                  {value.label}
+                  <span className="numbers-grid-name">
+                    {value.label}
+                  </span>
                 </div>
-              </div>
-            ))}
+              );
+            })}
+          </div>
           </div>
         </div>
       </section>

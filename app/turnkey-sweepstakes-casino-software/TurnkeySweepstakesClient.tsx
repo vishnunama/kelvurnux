@@ -506,11 +506,11 @@ export default function TurnkeySweepstakesClient() {
           {/* Tab Buttons */}
           <div
             ref={tabsContainerRef}
-            className="overflow-x-auto pt-0 pb-3 mb-6 sm:mb-8 md:mb-10 lg:mb-12 scrollbar-hide scroll-smooth flex justify-start sm:justify-center px-2 sm:px-0"
+            className="overflow-x-auto pt-0 pb-3 mb-6 sm:mb-8 md:mb-10 lg:mb-12 scrollbar-hide scroll-smooth px-2 sm:px-0"
             role="tablist"
             aria-label="Turnkey Sweepstakes Platform Capabilities"
           >
-            <div className="flex gap-1 sm:gap-1.5 md:gap-2 flex-nowrap py-1.5 px-1">
+            <div className="flex gap-1.5 md:gap-2 flex-nowrap py-1.5 px-1 w-max mx-auto">
               {tabs.map((tab) => {
                 const IconComponent = iconMap[tab.icon];
                 const isActive = activeTab === tab.label;
@@ -523,12 +523,12 @@ export default function TurnkeySweepstakesClient() {
                     aria-controls={`tab-panel-${tab.id}`}
                     ref={isActive ? activeTabRef : null}
                     onClick={() => handleTabClick(tab.label)}
-                    className={`flex items-center gap-1 sm:gap-2 md:gap-2.5 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${isActive
+                    className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 md:px-4 xl:px-5 py-2 sm:py-2.5 md:py-3 rounded-full font-medium text-sm xl:text-[15px] transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${isActive
                       ? 'bg-white text-black border-2 border-white'
                       : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
                       }`}
                   >
-                    {IconComponent && <IconComponent size={16} className="hidden sm:block" />}
+                    {IconComponent && <IconComponent size={16} className="hidden sm:block shrink-0" />}
                     <span className="leading-none">{tab.label}</span>
                   </button>
                 );

@@ -247,9 +247,9 @@ export default function ChecklistClient() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div
             ref={tabsContainerRef}
-            className="overflow-x-auto pt-0 pb-3 mb-8 scrollbar-hide scroll-smooth flex justify-start sm:justify-center"
+            className="overflow-x-auto pt-0 pb-3 mb-8 scrollbar-hide scroll-smooth"
           >
-            <div className="flex gap-2 flex-nowrap py-1.5 px-1">
+            <div className="flex gap-2 flex-nowrap py-1.5 px-1 w-max mx-auto">
               {tabs.map((tab) => {
                 const IconComponent = tab.icon;
                 return (
@@ -257,13 +257,13 @@ export default function ChecklistClient() {
                     key={tab.id}
                     ref={activeTab === tab.label ? activeTabRef : null}
                     onClick={() => handleTabClick(tab.label)}
-                    className={`flex items-center gap-2 px-4 md:px-6 py-2.5 rounded-full font-medium text-sm sm:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${
+                    className={`flex items-center gap-2 px-3.5 md:px-4 xl:px-5 py-2.5 rounded-full font-medium text-sm xl:text-[15px] transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${
                       activeTab === tab.label
                         ? 'bg-white text-black border-2 border-white'
                         : 'bg-gray-800/70 text-white/70 border-2 border-transparent hover:bg-gray-700 hover:text-white'
                     }`}
                   >
-                    <IconComponent size={16} className="hidden sm:block" />
+                    <IconComponent size={16} className="hidden sm:block shrink-0" />
                     <span className="leading-none">{tab.label}</span>
                   </button>
                 );

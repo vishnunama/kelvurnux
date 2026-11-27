@@ -153,7 +153,7 @@ export default function PaymentGatewaysSection() {
   };
 
   return (
-    <section className="section bg-[#0b0b0f] text-white relative py-12 sm:py-16 lg:py-24 overflow-hidden border-t border-white/[0.04]">
+    <section className="section bg-[#0b0b0f] text-white relative py-12 sm:py-16 lg:py-24 overflow-hidden">
       <style jsx global>{`
         @keyframes paymentScrollUp {
           0% {
@@ -213,26 +213,15 @@ export default function PaymentGatewaysSection() {
       <div className="section-padding w-full h-full">
         <div className="container-new max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative">
 
-          {/* Centered Top Heading matching site sections */}
-          <div
-            ref={(el) => { elementsRef.current[0] = el; }}
-            data-anim="from-bottom"
-            className="text-center mb-8 sm:mb-10 lg:mb-14"
-          >
-            <h2 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto">
-              Payment Methods Through One Integration
-            </h2>
-          </div>
-
           {/* Main Container: Stacked Flex on Mobile, 2-Column Grid on Desktop */}
           <div className="home_providers flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-0 relative overflow-hidden items-center lg:items-stretch">
             
-            {/* Left Side on Desktop, Bottom on Mobile: Content & CTA */}
+            {/* Left Side on Desktop, Top on Mobile: Content & CTA */}
             <div
               ref={(el) => { elementsRef.current[1] = el; }}
               data-anim="from-bottom"
               data-anim-delay="1"
-              className="home_providers-content flex flex-col justify-center items-start p-6 sm:p-8 lg:p-14 min-h-auto lg:min-h-[40rem] relative overflow-hidden w-full order-2 lg:order-1"
+              className="home_providers-content flex flex-col justify-center items-center lg:items-start py-6 px-2 sm:p-8 lg:p-14 min-h-auto lg:min-h-[40rem] relative overflow-hidden w-full order-1 lg:order-1"
             >
 
               {/* Background Graphic */}
@@ -248,18 +237,18 @@ export default function PaymentGatewaysSection() {
               />
 
               {/* Content Wrap */}
-              <div className="home_providers-top relative z-20 max-w-xl my-auto flex flex-col gap-4 sm:gap-5 text-left">
+              <div className="home_providers-top relative z-20 max-w-xl my-auto flex flex-col items-center lg:items-start gap-4 sm:gap-5 text-center lg:text-left">
 
-                <h3 className="section-gradient-title text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-tight">
-                  <span className="text-[#00ebaa]">DIVERSE PORTFOLIO</span> OF GLOBAL & LOCAL PROVIDERS
+                <h3 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  50+ Diverse Portfolio of Global & Local Providers
                 </h3>
 
-                <p className="text-[#a5a5a5] text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
+                <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed">
                   Connect card payments, e-wallets, bank transfers and regional payment methods to your platform. We perform technical API integration with the licensed payment providers contracted directly by your business and bring deposit and withdrawal records into your back office.
                 </p>
 
-                {/* CTA Button */}
-                <div className="mt-4 sm:mt-6">
+                {/* CTA Button (Desktop) */}
+                <div className="hidden lg:block mt-4 sm:mt-6">
                   <Link
                     href="#contact-form-section"
                     onClick={handleScrollToContact}
@@ -273,12 +262,12 @@ export default function PaymentGatewaysSection() {
 
             </div>
 
-            {/* Right Side on Desktop, Top on Mobile: 3-4 Vertical Columns Infinite Wall */}
+            {/* Right Side on Desktop, Bottom on Mobile: 3-4 Vertical Columns Infinite Wall */}
             <div
               ref={(el) => { elementsRef.current[2] = el; }}
               data-anim="fade-in"
               data-anim-delay="2"
-              className="home_providers-wr z-10 flex justify-between items-start w-full h-[19rem] xs:h-[22rem] sm:h-[30rem] lg:h-[38rem] relative overflow-hidden gap-[0.4rem] xs:gap-[0.63rem] order-1 lg:order-2"
+              className="home_providers-wr z-10 flex justify-between items-start w-full h-[19rem] xs:h-[22rem] sm:h-[30rem] lg:h-[38rem] relative overflow-hidden gap-[0.4rem] xs:gap-[0.63rem] order-2 lg:order-2"
               style={{
                 WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%, #000 96%, transparent 100%)',
                 maskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%, #000 96%, transparent 100%)',
@@ -324,6 +313,17 @@ export default function PaymentGatewaysSection() {
                 </div>
               </div>
 
+            </div>
+
+            {/* CTA Button (Mobile - below cards wall) */}
+            <div className="lg:hidden order-3 flex justify-center w-full mt-2">
+              <Link
+                href="#contact-form-section"
+                onClick={handleScrollToContact}
+                className="btn-main"
+              >
+                <span>Discuss Payment Integration</span>
+              </Link>
             </div>
 
           </div>

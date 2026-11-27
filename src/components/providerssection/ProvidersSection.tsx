@@ -158,27 +158,16 @@ export default function ProvidersSection() {
       <div className="section-padding w-full h-full">
         <div className="container-new max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative">
 
-          {/* Centered Top Heading matching site sections */}
-          <div
-            ref={(el) => { elementsRef.current[0] = el; }}
-            data-anim="from-bottom"
-            className="text-center mb-8 sm:mb-10 lg:mb-14"
-          >
-            <h2 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center max-w-4xl mx-auto">
-              Game Content Through One Integration
-            </h2>
-          </div>
-
           {/* Main Container: Stacked Flex on Mobile, 2-Column Grid on Desktop */}
           <div
             className="home_providers flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-0 relative overflow-hidden items-center lg:items-stretch"
           >
-            {/* Left Side (Top on Mobile): 3-4 Vertical Columns Infinite Wall */}
+            {/* Left Side on Desktop, Bottom on Mobile: 3-4 Vertical Columns Infinite Wall */}
             <div
               ref={(el) => { elementsRef.current[1] = el; }}
               data-anim="fade-in"
               data-anim-delay="1"
-              className="home_providers-wr z-10 flex justify-between items-start w-full h-[19rem] xs:h-[22rem] sm:h-[30rem] lg:h-[38rem] relative overflow-hidden gap-[0.4rem] xs:gap-[0.63rem]"
+              className="home_providers-wr z-10 flex justify-between items-start w-full h-[19rem] xs:h-[22rem] sm:h-[30rem] lg:h-[38rem] relative overflow-hidden gap-[0.4rem] xs:gap-[0.63rem] order-2 lg:order-1"
               style={{
                 WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%, #000 96%, transparent 100%)',
                 maskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%, #000 96%, transparent 100%)',
@@ -226,12 +215,12 @@ export default function ProvidersSection() {
 
             </div>
 
-            {/* Right Side (Bottom on Mobile): Text Content & CTA */}
+            {/* Right Side on Desktop, Top on Mobile: Text Content & CTA */}
             <div
               ref={(el) => { elementsRef.current[2] = el; }}
               data-anim="from-bottom"
               data-anim-delay="2"
-              className="home_providers-content flex flex-col justify-center items-start p-6 sm:p-8 lg:p-14 min-h-auto lg:min-h-[40rem] relative overflow-hidden w-full"
+              className="home_providers-content flex flex-col justify-center items-center lg:items-start py-6 px-2 sm:p-8 lg:p-14 min-h-auto lg:min-h-[40rem] relative overflow-hidden w-full order-1 lg:order-2"
             >
 
               {/* Background Graphic */}
@@ -247,22 +236,19 @@ export default function ProvidersSection() {
               />
 
               {/* Content Wrap */}
-              <div className="home_providers-top relative z-20 max-w-xl my-auto flex flex-col gap-4 sm:gap-5 text-left">
+              <div className="home_providers-top relative z-20 max-w-xl my-auto flex flex-col items-center lg:items-start gap-4 sm:gap-5 text-center lg:text-left">
 
-                <span className="text-white text-5xl xs:text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight block leading-none">
-                  150+
-                </span>
-
-                <h3 className="section-gradient-title text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight leading-tight">
-                  GAME PROVIDERS
+                <h3 className="flex flex-wrap items-baseline justify-center lg:justify-start gap-x-2.5 sm:gap-x-3 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  <span className="text-white">150+</span>
+                  <span className="section-gradient-title">Game Providers</span>
                 </h3>
 
-                <p className="text-[#a5a5a5] text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-                  Connect your platform to a broad portfolio of slots, live casino, crash, table and other gaming content through technical API integration using your licensed game provider or aggregator agreements.
+                <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed">
+                  Game content through one integration. Connect your platform to a broad portfolio of slots, live casino, crash, table and other gaming content through technical API integration using your licensed game provider or aggregator agreements.
                 </p>
 
-                {/* CTA Button */}
-                <div className="mt-4 sm:mt-6">
+                {/* CTA Button (Desktop) */}
+                <div className="hidden lg:block mt-4 sm:mt-6">
                   <Link
                     href="/casino-aggregator-api-solution"
                     className="btn-main"
@@ -273,6 +259,16 @@ export default function ProvidersSection() {
 
               </div>
 
+            </div>
+
+            {/* CTA Button (Mobile - below cards wall) */}
+            <div className="lg:hidden order-3 flex justify-center w-full mt-2">
+              <Link
+                href="/casino-aggregator-api-solution"
+                className="btn-main"
+              >
+                <span>Explore Aggregator</span>
+              </Link>
             </div>
 
           </div>
