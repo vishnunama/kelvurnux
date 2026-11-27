@@ -1520,7 +1520,7 @@ export default function CaseStudiesClient() {
       )}
 
       {/* Contact Form Section */}
-      <section id="contact-us" className="py-16 bg-[#0b0b0f] relative z-10 border-t border-white/10">
+      <section id="contact-us" className="py-16 bg-[#0b0b0f] relative z-10">
         <ContactForm />
       </section>
     </div>

@@ -570,10 +570,6 @@ export default function WhiteLabelCasinoPlatform() {
                 Everything you need to launch and scale your white label gaming platform — from core back-office infrastructure to unified player management, all configured and ready to deploy.
               </p>
 
-              <div className="rounded-xl border border-[#00ebaa]/25 bg-[#00ebaa]/5 p-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
-                <strong className="text-[#00ebaa]">Software-Only B2B Solution:</strong> Kvaornux delivers platform engineering and technical API integration only. We do not issue gaming licenses, sub-licenses, or merchant accounts — operators must hold valid licenses and direct provider agreements in permitted jurisdictions.
-              </div>
-
               <div
                 ref={(el) => { solutionsElementsRef.current[20] = el; }}
                 className="mt-6 flex justify-center lg:justify-start"
@@ -650,7 +646,7 @@ export default function WhiteLabelCasinoPlatform() {
       />
 
       {/* Three-Solution Comparison Section: White Label vs Turnkey vs Custom */}
-      <section id="turnkey-vs-custom" className="relative py-16 md:py-24 bg-[#080b0f] border-t border-white/10">
+      <section id="turnkey-vs-custom" className="relative py-16 md:py-24 bg-[#080b0f]">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-10 md:mb-16">
             <h2

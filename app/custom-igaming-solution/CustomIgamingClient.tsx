@@ -102,8 +102,8 @@ export default function CustomiGamingSolution() {
       icon: 'shield-check' as const,
       title: 'Payment Integration',
       description: 'Connect multi-currency fiat payment gateways, credit cards, localized e-wallets, and cryptocurrency processing rails based on your approved merchant accounts, target jurisdictions, and integration requirements. Custom transaction workflows are configured to support your compliance needs.',
-      image: '/assets/features/igaming-security-risk-management-aml-kyc.webp',
-      alt: 'iGaming Payment Integration, Security Risk Management, and AML/KYC Protocols'
+      image: '/assets/features/igaming-payment-integration.webp',
+      alt: 'iGaming Multi-Currency Payment Gateway and Crypto Cashier Integration'
     },
     {
       id: 'custom-development-launch',
@@ -425,7 +425,7 @@ export default function CustomiGamingSolution() {
           </div>
 
           {/* Subtitle/Description */}
-          <div className="max-w-4xl mx-auto mb-5 sm:mb-7 md:mb-8">
+          <div className="max-w-4xl mx-auto mb-8 sm:mb-10">
             <p 
               className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
               ref={(el) => { elementsRef.current[1] = el; }}
@@ -434,26 +434,6 @@ export default function CustomiGamingSolution() {
             >
               Build your casino, sportsbook, or complete iGaming platform from scratch with KVAORNUX. Our custom iGaming software development services are tailored to your business requirements, including unique features, payment integrations, player management, and full source code.
             </p>
-          </div>
-
-          {/* Hero CTA Button */}
-          <div
-            ref={(el) => { elementsRef.current[2] = el; }}
-            data-anim="from-bottom"
-            data-anim-delay="2"
-            className="flex justify-center mb-8 sm:mb-10"
-          >
-            <button
-              type="button"
-              onClick={handleScrollToContact}
-              className="btn-main overflow-hidden text-sm sm:text-base font-bold"
-              style={{
-                padding: '0.75rem 2.25rem',
-                minHeight: '2.9rem',
-              }}
-            >
-              Discuss Your Custom Project
-            </button>
           </div>
 
         </div>
@@ -674,7 +654,7 @@ export default function CustomiGamingSolution() {
       />
 
       {/* Three-Solution Comparison Section: White Label vs Turnkey vs Bespoke */}
-      <section id="solution-comparison" className="relative py-16 md:py-24 bg-[#080b0f] border-t border-white/10">
+      <section id="solution-comparison" className="relative py-16 md:py-24 bg-[#080b0f]">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">

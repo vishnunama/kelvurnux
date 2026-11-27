@@ -80,7 +80,7 @@ export default function CustomSweepstakesClient() {
       icon: 'wallet' as const,
       title: 'Architecture Designed Around Your Product',
       description: 'Define the platform around your required player journeys, wallet behavior, operational model and third-party ecosystem rather than adapting the business to a fixed template. Structure services and integrations around the requirements established during technical discovery.',
-      image: '/assets/features/custom-igaming-platform-design-interface.webp'
+      image: '/assets/features/custom-sweepstakes-architecture-banner.webp'
     },
     {
       id: 'custom-gc-sc',
@@ -88,7 +88,7 @@ export default function CustomSweepstakesClient() {
       icon: 'shield-check' as const,
       title: 'Gold Coin & Sweeps Coin Logic Built Around Your Model',
       description: 'Configure independent Gold Coin and Sweeps Coin balances, transaction ledgers, promotional allocation rules, administrative adjustments, eligibility logic and redemption-related currency workflows around the approved product requirements.',
-      image: '/assets/features/igaming-security-risk-management-aml-kyc.webp'
+      image: '/assets/features/custom-sweepstakes-gc-sc-banner.webp'
     },
     {
       id: 'player-workflows',
@@ -96,7 +96,7 @@ export default function CustomSweepstakesClient() {
       icon: 'gamepad-2' as const,
       title: 'Custom Player, AMOE & Eligibility Workflows',
       description: 'Design registration, player eligibility, AMOE request processing, verification, geolocation and account-control workflows around the operator\'s defined operating framework and required third-party services.',
-      image: '/assets/features/online-casino-game-aggregation-10000-plus-slots.webp'
+      image: '/assets/features/custom-sweepstakes-workflows-banner.webp'
     },
     {
       id: 'payments-redemption',
@@ -104,7 +104,7 @@ export default function CustomSweepstakesClient() {
       icon: 'credit-card' as const,
       title: 'Custom Purchase & Prize Redemption Operations',
       description: 'Build payment and redemption workflows around the required Gold Coin packages, payment services, transaction controls, redemption thresholds, verification gates, risk review processes, approval queues and prize-processing integrations.',
-      image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp'
+      image: '/assets/features/custom-sweepstakes-payments-banner.webp'
     },
     {
       id: 'custom-backoffice',

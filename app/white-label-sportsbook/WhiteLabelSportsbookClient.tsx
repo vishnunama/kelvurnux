@@ -76,7 +76,7 @@ export default function WhiteLabelSportsbookClient() {
       title: 'Branded Sportsbook & Betting App',
       description:
         'Launch a modern, thumb-first white label sports betting website and native Android betting app customized with your logo, domain, typography, and color identity. Includes Same-Game Bet Builder, dynamic cashout, and localized multi-odds formats.',
-      image: '/assets/features/tab-white-label-2.webp',
+      image: '/assets/features/wl-sportsbook-app-banner.webp',
       alt: 'Custom Branded White Label Sportsbook and Mobile Betting App Interface',
     },
     {
@@ -86,7 +86,7 @@ export default function WhiteLabelSportsbookClient() {
       title: 'Pre-Integrated Feeds & Automated Risk Controls',
       description:
         'Go live without negotiating months of separate data vendor contracts—backed by official Betradar, Pinnacle, Kambi, and Genius Sports feeds across 80+ sports and 1,000+ markets with automated sharp-bettor stake capping and margin overrides.',
-      image: '/assets/case-studies/sportsbook-platform/risk-dashboard.webp',
+      image: '/assets/features/wl-sportsbook-risk-feeds-banner.webp',
       alt: 'White Label Sportsbook Risk Management Dashboard and Live Odds Controls',
     },
     {
@@ -96,7 +96,7 @@ export default function WhiteLabelSportsbookClient() {
       title: 'Single-Wallet Casino, Fiat & Crypto Integration',
       description:
         'Maximize player LTV with a combined white label online casino and sportsbook software solution powered by one seamless wallet. Connect 10,000+ slots and live dealer tables alongside Bitcoin, USDT, ETH, Solana, and regional fiat rails.',
-      image: '/assets/features/crypto-casino-white-label-banner.webp',
+      image: '/assets/features/wl-sportsbook-single-wallet-banner.webp',
       alt: 'White Label Crypto Sportsbook and Single-Wallet Casino Integration',
     },
     {
@@ -564,10 +564,6 @@ export default function WhiteLabelSportsbookClient() {
               >
                 Everything you need to launch and scale your white label betting platform — from sub-140ms live odds feeds and automated risk management to mobile apps and unified player accounts, all configured and ready to deploy.
               </p>
-
-              <div className="rounded-xl border border-[#00ebaa]/25 bg-[#00ebaa]/5 p-4 text-xs sm:text-sm text-gray-300 leading-relaxed">
-                <strong className="text-[#00ebaa]">Software-Only B2B Solution:</strong> Kvaornux delivers platform engineering and technical API integration only. We do not issue gaming licenses, sub-licenses, or merchant accounts — operators must hold valid licenses and direct provider agreements in permitted jurisdictions.
-              </div>
 
               <div
                 ref={(el) => { solutionsElementsRef.current[20] = el; }}

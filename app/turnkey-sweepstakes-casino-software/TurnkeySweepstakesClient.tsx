@@ -81,7 +81,7 @@ export default function TurnkeySweepstakesClient() {
       icon: 'wallet' as const,
       title: 'Dual-Currency Virtual Currency Architecture',
       description: 'Built on a pre-configured platform core, the dual-currency engine maintains separate, real-time ledgers for Gold Coins (entertainment play) and Sweeps Coins (promotional participation). The core ledger handles atomic transaction commits, gameplay deductions, unredeemable vs. redeemable partitioning, and complete audit histories. Operators configure package pricing, bonus coin ratios, and 1x playthrough rules, while live balance calls connect seamlessly to external game server APIs.',
-      image: '/assets/features/custom-igaming-platform-design-interface.webp'
+      image: '/assets/features/sweepstakes-dual-wallet-banner.webp'
     },
     {
       id: 'compliance-controls',
@@ -89,7 +89,7 @@ export default function TurnkeySweepstakesClient() {
       icon: 'shield-check' as const,
       title: 'Compliance Controls, Geolocation & AMOE',
       description: 'Pre-built administrative modules provide end-to-end Alternative Method of Entry (AMOE) processing, unique request code tracking, automated promotional Sweeps Coin crediting, and responsible-play controls. Third-party identity verification (KYC) and geolocation services connect via API to enforce operator-configured jurisdictional blocklists (such as Washington, Idaho, Michigan, or Nevada), ensuring compliant player onboarding before gameplay or prize redemption.',
-      image: '/assets/features/igaming-security-risk-management-aml-kyc.webp'
+      image: '/assets/features/sweepstakes-kyc-geo-banner.webp'
     },
     {
       id: 'game-aggregation',
@@ -105,7 +105,7 @@ export default function TurnkeySweepstakesClient() {
       icon: 'credit-card' as const,
       title: 'Payments, Purchases & Prize Redemption',
       description: 'Manage Gold Coin package purchases and prize redemptions through a controlled operational pipeline. The platform core includes purchase checkout session handlers, redemption request intake, and a multi-stage administrative review queue (Pending, In Review, Approved, Disbursed). Operators set minimum/maximum redemption thresholds and integrate external payment gateways and payout rails subject to merchant underwriting approval.',
-      image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp'
+      image: '/assets/features/sweepstakes-purchases-redemption-banner.webp'
     },
     {
       id: 'backoffice-analytics',

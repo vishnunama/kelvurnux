@@ -15,6 +15,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 import OpportunitiesSection from '@/src/components/opportunitiessection/Opportunitiessection';
+import StepsSection, { StepItem } from '@/src/components/stepssection/StepsSection';
 import ContactForm from '@/src/components/contactform/ContactForm';
 import DiscoverMore from '@/src/components/Discovermore/Discovermore';
 import FAQSection from '@/src/components/FAQSection/FAQSection';
@@ -36,6 +37,54 @@ export default function TurnkeySportsbookSolutions() {
       window.location.href = '/#contact-form-section';
     }
   };
+
+  const turnkeySportsbookLaunchSteps: StepItem[] = [
+    {
+      id: 1,
+      title: 'Scope Your Turnkey Architecture',
+      text: (
+        <>
+          Define your target markets, betting verticals, and ownership model—whether standalone turnkey sportsbook software, combined sportsbook + casino, or multi-brand deployment with full platform control.
+        </>
+      ),
+    },
+    {
+      id: 2,
+      title: 'Design Your Brand & Betting UI',
+      text: (
+        <>
+          Customize your domain, brand identity, localized languages, odds formats, and mobile-first betting lobbies across responsive web, PWA, and branded Android APK.
+        </>
+      ),
+    },
+    {
+      id: 3,
+      title: 'Integrate Odds Feeds & Payments',
+      text: (
+        <>
+          Connect real-time pre-match, live in-play, and esports odds feeds alongside regional fiat gateways, crypto rails, and optional casino game aggregators via unified APIs.
+        </>
+      ),
+    },
+    {
+      id: 4,
+      title: 'Configure Risk, Compliance & QA',
+      text: (
+        <>
+          Set league margins, bettor limits, automated cashout rules, and KYC/AML workflows. Test live bet settlement, wallets, and back-office reporting while onboarding your operations team.
+        </>
+      ),
+    },
+    {
+      id: 5,
+      title: 'Launch & Scale with Full Control',
+      text: (
+        <>
+          Deploy on your own cloud or dedicated infrastructure with full ownership, backed by 24/7 engineering support, continuous updates, and flexibility to expand into new regions.
+        </>
+      ),
+    },
+  ];
 
   useEffect(() => {
     const elements = elementsRef.current.filter((el): el is HTMLElement => el !== null);
@@ -70,7 +119,7 @@ export default function TurnkeySportsbookSolutions() {
       icon: 'crown' as const,
       title: 'Full Sportsbook Platform Ownership',
       description: 'Take full control of your turnkey sportsbook with your own brand. Manage players, betting markets, payments, risk settings, and platform operations through a flexible sports betting software solution.',
-      image: '/assets/features/custom-igaming-platform-design-interface.webp'
+      image: '/assets/features/turnkey-sportsbook-ownership-banner.webp'
     },
     {
       id: 'game-apis',
@@ -78,7 +127,7 @@ export default function TurnkeySportsbookSolutions() {
       icon: 'gamepad-2' as const,
       title: 'Sportsbook API Integration',
       description: 'Connect your sportsbook platform with sports data feeds, odds providers, live betting APIs, and betting market sources to deliver real-time sports betting experiences.',
-      image: '/assets/features/online-casino-game-aggregation-10000-plus-slots.webp'
+      image: '/assets/features/turnkey-sportsbook-api-banner.webp'
     },
     {
       id: 'compliance',
@@ -501,6 +550,27 @@ export default function TurnkeySportsbookSolutions() {
           </div>
         </div>
       </section>
+
+      {/* Launch Process Steps Section */}
+      <StepsSection
+        sectionId="launch-process"
+        scrollSticky={false}
+        hideBgImage={true}
+        className="w-full rounded-t-[36px] md:rounded-t-[64px]"
+        sectionStyle={{
+          background:
+            'linear-gradient(180deg, rgba(14, 46, 41, 0.82) 0%, rgba(10, 34, 31, 0.72) 78%, rgba(9, 25, 24, 0.55) 92%, #0b0b0f 100%)',
+        }}
+        customTitle="How to Launch a Turnkey Sportsbook"
+        customSubtitle="Follow a clear five-step roadmap to scope your turnkey sportsbook architecture, customize your brand, integrate odds feeds and payments, and go live."
+        customSteps={turnkeySportsbookLaunchSteps}
+        customCtaText="Discuss Your Project"
+        ctaHref="#contact-form-section"
+        onCtaClick={(e) => {
+          e.preventDefault();
+          handleScrollToContact();
+        }}
+      />
 
       {/* Discover More Section */}
       <DiscoverMore

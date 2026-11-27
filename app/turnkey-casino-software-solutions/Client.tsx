@@ -76,7 +76,7 @@ export default function TurnkeyCasinoPlatform() {
       title: 'Complete Casino & Sportsbook Platform',
       description:
         'Launch a unified gaming platform featuring full casino capabilities and an integrated sportsbook by default. Deliver thousands of slots, live dealer tables, and diverse sports betting markets managed through a single player wallet and back office.',
-      image: '/assets/features/custom-igaming-platform-design-interface.webp',
+      image: '/assets/features/turnkey-casino-sportsbook-platform.webp',
       alt: 'Turnkey Casino and Sportsbook Platform Interface'
     },
     {
@@ -86,7 +86,7 @@ export default function TurnkeyCasinoPlatform() {
       title: 'Platform Source Code Included',
       description:
         'Gain long-term technical autonomy with platform source code included at no additional charge. Software delivery scope, licensing rights, and intellectual property provisions are clearly defined in your project agreement.',
-      image: '/assets/features/turnkey-igaming-platform-infrastructure-services.webp',
+      image: '/assets/features/platform-source-code-included.webp',
       alt: 'Turnkey Casino Software Infrastructure with Platform Source Code'
     },
     {
@@ -454,7 +454,7 @@ export default function TurnkeyCasinoPlatform() {
           </div>
 
           {/* Subtitle/Description */}
-          <div className="max-w-4xl mx-auto mb-5 sm:mb-7 md:mb-8">
+          <div className="max-w-4xl mx-auto mb-8 sm:mb-10">
             <p
               className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light"
               ref={(el) => { elementsRef.current[1] = el; }}
@@ -463,26 +463,6 @@ export default function TurnkeyCasinoPlatform() {
             >
               Launch your online casino and sportsbook with KVAORNUX turnkey casino software. Get a complete gaming platform with casino games, sports betting, payment integrations, an easy-to-use admin dashboard, and full source code included. Customize the platform to match your brand and business needs.
             </p>
-          </div>
-
-          {/* Hero CTA Button */}
-          <div
-            ref={(el) => { elementsRef.current[2] = el; }}
-            data-anim="from-bottom"
-            data-anim-delay="2"
-            className="flex justify-center mb-8 sm:mb-10"
-          >
-            <button
-              type="button"
-              onClick={handleScrollToContact}
-              className="btn-main overflow-hidden text-sm sm:text-base font-bold"
-              style={{
-                padding: '0.75rem 2.25rem',
-                minHeight: '2.9rem',
-              }}
-            >
-              Get a Turnkey Casino Quote
-            </button>
           </div>
 
         </div>

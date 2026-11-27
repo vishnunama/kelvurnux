@@ -74,7 +74,7 @@ export default function SweepstakesClient() {
       icon: 'wallet' as const,
       title: 'Dual-Currency Virtual Coin Wallet',
       description: 'Manage Gold Coins for fun play and Sweeps Coins for promotional games. The platform keeps balances completely separate, tracks every transaction, and gives players a seamless two-coin experience.',
-      image: '/assets/features/sweepstakes-dual-currency-wallet-system.webp'
+      image: '/assets/features/sweepstakes-dual-wallet-banner.webp'
     },
     {
       id: 'compliance-controls',
@@ -82,7 +82,7 @@ export default function SweepstakesClient() {
       icon: 'shield-check' as const,
       title: 'Player Verification & Location Controls',
       description: 'Verify player age and identity before prize redemptions, and restrict access from prohibited jurisdictions. The platform can support tracking and management for Alternative Method of Entry (AMOE) requests based on your configured promotional rules.',
-      image: '/assets/features/igaming-security-risk-management-aml-kyc.webp'
+      image: '/assets/features/sweepstakes-kyc-geo-banner.webp'
     },
     {
       id: 'game-aggregation',
@@ -98,7 +98,7 @@ export default function SweepstakesClient() {
       icon: 'credit-card' as const,
       title: 'Simple Coin Purchases & Prize Redemptions',
       description: 'Let players buy Gold Coin packages with trusted payment methods and redeem their winnings for real prizes. Every redemption request routes through a straightforward review and approval process.',
-      image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp'
+      image: '/assets/features/sweepstakes-purchases-redemption-banner.webp'
     },
     {
       id: 'backoffice-analytics',
@@ -656,7 +656,7 @@ export default function SweepstakesClient() {
       />
 
       {/* Turnkey vs Custom Comparison Section */}
-      <section id="turnkey-vs-custom" className="relative py-16 md:py-24 bg-[#080b0f] border-t border-white/10">
+      <section id="turnkey-vs-custom" className="relative py-16 md:py-24 bg-[#080b0f]">
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative z-10">
           <div className="text-center mb-10 md:mb-16">
             <h2

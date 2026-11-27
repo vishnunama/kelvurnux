@@ -89,7 +89,7 @@ export default function CryptoIgamingClient() {
       title: 'Crypto Deposits and Withdrawals',
       description:
         'Connect crypto payment services to your casino or sportsbook. Bring player deposits, withdrawals and payment records into your platform’s back office.',
-      image: '/assets/features/igaming-security-risk-management-aml-kyc.webp',
+      image: '/assets/features/crypto-payments-banner.webp',
       alt: 'Crypto Deposits and Withdrawals'
     },
     {
@@ -99,7 +99,7 @@ export default function CryptoIgamingClient() {
       title: 'Casino Games for Your Crypto Platform',
       description:
         'Connect slots, live casino, crash and table games from selected providers. Organize your game lobby around the content you want to offer your players.',
-      image: '/assets/features/comprehensive-casino-platform-features-roulette-dice.webp',
+      image: '/assets/features/crypto-games-banner.webp',
       alt: 'Casino Games for Your Crypto Platform'
     },
     {
@@ -109,7 +109,7 @@ export default function CryptoIgamingClient() {
       title: 'Your Brand, Your Player Experience',
       description:
         'Customize the design, navigation and player-facing pages. Add the features your business needs through our crypto casino software development services.',
-      image: '/assets/features/casino-game-providers-api-aggregator.webp',
+      image: '/assets/features/crypto-branding-banner.webp',
       alt: 'Your Brand, Your Player Experience'
     },
     {
@@ -119,7 +119,7 @@ export default function CryptoIgamingClient() {
       title: 'Crypto Casino and Sportsbook Software',
       description:
         'Offer casino games and sports betting through a combined platform. Our turnkey package includes casino and sportsbook, with a back office for managing daily operations.',
-      image: '/assets/features/turnkey-igaming-platform-infrastructure-services.webp',
+      image: '/assets/features/crypto-casino-sportsbook-banner.webp',
       alt: 'Crypto Casino and Sportsbook Software'
     },
     {

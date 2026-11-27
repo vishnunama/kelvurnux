@@ -1233,16 +1233,6 @@ export default function LicensingHubClient() {
             Compare licensing requirements, fees and application steps for five iGaming jurisdictions. Use the official sources to check your options, then plan the software for your casino or sportsbook.
           </p>
 
-          <div data-anim="from-bottom" data-anim-delay="3">
-            <a
-              href="#contact-us"
-              onClick={handleScrollToContact}
-              className="btn btn-fill events-hero-btn"
-            >
-              <span>Discuss Your Platform</span>
-            </a>
-          </div>
-
           {/* Bottom Meta Chips Divider */}
           <div className="events-hero-meta" data-anim="from-bottom" data-anim-delay="3">
             <div className="event-info-wrapper">
@@ -1412,7 +1402,7 @@ export default function LicensingHubClient() {
       {/* =========================================================================
           COMPARE IGAMING LICENSING OPTIONS (Testimonials-style Carousel + Case-Study Cards)
           ========================================================================= */}
-      <section className="licensing-compare-carousel-section relative z-10 border-t border-white/5">
+      <section className="licensing-compare-carousel-section relative z-10">
         <div className="max-w-[124rem] mx-auto lg:px-[4.5rem] px-[1.2rem] text-center mb-10">
           <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white mb-4">
             Compare iGaming Licensing Options
@@ -1537,7 +1527,7 @@ export default function LicensingHubClient() {
       {/* =========================================================================
           OPERATOR PLANNING GUIDES (Checklist & Market Access — 2-Column Emerald Cards)
           ========================================================================= */}
-      <section className="py-16 md:py-20 bg-[#0b0b0f] relative z-10 border-t border-white/5">
+      <section className="py-16 md:py-20 bg-[#0b0b0f] relative z-10">
         <div className="max-w-[124rem] mx-auto lg:px-[4.5rem] px-[1.2rem]">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white mb-4">
@@ -1682,7 +1672,7 @@ export default function LicensingHubClient() {
 
 
       {/* Contact Section */}
-      <section id="contact-us" className="py-16 bg-[#0b0b0f] relative z-10 border-t border-white/10">
+      <section id="contact-us" className="py-16 bg-[#0b0b0f] relative z-10">
         <ContactForm />
       </section>
     </div>

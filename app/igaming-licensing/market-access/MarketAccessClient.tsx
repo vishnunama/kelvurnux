@@ -182,20 +182,10 @@ export default function MarketAccessClient() {
             </h1>
           </div>
 
-          <div className="max-w-3xl mx-auto mb-8">
+          <div className="max-w-3xl mx-auto">
             <p className="text-base sm:text-lg text-[#a5a5a5] leading-relaxed text-center font-light">
               Start with where your players will be. For each target market, check whether you can offer your product, what local permissions you need and which rules your software must support.
             </p>
-          </div>
-
-          <div className="flex justify-center">
-            <a
-              href="#contact-us"
-              onClick={handleScrollToContact}
-              className="btn btn-fill events-hero-btn"
-            >
-              <span>Discuss Your Platform</span>
-            </a>
           </div>
         </div>
       </section>
@@ -352,7 +342,7 @@ export default function MarketAccessClient() {
       {/* Contact Section */}
       <section
         id="contact-us"
-        className="py-16 bg-[#0b0b0f] relative z-10 border-t border-white/10"
+        className="py-16 bg-[#0b0b0f] relative z-10"
       >
         <ContactForm />
       </section>
