@@ -9,10 +9,10 @@ export const metadata: Metadata = {
     canonical: 'https://kvaornux.com/igaming-licensing/market-access',
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
     googleBot: {
-      index: false,
+      index: true,
       follow: true,
     },
   },
