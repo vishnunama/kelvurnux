@@ -223,11 +223,11 @@ export default function FeaturesSection() {
               data-anim="from-left"
             >
               <Image
-                src="/assets/features-img.webp"
+                src="/assets/features-img.jpg"
                 alt={current.title}
                 width={1780}
                 height={1319}
-                className="w-full h-full object-contain scale-[1.45] xl:scale-[1.6] -translate-x-[10%] -translate-y-[5%] origin-center"
+                className="w-full h-full object-contain scale-[2.0] xl:scale-[2.15] translate-x-[10%] -translate-y-[8%] origin-center"
                 priority
               />
             </div>
@@ -348,11 +348,11 @@ export default function FeaturesSection() {
               data-anim="from-top"
             >
               <Image
-                src="/assets/features-img-mobile.webp"
+                src="/assets/features-img-mobile.jpg"
                 alt={current.title}
                 width={750}
                 height={1026}
-                className="w-full max-w-[500px] md:max-w-[650px] h-auto object-contain scale-105 translate-y-0"
+                className="w-full max-w-[560px] md:max-w-[700px] h-auto object-contain scale-[1.85] sm:scale-[1.9] -translate-y-4"
                 priority
               />
             </div>
