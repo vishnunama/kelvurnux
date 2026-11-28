@@ -317,7 +317,7 @@ export default function HeroSection() {
       <div className="hero-img">
         <div className="hero-img-overlay" />
         <img
-          src="/assets/hero-img.jpg"
+          src="/assets/hero-img.png?v=1"
           fetchPriority="high"
           decoding="async"
           alt="Kvaornux B2B iGaming Technology Solution"
