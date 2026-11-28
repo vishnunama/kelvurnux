@@ -341,7 +341,7 @@ export default function BrandValuesSection() {
           }}
         />
 
-        <div className="brand-values-card relative z-10 w-full mt-44 sm:mt-52 md:mt-60 lg:mt-64 pt-10 sm:pt-14 md:pt-16 pb-6 sm:pb-10">
+        <div className="brand-values-card relative z-10 w-full mt-44 sm:mt-52 md:mt-60 lg:mt-64 pt-10 sm:pt-14 md:pt-16 pb-4 sm:pb-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
             {/* Title */}
           <div

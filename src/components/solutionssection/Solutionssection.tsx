@@ -8,36 +8,39 @@ import 'swiper/css';
 const solutionsData = [
   {
     id: 1,
-    image: '/assets/sol-img-1.webp',
+    image: '/assets/sol-card-1.webp',
     title: 'Turnkey iGaming Platform',
     description: 'Launch a complete casino and sportsbook operation with the platform, back office, integrations and core infrastructure brought together in one solution.',
     alt: 'Turnkey iGaming Platform',
     ctaText: 'Explore Turnkey',
     ctaHref: '/turnkey-casino-software-solutions',
+    badges: ['Casino & Sportsbook Core', 'Back Office & PAM', 'API Integrations'],
   },
   {
     id: 2,
-    image: '/assets/sol-img-2.webp',
+    image: '/assets/sol-card-2.webp',
     title: 'White Label Casino',
     description: 'Launch your casino using a ready-made platform customized for your brand, with games, payments and back-office tools.',
     alt: 'White Label Casino',
     ctaText: 'Explore White Label',
     ctaHref: '/white-label-casino-solutions',
+    badges: ['Ready-Made Platform', 'Custom Brand UI', 'Games & Payments'],
   },
   {
     id: 3,
-    image: '/assets/sol-img-3.webp',
+    image: '/assets/sol-card-3.webp',
     title: 'Bespoke iGaming Solutions',
     description: 'Build a custom iGaming platform with the design, features and integrations your business needs.',
     alt: 'Bespoke iGaming Solutions',
     ctaText: 'Explore Bespoke Solutions',
     ctaHref: '/custom-igaming-solution',
+    badges: ['Custom Architecture', 'Tailored Features', 'Full Ownership'],
   }
 ];
 
 const styles = `
   .solutions-section {
-    background: radial-gradient(106.74% 100.05% at 50% 100.05%, #1c1918 0, #0b0b0f 19.4%);
+    background: #0b0b0f;
   }
 
   .solutions-title {
@@ -47,9 +50,98 @@ const styles = `
     -webkit-text-fill-color: transparent;
   }
 
-  .solutions-item {
-    background: linear-gradient(121deg, rgba(0, 235, 170, 0.2) 10.25%, rgba(0, 235, 170, 0.03) 99.99%), #0a141a;
-    border: 1px solid rgba(0, 235, 170, 0.3);
+  .sol-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0.3, 1);
+  }
+
+  .sol-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .sol-card-img {
+    z-index: 2;
+    height: 340px;
+    margin-bottom: -175px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    pointer-events: none;
+  }
+
+  .sol-card-img img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .sol-card-inner {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 165px 18px 18px;
+  }
+
+  .sol-card-inner::before {
+    content: "";
+    z-index: 1;
+    background: linear-gradient(143deg, rgba(14, 62, 53, 0.78) 7%, rgba(4, 16, 17, 0.9) 55%);
+    border: none;
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+
+  .sol-card-content {
+    position: relative;
+    z-index: 3;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+    padding: 24px;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    background: rgba(14, 30, 28, 0.72);
+    border: none;
+  }
+
+  .sol-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 768px) {
+    .sol-card-img {
+      height: 250px;
+      margin-bottom: -120px;
+    }
+
+    .sol-card-inner {
+      padding: 120px 14px 14px;
+    }
+
+    .sol-card-content {
+      padding: 20px;
+    }
   }
 
   
@@ -159,141 +251,130 @@ export default function SolutionsSection() {
             Choose a complete launch solution or build on Kvaornux technology with a setup tailored to your product, market and operating model.
           </p>
 
-          {/* Desktop Grid */}
-          {!isMobile && (
-            <div className="hidden md:grid grid-cols-3 gap-6 max-w-6xl mx-auto mb-12 md:mb-16">
+          {/* Big Cards Horizontal Slider (Desktop + Mobile) */}
+          <div className="mb-12 md:mb-16 w-full overflow-visible relative">
+            <Swiper
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              spaceBetween={20}
+              slidesPerView="auto"
+              grabCursor={true}
+              loop={false}
+              breakpoints={{
+                768: {
+                  spaceBetween: 28,
+                },
+              }}
+              style={{ overflow: 'visible' }}
+            >
               {solutionsData.map((solution, index) => (
-                <div
+                <SwiperSlide
                   key={solution.id}
-                  ref={(el) => { if (el) elementsRef.current[2 + index] = el; }}
-                  data-anim="from-bottom"
-                  data-anim-delay={index + 1}
-                  className="solutions-item rounded-3xl pt-16 pb-8 px-8 relative flex flex-col gap-4 h-full transition-all duration-300 hover:-translate-y-1 overflow-visible"
+                  style={{ width: 'auto', height: 'auto', overflow: 'visible' }}
                 >
-                  {/* Image */}
-                  <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-2/5 w-36 z-10 pointer-events-none overflow-visible">
-                    <img src={solution.image} alt={solution.alt} width={232} height={225} className="w-full h-auto block" />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-white text-xl font-bold leading-snug text-center mt-10">
-                    {solution.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-[#a5a5a5] text-base font-normal leading-relaxed text-center flex-grow">
-                    {solution.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* Mobile Slider */}
-          {isMobile && (
-            <div className="mb-15 w-full overflow-visible relative px-6 ">
-              <Swiper
-                onSwiper={(swiper) => {
-                  swiperRef.current = swiper;
-                }}
-                spaceBetween={24}
-                slidesPerView={1}
-                centeredSlides={false}
-                grabCursor={true}
-                loop={false}
-                style={{ overflow: 'visible' }}
-              >
-                {solutionsData.map((solution) => (
-                  <SwiperSlide key={solution.id} style={{ width: 'calc(100vw - 2rem)', overflow: 'visible' }}>
-                    <div className="solutions-item rounded-3xl pt-14 pb-6 px-6 relative flex flex-col gap-4 min-h-[310px] overflow-visible">
-                      {/* Image */}
-                      <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-2/5 w-28 z-10 pointer-events-none overflow-visible">
-                        <img src={solution.image} alt={solution.alt} width={232} height={225} className="w-full h-auto block" />
+                  <div
+                    ref={(el) => { if (el) elementsRef.current[2 + index] = el; }}
+                    data-anim="from-bottom"
+                    data-anim-delay={index + 1}
+                    className="w-[84vw] sm:w-[400px] md:w-[440px] lg:w-[470px] h-full flex flex-col"
+                  >
+                    <Link href={solution.ctaHref} className="sol-card flex-grow">
+                      {/* 3D Crystal Sculpture */}
+                      <div className="sol-card-img">
+                        <img src={solution.image} alt={solution.alt} width={420} height={420} />
                       </div>
 
-                      {/* Title */}
-                      <h3 className="text-white text-2xl font-bold leading-snug text-center mt-8 px-4">
-                        {solution.title}
-                      </h3>
+                      {/* Card Body + Frosted Glass Panel */}
+                      <div className="sol-card-inner">
+                        <div className="sol-card-content">
+                          <h3 className="text-white text-2xl lg:text-3xl font-bold leading-snug text-left">
+                            {solution.title}
+                          </h3>
 
-                      {/* Description */}
-                      <p className="text-[#a5a5a5] text-base font-normal leading-relaxed text-center flex-grow">
-                        {solution.description}
-                      </p>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+                          <p className="text-white/75 text-sm md:text-base font-normal leading-relaxed text-left flex-grow">
+                            {solution.description}
+                          </p>
 
-              {/* Left Arrow - Positioned on left side */}
-              <button
-                onClick={() => {
-                  if (swiperRef.current) swiperRef.current.slidePrev();
-                }}
-                className="nav-button absolute left-0 top-1/2 -translate-y-1/2 z-20"
-                style={{
-                  left: '-10px',
-                  width: '2.8rem',
-                  minWidth: '2.8rem',
-                  height: '2.8rem',
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.08)',
-                  boxShadow: '0 -3px 4px 0 rgba(6,10,13,0.26) inset, 0 2px 2.8px 0 rgba(255,255,255,0.13) inset',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
-                  <path d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
+                          <div className="flex flex-wrap gap-2.5 pt-2">
+                            {solution.badges.map((badge) => (
+                              <span key={badge} className="sol-pill">
+                                <span className="w-4 h-4 rounded-full border border-[#00ebaa] flex items-center justify-center shrink-0">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-[#00ebaa]" />
+                                </span>
+                                <span>{badge}</span>
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-              {/* Right Arrow - Positioned on right side */}
-              <button
-                onClick={() => {
-                  if (swiperRef.current) swiperRef.current.slideNext();
-                }}
-                className="nav-button absolute right-0 top-1/2 -translate-y-1/2 z-20"
-                style={{
-                  right: '-10px',
-                  width: '2.8rem',
-                  minWidth: '2.8rem',
-                  height: '2.8rem',
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.08)',
-                  boxShadow: '0 -3px 4px 0 rgba(6,10,13,0.26) inset, 0 2px 2.8px 0 rgba(255,255,255,0.13) inset',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
-                  <path d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          )}
+            {/* Left Arrow */}
+            <button
+              onClick={() => {
+                if (swiperRef.current) swiperRef.current.slidePrev();
+              }}
+              aria-label="Previous solution"
+              className="nav-button absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-20"
+              style={{
+                width: '2.8rem',
+                minWidth: '2.8rem',
+                height: '2.8rem',
+                borderRadius: '50%',
+                background: 'rgba(255,255,255,0.08)',
+                boxShadow: '0 -3px 4px 0 rgba(6,10,13,0.26) inset, 0 2px 2.8px 0 rgba(255,255,255,0.13) inset',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+                <path d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Right Arrow */}
+            <button
+              onClick={() => {
+                if (swiperRef.current) swiperRef.current.slideNext();
+              }}
+              aria-label="Next solution"
+              className="nav-button absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 z-20"
+              style={{
+                width: '2.8rem',
+                minWidth: '2.8rem',
+                height: '2.8rem',
+                borderRadius: '50%',
+                background: 'rgba(255,255,255,0.08)',
+                boxShadow: '0 -3px 4px 0 rgba(6,10,13,0.26) inset, 0 2px 2.8px 0 rgba(255,255,255,0.13) inset',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+                <path d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
 
           {/* Button */}
           <div
             ref={(el) => { if (el) elementsRef.current[2 + solutionsData.length] = el; }}
             data-anim="from-bottom"
-            className="flex justify-center "
+            className="flex justify-center"
           >
-            <button
-              onClick={() => {
-                const section = document.getElementById('contact-form-section');
-                if (section) {
-                  section.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  window.location.href = '/#contact-form-section';
-                }
-              }}
+            <Link
+              href="/solutions"
               className="btn-main overflow-hidden"
               style={{
                 background: 'radial-gradient(65% 140% at 50% -10%, #46ffc8 0%, #00eb9f 40%, #00c984 75%, #02a86e 100%)',
@@ -301,8 +382,8 @@ export default function SolutionsSection() {
                 color: '#04160f',
               }}
             >
-              <span>Let's Partner Up</span>
-            </button>
+              <span>Explore All Solutions</span>
+            </Link>
           </div>
 
         </div>

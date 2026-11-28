@@ -175,10 +175,12 @@ export default function PaymentGatewaysSection() {
 
         .payment-scroll-up {
           animation: paymentScrollUp 90s linear infinite;
+          will-change: transform;
         }
 
         .payment-scroll-down {
           animation: paymentScrollDown 90s linear infinite;
+          will-change: transform;
         }
 
         @media (max-width: 478px) {
@@ -210,12 +212,33 @@ export default function PaymentGatewaysSection() {
         [data-anim-delay="2"].visible { animation-delay: 0.2s; }
       `}</style>
 
-      <div className="section-padding w-full h-full">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(60% 65% at 28% 55%, rgba(43,255,191,0.16) 0%, rgba(13,11,16,0) 55%)'
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.08]"
+        style={{
+          backgroundImage: 'url(/assets/grid-bg.svg)',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: '50% 50%',
+          backgroundSize: '8rem 6.3rem',
+          WebkitMaskImage:
+            'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)',
+          maskImage:
+            'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)'
+        }}
+      />
+
+      <div className="section-padding w-full h-full relative z-10">
         <div className="container-new max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative">
 
           {/* Main Container: Stacked Flex on Mobile, 2-Column Grid on Desktop */}
           <div className="home_providers flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-0 relative overflow-hidden items-center lg:items-stretch">
-            
+
             {/* Left Side on Desktop, Top on Mobile: Content & CTA */}
             <div
               ref={(el) => { elementsRef.current[1] = el; }}
@@ -240,11 +263,11 @@ export default function PaymentGatewaysSection() {
               <div className="home_providers-top relative z-20 max-w-xl my-auto flex flex-col items-center lg:items-start gap-4 sm:gap-5 text-center lg:text-left">
 
                 <h3 className="section-gradient-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  50+ Diverse Portfolio of Global & Local Providers
+                  50+ Global &amp; Local Payment Providers
                 </h3>
 
                 <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed">
-                  Connect card payments, e-wallets, bank transfers and regional payment methods to your platform. We perform technical API integration with the licensed payment providers contracted directly by your business and bring deposit and withdrawal records into your back office.
+                  Connect cards, e-wallets, bank transfers and regional payment methods via technical API integration with your licensed payment providers, synced to your back office.
                 </p>
 
                 {/* CTA Button (Desktop) */}

@@ -4,6 +4,7 @@ import ContactForm from "@/src/components/contactform/ContactForm";
 import FAQSection from "@/src/components/FAQSection/FAQSection";
 import FeaturesSection from "@/src/components/features/FeaturesSection";
 import HeroSection from "@/src/components/hero/HeroSection";
+import OpportunitiesSection from "@/src/components/opportunitiessection/Opportunitiessection";
 import ProvidersSection from "@/src/components/providerssection/ProvidersSection";
 import PaymentGatewaysSection from "@/src/components/paymentgateways/PaymentGatewaysSection";
 import SolutionsSection from "@/src/components/solutionssection/Solutionssection";
@@ -132,9 +133,10 @@ export default function Home() {
       <ProvidersSection />
       <PaymentGatewaysSection />
       <SolutionsSection />
-      <StepsSection />
+      <StepsSection startFromFirst={true} />
       <TestimonialsSection />
       <FAQSection customFaqData={homepageFaqs} />
+      <OpportunitiesSection />
       <section id="contact-form-section">
         <ContactForm />
       </section>

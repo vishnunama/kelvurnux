@@ -202,10 +202,10 @@ export default function FeaturesSection() {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              Casino, Sportsbook and the Tools to Run Your Platform
+              Casino, Sportsbook &amp; Core Platform Tools
             </h2>
             <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed max-w-3xl mx-auto mt-3 sm:mt-4 text-center px-2">
-              Manage games, players, bonuses and daily operations with casino and sportsbook software built for your business. Connect the providers and payment services you need.
+              Manage games, players and bonuses with casino and sportsbook software built to connect your game providers and payment services.
             </p>
           </div>
 
@@ -352,7 +352,7 @@ export default function FeaturesSection() {
                 alt={current.title}
                 width={750}
                 height={1026}
-                className="w-full max-w-[560px] md:max-w-[700px] h-auto object-contain scale-[1.85] sm:scale-[1.9] -translate-y-4"
+                className="w-full max-w-[560px] md:max-w-[700px] h-auto object-contain scale-[1.85] sm:scale-[1.9] translate-y-8 sm:translate-y-10"
                 priority
               />
             </div>

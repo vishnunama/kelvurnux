@@ -795,7 +795,7 @@ export default function StepsSection({
                   disableOnInteraction: false,
                 }
             }
-            loop={!startFromFirst}
+            loop={true}
             centeredSlides={!startFromFirst}
             speed={550}
             grabCursor={true}

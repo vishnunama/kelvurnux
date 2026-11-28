@@ -91,7 +91,7 @@ export default function ProvidersSection() {
   }, []);
 
   return (
-    <section className="section bg-[#0b0b0f] text-white relative py-12 sm:py-16 lg:py-24 overflow-hidden">
+    <section className="section bg-[#0b0b0f] text-white relative pt-6 pb-12 sm:pt-8 sm:pb-16 lg:pt-12 lg:pb-24 overflow-hidden">
       <style jsx global>{`
         @keyframes logoScrollUp {
           0% {
@@ -113,10 +113,12 @@ export default function ProvidersSection() {
 
         .logo-scroll-up {
           animation: logoScrollUp 90s linear infinite;
+          will-change: transform;
         }
 
         .logo-scroll-down {
           animation: logoScrollDown 90s linear infinite;
+          will-change: transform;
         }
 
         @media (max-width: 478px) {
@@ -155,7 +157,28 @@ export default function ProvidersSection() {
         [data-anim-delay="2"].visible { animation-delay: 0.2s; }
       `}</style>
 
-      <div className="section-padding w-full h-full">
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(60% 65% at 72% 55%, rgba(43,255,191,0.16) 0%, rgba(13,11,16,0) 55%)'
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.08]"
+        style={{
+          backgroundImage: 'url(/assets/grid-bg.svg)',
+          backgroundRepeat: 'repeat',
+          backgroundPosition: '50% 50%',
+          backgroundSize: '8rem 6.3rem',
+          WebkitMaskImage:
+            'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)',
+          maskImage:
+            'linear-gradient(to bottom, transparent, black 20%, black 80%, transparent)'
+        }}
+      />
+
+      <div className="section-padding w-full h-full relative z-10">
         <div className="container-new max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative">
 
           {/* Main Container: Stacked Flex on Mobile, 2-Column Grid on Desktop */}
@@ -244,7 +267,7 @@ export default function ProvidersSection() {
                 </h3>
 
                 <p className="text-base md:text-lg text-[#a5a5a5] font-normal leading-relaxed">
-                  Game content through one integration. Connect your platform to a broad portfolio of slots, live casino, crash, table and other gaming content through technical API integration using your licensed game provider or aggregator agreements.
+                  Game content through one integration. Connect slots, live casino, crash and table games via technical API integration with your licensed provider or aggregator agreements.
                 </p>
 
                 {/* CTA Button (Desktop) */}
